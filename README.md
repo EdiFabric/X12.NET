@@ -13,17 +13,17 @@ Ensure all of your EDI objects are valid against their EDI rules before processi
 
 Communicate reliably with your business partners by sending them back fully compliant ( TA1 , 997 , 999 , CONTRL ) acknowledgments. Detect duplicates as early as EDI interchanges are read.
 
-Read multiple interchanges from the same file
-Continue on error to avoid breaking
-Automatic delimiters resolution
-Streaming for large interchanges
-Transaction splitting for large messages
-Fully compliant EDI rules validation
-Write objects directly to a stream or a file
-Configure custom EDI delimiters
-Apply segment postfixes
-Preserve whitespace and output situational segments
-Message, group and interchange trailers are automatically set
-Convert EDI objects to/from XML
-Generate fully compliant EDI acknowledgments
-Ability for cross segment validation and custom code validation
+* Read multiple interchanges from the same file
+* Continue on error to avoid breaking
+* Automatic delimiters resolution
+* Streaming for large interchanges
+* Transaction splitting for large messages
+* Fully compliant EDI rules validation
+* Write objects directly to a stream or a file
+* Configure custom EDI delimiters
+* Apply segment postfixes
+* Preserve whitespace and output situational segments
+* Message, group and interchange trailers are automatically set
+* Convert EDI objects to/from XML
+* Generate fully compliant EDI acknowledgments
+* Ability for cross segment validation and custom code validation
