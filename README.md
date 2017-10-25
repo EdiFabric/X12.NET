@@ -1,5 +1,5 @@
 # Everything you need to deliver great EDI applications.
-### The SDK uses EdiFabric's trial products which can be used for 14 days 
+### The SDK references EdiFabric's trial products which can be used for 14 days 
 
 EdiFabric empowers developers and businesses interested in enabling their software systems with EDI capabilities. Its simplicity and effectiveness lets you connect with partners in just a day.
 
