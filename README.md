@@ -27,3 +27,5 @@ Communicate reliably with your business partners by sending them back fully comp
 * Convert EDI objects to/from XML
 * Generate fully compliant EDI acknowledgments
 * Ability for cross segment validation and custom code validation
+
+[www.edifabric.com](http://edifabric.com/)
