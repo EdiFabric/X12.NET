@@ -16,7 +16,7 @@ Ensure all of your EDI objects are valid against their EDI rules before processi
 Communicate reliably with your business partners by sending them back fully compliant ( TA1 , 997 , 999 , CONTRL ) acknowledgments. Detect duplicates as early as EDI interchanges are read.
 
 * EDI DOM means No mapping, No grammars, No serialization, No Xpath, No key-value tables, No SEF, No XSD, No rule editors, No EDI experience
-* HIPAA 837 P & X12 810 & X12 850 & EDIFACT INVOIC & EDIFACT ORDERS
+* HIPAA 837 P & X12 810 & X12 850 & EDIFACT INVOIC & EDIFACT ORDERS EDI rules are included
 * Fully compliant HIPAA SNIP Levels validation
 * Read multiple interchanges from the same file
 * Continue on error to avoid breaking
