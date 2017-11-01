@@ -297,9 +297,9 @@ namespace EdiFabric.Sdk.X12
             result.ST.TransactionSetControlNumber_02 = controlNumber.PadLeft(9, '0');
 
             result.BIG = new BIG();
-            result.BIG.Date_01 = DateTime.Now.ToString("yyMMdd");
+            result.BIG.Date_01 = DateTime.Now.ToString("yyyyMMdd");
             result.BIG.InvoiceNumber_02 = "123456789";
-            result.BIG.Date_03 = "030627";
+            result.BIG.Date_03 = "20030627";
             result.BIG.PurchaseOrderNumber_04 = "201177";
 
             result.REF = new List<REF>();
