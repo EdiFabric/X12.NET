@@ -186,11 +186,11 @@ namespace EdiFabric.Rules.EDIFACT_D96A
         [Pos(30)]
         public List<TSORDERS_STGLoop1> STGLoop1 { get; set; }
 
-        public List<SegmentErrorContext> Validate(InstanceContext instanceContext, int segmentIndex, int inSegmentIndex, int inCompositeIndex, int repetitionIndex)
+        public List<SegmentErrorContext> Validate(ValidationContext validationContext)
         {
             var result = new List<SegmentErrorContext>();
 
-            var position = segmentIndex + 1;
+            var position = validationContext.SegmentIndex + 1;
             if (PIA != null)
                 position += PIA.Count;
             if (IMD != null)

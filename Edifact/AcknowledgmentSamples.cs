@@ -204,7 +204,7 @@ namespace EdiFabric.Sdk.Edifact
                         {
                             Debug.WriteLine(string.Format("Interchange with control number {0}", a.InterchangeHeader.InterchangeControlReference_5));
                             Debug.WriteLine(string.Format("Group with control number {0}", a.GroupHeader.GroupReferenceNumber_5));
-                            Debug.WriteLine("Message {0} with control number {1}", a.Message.Name, a.Message.GetControlNumber());
+                            Debug.WriteLine("Message {0} with control number {1}", a.Message.Name, a.Message.GetTransactionContext().HeaderControlNumber);
                             Debug.WriteLine("Is in duplicate group: {0}", a.InDuplicateGroup);
                             // reject message
                         }
@@ -257,7 +257,7 @@ namespace EdiFabric.Sdk.Edifact
                         if (a.InDuplicateInterchange)
                         {
                             Debug.WriteLine(string.Format("Interchange with control number {0}", a.InterchangeHeader.InterchangeControlReference_5));
-                            Debug.WriteLine("Message {0} with control number {1}", a.Message.Name, a.Message.GetControlNumber());
+                            Debug.WriteLine("Message {0} with control number {1}", a.Message.Name, a.Message.GetTransactionContext().HeaderControlNumber);
                             Debug.WriteLine("Is in duplicate interchange: {0}", a.InDuplicateInterchange);
                             // reject message
                         }

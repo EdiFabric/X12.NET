@@ -171,7 +171,7 @@ namespace EdiFabric.Sdk.X12
                     if (a.ErrorContext.HasErrors)
                     {
                         //  In case we decide to process the message anyway, preserve the control number
-                        processedMessages.Add(a.Message.GetControlNumber());
+                        processedMessages.Add(a.Message.GetTransactionContext().HeaderControlNumber);
                         //  Process the invalid message
 
                         // Reject message
@@ -284,7 +284,7 @@ namespace EdiFabric.Sdk.X12
                         {
                             Debug.WriteLine(string.Format("Interchange with control number {0}", a.InterchangeHeader.InterchangeControlNumber_13));
                             Debug.WriteLine(string.Format("Group with control number {0}", a.GroupHeader.GroupControlNumber_6));
-                            Debug.WriteLine("Message {0} with control number {1}", a.Message.Name, a.Message.GetControlNumber());
+                            Debug.WriteLine("Message {0} with control number {1}", a.Message.Name, a.Message.GetTransactionContext().HeaderControlNumber);
                             Debug.WriteLine("Is in duplicate group: {0}", a.InDuplicateGroup);
                             // reject message
                         }
@@ -340,7 +340,7 @@ namespace EdiFabric.Sdk.X12
                         {
                             Debug.WriteLine(string.Format("Interchange with control number {0}", a.InterchangeHeader.InterchangeControlNumber_13));
                             Debug.WriteLine(string.Format("Group with control number {0}", a.GroupHeader.GroupControlNumber_6));
-                            Debug.WriteLine("Message {0} with control number {1}", a.Message.Name, a.Message.GetControlNumber());
+                            Debug.WriteLine("Message {0} with control number {1}", a.Message.Name, a.Message.GetTransactionContext().HeaderControlNumber);
                             Debug.WriteLine("Is in duplicate interchange: {0}", a.InDuplicateInterchange);
                             // reject message
                         }

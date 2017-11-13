@@ -163,12 +163,12 @@ namespace EdiFabric.Rules.X12_004010
         [Pos(14)]
         public List<PKG> PKG { get; set; }
 
-        public List<SegmentErrorContext> Validate(InstanceContext instanceContext, int segmentIndex, int inSegmentIndex, int inCompositeIndex, int repetitionIndex)
+        public List<SegmentErrorContext> Validate(ValidationContext validationContext)
         {
             var result = new List<SegmentErrorContext>();
 
             if (N1 != null && N2 == null)
-                result.Add(new SegmentErrorContext("N2", segmentIndex + 2, GetType().GetTypeInfo(), SegmentErrorCode.RequiredSegmentMissing,
+                result.Add(new SegmentErrorContext("N2", validationContext.SegmentIndex + 2, GetType().GetTypeInfo(), SegmentErrorCode.RequiredSegmentMissing,
                     "N2 segment is missing."));
 
             return result;
