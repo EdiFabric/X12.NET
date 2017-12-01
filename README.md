@@ -15,14 +15,14 @@ Supports all versions for [X12](http://edifabric.com/edi-x12-transactions.html),
 
 Communicate reliably with your business partners by sending them back fully compliant ( [TA1](http://www.edifabric.com/edi-ta1-codes.html) , [997](http://www.edifabric.com/edi-997-codes.html) , [999](http://www.edifabric.com/edi-999-codes.html) , [CONTRL](http://www.edifabric.com/edi-contrl-codes.html) ) [EDI acknowledgments](http://edifabric.com/edi-acknowledgments.html). Detect duplicates as early as EDI interchanges are read.
 
-* EDI DOM means No mapping, No grammars, No serialization, No Xpath, No key-value tables, No SEF, No XSD, No rule editors, No EDI experience
-* HIPAA 837 P & X12 810 & X12 850 & EDIFACT INVOIC & EDIFACT ORDERS EDI rules are included
-* Fully compliant HIPAA SNIP Levels validation
+* [EDI DOM](http://www.edifabric.com/edi-dom-document-object-model.html) means No mapping, No grammars, No serialization, No Xpath, No key-value tables, No SEF, No XSD, No rule editors, No EDI experience
+* [HIPAA 837 P](https://github.com/EdiFabric/Sdk/blob/master/Hipaa/Rules/EF_HIPAA_005010X222A1_837.cs) & [X12 810](https://github.com/EdiFabric/Sdk/blob/master/X12/Rules/EF_X12_004010_TS810.cs) & [X12 850](https://github.com/EdiFabric/Sdk/blob/master/X12/Rules/EF_X12_004010_TS850.cs) & [EDIFACT INVOIC](https://github.com/EdiFabric/Sdk/blob/master/Edifact/Rules/EF_EDIFACT_D96A_TSINVOIC.cs) & [EDIFACT ORDERS](https://github.com/EdiFabric/Sdk/blob/master/Edifact/Rules/EF_EDIFACT_D96A_TSORDERS.cs) EDI rules are included
+* Fully compliant [HIPAA SNIP Levels validation](http://www.edifabric.com/edi-hipaa-compliance.html)
 * Read multiple interchanges from the same file
 * Continue on error to avoid breaking
 * Automatic delimiters resolution
 * Streaming for large interchanges
-* Transaction splitting for large messages
+* [Transaction splitting for large messages](http://www.edifabric.com/edi-message-split-to-segments.html)
 * Fully compliant EDI rules validation
 * Write objects directly to a stream or a file
 * Configure custom EDI delimiters
@@ -31,6 +31,6 @@ Communicate reliably with your business partners by sending them back fully comp
 * Message, group and interchange trailers are automatically set
 * Convert EDI objects to/from XML
 * Generate fully compliant EDI acknowledgments
-* Ability for cross segment validation and custom code validation
+* [Ability for cross segment validation and custom code validation](http://www.edifabric.com/edi-hipaa-validator.html)
 
 [www.edifabric.com](http://edifabric.com/)
