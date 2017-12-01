@@ -3,7 +3,7 @@
 
 ### Our EDI Document Object Model lets you to dynamically read, manipulate and write EDI files
 
-EdiFabric empowers developers and businesses interested in enabling their software systems with EDI capabilities. Its simplicity and effectiveness lets you connect with partners in just a day.
+[EdiFabric](http://edifabric.com/) empowers developers and businesses interested in enabling their software systems with EDI capabilities. Its simplicity and effectiveness lets you connect with partners in just a day.
 
 Supports all versions for X12, HIPAA, EDIFACT, EANCOM and VDA. Fully customizable EDI rules for each transaction set, allowing you to comply with any partner-proprietary format.
 
