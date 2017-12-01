@@ -7,13 +7,13 @@
 
 Supports all versions for [X12](http://edifabric.com/edi-x12-transactions.html), [HIPAA](http://edifabric.com/edi-hipaa-transactions.html), [EDIFACT](http://edifabric.com/edi-edifact-transactions-1.html), [EANCOM](http://edifabric.com/edi-eancom-transactions.html) and [VDA](http://edifabric.com/edi-vda-transactions.html). Fully customizable EDI rules for each transaction set, allowing you to comply with any partner-proprietary format.
 
-Lightning fast streaming of EDI documents into typed objects. Allows you to read files of any size, having multiple interchanges or even containing corrupt data without breaking.
+[Lightning fast streaming of EDI documents](http://edifabric.com/edi-file-translator.html) into typed objects. Allows you to read files of any size, having multiple interchanges or even containing corrupt data without breaking.
 
-Create your own EDI objects, and then write them to a stream or directly to a file. Allows you to customize all delimiters and segment postfixes. All trailers are automatically set.
+[Create your own EDI objects](http://edifabric.com/edi-file-generator.html), and then write them to a stream or directly to a file. Allows you to customize all delimiters and segment postfixes. All trailers are automatically set.
 
-Ensure all of your EDI objects are valid against their EDI rules before processing them downstream. Produces rich error context to help you quickly troubleshoot failures.
+[Ensure all of your EDI objects are valid](http://edifabric.com/edi-file-validator.html) against their EDI rules before processing them downstream. Produces rich error context to help you quickly troubleshoot failures.
 
-Communicate reliably with your business partners by sending them back fully compliant ( TA1 , 997 , 999 , CONTRL ) acknowledgments. Detect duplicates as early as EDI interchanges are read.
+Communicate reliably with your business partners by sending them back fully compliant ( [TA1](http://www.edifabric.com/edi-ta1-codes.html) , [997](http://www.edifabric.com/edi-997-codes.html) , [999](http://www.edifabric.com/edi-999-codes.html) , [CONTRL](http://www.edifabric.com/edi-contrl-codes.html) ) [EDI acknowledgments](http://edifabric.com/edi-acknowledgments.html). Detect duplicates as early as EDI interchanges are read.
 
 * EDI DOM means No mapping, No grammars, No serialization, No Xpath, No key-value tables, No SEF, No XSD, No rule editors, No EDI experience
 * HIPAA 837 P & X12 810 & X12 850 & EDIFACT INVOIC & EDIFACT ORDERS EDI rules are included
