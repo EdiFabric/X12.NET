@@ -8,6 +8,7 @@
             WriteSamples.Run();
             XmlSamples.Run();
             AcknowledgmentSamples.Run();
+            Custom999Samples.Run();
         }
     }
 }

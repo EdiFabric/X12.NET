@@ -303,6 +303,7 @@ namespace EdiFabric.Sdk.Edifact
             if (!po.IsValid(out errorContext))
             {
                 var customValidation = errorContext.Errors.FirstOrDefault(e => e.Value == "DTM segment is missing.");
+                Debug.WriteLine(customValidation.Value);
             }
         }
 

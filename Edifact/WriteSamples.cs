@@ -56,7 +56,7 @@ namespace EdiFabric.Sdk.Edifact
                     var writer = new EdifactWriter(stream, Encoding.Default, Environment.NewLine);
 
                     //  5.  Begin with UNB segment
-                    writer.Write(CreateUnb("1"));
+                    writer.Write(Helpers.CreateUnb("1"));
                     //  6.  Write all transactions
                     writer.Write(invoice);
                     //  No need to close any of the above
@@ -64,7 +64,7 @@ namespace EdiFabric.Sdk.Edifact
                     //  7.  Always flush at the end to release the cache
                     writer.Flush();
 
-                    Debug.Write(LoadString(stream));
+                    Debug.Write(Helpers.LoadString(stream));
                 }
             }
             else
@@ -107,7 +107,7 @@ namespace EdiFabric.Sdk.Edifact
                 //  Write directly to a file
                 var writer = new EdifactWriter(@"C:\Test\Output.txt", false);
 
-                writer.Write(CreateUnb("1"));
+                writer.Write(Helpers.CreateUnb("1"));
                 writer.Write(invoice);
 
                 //  4.  Always flush at the end to release the cache
@@ -136,7 +136,7 @@ namespace EdiFabric.Sdk.Edifact
             {
                 var writer = new EdifactWriter(stream, Encoding.Default, Environment.NewLine);
 
-                writer.Write(CreateUnb("1"));
+                writer.Write(Helpers.CreateUnb("1"));
                 
                 //  1.  Write the first invoice
                 writer.Write(CreateInvoice("1"));
@@ -148,7 +148,7 @@ namespace EdiFabric.Sdk.Edifact
 
                 writer.Flush();
 
-                Debug.Write(LoadString(stream));
+                Debug.Write(Helpers.LoadString(stream));
             }
         }
 
@@ -166,17 +166,17 @@ namespace EdiFabric.Sdk.Edifact
                 var writer = new EdifactWriter(stream, Encoding.Default, Environment.NewLine);
 
                 //  1.  Write the first interchange
-                writer.Write(CreateUnb("1"));
+                writer.Write(Helpers.CreateUnb("1"));
                 writer.Write(CreateInvoice("1"));
 
                 //  2.  Write the second interchange
                 //  No need to close the previous interchange with a IEA
-                writer.Write(CreateUnb("2"));
+                writer.Write(Helpers.CreateUnb("2"));
                 writer.Write(CreateInvoice("1"));
 
                 writer.Flush();
 
-                Debug.Write(LoadString(stream));
+                Debug.Write(Helpers.LoadString(stream));
             }
         }
 
@@ -200,12 +200,12 @@ namespace EdiFabric.Sdk.Edifact
                 //  Set the PreserveWhitespace flag to true
                 var writer = new EdifactWriter(stream, null, "", true);
 
-                writer.Write(CreateUnb("1"));
+                writer.Write(Helpers.CreateUnb("1"));
                 writer.Write(invoice);
 
                 writer.Flush();
 
-                Debug.Write(LoadString(stream));
+                Debug.Write(Helpers.LoadString(stream));
             }
         }
 
@@ -232,12 +232,12 @@ namespace EdiFabric.Sdk.Edifact
                     Separators.Edifact.DataElement, Separators.Edifact.RepetitionDataElement, Separators.Edifact.Escape);
 
                 //  Write the UNB with the custom separator set
-                writer.Write(CreateUnb("1"), separators);
+                writer.Write(Helpers.CreateUnb("1"), separators);
                 writer.Write(invoice);
 
                 writer.Flush();
 
-                Debug.Write(LoadString(stream));
+                Debug.Write(Helpers.LoadString(stream));
             }
         }
 
@@ -258,60 +258,13 @@ namespace EdiFabric.Sdk.Edifact
 
                 //  Write the custom UNA
                 writer.Write(Separators.Edifact.ToUna());
-                writer.Write(CreateUnb("1"));
+                writer.Write(Helpers.CreateUnb("1"));
                 writer.Write(invoice);
 
                 writer.Flush();
 
-                Debug.Write(LoadString(stream));
+                Debug.Write(Helpers.LoadString(stream));
             }
-        }
-
-        /// <summary>
-        /// Sample UNB
-        /// </summary>
-        static UNB CreateUnb(string controlNumber)
-        {
-            return new UNB
-            {
-                SYNTAXIDENTIFIER_1 = new S001
-                {
-                    //  Syntax Identifier
-                    SyntaxIdentifier_1 = "UNOB",
-                    //  Syntax Version Number
-                    SyntaxVersionNumber_2 = "1"
-                },
-                INTERCHANGESENDER_2 = new S002
-                {
-                    //  Interchange sender identification
-                    InterchangeSenderIdentification_1 = "RECEIVER1",
-                    //  Identification code qualifier
-                    IdentificationCodeQualifier_2 = "01",
-                    //  Interchange sender internal identification
-                    InterchangeSenderInternalIdentification_3 = "ZZUK"
-                },
-                INTERCHANGERECIPIENT_3 = new S003
-                {
-                    //  Interchange recipient identification
-                    InterchangeRecipientIdentification_1 = "SENDER1",
-                    //  Identification code qualifier
-                    IdentificationCodeQualifier_2 = "16",
-                    //  Interchange recipient internal identification
-                    InterchangeRecipientInternalIdentification_3 = "ZZUK"
-                },
-                DATEANDTIMEOFPREPARATION_4 = new S004
-                {
-                    //  Date
-                    Date_1 = DateTime.Now.Date.ToString("yyMMdd"),
-                    //  Time
-                    Time_2 = DateTime.Now.TimeOfDay.ToString("hhmm")
-                },
-                //  Interchange control reference
-                //  Must be incremented with every interchange
-                InterchangeControlReference_5 = controlNumber,
-                //  Application reference
-                ApplicationReference_7 = "INVOIC"
-            };
         }
 
         /// <summary>
@@ -395,7 +348,7 @@ namespace EdiFabric.Sdk.Edifact
             var imd1 = new IMD();
             imd1.Itemdescriptiontypecoded_01 = "F";
             imd1.ITEMDESCRIPTION_03 = new C273();
-            imd1.ITEMDESCRIPTION_03.Codelistresponsibleagencycoded_03 = "ITEM";
+            imd1.ITEMDESCRIPTION_03.Codelistresponsibleagencycoded_03 = "100";
             linLoop1.IMD.Add(imd1);
 
             linLoop1.QTY = new List<QTY>();
@@ -439,7 +392,7 @@ namespace EdiFabric.Sdk.Edifact
             var imd2 = new IMD();
             imd2.Itemdescriptiontypecoded_01 = "F";
             imd2.ITEMDESCRIPTION_03 = new C273();
-            imd2.ITEMDESCRIPTION_03.Codelistresponsibleagencycoded_03 = "ANOTHER ITEM";
+            imd2.ITEMDESCRIPTION_03.Codelistresponsibleagencycoded_03 = "101";
             linLoop2.IMD.Add(imd2);
 
             linLoop2.QTY = new List<QTY>();
@@ -500,15 +453,6 @@ namespace EdiFabric.Sdk.Edifact
             result.ALCLoop3.Add(alcLoop);
             
             return result;
-        }
-
-        static string LoadString(Stream stream)
-        {
-            stream.Position = 0;
-            using (var reader = new StreamReader(stream, Encoding.Default))
-            {
-                return reader.ReadToEnd();
-            }
-        }
+        }        
     }
 }

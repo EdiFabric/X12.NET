@@ -278,6 +278,7 @@ namespace EdiFabric.Sdk.X12
             if (!po.IsValid(out errorContext))
             {
                 var customValidation = errorContext.Errors.FirstOrDefault(e => e.Value == "N2 segment is missing.");
+                Debug.WriteLine(customValidation.Value);
             }
         }
 

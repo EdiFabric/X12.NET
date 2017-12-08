@@ -33,13 +33,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EdiFabric.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Core.Trial.2.2.0\lib\net45\EdiFabric.Core.dll</HintPath>
+      <HintPath>..\packages\EdiFabric.Core.Trial.2.2.1\lib\net45\EdiFabric.Core.dll</HintPath>
     </Reference>
     <Reference Include="EdiFabric.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Framework.Trial.9.2.1\lib\net45\EdiFabric.Framework.dll</HintPath>
+      <HintPath>..\packages\EdiFabric.Framework.Trial.9.2.2\lib\net45\EdiFabric.Framework.dll</HintPath>
     </Reference>
     <Reference Include="EdiFabric.Plugins.Ack.Edifact, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Plugins.Ack.Edifact.Trial.1.2.1\lib\net45\EdiFabric.Plugins.Ack.Edifact.dll</HintPath>
+      <HintPath>..\packages\EdiFabric.Plugins.Ack.Edifact.Trial.1.2.2\lib\net45\EdiFabric.Plugins.Ack.Edifact.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AcknowledgmentSamples.cs" />
+    <Compile Include="Helpers.cs" />
     <Compile Include="Rules\EF_EDIFACT_D96A_Codes.cs" />
     <Compile Include="Rules\EF_EDIFACT_D96A_ComplexElements.cs" />
     <Compile Include="Rules\EF_EDIFACT_D96A_Segments.cs" />

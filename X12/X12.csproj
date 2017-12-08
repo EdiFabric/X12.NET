@@ -33,13 +33,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EdiFabric.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Core.Trial.2.2.0\lib\net45\EdiFabric.Core.dll</HintPath>
+      <HintPath>..\packages\EdiFabric.Core.Trial.2.2.1\lib\net45\EdiFabric.Core.dll</HintPath>
     </Reference>
     <Reference Include="EdiFabric.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Framework.Trial.9.2.1\lib\net45\EdiFabric.Framework.dll</HintPath>
+      <HintPath>..\packages\EdiFabric.Framework.Trial.9.2.2\lib\net45\EdiFabric.Framework.dll</HintPath>
     </Reference>
     <Reference Include="EdiFabric.Plugins.Ack.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Plugins.Ack.X12.Trial.3.2.1\lib\net45\EdiFabric.Plugins.Ack.X12.dll</HintPath>
+      <HintPath>..\packages\EdiFabric.Plugins.Ack.X12.Trial.3.2.3\lib\net45\EdiFabric.Plugins.Ack.X12.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -51,10 +51,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Custom999tSamples.cs" />
     <Compile Include="AcknowledgmentSamples.cs" />
+    <Compile Include="Helpers.cs" />
     <Compile Include="Rules\EF_X12_004010_Codes.cs" />
     <Compile Include="Rules\EF_X12_004010_ComplexElements.cs" />
     <Compile Include="Rules\EF_X12_004010_Segments.cs" />
+    <Compile Include="Rules\Custom999.cs" />
     <Compile Include="Rules\EF_X12_004010_TS810.cs" />
     <Compile Include="Rules\EF_X12_004010_TS850.cs" />
     <Compile Include="Rules\EF_X12_004010_TS850_Split.cs" />
@@ -83,6 +86,9 @@
     <EmbeddedResource Include="Edi\DetectDuplicateGroup.txt" />
     <EmbeddedResource Include="Edi\DetectDuplicateInterchange.txt" />
     <EmbeddedResource Include="Edi\DuplicateMessage.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Edi\PurchaseOrdersMultipleGroups.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

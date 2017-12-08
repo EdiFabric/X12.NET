@@ -56,9 +56,9 @@ namespace EdiFabric.Sdk.X12
                     var writer = new X12Writer(stream, Encoding.Default, Environment.NewLine);
 
                     //  5.  Begin with ISA segment
-                    writer.Write(CreateIsa("000011111"));
+                    writer.Write(Helpers.CreateIsa("000011111"));
                     //  6.  Follow up with GS segment
-                    writer.Write(CreateGs("111111111"));
+                    writer.Write(Helpers.CreateGs("111111111"));
                     //  7.  Write all transactions
                     writer.Write(invoice);
                     //  No need to close any of the above
@@ -66,7 +66,7 @@ namespace EdiFabric.Sdk.X12
                     //  8.  Always flush at the end to release the cache
                     writer.Flush();
 
-                    Debug.Write(LoadString(stream));
+                    Debug.Write(Helpers.LoadString(stream));
                 }
             }
             else
@@ -113,8 +113,8 @@ namespace EdiFabric.Sdk.X12
                 //  Write directly to a file
                 var writer = new X12Writer(string.Format("{0}\\output.txt", folder), false);
 
-                writer.Write(CreateIsa("000011111"));
-                writer.Write(CreateGs("111111111"));
+                writer.Write(Helpers.CreateIsa("000011111"));
+                writer.Write(Helpers.CreateGs("111111111"));
                 writer.Write(invoice);
 
                 //  4.  Always flush at the end to release the cache
@@ -143,8 +143,8 @@ namespace EdiFabric.Sdk.X12
             {
                 var writer = new X12Writer(stream, Encoding.Default, Environment.NewLine);
 
-                writer.Write(CreateIsa("000011111"));
-                writer.Write(CreateGs("111111111"));
+                writer.Write(Helpers.CreateIsa("000011111"));
+                writer.Write(Helpers.CreateGs("111111111"));
                 
                 //  1.  Write the first invoice
                 writer.Write(CreateInvoice("00000001"));
@@ -156,7 +156,7 @@ namespace EdiFabric.Sdk.X12
 
                 writer.Flush();
 
-                Debug.Write(LoadString(stream));
+                Debug.Write(Helpers.LoadString(stream));
             }
         }
 
@@ -173,22 +173,22 @@ namespace EdiFabric.Sdk.X12
             {
                 var writer = new X12Writer(stream, Encoding.Default, Environment.NewLine);
 
-                writer.Write(CreateIsa("000011111"));
+                writer.Write(Helpers.CreateIsa("000011111"));
 
                 //  1.  Write the first group               
-                writer.Write(CreateGs("111111111"));
+                writer.Write(Helpers.CreateGs("111111111"));
                 //  Write the transactions...
                 writer.Write(CreateInvoice("00000001"));
 
                 //  2.  Write the second group
                 //  No need to close the previous group with a GE
-                writer.Write(CreateGs("222222222"));
+                writer.Write(Helpers.CreateGs("222222222"));
                 //  Write the transactions...
                 writer.Write(CreateInvoice("00000002"));
 
                 writer.Flush();
 
-                Debug.Write(LoadString(stream));
+                Debug.Write(Helpers.LoadString(stream));
             }
         }
 
@@ -206,19 +206,19 @@ namespace EdiFabric.Sdk.X12
                 var writer = new X12Writer(stream, Encoding.Default, Environment.NewLine);
 
                 //  1.  Write the first interchange
-                writer.Write(CreateIsa("000011111"));
-                writer.Write(CreateGs("111111111"));
+                writer.Write(Helpers.CreateIsa("000011111"));
+                writer.Write(Helpers.CreateGs("111111111"));
                 writer.Write(CreateInvoice("00000001"));
 
                 //  2.  Write the second interchange
                 //  No need to close the previous interchange with a IEA
-                writer.Write(CreateIsa("000022222"));
-                writer.Write(CreateGs("111111111"));
+                writer.Write(Helpers.CreateIsa("000022222"));
+                writer.Write(Helpers.CreateGs("111111111"));
                 writer.Write(CreateInvoice("00000002"));
                 
                 writer.Flush();
 
-                Debug.Write(LoadString(stream));
+                Debug.Write(Helpers.LoadString(stream));
             }
         }
 
@@ -243,13 +243,13 @@ namespace EdiFabric.Sdk.X12
                 //  Set the PreserveWhitespace flag to true
                 var writer = new X12Writer(stream, null, "", true);
 
-                writer.Write(CreateIsa("000011111"));
-                writer.Write(CreateGs("111111111"));
+                writer.Write(Helpers.CreateIsa("000011111"));
+                writer.Write(Helpers.CreateGs("111111111"));
                 writer.Write(invoice);
 
                 writer.Flush();
 
-                Debug.Write(LoadString(stream));
+                Debug.Write(Helpers.LoadString(stream));
             }
         }
 
@@ -275,13 +275,13 @@ namespace EdiFabric.Sdk.X12
                     Separators.X12.DataElement, Separators.X12.RepetitionDataElement, Separators.X12.Escape);
 
                 //  Write the ISA with the custom separator set
-                writer.Write(CreateIsa("000011111"), separators);
-                writer.Write(CreateGs("111111111"));
+                writer.Write(Helpers.CreateIsa("000011111"), separators);
+                writer.Write(Helpers.CreateGs("111111111"));
                 writer.Write(invoice);
 
                 writer.Flush();
 
-                Debug.Write(LoadString(stream));
+                Debug.Write(Helpers.LoadString(stream));
             }
         }
 
@@ -343,7 +343,7 @@ namespace EdiFabric.Sdk.X12
             result.IT1Loop1.Add(it1Loop);
 
             result.TDS = new TDS();
-            result.TDS.Amount_01 = "240.12";
+            result.TDS.Amount_01 = "24012";
 
             result.CAD = new CAD();
             result.CAD.Routing_05 = "1234";
@@ -354,83 +354,6 @@ namespace EdiFabric.Sdk.X12
             result.CTT.NumberofLineItems_01 = "1";
 
             return result;
-        }
-
-        /// <summary>
-        /// Sample GS
-        /// </summary>
-        static GS CreateGs(string controlNumber)
-        {
-            return new GS
-            {
-                //  Functional ID Code
-                CodeIdentifyingInformationType_1 = "IN",
-                //  Application Senders Code
-                SenderIDCode_2 = "RECEIVER1",
-                //  Application Receivers Code
-                ReceiverIDCode_3 = "SENDER1",
-                //  Date
-                Date_4 = DateTime.Now.Date.ToString("yyMMdd"),
-                //  Time
-                Time_5 = DateTime.Now.TimeOfDay.ToString("hhmm"),
-                //  Group Control Number
-                //  Must be unique to both partners for this interchange
-                GroupControlNumber_6 = controlNumber.PadLeft(9, '0'),
-                //  Responsible Agency Code
-                TransactionTypeCode_7 = "X",
-                //  Version/Release/Industry id code
-                VersionAndRelease_8 = "002040"
-            };
-        }
-
-        /// <summary>
-        /// Sample ISA
-        /// </summary>
-        static ISA CreateIsa(string controlNumber)
-        {
-            return new ISA
-            {
-                //  Authorization Information Qualifier
-                AuthorizationInformationQualifier_1 = "00",
-                //  Authorization Information
-                AuthorizationInformation_2 = "          ",
-                //  Security Information Qualifier
-                SecurityInformationQualifier_3 = "00",
-                //  Security Information
-                SecurityInformation_4 = "          ",
-                //  Interchange ID Qualifier
-                SenderIDQualifier_5 = "14",
-                //  Interchange Sender
-                InterchangeSenderID_6 = "RECEIVER1      ",
-                //  Interchange ID Qualifier
-                ReceiverIDQualifier_7 = "16",
-                //  Interchange Receiver
-                InterchangeReceiverID_8 = "SENDER1        ",
-                //  Date
-                InterchangeDate_9 = DateTime.Now.Date.ToString("yyMMdd"),
-                //  Time
-                InterchangeTime_10 = DateTime.Now.TimeOfDay.ToString("hhmm"),
-                //  Standard identifier
-                InterchangeControlStandardsIdentifier_11 = "U",
-                //  Interchange Version ID
-                //  This is the ISA version and not the transaction sets versions
-                InterchangeControlVersionNumber_12 = "00204",
-                //  Interchange Control Number
-                InterchangeControlNumber_13 = controlNumber.PadLeft(9, '0'),
-                //  Acknowledgment Requested (0 or 1)
-                AcknowledgementRequested_14 = "1",
-                //  Test Indicator
-                UsageIndicator_15 = "T",
-            };
-        }
-
-        static string LoadString(Stream stream)
-        {
-            stream.Position = 0;
-            using (var reader = new StreamReader(stream, Encoding.Default))
-            {
-                return reader.ReadToEnd();
-            }
-        }
+        }       
     }
 }

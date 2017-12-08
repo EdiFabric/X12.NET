@@ -7,6 +7,7 @@ using EdiFabric.Plugins.Acknowledgments.Edifact.Model;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 
@@ -150,10 +151,10 @@ namespace EdiFabric.Sdk.Edifact
                 },
                 MessageHandler = (s, a) =>
                 {
-                    if (a.ErrorContext.HasErrors)
+                    if (a.ErrorContext.HasErrors && a.ErrorContext.Codes.Any(c => c == Core.ErrorCodes.MessageErrorCode.DuplicateMessageControlNumber))
                     {
                         // do something with the message a.Message
-                        Debug.WriteLine("Message {0} with control number {1} is valid.", a.ErrorContext.Name, a.ErrorContext.ControlNumber);
+                        Debug.WriteLine("Message {0} with control number {1} is duplicate.", a.ErrorContext.Name, a.ErrorContext.ControlNumber);
                     }
                 },
                 // Turn on UCM for valid messages
@@ -287,6 +288,10 @@ namespace EdiFabric.Sdk.Edifact
             Debug.WriteLine("******************************");
 
             var edi = Assembly.GetExecutingAssembly().GetManifestResourceStream("EdiFabric.Sdk.Edifact.Edi.PurchaseOrder.txt");
+            int unbControlNumber = 28;
+            int ungControlNumber = 35;
+            Debug.WriteLine("Start interchange control number: {0}", unbControlNumber);
+            Debug.WriteLine("Start group control number: {0}", ungControlNumber);
 
             var settings = new AckSettings
             {
@@ -299,7 +304,7 @@ namespace EdiFabric.Sdk.Edifact
 
                     if (a.Message.Name == "CONTRL" && a.AckType == AckType.Functional)
                     {
-                        var ack = BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message);
+                        var ack = BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message, ++unbControlNumber, ++ungControlNumber);
                         Debug.Write(ack);
                     }
                 },
@@ -311,13 +316,8 @@ namespace EdiFabric.Sdk.Edifact
                         Debug.WriteLine("Message {0} with control number {1} is valid.", a.ErrorContext.Name, a.ErrorContext.ControlNumber);
                     }
                 },
-                Incrementers = new ControlIncrementers(23, 15, 5)
             };
-
-            Debug.WriteLine("Start interchange control number: {0}", settings.Incrementers.LatestInterchange);
-            Debug.WriteLine("Start group control number: {0}", settings.Incrementers.LatestGroup);
-            Debug.WriteLine("Start transaction control number: {0}", settings.Incrementers.LatestMessage);
-            
+          
             var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
             using (var ediReader = new EdifactReader(edi, "EdiFabric.Sdk.Edifact"))
             {
@@ -326,18 +326,17 @@ namespace EdiFabric.Sdk.Edifact
             }
             ackMan.Complete();
 
-            Debug.WriteLine("Last interchange control number: {0}", settings.Incrementers.LatestInterchange);
-            Debug.WriteLine("Last group control number: {0}", settings.Incrementers.LatestGroup);
-            Debug.WriteLine("Last transaction control number: {0}", settings.Incrementers.LatestMessage);
+            Debug.WriteLine("Last interchange control number: {0}", unbControlNumber);
+            Debug.WriteLine("Last group control number: {0}", ungControlNumber);
         }
 
-        private static string BuildAck(UNB unb, UNG ung, EdiMessage ack)
+        private static string BuildAck(UNB originalUnb, UNG originalUng, EdiMessage ack, int unbControlNumber = 1, int ungControlNumber = 1)
         {
             var memoryStream = new MemoryStream();
             var writer = new EdifactWriter(memoryStream, Encoding.Default, Environment.NewLine);
-            writer.Write(unb);
-            if(ung != null)
-                writer.Write(ung);
+            writer.Write(originalUnb.ToAckUnb(unbControlNumber.ToString()));
+            if(originalUng != null)
+                writer.Write(originalUng.ToAckUng(ungControlNumber.ToString()));
             writer.Write(ack);
             writer.Flush();
             memoryStream.Position = 0;

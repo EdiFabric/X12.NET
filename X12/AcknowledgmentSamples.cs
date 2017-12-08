@@ -53,7 +53,7 @@ namespace EdiFabric.Sdk.X12
 
                     if (a.Message.Name == "999")
                     {
-                        var ack = BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message);
+                        var ack = Helpers.BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message, AckVersion.Hipaa_999);
                         Debug.Write(ack);
                     }
                 },
@@ -101,7 +101,7 @@ namespace EdiFabric.Sdk.X12
 
                     if (a.Message.Name == "997")
                     {
-                        var ack = BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message);
+                        var ack = Helpers.BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message, AckVersion.X12_997);
                         Debug.Write(ack);
                     }
                 },
@@ -162,7 +162,7 @@ namespace EdiFabric.Sdk.X12
                             }
                         }
 
-                        var ack = BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message);
+                        var ack = Helpers.BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message, AckVersion.Hipaa_999);
                         Debug.Write(ack);
                     }
                 },                
@@ -222,7 +222,7 @@ namespace EdiFabric.Sdk.X12
 
                     if (a.Message.Name == "997")
                     {
-                        var ack = BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message);
+                        var ack = Helpers.BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message, AckVersion.X12_997);
                         Debug.Write(ack);
                     }
                 },
@@ -272,22 +272,19 @@ namespace EdiFabric.Sdk.X12
 
                     if (a.Message.Name == "997")
                     {
-                        var ack = BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message);
+                        var ack = Helpers.BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message, AckVersion.X12_997);
                         Debug.Write(ack);
                     }
                 },
                 MessageHandler = (s, a) =>
                 {
-                    if (!a.ErrorContext.HasErrors)
+                    if (a.InDuplicateGroup)
                     {
-                        if (a.InDuplicateGroup)
-                        {
-                            Debug.WriteLine(string.Format("Interchange with control number {0}", a.InterchangeHeader.InterchangeControlNumber_13));
-                            Debug.WriteLine(string.Format("Group with control number {0}", a.GroupHeader.GroupControlNumber_6));
-                            Debug.WriteLine("Message {0} with control number {1}", a.Message.Name, a.Message.GetTransactionContext().HeaderControlNumber);
-                            Debug.WriteLine("Is in duplicate group: {0}", a.InDuplicateGroup);
-                            // reject message
-                        }
+                        Debug.WriteLine(string.Format("Interchange with control number {0}", a.InterchangeHeader.InterchangeControlNumber_13));
+                        Debug.WriteLine(string.Format("Group with control number {0}", a.GroupHeader.GroupControlNumber_6));
+                        Debug.WriteLine("Message {0} with control number {1}", a.Message.Name, a.Message.GetTransactionContext().HeaderControlNumber);
+                        Debug.WriteLine("Is in duplicate group: {0}", a.InDuplicateGroup);
+                        // reject message
                     }
                 },
                 AckVersion = AckVersion.X12_997,
@@ -328,22 +325,19 @@ namespace EdiFabric.Sdk.X12
 
                     if (a.Message.Name == "997")
                     {
-                        var ack = BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message);
+                        var ack = Helpers.BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message, AckVersion.X12_997);
                         Debug.Write(ack);
                     }
                 },
                 MessageHandler = (s, a) =>
                 {
-                    if (!a.ErrorContext.HasErrors)
+                    if (a.InDuplicateInterchange)
                     {
-                        if (a.InDuplicateInterchange)
-                        {
-                            Debug.WriteLine(string.Format("Interchange with control number {0}", a.InterchangeHeader.InterchangeControlNumber_13));
-                            Debug.WriteLine(string.Format("Group with control number {0}", a.GroupHeader.GroupControlNumber_6));
-                            Debug.WriteLine("Message {0} with control number {1}", a.Message.Name, a.Message.GetTransactionContext().HeaderControlNumber);
-                            Debug.WriteLine("Is in duplicate interchange: {0}", a.InDuplicateInterchange);
-                            // reject message
-                        }
+                        Debug.WriteLine(string.Format("Interchange with control number {0}", a.InterchangeHeader.InterchangeControlNumber_13));
+                        Debug.WriteLine(string.Format("Group with control number {0}", a.GroupHeader.GroupControlNumber_6));
+                        Debug.WriteLine("Message {0} with control number {1}", a.Message.Name, a.Message.GetTransactionContext().HeaderControlNumber);
+                        Debug.WriteLine("Is in duplicate interchange: {0}", a.InDuplicateInterchange);
+                        // reject message
                     }
                 },
                 AckVersion = AckVersion.X12_997,
@@ -372,6 +366,10 @@ namespace EdiFabric.Sdk.X12
             Debug.WriteLine("******************************");
 
             var edi = Assembly.GetExecutingAssembly().GetManifestResourceStream("EdiFabric.Sdk.X12.Edi.PurchaseOrder.txt");
+            int isaControlNumber = 28;
+            int gsControlNumber = 35;
+            Debug.WriteLine("Start interchange control number: {0}", isaControlNumber);
+            Debug.WriteLine("Start group control number: {0}", gsControlNumber);
 
             var settings = new AckSettings
             {
@@ -384,7 +382,7 @@ namespace EdiFabric.Sdk.X12
 
                     if (a.Message.Name == "997")
                     {
-                        var ack = BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message);
+                        var ack = Helpers.BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message, AckVersion.X12_997, ++isaControlNumber, ++gsControlNumber);
                         Debug.Write(ack);
                     }
                 },
@@ -397,11 +395,7 @@ namespace EdiFabric.Sdk.X12
                     }
                 },
                 AckVersion = AckVersion.X12_997,
-                Incrementers = new ControlIncrementers(23, 15, 5)
             };
-            Debug.WriteLine("Start interchange control number: {0}", settings.Incrementers.LatestInterchange);
-            Debug.WriteLine("Start group control number: {0}", settings.Incrementers.LatestGroup);
-            Debug.WriteLine("Start transaction control number: {0}", settings.Incrementers.LatestMessage);
 
             var ackMan = new Plugins.Acknowledgments.X12.AckMan(settings);
             using (var ediReader = new X12Reader(edi, "EdiFabric.Sdk.X12"))
@@ -411,22 +405,8 @@ namespace EdiFabric.Sdk.X12
             }
             ackMan.Complete();
 
-            Debug.WriteLine("Last interchange control number: {0}", settings.Incrementers.LatestInterchange);
-            Debug.WriteLine("Last group control number: {0}", settings.Incrementers.LatestGroup);
-            Debug.WriteLine("Last transaction control number: {0}", settings.Incrementers.LatestMessage);
-        }
-
-        private static string BuildAck(ISA isa, GS gs, EdiMessage ack)
-        {
-            var memoryStream = new MemoryStream();
-            var writer = new X12Writer(memoryStream, Encoding.Default, Environment.NewLine);
-            writer.Write(isa);
-            writer.Write(gs);
-            writer.Write(ack);
-            writer.Flush();
-            memoryStream.Position = 0;
-            using (var reader = new StreamReader(memoryStream))
-                return reader.ReadToEnd();
+            Debug.WriteLine("Last interchange control number: {0}", isaControlNumber);
+            Debug.WriteLine("Last group control number: {0}", gsControlNumber);
         }
 
         private static bool IsDuplicate(string key)
