@@ -51,12 +51,17 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReadSamples.cs" />
+    <Compile Include="Rules\EF_HIPAA_005010X222A1_834.cs" />
     <Compile Include="Rules\EF_HIPAA_005010X222A1_837.cs" />
+    <Compile Include="Write834Samples.cs" />
     <Compile Include="WriteSamples.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Edi\BenefitEnrollment.txt" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Edi\ClaimPayment.txt" />
