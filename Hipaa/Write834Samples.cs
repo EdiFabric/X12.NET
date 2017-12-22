@@ -48,6 +48,10 @@ namespace EdiFabric.Sdk.Hipaa
             result.BGN.TimeZoneCode_05 = "PT"; //Optional but most Carriers use
             //result.BGN.ReferenceIdentification_06 = ""; //Not usually sent
             result.BGN.ActionCode_07 = "4"; //2 = Change, 4 = Verify, RX = replace
+            //Optional REF
+            result.REF_TransactionSetPolicyNumber = new REF_TransactionSetPolicyNumber();
+            result.REF_TransactionSetPolicyNumber.ReferenceIdentificationQualifier_01 = "38";
+            result.REF_TransactionSetPolicyNumber.ReferenceIdentification_02 = "0123456";//Carrier/Vendor specific
             /*
             //Example 837, use as reference
             result.All_NM1 = new All_NM1();

@@ -20,8 +20,11 @@
         [Pos(2)]
         public BGN BGN { get; set; }
 
-        [Required]
         [Pos(3)]
+        public REF_TransactionSetPolicyNumber REF_TransactionSetPolicyNumber { get; set; }
+
+        [Required]
+        [Pos(4)]
         public SE SE { get; set; }
 
     }
@@ -46,6 +49,18 @@
     [Serializable()]
     [EdiCodes(",2,4,RX")]
     public class X12_ID_306
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(",38,")]
+    public class X12_ID_128
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(",38,")]
+    public class X12_ID_127
     {
     }
 
@@ -87,4 +102,18 @@
         [Pos(7)]
         public string ActionCode_07 { get; set; }
     }
+
+    [Serializable()]
+    [Segment("REF")]
+    public class REF_TransactionSetPolicyNumber
+    {
+        [Required]
+        [DataElement("128", typeof(X12_ID_128))]
+        [Pos(1)]
+        public string ReferenceIdentificationQualifier_01 { get; set; }
+        [DataElement("127", typeof(X12_AN))]
+        [Pos(2)]
+        public string ReferenceIdentification_02 { get; set; }
+    }
+
 }
