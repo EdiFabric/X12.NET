@@ -25,6 +25,8 @@
         [Pos(4)]
         public DTP DTP_FileEffectiveDate { get; set; }
 
+        public QTY QTY_TransactionSetControlTotals { get; set; }
+
         [Required]
         [Pos(5)]
         public SE SE { get; set; }
@@ -143,6 +145,17 @@
     }
 
     [Serializable()]
+    [EdiCodes(",DT,ET,TO")]
+    public class X12_ID_673
+    {
+    }
+
+    [Serializable()]
+    public class X12_R
+    {
+    }
+
+    [Serializable()]
     [Segment("BGN")]
     public class BGN
     {
@@ -214,6 +227,19 @@
         public string DateTimePeriod_03 { get; set; }
     }
 
+    [Serializable()]
+    [Segment("QTY")]
+    public class QTY
+    {
 
+        [Required]
+        [DataElement("673", typeof(X12_ID_673))]
+        [Pos(1)]
+        public string QuantityQualifier_01 { get; set; }
+        [StringLength(1, 15)]
+        [DataElement("380", typeof(X12_R))]
+        [Pos(2)]
+        public string Quantity_02 { get; set; }
+    }
 
 }

@@ -59,6 +59,12 @@ namespace EdiFabric.Sdk.Hipaa
             result.DTP_FileEffectiveDate.DateTimeQualifier_01 = "007";
             result.DTP_FileEffectiveDate.DateTimePeriodFormatQualifier_02 = "D8";
             result.DTP_FileEffectiveDate.DateTimePeriod_03 = CurrentDate;
+
+            //Optional QTY
+            result.QTY_TransactionSetControlTotals = new QTY();
+            result.QTY_TransactionSetControlTotals.QuantityQualifier_01 = "TO";
+            result.QTY_TransactionSetControlTotals.Quantity_02 = "1";//Only one record for this example.
+
             /*
             //Example 837, use as reference
             result.All_NM1 = new All_NM1();
