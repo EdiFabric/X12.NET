@@ -34,8 +34,10 @@ namespace EdiFabric.Sdk.Hipaa
         /// </summary>
         static TS834 CreateClaim(string controlNumber)
         {
+            string CurrentDate = DateTime.Now.ToString("yyyyMMdd");
             var result = new TS834();
 
+            //Heading
             result.ST = new ST();
             result.ST.TransactionSetIdentifierCode_01 = "834";
             result.ST.TransactionSetControlNumber_02 = controlNumber.PadLeft(9, '0');
@@ -43,7 +45,7 @@ namespace EdiFabric.Sdk.Hipaa
             result.BGN = new BGN();
             result.BGN.TransactionSetPurposeCode_01 = "00";
             result.BGN.TransactionSetReferenceNumber_02 = "WSU-WEY-20050221-1";
-            result.BGN.TransactionSetCreationDate_03 = DateTime.Now.ToString("yyyyMMdd");
+            result.BGN.TransactionSetCreationDate_03 = CurrentDate;
             result.BGN.TransactionSetCreationTime_04 = DateTime.Now.ToString("hhmmss");
             result.BGN.TimeZoneCode_05 = "PT"; //Optional but most Carriers use
             //result.BGN.ReferenceIdentification_06 = ""; //Not usually sent
@@ -52,6 +54,11 @@ namespace EdiFabric.Sdk.Hipaa
             result.REF_TransactionSetPolicyNumber = new REF_TransactionSetPolicyNumber();
             result.REF_TransactionSetPolicyNumber.ReferenceIdentificationQualifier_01 = "38";
             result.REF_TransactionSetPolicyNumber.ReferenceIdentification_02 = "0123456";//Carrier/Vendor specific
+
+            //Optional DTP
+            result.DTP_FileEffectiveDate.DateTimeQualifier_01 = "007";
+            result.DTP_FileEffectiveDate.DateTimePeriodFormatQualifier_02 = "D8";
+            result.DTP_FileEffectiveDate.DateTimePeriod_03 = CurrentDate;
             /*
             //Example 837, use as reference
             result.All_NM1 = new All_NM1();
