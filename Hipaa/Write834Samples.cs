@@ -40,15 +40,16 @@ namespace EdiFabric.Sdk.Hipaa
             result.ST.TransactionSetIdentifierCode_01 = "834";
             result.ST.TransactionSetControlNumber_02 = controlNumber.PadLeft(9, '0');
             result.ST.ImplementationConventionPreference_03 = "005010X222A1";
+            result.BGN = new BGN();
+            result.BGN.TransactionSetPurposeCode_01 = "00";
+            result.BGN.TransactionSetReferenceNumber_02 = "WSU-WEY-20050221-1";
+            result.BGN.TransactionSetCreationDate_03 = DateTime.Now.ToString("yyyyMMdd");
+            result.BGN.TransactionSetCreationTime_04 = DateTime.Now.ToString("hhmmss");
+            result.BGN.TimeZoneCode_05 = "PT"; //Optional but most Carriers use
+            //result.BGN.ReferenceIdentification_06 = ""; //Not usually sent
+            result.BGN.ActionCode_07 = "4"; //2 = Change, 4 = Verify, RX = replace
             /*
-            result.BHT_BeginningofHierarchicalTransaction = new BHT_BeginningofHierarchicalTransaction();
-            result.BHT_BeginningofHierarchicalTransaction.HierarchicalStructureCode_01 = "0019";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionSetPurposeCode_02 = "00";
-            result.BHT_BeginningofHierarchicalTransaction.OriginatorApplicationTransactionIdentifier_03 = "010";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionSetCreationDate_04 = "20170617";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionSetCreationTime_05 = "1741";
-            result.BHT_BeginningofHierarchicalTransaction.ClaimorEncounterIdentifier_06 = "CH";
-
+            //Example 837, use as reference
             result.All_NM1 = new All_NM1();
             result.All_NM1.Loop_1000A = new Loop_1000A();
 
