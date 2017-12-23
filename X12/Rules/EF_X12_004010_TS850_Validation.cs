@@ -122,7 +122,7 @@ namespace EdiFabric.Rules.X12_004010
     
     [Serializable()]
     [Group(typeof(N1))]
-    public class TS850_N1Loop1Validation : IValidator
+    public class TS850_N1Loop1Validation : IEdiValidator
     {
         
         [Required]
@@ -163,7 +163,7 @@ namespace EdiFabric.Rules.X12_004010
         [Pos(14)]
         public List<PKG> PKG { get; set; }
 
-        public List<SegmentErrorContext> Validate(ValidationContext validationContext)
+        public List<SegmentErrorContext> ValidateEdi(ValidationContext validationContext)
         {
             var result = new List<SegmentErrorContext>();
 

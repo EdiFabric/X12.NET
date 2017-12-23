@@ -94,7 +94,7 @@ namespace EdiFabric.Rules.EDIFACT_D96A
     
     [Serializable()]
     [Group(typeof(LIN))]
-    public class TSORDERS_LINLoop1Validation : IValidator
+    public class TSORDERS_LINLoop1Validation : IEdiValidator
     {
 
         [Required]
@@ -186,7 +186,7 @@ namespace EdiFabric.Rules.EDIFACT_D96A
         [Pos(30)]
         public List<TSORDERS_STGLoop1> STGLoop1 { get; set; }
 
-        public List<SegmentErrorContext> Validate(ValidationContext validationContext)
+        public List<SegmentErrorContext> ValidateEdi(ValidationContext validationContext)
         {
             var result = new List<SegmentErrorContext>();
 
