@@ -32,8 +32,10 @@
         public All_NM1 All_NM1 { get; set; }
         [Required]
         [Pos(7)]
+        public List<Loop_2000> Loop_2000 { get; set; }
+        [Required]
+        [Pos(7)]
         public SE SE { get; set; }
-
     }
 
     [Serializable()]
@@ -167,6 +169,62 @@
     [Serializable()]
     [EdiCodes(",24,FI,XV,")]
     public class X12_ID_66
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(",N,Y,")]
+    public class X12_ID_1073
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(@",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,36,37,38,39,40,41,43,45,46,47,48,49,50,51,52,53,55,56,57,58,59,60,61,62,63,64,65,66,67,68,70,71,72,73,74,75,76,78,79,80,81,82,83,84,86,87,88,90,91,92,93,94,95,96,97,98,99,A1,A2,A3,A4,A5,A6,A7,A8,A9,B1,B2,B3,B4,B5,B6,B7,B8,B9,C1,C2,C3,C4,C5,C8,C9,D1,D2,D3,D4,D5,D6,D7,D8,D9,E1,E2,E3,E4,E5,E6,E7,E8,E9,F1,F2,F3,F6,F7,F8,F9,G2,G3,G4,G5,G6,G7,G8,G9,H1,H4,N1,OT,ZZ,")]
+    public class X12_ID_1069
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(@",001,021,024,030,")]
+    public class X12_ID_875
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(@",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,4A,4B,4C,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,XB,XI,XL,XM,XN,XT,ZZ,")]
+    public class X12_ID_1203
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(",A,C,I,S,T,V,")]
+    public class X12_ID_1216
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(",A,B,C,D,E,")]
+    public class X12_ID_1218
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(",1,2,3,4,5,6,7,8,ZZ,")]
+    public class X12_ID_1219
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(",AA,AB,AC,AD,AE,AF,AG,AH,AO,AP,AU,CA,CO,CT,DC,DD,DI,DQ,DR,DS,FA,FB,FC,FO,FT,HD,IA" +
+    ",IR,L1,LA,LE,LF,LM,LS,LU,LW,LX,NE,OS,OT,PA,PE,PT,PV,PW,RA,RB,RC,RD,RE,RI,RM,RP,R" +
+    "T,RU,RW,SA,SB,SE,SL,SU,TE,TF,TM,TP,TR,UK,VO,ZZ,")]
+    public class X12_ID_584
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(",F,N,P,")]
+    public class X12_ID_1220
     {
     }
 
@@ -320,6 +378,79 @@
         [Required]
         [Pos(1)]
         public NM1 NM1_BrokerName { get; set; }
+    }
+
+    [Serializable()]
+    [Segment("INS")]
+    public class INS
+    {
+
+        [Required]
+        [DataElement("1073", typeof(X12_ID_1073))]
+        [Pos(1)]
+        public string YesNoConditionorResponseCode_01 { get; set; }
+        [Required]
+        [DataElement("1069", typeof(X12_ID_1069))]
+        [Pos(2)]
+        public string IndividualRelationshipCode_02 { get; set; }
+        [DataElement("875", typeof(X12_ID_875))]
+        [Pos(3)]
+        public string MaintenanceTypeCode_03 { get; set; }
+        [DataElement("1203", typeof(X12_ID_1203))]
+        [Pos(4)]
+        public string MaintenanceReasonCode_04 { get; set; }
+        [DataElement("1216", typeof(X12_ID_1216))]
+        [Pos(5)]
+        public string BenefitStatusCode_05 { get; set; }
+        [DataElement("1218", typeof(X12_ID_1218))]
+        [Pos(6)]
+        public string MedicarePlanCode_06 { get; set; }
+        [DataElement("1219", typeof(X12_ID_1219))]
+        [Pos(7)]
+        public string ConsolidatedOmnibusBudgetReconciliationActCOBRAQualifyingEventCode_07 { get; set; }
+        [DataElement("584", typeof(X12_ID_584))]
+        [Pos(8)]
+        public string EmploymentStatusCode_08 { get; set; }
+        [DataElement("1220", typeof(X12_ID_1220))]
+        [Pos(9)]
+        public string StudentStatusCode_09 { get; set; }
+        [DataElement("1073", typeof(X12_ID_1073))]
+        [Pos(10)]
+        public string YesNoConditionorResponseCode_10 { get; set; }
+        [DataElement("1250", typeof(X12_ID_1250))]
+        [Pos(11)]
+        public string DateTimePeriodFormatQualifier_11 { get; set; }
+        [StringLength(1, 35)]
+        [DataElement("1251", typeof(X12_AN))]
+        [Pos(12)]
+        public string DateTimePeriod_12 { get; set; }
+        [DataElement("1165", typeof(X12_AN))]
+        [Pos(13)]
+        public string ConfidentialityCode_13 { get; set; }
+        [StringLength(2, 30)]
+        [DataElement("19", typeof(X12_AN))]
+        [Pos(14)]
+        public string CityName_14 { get; set; }
+        [StringLength(2, 2)]
+        [DataElement("156", typeof(X12_AN))]
+        [Pos(15)]
+        public string StateorProvinceCode_15 { get; set; }
+        [StringLength(2, 3)]
+        [DataElement("26", typeof(X12_AN))]//TODO: Add applicable country codes.
+        [Pos(16)]
+        public string CountryCode_16 { get; set; }
+        [StringLength(1, 9)]
+        [DataElement("1470", typeof(X12_N0))]
+        [Pos(17)]
+        public string Number_17 { get; set; }
+    }
+
+    [Serializable()]
+    public class Loop_2000
+    {
+        [Required]
+        [Pos(1)]
+        public INS INS { get; set; }
     }
 
 }

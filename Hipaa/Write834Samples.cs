@@ -85,35 +85,29 @@ namespace EdiFabric.Sdk.Hipaa
             //result.All_NM1.Loop_1000C = new Loop_1000C();
             //Usually brokers are optional fields
 
+            //Loop 2000
+            //INS
+            result.Loop_2000 = new List<Loop_2000>();
+            Loop_2000 Loop_2000 = new Loop_2000();
+            Loop_2000.INS = new INS();
+            Loop_2000.INS.YesNoConditionorResponseCode_01 = "Y";//Subscriber/Member record
+            Loop_2000.INS.IndividualRelationshipCode_02 = "18";
+            Loop_2000.INS.MaintenanceTypeCode_03 = "021";
+            Loop_2000.INS.MaintenanceReasonCode_04 = "20";
+            Loop_2000.INS.BenefitStatusCode_05 = "A";
+            Loop_2000.INS.MedicarePlanCode_06 = "E";
+            //Loop_2000.INS.ConsolidatedOmnibusBudgetReconciliationActCOBRAQualifyingEventCode_07 = "0";
+            Loop_2000.INS.EmploymentStatusCode_08 = "AC";
+            //Loop_2000.INS.StudentStatusCode_09 = "N";
+            Loop_2000.INS.YesNoConditionorResponseCode_10 = "N";
+            //Loop_2000.INS.DateTimePeriodFormatQualifier_11 = "";//Dealth Date: Carrier specific
+            //Loop_2000.INS.DateTimePeriod_12 = "";
+            Loop_2000.INS.ConfidentialityCode_13 = "";//Usually left blank.
+            //Loop_2000.INS.CityName_14 = "City"; //14-17 usually not sent in favor of N3/N4 segments
+
+            result.Loop_2000.Add(Loop_2000);
             /*
             //Example 837, use as reference
-            result.All_NM1 = new All_NM1();
-            result.All_NM1.Loop_1000A = new Loop_1000A();
-
-            result.All_NM1.Loop_1000A.NM1_SubmitterName = new NM1_SubmitterName();
-            result.All_NM1.Loop_1000A.NM1_SubmitterName.EntityIdentifierCode_01 = "41";
-            result.All_NM1.Loop_1000A.NM1_SubmitterName.EntityTypeQualifier_02 = "2";
-            result.All_NM1.Loop_1000A.NM1_SubmitterName.SubmitterLastorOrganizationName_03 = "SUBMITTER";
-            result.All_NM1.Loop_1000A.NM1_SubmitterName.IdentificationCodeQualifier_08 = "46";
-            result.All_NM1.Loop_1000A.NM1_SubmitterName.SubmitterIdentifier_09 = "ABC123";
-
-
-            result.All_NM1.Loop_1000A.PER_SubmitterEDIContactInformation = new List<PER_SubmitterEDIContactInformation>();
-            var per1 = new PER_SubmitterEDIContactInformation();
-            per1.ContactFunctionCode_01 = "IC";
-            per1.SubmitterContactName_02 = "BOB SMITH";
-            per1.CommunicationNumberQualifier_03 = "TE";
-            per1.CommunicationNumber_04 = "4805551212";
-            result.All_NM1.Loop_1000A.PER_SubmitterEDIContactInformation.Add(per1);
-
-            result.All_NM1.Loop_1000B = new Loop_1000B();
-
-            result.All_NM1.Loop_1000B.NM1_ReceiverName = new NM1_ReceiverName();
-            result.All_NM1.Loop_1000B.NM1_ReceiverName.EntityIdentifierCode_01 = "40";
-            result.All_NM1.Loop_1000B.NM1_ReceiverName.EntityTypeQualifier_02 = "2";
-            result.All_NM1.Loop_1000B.NM1_ReceiverName.ReceiverName_03 = "RECEIVER";
-            result.All_NM1.Loop_1000B.NM1_ReceiverName.IdentificationCodeQualifier_08 = "46";
-            result.All_NM1.Loop_1000B.NM1_ReceiverName.ReceiverPrimaryIdentifier_09 = "44556";
 
             result.Loop_2000A = new List<Loop_2000A>();
             var loop2000A1 = new Loop_2000A();
