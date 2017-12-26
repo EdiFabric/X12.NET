@@ -113,7 +113,24 @@ namespace EdiFabric.Sdk.Hipaa
             Loop_2000.Ref_MemberSupplementalIdentifier.ReferenceIdentificationQualifier_01 = "1L";
             Loop_2000.Ref_MemberSupplementalIdentifier.ReferenceIdentification_02 = "ABC123";//Group or Policy Number usually Carrier specific
 
+            DTP DTP_MemberHireSegment = new DTP();
+            DTP_MemberHireSegment.DateTimeQualifier_01 = "336";
+            DTP_MemberHireSegment.DateTimePeriodFormatQualifier_02 = "D8";
+            DTP_MemberHireSegment.DateTimePeriod_03 = "20170501";
 
+            DTP DTP_MemberEffectiveSegment = new DTP();
+            DTP_MemberEffectiveSegment.DateTimeQualifier_01 = "356";
+            DTP_MemberEffectiveSegment.DateTimePeriodFormatQualifier_02 = "D8";
+            DTP_MemberEffectiveSegment.DateTimePeriod_03 = "20170601";
+
+            //Example term of coverage
+            //DTP DTP_MemberEligibilityEndSegment = new DTP();
+            //DTP_MemberEligibilityEndSegment.DateTimeQualifier_01 = "357";
+            //DTP_MemberEligibilityEndSegment.DateTimePeriodFormatQualifier_02 = "D8";
+            //DTP_MemberEligibilityEndSegment.DateTimePeriod_03 = "20171231";
+
+            Loop_2000.DTP_MemberLevelDates.Add(DTP_MemberHireSegment);
+            Loop_2000.DTP_MemberLevelDates.Add(DTP_MemberEffectiveSegment);
             result.Loop_2000.Add(Loop_2000);
 
             /*

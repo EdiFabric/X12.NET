@@ -451,9 +451,13 @@
         [Required]
         [Pos(1)]
         public INS INS { get; set; }
+        [Required]
         [Pos(2)]
         public REF Ref_SubscriberIdentifier { get; set; }
-        public REF Ref_MemberSupplementalIdentifier { get; set; }
+        [Pos(3)]
+        public REF Ref_MemberSupplementalIdentifier { get; set; }//This may need to be a list?
+        [Pos(4)]
+        public List<DTP> DTP_MemberLevelDates { get; set; }
     }
 
 }
