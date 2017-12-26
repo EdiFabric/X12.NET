@@ -24,11 +24,14 @@
         public REF_TransactionSetPolicyNumber REF_TransactionSetPolicyNumber { get; set; }
         [Pos(4)]
         public DTP DTP_FileEffectiveDate { get; set; }
-
+        [Pos(5)]
         public QTY QTY_TransactionSetControlTotals { get; set; }
 
         [Required]
-        [Pos(5)]
+        [Pos(6)]
+        public All_NM1 All_NM1 { get; set; }
+        [Required]
+        [Pos(7)]
         public SE SE { get; set; }
 
     }
@@ -156,6 +159,19 @@
     }
 
     [Serializable()]
+    [EdiCodes(",P5,IN,BO,TV,")]
+    public class X12_ID_98
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(",24,FI,XV,")]
+    public class X12_ID_66
+    {
+    }
+
+
+    [Serializable()]
     [Segment("BGN")]
     public class BGN
     {
@@ -240,6 +256,70 @@
         [DataElement("380", typeof(X12_R))]
         [Pos(2)]
         public string Quantity_02 { get; set; }
+    }
+
+    [Serializable()]
+    [All()]
+    public class All_NM1
+    {
+        [Required]
+        [Pos(1)]
+        public Loop_1000A Loop_1000A { get; set; }
+        [Required]
+        [Pos(2)]
+        public Loop_1000B Loop_1000B { get; set; }
+        [Pos(3)]
+        public Loop_1000C Loop_1000C { get; set; }
+    }
+
+    [Serializable()]
+    [Segment("NM1", typeof(X12_ID_98))]
+    public class NM1
+    {
+        [Required]
+        [DataElement("98", typeof(X12_ID_98))]
+        [Pos(1)]
+        public string EntityIdentifierCode_01 { get; set; }
+        [StringLength(1, 60)]
+        [DataElement("93", typeof(X12_AN))]
+        [Pos(2)]
+        public string Name_02 { get; set; }
+        [Required]
+        [StringLength(1, 2)]
+        [DataElement("66", typeof(X12_ID_66))]
+        [Pos(3)]
+        public string IdentificationCodeQualifier_03 { get; set; }
+        [StringLength(2, 80)]
+        [DataElement("67", typeof(X12_AN))]
+        [Pos(4)]
+        public string IdentificationCode_04 { get; set; }
+    }
+
+    [Serializable()]
+    [Group(typeof(NM1))]
+    public class Loop_1000A
+    {
+        [Required]
+        [Pos(1)]
+        public NM1 NM1_SponsorName { get; set; }
+    }
+
+    [Serializable()]
+    [Group(typeof(NM1))]
+    public class Loop_1000B
+    {
+        [Required]
+        [Pos(1)]
+        public NM1 NM1_PayerName { get; set; }
+    }
+
+    [Serializable()]
+    [Group(typeof(NM1))]
+    public class Loop_1000C
+    {
+        [Required]
+        [Pos(1)]
+        public NM1 NM1_BrokerName { get; set; }
     }
 
 }

@@ -53,7 +53,7 @@ namespace EdiFabric.Sdk.Hipaa
             //Optional REF
             result.REF_TransactionSetPolicyNumber = new REF_TransactionSetPolicyNumber();
             result.REF_TransactionSetPolicyNumber.ReferenceIdentificationQualifier_01 = "38";
-            result.REF_TransactionSetPolicyNumber.ReferenceIdentification_02 = "0123456";//Carrier/Vendor specific
+            result.REF_TransactionSetPolicyNumber.ReferenceIdentification_02 = "01-23456";//Carrier/Vendor specific
 
             //Optional DTP
             result.DTP_FileEffectiveDate.DateTimeQualifier_01 = "007";
@@ -64,6 +64,26 @@ namespace EdiFabric.Sdk.Hipaa
             result.QTY_TransactionSetControlTotals = new QTY();
             result.QTY_TransactionSetControlTotals.QuantityQualifier_01 = "TO";
             result.QTY_TransactionSetControlTotals.Quantity_02 = "1";//Only one record for this example.
+
+            //Loop 1000
+            result.All_NM1 = new All_NM1();
+
+            //Loop 1000A
+            result.All_NM1.Loop_1000A = new Loop_1000A();
+            result.All_NM1.Loop_1000A.NM1_SponsorName.EntityIdentifierCode_01 = "P5";
+            result.All_NM1.Loop_1000A.NM1_SponsorName.Name_02 = "Sponsor Name";
+            result.All_NM1.Loop_1000A.NM1_SponsorName.IdentificationCodeQualifier_03 = "FI";
+            result.All_NM1.Loop_1000A.NM1_SponsorName.IdentificationCode_04 = "1223456";
+
+            //Loop 1000B
+            result.All_NM1.Loop_1000B = new Loop_1000B();
+            result.All_NM1.Loop_1000B.NM1_PayerName.EntityIdentifierCode_01 = "IN";
+            result.All_NM1.Loop_1000B.NM1_PayerName.Name_02 = "ABC PAYER";
+            result.All_NM1.Loop_1000B.NM1_PayerName.IdentificationCodeQualifier_03 = "FI";
+            result.All_NM1.Loop_1000B.NM1_PayerName.IdentificationCode_04 = "11-111111";
+
+            //result.All_NM1.Loop_1000C = new Loop_1000C();
+            //Usually brokers are optional fields
 
             /*
             //Example 837, use as reference
