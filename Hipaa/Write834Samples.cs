@@ -51,7 +51,7 @@ namespace EdiFabric.Sdk.Hipaa
             //result.BGN.ReferenceIdentification_06 = ""; //Not usually sent
             result.BGN.ActionCode_07 = "4"; //2 = Change, 4 = Verify, RX = replace
             //Optional REF
-            result.REF_TransactionSetPolicyNumber = new REF_TransactionSetPolicyNumber();
+            result.REF_TransactionSetPolicyNumber = new REF();
             result.REF_TransactionSetPolicyNumber.ReferenceIdentificationQualifier_01 = "38";
             result.REF_TransactionSetPolicyNumber.ReferenceIdentification_02 = "01-23456";//Carrier/Vendor specific
 
@@ -105,7 +105,17 @@ namespace EdiFabric.Sdk.Hipaa
             Loop_2000.INS.ConfidentialityCode_13 = "";//Usually left blank.
             //Loop_2000.INS.CityName_14 = "City"; //14-17 usually not sent in favor of N3/N4 segments
 
+            Loop_2000.Ref_SubscriberIdentifier = new REF();
+            Loop_2000.Ref_SubscriberIdentifier.ReferenceIdentificationQualifier_01 = "0F";
+            Loop_2000.Ref_SubscriberIdentifier.ReferenceIdentification_02 = "12345678";//typically a UUID or SSN
+
+            Loop_2000.Ref_MemberSupplementalIdentifier = new REF();
+            Loop_2000.Ref_MemberSupplementalIdentifier.ReferenceIdentificationQualifier_01 = "1L";
+            Loop_2000.Ref_MemberSupplementalIdentifier.ReferenceIdentification_02 = "ABC123";//Group or Policy Number usually Carrier specific
+
+
             result.Loop_2000.Add(Loop_2000);
+
             /*
             //Example 837, use as reference
 

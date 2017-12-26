@@ -21,7 +21,7 @@
         public BGN BGN { get; set; }
 
         [Pos(3)]
-        public REF_TransactionSetPolicyNumber REF_TransactionSetPolicyNumber { get; set; }
+        public REF REF_TransactionSetPolicyNumber { get; set; }
         [Pos(4)]
         public DTP DTP_FileEffectiveDate { get; set; }
         [Pos(5)]
@@ -62,7 +62,7 @@
     }
 
     [Serializable()]
-    [EdiCodes(",38,")]
+    [EdiCodes(",38,0F,17,1L,23,3H,4A,6O,ABB,D3,DX,F6,P5,Q4,QQ,ZZ,")]
     public class X12_ID_128
     {
     }
@@ -270,7 +270,7 @@
 
     [Serializable()]
     [Segment("REF")]
-    public class REF_TransactionSetPolicyNumber
+    public class REF
     {
         [Required]
         [DataElement("128", typeof(X12_ID_128))]
@@ -451,6 +451,9 @@
         [Required]
         [Pos(1)]
         public INS INS { get; set; }
+        [Pos(2)]
+        public REF Ref_SubscriberIdentifier { get; set; }
+        public REF Ref_MemberSupplementalIdentifier { get; set; }
     }
 
 }
