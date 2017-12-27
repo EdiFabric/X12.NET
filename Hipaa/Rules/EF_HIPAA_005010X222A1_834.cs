@@ -33,6 +33,10 @@
         [Required]
         [Pos(7)]
         public List<Loop_2000> Loop_2000 { get; set; }
+
+        [Required]
+        [Pos(8)]
+        public List<Loop_2100A> Loop_2100A { get; set; }
         [Required]
         [Pos(7)]
         public SE SE { get; set; }
@@ -225,6 +229,18 @@
     [Serializable()]
     [EdiCodes(",F,N,P,")]
     public class X12_ID_1220
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(",IP,")]
+    public class X12_ID_366
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(",AP,BN,CP,EM,EX,FX,HP,TE,WP,")]
+    public class X12_ID_365
     {
     }
 
@@ -446,6 +462,46 @@
     }
 
     [Serializable()]
+    [Segment("PER")]
+    public class PER
+    {
+
+        [Required]
+        [DataElement("366", typeof(X12_ID_366))]
+        [Pos(1)]
+        public string ContactFunctionCode_01 { get; set; }
+        [StringLength(1, 60)]
+        [DataElement("93", typeof(X12_AN))]
+        [Pos(2)]
+        public string Name_02 { get; set; }
+        [DataElement("365", typeof(X12_ID_365))]
+        [Pos(3)]
+        public string CommunicationNumberQualifier_03 { get; set; }
+        [StringLength(1, 80)]
+        [DataElement("364", typeof(X12_AN))]
+        [Pos(4)]
+        public string CommunicationNumber_04 { get; set; }
+        [DataElement("365", typeof(X12_ID_365))]
+        [Pos(5)]
+        public string CommunicationNumberQualifier_05 { get; set; }
+        [StringLength(1, 80)]
+        [DataElement("364", typeof(X12_AN))]
+        [Pos(6)]
+        public string CommunicationNumber_06 { get; set; }
+        [DataElement("365", typeof(X12_ID_365))]
+        [Pos(7)]
+        public string CommunicationNumberQualifier_07 { get; set; }
+        [StringLength(1, 80)]
+        [DataElement("364", typeof(X12_AN))]
+        [Pos(8)]
+        public string CommunicationNumber_08 { get; set; }
+        [StringLength(1, 20)]
+        [DataElement("443", typeof(X12_AN))]
+        [Pos(9)]
+        public string ContactInquiryReference_09 { get; set; }
+    }
+
+    [Serializable()]
     public class Loop_2000
     {
         [Required]
@@ -458,6 +514,17 @@
         public REF Ref_MemberSupplementalIdentifier { get; set; }//This may need to be a list?
         [Pos(4)]
         public List<DTP> DTP_MemberLevelDates { get; set; }
+    }
+
+    [Serializable()]
+    public class Loop_2100A
+    {
+        [Required]
+        [Pos(1)]
+        public NM1 NM1_MemberName { get; set; }
+        [Required]
+        [Pos(1)]
+        public PER Per_MemberCommunicationNumbers { get; set; }
     }
 
 }

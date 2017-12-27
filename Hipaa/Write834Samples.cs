@@ -133,6 +133,23 @@ namespace EdiFabric.Sdk.Hipaa
             Loop_2000.DTP_MemberLevelDates.Add(DTP_MemberEffectiveSegment);
             result.Loop_2000.Add(Loop_2000);
 
+            result.Loop_2100A = new List<Loop_2100A>();
+            Loop_2100A Loop_2100A = new Loop_2100A();
+            Loop_2100A.NM1_MemberName = new NM1();
+            Loop_2100A.NM1_MemberName.EntityIdentifierCode_01 = "IL";
+            Loop_2100A.NM1_MemberName.Name_02 = "1";
+            Loop_2100A.NM1_MemberName.IdentificationCodeQualifier_03 = "MemberLastName";
+            Loop_2100A.NM1_MemberName.IdentificationCode_04 = "MemberFirstname";
+            //Optional Loop 2100A Segment NM1 05-09
+
+            Loop_2100A.Per_MemberCommunicationNumbers = new PER();
+            Loop_2100A.Per_MemberCommunicationNumbers.ContactFunctionCode_01 = "IP";
+            //Loop_2100A.Per_MemberCommunicationNumbers.Name_02 = "abc123";
+            Loop_2100A.Per_MemberCommunicationNumbers.CommunicationNumberQualifier_03 = "CP";
+            Loop_2100A.Per_MemberCommunicationNumbers.CommunicationNumber_04 = "9991111111";
+            //Optional Loop 2100A Segment Per
+            result.Loop_2100A.Add(Loop_2100A);
+
             /*
             //Example 837, use as reference
 
