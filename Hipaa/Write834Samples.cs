@@ -148,6 +148,10 @@ namespace EdiFabric.Sdk.Hipaa
             Loop_2100A.Per_MemberCommunicationNumbers.CommunicationNumberQualifier_03 = "CP";
             Loop_2100A.Per_MemberCommunicationNumbers.CommunicationNumber_04 = "9991111111";
             //Optional Loop 2100A Segment Per
+
+            Loop_2100A.N3_MemberResidenceStreetAddress = new N3_MemberResidenceStreetAddress();
+            Loop_2100A.N3_MemberResidenceStreetAddress.Address_Information_01 = "444 Fake street";
+            Loop_2100A.N3_MemberResidenceStreetAddress.Address_Information_02 = "Apt 300";
             result.Loop_2100A.Add(Loop_2100A);
 
             /*

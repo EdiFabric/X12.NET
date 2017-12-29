@@ -502,6 +502,21 @@
     }
 
     [Serializable()]
+    [Segment("N3")]
+    public class N3_MemberResidenceStreetAddress
+    {
+        [Required]
+        [StringLength(1, 55)]
+        [DataElement("166", typeof(X12_AN))]
+        [Pos(1)]
+        public string Address_Information_01 { get; set; }
+        [StringLength(1, 55)]
+        [DataElement("166", typeof(X12_AN))]
+        [Pos(2)]
+        public string Address_Information_02 { get; set; }
+    }
+
+    [Serializable()]
     public class Loop_2000
     {
         [Required]
@@ -523,8 +538,11 @@
         [Pos(1)]
         public NM1 NM1_MemberName { get; set; }
         [Required]
-        [Pos(1)]
+        [Pos(2)]
         public PER Per_MemberCommunicationNumbers { get; set; }
+        [Required]
+        [Pos(2)]
+        public N3_MemberResidenceStreetAddress N3_MemberResidenceStreetAddress { get; set; }
     }
 
 }
