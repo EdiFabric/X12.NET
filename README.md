@@ -5,7 +5,7 @@
 
 [EdiFabric](http://www.edifabric.com/) empowers developers and businesses interested in enabling their software systems with EDI capabilities. Its simplicity and effectiveness lets you connect with partners in just a day.
 
-Supports all versions for [X12](http://edifabric.com/edi-x12-transactions.html), [HIPAA](http://edifabric.com/edi-hipaa-transactions.html), [EDIFACT](http://edifabric.com/edi-edifact-transactions-1.html), [EANCOM](http://edifabric.com/edi-eancom-transactions.html) and [VDA](http://edifabric.com/edi-vda-transactions.html). Fully customizable EDI rules for each transaction set, allowing you to comply with any partner-proprietary format.
+Supports all versions for [X12](http://edifabric.com/edi-x12-transactions.html), [HIPAA](http://edifabric.com/edi-hipaa-transactions.html), [EDIFACT](http://edifabric.com/edi-edifact-transactions-1.html), [EANCOM](http://edifabric.com/edi-eancom-transactions.html) ,[VDA](http://edifabric.com/edi-vda-transactions.html) and [PNRGOV](http://www.edifabric.com/pnrgov.html) . Fully customizable EDI rules for each transaction set, allowing you to comply with any partner-proprietary format.
 
 [Lightning fast streaming of EDI documents](http://edifabric.com/edi-translator.html) into typed objects. Allows you to read files of any size, having multiple interchanges or even containing corrupt data without breaking.
 
