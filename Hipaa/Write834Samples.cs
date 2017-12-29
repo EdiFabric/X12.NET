@@ -152,6 +152,15 @@ namespace EdiFabric.Sdk.Hipaa
             Loop_2100A.N3_MemberResidenceStreetAddress = new N3_MemberResidenceStreetAddress();
             Loop_2100A.N3_MemberResidenceStreetAddress.Address_Information_01 = "444 Fake street";
             Loop_2100A.N3_MemberResidenceStreetAddress.Address_Information_02 = "Apt 300";
+
+            Loop_2100A.N4_OtherSubscriberCity_State_ZIPCode = new N4_OtherSubscriberCity_State_ZIPCode();
+            Loop_2100A.N4_OtherSubscriberCity_State_ZIPCode.OtherSubscriberCityName_01 = "TestCity";
+            Loop_2100A.N4_OtherSubscriberCity_State_ZIPCode.OtherSubscriberStateorProvinceCode_02 = "CA";
+            Loop_2100A.N4_OtherSubscriberCity_State_ZIPCode.OtherSubscriberPostalZoneorZIPCode_03 = "93710";
+            //Loop_2100A.N4_OtherSubscriberCity_State_ZIPCode.CountryCode_04 = "US";//Optional. Only outside the US.
+            //Loop_2100A.N4_OtherSubscriberCity_State_ZIPCode.LocationQualifier_05 = "";//Optional. 60 = Area and CY = Country/Parish
+            //Loop_2100A.N4_OtherSubscriberCity_State_ZIPCode.LocationIdentifier_06 = "";//Optional. Carrier/Plan specific.
+            //Loop_2100A.N4_OtherSubscriberCity_State_ZIPCode.CountrySubdivisionCode_07 = "";//Optional. Use country subdivision codes ISO 3166.
             result.Loop_2100A.Add(Loop_2100A);
 
             /*

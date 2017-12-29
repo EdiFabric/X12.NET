@@ -244,6 +244,17 @@
     {
     }
 
+    [Serializable()]
+    public class X12_ID
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(@",10,11,12,13,14,18,19,20,21,22,27,28,29,30,31,32,33,34,35,36,38,39,40,41,42,43,44,45,46,47,48,49,50,52,53,54,55,57,58,59,60,93,94,A,A1,AA,AC,AP,AR,B,B1,BE,BL,BS,C,C2,CA,CB,CC,CD,CE,CG,CI,CL,CM,CO,CR,CS,CY,D,DC,DE,DL,DO,DP,DR,DT,E,EA,EB,EL,F,FA,FE,FF,FI,FR,FS,FT,FV,G,GL,H,I,IA,IB,IM,IP,IS,IT,J,K,KE,KL,KP,L,LO,M,MI,MO,MS,MZ,NS,O,OA,OF,OL,OP,OR,OV,P,PA,PB,PC,PD,PE,PF,PG,PH,PL,PM,PO,PP,PQ,PR,PS,PT,PU,PV,PZ,Q,RA,RC,RE,RG,RJ,RL,RS,RT,SA,SB,SC,SD,SE,SG,SH,SL,SN,SP,SS,ST,SW,TA,TC,TI,TL,TM,TN,TP,TR,TX,UN,UR,UT,VA,VI,VS,W,WF,WH,WI,X1,ZN,ZZ,")]
+    public class X12_ID_309
+    {
+    }
+
 
     [Serializable()]
     [Segment("BGN")]
@@ -517,6 +528,44 @@
     }
 
     [Serializable()]
+    [Segment("N4")]
+    public class N4_OtherSubscriberCity_State_ZIPCode
+    {
+
+        [Required]
+        [StringLength(2, 30)]
+        [DataElement("19", typeof(X12_AN))]
+        [Pos(1)]
+        public string OtherSubscriberCityName_01 { get; set; }
+        [Exclusion(7)]
+        [StringLength(2, 2)]
+        [DataElement("156", typeof(X12_ID))]
+        [Pos(2)]
+        public string OtherSubscriberStateorProvinceCode_02 { get; set; }
+        [StringLength(3, 15)]
+        [DataElement("116", typeof(X12_ID))]
+        [Pos(3)]
+        public string OtherSubscriberPostalZoneorZIPCode_03 { get; set; }
+        [StringLength(2, 3)]
+        [DataElement("26", typeof(X12_ID))]
+        [Pos(4)]
+        public string CountryCode_04 { get; set; }
+        [DataElement("309", typeof(X12_ID_309))]
+        [Pos(5)]
+        public string LocationQualifier_05 { get; set; }
+        [Conditional(5)]
+        [StringLength(1, 30)]
+        [DataElement("310", typeof(X12_AN))]
+        [Pos(6)]
+        public string LocationIdentifier_06 { get; set; }
+        [Conditional(4)]
+        [StringLength(1, 3)]
+        [DataElement("1715", typeof(X12_ID))]
+        [Pos(7)]
+        public string CountrySubdivisionCode_07 { get; set; }
+    }
+
+    [Serializable()]
     public class Loop_2000
     {
         [Required]
@@ -543,6 +592,9 @@
         [Required]
         [Pos(2)]
         public N3_MemberResidenceStreetAddress N3_MemberResidenceStreetAddress { get; set; }
+        [Required]
+        [Pos(3)]
+        public N4_OtherSubscriberCity_State_ZIPCode N4_OtherSubscriberCity_State_ZIPCode { get; set; }
     }
 
 }
