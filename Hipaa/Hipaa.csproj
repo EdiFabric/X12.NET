@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Read834Samples.cs" />
     <Compile Include="ReadSamples.cs" />
     <Compile Include="Rules\EF_HIPAA_005010X222A1_834.cs" />
     <Compile Include="Rules\EF_HIPAA_005010X222A1_837.cs" />
@@ -61,10 +62,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Edi\BenefitEnrollment.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Edi\ClaimPayment.txt" />
+	<EmbeddedResource Include="Edi\BenefitEnrollment.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

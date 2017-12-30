@@ -10,7 +10,7 @@
 
 
     [Serializable()]
-    [Message("X12", "005010X222A1", "834")]
+    [Message("X12", "005010X220A1", "834")]
     public class TS834 : EdiMessage
     {
 
