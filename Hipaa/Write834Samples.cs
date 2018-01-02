@@ -161,6 +161,12 @@ namespace EdiFabric.Sdk.Hipaa
             //Loop_2100A.N4_OtherSubscriberCity_State_ZIPCode.LocationQualifier_05 = "";//Optional. 60 = Area and CY = Country/Parish
             //Loop_2100A.N4_OtherSubscriberCity_State_ZIPCode.LocationIdentifier_06 = "";//Optional. Carrier/Plan specific.
             //Loop_2100A.N4_OtherSubscriberCity_State_ZIPCode.CountrySubdivisionCode_07 = "";//Optional. Use country subdivision codes ISO 3166.
+
+            Loop_2100A.DMG_MemberDemographicInformation = new DMG_MemberDemographicInformation();
+            Loop_2100A.DMG_MemberDemographicInformation.DateTimePeriodFormatQualifier_01 = "D8";
+            Loop_2100A.DMG_MemberDemographicInformation.SubscriberBirthDate_02 = "19330706";
+            Loop_2100A.DMG_MemberDemographicInformation.SubscriberGenderCode_03 = "M";
+            //Optional Loop 2100A Segment DMG 04-11
             result.Loop_2100A.Add(Loop_2100A);
 
             /*

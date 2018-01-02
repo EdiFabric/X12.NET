@@ -13,7 +13,6 @@
     [Message("X12", "005010X220A1", "834")]
     public class TS834 : EdiMessage
     {
-
         [Pos(1)]
         public ST ST { get; set; }
         [Required]
@@ -255,6 +254,81 @@
     {
     }
 
+    [Serializable()]
+    [EdiCodes(",F,M,U,")]
+    public class X12_ID_1068
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(",A,B,C,D,I,K,M,R,S,U,W,X,")]
+    public class X12_ID_1067
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(",7,8,A,B,C,D,E,F,G,H,I,J,N,O,P,Q,R,S,T,U,V,W,Z,")]
+    public class X12_ID_1109
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(",0,1,10,100,101,102,103,104,105,106,107,108,109,11,12,13,14,15,16,17,18,19,20,21," +
+    "22,23,24,25,26,27,28,29,3,30,31,32,33,34,35,36,37,38,39,4,40,41,42,43,44,45,46,4" +
+    "7,48,49,5,50,52,53,54,55,56,57,58,59,60,61,62,63,65,66,67,68,69,7,71,72,73,74,75" +
+    ",78,79,8,80,81,82,83,84,85,87,88,89,90,91,92,93,94,95,96,97,98,99,A,A1,A2,A3,A4," +
+    "A5,A6,A7,A8,A9,AA,AAA,AAD,AAE,AAF,AAG,AAH,AAI,AAJ,AAK,AAL,AAM,AAN,AAO,AAP,AAQ,AA" +
+    "R,AAS,AAT,AAU,AAV,AAW,AAX,AAY,AB,ABF,ABJ,ABK,ABN,ABR,ABS,ABU,ABV,AC,ACR,AD,ADD,A" +
+    "DJ,AE,AF,AG,AH,AI,AJ,AJT,AK,AL,ALM,ALP,AM,AN,AO,APE,APR,AQ,AR,ARI,AS,ASD,AT,ATD," +
+    "ATT,AU,AV,AW,AX,AY,AZ,B,BA,BB,BBQ,BBR,BC,BCC,BCR,BD,BE,BF,BG,BH,BI,BJ,BK,BL,BN,B" +
+    "O,BP,BPL,BQ,BR,BRL,BS,BSL,BSP,BT,BTC,BU,BUI,BV,BW,BX,BY,BZ,C,C1,C2,C3,CA,CAH,CB," +
+    "CC,CD,CE,CF,CFI,CG,CH,CHG,CI,CIE,CJ,CK,CL,CLP,CM,CML,CN,CNC,CO,COG,CP,CPS,CQ,CR," +
+    "CRC,CS,CSD,CSF,CT,CU,CV,CW,CZ,D,D1,D2,D3,D4,D5,DA,DAC,DB,DBS,DC,DD,DE,DF,DG,DGO," +
+    "DH,DI,DJ,DK,DL,DLO,DLP,DM,DN,DO,DOF,DP,DPE,DPL,DQ,DR,DRL,DS,DSR,DSS,DT,DU,DW,DX," +
+    "DY,DZ,E,EA,EAA,EAB,EAC,EAD,EAE,EAF,EAG,EAH,EAI,EAJ,EAK,EAL,EAM,EAN,EAO,EAP,EAQ,E" +
+    "AR,EAS,EAT,EAU,EAV,EAW,EAX,EAY,EAZ,EB,EBA,EBB,EBC,EBD,EBE,EBF,EBG,EBH,EBI,EBJ,EB" +
+    "K,EBL,EBM,EBN,EBO,EBP,EBQ,EBR,EBS,EBT,EBU,EBV,EBW,EBX,EBY,EBZ,EC,ECA,ECB,ECC,ECD" +
+    ",ECE,ECF,ECG,ECH,ECI,ECJ,ECK,ECL,ECM,ECN,ECO,ECP,ECQ,ECR,ECS,ECT,ECU,ECV,ECW,ECX" +
+    ",ECY,ECZ,ED,EDA,EDB,EDC,EDD,EDE,EDF,EDG,EDH,EDI,EDJ,EDK,EDL,EDM,EDN,EDO,EDP,EDQ," +
+    "EDR,EDS,EDT,EDU,EDV,EDW,EDX,EDY,EDZ,EE,EEA,EEB,EEC,EED,EEE,EEF,EEG,EEH,EEI,EEJ,E" +
+    "EK,EEL,EEM,EEN,EEO,EEP,EEQ,EER,EES,EF,EG,EH,EI,EJ,EK,EL,EM,EMC,EN,EO,EQ,EQR,ER,E" +
+    "S,ESC,ESL,ET,ETL,EU,EV,EW,EWC,EWR,EX,EXD,EY,EZ,F,FA,FAP,FB,FC,FC1,FD,FE,FF,FF1,F" +
+    "G,FH,FH1,FI,FIR,FJ,FK,FL,FL1,FM,FMO,FMS,FN,FO,FP,FP1,FQ,FR,FRP,FS,FT,FT1,FU,FV,F" +
+    "W,FX,FZ,G,G1,GA,GB,GC,GD,GE,GF,GG,GI,GJ,GK,GQ,GR,GS,GT,GU,GV,GW,GX,GY,GZ,H,HA,HB" +
+    ",HC,HD,HE,HF,HG,HI,HJ,HK,HL,HM,HO,HRC,HS,HZR,I,IBP,IC,ID,IF,IMC,IMP,IND,IPA,IQ,I" +
+    "RR,IRT,IT,J,J0,J1,J2,J3,J4,J5,J6,J7,J8,J9,JA,JB,JC,JCL,JD,JE,JF,JG,JH,JI,JK,JL,J" +
+    "M,JN,JO,JOL,JP,K,KA,KB,KC,KD,KE,KF,KG,KH,KI,KJ,KK,KL,KM,KO,KP,KQ,KS,KT,KU,KW,KYL" +
+    ",KZ,L,LA,LB,LC,LD,LE,LF,LG,LH,LIN,LJ,LK,LM,LN,LO,LOC,LOI,LP,LQ,LR,LS,LSC,LT,LZ,M" +
+    ",MA,MAC,MB,MC,MCC,MCD,ME,MEC,MI,MJ,MK,ML,MN,MOC,MOE,MRI,MS,MT,N,NA,NAC,NAF,NAN,N" +
+    "AS,NB,NC,ND,NDC,NE,NF,NH,NI,NIR,NJ,NK,NP,NPC,NR,NS,NT,NUB,O,O1,O2,O3,O4,OC,P,PA," +
+    "PB,PC,PCR,PD,PDA,PGS,PHC,PI,PIT,PL,PLC,PLS,POB,PPD,PPP,PPS,PPV,PQA,PR,PRA,PRC,PR" +
+    "I,PRR,PRT,PS,PT,PWA,PWI,PWR,PWS,PWT,Q,QA,QB,QC,QDR,QE,QF,QG,QH,QI,QJ,QK,QS,QT,R," +
+    "R1,R2,R3,R4,RA,RAS,RC,RCA,RD,RE,REC,RED,REN,RET,RFC,RI,RJC,RQ,RSS,RT,RTC,RUM,RVC" +
+    ",RX,S,SA,SAT,SB,SBA,SC,SCI,SD,SE,SEC,SET,SF,SG,SH,SHL,SHM,SHN,SHO,SHP,SHQ,SHR,SH" +
+    "S,SHT,SHU,SHV,SHW,SHX,SHY,SHZ,SI,SIA,SIB,SIC,SID,SIE,SIF,SIG,SIH,SII,SIJ,SIK,SIL" +
+    ",SIM,SIN,SIO,SIP,SIQ,SIR,SIS,SIT,SIU,SIV,SIW,SIX,SIY,SIZ,SJ,SJA,SJB,SJC,SJD,SJE," +
+    "SJF,SJG,SJH,SJI,SJJ,SJK,SJL,SJM,SJN,SJO,SJP,SJQ,SJR,SJS,SJT,SJU,SJV,SJW,SJX,SJY," +
+    "SJZ,SKA,SKB,SKC,SKD,SKE,SKF,SKG,SKH,SKI,SKJ,SKK,SKL,SKM,SKN,SKO,SKP,SKQ,SKR,SKS," +
+    "SKT,SKU,SKV,SKW,SKX,SKY,SKZ,SL,SLA,SLS,SMB,SMC,SMD,SMI,SMT,SO,SP,SPE,SR,SRL,SRR," +
+    "SRT,SS,SSC,ST,STC,STF,SUI,SVC,SWR,T,T00,T01,T02,T03,T04,T05,T06,T07,T08,T09,T10," +
+    "T11,T12,T13,T14,T15,T16,T17,T18,T19,T20,T21,T22,T23,T24,T25,T26,T27,T28,T29,T30," +
+    "T31,T32,T33,T34,T35,TB,TC,TCD,TCL,TD,TE,TF,TFR,TG,TL,TOL,TP,TQ,TR,TT,TTL,TX,TY,U" +
+    ",UER,UJC,UNP,UPC,UPT,UR,US,UT,UTC,UU,V,VAL,VP,W,WDL,WRC,WSD,X,XD,Y,Z,ZZ,")]
+    public class X12_ID_1270
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(",1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,I,J,K,")]
+    public class X12_ID_659
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(",1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,I,")]
+    public class X12_ID_1066
+    {
+    }
 
     [Serializable()]
     [Segment("BGN")]
@@ -566,6 +640,74 @@
     }
 
     [Serializable()]
+    [Composite("C056_CompositeRaceorEthnicityInformation_2")]
+    public class C056_CompositeRaceorEthnicityInformation
+    {
+
+        [DataElement("1109", typeof(X12_ID_1109))]
+        [Pos(1)]
+        public string RaceorEthnicityCode_01 { get; set; }
+        [Paired(3)]
+        [DataElement("1270", typeof(X12_ID_1270))]
+        [Pos(2)]
+        public string CodeListQualifierCode_02 { get; set; }
+        [StringLength(1, 30)]
+        [DataElement("1271", typeof(X12_AN))]
+        [Pos(3)]
+        public string IndustryCode_03 { get; set; }
+    }
+
+    [Serializable()]
+    [Segment("DMG", typeof(X12_ID_1250))]
+    public class DMG_MemberDemographicInformation
+    {
+
+        [Paired(2)]
+        [Required]
+        [DataElement("1250", typeof(X12_ID_1250))]
+        [Pos(1)]
+        public string DateTimePeriodFormatQualifier_01 { get; set; }
+        [Required]
+        [StringLength(1, 35)]
+        [DataElement("1251", typeof(X12_AN))]
+        [Pos(2)]
+        public string SubscriberBirthDate_02 { get; set; }
+        [Required]
+        [DataElement("1068", typeof(X12_ID_1068))]
+        [Pos(3)]
+        public string SubscriberGenderCode_03 { get; set; }
+        [DataElement("1067", typeof(X12_ID_1067))]
+        [Pos(4)]
+        public string MaritalStatusCode_04 { get; set; }
+        [ListCount(10)]
+        [Pos(5)]
+        public List<C056_CompositeRaceorEthnicityInformation> CompositeRaceorEthnicityInformation_05 { get; set; }
+        [DataElement("1066", typeof(X12_ID_1066))]
+        [Pos(6)]
+        public string CitizenshipStatusCode_06 { get; set; }
+        [StringLength(2, 3)]
+        [DataElement("26", typeof(X12_ID))]
+        [Pos(7)]
+        public string CountryCode_07 { get; set; }
+        [DataElement("659", typeof(X12_ID_659))]
+        [Pos(8)]
+        public string BasisofVerificationCode_08 { get; set; }
+        [StringLength(1, 15)]
+        [DataElement("380", typeof(X12_R))]
+        [Pos(9)]
+        public string Quantity_09 { get; set; }
+        [Paired(11)]
+        [DataElement("1270", typeof(X12_ID_1270))]
+        [Pos(10)]
+        public string CodeListQualifierCode_10 { get; set; }
+        [Conditional(5)]
+        [StringLength(1, 30)]
+        [DataElement("1271", typeof(X12_AN))]
+        [Pos(11)]
+        public string IndustryCode_11 { get; set; }
+    }
+
+    [Serializable()]
     public class Loop_2000
     {
         [Required]
@@ -595,6 +737,9 @@
         [Required]
         [Pos(3)]
         public N4_OtherSubscriberCity_State_ZIPCode N4_OtherSubscriberCity_State_ZIPCode { get; set; }
+        [Required]
+        [Pos(3)]
+        public DMG_MemberDemographicInformation DMG_MemberDemographicInformation { get; set; }
     }
 
 }
