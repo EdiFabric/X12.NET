@@ -174,6 +174,19 @@ namespace EdiFabric.Sdk.Hipaa
             Loop_2100A.EC_EmploymentClass.EmpoymentClassCode_02 = "03";
             Loop_2100A.EC_EmploymentClass.EmpoymentClassCode_03 = "11";
 
+            //Optional Member Income segment
+            //Used for Carriers/Employeers that need specific member income amounts as part of billable plans.
+            Loop_2100A.ICM_MemberIncome.FrequencyCode_01 = "1";//Typically weekly or monthly
+            Loop_2100A.ICM_MemberIncome.MonetaryAmount_02 = "2000";
+            Loop_2100A.ICM_MemberIncome.Quantity_03 = "40";
+            Loop_2100A.ICM_MemberIncome.LocationIdentifier_04 = "93710";//Most will default to a an internal location code or Zip
+            Loop_2100A.ICM_MemberIncome.SalaryGrade_05 = "A";//Abitrary Code set by the employeer
+
+            //TODO: Optional Segments
+            //AMT Member Policy Amounts
+            //HLH Member Health Information
+            //LUI Member Language
+
             result.Loop_2100A.Add(Loop_2100A);
 
             /*
