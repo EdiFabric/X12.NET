@@ -331,6 +331,14 @@
     }
 
     [Serializable()]
+    [EdiCodes(",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27" +
+    ",28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,53,54,5" +
+    "5,56,57,58,ZZ,")]
+    public class X12_ID_1176
+    {
+    }
+
+    [Serializable()]
     [Segment("BGN")]
     public class BGN
     {
@@ -640,6 +648,22 @@
     }
 
     [Serializable()]
+    [Segment("PER")]
+    public class EC_EmploymentClass
+    {
+
+        [DataElement("1176", typeof(X12_ID_1176))]
+        [Pos(1)]
+        public string EmpoymentClassCode_01 { get; set; }
+        [DataElement("1176", typeof(X12_ID_1176))]
+        [Pos(2)]
+        public string EmpoymentClassCode_02 { get; set; }
+        [DataElement("1176", typeof(X12_ID_1176))]
+        [Pos(3)]
+        public string EmpoymentClassCode_03 { get; set; }
+    }
+
+    [Serializable()]
     [Composite("C056_CompositeRaceorEthnicityInformation_2")]
     public class C056_CompositeRaceorEthnicityInformation
     {
@@ -740,6 +764,8 @@
         [Required]
         [Pos(3)]
         public DMG_MemberDemographicInformation DMG_MemberDemographicInformation { get; set; }
+        [Pos(4)]
+        public EC_EmploymentClass EC_EmploymentClass { get; set; }
     }
 
 }

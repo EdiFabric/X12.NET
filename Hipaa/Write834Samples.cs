@@ -167,6 +167,13 @@ namespace EdiFabric.Sdk.Hipaa
             Loop_2100A.DMG_MemberDemographicInformation.SubscriberBirthDate_02 = "19330706";
             Loop_2100A.DMG_MemberDemographicInformation.SubscriberGenderCode_03 = "M";
             //Optional Loop 2100A Segment DMG 04-11
+
+            //Optional sgment unless Carrier/Client specifically ask for it.
+            Loop_2100A.EC_EmploymentClass = new EC_EmploymentClass();
+            Loop_2100A.EC_EmploymentClass.EmpoymentClassCode_01 = "01";
+            Loop_2100A.EC_EmploymentClass.EmpoymentClassCode_02 = "03";
+            Loop_2100A.EC_EmploymentClass.EmpoymentClassCode_03 = "11";
+
             result.Loop_2100A.Add(Loop_2100A);
 
             /*
