@@ -695,8 +695,6 @@
         [DataElement("1214", typeof(X12_AN))]
         [Pos(5)]
         public string SalaryGrade_05 { get; set; }
-        [StringLength(3, 3)]
-        [DataElement("100", typeof(X12_ID))]
     }
 
     [Serializable()]
