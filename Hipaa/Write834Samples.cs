@@ -233,8 +233,29 @@ namespace EdiFabric.Sdk.Hipaa
             //AMT Member Policy Amounts
             //HLH Member Health Information
             //LUI Member Language
-
+            //NM1 Member mailing Address
+            //N3 Member Mail Street Address
+            //N4 Member Mail city, State, Zip
             result.Loop_2100A.Add(Loop_2100A);
+
+            //Loop 2200:
+            //DSB Disability Info
+            //DTP Disability Eligibility Dates
+
+            //Loop 2300 (Required on most Carriers)
+            result.Loop_2300 = new List<Loop_2300>();
+            Loop_2300 Loop_2300 = new Loop_2300();
+            Loop_2300.HD_HealthCoverage = new HD();
+            Loop_2300.HD_HealthCoverage.MaintenanceTypeCode_01 = "026";
+            //Loop_2300.HD_HealthCoverage.MaintenanceReasonCode_02 = "1";//usually Carrier specific
+            Loop_2300.HD_HealthCoverage.InsuranceLineCode_03 = "PPO";
+            Loop_2300.HD_HealthCoverage.PlanCoverageDescription_04 = "Test PPO Plan";//Optional. Some carriers make this a required field with specific reporting values.
+            Loop_2300.HD_HealthCoverage.CoverageLevelCode_05 = "EMP";//Employee only is usually EMP or IND Carrier specific
+            //06-07 almost never used
+            Loop_2300.HD_HealthCoverage.UnderwritingDecisionCode_08 = "Y";//Y/N value but can be removed if nessessary
+            Loop_2300.HD_HealthCoverage.YesNoConditionorResponseCode_09 = "N";//Sometimes used as a Late Enrollment Indicator
+
+            result.Loop_2300.Add(Loop_2300);
 
             return result;
         }

@@ -18,24 +18,24 @@
         [Required]
         [Pos(2)]
         public BGN BGN { get; set; }
-
         [Pos(3)]
         public REF REF_TransactionSetPolicyNumber { get; set; }
         [Pos(4)]
         public DTP DTP_FileEffectiveDate { get; set; }
         [Pos(5)]
         public QTY QTY_TransactionSetControlTotals { get; set; }
-
         [Required]
         [Pos(6)]
         public All_NM1 All_NM1 { get; set; }
         [Required]
         [Pos(7)]
         public List<Loop_2000> Loop_2000 { get; set; }
-
         [Required]
         [Pos(8)]
         public List<Loop_2100A> Loop_2100A { get; set; }
+        [Required]
+        [Pos(8)]
+        public List<Loop_2300> Loop_2300 { get; set; }
         [Required]
         [Pos(7)]
         public SE SE { get; set; }
@@ -341,6 +341,32 @@
     [Serializable()]
     [EdiCodes(",1,2,3,4,5,6,7,8,9,B,C,H,Q,S,U,Z,")]
     public class X12_ID_594
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(",403,AC,ADD,AF,AG,AH,AI,AJ,AK,AP,AR,BC,BE,BH,BK,CHU,CLF,CV,DCP,DEN,EMP,EPO,FAC,FS" +
+    "A,GDC,HE,HLT,HMO,IRA,IRC,LL,LTC,LTD,MM,MOD,NGD,NQ,PDG,POS,PPO,PRA,PSP,QDA,QDC,ST" +
+    "D,UL,UR,VIS,ZZZ,")]
+    public class X12_ID_1205
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(",CHD,DEP,E1D,E2D,E3D,E5D,E6D,E7D,E8D,E9D,ECH,EMP,ESP,FAM,IND,SPC,SPO,TWO,")]
+    public class X12_ID_1207
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(",A,B,C,D,I,N,S,")]
+    public class X12_ID_1209
+    {
+    }
+
+    [Serializable()]
+    [EdiCodes(",AM,BAX,FLR,HCS,NP,PCS,THR,ZZ,")]
+    public class X12_ID_1211
     {
     }
 
@@ -766,6 +792,50 @@
     }
 
     [Serializable()]
+    [Segment("HD")]
+    public class HD
+    {
+
+        [Required]
+        [DataElement("875", typeof(X12_ID_875))]
+        [Pos(1)]
+        public string MaintenanceTypeCode_01 { get; set; }
+        [DataElement("1203", typeof(X12_ID_1203))]
+        [Pos(2)]
+        public string MaintenanceReasonCode_02 { get; set; }
+        [DataElement("1205", typeof(X12_ID_1205))]
+        [Pos(3)]
+        public string InsuranceLineCode_03 { get; set; }
+        [StringLength(1, 50)]
+        [DataElement("1204", typeof(X12_AN))]
+        [Pos(4)]
+        public string PlanCoverageDescription_04 { get; set; }
+        [DataElement("1207", typeof(X12_ID_1207))]
+        [Pos(5)]
+        public string CoverageLevelCode_05 { get; set; }
+        [StringLength(1, 9)]
+        [DataElement("609", typeof(X12_N0))]
+        [Pos(6)]
+        public string Count_06 { get; set; }
+        [StringLength(1, 9)]
+        [DataElement("609", typeof(X12_N0))]
+        [Pos(7)]
+        public string Count_07 { get; set; }
+        [DataElement("1209", typeof(X12_ID_1209))]
+        [Pos(8)]
+        public string UnderwritingDecisionCode_08 { get; set; }
+        [DataElement("1073", typeof(X12_ID_1073))]
+        [Pos(9)]
+        public string YesNoConditionorResponseCode_09 { get; set; }
+        [DataElement("1211", typeof(X12_ID_1211))]
+        [Pos(10)]
+        public string DrugHouseCode_10 { get; set; }
+        [DataElement("1073", typeof(X12_ID_1073))]
+        [Pos(11)]
+        public string YesNoConditionorResponseCode_11 { get; set; }
+    }
+
+    [Serializable()]
     public class Loop_2000
     {
         [Required]
@@ -802,6 +872,18 @@
         public EC_EmploymentClass EC_EmploymentClass { get; set; }
         [Pos(5)]
         public ICM ICM_MemberIncome { get; set; }
+    }
+
+    [Serializable()]
+    //[Group(typeof(CLM_ClaimInformation))]
+    public class Loop_2300
+    {
+
+        [Required]
+        [Pos(1)]
+        public HD HD_HealthCoverage { get; set; }
+        //[Pos(2)]
+        //public All_DTP All_DTP { get; set; }
     }
 
 }
