@@ -255,6 +255,18 @@ namespace EdiFabric.Sdk.Hipaa
             Loop_2300.HD_HealthCoverage.UnderwritingDecisionCode_08 = "Y";//Y/N value but can be removed if nessessary
             Loop_2300.HD_HealthCoverage.YesNoConditionorResponseCode_09 = "N";//Sometimes used as a Late Enrollment Indicator
 
+            DTP DTP_MaintenanceEffective = new DTP();
+            DTP_MaintenanceEffective.DateTimeQualifier_01 = "303";
+            DTP_MaintenanceEffective.DateTimePeriodFormatQualifier_02 = "D3";
+            DTP_MaintenanceEffective.DateTimePeriod_03 = "20151001";
+            Loop_2300.DTP_HealthCoverageDates.Add(DTP_MaintenanceEffective);
+
+            DTP DTP_BenefitBegin = new DTP();
+            DTP_BenefitBegin.DateTimeQualifier_01 = "348";
+            DTP_BenefitBegin.DateTimePeriodFormatQualifier_02 = "348";
+            DTP_BenefitBegin.DateTimePeriod_03 = "20150901";
+            Loop_2300.DTP_HealthCoverageDates.Add(DTP_BenefitBegin);
+
             result.Loop_2300.Add(Loop_2300);
 
             return result;

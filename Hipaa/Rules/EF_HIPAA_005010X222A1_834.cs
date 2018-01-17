@@ -836,6 +836,16 @@
     }
 
     [Serializable()]
+    [All()]
+    public class All_DTP
+    {
+
+        [ListCount(6)]
+        [Pos(1)]
+        public List<DTP> DTP_HealthCoverageDates { get; set; }
+    }
+
+    [Serializable()]
     public class Loop_2000
     {
         [Required]
@@ -882,8 +892,9 @@
         [Required]
         [Pos(1)]
         public HD HD_HealthCoverage { get; set; }
-        //[Pos(2)]
-        //public All_DTP All_DTP { get; set; }
+        [ListCount(6)]
+        [Pos(2)]
+        public List<DTP> DTP_HealthCoverageDates { get; set; }
     }
 
 }
