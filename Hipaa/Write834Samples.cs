@@ -267,6 +267,16 @@ namespace EdiFabric.Sdk.Hipaa
             DTP_BenefitBegin.DateTimePeriod_03 = "20150901";
             Loop_2300.DTP_HealthCoverageDates.Add(DTP_BenefitBegin);
 
+            REF REF_ClientReportingCategory = new REF();
+            REF_ClientReportingCategory.ReferenceIdentificationQualifier_01 = "17";
+            REF_ClientReportingCategory.ReferenceIdentification_02 = "12345";
+            Loop_2300.REF_HealthCoveragePolicyNumbers.Add(REF_ClientReportingCategory);
+
+            REF REF_GroupPolicyNumber = new REF();
+            REF_GroupPolicyNumber.ReferenceIdentificationQualifier_01 = "1L";
+            REF_GroupPolicyNumber.ReferenceIdentification_02 = "54321";
+            Loop_2300.REF_HealthCoveragePolicyNumbers.Add(REF_GroupPolicyNumber);
+
             result.Loop_2300.Add(Loop_2300);
 
             return result;

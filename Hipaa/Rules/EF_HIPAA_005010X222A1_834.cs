@@ -895,6 +895,9 @@
         [ListCount(6)]
         [Pos(2)]
         public List<DTP> DTP_HealthCoverageDates { get; set; }
+        [ListCount(14)]
+        [Pos(3)]
+        public List<REF> REF_HealthCoveragePolicyNumbers { get; set; }
     }
 
 }
