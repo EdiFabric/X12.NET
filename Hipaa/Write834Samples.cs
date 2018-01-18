@@ -279,6 +279,25 @@ namespace EdiFabric.Sdk.Hipaa
 
             result.Loop_2300.Add(Loop_2300);
 
+            result.Loop_2310 = new List<Loop_2310>();
+            Loop_2310 Loop_2310 = new Loop_2310();
+            Loop_2310.LX_ProviderInformation = new LX();
+            Loop_2310.LX_ProviderInformation.AssignedNumber_01 = "1";
+
+            Loop_2310.NM1_ReferingProviderName = new NM1_ReferringProviderName();
+            Loop_2310.NM1_ReferingProviderName.EntityIdentifierCode_01 = "OD";
+            Loop_2310.NM1_ReferingProviderName.EntityTypeQualifier_02 = "1";
+            Loop_2310.NM1_ReferingProviderName.ReferringProviderLastName_03 = "ABC Hospital";
+            Loop_2310.NM1_ReferingProviderName.ReferringProviderFirstName_04 = "Care";
+            Loop_2310.NM1_ReferingProviderName.ReferringProviderMiddleNameorInitial_05 = "A";
+            Loop_2310.NM1_ReferingProviderName.NamePrefix_06 = "Sr";
+            Loop_2310.NM1_ReferingProviderName.ReferringProviderNameSuffix_07 = "";
+            Loop_2310.NM1_ReferingProviderName.IdentificationCodeQualifier_08 = "SV";
+            Loop_2310.NM1_ReferingProviderName.ReferringProviderIdentifier_09 = "Doc PPO";
+            Loop_2310.NM1_ReferingProviderName.EntityRelationshipCode_10 = "25";
+
+            result.Loop_2310.Add(Loop_2310);
+
             return result;
         }
 
