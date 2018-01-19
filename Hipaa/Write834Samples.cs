@@ -298,6 +298,15 @@ namespace EdiFabric.Sdk.Hipaa
 
             result.Loop_2310.Add(Loop_2310);
 
+            result.Loop_2320 = new List<Loop_2320>();
+            Loop_2320 Loop_2320 = new Loop_2320();
+            Loop_2320.COB_CoordinationOfBenefits.PayerResponsibilitySequenceNumberCode_01 = "P";
+            Loop_2320.COB_CoordinationOfBenefits.ReferenceIdentification_02 = "A";
+            Loop_2320.COB_CoordinationOfBenefits.CoordinationofBenefitsCode_03 = "1";
+            Loop_2320.COB_CoordinationOfBenefits.ServiceTypeCode_04 = "1";
+
+            result.Loop_2320.Add(Loop_2320);
+
             return result;
         }
 
