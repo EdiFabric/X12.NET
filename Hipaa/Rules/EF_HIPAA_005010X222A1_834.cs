@@ -1116,6 +1116,10 @@
         [ListCount(10)]
         [Pos(2)]
         public List<REF> REF_AdditionalCoordinationOfBenefitsIdentifiers { get; set; }
+        [ListCount(2)]
+        [Pos(3)]
+        public List<DTP> DTP_CoordinationOfBenefitsEleigibilityDates { get; set; }
+
     }
 
 }

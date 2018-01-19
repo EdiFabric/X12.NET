@@ -311,6 +311,12 @@ namespace EdiFabric.Sdk.Hipaa
             REFAccountCode.ReferenceIdentification_02 = "12345";
             Loop_2320.REF_AdditionalCoordinationOfBenefitsIdentifiers.Add(REFAccountCode);
 
+            Loop_2320.DTP_CoordinationOfBenefitsEleigibilityDates = new List<DTP>();
+            DTP DTP_CoordinationOfBenefitBegin = new DTP();
+            DTP_CoordinationOfBenefitBegin.DateTimeQualifier_01 = "334";
+            DTP_CoordinationOfBenefitBegin.DateTimePeriodFormatQualifier_02 = "D8";
+            DTP_CoordinationOfBenefitBegin.DateTimePeriod_03 = "20150101";
+
             result.Loop_2320.Add(Loop_2320);
 
             return result;
