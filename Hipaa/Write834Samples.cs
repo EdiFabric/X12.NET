@@ -319,6 +319,17 @@ namespace EdiFabric.Sdk.Hipaa
 
             result.Loop_2320.Add(Loop_2320);
 
+            Loop_2330 Loop_2330 = new Loop_2330();
+            Loop_2330.NM1_CoordinationOfBenefitsRelatedEntity = new NM1_InsuranceProviderName();
+            Loop_2330.NM1_CoordinationOfBenefitsRelatedEntity.EntityIdentifierCode_01 = "IN";
+            Loop_2330.NM1_CoordinationOfBenefitsRelatedEntity.EntityTypeQualifier_02 = "2";
+            Loop_2330.NM1_CoordinationOfBenefitsRelatedEntity.ReferringProviderLastName_03 = "Insurance";
+            Loop_2330.NM1_CoordinationOfBenefitsRelatedEntity.ReferringProviderFirstName_04 = "ABC";
+            Loop_2330.NM1_CoordinationOfBenefitsRelatedEntity.IdentificationCodeQualifier_08 = "FI";
+            Loop_2330.NM1_CoordinationOfBenefitsRelatedEntity.ReferringProviderIdentifier_09 = "12-345678";
+            //Misleading as "Loop" only contains NM1 element once.
+            result.Loop_2330 = Loop_2330;
+
             return result;
         }
 

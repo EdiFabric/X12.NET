@@ -40,8 +40,10 @@
         public List<Loop_2310> Loop_2310 { get; set; }
         [Pos(10)]
         public List<Loop_2320> Loop_2320 { get; set; }
+        [Pos(11)]
+        public Loop_2330 Loop_2330 { get; set; }
         [Required]
-        [Pos(10)]
+        [Pos(12)]
         public SE SE { get; set; }
     }
 
@@ -662,6 +664,50 @@
     }
 
     [Serializable()]
+    [Segment("NM1", typeof(X12_ID_98_9), typeof(X12_ID_1065))]
+    public class NM1_InsuranceProviderName
+    {
+
+        [Required]
+        [DataElement("98", typeof(X12_ID_98_9))]
+        [Pos(1)]
+        public string EntityIdentifierCode_01 { get; set; }
+        [Required]
+        [DataElement("1065", typeof(X12_ID_1065))]
+        [Pos(2)]
+        public string EntityTypeQualifier_02 { get; set; }
+        [Required]
+        [StringLength(1, 60)]
+        [DataElement("1035", typeof(X12_AN))]
+        [Pos(3)]
+        public string ReferringProviderLastName_03 { get; set; }
+        [StringLength(1, 35)]
+        [DataElement("1036", typeof(X12_AN))]
+        [Pos(4)]
+        public string ReferringProviderFirstName_04 { get; set; }
+        [StringLength(1, 25)]
+        [DataElement("1037", typeof(X12_AN))]
+        [Pos(5)]
+        public string ReferringProviderMiddleNameorInitial_05 { get; set; }
+        [StringLength(1, 10)]
+        [DataElement("1038", typeof(X12_AN))]
+        [Pos(6)]
+        public string NamePrefix_06 { get; set; }
+        [StringLength(1, 10)]
+        [DataElement("1039", typeof(X12_AN))]
+        [Pos(7)]
+        public string ReferringProviderNameSuffix_07 { get; set; }
+        [Paired(9)]
+        [DataElement("66", typeof(X12_ID_66_2))]
+        [Pos(8)]
+        public string IdentificationCodeQualifier_08 { get; set; }
+        [StringLength(2, 80)]
+        [DataElement("67", typeof(X12_AN))]
+        [Pos(9)]
+        public string ReferringProviderIdentifier_09 { get; set; }
+    }
+
+    [Serializable()]
     [Group(typeof(NM1))]
     public class Loop_1000A
     {
@@ -1119,7 +1165,15 @@
         [ListCount(2)]
         [Pos(3)]
         public List<DTP> DTP_CoordinationOfBenefitsEleigibilityDates { get; set; }
-
     }
+
+    [Serializable]
+    public class Loop_2330
+    {
+        [Pos(1)]
+        public NM1_InsuranceProviderName NM1_CoordinationOfBenefitsRelatedEntity { get; set; }
+    }
+
+
 
 }
