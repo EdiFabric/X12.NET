@@ -305,6 +305,12 @@ namespace EdiFabric.Sdk.Hipaa
             Loop_2320.COB_CoordinationOfBenefits.CoordinationofBenefitsCode_03 = "1";
             Loop_2320.COB_CoordinationOfBenefits.ServiceTypeCode_04 = "1";
 
+            Loop_2320.REF_AdditionalCoordinationOfBenefitsIdentifiers = new List<REF>();
+            REF REFAccountCode = new REF();
+            REFAccountCode.ReferenceIdentificationQualifier_01 = "60";
+            REFAccountCode.ReferenceIdentification_02 = "12345";
+            Loop_2320.REF_AdditionalCoordinationOfBenefitsIdentifiers.Add(REFAccountCode);
+
             result.Loop_2320.Add(Loop_2320);
 
             return result;

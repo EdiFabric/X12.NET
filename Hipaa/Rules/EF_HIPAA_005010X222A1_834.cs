@@ -1113,6 +1113,9 @@
     {
         [Pos(1)]
         public COB COB_CoordinationOfBenefits { get; set; }
+        [ListCount(10)]
+        [Pos(2)]
+        public List<REF> REF_AdditionalCoordinationOfBenefitsIdentifiers { get; set; }
     }
 
 }
