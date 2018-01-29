@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            //ReadSamples.Run();
-            //WriteSamples.Run();
+            ReadSamples.Run();
+            WriteSamples.Run();
             //Read834Samples.Run();
             Write834Samples.Run();
         }
