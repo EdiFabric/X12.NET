@@ -330,6 +330,12 @@ namespace EdiFabric.Sdk.Hipaa
             //Misleading as "Loop" only contains NM1 element once.
             result.Loop_2330 = Loop_2330;
 
+            //Optional Report Category
+            //Misleading as "Loop" usually contains LX element only once.
+            Loop_2700 Loop_2700 = new Loop_2700();
+            Loop_2700.LX_MemberReportingCategories = new LX();
+            Loop_2700.LX_MemberReportingCategories.AssignedNumber_01 = "2";
+
             return result;
         }
 

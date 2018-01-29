@@ -42,6 +42,8 @@
         public List<Loop_2320> Loop_2320 { get; set; }
         [Pos(11)]
         public Loop_2330 Loop_2330 { get; set; }
+        [Pos(12)]
+        public Loop_2700 Loop_2700 { get; set; }
         [Required]
         [Pos(12)]
         public SE SE { get; set; }
@@ -1172,6 +1174,13 @@
     {
         [Pos(1)]
         public NM1_InsuranceProviderName NM1_CoordinationOfBenefitsRelatedEntity { get; set; }
+    }
+
+    [Serializable]
+    public class Loop_2700
+    {
+        [Pos(1)]
+        public LX LX_MemberReportingCategories { get; set; }
     }
 
 
