@@ -13,16 +13,16 @@ Fully customizable EDI templates as C# files for [X12](https://support.edifabric
 
 [Ensure all of your EDI objects are valid](https://support.edifabric.com/hc/en-us/articles/360000373811-EDI-compliant-validation) against their EDI rules before processing them downstream. Produces rich error context to help you quickly troubleshoot failures.
 
-Communicate reliably with your business partners by sending them back fully compliant ( [TA1](http://www.edifabric.com/x12-ta1-acknowledgment-error-codes.html) , [997](http://www.edifabric.com/x12-997-acknowledgment-error-codes.html) , [999](http://www.edifabric.com/x12-999-acknowledgment-error-codes.html) , [CONTRL](http://www.edifabric.com/edifact-contrl-acknowledgment-error-codes.html) ) [EDI acknowledgments](http://edifabric.com/edi-acknowledgments.html). Detect duplicates as early as EDI interchanges are read.
+Communicate reliably with your business partners by sending them back fully compliant ( [TA1](https://support.edifabric.com/hc/en-us/articles/360000367092-X12-TA1-acknowledgment-error-codes) , [997](https://support.edifabric.com/hc/en-us/articles/360000380131-X12-997-acknowledgment-error-codes) , [999](https://support.edifabric.com/hc/en-us/articles/360000367172-X12-999-acknowledgment-error-codes) , [CONTRL](https://support.edifabric.com/hc/en-us/articles/360000367432-EDIFACT-CONTRL-acknowledgment-error-codes) ) [EDI acknowledgments](https://support.edifabric.com/hc/en-us/articles/360000380491-EDI-acknowledgments-generation). Detect duplicates as early as EDI interchanges are read.
 
-* [EDI DOM](http://www.edifabric.com/edi-dom-document-object-model.html) means No mapping, No grammars, No serialization, No Xpath, No key-value tables, No SEF, No XSD, No rule editors, No EDI experience
-* [HIPAA 837 P](http://www.edifabric.com/hipaa-claim-837.html) & [X12 810](http://www.edifabric.com/x12-810.html) & [X12 850](http://www.edifabric.com/x12-850.html) & [EDIFACT INVOIC](http://www.edifabric.com/edifact-invoic.html) & [EDIFACT ORDERS](http://www.edifabric.com/edifact-orders.html) EDI rules are included
-* Fully compliant [HIPAA SNIP Levels validation](http://www.edifabric.com/edi-hipaa-snip-compliance.html)
+* [EDI DOM](https://support.edifabric.com/hc/en-us/articles/360000280572-EDI-DOM-basics) means No mapping, No grammars, No serialization, No Xpath, No key-value tables, No SEF, No XSD, No rule editors, No EDI experience
+* [HIPAA 837 P](https://support.edifabric.com/hc/en-us/articles/360000368612-HIPAA-837-P) & [X12 810](https://support.edifabric.com/hc/en-us/articles/360000368792-X12-810) & [X12 850](https://support.edifabric.com/hc/en-us/articles/360000368872-X12-850) & [EDIFACT INVOIC](https://support.edifabric.com/hc/en-us/articles/360000381911-EDIFACT-INVOIC) & [EDIFACT ORDERS](https://support.edifabric.com/hc/en-us/articles/360000369092-EDIFACT-ORDERS)
+* Fully compliant [HIPAA SNIP Levels validation](https://support.edifabric.com/hc/en-us/articles/360000361352-EDI-HIPAA-SNIP-compliance)
 * Read multiple interchanges from the same file
 * Continue on error to avoid breaking
 * Automatic delimiters resolution
 * Streaming for large interchanges
-* [Transaction splitting for large messages](http://www.edifabric.com/large-edi-files.html)
+* [Transaction splitting for large messages](https://support.edifabric.com/hc/en-us/articles/360000312212-Large-EDI-files-translation-by-splitting)
 * Fully compliant EDI rules validation
 * Write objects directly to a stream or a file
 * Configure custom EDI delimiters
