@@ -1,8 +1,7 @@
 # Best-in-class EDI software tools for any .NET developer
 ### The SDK references EdiFabric's trial products which can be used for 14 days 
 ### Our EDI Document Object Model lets you to dynamically read, manipulate and write EDI files
-
-[EDI Help & Support](https://support.edifabric.com/hc/en-us)
+### [EDI Help & Support](https://support.edifabric.com/hc/en-us)
 
 [EdiFabric](http://www.edifabric.com/) empowers developers and businesses interested in enabling their software systems with EDI capabilities. Its simplicity and effectiveness lets you connect with partners in just a day.
 
