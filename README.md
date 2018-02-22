@@ -5,13 +5,13 @@
 
 [EdiFabric](http://www.edifabric.com/) empowers developers and businesses interested in enabling their software systems with EDI capabilities. Its simplicity and effectiveness lets you connect with partners in just a day.
 
-Supports all versions for [X12](http://edifabric.com/edi-x12-transactions.html), [HIPAA](http://edifabric.com/edi-hipaa-transactions.html), [EDIFACT](http://edifabric.com/edi-edifact-transactions-1.html), [EANCOM](http://edifabric.com/edi-eancom-transactions.html) ,[VDA](http://edifabric.com/edi-vda-transactions.html) and [PNRGOV](http://www.edifabric.com/pnrgov.html) . Fully customizable EDI rules for each transaction set, allowing you to comply with any partner-proprietary format.
+Fully customizable EDI templates as C# files for [X12](https://support.edifabric.com/hc/en-us/sections/360000067292-X12-Resources), [HIPAA](https://support.edifabric.com/hc/en-us/articles/360000372751-HIPAA-templates-270-271-276-277-278-834-835-837), [EDIFACT](https://support.edifabric.com/hc/en-us/sections/360000070531-EDIFACT-Resources), [EANCOM](https://support.edifabric.com/hc/en-us/articles/360000349012-EANCOM-templates-for-versions-D93A-D96A-and-D01B-) ,[VDA](https://support.edifabric.com/hc/en-us/articles/360000367932-VDA-templates-4905-4906-4908-4913-4915) and [PNRGOV](https://support.edifabric.com/hc/en-us/articles/360000349592-PNRGOV-templates) . 
 
-[Lightning fast streaming of EDI documents](http://edifabric.com/edi-translator.html) into typed objects. Allows you to read files of any size, having multiple interchanges or even containing corrupt data without breaking.
+[Lightning fast streaming of EDI documents](https://support.edifabric.com/hc/en-us/articles/360000311132-EDI-files-translation) into typed objects. Allows you to read files of any size, having multiple interchanges or even containing corrupt data without breaking.
 
-[Create your own EDI objects](http://edifabric.com/edi-generator.html), and then write them to a stream or directly to a file. Allows you to customize all delimiters and segment postfixes. All trailers are automatically set.
+[Create your own EDI objects](https://support.edifabric.com/hc/en-us/articles/360000311772-EDI-files-generation), and then write them to a stream or directly to a file. Allows you to customize all delimiters and segment postfixes. All trailers are automatically set.
 
-[Ensure all of your EDI objects are valid](http://edifabric.com/edi-validator.html) against their EDI rules before processing them downstream. Produces rich error context to help you quickly troubleshoot failures.
+[Ensure all of your EDI objects are valid](https://support.edifabric.com/hc/en-us/articles/360000373811-EDI-compliant-validation) against their EDI rules before processing them downstream. Produces rich error context to help you quickly troubleshoot failures.
 
 Communicate reliably with your business partners by sending them back fully compliant ( [TA1](http://www.edifabric.com/x12-ta1-acknowledgment-error-codes.html) , [997](http://www.edifabric.com/x12-997-acknowledgment-error-codes.html) , [999](http://www.edifabric.com/x12-999-acknowledgment-error-codes.html) , [CONTRL](http://www.edifabric.com/edifact-contrl-acknowledgment-error-codes.html) ) [EDI acknowledgments](http://edifabric.com/edi-acknowledgments.html). Detect duplicates as early as EDI interchanges are read.
 
