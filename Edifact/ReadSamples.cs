@@ -63,7 +63,10 @@ namespace EdiFabric.Sdk.Edifact
                 foreach (var readerError in readerErrors)
                 {
                     //  Respond with the error context, which contains the standard EDI error code and fault reason
-                    var error = readerError.MessageErrorContext.Flatten();
+                    if (readerError.MessageErrorContext != null)
+                    {
+                        var error = readerError.MessageErrorContext.Flatten();
+                    }
                 }
             }
 

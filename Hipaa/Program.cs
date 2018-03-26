@@ -7,7 +7,7 @@
             ReadSamples.Run();
             WriteSamples.Run();
             //Read834Samples.Run();
-            Write834Samples.Run();
+            //Write834Samples.Run();
         }
     }
 }
