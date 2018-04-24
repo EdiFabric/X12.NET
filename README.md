@@ -1,5 +1,5 @@
 ### EDI Toolkit to Translate EDI, Generate EDI, Validate EDI and more. 
-#### Includes high-performance .NET EDI libraries plus 5000+ fully customizable EDI templates for HIPAA, X12, EDIFACT, EANCOM, VDA and PNRGOV
+#### Includes high-performance .NET EDI libraries plus 5000+ fully customizable EDI templates
 #### The SDK references 14 day trial NuGet packages
 
 [EdiFabric](http://www.edifabric.com/) EDI Tools empower developers and businesses interested in enabling their software systems with EDI capabilities. 
@@ -11,6 +11,15 @@ With EdiFabric EDI Toolkit you can:
 * Validate EDI files for compliance
 * Automatically generate EDI acknowledgments
 * Customize EDI templates per customer and comply with any format
+
+EDI Templates are included for the following standards:
+
+* [EDIFACT](https://support.edifabric.com/hc/en-us/sections/360000070531-EDIFACT-Resources)
+* [EANCOM](https://support.edifabric.com/hc/en-us/articles/360000349012-EANCOM-templates-for-versions-D93A-D96A-and-D01B-)
+* [PNRGOV](https://support.edifabric.com/hc/en-us/articles/360000349592-PNRGOV-templates)
+* [X12](https://support.edifabric.com/hc/en-us/sections/360000067292-X12-Resources)
+* [HIPAA](https://support.edifabric.com/hc/en-us/articles/360000372751-HIPAA-templates-270-271-276-277-278-834-835-837)
+* [VDA](https://support.edifabric.com/hc/en-us/articles/360000367932-VDA-templates-4905-4906-4908-4913-4915)
 
 EdiFabric EDI Toolkit supports:
 
