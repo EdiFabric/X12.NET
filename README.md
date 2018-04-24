@@ -1,8 +1,7 @@
 ### EDI Toolkit to Translate EDI, Generate EDI, Validate EDI and more. 
-#### Includes high-performance .NET EDI libraries plus 5000+ fully customizable EDI templates
-#### The SDK references 14 day trial NuGet packages
+#### Includes high-performance .NET EDI libraries plus 5000+ fully customizable EDI templates. The SDK references 14 day trial NuGet packages
 
-[EdiFabric](http://www.edifabric.com/) EDI Tools empower developers and businesses interested in enabling their software systems with EDI capabilities. 
+EDI developer tools that rock. Focus on what you love: building great apps
 
 With EdiFabric EDI Toolkit you can:
 
