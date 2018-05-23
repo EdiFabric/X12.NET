@@ -7,7 +7,7 @@ using System.Text;
 using EdiFabric.Core.Model.Edi.ErrorContexts;
 using EdiFabric.Core.Model.Edi.X12;
 using EdiFabric.Framework.Writers;
-using EdiFabric.Rules.HIPAA_005010X222A1_837;
+using EdiFabric.Rules.HIPAA_5010;
 
 namespace EdiFabric.Sdk.Hipaa
 {
@@ -46,19 +46,17 @@ namespace EdiFabric.Sdk.Hipaa
                 {
                     //  4.  Use CRLF(new line) as segment postfix for clarity
                     //  Always agree postfixes and separators with the trading partner
-                    var writer = new X12Writer(stream, Encoding.Default, Environment.NewLine);
-
-                    //  5.  Begin with ISA segment
-                    writer.Write(CreateIsa("000011111"));
-                    //  6.  Follow up with GS segment
-                    writer.Write(CreateGs("111111111"));
-                    //  7.  Write all transactions
-                    //  Batch up as many as needed
-                    writer.Write(claim);
-                    //  No need to close any of the above
-
-                    //  8.  Always flush at the end to release the cache
-                    writer.Flush();
+                    using (var writer = new X12Writer(stream, Encoding.Default, Environment.NewLine))
+                    {
+                        //  5.  Begin with ISA segment
+                        writer.Write(CreateIsa("000011111"));
+                        //  6.  Follow up with GS segment
+                        writer.Write(CreateGs("111111111"));
+                        //  7.  Write all transactions
+                        //  Batch up as many as needed
+                        writer.Write(claim);
+                        //  No need to close any of the above
+                    }
 
                     Debug.Write(LoadString(stream));
                 }
@@ -82,298 +80,296 @@ namespace EdiFabric.Sdk.Hipaa
         /// <summary>
         /// Sample claim
         /// </summary>
-        static TS837 CreateClaim(string controlNumber)
+        static TS837P CreateClaim(string controlNumber)
         {
-            var result = new TS837();
+            var result = new TS837P();
 
             result.ST = new ST();
             result.ST.TransactionSetIdentifierCode_01 = "837";
             result.ST.TransactionSetControlNumber_02 = controlNumber.PadLeft(9, '0');
             result.ST.ImplementationConventionPreference_03 = "005010X222A1";
 
-            result.BHT_BeginningofHierarchicalTransaction = new BHT_BeginningofHierarchicalTransaction();
-            result.BHT_BeginningofHierarchicalTransaction.HierarchicalStructureCode_01 = "0019";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionSetPurposeCode_02 = "00";
-            result.BHT_BeginningofHierarchicalTransaction.OriginatorApplicationTransactionIdentifier_03 = "010";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionSetCreationDate_04 = "20170617";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionSetCreationTime_05 = "1741";
-            result.BHT_BeginningofHierarchicalTransaction.ClaimorEncounterIdentifier_06 = "CH";
+            result.BeginningofHierarchicalTransaction = new BHT_BeginningofHierarchicalTransaction();
+            result.BeginningofHierarchicalTransaction.BHT01 = "0019";
+            result.BeginningofHierarchicalTransaction.BHT02 = "00";
+            result.BeginningofHierarchicalTransaction.BHT03 = "010";
+            result.BeginningofHierarchicalTransaction.BHT04 = "20170617";
+            result.BeginningofHierarchicalTransaction.BHT05 = "1741";
+            result.BeginningofHierarchicalTransaction.BHT06 = "CH";
 
-            result.All_NM1 = new All_NM1();
-            result.All_NM1.Loop_1000A = new Loop_1000A();
+            result.AllNM1 = new All_NM1_TS837P();
+            result.AllNM1.Loop1000A = new Loop_1000A_TS837P();
 
-            result.All_NM1.Loop_1000A.NM1_SubmitterName = new NM1_SubmitterName();
-            result.All_NM1.Loop_1000A.NM1_SubmitterName.EntityIdentifierCode_01 = "41";
-            result.All_NM1.Loop_1000A.NM1_SubmitterName.EntityTypeQualifier_02 = "2";
-            result.All_NM1.Loop_1000A.NM1_SubmitterName.SubmitterLastorOrganizationName_03 = "SUBMITTER";
-            result.All_NM1.Loop_1000A.NM1_SubmitterName.IdentificationCodeQualifier_08 = "46";
-            result.All_NM1.Loop_1000A.NM1_SubmitterName.SubmitterIdentifier_09 = "ABC123";
+            result.AllNM1.Loop1000A.SubmitterName = new NM1_SubmitterName();
+            result.AllNM1.Loop1000A.SubmitterName.NM101 = "41";
+            result.AllNM1.Loop1000A.SubmitterName.NM102 = "2";
+            result.AllNM1.Loop1000A.SubmitterName.NM103 = "SUBMITTER";
+            result.AllNM1.Loop1000A.SubmitterName.NM108 = "46";
+            result.AllNM1.Loop1000A.SubmitterName.NM109 = "ABC123";
 
             
-            result.All_NM1.Loop_1000A.PER_SubmitterEDIContactInformation = new List<PER_SubmitterEDIContactInformation>();
-            var per1 = new PER_SubmitterEDIContactInformation();
-            per1.ContactFunctionCode_01 = "IC";
-            per1.SubmitterContactName_02 = "BOB SMITH";
-            per1.CommunicationNumberQualifier_03 = "TE";
-            per1.CommunicationNumber_04 = "4805551212";
-            result.All_NM1.Loop_1000A.PER_SubmitterEDIContactInformation.Add(per1);
+            result.AllNM1.Loop1000A.SubmitterEDIContactInformation = new List<PER_BillingProviderContactInformation>();
+            var per1 = new PER_BillingProviderContactInformation();
+            per1.PER01 = "IC";
+            per1.PER02 = "BOB SMITH";
+            per1.PER03 = "TE";
+            per1.PER04 = "4805551212";
+            result.AllNM1.Loop1000A.SubmitterEDIContactInformation.Add(per1);
 
-            result.All_NM1.Loop_1000B = new Loop_1000B();
+            result.AllNM1.Loop1000B = new Loop_1000B_TS837P();
 
-            result.All_NM1.Loop_1000B.NM1_ReceiverName = new NM1_ReceiverName();
-            result.All_NM1.Loop_1000B.NM1_ReceiverName.EntityIdentifierCode_01 = "40";
-            result.All_NM1.Loop_1000B.NM1_ReceiverName.EntityTypeQualifier_02 = "2";
-            result.All_NM1.Loop_1000B.NM1_ReceiverName.ReceiverName_03 = "RECEIVER";
-            result.All_NM1.Loop_1000B.NM1_ReceiverName.IdentificationCodeQualifier_08 = "46";
-            result.All_NM1.Loop_1000B.NM1_ReceiverName.ReceiverPrimaryIdentifier_09 = "44556";
+            result.AllNM1.Loop1000B.ReceiverName = new NM1_ReceiverName();
+            result.AllNM1.Loop1000B.ReceiverName.NM101 = "40";
+            result.AllNM1.Loop1000B.ReceiverName.NM102 = "2";
+            result.AllNM1.Loop1000B.ReceiverName.NM103 = "RECEIVER";
+            result.AllNM1.Loop1000B.ReceiverName.NM108 = "46";
+            result.AllNM1.Loop1000B.ReceiverName.NM109 = "44556";
 
-            result.Loop_2000A = new List<Loop_2000A>();
-            var loop2000A1 = new Loop_2000A();
+            result.Loop2000A = new List<Loop_2000A_TS837P>();
+            var loop2000A1 = new Loop_2000A_TS837P();
 
-            loop2000A1.HL_BillingProviderHierarchicalLevel = new HL_BillingProviderHierarchicalLevel();
-            loop2000A1.HL_BillingProviderHierarchicalLevel.HierarchicalIDNumber_01 = "1";
-            loop2000A1.HL_BillingProviderHierarchicalLevel.HierarchicalLevelCode_03 = "20";
-            loop2000A1.HL_BillingProviderHierarchicalLevel.HierarchicalChildCode_04 = "1";
+            loop2000A1.BillingProviderHierarchicalLevel = new HL_BillingProviderHierarchicalLevel();
+            loop2000A1.BillingProviderHierarchicalLevel.HL01 = "1";
+            loop2000A1.BillingProviderHierarchicalLevel.HL03 = "20";
+            loop2000A1.BillingProviderHierarchicalLevel.HL04 = "1";
 
-            loop2000A1.All_NM1_2 = new All_NM1_2();
-            loop2000A1.All_NM1_2.Loop_2010AA = new Loop_2010AA();
-            loop2000A1.All_NM1_2.Loop_2010AA.NM1_BillingProviderName = new NM1_BillingProviderName();
-            loop2000A1.All_NM1_2.Loop_2010AA.NM1_BillingProviderName.EntityIdentifierCode_01 = "85";
-            loop2000A1.All_NM1_2.Loop_2010AA.NM1_BillingProviderName.EntityTypeQualifier_02 = "2";
-            loop2000A1.All_NM1_2.Loop_2010AA.NM1_BillingProviderName.BillingProviderLastorOrganizationalName_03 = "BILLING PROVIDER";
-            loop2000A1.All_NM1_2.Loop_2010AA.NM1_BillingProviderName.IdentificationCodeQualifier_08 = "XX";
-            loop2000A1.All_NM1_2.Loop_2010AA.NM1_BillingProviderName.BillingProviderIdentifier_09 = "1122334455";
+            loop2000A1.AllNM1 = new All_NM1_2_TS837P();
+            loop2000A1.AllNM1.Loop2010AA = new Loop_2010AA_TS837P();
+            loop2000A1.AllNM1.Loop2010AA.BillingProviderName = new NM1_BillingProviderName();
+            loop2000A1.AllNM1.Loop2010AA.BillingProviderName.NM101 = "85";
+            loop2000A1.AllNM1.Loop2010AA.BillingProviderName.NM102 = "2";
+            loop2000A1.AllNM1.Loop2010AA.BillingProviderName.NM103 = "BILLING PROVIDER";
+            loop2000A1.AllNM1.Loop2010AA.BillingProviderName.NM108 = "XX";
+            loop2000A1.AllNM1.Loop2010AA.BillingProviderName.NM109 = "1122334455";
 
-            loop2000A1.All_NM1_2.Loop_2010AA.N3_BillingProviderAddress = new N3_BillingProviderAddress();
-            loop2000A1.All_NM1_2.Loop_2010AA.N3_BillingProviderAddress.BillingProviderAddressLine_01 = "1234 SOME ROAD";
+            loop2000A1.AllNM1.Loop2010AA.BillingProviderAddress = new N3_AmbulanceDrop();
+            loop2000A1.AllNM1.Loop2010AA.BillingProviderAddress.N301 = "1234 SOME ROAD";
 
-            loop2000A1.All_NM1_2.Loop_2010AA.N4_BillingProviderCity_State_ZIPCode = new N4_BillingProviderCity_State_ZIPCode();
-            loop2000A1.All_NM1_2.Loop_2010AA.N4_BillingProviderCity_State_ZIPCode.BillingProviderCityName_01 = "CHICAGO";
-            loop2000A1.All_NM1_2.Loop_2010AA.N4_BillingProviderCity_State_ZIPCode.BillingProviderStateorProvinceCode_02 = "IL";
-            loop2000A1.All_NM1_2.Loop_2010AA.N4_BillingProviderCity_State_ZIPCode.BillingProviderPostalZoneorZIPCode_03 = "606739999";
+            loop2000A1.AllNM1.Loop2010AA.BillingProviderCity = new N4_AmbulanceDrop();
+            loop2000A1.AllNM1.Loop2010AA.BillingProviderCity.N401 = "CHICAGO";
+            loop2000A1.AllNM1.Loop2010AA.BillingProviderCity.N402 = "IL";
+            loop2000A1.AllNM1.Loop2010AA.BillingProviderCity.N403 = "606739999";
 
-            loop2000A1.All_NM1_2.Loop_2010AA.All_REF = new All_REF();
-            loop2000A1.All_NM1_2.Loop_2010AA.All_REF.REF_BillingProviderTaxIdentification = new REF_BillingProviderTaxIdentification();
-            loop2000A1.All_NM1_2.Loop_2010AA.All_REF.REF_BillingProviderTaxIdentification
-                .ReferenceIdentificationQualifier_01 = "EI";
-            loop2000A1.All_NM1_2.Loop_2010AA.All_REF.REF_BillingProviderTaxIdentification
-                .BillingProviderTaxIdentificationNumber_02 = "999999999";
+            loop2000A1.AllNM1.Loop2010AA.AllREF = new All_REF_TS837P();
+            loop2000A1.AllNM1.Loop2010AA.AllREF.BillingProviderTaxIdentification = new REF_BillingProviderTaxIdentification();
+            loop2000A1.AllNM1.Loop2010AA.AllREF.BillingProviderTaxIdentification.REF01 = "EI";
+            loop2000A1.AllNM1.Loop2010AA.AllREF.BillingProviderTaxIdentification.REF02 = "999999999";
 
-            loop2000A1.Loop_2000B = new List<Loop_2000B>();
+            loop2000A1.Loop2000B = new List<Loop_2000B_TS837P>();
 
-            var loop2000B1 = new Loop_2000B();
-            loop2000B1.HL_SubscriberHierarchicalLevel = new HL_SubscriberHierarchicalLevel();
-            loop2000B1.HL_SubscriberHierarchicalLevel.HierarchicalIDNumber_01 = "2";
-            loop2000B1.HL_SubscriberHierarchicalLevel.HierarchicalParentIDNumber_02 = "1";
-            loop2000B1.HL_SubscriberHierarchicalLevel.HierarchicalLevelCode_03 = "22";
-            loop2000B1.HL_SubscriberHierarchicalLevel.HierarchicalChildCode_04 = "0";
+            var loop2000B1 = new Loop_2000B_TS837P();
+            loop2000B1.SubscriberHierarchicalLevel = new HL_SubscriberHierarchicalLevel();
+            loop2000B1.SubscriberHierarchicalLevel.HL01 = "2";
+            loop2000B1.SubscriberHierarchicalLevel.HL02 = "1";
+            loop2000B1.SubscriberHierarchicalLevel.HL03 = "22";
+            loop2000B1.SubscriberHierarchicalLevel.HL04 = "0";
 
-            loop2000B1.SBR_SubscriberInformation = new SBR_SubscriberInformation();
-            loop2000B1.SBR_SubscriberInformation.PayerResponsibilitySequenceNumberCode_01 = "P";
-            loop2000B1.SBR_SubscriberInformation.IndividualRelationshipCode_02 = "18";
-            loop2000B1.SBR_SubscriberInformation.ClaimFilingIndicatorCode_09 = "12";
+            loop2000B1.SubscriberInformation = new SBR_SubscriberInformation();
+            loop2000B1.SubscriberInformation.SBR01 = "P";
+            loop2000B1.SubscriberInformation.SBR02 = "18";
+            loop2000B1.SubscriberInformation.SBR09 = "12";
 
-            loop2000B1.All_NM1_3 = new All_NM1_3();
-            loop2000B1.All_NM1_3.Loop_2010BA = new Loop_2010BA();
-            loop2000B1.All_NM1_3.Loop_2010BA.NM1_SubscriberName = new NM1_SubscriberName();
-            loop2000B1.All_NM1_3.Loop_2010BA.NM1_SubscriberName.EntityIdentifierCode_01 = "IL";
-            loop2000B1.All_NM1_3.Loop_2010BA.NM1_SubscriberName.EntityTypeQualifier_02 = "1";
-            loop2000B1.All_NM1_3.Loop_2010BA.NM1_SubscriberName.SubscriberLastName_03 = "BLOGGS";
-            loop2000B1.All_NM1_3.Loop_2010BA.NM1_SubscriberName.SubscriberFirstName_04 = "JOE";
-            loop2000B1.All_NM1_3.Loop_2010BA.NM1_SubscriberName.IdentificationCodeQualifier_08 = "MI";
-            loop2000B1.All_NM1_3.Loop_2010BA.NM1_SubscriberName.SubscriberPrimaryIdentifier_09 = "1234567890";
+            loop2000B1.AllNM1 = new All_NM1_3_TS837P();
+            loop2000B1.AllNM1.Loop2010BA = new Loop_2010BA_TS837P();
+            loop2000B1.AllNM1.Loop2010BA.SubscriberName = new NM1_SubscriberName();
+            loop2000B1.AllNM1.Loop2010BA.SubscriberName.NM101 = "IL";
+            loop2000B1.AllNM1.Loop2010BA.SubscriberName.NM102 = "1";
+            loop2000B1.AllNM1.Loop2010BA.SubscriberName.NM103 = "BLOGGS";
+            loop2000B1.AllNM1.Loop2010BA.SubscriberName.NM104 = "JOE";
+            loop2000B1.AllNM1.Loop2010BA.SubscriberName.NM108 = "MI";
+            loop2000B1.AllNM1.Loop2010BA.SubscriberName.NM109 = "1234567890";
 
-            loop2000B1.All_NM1_3.Loop_2010BA.N3_SubscriberAddress = new N3_SubscriberAddress();
-            loop2000B1.All_NM1_3.Loop_2010BA.N3_SubscriberAddress.SubscriberAddressLine_01 = "1 SOME BLVD";
+            loop2000B1.AllNM1.Loop2010BA.SubscriberAddress = new N3_AmbulanceDrop();
+            loop2000B1.AllNM1.Loop2010BA.SubscriberAddress.N301 = "1 SOME BLVD";
 
-            loop2000B1.All_NM1_3.Loop_2010BA.N4_SubscriberCity_State_ZIPCode = new N4_SubscriberCity_State_ZIPCode();
-            loop2000B1.All_NM1_3.Loop_2010BA.N4_SubscriberCity_State_ZIPCode.SubscriberCityName_01 = "CHICAGO";
-            loop2000B1.All_NM1_3.Loop_2010BA.N4_SubscriberCity_State_ZIPCode.SubscriberStateCode_02 = "IL";
-            loop2000B1.All_NM1_3.Loop_2010BA.N4_SubscriberCity_State_ZIPCode.SubscriberPostalZoneorZIPCode_03 = "606129998";
+            loop2000B1.AllNM1.Loop2010BA.SubscriberCity = new N4_AmbulanceDrop();
+            loop2000B1.AllNM1.Loop2010BA.SubscriberCity.N401 = "CHICAGO";
+            loop2000B1.AllNM1.Loop2010BA.SubscriberCity.N402 = "IL";
+            loop2000B1.AllNM1.Loop2010BA.SubscriberCity.N403 = "606129998";
 
-            loop2000B1.All_NM1_3.Loop_2010BA.DMG_SubscriberDemographicInformation = new DMG_SubscriberDemographicInformation();
-            loop2000B1.All_NM1_3.Loop_2010BA.DMG_SubscriberDemographicInformation.DateTimePeriodFormatQualifier_01 = "D8";
-            loop2000B1.All_NM1_3.Loop_2010BA.DMG_SubscriberDemographicInformation.SubscriberBirthDate_02 = "19570111";
-            loop2000B1.All_NM1_3.Loop_2010BA.DMG_SubscriberDemographicInformation.SubscriberGenderCode_03 = "M";
+            loop2000B1.AllNM1.Loop2010BA.SubscriberDemographicInformation = new DMG_PatientDemographicInformation();
+            loop2000B1.AllNM1.Loop2010BA.SubscriberDemographicInformation.DMG01 = "D8";
+            loop2000B1.AllNM1.Loop2010BA.SubscriberDemographicInformation.DMG02 = "19570111";
+            loop2000B1.AllNM1.Loop2010BA.SubscriberDemographicInformation.DMG03 = "M";
 
-            loop2000B1.All_NM1_3.Loop_2010BB = new Loop_2010BB();
-            loop2000B1.All_NM1_3.Loop_2010BB.NM1_PayerName = new NM1_PayerName();
-            loop2000B1.All_NM1_3.Loop_2010BB.NM1_PayerName.EntityIdentifierCode_01 = "PR";
-            loop2000B1.All_NM1_3.Loop_2010BB.NM1_PayerName.EntityTypeQualifier_02 = "2";
-            loop2000B1.All_NM1_3.Loop_2010BB.NM1_PayerName.PayerName_03 = "PAYER";
-            loop2000B1.All_NM1_3.Loop_2010BB.NM1_PayerName.IdentificationCodeQualifier_08 = "PI";
-            loop2000B1.All_NM1_3.Loop_2010BB.NM1_PayerName.PayerIdentifier_09 = "12345";
+            loop2000B1.AllNM1.Loop2010BB = new Loop_2010BB_TS837P();
+            loop2000B1.AllNM1.Loop2010BB.PayerName = new NM1_OtherPayerName();
+            loop2000B1.AllNM1.Loop2010BB.PayerName.NM101 = "PR";
+            loop2000B1.AllNM1.Loop2010BB.PayerName.NM102 = "2";
+            loop2000B1.AllNM1.Loop2010BB.PayerName.NM103 = "PAYER";
+            loop2000B1.AllNM1.Loop2010BB.PayerName.NM108 = "PI";
+            loop2000B1.AllNM1.Loop2010BB.PayerName.NM109 = "12345";
 
-            loop2000B1.All_NM1_3.Loop_2010BB.N3_PayerAddress = new N3_PayerAddress();
-            loop2000B1.All_NM1_3.Loop_2010BB.N3_PayerAddress.PayerAddressLine_01 = "1 PAYER WAY";
+            loop2000B1.AllNM1.Loop2010BB.PayerAddress = new N3_AmbulanceDrop();
+            loop2000B1.AllNM1.Loop2010BB.PayerAddress.N301 = "1 PAYER WAY";
 
-            loop2000B1.All_NM1_3.Loop_2010BB.N4_PayerCity_State_ZIPCode = new N4_PayerCity_State_ZIPCode();
-            loop2000B1.All_NM1_3.Loop_2010BB.N4_PayerCity_State_ZIPCode.PayerCityName_01 = "ST LOUIS";
-            loop2000B1.All_NM1_3.Loop_2010BB.N4_PayerCity_State_ZIPCode.PayerStateorProvinceCode_02 = "MO";
-            loop2000B1.All_NM1_3.Loop_2010BB.N4_PayerCity_State_ZIPCode.PayerPostalZoneorZIPCode_03 = "212441850";
+            loop2000B1.AllNM1.Loop2010BB.PayerCity = new N4_AmbulanceDrop();
+            loop2000B1.AllNM1.Loop2010BB.PayerCity.N401 = "ST LOUIS";
+            loop2000B1.AllNM1.Loop2010BB.PayerCity.N402 = "MO";
+            loop2000B1.AllNM1.Loop2010BB.PayerCity.N403 = "212441850";
 
-            loop2000B1.All_NM1_3.Loop_2010BB.All_REF_4 = new All_REF_4();
-            loop2000B1.All_NM1_3.Loop_2010BB.All_REF_4.REF_PayerSecondaryIdentification = new List<REF_PayerSecondaryIdentification>();
-            var refPayer1 = new REF_PayerSecondaryIdentification();
-            refPayer1.ReferenceIdentificationQualifier_01 = "2U";
-            refPayer1.PayerSecondaryIdentifier_02 = "W1014";
+            loop2000B1.AllNM1.Loop2010BB.AllREF = new All_REF_4_TS837P();
+            loop2000B1.AllNM1.Loop2010BB.AllREF.PayerSecondaryIdentification = new List<REF_OtherPayerSecondaryIdentifier>();
+            var refPayer1 = new REF_OtherPayerSecondaryIdentifier();
+            refPayer1.REF01 = "2U";
+            refPayer1.REF02 = "W1014";
 
-            loop2000B1.All_NM1_3.Loop_2010BB.All_REF_4.REF_PayerSecondaryIdentification.Add(refPayer1);
+            loop2000B1.AllNM1.Loop2010BB.AllREF.PayerSecondaryIdentification.Add(refPayer1);
             
-            loop2000B1.Loop_2300 = new List<Loop_2300>();
-            var loop23001 = new Loop_2300();
-            loop23001.CLM_ClaimInformation = new CLM_ClaimInformation();
-            loop23001.CLM_ClaimInformation.PatientControlNumber_01 = "1000A";
-            loop23001.CLM_ClaimInformation.TotalClaimChargeAmount_02 = "140";
-            loop23001.CLM_ClaimInformation.HealthCareServiceLocationInformation_05 = new C023_HealthCareServiceLocationInformation();
-            loop23001.CLM_ClaimInformation.HealthCareServiceLocationInformation_05.PlaceofServiceCode_01 = "19";
-            loop23001.CLM_ClaimInformation.HealthCareServiceLocationInformation_05.FacilityCodeQualifier_02 = "B";
-            loop23001.CLM_ClaimInformation.HealthCareServiceLocationInformation_05.ClaimFrequencyCode_03 = "1";
-            loop23001.CLM_ClaimInformation.ProviderorSupplierSignatureIndicator_06 = "Y";
-            loop23001.CLM_ClaimInformation.AssignmentorPlanParticipationCode_07 = "A";
-            loop23001.CLM_ClaimInformation.BenefitsAssignmentCertificationIndicator_08 = "Y";
-            loop23001.CLM_ClaimInformation.ReleaseofInformationCode_09 = "Y";
+            loop2000B1.Loop2300 = new List<Loop_2300_2_TS837P>();
+            var loop23001 = new Loop_2300_2_TS837P();
+            loop23001.ClaimInformation = new CLM_ClaimInformation();
+            loop23001.ClaimInformation.CLM01 = "1000A";
+            loop23001.ClaimInformation.CLM02 = "140";
+            loop23001.ClaimInformation.CLM05 = new C023_HealthCareServiceLocationInformation();
+            loop23001.ClaimInformation.CLM05.C02301 = "19";
+            loop23001.ClaimInformation.CLM05.C02302 = "B";
+            loop23001.ClaimInformation.CLM05.C02303 = "1";
+            loop23001.ClaimInformation.CLM06 = "Y";
+            loop23001.ClaimInformation.CLM07 = "A";
+            loop23001.ClaimInformation.CLM08 = "Y";
+            loop23001.ClaimInformation.CLM09 = "Y";
 
-            loop23001.All_HI = new All_HI();
-            loop23001.All_HI.HI_HealthCareDiagnosisCode = new HI_HealthCareDiagnosisCode();
-            loop23001.All_HI.HI_HealthCareDiagnosisCode.HealthCareCodeInformation_01 = new C022_HealthCareCodeInformation();
-            loop23001.All_HI.HI_HealthCareDiagnosisCode.HealthCareCodeInformation_01.DiagnosisTypeCode_01 = "ABK";
-            loop23001.All_HI.HI_HealthCareDiagnosisCode.HealthCareCodeInformation_01.DiagnosisCode_02 = "I10";
+            loop23001.AllHI = new All_HI_2_TS837P();
+            loop23001.AllHI.HealthCareDiagnosisCode = new HI_HealthCareDiagnosisCode();
+            loop23001.AllHI.HealthCareDiagnosisCode.HI01 = new C022_HealthCareCodeInformation_6();
+            loop23001.AllHI.HealthCareDiagnosisCode.HI01.C02201 = "ABK";
+            loop23001.AllHI.HealthCareDiagnosisCode.HI01.C02202 = "I10";
 
-            loop23001.Loop_2400 = new List<Loop_2400>();
-            var loop24001 = new Loop_2400();
+            loop23001.Loop2400 = new List<Loop_2400_2_TS837P>();
+            var loop24001 = new Loop_2400_2_TS837P();
 
-            loop24001.LX_ServiceLineNumber = new LX_ServiceLineNumber();
-            loop24001.LX_ServiceLineNumber.AssignedNumber_01 = "1";
+            loop24001.ServiceLineNumber = new LX_ServiceLineNumber();
+            loop24001.ServiceLineNumber.LX01 = "1";
 
-            loop24001.SV1_ProfessionalService = new SV1_ProfessionalService();
-            loop24001.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01 = new C003_CompositeMedicalProcedureIdentifier();
-            loop24001.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProductorServiceIDQualifier_01 = "HC";
-            loop24001.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProcedureCode_02 = "99213";
-            loop24001.SV1_ProfessionalService.LineItemChargeAmount_02 = "140";
-            loop24001.SV1_ProfessionalService.UnitorBasisforMeasurementCode_03 = "UN";
-            loop24001.SV1_ProfessionalService.ServiceUnitCount_04 = "1";
-            loop24001.SV1_ProfessionalService.CompositeDiagnosisCodePointer_07 = new C004_CompositeDiagnosisCodePointer();
-            loop24001.SV1_ProfessionalService.CompositeDiagnosisCodePointer_07.DiagnosisCodePointer_01 = "1";
+            loop24001.ProfessionalService = new SV1_ProfessionalService();
+            loop24001.ProfessionalService.SV101 = new C003_CompositeMedicalProcedureIdentifier_2();
+            loop24001.ProfessionalService.SV101.C00301 = "HC";
+            loop24001.ProfessionalService.SV101.C00302 = "99213";
+            loop24001.ProfessionalService.SV102 = "140";
+            loop24001.ProfessionalService.SV103 = "UN";
+            loop24001.ProfessionalService.SV104 = "1";
+            loop24001.ProfessionalService.SV107 = new C004_CompositeDiagnosisCodePointer();
+            loop24001.ProfessionalService.SV107.C00401 = "1";
 
-            loop24001.All_DTP_2 = new All_DTP_2();
-            loop24001.All_DTP_2.DTP_Date_ServiceDate = new DTP_Date_ServiceDate();
-            loop24001.All_DTP_2.DTP_Date_ServiceDate.DateTimeQualifier_01 = "472";
-            loop24001.All_DTP_2.DTP_Date_ServiceDate.DateTimePeriodFormatQualifier_02 = "D8";
-            loop24001.All_DTP_2.DTP_Date_ServiceDate.ServiceDate_03 = "20151124";
+            loop24001.AllDTP = new All_DTP_2_TS837P();
+            loop24001.AllDTP.Date = new DTP_Date_18();
+            loop24001.AllDTP.Date.DTP01 = "472";
+            loop24001.AllDTP.Date.DTP02 = "D8";
+            loop24001.AllDTP.Date.DTP03 = "20151124";
 
-            loop23001.Loop_2400.Add(loop24001);
-            loop2000B1.Loop_2300.Add(loop23001);
-            loop2000A1.Loop_2000B.Add(loop2000B1);
+            loop23001.Loop2400.Add(loop24001);
+            loop2000B1.Loop2300.Add(loop23001);
+            loop2000A1.Loop2000B.Add(loop2000B1);
 
             // from here
 
-            var loop2000B2 = new Loop_2000B();
-            loop2000B2.HL_SubscriberHierarchicalLevel = new HL_SubscriberHierarchicalLevel();
-            loop2000B2.HL_SubscriberHierarchicalLevel.HierarchicalIDNumber_01 = "3";
-            loop2000B2.HL_SubscriberHierarchicalLevel.HierarchicalParentIDNumber_02 = "1";
-            loop2000B2.HL_SubscriberHierarchicalLevel.HierarchicalLevelCode_03 = "22";
-            loop2000B2.HL_SubscriberHierarchicalLevel.HierarchicalChildCode_04 = "0";
+            var loop2000B2 = new Loop_2000B_TS837P();
+            loop2000B2.SubscriberHierarchicalLevel = new HL_SubscriberHierarchicalLevel();
+            loop2000B2.SubscriberHierarchicalLevel.HL01 = "3";
+            loop2000B2.SubscriberHierarchicalLevel.HL02 = "1";
+            loop2000B2.SubscriberHierarchicalLevel.HL03 = "22";
+            loop2000B2.SubscriberHierarchicalLevel.HL04 = "0";
 
-            loop2000B2.SBR_SubscriberInformation = new SBR_SubscriberInformation();
-            loop2000B2.SBR_SubscriberInformation.PayerResponsibilitySequenceNumberCode_01 = "P";
-            loop2000B2.SBR_SubscriberInformation.IndividualRelationshipCode_02 = "18";
-            loop2000B2.SBR_SubscriberInformation.ClaimFilingIndicatorCode_09 = "12";
+            loop2000B2.SubscriberInformation = new SBR_SubscriberInformation();
+            loop2000B2.SubscriberInformation.SBR01 = "P";
+            loop2000B2.SubscriberInformation.SBR02 = "18";
+            loop2000B2.SubscriberInformation.SBR09 = "12";
 
-            loop2000B2.All_NM1_3 = new All_NM1_3();
-            loop2000B2.All_NM1_3.Loop_2010BA = new Loop_2010BA();
-            loop2000B2.All_NM1_3.Loop_2010BA.NM1_SubscriberName = new NM1_SubscriberName();
-            loop2000B2.All_NM1_3.Loop_2010BA.NM1_SubscriberName.EntityIdentifierCode_01 = "IL";
-            loop2000B2.All_NM1_3.Loop_2010BA.NM1_SubscriberName.EntityTypeQualifier_02 = "1";
-            loop2000B2.All_NM1_3.Loop_2010BA.NM1_SubscriberName.SubscriberLastName_03 = "BLOGGS";
-            loop2000B2.All_NM1_3.Loop_2010BA.NM1_SubscriberName.SubscriberFirstName_04 = "FRED";
-            loop2000B2.All_NM1_3.Loop_2010BA.NM1_SubscriberName.IdentificationCodeQualifier_08 = "MI";
-            loop2000B2.All_NM1_3.Loop_2010BA.NM1_SubscriberName.SubscriberPrimaryIdentifier_09 = "9876543201";
+            loop2000B2.AllNM1 = new All_NM1_3_TS837P();
+            loop2000B2.AllNM1.Loop2010BA = new Loop_2010BA_TS837P();
+            loop2000B2.AllNM1.Loop2010BA.SubscriberName = new NM1_SubscriberName();
+            loop2000B2.AllNM1.Loop2010BA.SubscriberName.NM101 = "IL";
+            loop2000B2.AllNM1.Loop2010BA.SubscriberName.NM102 = "1";
+            loop2000B2.AllNM1.Loop2010BA.SubscriberName.NM103 = "BLOGGS";
+            loop2000B2.AllNM1.Loop2010BA.SubscriberName.NM104 = "FRED";
+            loop2000B2.AllNM1.Loop2010BA.SubscriberName.NM108 = "MI";
+            loop2000B2.AllNM1.Loop2010BA.SubscriberName.NM109 = "9876543201";
 
-            loop2000B2.All_NM1_3.Loop_2010BA.N3_SubscriberAddress = new N3_SubscriberAddress();
-            loop2000B2.All_NM1_3.Loop_2010BA.N3_SubscriberAddress.SubscriberAddressLine_01 = "1 ANOTHER STR";
+            loop2000B2.AllNM1.Loop2010BA.SubscriberAddress = new N3_AmbulanceDrop();
+            loop2000B2.AllNM1.Loop2010BA.SubscriberAddress.N301 = "1 ANOTHER STR";
 
-            loop2000B2.All_NM1_3.Loop_2010BA.N4_SubscriberCity_State_ZIPCode = new N4_SubscriberCity_State_ZIPCode();
-            loop2000B2.All_NM1_3.Loop_2010BA.N4_SubscriberCity_State_ZIPCode.SubscriberCityName_01 = "CHICAGO";
-            loop2000B2.All_NM1_3.Loop_2010BA.N4_SubscriberCity_State_ZIPCode.SubscriberStateCode_02 = "IL";
-            loop2000B2.All_NM1_3.Loop_2010BA.N4_SubscriberCity_State_ZIPCode.SubscriberPostalZoneorZIPCode_03 = "606129998";
+            loop2000B2.AllNM1.Loop2010BA.SubscriberCity = new N4_AmbulanceDrop();
+            loop2000B2.AllNM1.Loop2010BA.SubscriberCity.N401 = "CHICAGO";
+            loop2000B2.AllNM1.Loop2010BA.SubscriberCity.N402 = "IL";
+            loop2000B2.AllNM1.Loop2010BA.SubscriberCity.N403 = "606129998";
 
-            loop2000B2.All_NM1_3.Loop_2010BA.DMG_SubscriberDemographicInformation = new DMG_SubscriberDemographicInformation();
-            loop2000B2.All_NM1_3.Loop_2010BA.DMG_SubscriberDemographicInformation.DateTimePeriodFormatQualifier_01 = "D8";
-            loop2000B2.All_NM1_3.Loop_2010BA.DMG_SubscriberDemographicInformation.SubscriberBirthDate_02 = "19700601";
-            loop2000B2.All_NM1_3.Loop_2010BA.DMG_SubscriberDemographicInformation.SubscriberGenderCode_03 = "M";
+            loop2000B2.AllNM1.Loop2010BA.SubscriberDemographicInformation = new DMG_PatientDemographicInformation();
+            loop2000B2.AllNM1.Loop2010BA.SubscriberDemographicInformation.DMG01 = "D8";
+            loop2000B2.AllNM1.Loop2010BA.SubscriberDemographicInformation.DMG02 = "19700601";
+            loop2000B2.AllNM1.Loop2010BA.SubscriberDemographicInformation.DMG03 = "M";
 
-            loop2000B2.All_NM1_3.Loop_2010BB = new Loop_2010BB();
-            loop2000B2.All_NM1_3.Loop_2010BB.NM1_PayerName = new NM1_PayerName();
-            loop2000B2.All_NM1_3.Loop_2010BB.NM1_PayerName.EntityIdentifierCode_01 = "PR";
-            loop2000B2.All_NM1_3.Loop_2010BB.NM1_PayerName.EntityTypeQualifier_02 = "2";
-            loop2000B2.All_NM1_3.Loop_2010BB.NM1_PayerName.PayerName_03 = "PAYER";
-            loop2000B2.All_NM1_3.Loop_2010BB.NM1_PayerName.IdentificationCodeQualifier_08 = "PI";
-            loop2000B2.All_NM1_3.Loop_2010BB.NM1_PayerName.PayerIdentifier_09 = "12345";
+            loop2000B2.AllNM1.Loop2010BB = new Loop_2010BB_TS837P();
+            loop2000B2.AllNM1.Loop2010BB.PayerName = new NM1_OtherPayerName();
+            loop2000B2.AllNM1.Loop2010BB.PayerName.NM101 = "PR";
+            loop2000B2.AllNM1.Loop2010BB.PayerName.NM102 = "2";
+            loop2000B2.AllNM1.Loop2010BB.PayerName.NM103 = "PAYER";
+            loop2000B2.AllNM1.Loop2010BB.PayerName.NM108 = "PI";
+            loop2000B2.AllNM1.Loop2010BB.PayerName.NM109 = "12345";
 
-            loop2000B2.All_NM1_3.Loop_2010BB.N3_PayerAddress = new N3_PayerAddress();
-            loop2000B2.All_NM1_3.Loop_2010BB.N3_PayerAddress.PayerAddressLine_01 = "1 PAYER WAY";
+            loop2000B2.AllNM1.Loop2010BB.PayerAddress = new N3_AmbulanceDrop();
+            loop2000B2.AllNM1.Loop2010BB.PayerAddress.N301 = "1 PAYER WAY";
 
-            loop2000B2.All_NM1_3.Loop_2010BB.N4_PayerCity_State_ZIPCode = new N4_PayerCity_State_ZIPCode();
-            loop2000B2.All_NM1_3.Loop_2010BB.N4_PayerCity_State_ZIPCode.PayerCityName_01 = "ST LOUIS";
-            loop2000B2.All_NM1_3.Loop_2010BB.N4_PayerCity_State_ZIPCode.PayerStateorProvinceCode_02 = "MO";
-            loop2000B2.All_NM1_3.Loop_2010BB.N4_PayerCity_State_ZIPCode.PayerPostalZoneorZIPCode_03 = "212441850";
+            loop2000B2.AllNM1.Loop2010BB.PayerCity = new N4_AmbulanceDrop();
+            loop2000B2.AllNM1.Loop2010BB.PayerCity.N401 = "ST LOUIS";
+            loop2000B2.AllNM1.Loop2010BB.PayerCity.N402 = "MO";
+            loop2000B2.AllNM1.Loop2010BB.PayerCity.N403 = "212441850";
 
-            loop2000B2.All_NM1_3.Loop_2010BB.All_REF_4 = new All_REF_4();
-            loop2000B2.All_NM1_3.Loop_2010BB.All_REF_4.REF_PayerSecondaryIdentification = new List<REF_PayerSecondaryIdentification>();
-            var refPayer2 = new REF_PayerSecondaryIdentification();
-            refPayer2.ReferenceIdentificationQualifier_01 = "2U";
-            refPayer2.PayerSecondaryIdentifier_02 = "W1014";
+            loop2000B2.AllNM1.Loop2010BB.AllREF = new All_REF_4_TS837P();
+            loop2000B2.AllNM1.Loop2010BB.AllREF.PayerSecondaryIdentification = new List<REF_OtherPayerSecondaryIdentifier>();
+            var refPayer2 = new REF_OtherPayerSecondaryIdentifier();
+            refPayer2.REF01 = "2U";
+            refPayer2.REF02 = "W1014";
 
-            loop2000B2.All_NM1_3.Loop_2010BB.All_REF_4.REF_PayerSecondaryIdentification.Add(refPayer2);
+            loop2000B2.AllNM1.Loop2010BB.AllREF.PayerSecondaryIdentification.Add(refPayer2);
 
-            loop2000B2.Loop_2300 = new List<Loop_2300>();
-            var loop23002 = new Loop_2300();
-            loop23002.CLM_ClaimInformation = new CLM_ClaimInformation();
-            loop23002.CLM_ClaimInformation.PatientControlNumber_01 = "1001A";
-            loop23002.CLM_ClaimInformation.TotalClaimChargeAmount_02 = "140";
-            loop23002.CLM_ClaimInformation.HealthCareServiceLocationInformation_05 = new C023_HealthCareServiceLocationInformation();
-            loop23002.CLM_ClaimInformation.HealthCareServiceLocationInformation_05.PlaceofServiceCode_01 = "19";
-            loop23002.CLM_ClaimInformation.HealthCareServiceLocationInformation_05.FacilityCodeQualifier_02 = "B";
-            loop23002.CLM_ClaimInformation.HealthCareServiceLocationInformation_05.ClaimFrequencyCode_03 = "1";
-            loop23002.CLM_ClaimInformation.ProviderorSupplierSignatureIndicator_06 = "Y";
-            loop23002.CLM_ClaimInformation.AssignmentorPlanParticipationCode_07 = "A";
-            loop23002.CLM_ClaimInformation.BenefitsAssignmentCertificationIndicator_08 = "Y";
-            loop23002.CLM_ClaimInformation.ReleaseofInformationCode_09 = "Y";
+            loop2000B2.Loop2300 = new List<Loop_2300_2_TS837P>();
+            var loop23002 = new Loop_2300_2_TS837P();
+            loop23002.ClaimInformation = new CLM_ClaimInformation();
+            loop23002.ClaimInformation.CLM01 = "1001A";
+            loop23002.ClaimInformation.CLM02 = "140";
+            loop23002.ClaimInformation.CLM05 = new C023_HealthCareServiceLocationInformation();
+            loop23002.ClaimInformation.CLM05.C02301 = "19";
+            loop23002.ClaimInformation.CLM05.C02302 = "B";
+            loop23002.ClaimInformation.CLM05.C02303 = "1";
+            loop23002.ClaimInformation.CLM06 = "Y";
+            loop23002.ClaimInformation.CLM07 = "A";
+            loop23002.ClaimInformation.CLM08 = "Y";
+            loop23002.ClaimInformation.CLM09 = "Y";
 
-            loop23002.All_HI = new All_HI();
-            loop23002.All_HI.HI_HealthCareDiagnosisCode = new HI_HealthCareDiagnosisCode();
-            loop23002.All_HI.HI_HealthCareDiagnosisCode.HealthCareCodeInformation_01 = new C022_HealthCareCodeInformation();
-            loop23002.All_HI.HI_HealthCareDiagnosisCode.HealthCareCodeInformation_01.DiagnosisTypeCode_01 = "ABK";
-            loop23002.All_HI.HI_HealthCareDiagnosisCode.HealthCareCodeInformation_01.DiagnosisCode_02 = "I10";
+            loop23002.AllHI = new All_HI_2_TS837P();
+            loop23002.AllHI.HealthCareDiagnosisCode = new HI_HealthCareDiagnosisCode();
+            loop23002.AllHI.HealthCareDiagnosisCode.HI01 = new C022_HealthCareCodeInformation_6();
+            loop23002.AllHI.HealthCareDiagnosisCode.HI01.C02201 = "ABK";
+            loop23002.AllHI.HealthCareDiagnosisCode.HI01.C02202 = "I10";
 
-            loop23002.Loop_2400 = new List<Loop_2400>();
-            var loop24002 = new Loop_2400();
+            loop23002.Loop2400 = new List<Loop_2400_2_TS837P>();
+            var loop24002 = new Loop_2400_2_TS837P();
 
-            loop24002.LX_ServiceLineNumber = new LX_ServiceLineNumber();
-            loop24002.LX_ServiceLineNumber.AssignedNumber_01 = "1";
+            loop24002.ServiceLineNumber = new LX_ServiceLineNumber();
+            loop24002.ServiceLineNumber.LX01 = "1";
 
-            loop24002.SV1_ProfessionalService = new SV1_ProfessionalService();
-            loop24002.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01 = new C003_CompositeMedicalProcedureIdentifier();
-            loop24002.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProductorServiceIDQualifier_01 = "HC";
-            loop24002.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProcedureCode_02 = "99213";
-            loop24002.SV1_ProfessionalService.LineItemChargeAmount_02 = "140";
-            loop24002.SV1_ProfessionalService.UnitorBasisforMeasurementCode_03 = "UN";
-            loop24002.SV1_ProfessionalService.ServiceUnitCount_04 = "1";
-            loop24002.SV1_ProfessionalService.CompositeDiagnosisCodePointer_07 = new C004_CompositeDiagnosisCodePointer();
-            loop24002.SV1_ProfessionalService.CompositeDiagnosisCodePointer_07.DiagnosisCodePointer_01 = "1";
+            loop24002.ProfessionalService = new SV1_ProfessionalService();
+            loop24002.ProfessionalService.SV101 = new C003_CompositeMedicalProcedureIdentifier_2();
+            loop24002.ProfessionalService.SV101.C00301 = "HC";
+            loop24002.ProfessionalService.SV101.C00302 = "99213";
+            loop24002.ProfessionalService.SV102 = "140";
+            loop24002.ProfessionalService.SV103 = "UN";
+            loop24002.ProfessionalService.SV104 = "1";
+            loop24002.ProfessionalService.SV107 = new C004_CompositeDiagnosisCodePointer();
+            loop24002.ProfessionalService.SV107.C00401 = "1";
 
-            loop24002.All_DTP_2 = new All_DTP_2();
-            loop24002.All_DTP_2.DTP_Date_ServiceDate = new DTP_Date_ServiceDate();
-            loop24002.All_DTP_2.DTP_Date_ServiceDate.DateTimeQualifier_01 = "472";
-            loop24002.All_DTP_2.DTP_Date_ServiceDate.DateTimePeriodFormatQualifier_02 = "D8";
-            loop24002.All_DTP_2.DTP_Date_ServiceDate.ServiceDate_03 = "20151124";
+            loop24002.AllDTP = new All_DTP_2_TS837P();
+            loop24002.AllDTP.Date = new DTP_Date_18();
+            loop24002.AllDTP.Date.DTP01 = "472";
+            loop24002.AllDTP.Date.DTP02 = "D8";
+            loop24002.AllDTP.Date.DTP03 = "20151124";
 
-            loop23002.Loop_2400.Add(loop24002);
-            loop2000B2.Loop_2300.Add(loop23002);
-            loop2000A1.Loop_2000B.Add(loop2000B2);
+            loop23002.Loop2400.Add(loop24002);
+            loop2000B2.Loop2300.Add(loop23002);
+            loop2000A1.Loop2000B.Add(loop2000B2);
 
-            result.Loop_2000A.Add(loop2000A1);
+            result.Loop2000A.Add(loop2000A1);
 
             return result;
         }

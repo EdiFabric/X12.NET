@@ -33,10 +33,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EdiFabric.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Core.9.6.2\lib\net45\EdiFabric.Core.dll</HintPath>
+      <HintPath>..\packages\EdiFabric.Core.9.6.3\lib\net45\EdiFabric.Core.dll</HintPath>
     </Reference>
     <Reference Include="EdiFabric.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Framework.9.6.2\lib\net45\EdiFabric.Framework.dll</HintPath>
+      <HintPath>..\packages\EdiFabric.Framework.9.6.3\lib\net45\EdiFabric.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -48,13 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OldRules\EF_HIPAA_005010X222A1_837.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Read834Samples.cs" />
     <Compile Include="ReadSamples.cs" />
-    <Compile Include="Rules\EF_HIPAA_005010X222A1_834.cs" />
-    <Compile Include="Rules\EF_HIPAA_005010X222A1_837.cs" />
-    <Compile Include="Write834Samples.cs" />
+    <Compile Include="Rules\EF_HIPAA_005010P_BaseComplexElements.cs" />
+    <Compile Include="Rules\EF_HIPAA_005010P_BaseSegments.cs" />
+    <Compile Include="Rules\EF_HIPAA_005010P_Codes.cs" />
+    <Compile Include="Rules\EF_HIPAA_005010P_ComplexElements.cs" />
+    <Compile Include="Rules\EF_HIPAA_005010P_Segments.cs" />
+    <Compile Include="Rules\EF_HIPAA_005010P_TS837P.cs" />
     <Compile Include="WriteSamples.cs" />
   </ItemGroup>
   <ItemGroup>

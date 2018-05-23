@@ -41,11 +41,13 @@ namespace EdiFabric.Sdk.Vda
             {
                 //  2.  Use CRLF(new line) as segment postfix for clarity
                 //  Always agree postfixes and separators with the trading partner
-                var writer = new VdaWriter(stream, Environment.NewLine, Encoding.UTF8);
-                //  3.  Write all transactions
-                writer.Write(vda4905);
-                //  4.  Always flush at the end to release the cache
-                writer.Flush();
+                using (var writer = new VdaWriter(stream, Environment.NewLine, Encoding.UTF8))
+                {
+                    //  3.  Write all transactions
+                    writer.Write(vda4905);
+                }
+
+                Debug.Write(LoadString(stream));
             }
         }
 

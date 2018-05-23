@@ -54,18 +54,16 @@ namespace EdiFabric.Sdk.X12
                 {
                     //  4.  Use CRLF(new line) as segment postfix for clarity
                     //  Always agree postfixes and separators with the trading partner
-                    var writer = new X12Writer(stream, Encoding.Default, Environment.NewLine);
-
-                    //  5.  Begin with ISA segment
-                    writer.Write(Helpers.CreateIsa("000011111"));
-                    //  6.  Follow up with GS segment
-                    writer.Write(Helpers.CreateGs("111111111"));
-                    //  7.  Write all transactions
-                    writer.Write(invoice);
-                    //  No need to close any of the above
-
-                    //  8.  Always flush at the end to release the cache
-                    writer.Flush();
+                    using (var writer = new X12Writer(stream, Encoding.Default, Environment.NewLine))
+                    {
+                        //  5.  Begin with ISA segment
+                        writer.Write(Helpers.CreateIsa("000011111"));
+                        //  6.  Follow up with GS segment
+                        writer.Write(Helpers.CreateGs("111111111"));
+                        //  7.  Write all transactions
+                        writer.Write(invoice);
+                        //  No need to close any of the above
+                    }
 
                     Debug.Write(Helpers.LoadString(stream));
                 }
@@ -112,16 +110,12 @@ namespace EdiFabric.Sdk.X12
 
                 //  3.  Use default encoding and no segment postfix
                 //  Write directly to a file
-                var writer = new X12Writer(string.Format("{0}\\output.txt", folder), false);
-
-                writer.Write(Helpers.CreateIsa("000011111"));
-                writer.Write(Helpers.CreateGs("111111111"));
-                writer.Write(invoice);
-
-                //  4.  Always flush at the end to release the cache
-                writer.Flush();
-
-                writer.Dispose();
+                using (var writer = new X12Writer(string.Format("{0}\\output.txt", folder), false))
+                {
+                    writer.Write(Helpers.CreateIsa("000011111"));
+                    writer.Write(Helpers.CreateGs("111111111"));
+                    writer.Write(invoice);
+                }
 
                 Debug.WriteLine("Written to file.");
             }
@@ -142,20 +136,19 @@ namespace EdiFabric.Sdk.X12
 
             using (var stream = new MemoryStream())
             {
-                var writer = new X12Writer(stream, Encoding.Default, Environment.NewLine);
+                using (var writer = new X12Writer(stream, Encoding.Default, Environment.NewLine))
+                {
+                    writer.Write(Helpers.CreateIsa("000011111"));
+                    writer.Write(Helpers.CreateGs("111111111"));
 
-                writer.Write(Helpers.CreateIsa("000011111"));
-                writer.Write(Helpers.CreateGs("111111111"));
-                
-                //  1.  Write the first invoice
-                writer.Write(CreateInvoice("00000001"));
-                
-                //  2.  Write the second invoice
-                writer.Write(CreateInvoice("00000002"));
+                    //  1.  Write the first invoice
+                    writer.Write(CreateInvoice("00000001"));
 
-                //  3.  Write any subsequent invoice...
+                    //  2.  Write the second invoice
+                    writer.Write(CreateInvoice("00000002"));
 
-                writer.Flush();
+                    //  3.  Write any subsequent invoice...
+                }
 
                 Debug.Write(Helpers.LoadString(stream));
             }
@@ -172,22 +165,21 @@ namespace EdiFabric.Sdk.X12
 
             using (var stream = new MemoryStream())
             {
-                var writer = new X12Writer(stream, Encoding.Default, Environment.NewLine);
+                using (var writer = new X12Writer(stream, Encoding.Default, Environment.NewLine))
+                {
+                    writer.Write(Helpers.CreateIsa("000011111"));
 
-                writer.Write(Helpers.CreateIsa("000011111"));
+                    //  1.  Write the first group               
+                    writer.Write(Helpers.CreateGs("111111111"));
+                    //  Write the transactions...
+                    writer.Write(CreateInvoice("00000001"));
 
-                //  1.  Write the first group               
-                writer.Write(Helpers.CreateGs("111111111"));
-                //  Write the transactions...
-                writer.Write(CreateInvoice("00000001"));
-
-                //  2.  Write the second group
-                //  No need to close the previous group with a GE
-                writer.Write(Helpers.CreateGs("222222222"));
-                //  Write the transactions...
-                writer.Write(CreateInvoice("00000002"));
-
-                writer.Flush();
+                    //  2.  Write the second group
+                    //  No need to close the previous group with a GE
+                    writer.Write(Helpers.CreateGs("222222222"));
+                    //  Write the transactions...
+                    writer.Write(CreateInvoice("00000002"));
+                }
 
                 Debug.Write(Helpers.LoadString(stream));
             }
@@ -204,20 +196,19 @@ namespace EdiFabric.Sdk.X12
 
             using (var stream = new MemoryStream())
             {
-                var writer = new X12Writer(stream, Encoding.Default, Environment.NewLine);
+                using (var writer = new X12Writer(stream, Encoding.Default, Environment.NewLine))
+                {
+                    //  1.  Write the first interchange
+                    writer.Write(Helpers.CreateIsa("000011111"));
+                    writer.Write(Helpers.CreateGs("111111111"));
+                    writer.Write(CreateInvoice("00000001"));
 
-                //  1.  Write the first interchange
-                writer.Write(Helpers.CreateIsa("000011111"));
-                writer.Write(Helpers.CreateGs("111111111"));
-                writer.Write(CreateInvoice("00000001"));
-
-                //  2.  Write the second interchange
-                //  No need to close the previous interchange with a IEA
-                writer.Write(Helpers.CreateIsa("000022222"));
-                writer.Write(Helpers.CreateGs("111111111"));
-                writer.Write(CreateInvoice("00000002"));
-                
-                writer.Flush();
+                    //  2.  Write the second interchange
+                    //  No need to close the previous interchange with a IEA
+                    writer.Write(Helpers.CreateIsa("000022222"));
+                    writer.Write(Helpers.CreateGs("111111111"));
+                    writer.Write(CreateInvoice("00000002"));
+                }
 
                 Debug.Write(Helpers.LoadString(stream));
             }
@@ -242,13 +233,12 @@ namespace EdiFabric.Sdk.X12
             using (var stream = new MemoryStream())
             {
                 //  Set the PreserveWhitespace flag to true
-                var writer = new X12Writer(stream, null, "", true);
-
-                writer.Write(Helpers.CreateIsa("000011111"));
-                writer.Write(Helpers.CreateGs("111111111"));
-                writer.Write(invoice);
-
-                writer.Flush();
+                using (var writer = new X12Writer(stream, null, "", true))
+                {
+                    writer.Write(Helpers.CreateIsa("000011111"));
+                    writer.Write(Helpers.CreateGs("111111111"));
+                    writer.Write(invoice);
+                }
 
                 Debug.Write(Helpers.LoadString(stream));
             }
@@ -269,18 +259,17 @@ namespace EdiFabric.Sdk.X12
             
             using (var stream = new MemoryStream())
             {
-                var writer = new X12Writer(stream, Encoding.Default, Environment.NewLine);
+                using (var writer = new X12Writer(stream, Encoding.Default, Environment.NewLine))
+                {
+                    //  Set a custom segment separator.
+                    var separators = new Separators('|', Separators.X12.ComponentDataElement,
+                        Separators.X12.DataElement, Separators.X12.RepetitionDataElement, Separators.X12.Escape);
 
-                //  Set a custom segment separator.
-                var separators = new Separators('|', Separators.X12.ComponentDataElement,
-                    Separators.X12.DataElement, Separators.X12.RepetitionDataElement, Separators.X12.Escape);
-
-                //  Write the ISA with the custom separator set
-                writer.Write(Helpers.CreateIsa("000011111"), separators);
-                writer.Write(Helpers.CreateGs("111111111"));
-                writer.Write(invoice);
-
-                writer.Flush();
+                    //  Write the ISA with the custom separator set
+                    writer.Write(Helpers.CreateIsa("000011111"), separators);
+                    writer.Write(Helpers.CreateGs("111111111"));
+                    writer.Write(invoice);
+                }
 
                 Debug.Write(Helpers.LoadString(stream));
             }
@@ -310,18 +299,16 @@ namespace EdiFabric.Sdk.X12
                 {
                     //  4.  Use CRLF(new line) as segment postfix for clarity
                     //  Always agree postfixes and separators with the trading partner
-                    var writer = new X12Writer(stream, Encoding.Default, Environment.NewLine);
-
-                    //  5.  Begin with ISA segment
-                    writer.Write(Helpers.CreateIsa("000011111"));
-                    //  6.  Follow up with GS segment
-                    writer.Write(Helpers.CreateGs("111111111"));
-                    //  7.  Write all transactions
-                    writer.Write(po);
-                    //  No need to close any of the above
-
-                    //  8.  Always flush at the end to release the cache
-                    writer.Flush();
+                    using (var writer = new X12Writer(stream, Encoding.Default, Environment.NewLine))
+                    {
+                        //  5.  Begin with ISA segment
+                        writer.Write(Helpers.CreateIsa("000011111"));
+                        //  6.  Follow up with GS segment
+                        writer.Write(Helpers.CreateGs("111111111"));
+                        //  7.  Write all transactions
+                        writer.Write(po);
+                        //  No need to close any of the above
+                    }
 
                     Debug.Write(Helpers.LoadString(stream));
                 }

@@ -7,7 +7,7 @@ using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Edi.ErrorContexts;
 using EdiFabric.Framework;
 using EdiFabric.Framework.Readers;
-using EdiFabric.Rules.HIPAA_005010X222A1_837;
+using EdiFabric.Rules.HIPAA_5010;
 
 namespace EdiFabric.Sdk.Hipaa
 {
@@ -58,7 +58,7 @@ namespace EdiFabric.Sdk.Hipaa
 
             //  4.  Pull the transactions that are needed (multiple functional groups contain different transaction types, 
             //  e.g. the same document can contain invoices and dispatch advice notes)
-            var claims = ediItems.OfType<TS837>();
+            var claims = ediItems.OfType<TS837P>();
 
             //  5.  Validate all claims.
             foreach (var claim in claims)

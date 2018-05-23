@@ -53,16 +53,14 @@ namespace EdiFabric.Sdk.Edifact
                 {
                     //  4.  Use CRLF(new line) as segment postfix for clarity
                     //  Always agree postfixes and separators with the trading partner
-                    var writer = new EdifactWriter(stream, Encoding.Default, Environment.NewLine);
-
-                    //  5.  Begin with UNB segment
-                    writer.Write(Helpers.CreateUnb("1"));
-                    //  6.  Write all transactions
-                    writer.Write(invoice);
-                    //  No need to close any of the above
-
-                    //  7.  Always flush at the end to release the cache
-                    writer.Flush();
+                    using (var writer = new EdifactWriter(stream, Encoding.Default, Environment.NewLine))
+                    {
+                        //  5.  Begin with UNB segment
+                        writer.Write(Helpers.CreateUnb("1"));
+                        //  6.  Write all transactions
+                        writer.Write(invoice);
+                        //  No need to close any of the above
+                    }
 
                     Debug.Write(Helpers.LoadString(stream));
                 }
@@ -105,15 +103,11 @@ namespace EdiFabric.Sdk.Edifact
 
                 //  3.  Use default encoding and no segment postfix
                 //  Write directly to a file
-                var writer = new EdifactWriter(@"C:\Test\Output.txt", false);
-
-                writer.Write(Helpers.CreateUnb("1"));
-                writer.Write(invoice);
-
-                //  4.  Always flush at the end to release the cache
-                writer.Flush();
-
-                writer.Dispose();
+                using (var writer = new EdifactWriter(@"C:\Test\Output.txt", false))
+                {
+                    writer.Write(Helpers.CreateUnb("1"));
+                    writer.Write(invoice);
+                }
 
                 Debug.WriteLine("Written to file.");
             }
@@ -134,19 +128,18 @@ namespace EdiFabric.Sdk.Edifact
 
             using (var stream = new MemoryStream())
             {
-                var writer = new EdifactWriter(stream, Encoding.Default, Environment.NewLine);
+                using (var writer = new EdifactWriter(stream, Encoding.Default, Environment.NewLine))
+                {
+                    writer.Write(Helpers.CreateUnb("1"));
 
-                writer.Write(Helpers.CreateUnb("1"));
-                
-                //  1.  Write the first invoice
-                writer.Write(CreateInvoice("1"));
+                    //  1.  Write the first invoice
+                    writer.Write(CreateInvoice("1"));
 
-                //  2.  Write the second invoice
-                writer.Write(CreateInvoice("2"));
+                    //  2.  Write the second invoice
+                    writer.Write(CreateInvoice("2"));
 
-                //  3.  Write any subsequent invoices...
-
-                writer.Flush();
+                    //  3.  Write any subsequent invoices...
+                }
 
                 Debug.Write(Helpers.LoadString(stream));
             }
@@ -163,18 +156,17 @@ namespace EdiFabric.Sdk.Edifact
 
             using (var stream = new MemoryStream())
             {
-                var writer = new EdifactWriter(stream, Encoding.Default, Environment.NewLine);
+                using (var writer = new EdifactWriter(stream, Encoding.Default, Environment.NewLine))
+                {
+                    //  1.  Write the first interchange
+                    writer.Write(Helpers.CreateUnb("1"));
+                    writer.Write(CreateInvoice("1"));
 
-                //  1.  Write the first interchange
-                writer.Write(Helpers.CreateUnb("1"));
-                writer.Write(CreateInvoice("1"));
-
-                //  2.  Write the second interchange
-                //  No need to close the previous interchange with a IEA
-                writer.Write(Helpers.CreateUnb("2"));
-                writer.Write(CreateInvoice("1"));
-
-                writer.Flush();
+                    //  2.  Write the second interchange
+                    //  No need to close the previous interchange with a IEA
+                    writer.Write(Helpers.CreateUnb("2"));
+                    writer.Write(CreateInvoice("1"));
+                }
 
                 Debug.Write(Helpers.LoadString(stream));
             }
@@ -198,12 +190,11 @@ namespace EdiFabric.Sdk.Edifact
             using (var stream = new MemoryStream())
             {
                 //  Set the PreserveWhitespace flag to true
-                var writer = new EdifactWriter(stream, null, "", true);
-
-                writer.Write(Helpers.CreateUnb("1"));
-                writer.Write(invoice);
-
-                writer.Flush();
+                using (var writer = new EdifactWriter(stream, null, "", true))
+                {
+                    writer.Write(Helpers.CreateUnb("1"));
+                    writer.Write(invoice);
+                }
 
                 Debug.Write(Helpers.LoadString(stream));
             }
@@ -225,17 +216,16 @@ namespace EdiFabric.Sdk.Edifact
 
             using (var stream = new MemoryStream())
             {
-                var writer = new EdifactWriter(stream, Encoding.Default, Environment.NewLine);
+                using (var writer = new EdifactWriter(stream, Encoding.Default, Environment.NewLine))
+                {
+                    //  Set a custom segment separator.
+                    var separators = new Separators('|', Separators.Edifact.ComponentDataElement,
+                        Separators.Edifact.DataElement, Separators.Edifact.RepetitionDataElement, Separators.Edifact.Escape);
 
-                //  Set a custom segment separator.
-                var separators = new Separators('|', Separators.Edifact.ComponentDataElement,
-                    Separators.Edifact.DataElement, Separators.Edifact.RepetitionDataElement, Separators.Edifact.Escape);
-
-                //  Write the UNB with the custom separator set
-                writer.Write(Helpers.CreateUnb("1"), separators);
-                writer.Write(invoice);
-
-                writer.Flush();
+                    //  Write the UNB with the custom separator set
+                    writer.Write(Helpers.CreateUnb("1"), separators);
+                    writer.Write(invoice);
+                }
 
                 Debug.Write(Helpers.LoadString(stream));
             }
@@ -254,14 +244,13 @@ namespace EdiFabric.Sdk.Edifact
             
             using (var stream = new MemoryStream())
             {
-                var writer = new EdifactWriter(stream);
-
-                //  Write the custom UNA
-                writer.Write(Separators.Edifact.ToUna());
-                writer.Write(Helpers.CreateUnb("1"));
-                writer.Write(invoice);
-
-                writer.Flush();
+                using (var writer = new EdifactWriter(stream))
+                {
+                    //  Write the custom UNA
+                    writer.Write(Separators.Edifact.ToUna());
+                    writer.Write(Helpers.CreateUnb("1"));
+                    writer.Write(invoice);
+                }
 
                 Debug.Write(Helpers.LoadString(stream));
             }
