@@ -1,14 +1,47 @@
 namespace EdiFabric.Rules.HIPAA_5010
 {
-    using System;
-    using System.Collections.Generic;
     using EdiFabric.Core.Annotations.Edi;
     using EdiFabric.Core.Annotations.Validation;
     using EdiFabric.Core.Model.Edi;
     using EdiFabric.Core.Model.Edi.X12;
-    using EdiFabric.Core.Model.Edi.ErrorContexts;
-    
-    
+    using System;
+    using System.Collections.Generic;
+
+    /// <summary>
+    /// Health Care Claim : Professional
+    /// </summary>
+    [Serializable()]
+    [Message("X12", "005010X222A1", "837")]
+    public class TS837P : EdiMessage
+    {
+
+        [Pos(1)]
+        /// <summary>
+        /// Transaction Set Header
+        /// </summary>
+        public ST ST { get; set; }
+        [Required]
+        [Pos(2)]
+        /// <summary>
+        /// Beginning of Hierarchical Transaction
+        /// </summary>
+        public BHT_BeginningofHierarchicalTransaction_7 BeginningofHierarchicalTransaction { get; set; }
+        [Required]
+        [Pos(3)]
+        public All_NM1_TS837P AllNM1 { get; set; }
+        [Required]
+        [Pos(4)]
+        /// <summary>
+        /// Loop for Billing Provider Hierarchical Level
+        /// </summary>
+        public List<Loop_2000A_TS837P> Loop2000A { get; set; }
+        [Pos(5)]
+        /// <summary>
+        /// Transaction Set Trailer
+        /// </summary>
+        public SE SE { get; set; }
+    }
+
     [Serializable()]
     [All()]
     public class All_AMT_2_TS837P
@@ -110,53 +143,53 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Date - Service Date
         /// </summary>
-        public DTP_Date_18 Date { get; set; }
+        public DTP_ClaimLevelServiceDate Date { get; set; }
         [Pos(2)]
         /// <summary>
         /// Date - Prescription Date
         /// </summary>
-        public DTP_Date_9 Date_02 { get; set; }
+        public DTP_HearingandVisionPrescriptionDate Date_02 { get; set; }
         [Pos(3)]
         /// <summary>
         /// DATE - Certification Revision/Recertification Date
         /// </summary>
-        public DTP_DATE DATE { get; set; }
+        public DTP_CertificationRevision DATE { get; set; }
         [Pos(4)]
         /// <summary>
         /// Date - Begin Therapy Date
         /// </summary>
-        public DTP_Date_6 Date_04 { get; set; }
+        public DTP_BeginTherapyDate Date_04 { get; set; }
         [Pos(5)]
         /// <summary>
         /// Date - Last Certification Date
         /// </summary>
-        public DTP_Date_11 Date_05 { get; set; }
+        public DTP_LastCertificationDate Date_05 { get; set; }
         [Pos(6)]
         /// <summary>
         /// Date - Last Seen Date
         /// </summary>
-        public DTP_Date_13 Date_06 { get; set; }
+        public DTP_LastSeenDate Date_06 { get; set; }
         [ListCount(2)]
         [Pos(7)]
         /// <summary>
         /// Date - Test Date
         /// </summary>
-        public List<DTP_Date_20> Date_07 { get; set; }
+        public List<DTP_TestDate> Date_07 { get; set; }
         [Pos(8)]
         /// <summary>
         /// Date - Shipped Date
         /// </summary>
-        public DTP_Date_19 Date_08 { get; set; }
+        public DTP_ShippedDate Date_08 { get; set; }
         [Pos(9)]
         /// <summary>
         /// Date - Last X-ray Date
         /// </summary>
-        public DTP_Date_15 Date_09 { get; set; }
+        public DTP_LastXrayDate Date_09 { get; set; }
         [Pos(10)]
         /// <summary>
         /// Date - Initial Treatment Date
         /// </summary>
-        public DTP_Date_10 Date_10 { get; set; }
+        public DTP_InitialTreatmentDate Date_10 { get; set; }
     }
     
     [Serializable()]
@@ -168,73 +201,73 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Date - Onset of Current Illness or Symptom
         /// </summary>
-        public DTP_Date_16 Date { get; set; }
+        public DTP_OnsetofCurrentIllnessorSymptom Date { get; set; }
         [Pos(2)]
         /// <summary>
         /// Date - Initial Treatment Date
         /// </summary>
-        public DTP_Date_10 Date_02 { get; set; }
+        public DTP_InitialTreatmentDate Date_02 { get; set; }
         [Pos(3)]
         /// <summary>
         /// Date - Last Seen Date
         /// </summary>
-        public DTP_Date_13 Date_03 { get; set; }
+        public DTP_LastSeenDate Date_03 { get; set; }
         [Pos(4)]
         /// <summary>
         /// Date - Acute Manifestation
         /// </summary>
-        public DTP_Date_2 Date_04 { get; set; }
+        public DTP_AcuteManifestation Date_04 { get; set; }
         [Pos(5)]
         /// <summary>
         /// Date - Accident
         /// </summary>
-        public DTP_Date Date_05 { get; set; }
+        public DTP_AccidentDate_2 Date_05 { get; set; }
         [Pos(6)]
         /// <summary>
         /// Date - Last Menstrual Period
         /// </summary>
-        public DTP_Date_12 Date_06 { get; set; }
+        public DTP_LastMenstrualPeriod Date_06 { get; set; }
         [Pos(7)]
         /// <summary>
         /// Date - Last X-ray Date
         /// </summary>
-        public DTP_Date_15 Date_07 { get; set; }
+        public DTP_LastXrayDate Date_07 { get; set; }
         [Pos(8)]
         /// <summary>
         /// Date - Hearing and Vision Prescription Date
         /// </summary>
-        public DTP_Date_9 Date_08 { get; set; }
+        public DTP_HearingandVisionPrescriptionDate Date_08 { get; set; }
         [Pos(9)]
         /// <summary>
         /// Date - Disability Dates
         /// </summary>
-        public DTP_Date_7 Date_09 { get; set; }
+        public DTP_DisabilityDates Date_09 { get; set; }
         [Pos(10)]
         /// <summary>
         /// Date - Last Worked
         /// </summary>
-        public DTP_Date_14 Date_10 { get; set; }
+        public DTP_LastWorked Date_10 { get; set; }
         [Pos(11)]
         /// <summary>
         /// Date - Authorized Return to Work
         /// </summary>
-        public DTP_Date_5 Date_11 { get; set; }
+        public DTP_AuthorizedReturntoWork Date_11 { get; set; }
         [Pos(12)]
         /// <summary>
         /// Date - Admission
         /// </summary>
-        public DTP_Date_3 Date_12 { get; set; }
+        public DTP_AdmissionDate_4 Date_12 { get; set; }
         [Pos(13)]
         /// <summary>
         /// Date - Discharge
         /// </summary>
-        public DTP_Date_8 Date_13 { get; set; }
+        public DTP_Discharge Date_13 { get; set; }
         [ListCount(2)]
         [Pos(14)]
         /// <summary>
         /// Date - Assumed and Relinquished Care Dates
         /// </summary>
-        public List<DTP_Date_4> Date_14 { get; set; }
+        public List<DTP_AssumedandRelinquishedCareDates> Date_14 { get; set; }
         [Pos(15)]
         /// <summary>
         /// Property and Casualty Date of First Contact
@@ -244,7 +277,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Date - Repricer Received Date
         /// </summary>
-        public DTP_Date_17 Date_16 { get; set; }
+        public DTP_RepricerReceivedDate Date_16 { get; set; }
     }
     
     [Serializable()]
@@ -257,7 +290,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Health Care Diagnosis Code
         /// </summary>
-        public HI_HealthCareDiagnosisCode HealthCareDiagnosisCode { get; set; }
+        public HI_DependentHealthCareDiagnosisCode HealthCareDiagnosisCode { get; set; }
         [Pos(2)]
         /// <summary>
         /// Anesthesia Related Procedure
@@ -490,7 +523,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Line Supplemental Information
         /// </summary>
-        public List<PWK_LineSupplementalInformation> LineSupplementalInformation { get; set; }
+        public List<PWK_ClaimSupplementalInformation_2> LineSupplementalInformation { get; set; }
         [Pos(2)]
         /// <summary>
         /// Durable Medical Equipment Certificate of Medical Necessity Indicator
@@ -617,7 +650,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Pay-To Plan Tax Identification Number
         /// </summary>
-        public REF_Pay_2 Pay_02 { get; set; }
+        public REF_BillingProviderTaxIdentification_2 Pay_02 { get; set; }
     }
     
     [Serializable()]
@@ -715,7 +748,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Claim Identifier For Transmission Intermediaries
         /// </summary>
-        public REF_ClaimIdentifierForTransmissionIntermediaries ClaimIdentifierForTransmissionIntermediaries { get; set; }
+        public REF_ClaimIdentificationNumberForClearinghousesandOtherTransmissionIntermediaries ClaimIdentifierForTransmissionIntermediaries { get; set; }
         [Pos(12)]
         /// <summary>
         /// Medical Record Number
@@ -773,7 +806,7 @@ namespace EdiFabric.Rules.HIPAA_5010
     /// Loop for Submitter Name
     /// </summary>
     [Serializable()]
-    [Group(typeof(NM1_SubmitterName))]
+    [Group(typeof(NM1_InformationReceiverName_4))]
     public class Loop_1000A_TS837P
     {
         
@@ -782,7 +815,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Submitter Name
         /// </summary>
-        public NM1_SubmitterName SubmitterName { get; set; }
+        public NM1_InformationReceiverName_4 SubmitterName { get; set; }
         [Required]
         [ListCount(2)]
         [Pos(2)]
@@ -831,7 +864,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Foreign Currency Information
         /// </summary>
-        public CUR_ForeignCurrencyInformation ForeignCurrencyInformation { get; set; }
+        public CUR_ForeignCurrencyInformation_3 ForeignCurrencyInformation { get; set; }
         [Required]
         [Pos(4)]
         public All_NM1_2_TS837P AllNM1 { get; set; }
@@ -867,7 +900,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Patient Information
         /// </summary>
-        public PAT_PatientInformation_2 PatientInformation { get; set; }
+        public PAT_PatientInformation_3 PatientInformation { get; set; }
         [Required]
         [Pos(4)]
         public All_NM1_3_TS837P AllNM1 { get; set; }
@@ -888,7 +921,7 @@ namespace EdiFabric.Rules.HIPAA_5010
     /// Loop for Patient Hierarchical Level
     /// </summary>
     [Serializable()]
-    [Group(typeof(HL_PatientHierarchicalLevel))]
+    [Group(typeof(HL_DependentLevel))]
     public class Loop_2000C_TS837P
     {
         
@@ -897,7 +930,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Patient Hierarchical Level
         /// </summary>
-        public HL_PatientHierarchicalLevel PatientHierarchicalLevel { get; set; }
+        public HL_DependentLevel PatientHierarchicalLevel { get; set; }
         [Required]
         [Pos(2)]
         /// <summary>
@@ -923,7 +956,7 @@ namespace EdiFabric.Rules.HIPAA_5010
     /// Loop for Billing Provider Name
     /// </summary>
     [Serializable()]
-    [Group(typeof(NM1_BillingProviderName))]
+    [Group(typeof(NM1_BillingProviderName_2))]
     public class Loop_2010AA_TS837P
     {
         
@@ -932,19 +965,19 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Billing Provider Name
         /// </summary>
-        public NM1_BillingProviderName BillingProviderName { get; set; }
+        public NM1_BillingProviderName_2 BillingProviderName { get; set; }
         [Required]
         [Pos(2)]
         /// <summary>
         /// Billing Provider Address
         /// </summary>
-        public N3_AmbulanceDrop BillingProviderAddress { get; set; }
+        public N3_AdditionalPatientInformationContactAddress BillingProviderAddress { get; set; }
         [Required]
         [Pos(3)]
         /// <summary>
         /// Billing Provider City, State, ZIP Code
         /// </summary>
-        public N4_AmbulanceDrop BillingProviderCity { get; set; }
+        public N4_AdditionalPatientInformationContactCity BillingProviderCity { get; set; }
         [Required]
         [Pos(4)]
         public All_REF_TS837P AllREF { get; set; }
@@ -975,20 +1008,20 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Pay-To Address - ADDRESS
         /// </summary>
-        public N3_AmbulanceDrop Pay_02 { get; set; }
+        public N3_AdditionalPatientInformationContactAddress Pay_02 { get; set; }
         [Required]
         [Pos(3)]
         /// <summary>
         /// Pay-to Address City, State, ZIP Code
         /// </summary>
-        public N4_AmbulanceDrop Pay_03 { get; set; }
+        public N4_AdditionalPatientInformationContactCity Pay_03 { get; set; }
     }
     
     /// <summary>
     /// Loop for Pay-To Plan Name
     /// </summary>
     [Serializable()]
-    [Group(typeof(NM1_Pay_2))]
+    [Group(typeof(NM1_Pay_3))]
     public class Loop_2010AC_TS837P
     {
         
@@ -997,19 +1030,19 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Pay-To Plan Name
         /// </summary>
-        public NM1_Pay_2 Pay { get; set; }
+        public NM1_Pay_3 Pay { get; set; }
         [Required]
         [Pos(2)]
         /// <summary>
         /// Pay-To Plan Address
         /// </summary>
-        public N3_AmbulanceDrop Pay_02 { get; set; }
+        public N3_AdditionalPatientInformationContactAddress Pay_02 { get; set; }
         [Required]
         [Pos(3)]
         /// <summary>
         /// Pay-To Plan City, State, ZIP Code
         /// </summary>
-        public N4_AmbulanceDrop Pay_03 { get; set; }
+        public N4_AdditionalPatientInformationContactCity Pay_03 { get; set; }
         [Required]
         [Pos(4)]
         public All_REF_2_TS837P AllREF { get; set; }
@@ -1019,7 +1052,7 @@ namespace EdiFabric.Rules.HIPAA_5010
     /// Loop for Subscriber Name
     /// </summary>
     [Serializable()]
-    [Group(typeof(NM1_SubscriberName))]
+    [Group(typeof(NM1_SubscriberName_5))]
     public class Loop_2010BA_TS837P
     {
         
@@ -1028,17 +1061,17 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Subscriber Name
         /// </summary>
-        public NM1_SubscriberName SubscriberName { get; set; }
+        public NM1_SubscriberName_5 SubscriberName { get; set; }
         [Pos(2)]
         /// <summary>
         /// Subscriber Address
         /// </summary>
-        public N3_AmbulanceDrop SubscriberAddress { get; set; }
+        public N3_AdditionalPatientInformationContactAddress SubscriberAddress { get; set; }
         [Pos(3)]
         /// <summary>
         /// Subscriber City, State, ZIP Code
         /// </summary>
-        public N4_AmbulanceDrop SubscriberCity { get; set; }
+        public N4_AdditionalPatientInformationContactCity SubscriberCity { get; set; }
         [Pos(4)]
         /// <summary>
         /// Subscriber Demographic Information
@@ -1071,12 +1104,12 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Payer Address
         /// </summary>
-        public N3_AmbulanceDrop PayerAddress { get; set; }
+        public N3_AdditionalPatientInformationContactAddress PayerAddress { get; set; }
         [Pos(3)]
         /// <summary>
         /// Payer City, State, ZIP Code
         /// </summary>
-        public N4_AmbulanceDrop PayerCity { get; set; }
+        public N4_AdditionalPatientInformationContactCity PayerCity { get; set; }
         [Pos(4)]
         public All_REF_4_TS837P AllREF { get; set; }
     }
@@ -1085,7 +1118,7 @@ namespace EdiFabric.Rules.HIPAA_5010
     /// Loop for Patient Name
     /// </summary>
     [Serializable()]
-    [Group(typeof(NM1_PatientName))]
+    [Group(typeof(NM1_PatientName_3))]
     public class Loop_2010CA_TS837P
     {
         
@@ -1094,19 +1127,19 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Patient Name
         /// </summary>
-        public NM1_PatientName PatientName { get; set; }
+        public NM1_PatientName_3 PatientName { get; set; }
         [Required]
         [Pos(2)]
         /// <summary>
         /// Patient Address
         /// </summary>
-        public N3_AmbulanceDrop PatientAddress { get; set; }
+        public N3_AdditionalPatientInformationContactAddress PatientAddress { get; set; }
         [Required]
         [Pos(3)]
         /// <summary>
         /// Patient City, State, ZIP Code
         /// </summary>
-        public N4_AmbulanceDrop PatientCity { get; set; }
+        public N4_AdditionalPatientInformationContactCity PatientCity { get; set; }
         [Required]
         [Pos(4)]
         /// <summary>
@@ -1126,7 +1159,7 @@ namespace EdiFabric.Rules.HIPAA_5010
     /// Loop for Claim Information
     /// </summary>
     [Serializable()]
-    [Group(typeof(CLM_ClaimInformation))]
+    [Group(typeof(CLM_ClaimInformation_2))]
     public class Loop_2300_2_TS837P
     {
         
@@ -1135,7 +1168,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Claim Information
         /// </summary>
-        public CLM_ClaimInformation ClaimInformation { get; set; }
+        public CLM_ClaimInformation_2 ClaimInformation { get; set; }
         [Pos(2)]
         public All_DTP_3_TS837P AllDTP { get; set; }
         [ListCount(10)]
@@ -1143,12 +1176,12 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Claim Supplemental Information
         /// </summary>
-        public List<PWK_ClaimSupplementalInformation> ClaimSupplementalInformation { get; set; }
+        public List<PWK_ClaimSupplementalInformation_3> ClaimSupplementalInformation { get; set; }
         [Pos(4)]
         /// <summary>
         /// Contract Information
         /// </summary>
-        public CN1_ContractInformation ContractInformation { get; set; }
+        public CN1_ContractInformation_2 ContractInformation { get; set; }
         [Pos(5)]
         /// <summary>
         /// Patient Amount Paid
@@ -1166,7 +1199,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Claim Note
         /// </summary>
-        public NTE_ClaimNote ClaimNote { get; set; }
+        public NTE_ClaimNote_2 ClaimNote { get; set; }
         [Pos(9)]
         /// <summary>
         /// Ambulance Transport Information
@@ -1250,7 +1283,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Rendering Provider Secondary Identification
         /// </summary>
-        public List<REF_OtherPayerRenderingProviderSecondaryIdentification> RenderingProviderSecondaryIdentification { get; set; }
+        public List<REF_AssistantSurgeonSecondaryIdentification> RenderingProviderSecondaryIdentification { get; set; }
     }
     
     /// <summary>
@@ -1272,13 +1305,13 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Service Facility Location Address
         /// </summary>
-        public N3_AmbulanceDrop ServiceFacilityLocationAddress { get; set; }
+        public N3_AdditionalPatientInformationContactAddress ServiceFacilityLocationAddress { get; set; }
         [Required]
         [Pos(3)]
         /// <summary>
         /// Service Facility Location City, State, ZIP Code
         /// </summary>
-        public N4_AmbulanceDrop ServiceFacilityLocationCity { get; set; }
+        public N4_AdditionalPatientInformationContactCity ServiceFacilityLocationCity { get; set; }
         [ListCount(3)]
         [Pos(4)]
         /// <summary>
@@ -1311,7 +1344,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Supervising Provider Secondary Identification
         /// </summary>
-        public List<REF_OtherPayerRenderingProviderSecondaryIdentification> SupervisingProviderSecondaryIdentification { get; set; }
+        public List<REF_AssistantSurgeonSecondaryIdentification> SupervisingProviderSecondaryIdentification { get; set; }
     }
     
     /// <summary>
@@ -1333,13 +1366,13 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Ambulance Pick-up Location Address
         /// </summary>
-        public N3_AmbulanceDrop AmbulancePick_02 { get; set; }
+        public N3_AdditionalPatientInformationContactAddress AmbulancePick_02 { get; set; }
         [Required]
         [Pos(3)]
         /// <summary>
         /// Ambulance Pick-up Location City, State, Zip Code
         /// </summary>
-        public N4_AmbulanceDrop AmbulancePick_03 { get; set; }
+        public N4_AdditionalPatientInformationContactCity AmbulancePick_03 { get; set; }
     }
     
     /// <summary>
@@ -1361,13 +1394,13 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Ambulance Drop-off Location Address
         /// </summary>
-        public N3_AmbulanceDrop AmbulanceDrop_02 { get; set; }
+        public N3_AdditionalPatientInformationContactAddress AmbulanceDrop_02 { get; set; }
         [Required]
         [Pos(3)]
         /// <summary>
         /// Ambulance Drop-off Location City, State, Zip Code
         /// </summary>
-        public N4_AmbulanceDrop AmbulanceDrop_03 { get; set; }
+        public N4_AdditionalPatientInformationContactCity AmbulanceDrop_03 { get; set; }
     }
     
     /// <summary>
@@ -1397,7 +1430,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Other Insurance Coverage Information
         /// </summary>
-        public OI_OtherInsuranceCoverageInformation OtherInsuranceCoverageInformation { get; set; }
+        public OI_OtherInsuranceCoverageInformation_2 OtherInsuranceCoverageInformation { get; set; }
         [Pos(5)]
         /// <summary>
         /// Outpatient Adjudication Information
@@ -1426,12 +1459,12 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Other Subscriber Address
         /// </summary>
-        public N3_AmbulanceDrop OtherSubscriberAddress { get; set; }
+        public N3_AdditionalPatientInformationContactAddress OtherSubscriberAddress { get; set; }
         [Pos(3)]
         /// <summary>
         /// Other Subscriber City, State, ZIP Code
         /// </summary>
-        public N4_AmbulanceDrop OtherSubscriberCity { get; set; }
+        public N4_AdditionalPatientInformationContactCity OtherSubscriberCity { get; set; }
         [Pos(4)]
         /// <summary>
         /// Other Subscriber Secondary Identification
@@ -1457,17 +1490,17 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Other Payer Address
         /// </summary>
-        public N3_AmbulanceDrop OtherPayerAddress { get; set; }
+        public N3_AdditionalPatientInformationContactAddress OtherPayerAddress { get; set; }
         [Pos(3)]
         /// <summary>
         /// Other Payer City, State, ZIP Code
         /// </summary>
-        public N4_AmbulanceDrop OtherPayerCity { get; set; }
+        public N4_AdditionalPatientInformationContactCity OtherPayerCity { get; set; }
         [Pos(4)]
         /// <summary>
         /// Claim Check or Remittance Date
         /// </summary>
-        public DTP_ClaimCheckorRemittanceDate ClaimCheckorRemittanceDate { get; set; }
+        public DTP_ClaimCheckOrRemittanceDate ClaimCheckorRemittanceDate { get; set; }
         [Pos(5)]
         public All_REF_10_TS837P AllREF { get; set; }
     }
@@ -1499,7 +1532,7 @@ namespace EdiFabric.Rules.HIPAA_5010
     /// Loop for Other Payer Rendering Provider
     /// </summary>
     [Serializable()]
-    [Group(typeof(NM1_OtherPayerRenderingProvider))]
+    [Group(typeof(NM1_OtherPayerRenderingProvider_2))]
     public class Loop_2330D_2_TS837P
     {
         
@@ -1508,14 +1541,14 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Other Payer Rendering Provider
         /// </summary>
-        public NM1_OtherPayerRenderingProvider OtherPayerRenderingProvider { get; set; }
+        public NM1_OtherPayerRenderingProvider_2 OtherPayerRenderingProvider { get; set; }
         [Required]
         [ListCount(3)]
         [Pos(2)]
         /// <summary>
         /// Other Payer Rendering Provider Secondary Identification
         /// </summary>
-        public List<REF_OtherPayerRenderingProviderSecondaryIdentification> OtherPayerRenderingProviderSecondaryIdentification { get; set; }
+        public List<REF_AssistantSurgeonSecondaryIdentification> OtherPayerRenderingProviderSecondaryIdentification { get; set; }
     }
     
     /// <summary>
@@ -1561,7 +1594,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Other Payer Supervising Provider Secondary Identification
         /// </summary>
-        public List<REF_OtherPayerRenderingProviderSecondaryIdentification> OtherPayerSupervisingProviderSecondaryIdentification { get; set; }
+        public List<REF_AssistantSurgeonSecondaryIdentification> OtherPayerSupervisingProviderSecondaryIdentification { get; set; }
     }
     
     /// <summary>
@@ -1591,7 +1624,7 @@ namespace EdiFabric.Rules.HIPAA_5010
     /// Loop for Service Line Number
     /// </summary>
     [Serializable()]
-    [Group(typeof(LX_ServiceLineNumber))]
+    [Group(typeof(LX_HeaderNumber))]
     public class Loop_2400_2_TS837P
     {
         
@@ -1600,7 +1633,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Service Line Number
         /// </summary>
-        public LX_ServiceLineNumber ServiceLineNumber { get; set; }
+        public LX_HeaderNumber ServiceLineNumber { get; set; }
         [Required]
         [Pos(2)]
         /// <summary>
@@ -1641,7 +1674,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Contract Information
         /// </summary>
-        public CN1_ContractInformation ContractInformation { get; set; }
+        public CN1_ContractInformation_2 ContractInformation { get; set; }
         [Pos(12)]
         public All_REF_11_TS837P AllREF { get; set; }
         [Pos(13)]
@@ -1663,7 +1696,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Line Pricing/Repricing Information
         /// </summary>
-        public HCP_LinePricing LinePricing { get; set; }
+        public HCP_LinePricing_3 LinePricing { get; set; }
         [Pos(18)]
         /// <summary>
         /// Loop for Drug Identification
@@ -1688,7 +1721,7 @@ namespace EdiFabric.Rules.HIPAA_5010
     /// Loop for Drug Identification
     /// </summary>
     [Serializable()]
-    [Group(typeof(LIN_DrugIdentification))]
+    [Group(typeof(LIN_DrugIdentification_2))]
     public class Loop_2410_2_TS837P
     {
         
@@ -1697,7 +1730,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Drug Identification
         /// </summary>
-        public LIN_DrugIdentification DrugIdentification { get; set; }
+        public LIN_DrugIdentification_2 DrugIdentification { get; set; }
         [Required]
         [Pos(2)]
         /// <summary>
@@ -1735,7 +1768,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Rendering Provider Secondary Identification
         /// </summary>
-        public List<REF_OtherPayerRenderingProviderSecondaryIdentification> RenderingProviderSecondaryIdentification { get; set; }
+        public List<REF_AssistantSurgeonSecondaryIdentification> RenderingProviderSecondaryIdentification { get; set; }
     }
     
     /// <summary>
@@ -1779,13 +1812,13 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Service Facility Location Address
         /// </summary>
-        public N3_AmbulanceDrop ServiceFacilityLocationAddress { get; set; }
+        public N3_AdditionalPatientInformationContactAddress ServiceFacilityLocationAddress { get; set; }
         [Required]
         [Pos(3)]
         /// <summary>
         /// Service Facility Location City, State, ZIP Code
         /// </summary>
-        public N4_AmbulanceDrop ServiceFacilityLocationCity { get; set; }
+        public N4_AdditionalPatientInformationContactCity ServiceFacilityLocationCity { get; set; }
         [ListCount(3)]
         [Pos(4)]
         /// <summary>
@@ -1813,7 +1846,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Supervising Provider Secondary Identification
         /// </summary>
-        public List<REF_OtherPayerRenderingProviderSecondaryIdentification> SupervisingProviderSecondaryIdentification { get; set; }
+        public List<REF_AssistantSurgeonSecondaryIdentification> SupervisingProviderSecondaryIdentification { get; set; }
     }
     
     /// <summary>
@@ -1834,12 +1867,12 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Ordering Provider Address
         /// </summary>
-        public N3_AmbulanceDrop OrderingProviderAddress { get; set; }
+        public N3_AdditionalPatientInformationContactAddress OrderingProviderAddress { get; set; }
         [Pos(3)]
         /// <summary>
         /// Ordering Provider City, State, ZIP Code
         /// </summary>
-        public N4_AmbulanceDrop OrderingProviderCity { get; set; }
+        public N4_AdditionalPatientInformationContactCity OrderingProviderCity { get; set; }
         [ListCount(20)]
         [Pos(4)]
         /// <summary>
@@ -1894,13 +1927,13 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Ambulance Pick-up Location Address
         /// </summary>
-        public N3_AmbulanceDrop AmbulancePick_02 { get; set; }
+        public N3_AdditionalPatientInformationContactAddress AmbulancePick_02 { get; set; }
         [Required]
         [Pos(3)]
         /// <summary>
         /// Ambulance Pick-up Location City, State, Zip Code
         /// </summary>
-        public N4_AmbulanceDrop AmbulancePick_03 { get; set; }
+        public N4_AdditionalPatientInformationContactCity AmbulancePick_03 { get; set; }
     }
     
     /// <summary>
@@ -1922,13 +1955,13 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Ambulance Drop-off Location Address
         /// </summary>
-        public N3_AmbulanceDrop AmbulanceDrop_02 { get; set; }
+        public N3_AdditionalPatientInformationContactAddress AmbulanceDrop_02 { get; set; }
         [Required]
         [Pos(3)]
         /// <summary>
         /// Ambulance Drop-off Location City, State, Zip Code
         /// </summary>
-        public N4_AmbulanceDrop AmbulanceDrop_03 { get; set; }
+        public N4_AdditionalPatientInformationContactCity AmbulanceDrop_03 { get; set; }
     }
     
     /// <summary>
@@ -1956,7 +1989,7 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// <summary>
         /// Line Check or Remittance Date
         /// </summary>
-        public DTP_ClaimCheckorRemittanceDate LineCheckorRemittanceDate { get; set; }
+        public DTP_ClaimCheckOrRemittanceDate LineCheckorRemittanceDate { get; set; }
         [Pos(4)]
         /// <summary>
         /// Remaining Patient Liability
@@ -1986,39 +2019,5 @@ namespace EdiFabric.Rules.HIPAA_5010
         /// </summary>
         public List<FRM_SupportingDocumentation> SupportingDocumentation { get; set; }
     }
-    
-    /// <summary>
-    /// Health Care Claim : Professional
-    /// </summary>
-    [Serializable()]
-    [Message("X12", "005010X222A1", "837")]
-    public class TS837P : EdiMessage
-    {
         
-        [Pos(1)]
-        /// <summary>
-        /// Transaction Set Header
-        /// </summary>
-        public ST ST { get; set; }
-        [Required]
-        [Pos(2)]
-        /// <summary>
-        /// Beginning of Hierarchical Transaction
-        /// </summary>
-        public BHT_BeginningofHierarchicalTransaction BeginningofHierarchicalTransaction { get; set; }
-        [Required]
-        [Pos(3)]
-        public All_NM1_TS837P AllNM1 { get; set; }
-        [Required]
-        [Pos(4)]
-        /// <summary>
-        /// Loop for Billing Provider Hierarchical Level
-        /// </summary>
-        public List<Loop_2000A_TS837P> Loop2000A { get; set; }
-        [Pos(5)]
-        /// <summary>
-        /// Transaction Set Trailer
-        /// </summary>
-        public SE SE { get; set; }
-    }
 }
