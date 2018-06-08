@@ -6,11 +6,11 @@
         {
             Examples.WriteSingleInvoiceToStream();
             Examples.WriteSingleInvoiceToFile();
+            Examples.WriteWithCustomSeparators();
+            Examples.WriteWithSegmetPostfix();
             Examples.WriteMultipleInvoices();
             Examples.WriteMultipleInterchanges();
             Examples.WriteSegmentWithWhitespace();
-            Examples.WriteWithCustomSeparators();
-            Examples.WriteWithUna();
         }
     }
 }

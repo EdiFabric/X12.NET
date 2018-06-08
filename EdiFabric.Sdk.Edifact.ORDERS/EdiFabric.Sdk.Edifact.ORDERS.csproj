@@ -32,6 +32,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EdiFabric.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
+      <HintPath>..\packages\EdiFabric.Core.9.7.0\lib\net45\EdiFabric.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EdiFabric.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
+      <HintPath>..\packages\EdiFabric.Framework.9.7.0\lib\net45\EdiFabric.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="EdiFabric.Rules.EdifactD96A, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
+      <HintPath>..\packages\EdiFabric.Rules.Edifact.D96A.2.6.0\lib\net45\EdiFabric.Rules.EdifactD96A.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,6 +56,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EdiFabric.Sdk.Helpers\EdiFabric.Sdk.Helpers.csproj">
+      <Project>{4c09fee1-decb-42ec-9b0a-dad7e7232005}</Project>
+      <Name>EdiFabric.Sdk.Helpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EdiFabric.Sdk.TemplateFactories\EdiFabric.Sdk.TemplateFactories.csproj">
+      <Project>{325f4410-67e7-470c-beea-c04f034bcd56}</Project>
+      <Name>EdiFabric.Sdk.TemplateFactories</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -48,5 +48,13 @@ namespace EdiFabric.Sdk.TemplateFactories
                 unh.MessageIdentifier_02.MessageVersionNumber_02,
                 unh.MessageIdentifier_02.MessageType_01));
         }
+
+        public static Assembly TrialAssembliesFactory(MessageContext messageContext)
+        {
+            if (messageContext.Version == "D96A")
+                return Assembly.Load("EdiFabric.Rules.EdifactD96A");
+
+            throw new System.Exception(string.Format("Unsupported version {0}", messageContext.Version));
+        }
     }
 }

@@ -18,6 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EDI Files", "EDI Files", "{
 		Files.Edifact\DetectDuplicateGroup.txt = Files.Edifact\DetectDuplicateGroup.txt
 		Files.Edifact\DetectDuplicateInterchange.txt = Files.Edifact\DetectDuplicateInterchange.txt
 		Files.Edifact\DuplicateMessage.txt = Files.Edifact\DuplicateMessage.txt
+		Files.Edifact\Invoice.txt = Files.Edifact\Invoice.txt
 		Files.Edifact\MixedTransactions.txt = Files.Edifact\MixedTransactions.txt
 		Files.Edifact\PurchaseOrder.txt = Files.Edifact\PurchaseOrder.txt
 		Files.Edifact\PurchaseOrder.xml = Files.Edifact\PurchaseOrder.xml
