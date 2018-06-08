@@ -1,0 +1,20 @@
+﻿namespace EdiFabric.Sdk.Edifact.Read
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Examples.ReadAllPurchaseOrders();
+            Examples.ReadPurchaseOrdersOneAtATime();
+            Examples.ReadWithTypeResolution();
+            Examples.ReadWithEncoding();
+            Examples.ReadWithUna();
+            Examples.ReadWithSplitting();
+            Examples.CrossSegmentValidation();
+            Examples.ValidateControlSegments();
+            Examples.ReadMixedTransactions();
+            Examples.ReadCorruptUnb();
+            Examples.ReadWithContinueOnError();
+        }
+    }
+}
