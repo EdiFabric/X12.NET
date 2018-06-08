@@ -2,7 +2,9 @@
 using EdiFabric.Framework.Readers;
 using EdiFabric.Plugins.Acknowledgments.Edifact.Model;
 using EdiFabric.Sdk.Helpers;
+using EdiFabric.Sdk.TemplateFactories;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 
@@ -19,7 +21,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var edi = Assembly.GetExecutingAssembly().GetManifestResourceStream("EdiFabric.Sdk.Edifact.Edi.PurchaseOrder.txt");
+            var edi = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrder.txt");
 
             var settings = new AckSettings
             {
@@ -49,7 +51,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             };
 
             var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, "EdiFabric.Sdk.Edifact"))
+            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialAssembliesFactory))
             {
                 while (ediReader.Read())
                     ackMan.Publish(ediReader.Item);
@@ -66,7 +68,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var edi = Assembly.GetExecutingAssembly().GetManifestResourceStream("EdiFabric.Sdk.Edifact.Edi.PurchaseOrderInvalid.txt");
+            var edi = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrderInvalid.txt");
 
             var settings = new AckSettings
             {
@@ -96,7 +98,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             };
 
             var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, "EdiFabric.Sdk.Edifact"))
+            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialAssembliesFactory))
             {
                 while (ediReader.Read())
                     ackMan.Publish(ediReader.Item);
@@ -113,7 +115,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var edi = Assembly.GetExecutingAssembly().GetManifestResourceStream("EdiFabric.Sdk.Edifact.Edi.DuplicateMessage.txt");
+            var edi = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\DuplicateMessage.txt");
 
             var settings = new AckSettings
             {
@@ -140,11 +142,12 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
                 },
                 // Turn on UCM for valid messages
                 GenerateForValidMessages = true,
-                TransactionSetDuplicates = true
+                TransactionSetDuplicates = true,
+                TechnicalAck = TechnicalAck.Enforce
             };
 
             var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, "EdiFabric.Sdk.Edifact"))
+            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialAssembliesFactory))
             {
                 while (ediReader.Read())
                     ackMan.Publish(ediReader.Item);
@@ -161,7 +164,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var edi = Assembly.GetExecutingAssembly().GetManifestResourceStream("EdiFabric.Sdk.Edifact.Edi.DetectDuplicateGroup.txt");
+            var edi = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\DetectDuplicateGroup.txt");
 
             var settings = new AckSettings
             {
@@ -198,7 +201,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             };
 
             var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, "EdiFabric.Sdk.Edifact"))
+            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialAssembliesFactory))
             {
                 while (ediReader.Read())
                     ackMan.Publish(ediReader.Item);
@@ -215,7 +218,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var edi = Assembly.GetExecutingAssembly().GetManifestResourceStream("EdiFabric.Sdk.Edifact.Edi.DetectDuplicateInterchange.txt");
+            var edi = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\DetectDuplicateInterchange.txt");
 
             var settings = new AckSettings
             {
@@ -251,7 +254,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             };
 
             var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, "EdiFabric.Sdk.Edifact"))
+            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialAssembliesFactory))
             {
                 while (ediReader.Read())
                     ackMan.Publish(ediReader.Item);
@@ -268,7 +271,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var edi = Assembly.GetExecutingAssembly().GetManifestResourceStream("EdiFabric.Sdk.Edifact.Edi.PurchaseOrder.txt");
+            var edi = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrder.txt");
             int unbControlNumber = 28;
             int ungControlNumber = 35;
             Debug.WriteLine("Start interchange control number: {0}", unbControlNumber);
@@ -300,7 +303,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             };
           
             var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, "EdiFabric.Sdk.Edifact"))
+            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialAssembliesFactory))
             {
                 while (ediReader.Read())
                     ackMan.Publish(ediReader.Item);

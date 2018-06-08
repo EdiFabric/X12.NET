@@ -8,10 +8,11 @@ using EdiFabric.Core.Model.Edi;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Rules.EDIFACT_D96A;
 using EdiFabric.Sdk.Helpers;
+using EdiFabric.Sdk.TemplateFactories;
 
 namespace EdiFabric.Sdk.Edifact.Export.Xml
 {
-    class XmlSamples
+    class Examples
     {
         /// <summary>
         /// Serialize an EDI object to XML
@@ -22,12 +23,10 @@ namespace EdiFabric.Sdk.Edifact.Export.Xml
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            Stream purchaseOrderStream =
-                Assembly.GetExecutingAssembly()
-                    .GetManifestResourceStream("EdiFabric.Sdk.Edifact.Edi.PurchaseOrder.txt");
+            var purchaseOrderStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrder.txt");
 
             List<EdiItem> ediItems;
-            using (var ediReader = new EdifactReader(purchaseOrderStream, "EdiFabric.Sdk.Edifact"))
+            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.AssemblyFactory))
             {
                 ediItems = ediReader.ReadToEnd().ToList();
             }
@@ -49,9 +48,7 @@ namespace EdiFabric.Sdk.Edifact.Export.Xml
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            Stream purchaseOrderStream =
-                Assembly.GetExecutingAssembly()
-                    .GetManifestResourceStream("EdiFabric.Sdk.Edifact.Edi.PurchaseOrder.xml");
+            var purchaseOrderStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrder.xml");
 
             var xml = XElement.Load(purchaseOrderStream);
             var po = XmlHelpers.Deserialize<TSORDERS>(xml);

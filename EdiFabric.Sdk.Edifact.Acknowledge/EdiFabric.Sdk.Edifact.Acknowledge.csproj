@@ -64,6 +64,10 @@
       <Project>{4C09FEE1-DECB-42EC-9B0A-DAD7E7232005}</Project>
       <Name>EdiFabric.Sdk.Helpers</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EdiFabric.Sdk.TemplateFactories\EdiFabric.Sdk.TemplateFactories.csproj">
+      <Project>{325f4410-67e7-470c-beea-c04f034bcd56}</Project>
+      <Name>EdiFabric.Sdk.TemplateFactories</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

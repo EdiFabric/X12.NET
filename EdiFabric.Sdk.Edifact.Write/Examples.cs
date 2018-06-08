@@ -106,7 +106,7 @@ namespace EdiFabric.Sdk.Edifact.Write
 
             using (var stream = new MemoryStream())
             {
-                using (var writer = new EdifactWriter(stream, Encoding.Default, Environment.NewLine))
+                using (var writer = new EdifactWriter(stream))
                 {
                     //  Set a custom segment separator
                     var separators = new Separators('|', Separators.Edifact.ComponentDataElement,
@@ -155,7 +155,7 @@ namespace EdiFabric.Sdk.Edifact.Write
 
             using (var stream = new MemoryStream())
             {
-                using (var writer = new EdifactWriter(stream, Encoding.Default, Environment.NewLine))
+                using (var writer = new EdifactWriter(stream))
                 {
                     writer.Write(EdifactHelpers.CreateUnb("1"));
 
@@ -183,7 +183,7 @@ namespace EdiFabric.Sdk.Edifact.Write
 
             using (var stream = new MemoryStream())
             {
-                using (var writer = new EdifactWriter(stream, Encoding.Default, Environment.NewLine))
+                using (var writer = new EdifactWriter(stream))
                 {
                     //  1.  Write the first interchange
                     writer.Write(EdifactHelpers.CreateUnb("1"));

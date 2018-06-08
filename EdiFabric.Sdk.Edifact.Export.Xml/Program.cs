@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            XmlSamples.SerializeToXml();
-            XmlSamples.DeserializeFromXml();
+            Examples.SerializeToXml();
+            Examples.DeserializeFromXml();
         }
     }
 }
