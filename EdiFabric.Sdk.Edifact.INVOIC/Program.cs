@@ -1,4 +1,5 @@
 ﻿using EdiFabric.Core.Model.Edi;
+using EdiFabric.Core.Model.Edi.ErrorContexts;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Framework.Writers;
 using EdiFabric.Rules.EDIFACT_D96A;
@@ -14,34 +15,64 @@ namespace EdiFabric.Sdk.Edifact.INVOIC
     {
         static void Main(string[] args)
         {
-            ReadInvoic();
-            WriteInvoic();
+            Read();
+            Write();
         }
 
-        static void ReadInvoic()
+        /// <summary>
+        /// Read Invoices
+        /// </summary>
+        static void Read()
         {
-            var purchaseOrderStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\Invoice.txt");
+            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\Invoice.txt");
 
-            //  2.  Read all the contents
             List<EdiItem> ediItems;
-            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.TrialAssembliesFactory))
+            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.TrialAssembliesFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
-            //  3.  Pull the purchase orders
-            var purchaseOrders = ediItems.OfType<TSINVOIC>();
+            var transactions = ediItems.OfType<TSINVOIC>();
+
+            foreach (var transaction in transactions)
+            {
+                MessageErrorContext mec;
+                if (transaction.IsValid(out mec))
+                {
+                    //  valid
+                }
+                else
+                {
+                    //  invalid
+                    var errors = mec.Flatten();
+                }
+            }
         }
 
-        static void WriteInvoic()
+        /// <summary>
+        /// Write Invoices
+        /// </summary>
+        static void Write()
         {
             using (var stream = new MemoryStream())
             {
-                using (var writer = new EdifactWriter(stream))
-                {
-                    writer.Write(EdifactHelpers.CreateUnb("1"));
-                    writer.Write(EdifactHelpers.CreateInvoice("1"));
-                }
+                var transaction = EdifactHelpers.CreateInvoice("1");
 
-                var ediString = StreamHelpers.LoadString(stream);
+                MessageErrorContext mec;
+                if (transaction.IsValid(out mec))
+                {
+                    //  valid
+                    using (var writer = new EdifactWriter(stream))
+                    {
+                        writer.Write(EdifactHelpers.CreateUnb("1"));
+                        writer.Write(transaction);
+                    }
+
+                    var ediString = StreamHelpers.LoadString(stream);
+                }
+                else
+                {
+                    //  invalid
+                    var errors = mec.Flatten();
+                }                
             }            
         }        
     }

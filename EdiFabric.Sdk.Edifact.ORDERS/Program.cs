@@ -1,4 +1,5 @@
 ﻿using EdiFabric.Core.Model.Edi;
+using EdiFabric.Core.Model.Edi.ErrorContexts;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Framework.Writers;
 using EdiFabric.Rules.EDIFACT_D96A;
@@ -14,34 +15,64 @@ namespace EdiFabric.Sdk.Edifact.ORDERS
     {
         static void Main(string[] args)
         {
-            ReadOrders();
-            WriteOrders();
+            Read();
+            Write();
         }
 
-        static void ReadOrders()
+        /// <summary>
+        /// Read Purchase Orders 
+        /// </summary>
+        static void Read()
         {
-            var purchaseOrderStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrder.txt");
+            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrder.txt");
 
-            //  2.  Read all the contents
             List<EdiItem> ediItems;
-            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.TrialAssembliesFactory))
+            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.TrialAssembliesFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
-            //  3.  Pull the purchase orders
-            var purchaseOrders = ediItems.OfType<TSORDERS>();
+            var transactions = ediItems.OfType<TSORDERS>();
+
+            foreach (var transaction in transactions)
+            {
+                MessageErrorContext mec;
+                if (transaction.IsValid(out mec))
+                {
+                    //  valid
+                }
+                else
+                {
+                    //  invalid
+                    var errors = mec.Flatten();
+                }
+            }
         }
 
-        static void WriteOrders()
+        /// <summary>
+        /// Write Purchase Orders
+        /// </summary>
+        static void Write()
         {
             using (var stream = new MemoryStream())
             {
-                using (var writer = new EdifactWriter(stream))
-                {
-                    writer.Write(EdifactHelpers.CreateUnb("1"));
-                    writer.Write(EdifactHelpers.CreatePurchaseOrder("1"));
-                }
+                var transaction = EdifactHelpers.CreatePurchaseOrder("1");
 
-                var ediString = StreamHelpers.LoadString(stream);
+                MessageErrorContext mec;
+                if (transaction.IsValid(out mec))
+                {
+                    //  valid
+                    using (var writer = new EdifactWriter(stream))
+                    {
+                        writer.Write(EdifactHelpers.CreateUnb("1"));
+                        writer.Write(transaction);
+                    }
+
+                    var ediString = StreamHelpers.LoadString(stream);
+                }
+                else
+                {
+                    //  invalid
+                    var errors = mec.Flatten();
+                }
             }
         }
     }

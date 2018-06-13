@@ -336,7 +336,7 @@ namespace EdiFabric.Sdk.Helpers
             result.UNH.MessageIdentifier_02 = new S009();
             result.UNH.MessageIdentifier_02.MessageType_01 = "ORDERS";
             result.UNH.MessageIdentifier_02.MessageVersionNumber_02 = "D";
-            result.UNH.MessageIdentifier_02.MessageReleaseNumber_03 = "00A";
+            result.UNH.MessageIdentifier_02.MessageReleaseNumber_03 = "96A";
             result.UNH.MessageIdentifier_02.ControllingAgencyCoded_04 = "UN";
 
             //  Order number 128576
@@ -731,7 +731,7 @@ namespace EdiFabric.Sdk.Helpers
             //  The first place to which the product is to be delivered is identified by GLN 3312345501003
             locLoop2.LOC = new LOC();
             locLoop2.LOC.Placelocationqualifier_01 = "7";
-            locLoop1.LOC.LOCATIONIDENTIFICATION_02 = new C517();
+            locLoop2.LOC.LOCATIONIDENTIFICATION_02 = new C517();
             locLoop2.LOC.LOCATIONIDENTIFICATION_02.Placelocationidentification_01 = "3312345501003";
             locLoop2.LOC.LOCATIONIDENTIFICATION_02.Codelistresponsibleagencycoded_03 = "9";
 
@@ -787,7 +787,7 @@ namespace EdiFabric.Sdk.Helpers
             var cnt = new CNT();
             cnt.CONTROL_01 = new C270();
             cnt.CONTROL_01.Controlqualifier_01 = "2";
-            cnt.CONTROL_01.Controlqualifier_01 = "1";
+            cnt.CONTROL_01.Controlvalue_02 = "1";
             result.CNT.Add(cnt);
 
             return result;
