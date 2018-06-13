@@ -38,7 +38,7 @@ namespace EdiFabric.Sdk.Edifact.ORDERS
                 using (var writer = new EdifactWriter(stream))
                 {
                     writer.Write(EdifactHelpers.CreateUnb("1"));
-                    writer.Write(EdifactHelpers.CreateOrders("1"));
+                    writer.Write(EdifactHelpers.CreatePurchaseOrder("1"));
                 }
 
                 var ediString = StreamHelpers.LoadString(stream);

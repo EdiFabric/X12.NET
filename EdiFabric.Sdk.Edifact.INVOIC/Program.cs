@@ -1,5 +1,4 @@
 ﻿using EdiFabric.Core.Model.Edi;
-using EdiFabric.Core.Model.Edi.Edifact;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Framework.Writers;
 using EdiFabric.Rules.EDIFACT_D96A;
@@ -39,7 +38,7 @@ namespace EdiFabric.Sdk.Edifact.INVOIC
                 using (var writer = new EdifactWriter(stream))
                 {
                     writer.Write(EdifactHelpers.CreateUnb("1"));
-                    writer.Write(EdifactHelpers.CreateInvoic("1"));
+                    writer.Write(EdifactHelpers.CreateInvoice("1"));
                 }
 
                 var ediString = StreamHelpers.LoadString(stream);

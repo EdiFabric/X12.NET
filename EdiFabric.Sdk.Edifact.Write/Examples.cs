@@ -22,7 +22,7 @@ namespace EdiFabric.Sdk.Edifact.Write
             Debug.WriteLine("******************************");
 
             //  1.  Construct the invoice
-            var invoice = EdifactHelpers.CreateInvoic("1");
+            var invoice = EdifactHelpers.CreateInvoice("1");
 
             //  2.  Validate it by skipping trailer validation
             MessageErrorContext errorContext;
@@ -68,7 +68,7 @@ namespace EdiFabric.Sdk.Edifact.Write
             Debug.WriteLine("******************************");
 
             //  1.  Construct the invoice
-            var invoice = EdifactHelpers.CreateInvoic("1");
+            var invoice = EdifactHelpers.CreateInvoice("1");
 
             //  2.  Validate it by skipping trailer validation
             MessageErrorContext errorContext;
@@ -102,7 +102,7 @@ namespace EdiFabric.Sdk.Edifact.Write
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var invoice = EdifactHelpers.CreateInvoic("1");
+            var invoice = EdifactHelpers.CreateInvoice("1");
 
             using (var stream = new MemoryStream())
             {
@@ -130,7 +130,7 @@ namespace EdiFabric.Sdk.Edifact.Write
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var invoice = EdifactHelpers.CreateInvoic("1");
+            var invoice = EdifactHelpers.CreateInvoice("1");
 
             using (var stream = new MemoryStream())
             {
@@ -160,10 +160,10 @@ namespace EdiFabric.Sdk.Edifact.Write
                     writer.Write(EdifactHelpers.CreateUnb("1"));
 
                     //  1.  Write the first invoice
-                    writer.Write(EdifactHelpers.CreateInvoic("1"));
+                    writer.Write(EdifactHelpers.CreateInvoice("1"));
 
                     //  2.  Write the second invoice
-                    writer.Write(EdifactHelpers.CreateInvoic("2"));
+                    writer.Write(EdifactHelpers.CreateInvoice("2"));
 
                     //  3.  Write any subsequent invoices...
                 }
@@ -187,12 +187,12 @@ namespace EdiFabric.Sdk.Edifact.Write
                 {
                     //  1.  Write the first interchange
                     writer.Write(EdifactHelpers.CreateUnb("1"));
-                    writer.Write(EdifactHelpers.CreateInvoic("1"));
+                    writer.Write(EdifactHelpers.CreateInvoice("1"));
 
                     //  2.  Write the second interchange
                     //  No need to close the previous interchange with a IEA
                     writer.Write(EdifactHelpers.CreateUnb("2"));
-                    writer.Write(EdifactHelpers.CreateInvoic("1"));
+                    writer.Write(EdifactHelpers.CreateInvoice("1"));
                 }
 
                 Debug.Write(StreamHelpers.LoadString(stream));
@@ -208,7 +208,7 @@ namespace EdiFabric.Sdk.Edifact.Write
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var invoice = EdifactHelpers.CreateInvoic("1");
+            var invoice = EdifactHelpers.CreateInvoice("1");
 
             //  Initialize a blank property
             invoice.BGM.Responsetypecoded_04 = "";

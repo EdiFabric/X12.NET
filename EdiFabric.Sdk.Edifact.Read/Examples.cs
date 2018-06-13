@@ -27,7 +27,7 @@ namespace EdiFabric.Sdk.Edifact.Read
             Debug.WriteLine("******************************");
 
             //  1.  Load to a stream 
-            var purchaseOrderStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrders.txt");
+            var purchaseOrderStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrder.txt");
             
             //  2.  Read all the contents
             List<EdiItem> ediItems;

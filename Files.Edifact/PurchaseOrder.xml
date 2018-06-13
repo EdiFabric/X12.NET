@@ -1,4 +1,4 @@
-﻿<TSORDERS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<TSORDERS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <UNH>
     <MessageReferenceNumber_01>000000101</MessageReferenceNumber_01>
     <MessageIdentifier_02>
@@ -12,210 +12,329 @@
     <DOCUMENTMESSAGENAME_01>
       <Documentmessagenamecoded_01>220</Documentmessagenamecoded_01>
     </DOCUMENTMESSAGENAME_01>
-    <Documentmessagenumber_02>0123456789123</Documentmessagenumber_02>
+    <Documentmessagenumber_02>128576</Documentmessagenumber_02>
     <Messagefunctioncoded_03>9</Messagefunctioncoded_03>
-    <Responsetypecoded_04>AC</Responsetypecoded_04>
   </BGM>
   <DTM>
     <DTM>
       <DATETIMEPERIOD_01>
         <Datetimeperiodqualifier_01>137</Datetimeperiodqualifier_01>
-        <Datetimeperiod_02>20060515</Datetimeperiod_02>
-        <Datetimeperiodformatqualifier_03>102</Datetimeperiodformatqualifier_03>
-      </DATETIMEPERIOD_01>
-    </DTM>
-    <DTM>
-      <DATETIMEPERIOD_01>
-        <Datetimeperiodqualifier_01>61</Datetimeperiodqualifier_01>
-        <Datetimeperiod_02>20060515</Datetimeperiod_02>
+        <Datetimeperiod_02>20020830</Datetimeperiod_02>
         <Datetimeperiodformatqualifier_03>102</Datetimeperiodformatqualifier_03>
       </DATETIMEPERIOD_01>
     </DTM>
   </DTM>
+  <PAI>
+    <PAYMENTINSTRUCTIONDETAILS_01>
+      <Paymentmeanscoded_03>42</Paymentmeanscoded_03>
+    </PAYMENTINSTRUCTIONDETAILS_01>
+  </PAI>
   <FTX>
     <FTX>
-      <Textsubjectqualifier_01>GEN</Textsubjectqualifier_01>
+      <Textsubjectqualifier_01>ZZZ</Textsubjectqualifier_01>
       <Textfunctioncoded_02>1</Textfunctioncoded_02>
       <TEXTREFERENCE_03>
-        <Freetextcoded_01>DUY</Freetextcoded_01>
-        <Codelistqualifier_02>1B</Codelistqualifier_02>
-        <Codelistresponsibleagencycoded_03>28</Codelistresponsibleagencycoded_03>
+        <Freetextcoded_01>001</Freetextcoded_01>
+        <Codelistresponsibleagencycoded_03>91</Codelistresponsibleagencycoded_03>
       </TEXTREFERENCE_03>
     </FTX>
   </FTX>
+  <RFFLoop1>
+    <TSORDERS_RFFLoop1>
+      <RFF>
+        <REFERENCE_01>
+          <Referencequalifier_01>CT</Referencequalifier_01>
+          <Referencenumber_02>652744</Referencenumber_02>
+        </REFERENCE_01>
+      </RFF>
+      <DTM>
+        <DTM>
+          <DATETIMEPERIOD_01>
+            <Datetimeperiodqualifier_01>171</Datetimeperiodqualifier_01>
+            <Datetimeperiod_02>20020825</Datetimeperiod_02>
+            <Datetimeperiodformatqualifier_03>102</Datetimeperiodformatqualifier_03>
+          </DATETIMEPERIOD_01>
+        </DTM>
+      </DTM>
+    </TSORDERS_RFFLoop1>
+  </RFFLoop1>
   <NADLoop1>
     <TSORDERS_NADLoop1>
       <NAD>
         <Partyqualifier_01>BY</Partyqualifier_01>
         <PARTYIDENTIFICATIONDETAILS_02>
-          <Partyididentification_01>1135309</Partyididentification_01>
-          <Codelistresponsibleagencycoded_03>31B</Codelistresponsibleagencycoded_03>
+          <Partyididentification_01>5412345000013</Partyididentification_01>
+          <Codelistresponsibleagencycoded_03>9</Codelistresponsibleagencycoded_03>
         </PARTYIDENTIFICATIONDETAILS_02>
       </NAD>
-    </TSORDERS_NADLoop1>
-    <TSORDERS_NADLoop1>
-      <NAD>
-        <Partyqualifier_01>DP</Partyqualifier_01>
-        <PARTYIDENTIFICATIONDETAILS_02>
-          <Partyididentification_01>6678157</Partyididentification_01>
-          <Codelistqualifier_02>31B</Codelistqualifier_02>
-        </PARTYIDENTIFICATIONDETAILS_02>
-      </NAD>
+      <RFFLoop2>
+        <TSORDERS_RFFLoop2>
+          <RFF>
+            <REFERENCE_01>
+              <Referencequalifier_01>VA</Referencequalifier_01>
+              <Referencenumber_02>87765432</Referencenumber_02>
+            </REFERENCE_01>
+          </RFF>
+        </TSORDERS_RFFLoop2>
+      </RFFLoop2>
+      <CTALoop1>
+        <TSORDERS_CTALoop1>
+          <CTA>
+            <Contactfunctioncoded_01>OC</Contactfunctioncoded_01>
+            <DEPARTMENTOREMPLOYEEDETAILS_02>
+              <Departmentoremployee_02>P FORGET</Departmentoremployee_02>
+            </DEPARTMENTOREMPLOYEEDETAILS_02>
+          </CTA>
+          <COM>
+            <COM>
+              <COMMUNICATIONCONTACT_01>
+                <Communicationnumber_01>0044715632478</Communicationnumber_01>
+                <Communicationchannelqualifier_02>TE</Communicationchannelqualifier_02>
+              </COMMUNICATIONCONTACT_01>
+            </COM>
+          </COM>
+        </TSORDERS_CTALoop1>
+      </CTALoop1>
     </TSORDERS_NADLoop1>
     <TSORDERS_NADLoop1>
       <NAD>
         <Partyqualifier_01>SU</Partyqualifier_01>
         <PARTYIDENTIFICATIONDETAILS_02>
-          <Partyididentification_01>3333333</Partyididentification_01>
-          <Codelistqualifier_02>31B</Codelistqualifier_02>
+          <Partyididentification_01>4012345500004</Partyididentification_01>
+          <Codelistresponsibleagencycoded_03>9</Codelistresponsibleagencycoded_03>
         </PARTYIDENTIFICATIONDETAILS_02>
       </NAD>
+      <RFFLoop2>
+        <TSORDERS_RFFLoop2>
+          <RFF>
+            <REFERENCE_01>
+              <Referencequalifier_01>VA</Referencequalifier_01>
+              <Referencenumber_02>56225432</Referencenumber_02>
+            </REFERENCE_01>
+          </RFF>
+        </TSORDERS_RFFLoop2>
+      </RFFLoop2>
     </TSORDERS_NADLoop1>
   </NADLoop1>
+  <CUXLoop1>
+    <TSORDERS_CUXLoop1>
+      <CUX>
+        <CURRENCYDETAILS_01>
+          <Currencydetailsqualifier_01>2</Currencydetailsqualifier_01>
+          <Currencycoded_02>GBP</Currencycoded_02>
+          <Currencyqualifier_03>9</Currencyqualifier_03>
+        </CURRENCYDETAILS_01>
+        <CURRENCYDETAILS_02>
+          <Currencydetailsqualifier_01>3</Currencydetailsqualifier_01>
+          <Currencycoded_02>EUR</Currencycoded_02>
+          <Currencyqualifier_03>4</Currencyqualifier_03>
+        </CURRENCYDETAILS_02>
+        <Rateofexchange_03>1.67</Rateofexchange_03>
+      </CUX>
+      <DTM>
+        <DTM>
+          <DATETIMEPERIOD_01>
+            <Datetimeperiodqualifier_01>134</Datetimeperiodqualifier_01>
+            <Datetimeperiod_02>2002080120020831</Datetimeperiod_02>
+            <Datetimeperiodformatqualifier_03>718</Datetimeperiodformatqualifier_03>
+          </DATETIMEPERIOD_01>
+        </DTM>
+      </DTM>
+    </TSORDERS_CUXLoop1>
+  </CUXLoop1>
+  <TDTLoop1>
+    <TSORDERS_TDTLoop1>
+      <TDT>
+        <Transportstagequalifier_01>20</Transportstagequalifier_01>
+        <MODEOFTRANSPORT_03>
+          <Modeoftransportcoded_01>30</Modeoftransportcoded_01>
+        </MODEOFTRANSPORT_03>
+        <TRANSPORTMEANS_04>
+          <Typeofmeansoftransportidentification_01>31</Typeofmeansoftransportidentification_01>
+        </TRANSPORTMEANS_04>
+      </TDT>
+    </TSORDERS_TDTLoop1>
+  </TDTLoop1>
+  <TODLoop1>
+    <TSORDERS_TODLoop1>
+      <TOD>
+        <Termsofdeliveryortransportfunctioncoded_01>3</Termsofdeliveryortransportfunctioncoded_01>
+        <TERMSOFDELIVERYORTRANSPORT_03>
+          <Termsofdeliveryortransportcoded_01>CIF</Termsofdeliveryortransportcoded_01>
+          <Codelistqualifier_02>23</Codelistqualifier_02>
+          <Codelistresponsibleagencycoded_03>9</Codelistresponsibleagencycoded_03>
+        </TERMSOFDELIVERYORTRANSPORT_03>
+      </TOD>
+      <LOC>
+        <LOC>
+          <Placelocationqualifier_01>1</Placelocationqualifier_01>
+          <LOCATIONIDENTIFICATION_02>
+            <Placelocationidentification_01>BE-BRU</Placelocationidentification_01>
+          </LOCATIONIDENTIFICATION_02>
+        </LOC>
+      </LOC>
+    </TSORDERS_TODLoop1>
+  </TODLoop1>
   <LINLoop1>
     <TSORDERS_LINLoop1>
       <LIN>
         <Lineitemnumber_01>1</Lineitemnumber_01>
+        <ITEMNUMBERIDENTIFICATION_03>
+          <Itemnumber_01>4000862141404</Itemnumber_01>
+          <Itemnumbertypecoded_02>SRS</Itemnumbertypecoded_02>
+        </ITEMNUMBERIDENTIFICATION_03>
       </LIN>
       <PIA>
         <PIA>
-          <Productidfunctionqualifier_01>5</Productidfunctionqualifier_01>
+          <Productidfunctionqualifier_01>1</Productidfunctionqualifier_01>
           <ITEMNUMBERIDENTIFICATION_02>
-            <Itemnumber_01>0835201031</Itemnumber_01>
-            <Itemnumbertypecoded_02>IB</Itemnumbertypecoded_02>
+            <Itemnumber_01>ABC1234</Itemnumber_01>
+            <Itemnumbertypecoded_02>IN</Itemnumbertypecoded_02>
           </ITEMNUMBERIDENTIFICATION_02>
         </PIA>
       </PIA>
+      <IMD>
+        <IMD>
+          <Itemdescriptiontypecoded_01>C</Itemdescriptiontypecoded_01>
+          <ITEMDESCRIPTION_03>
+            <Itemdescriptionidentification_01>TU</Itemdescriptionidentification_01>
+            <Codelistresponsibleagencycoded_03>9</Codelistresponsibleagencycoded_03>
+          </ITEMDESCRIPTION_03>
+        </IMD>
+      </IMD>
       <QTY>
         <QTY>
           <QUANTITYDETAILS_01>
             <Quantityqualifier_01>21</Quantityqualifier_01>
-            <Quantity_02>2</Quantity_02>
+            <Quantity_02>48</Quantity_02>
           </QUANTITYDETAILS_01>
         </QTY>
       </QTY>
+      <MOA>
+        <MOA>
+          <MONETARYAMOUNT_01>
+            <Monetaryamounttypequalifier_01>203</Monetaryamounttypequalifier_01>
+            <Monetaryamount_02>699.84</Monetaryamount_02>
+          </MONETARYAMOUNT_01>
+        </MOA>
+      </MOA>
       <PRILoop1>
         <TSORDERS_PRILoop1>
           <PRI>
             <PRICEINFORMATION_01>
-              <Pricequalifier_01>AAB</Pricequalifier_01>
-              <Price_02>10.5</Price_02>
-              <Pricetypequalifier_04>SRP</Pricetypequalifier_04>
+              <Pricequalifier_01>AAA</Pricequalifier_01>
+              <Price_02>14.58</Price_02>
+              <Pricetypecoded_03>CT</Pricetypecoded_03>
+              <Pricetypequalifier_04>AAE</Pricetypequalifier_04>
+              <Unitpricebasis_05>1</Unitpricebasis_05>
+              <Measureunitqualifier_06>KGM</Measureunitqualifier_06>
             </PRICEINFORMATION_01>
           </PRI>
         </TSORDERS_PRILoop1>
       </PRILoop1>
-      <ALCLoop2>
-        <TSORDERS_ALCLoop2>
-          <ALC>
-            <Allowanceorchargequalifier_01>A</Allowanceorchargequalifier_01>
-          </ALC>
-          <PCDLoop2>
-            <PCD>
-              <PERCENTAGEDETAILS_01>
-                <Percentagequalifier_01>3</Percentagequalifier_01>
-                <Percentage_02>20</Percentage_02>
-              </PERCENTAGEDETAILS_01>
-            </PCD>
-          </PCDLoop2>
-        </TSORDERS_ALCLoop2>
-      </ALCLoop2>
-    </TSORDERS_LINLoop1>
-    <TSORDERS_LINLoop1>
-      <LIN>
-        <Lineitemnumber_01>2</Lineitemnumber_01>
-      </LIN>
-      <PIA>
-        <PIA>
-          <Productidfunctionqualifier_01>5</Productidfunctionqualifier_01>
-          <ITEMNUMBERIDENTIFICATION_02>
-            <Itemnumber_01>0835202151</Itemnumber_01>
-            <Itemnumbertypecoded_02>IB</Itemnumbertypecoded_02>
-          </ITEMNUMBERIDENTIFICATION_02>
-        </PIA>
-      </PIA>
-      <QTY>
-        <QTY>
-          <QUANTITYDETAILS_01>
-            <Quantityqualifier_01>21</Quantityqualifier_01>
-            <Quantity_02>10</Quantity_02>
-          </QUANTITYDETAILS_01>
-        </QTY>
-      </QTY>
-      <PRILoop1>
-        <TSORDERS_PRILoop1>
-          <PRI>
-            <PRICEINFORMATION_01>
-              <Pricequalifier_01>AAB</Pricequalifier_01>
-              <Price_02>9.25</Price_02>
-              <Pricetypequalifier_04>SRP</Pricetypequalifier_04>
-            </PRICEINFORMATION_01>
-          </PRI>
-        </TSORDERS_PRILoop1>
-      </PRILoop1>
-      <ALCLoop2>
-        <TSORDERS_ALCLoop2>
-          <ALC>
-            <Allowanceorchargequalifier_01>A</Allowanceorchargequalifier_01>
-          </ALC>
-          <PCDLoop2>
-            <PCD>
-              <PERCENTAGEDETAILS_01>
-                <Percentagequalifier_01>3</Percentagequalifier_01>
-                <Percentage_02>20</Percentage_02>
-              </PERCENTAGEDETAILS_01>
-            </PCD>
-          </PCDLoop2>
-        </TSORDERS_ALCLoop2>
-      </ALCLoop2>
-    </TSORDERS_LINLoop1>
-    <TSORDERS_LINLoop1>
-      <LIN>
-        <Lineitemnumber_01>3</Lineitemnumber_01>
-      </LIN>
-      <PIA>
-        <PIA>
-          <Productidfunctionqualifier_01>5</Productidfunctionqualifier_01>
-          <ITEMNUMBERIDENTIFICATION_02>
-            <Itemnumber_01>0835208338</Itemnumber_01>
-            <Itemnumbertypecoded_02>IB</Itemnumbertypecoded_02>
-          </ITEMNUMBERIDENTIFICATION_02>
-        </PIA>
-      </PIA>
-      <QTY>
-        <QTY>
-          <QUANTITYDETAILS_01>
-            <Quantityqualifier_01>21</Quantityqualifier_01>
-            <Quantity_02>5</Quantity_02>
-          </QUANTITYDETAILS_01>
-        </QTY>
-      </QTY>
-      <PRILoop1>
-        <TSORDERS_PRILoop1>
-          <PRI>
-            <PRICEINFORMATION_01>
-              <Pricequalifier_01>AAB</Pricequalifier_01>
-              <Price_02>30</Price_02>
-              <Pricetypequalifier_04>SRP</Pricetypequalifier_04>
-            </PRICEINFORMATION_01>
-          </PRI>
-        </TSORDERS_PRILoop1>
-      </PRILoop1>
-      <ALCLoop2>
-        <TSORDERS_ALCLoop2>
-          <ALC>
-            <Allowanceorchargequalifier_01>A</Allowanceorchargequalifier_01>
-          </ALC>
-          <PCDLoop2>
-            <PCD>
-              <PERCENTAGEDETAILS_01>
-                <Percentagequalifier_01>3</Percentagequalifier_01>
-                <Percentage_02>20</Percentage_02>
-              </PERCENTAGEDETAILS_01>
-            </PCD>
-          </PCDLoop2>
-        </TSORDERS_ALCLoop2>
-      </ALCLoop2>
+      <RFFLoop3>
+        <TSORDERS_RFFLoop3>
+          <RFF>
+            <REFERENCE_01>
+              <Referencequalifier_01>PL</Referencequalifier_01>
+              <Referencenumber_02>AUG93RNG04</Referencenumber_02>
+            </REFERENCE_01>
+          </RFF>
+          <DTM>
+            <DTM>
+              <DATETIMEPERIOD_01>
+                <Datetimeperiodqualifier_01>171</Datetimeperiodqualifier_01>
+                <Datetimeperiod_02>20020801</Datetimeperiod_02>
+                <Datetimeperiodformatqualifier_03>102</Datetimeperiodformatqualifier_03>
+              </DATETIMEPERIOD_01>
+            </DTM>
+          </DTM>
+        </TSORDERS_RFFLoop3>
+      </RFFLoop3>
+      <PACLoop2>
+        <TSORDERS_PACLoop2>
+          <PAC>
+            <Numberofpackages_01>2</Numberofpackages_01>
+            <PACKAGINGDETAILS_02>
+              <Packagingrelatedinformationcoded_02>51</Packagingrelatedinformationcoded_02>
+            </PACKAGINGDETAILS_02>
+            <PACKAGETYPE_03>
+              <Typeofpackagesidentification_01>CS</Typeofpackagesidentification_01>
+            </PACKAGETYPE_03>
+          </PAC>
+          <PCILoop2>
+            <TSORDERS_PCILoop2>
+              <PCI>
+                <Markinginstructionscoded_01>14</Markinginstructionscoded_01>
+              </PCI>
+            </TSORDERS_PCILoop2>
+          </PCILoop2>
+        </TSORDERS_PACLoop2>
+      </PACLoop2>
+      <LOCLoop2>
+        <TSORDERS_LOCLoop2>
+          <LOC>
+            <Placelocationqualifier_01>7</Placelocationqualifier_01>
+            <LOCATIONIDENTIFICATION_02>
+              <Placelocationidentification_01>3312345502000</Placelocationidentification_01>
+              <Codelistresponsibleagencycoded_03>9</Codelistresponsibleagencycoded_03>
+            </LOCATIONIDENTIFICATION_02>
+          </LOC>
+          <QTY>
+            <QUANTITYDETAILS_01>
+              <Quantityqualifier_01>11</Quantityqualifier_01>
+              <Quantity_02>24</Quantity_02>
+            </QUANTITYDETAILS_01>
+          </QTY>
+          <DTM>
+            <DTM>
+              <DATETIMEPERIOD_01>
+                <Datetimeperiodqualifier_01>2</Datetimeperiodqualifier_01>
+                <Datetimeperiod_02>20020915</Datetimeperiod_02>
+                <Datetimeperiodformatqualifier_03>102</Datetimeperiodformatqualifier_03>
+              </DATETIMEPERIOD_01>
+            </DTM>
+          </DTM>
+        </TSORDERS_LOCLoop2>
+        <TSORDERS_LOCLoop2>
+          <LOC>
+            <Placelocationqualifier_01>7</Placelocationqualifier_01>
+            <LOCATIONIDENTIFICATION_02>
+              <Placelocationidentification_01>3312345501003</Placelocationidentification_01>
+              <Codelistresponsibleagencycoded_03>9</Codelistresponsibleagencycoded_03>
+            </LOCATIONIDENTIFICATION_02>
+          </LOC>
+          <QTY>
+            <QUANTITYDETAILS_01>
+              <Quantityqualifier_01>11</Quantityqualifier_01>
+              <Quantity_02>24</Quantity_02>
+            </QUANTITYDETAILS_01>
+          </QTY>
+          <DTM>
+            <DTM>
+              <DATETIMEPERIOD_01>
+                <Datetimeperiodqualifier_01>2</Datetimeperiodqualifier_01>
+                <Datetimeperiod_02>20020913</Datetimeperiod_02>
+                <Datetimeperiodformatqualifier_03>102</Datetimeperiodformatqualifier_03>
+              </DATETIMEPERIOD_01>
+            </DTM>
+          </DTM>
+        </TSORDERS_LOCLoop2>
+      </LOCLoop2>
+      <TAXLoop3>
+        <TSORDERS_TAXLoop3>
+          <TAX>
+            <Dutytaxfeefunctionqualifier_01>7</Dutytaxfeefunctionqualifier_01>
+            <DUTYTAXFEETYPE_02>
+              <Dutytaxfeetypecoded_01>VAT</Dutytaxfeetypecoded_01>
+            </DUTYTAXFEETYPE_02>
+            <DUTYTAXFEEDETAIL_05>
+              <Dutytaxfeerate_04>17.5</Dutytaxfeerate_04>
+            </DUTYTAXFEEDETAIL_05>
+            <Dutytaxfeecategorycoded_06>S</Dutytaxfeecategorycoded_06>
+          </TAX>
+        </TSORDERS_TAXLoop3>
+      </TAXLoop3>
     </TSORDERS_LINLoop1>
   </LINLoop1>
   <UNS>
@@ -225,18 +344,12 @@
     <CNT>
       <CONTROL_01>
         <Controlqualifier_01>2</Controlqualifier_01>
-        <Controlvalue_02>3</Controlvalue_02>
-      </CONTROL_01>
-    </CNT>
-    <CNT>
-      <CONTROL_01>
-        <Controlqualifier_01>1</Controlqualifier_01>
-        <Controlvalue_02>17</Controlvalue_02>
+        <Controlvalue_02>1</Controlvalue_02>
       </CONTROL_01>
     </CNT>
   </CNT>
   <UNT>
-    <NumberofSegmentsinaMessage_01>30</NumberofSegmentsinaMessage_01>
+    <NumberofSegmentsinaMessage_01>38</NumberofSegmentsinaMessage_01>
     <MessageReferenceNumber_02>000000101</MessageReferenceNumber_02>
   </UNT>
 </TSORDERS>
