@@ -13,18 +13,31 @@ namespace EdiFabric.Sdk.TemplateFactories
         /// </summary>
         /// <param name="messageContext">The message context.</param>
         /// <returns>The assembly containing the matching template.</returns>
-        public static Assembly AssemblyFactory(MessageContext messageContext)
+        public static Assembly FullTemplateFactory(MessageContext messageContext)
         {
-            if (messageContext.SenderId == "SPLIT1")
-                return Assembly.Load("EdiFabric.Sdk.Edifact.Templates.D96A.Split");
-
-            if (messageContext.SenderId == "VALIDATE1")
-                return Assembly.Load("EdiFabric.Sdk.Edifact.Templates.D96A.Validation");
-
-            if (messageContext.Version == "D96A")
+            if (messageContext.Version == "D96A" && (messageContext.Name == "ORDERS" || messageContext.Name == "INVOIC"))
                 return Assembly.Load("EdiFabric.Sdk.Edifact.Templates.D96A");
 
-            throw new System.Exception(string.Format("Unsupported version {0}", messageContext.Version));
+            throw new System.Exception(string.Format("Transaction {0} for version {1} is not supported.",
+                messageContext.Name, messageContext.Version));
+        }
+
+        public static Assembly SplitFactory(MessageContext messageContext)
+        {
+            if (messageContext.Version == "D96A" && (messageContext.Name == "ORDERS" || messageContext.Name == "INVOIC"))
+                return Assembly.Load("EdiFabric.Sdk.Edifact.Templates.D96A.Split");
+
+            throw new System.Exception(string.Format("Transaction {0} for version {1} is not supported.",
+                messageContext.Name, messageContext.Version));
+        }
+
+        public static Assembly CustomValidationFactory(MessageContext messageContext)
+        {
+            if (messageContext.Version == "D96A" && (messageContext.Name == "ORDERS" || messageContext.Name == "INVOIC"))
+                return Assembly.Load("EdiFabric.Sdk.Edifact.Templates.D96A.Validation");
+
+            throw new System.Exception(string.Format("Transaction {0} for version {1} is not supported.",
+                messageContext.Name, messageContext.Version));
         }
 
         /// <summary>
@@ -44,12 +57,11 @@ namespace EdiFabric.Sdk.TemplateFactories
                 unh.MessageIdentifier_02.MessageType_01 == "INVOIC")
                 return typeof(TSINVOIC).GetTypeInfo();
 
-            throw new System.Exception(string.Format("Unsupported version {0} and transaction {1}",
-                unh.MessageIdentifier_02.MessageVersionNumber_02,
-                unh.MessageIdentifier_02.MessageType_01));
+            throw new System.Exception(string.Format("Transaction {0} for version {1} is not supported.",
+                unh.MessageIdentifier_02.MessageType_01, unh.MessageIdentifier_02.MessageVersionNumber_02));
         }
-
-        public static Assembly TrialAssembliesFactory(MessageContext messageContext)
+        
+        public static Assembly TrialFactory(MessageContext messageContext)
         {
             if (messageContext.Version == "D96A")
                 return Assembly.Load("EdiFabric.Rules.EdifactD96A");

@@ -15,19 +15,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EDI Files", "EDI Files", "{
 	ProjectSection(SolutionItems) = preProject
 		Files.Edifact\CorruptUnb.txt = Files.Edifact\CorruptUnb.txt
 		Files.Edifact\CorruptUnh.txt = Files.Edifact\CorruptUnh.txt
-		Files.Edifact\DetectDuplicateGroup.txt = Files.Edifact\DetectDuplicateGroup.txt
-		Files.Edifact\DetectDuplicateInterchange.txt = Files.Edifact\DetectDuplicateInterchange.txt
+		Files.Edifact\DuplicateGroup.txt = Files.Edifact\DuplicateGroup.txt
+		Files.Edifact\DuplicateInterchange.txt = Files.Edifact\DuplicateInterchange.txt
 		Files.Edifact\DuplicateMessage.txt = Files.Edifact\DuplicateMessage.txt
 		Files.Edifact\Invoice.txt = Files.Edifact\Invoice.txt
 		Files.Edifact\MixedTransactions.txt = Files.Edifact\MixedTransactions.txt
 		Files.Edifact\PurchaseOrder.txt = Files.Edifact\PurchaseOrder.txt
 		Files.Edifact\PurchaseOrder.xml = Files.Edifact\PurchaseOrder.xml
-		Files.Edifact\PurchaseOrderCustomValidation.txt = Files.Edifact\PurchaseOrderCustomValidation.txt
 		Files.Edifact\PurchaseOrderInvalid.txt = Files.Edifact\PurchaseOrderInvalid.txt
-		Files.Edifact\PurchaseOrderLINSplit.txt = Files.Edifact\PurchaseOrderLINSplit.txt
+		Files.Edifact\PurchaseOrderMultiLine.txt = Files.Edifact\PurchaseOrderMultiLine.txt
 		Files.Edifact\PurchaseOrders.txt = Files.Edifact\PurchaseOrders.txt
-		Files.Edifact\PurchaseOrderWithUna.txt = Files.Edifact\PurchaseOrderWithUna.txt
-		Files.Edifact\PurchaseOrderWithUng.txt = Files.Edifact\PurchaseOrderWithUng.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.Read", "EdiFabric.Sdk.Edifact.Read\EdiFabric.Sdk.Edifact.Read.csproj", "{BC2B9848-5644-4E03-98E8-09753CE3331E}"

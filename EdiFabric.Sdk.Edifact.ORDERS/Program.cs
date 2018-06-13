@@ -27,7 +27,7 @@ namespace EdiFabric.Sdk.Edifact.ORDERS
             var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrder.txt");
 
             List<EdiItem> ediItems;
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.TrialAssembliesFactory))
+            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.TrialFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var transactions = ediItems.OfType<TSORDERS>();

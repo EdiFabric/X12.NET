@@ -27,11 +27,11 @@ namespace EdiFabric.Sdk.Edifact.Read
             Debug.WriteLine("******************************");
 
             //  1.  Load to a stream 
-            var purchaseOrderStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrder.txt");
+            var purchaseOrderStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrders.txt");
             
             //  2.  Read all the contents
             List<EdiItem> ediItems;
-            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.AssemblyFactory))
+            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.FullTemplateFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             //  3.  Pull the purchase orders
@@ -77,7 +77,7 @@ namespace EdiFabric.Sdk.Edifact.Read
 
             //  2. Read item by item, that is each call to Read() 
             //  brings back either a control segment (UNB, UNG, UNE or UNZ) or a transaction
-            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.AssemblyFactory))
+            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.FullTemplateFactory))
             {
                 while (ediReader.Read())
                 {
@@ -127,48 +127,7 @@ namespace EdiFabric.Sdk.Edifact.Read
                 foreach (var ediItem in ediItems)
                     Debug.WriteLine(ediItem.GetType().Name);
             }
-        }        
-
-        /// <summary>
-        /// Read with custom encoding, UTF8 is used by default.
-        /// </summary>
-        public static void ReadWithEncoding()
-        {
-            Debug.WriteLine("******************************");
-            Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
-            Debug.WriteLine("******************************");
-
-            Stream purchaseOrderStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrder.txt");
-
-            //  Use UTF8
-            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.AssemblyFactory, Encoding.UTF8))
-            {
-                var ediItems = ediReader.ReadToEnd().ToList();
-
-                foreach (var ediItem in ediItems)
-                    Debug.WriteLine(ediItem.GetType().Name);
-            }
-        }
-
-        /// <summary>
-        /// The reader automatically resolves the delimiters if UNA is present.
-        /// </summary>
-        public static void ReadWithUna()
-        {
-            Debug.WriteLine("******************************");
-            Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
-            Debug.WriteLine("******************************");
-
-            Stream purchaseOrderStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrderWithUna.txt");
-
-            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.AssemblyFactory))
-            {
-                var ediItems = ediReader.ReadToEnd().ToList();
-
-                foreach (var ediItem in ediItems)
-                    Debug.WriteLine(ediItem.GetType().Name);
-            }
-        }
+        } 
 
         /// <summary>
         /// Split a message into parts (blocks of segments) and read each part individually.
@@ -186,7 +145,7 @@ namespace EdiFabric.Sdk.Edifact.Read
             //  Set the class to inherit from EdiItem and the parser will automatically split by it.
             //  See EF_EDIFACT_D96A_TSORDERS_Split.cs in project EdiFabric.Sdk.Edifact.Templates.D96A.Split.
             List<EdiItem> ediItems;
-            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.AssemblyFactory))
+            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.SplitFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             //  Find all LIN loops, they are all separate ediItems\EdiMessages
@@ -208,7 +167,7 @@ namespace EdiFabric.Sdk.Edifact.Read
             // The custom validation logic is applied in the template by implementing IEdiValidator.
             // See EF_EDIFACT_D96A_TSORDERS_Validation.cs in project EdiFabric.Sdk.Edifact.Templates.D96A.Validation.
             List<EdiItem> ediItems;
-            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.AssemblyFactory))
+            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.CustomValidationFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             //  Get the purchase order
@@ -234,7 +193,7 @@ namespace EdiFabric.Sdk.Edifact.Read
 
             Stream purchaseOrderStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrderWithUng.txt");
 
-            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.AssemblyFactory))
+            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.FullTemplateFactory))
             {
                 while(ediReader.Read())
                 {
@@ -276,7 +235,7 @@ namespace EdiFabric.Sdk.Edifact.Read
             Stream purchaseOrderStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\MixedTransactions.txt");
 
             //  2.  Read multiple transactions batched up in the same interchange
-            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.AssemblyFactory))
+            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.FullTemplateFactory))
             {
                 while (ediReader.Read())
                 {
@@ -315,7 +274,7 @@ namespace EdiFabric.Sdk.Edifact.Read
             Stream purchaseOrderStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\CorruptUnb.txt");
 
             List<EdiItem> ediItems;
-            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.AssemblyFactory))
+            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.FullTemplateFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var readerErrors = ediItems.OfType<ReaderErrorContext>();
@@ -338,7 +297,7 @@ namespace EdiFabric.Sdk.Edifact.Read
 
             //  Set the continue on error flag to true
             List<EdiItem> ediItems;
-            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.AssemblyFactory, Encoding.UTF8, true))
+            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.FullTemplateFactory, Encoding.UTF8, true))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var readerErrors = ediItems.OfType<ReaderErrorContext>();

@@ -9,7 +9,7 @@ namespace EdiFabric.Rules.EDIFACT_D96A
     
     
     [Serializable()]
-    [Message("EDIFACT", "DSPL", "ORDERS")]
+    [Message("EDIFACT", "D96A", "ORDERS")]
     public class TSORDERSSplit : EdiMessage
     {
         

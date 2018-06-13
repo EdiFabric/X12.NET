@@ -51,7 +51,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             };
 
             var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialAssembliesFactory))
+            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialFactory))
             {
                 while (ediReader.Read())
                     ackMan.Publish(ediReader.Item);
@@ -98,7 +98,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             };
 
             var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialAssembliesFactory))
+            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialFactory))
             {
                 while (ediReader.Read())
                     ackMan.Publish(ediReader.Item);
@@ -147,7 +147,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             };
 
             var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialAssembliesFactory))
+            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialFactory))
             {
                 while (ediReader.Read())
                     ackMan.Publish(ediReader.Item);
@@ -201,7 +201,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             };
 
             var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialAssembliesFactory))
+            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialFactory))
             {
                 while (ediReader.Read())
                     ackMan.Publish(ediReader.Item);
@@ -254,7 +254,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             };
 
             var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialAssembliesFactory))
+            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialFactory))
             {
                 while (ediReader.Read())
                     ackMan.Publish(ediReader.Item);
@@ -303,7 +303,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             };
           
             var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialAssembliesFactory))
+            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialFactory))
             {
                 while (ediReader.Read())
                     ackMan.Publish(ediReader.Item);

@@ -11,7 +11,7 @@ namespace EdiFabric.Rules.EDIFACT_D96A
     using EdiFabric.Core.ErrorCodes;
 
     [Serializable()]
-    [Message("EDIFACT", "DVAL", "ORDERS")]
+    [Message("EDIFACT", "D96A", "ORDERS")]
     public class TSORDERSValidation : EdiMessage
     {
 

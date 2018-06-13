@@ -26,7 +26,7 @@ namespace EdiFabric.Sdk.Edifact.Export.Xml
             var purchaseOrderStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrder.txt");
 
             List<EdiItem> ediItems;
-            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.AssemblyFactory))
+            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.TrialFactory))
             {
                 ediItems = ediReader.ReadToEnd().ToList();
             }
