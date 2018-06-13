@@ -36,9 +36,6 @@
     <Reference Include="EdiFabric.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
       <HintPath>..\packages\EdiFabric.Framework.9.7.0\lib\net45\EdiFabric.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="EdiFabric.Rules.EdifactD96A, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Rules.Edifact.D96A.2.6.0\lib\net45\EdiFabric.Rules.EdifactD96A.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -56,6 +53,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EdiFabric.Sdk.Edifact.Templates.D96A\EdiFabric.Sdk.Edifact.Templates.D96A.csproj">
+      <Project>{a6b9ede5-99e9-4696-9cee-6b6fff45cc12}</Project>
+      <Name>EdiFabric.Sdk.Edifact.Templates.D96A</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

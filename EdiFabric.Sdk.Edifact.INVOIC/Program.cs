@@ -27,7 +27,7 @@ namespace EdiFabric.Sdk.Edifact.INVOIC
             var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\Invoice.txt");
 
             List<EdiItem> ediItems;
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.TrialFactory))
+            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var transactions = ediItems.OfType<TSINVOIC>();
@@ -54,10 +54,10 @@ namespace EdiFabric.Sdk.Edifact.INVOIC
         {
             using (var stream = new MemoryStream())
             {
-                var transaction = EdifactHelpers.CreateInvoice("1");
+                var transaction = EdifactHelpers.BuildInvoice("1");
 
                 MessageErrorContext mec;
-                if (transaction.IsValid(out mec))
+                if (transaction.IsValid(out mec, true))
                 {
                     //  valid
                     using (var writer = new EdifactWriter(stream))
