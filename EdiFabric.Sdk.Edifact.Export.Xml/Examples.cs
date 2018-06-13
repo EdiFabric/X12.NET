@@ -23,18 +23,18 @@ namespace EdiFabric.Sdk.Edifact.Export.Xml
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var purchaseOrderStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrder.txt");
+            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrder.txt");
 
             List<EdiItem> ediItems;
-            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.TrialFactory))
+            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
             {
                 ediItems = ediReader.ReadToEnd().ToList();
             }
 
-            var purchaseOrders = ediItems.OfType<TSORDERS>();
-            foreach (var po in purchaseOrders)
+            var transactions = ediItems.OfType<TSORDERS>();
+            foreach (var transaction in transactions)
             {
-                var xml = XmlHelpers.Serialize(po);
+                var xml = XmlHelpers.Serialize(transaction);
                 Debug.WriteLine(xml.Root.ToString());
             }
         }
@@ -48,10 +48,10 @@ namespace EdiFabric.Sdk.Edifact.Export.Xml
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var purchaseOrderStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrder.xml");
+            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrder.xml");
 
-            var xml = XElement.Load(purchaseOrderStream);
-            var po = XmlHelpers.Deserialize<TSORDERS>(xml);
+            var xml = XElement.Load(ediStream);
+            var transaction = XmlHelpers.Deserialize<TSORDERS>(xml);
         }       
     }
 }

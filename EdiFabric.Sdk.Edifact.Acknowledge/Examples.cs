@@ -13,7 +13,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
     class Examples
     {
         /// <summary>
-        /// Generates a CONTRL for a valid purchase order.
+        /// Generate CONTRL for a valid message.
         /// </summary>
         public static void GenerateContrlForValid()
         {
@@ -29,7 +29,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
                 {
                     if (a.Message.Name == "CONTRL" && a.AckType == AckType.Technical)
                     {
-                        // a.AckInterchange is technical acknowledgment 
+                        // a.Message is technical acknowledgment 
                     }
 
                     if (a.Message.Name == "CONTRL" && a.AckType == AckType.Functional)
@@ -51,7 +51,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             };
 
             var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialFactory))
+            using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
             {
                 while (ediReader.Read())
                     ackMan.Publish(ediReader.Item);
@@ -60,7 +60,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
         }
 
         /// <summary>
-        /// Generates a CONTRL for an invalid purchase order.
+        /// Generate CONTRL for an invalid message.
         /// </summary>
         public static void GenerateContrlForInvalid()
         {
@@ -87,10 +87,10 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
                 },
                 MessageHandler = (s, a) =>
                 {
-                    if (!a.ErrorContext.HasErrors)
+                    if (a.ErrorContext.HasErrors)
                     {
                         // do something with the message a.Message
-                        Debug.WriteLine("Message {0} with control number {1} is valid.", a.ErrorContext.Name, a.ErrorContext.ControlNumber);
+                        Debug.WriteLine("Message {0} with control number {1} is invalid.", a.ErrorContext.Name, a.ErrorContext.ControlNumber);
                     }
                 },
                 // Turn on UCM for valid messages
@@ -98,7 +98,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             };
 
             var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialFactory))
+            using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
             {
                 while (ediReader.Read())
                     ackMan.Publish(ediReader.Item);
@@ -147,7 +147,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             };
 
             var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialFactory))
+            using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
             {
                 while (ediReader.Read())
                     ackMan.Publish(ediReader.Item);
@@ -164,7 +164,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var edi = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\DetectDuplicateGroup.txt");
+            var edi = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\DuplicateGroup.txt");
 
             var settings = new AckSettings
             {
@@ -201,7 +201,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             };
 
             var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialFactory))
+            using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
             {
                 while (ediReader.Read())
                     ackMan.Publish(ediReader.Item);
@@ -218,7 +218,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var edi = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\DetectDuplicateInterchange.txt");
+            var edi = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\DuplicateInterchange.txt");
 
             var settings = new AckSettings
             {
@@ -254,7 +254,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             };
 
             var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialFactory))
+            using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
             {
                 while (ediReader.Read())
                     ackMan.Publish(ediReader.Item);
@@ -303,7 +303,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             };
           
             var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, EdifactFactories.TrialFactory))
+            using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
             {
                 while (ediReader.Read())
                     ackMan.Publish(ediReader.Item);
