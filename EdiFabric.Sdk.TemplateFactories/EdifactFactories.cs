@@ -9,12 +9,18 @@ namespace EdiFabric.Sdk.TemplateFactories
     {
         /// <summary>
         /// Parse the transaction implicitly to a type with matching attributes in the specified assembly.
-        /// Matching by UNH MessageIdentifier.
+        /// Matching by UNH MessageIdentifier or Sender ID.
         /// </summary>
         /// <param name="messageContext">The message context.</param>
         /// <returns>The assembly containing the matching template.</returns>
         public static Assembly FullTemplateFactory(MessageContext messageContext)
         {
+            if (messageContext.SenderId == "CUSTOM1")
+                return Assembly.Load("EdiFabric.Sdk.Edifact.Templates.D96A.Custom1");
+
+            if (messageContext.SenderId == "CUSTOM2")
+                return Assembly.Load("EdiFabric.Sdk.Edifact.Templates.D96A.Custom2");
+
             if (messageContext.Version == "D96A" && (messageContext.Name == "ORDERS" || messageContext.Name == "INVOIC"))
                 return Assembly.Load("EdiFabric.Sdk.Edifact.Templates.D96A");
 

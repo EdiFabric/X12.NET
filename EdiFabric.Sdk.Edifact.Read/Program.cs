@@ -7,6 +7,8 @@
             Examples.ReadAllPurchaseOrders();
             Examples.ReadPurchaseOrdersOneAtATime();
             Examples.ReadWithTypeResolution();
+            Examples.ReadCustomTemplate1();
+            Examples.ReadCustomTemplate2();
             Examples.ReadWithSplitting();
             Examples.CrossSegmentValidation();
             Examples.ValidateControlSegments();

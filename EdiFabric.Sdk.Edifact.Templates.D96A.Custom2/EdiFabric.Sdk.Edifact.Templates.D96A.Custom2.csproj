@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EdiFabric.Sdk.Edifact.Templates.D96A.Custom2</RootNamespace>
     <AssemblyName>EdiFabric.Sdk.Edifact.Templates.D96A.Custom2</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EdiFabric.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
+      <HintPath>..\packages\EdiFabric.Core.9.7.2\lib\net45\EdiFabric.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,7 +44,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EF_EDIFACT_D96A_TSORDERS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EdiFabric.Sdk.Edifact.Templates.D96A.Custom1\EdiFabric.Sdk.Edifact.Templates.D96A.Custom1.csproj">
+      <Project>{656eb62e-1c93-4f77-bbd0-b34dd9353cba}</Project>
+      <Name>EdiFabric.Sdk.Edifact.Templates.D96A.Custom1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EdiFabric.Sdk.Edifact.Templates.D96A\EdiFabric.Sdk.Edifact.Templates.D96A.csproj">
+      <Project>{A6B9EDE5-99E9-4696-9CEE-6B6FFF45CC12}</Project>
+      <Name>EdiFabric.Sdk.Edifact.Templates.D96A</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

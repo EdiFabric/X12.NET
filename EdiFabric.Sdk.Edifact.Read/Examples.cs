@@ -127,7 +127,73 @@ namespace EdiFabric.Sdk.Edifact.Read
                 foreach (var ediItem in ediItems)
                     Debug.WriteLine(ediItem.GetType().Name);
             }
-        } 
+        }
+
+        /// <summary>
+        /// Parsing partner specific message by custom template (added an extra field to BGM segment).
+        /// </summary>
+        public static void ReadCustomTemplate1()
+        {
+            Debug.WriteLine("******************************");
+            Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
+            Debug.WriteLine("******************************");
+
+            Stream purchaseOrderStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrderCustom1.txt");
+
+            //  Resolve custom template by partner ID in the FullTemplateFactory
+            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.FullTemplateFactory))
+            {
+                var ediItems = ediReader.ReadToEnd().ToList();
+
+                foreach (var ediItem in ediItems)
+                {
+                    var msg = ediItem as TSORDERSCustom1;
+                    if (msg != null)
+                    {
+                        MessageErrorContext errorContext;
+                        if (msg.IsValid(out errorContext))
+                        {
+                            //  The purchase order is valid, process it downstream
+                        }
+                    }
+
+                    Debug.WriteLine(ediItem.GetType().Name);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Parsing partner specific message by custom template (added an extra field to BGM segment).
+        /// </summary>
+        public static void ReadCustomTemplate2()
+        {
+            Debug.WriteLine("******************************");
+            Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
+            Debug.WriteLine("******************************");
+
+            Stream purchaseOrderStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrderCustom2.txt");
+
+            //  Resolve custom template by partner ID in the FullTemplateFactory
+            using (var ediReader = new EdifactReader(purchaseOrderStream, EdifactFactories.FullTemplateFactory))
+            {
+                var ediItems = ediReader.ReadToEnd().ToList();
+
+                foreach (var ediItem in ediItems)
+                {
+                    var msg = ediItem as TSORDERSCustom2;
+                    if (msg != null)
+                    {
+                        MessageErrorContext errorContext;
+                        if (msg.IsValid(out errorContext))
+                        {
+                            //  The purchase order is valid, process it downstream
+                        }
+                    }
+
+                    Debug.WriteLine(ediItem.GetType().Name);
+                }
+            }
+        }
 
         /// <summary>
         /// Split a message into parts (blocks of segments) and read each part individually.
