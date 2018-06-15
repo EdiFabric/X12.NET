@@ -1,4 +1,5 @@
 ﻿using EdiFabric.Core.Model.Ack;
+using EdiFabric.Core.Model.Edi.Edifact;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Plugins.Acknowledgments.Edifact.Model;
 using EdiFabric.Sdk.Helpers;
@@ -27,14 +28,19 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             {
                 AckHandler = (s, a) =>
                 {
-                    if (a.Message.Name == "CONTRL" && a.AckType == AckType.Technical)
+                    var contrl = a.Message as TSCONTRL;
+
+                    if (contrl != null && a.AckType == AckType.Technical)
                     {
                         // a.Message is technical acknowledgment 
                     }
 
-                    if (a.Message.Name == "CONTRL" && a.AckType == AckType.Functional)
+                    if (contrl != null && a.AckType == AckType.Functional)
                     {
-                        var ack = EdifactHelpers.BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message);
+                        //  Inspect the acknowledgment
+                        var ackCode = contrl.UCI.Actioncoded_04;
+
+                        var ack = EdifactHelpers.BuildAck(a.InterchangeHeader, a.GroupHeader, contrl);
                         Debug.Write(ack);
                     }
                 },
@@ -74,14 +80,16 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             {
                 AckHandler = (s, a) =>
                 {
-                    if (a.Message.Name == "CONTRL" && a.AckType == AckType.Technical)
+                    var contrl = a.Message as TSCONTRL;
+
+                    if (contrl != null && a.AckType == AckType.Technical)
                     {
-                        // a.AckInterchange is technical acknowledgment 
+                        // a.Message is technical acknowledgment 
                     }
 
-                    if (a.Message.Name == "CONTRL" && a.AckType == AckType.Functional)
+                    if (contrl != null && a.AckType == AckType.Functional)
                     {
-                        var ack = EdifactHelpers.BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message);
+                        var ack = EdifactHelpers.BuildAck(a.InterchangeHeader, a.GroupHeader, contrl);
                         Debug.Write(ack);
                     }
                 },
@@ -121,14 +129,16 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             {
                 AckHandler = (s, a) =>
                 {
-                    if (a.Message.Name == "CONTRL" && a.AckType == AckType.Technical)
+                    var contrl = a.Message as TSCONTRL;
+
+                    if (contrl != null && a.AckType == AckType.Technical)
                     {
-                        // a.AckInterchange is technical acknowledgment 
+                        // a.Message is technical acknowledgment 
                     }
 
-                    if (a.Message.Name == "CONTRL" && a.AckType == AckType.Functional)
+                    if (contrl != null && a.AckType == AckType.Functional)
                     {
-                        var ack = EdifactHelpers.BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message);
+                        var ack = EdifactHelpers.BuildAck(a.InterchangeHeader, a.GroupHeader, contrl);
                         Debug.Write(ack);
                     }
                 },
@@ -170,14 +180,16 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             {
                 AckHandler = (s, a) =>
                 {
-                    if (a.Message.Name == "CONTRL" && a.AckType == AckType.Technical)
+                    var contrl = a.Message as TSCONTRL;
+
+                    if (contrl != null && a.AckType == AckType.Technical)
                     {
-                        // a.AckInterchange is technical acknowledgment 
+                        // a.Message is technical acknowledgment 
                     }
 
-                    if (a.Message.Name == "CONTRL" && a.AckType == AckType.Functional)
+                    if (contrl != null && a.AckType == AckType.Functional)
                     {
-                        var ack = EdifactHelpers.BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message);
+                        var ack = EdifactHelpers.BuildAck(a.InterchangeHeader, a.GroupHeader, contrl);
                         Debug.Write(ack);
                     }
                 },
@@ -224,14 +236,16 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             {
                 AckHandler = (s, a) =>
                 {
-                    if (a.Message.Name == "CONTRL" && a.AckType == AckType.Technical)
+                    var contrl = a.Message as TSCONTRL;
+
+                    if (contrl != null && a.AckType == AckType.Technical)
                     {
-                        // a.AckInterchange is technical acknowledgment 
+                        // a.Message is technical acknowledgment 
                     }
 
-                    if (a.Message.Name == "CONTRL" && a.AckType == AckType.Functional)
+                    if (contrl != null && a.AckType == AckType.Functional)
                     {
-                        var ack = EdifactHelpers.BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message);
+                        var ack = EdifactHelpers.BuildAck(a.InterchangeHeader, a.GroupHeader, contrl);
                         Debug.Write(ack);
                     }
                 },
@@ -281,14 +295,16 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
             {
                 AckHandler = (s, a) =>
                 {
-                    if (a.Message.Name == "CONTRL" && a.AckType == AckType.Technical)
+                    var contrl = a.Message as TSCONTRL;
+
+                    if (contrl != null && a.AckType == AckType.Technical)
                     {
-                        // a.AckInterchange is technical acknowledgment 
+                        // a.Message is technical acknowledgment 
                     }
 
-                    if (a.Message.Name == "CONTRL" && a.AckType == AckType.Functional)
+                    if (contrl != null && a.AckType == AckType.Functional)
                     {
-                        var ack = EdifactHelpers.BuildAck(a.InterchangeHeader, a.GroupHeader, a.Message, ++unbControlNumber, ++ungControlNumber);
+                        var ack = EdifactHelpers.BuildAck(a.InterchangeHeader, a.GroupHeader, contrl, ++unbControlNumber, ++ungControlNumber);
                         Debug.Write(ack);
                     }
                 },

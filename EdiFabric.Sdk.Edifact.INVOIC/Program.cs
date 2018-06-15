@@ -62,7 +62,7 @@ namespace EdiFabric.Sdk.Edifact.INVOIC
                     //  valid
                     using (var writer = new EdifactWriter(stream))
                     {
-                        writer.Write(EdifactHelpers.CreateUnb("1"));
+                        writer.Write(EdifactHelpers.BuildUnb("1"));
                         writer.Write(transaction);
                     }
 

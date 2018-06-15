@@ -1,5 +1,4 @@
-﻿using EdiFabric.Core.Model.Edi;
-using EdiFabric.Core.Model.Edi.Edifact;
+﻿using EdiFabric.Core.Model.Edi.Edifact;
 using EdiFabric.Framework.Writers;
 using EdiFabric.Rules.EDIFACT_D96A;
 using System;
@@ -11,7 +10,10 @@ namespace EdiFabric.Sdk.Helpers
 {
     public static class EdifactHelpers
     {
-        public static UNB CreateUnb(string controlNumber)
+        /// <summary>
+        /// Build UNB.
+        /// </summary>
+        public static UNB BuildUnb(string controlNumber)
         {
             return new UNB
             {
@@ -25,20 +27,20 @@ namespace EdiFabric.Sdk.Helpers
                 INTERCHANGESENDER_2 = new S002
                 {
                     //  Interchange sender identification
-                    InterchangeSenderIdentification_1 = "RECEIVER1",
+                    InterchangeSenderIdentification_1 = "SENDERID",
                     //  Identification code qualifier
                     IdentificationCodeQualifier_2 = "01",
                     //  Interchange sender internal identification
-                    InterchangeSenderInternalIdentification_3 = "ZZUK"
+                    InterchangeSenderInternalIdentification_3 = "ZZZ"
                 },
                 INTERCHANGERECIPIENT_3 = new S003
                 {
                     //  Interchange recipient identification
-                    InterchangeRecipientIdentification_1 = "SENDER1",
+                    InterchangeRecipientIdentification_1 = "RECEIVERID",
                     //  Identification code qualifier
                     IdentificationCodeQualifier_2 = "16",
                     //  Interchange recipient internal identification
-                    InterchangeRecipientInternalIdentification_3 = "ZZUK"
+                    InterchangeRecipientInternalIdentification_3 = "ZZZ"
                 },
                 DATEANDTIMEOFPREPARATION_4 = new S004
                 {
@@ -48,13 +50,48 @@ namespace EdiFabric.Sdk.Helpers
                     Time_2 = DateTime.Now.TimeOfDay.ToString("hhmm")
                 },
                 //  Interchange control reference
-                //  Must be incremented with every interchange
-                InterchangeControlReference_5 = controlNumber,
-                //  Application reference
-                ApplicationReference_7 = "INVOIC"
+                InterchangeControlReference_5 = controlNumber
             };
         }
 
+        /// <summary>
+        /// Build UNG.
+        /// </summary>
+        public static UNG BuildUng(string controlNumber, string transactionType)
+        {
+            return new UNG
+            {
+                //  The type of messages in the group, INVOIC, etc.
+                MessageGroupIdentification_1 = transactionType,
+                APPLICATIONSENDERIDENTIFICATION_2 = new S006
+                {
+                    //  Sender identification
+                    ApplicationSenderIdentification_1 = "SENDERID",
+                    IdentificationCodeQualifier_2 = "ZZZ"
+                },
+                APPLICATIONRECIPIENTIDENTIFICATION_3 = new S007
+                {
+                    //  Recipient identification
+                    ApplicationRecipientIdentification_1 = "RECEIVERID",
+                    IdentificationCodeQualifier_2 = "ZZZ"
+                },
+                DATEANDTIMEOFPREPARATION_4 = new S004
+                {
+                    //  Date
+                    Date_1 = DateTime.Now.Date.ToString("yyMMdd"),
+                    //  Time
+                    Time_2 = DateTime.Now.TimeOfDay.ToString("hhmm")
+                },
+                //  Group control reference
+                GroupReferenceNumber_5 = controlNumber,
+                //  Controlling agency
+                ControllingAgency_6 = "UN"
+            };
+        }
+
+        /// <summary>
+        /// Swap the original sender and receiver and copy over the rest of the values.
+        /// </summary>
         public static UNB ToAckUnb(this UNB header, string controlNumber)
         {
             var result = new UNB();
@@ -94,6 +131,9 @@ namespace EdiFabric.Sdk.Helpers
             return result;
         }
 
+        /// <summary>
+        /// Swap the original sender and receiver and copy over the rest of the values.
+        /// </summary>
         public static UNG ToAckUng(this UNG header, string controlNumber)
         {
             if (header == null)
@@ -124,7 +164,10 @@ namespace EdiFabric.Sdk.Helpers
             };
         }
 
-        public static string BuildAck(UNB originalUnb, UNG originalUng, EdiMessage ack, int unbControlNumber = 1, int ungControlNumber = 1)
+        /// <summary>
+        /// Build functional CONTRL acknowledgment using the original UNB and UNG.
+        /// </summary>
+        public static string BuildAck(UNB originalUnb, UNG originalUng, TSCONTRL ack, int unbControlNumber = 1, int ungControlNumber = 1)
         {
             var memoryStream = new MemoryStream();
 
@@ -141,6 +184,9 @@ namespace EdiFabric.Sdk.Helpers
                 return reader.ReadToEnd();
         }
 
+        /// <summary>
+        /// Build invoice.
+        /// </summary>
         public static TSINVOIC BuildInvoice(string controlNumber)
         {
             var result = new TSINVOIC();
