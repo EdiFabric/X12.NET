@@ -145,183 +145,648 @@ namespace EdiFabric.Sdk.Helpers
         {
             var result = new TSINVOIC();
 
+            //  Message header
             result.UNH = new UNH();
             result.UNH.MessageReferenceNumber_01 = controlNumber.PadLeft(14, '0');
             result.UNH.MessageIdentifier_02 = new S009();
             result.UNH.MessageIdentifier_02.MessageType_01 = "INVOIC";
             result.UNH.MessageIdentifier_02.MessageVersionNumber_02 = "D";
-            result.UNH.MessageIdentifier_02.MessageReleaseNumber_03 = "00A";
+            result.UNH.MessageIdentifier_02.MessageReleaseNumber_03 = "96A";
             result.UNH.MessageIdentifier_02.ControllingAgencyCoded_04 = "UN";
 
+            //  Commercial invoice number IN432097
             result.BGM = new BGM();
             result.BGM.DOCUMENTMESSAGENAME_01 = new C002();
             result.BGM.DOCUMENTMESSAGENAME_01.Documentmessagenamecoded_01 = "380";
-            result.BGM.Documentmessagenumber_02 = "342459";
-            result.BGM.Messagefunctioncoded_03 = "9";
+            result.BGM.Documentmessagenumber_02 = "IN432097";
 
+            //  Repeating DTM
             result.DTM = new List<DTM>();
+
+            //  Message date 8th March 2002
             var dtm = new DTM();
             dtm.DATETIMEPERIOD_01 = new C507();
-            dtm.DATETIMEPERIOD_01.Datetimeperiodqualifier_01 = "3";
-            dtm.DATETIMEPERIOD_01.Datetimeperiod_02 = "20060515";
+            dtm.DATETIMEPERIOD_01.Datetimeperiodqualifier_01 = "137";
+            dtm.DATETIMEPERIOD_01.Datetimeperiod_02 = "20020308";
             dtm.DATETIMEPERIOD_01.Datetimeperiodformatqualifier_03 = "102";
             result.DTM.Add(dtm);
 
-            result.RFFLoop1 = new List<TSINVOIC_RFFLoop1>();
-            var rffLoop = new TSINVOIC_RFFLoop1();
-            rffLoop.RFF = new RFF();
-            rffLoop.RFF.REFERENCE_01 = new C506();
-            rffLoop.RFF.REFERENCE_01.Referencequalifier_01 = "ON";
-            rffLoop.RFF.REFERENCE_01.Referencenumber_02 = "521052";
-            result.RFFLoop1.Add(rffLoop);
+            //  Instructions to pay in bank account
+            result.PAI = new PAI();
+            result.PAI.PAYMENTINSTRUCTIONDETAILS_01 = new C534();
+            result.PAI.PAYMENTINSTRUCTIONDETAILS_01.Paymentmeanscoded_03 = "42";
 
+            //  Repeating RFF Groups
+            result.RFFLoop1 = new List<TSINVOIC_RFFLoop1>();
+
+            //  Begin RFF Group 1
+            var rffLoop1 = new TSINVOIC_RFFLoop1();
+
+            //  Purchase order invoiced number ORD9523
+            rffLoop1.RFF = new RFF();
+            rffLoop1.RFF.REFERENCE_01 = new C506();
+            rffLoop1.RFF.REFERENCE_01.Referencequalifier_01 = "ON";
+            rffLoop1.RFF.REFERENCE_01.Referencenumber_02 = "ORD9523";
+
+            //  Repeating DTM
+            rffLoop1.DTM = new List<DTM>();
+
+            //  Reference date 12th February 2002
+            var dtmRff1 = new DTM();
+            dtmRff1.DATETIMEPERIOD_01 = new C507();
+            dtmRff1.DATETIMEPERIOD_01.Datetimeperiodqualifier_01 = "171";
+            dtmRff1.DATETIMEPERIOD_01.Datetimeperiod_02 = "20020212";
+            dtmRff1.DATETIMEPERIOD_01.Datetimeperiodformatqualifier_03 = "102";
+            rffLoop1.DTM.Add(dtmRff1);
+
+            //  End RFF Group 1
+            result.RFFLoop1.Add(rffLoop1);
+
+            //  Begin RFF Group 2
+            var rffLoop2 = new TSINVOIC_RFFLoop1();
+
+            //  Price list reference number PL99523
+            rffLoop2.RFF = new RFF();
+            rffLoop2.RFF.REFERENCE_01 = new C506();
+            rffLoop2.RFF.REFERENCE_01.Referencequalifier_01 = "PL";
+            rffLoop2.RFF.REFERENCE_01.Referencenumber_02 = "PL99523";
+
+            //  Repeating DTM
+            rffLoop2.DTM = new List<DTM>();
+
+            //  Reference date 1st January 2002 
+            var dtmRff2 = new DTM();
+            dtmRff2.DATETIMEPERIOD_01 = new C507();
+            dtmRff2.DATETIMEPERIOD_01.Datetimeperiodqualifier_01 = "171";
+            dtmRff2.DATETIMEPERIOD_01.Datetimeperiod_02 = "20020101";
+            dtmRff2.DATETIMEPERIOD_01.Datetimeperiodformatqualifier_03 = "102";
+            rffLoop2.DTM.Add(dtmRff2);
+
+            //  End RFF Group 2
+            result.RFFLoop1.Add(rffLoop2);
+
+            //  Begin RFF Group 3
+            var rffLoop3 = new TSINVOIC_RFFLoop1();
+
+            //  Reference delivery note number 53662
+            rffLoop3.RFF = new RFF();
+            rffLoop3.RFF.REFERENCE_01 = new C506();
+            rffLoop3.RFF.REFERENCE_01.Referencequalifier_01 = "DQ";
+            rffLoop3.RFF.REFERENCE_01.Referencenumber_02 = "53662";
+
+            //  Repeating DTM
+            rffLoop3.DTM = new List<DTM>();
+
+            //  Reference date 15th February 2002
+            var dtmRff3 = new DTM();
+            dtmRff3.DATETIMEPERIOD_01 = new C507();
+            dtmRff3.DATETIMEPERIOD_01.Datetimeperiodqualifier_01 = "171";
+            dtmRff3.DATETIMEPERIOD_01.Datetimeperiod_02 = "20020215";
+            dtmRff3.DATETIMEPERIOD_01.Datetimeperiodformatqualifier_03 = "102";
+            rffLoop3.DTM.Add(dtmRff3);
+
+            //  End RFF Group 3
+            result.RFFLoop1.Add(rffLoop3);
+
+            //  Repeating NAD Groups
             result.NADLoop1 = new List<TSINVOIC_NADLoop1>();
 
+            //  Begin NAD Group 1
             var nadLoop1 = new TSINVOIC_NADLoop1();
+
+            //  Buyer identified by GLN 5412345000013
             nadLoop1.NAD = new NAD();
             nadLoop1.NAD.Partyqualifier_01 = "BY";
             nadLoop1.NAD.PARTYIDENTIFICATIONDETAILS_02 = new C082();
-            nadLoop1.NAD.PARTYIDENTIFICATIONDETAILS_02.Partyididentification_01 = "792820524";
-            nadLoop1.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistqualifier_02 = "16";
-            nadLoop1.NAD.PARTYNAME_04 = new C080();
-            nadLoop1.NAD.PARTYNAME_04.Partyname_01 = "SOME COMPANY";
+            nadLoop1.NAD.PARTYIDENTIFICATIONDETAILS_02.Partyididentification_01 = "5412345000013";
+            nadLoop1.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistresponsibleagencycoded_03 = "9";
+
+            //  Repeating RFF Groups
+            nadLoop1.RFFLoop2 = new List<TSINVOIC_RFFLoop2>();
+
+            //  Begin RFF Group 1
+            var rffNadLoop1 = new TSINVOIC_RFFLoop2();
+
+            //  VAT reference number of the buyer 4146023 
+            rffNadLoop1.RFF = new RFF();
+            rffNadLoop1.RFF.REFERENCE_01 = new C506();
+            rffNadLoop1.RFF.REFERENCE_01.Referencequalifier_01 = "VA";
+            rffNadLoop1.RFF.REFERENCE_01.Referencenumber_02 = "4146023";
+
+            //  End RFF Group 1
+            nadLoop1.RFFLoop2.Add(rffNadLoop1);
+
+            //  End NAD Group 1
             result.NADLoop1.Add(nadLoop1);
 
+            //  Begin NAD Group 2
             var nadLoop2 = new TSINVOIC_NADLoop1();
+
+            //  Supplier identified by GLN 4012345500004
             nadLoop2.NAD = new NAD();
-            nadLoop2.NAD.Partyqualifier_01 = "SE";
+            nadLoop2.NAD.Partyqualifier_01 = "SU";
             nadLoop2.NAD.PARTYIDENTIFICATIONDETAILS_02 = new C082();
-            nadLoop2.NAD.PARTYIDENTIFICATIONDETAILS_02.Partyididentification_01 = "005435656";
-            nadLoop2.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistresponsibleagencycoded_03 = "16";
-            nadLoop2.NAD.PARTYNAME_04 = new C080();
-            nadLoop2.NAD.PARTYNAME_04.Partyname_01 = "SOME COMPANY 2";
+            nadLoop2.NAD.PARTYIDENTIFICATIONDETAILS_02.Partyididentification_01 = "4012345500004";
+            nadLoop2.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistresponsibleagencycoded_03 = "9";
+
+            //  Repeating RFF Groups
+            nadLoop2.RFFLoop2 = new List<TSINVOIC_RFFLoop2>();
+
+            //  Begin RFF Group 1
+            var rffNadLoop2 = new TSINVOIC_RFFLoop2();
+
+            //  VAT reference number of the supplier VR12345
+            rffNadLoop2.RFF = new RFF();
+            rffNadLoop2.RFF.REFERENCE_01 = new C506();
+            rffNadLoop2.RFF.REFERENCE_01.Referencequalifier_01 = "VA";
+            rffNadLoop2.RFF.REFERENCE_01.Referencenumber_02 = "VR12345";
+
+            //  End RFF Group 1
+            nadLoop2.RFFLoop2.Add(rffNadLoop2);
+
+            //  End NAD Group 2
             result.NADLoop1.Add(nadLoop2);
 
+            //  Begin NAD Group 3
+            var nadLoop3 = new TSINVOIC_NADLoop1();
+
+            //  Delivery party identified by GLN 5412345678908
+            nadLoop3.NAD = new NAD();
+            nadLoop3.NAD.Partyqualifier_01 = "DP";
+            nadLoop3.NAD.PARTYIDENTIFICATIONDETAILS_02 = new C082();
+            nadLoop3.NAD.PARTYIDENTIFICATIONDETAILS_02.Partyididentification_01 = "5412345678908";
+            nadLoop3.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistresponsibleagencycoded_03 = "9";            
+
+            //  End NAD Group 3
+            result.NADLoop1.Add(nadLoop3);
+
+            //  Repeating CUX Groups
             result.CUXLoop1 = new List<TSINVOIC_CUXLoop1>();
+
+            //  Begin CUX Group
             var cuxLoop = new TSINVOIC_CUXLoop1();
+
+            //  Reference currency is Euros 
             cuxLoop.CUX = new CUX();
             cuxLoop.CUX.CURRENCYDETAILS_01 = new C504();
-            cuxLoop.CUX.CURRENCYDETAILS_01.Currencydetailsqualifier_01 = "1";
-            cuxLoop.CUX.CURRENCYDETAILS_01.Currencycoded_02 = "USD";
+            cuxLoop.CUX.CURRENCYDETAILS_01.Currencydetailsqualifier_01 = "2";
+            cuxLoop.CUX.CURRENCYDETAILS_01.Currencycoded_02 = "EUR";
+            cuxLoop.CUX.CURRENCYDETAILS_01.Currencyqualifier_03 = "4";
+
+            //  End CUX Group
             result.CUXLoop1.Add(cuxLoop);
 
+            //  Repeating PAT Groups
+            result.PATLoop1 = new List<TSINVOIC_PATLoop1>();
+
+            //  Begin PAT Group 1
+            var patLoop1 = new TSINVOIC_PATLoop1();
+
+            //  Payment terms 2 months after date of invoice
+            patLoop1.PAT = new PAT();
+            patLoop1.PAT.Paymenttermstypequalifier_01 = "1";
+            patLoop1.PAT.TERMSTIMEINFORMATION_03 = new C112();
+            patLoop1.PAT.TERMSTIMEINFORMATION_03.Paymenttimereferencecoded_01 = "5";
+            patLoop1.PAT.TERMSTIMEINFORMATION_03.Timerelationcoded_02 = "3";
+            patLoop1.PAT.TERMSTIMEINFORMATION_03.Typeofperiodcoded_03 = "M";
+            patLoop1.PAT.TERMSTIMEINFORMATION_03.Numberofperiods_04 = "2";
+
+            //  End PAT Group 1
+            result.PATLoop1.Add(patLoop1);
+
+            //  Begin PAT Group 2
+            var patLoop2 = new TSINVOIC_PATLoop1();
+
+            //  Payment discount for payment 10 days after date of invoice
+            patLoop2.PAT = new PAT();
+            patLoop2.PAT.Paymenttermstypequalifier_01 = "22";
+            patLoop2.PAT.TERMSTIMEINFORMATION_03 = new C112();
+            patLoop2.PAT.TERMSTIMEINFORMATION_03.Paymenttimereferencecoded_01 = "5";
+            patLoop2.PAT.TERMSTIMEINFORMATION_03.Timerelationcoded_02 = "3";
+            patLoop2.PAT.TERMSTIMEINFORMATION_03.Typeofperiodcoded_03 = "D";
+            patLoop2.PAT.TERMSTIMEINFORMATION_03.Numberofperiods_04 = "10";
+
+            //  Percentage information for the allowances or charges 2.5 %
+            patLoop2.PCD = new PCD();
+            patLoop2.PCD.PERCENTAGEDETAILS_01 = new C501();
+            patLoop2.PCD.PERCENTAGEDETAILS_01.Percentagequalifier_01 = "12";
+            patLoop2.PCD.PERCENTAGEDETAILS_01.Percentage_02 = "2.5";
+            patLoop2.PCD.PERCENTAGEDETAILS_01.Percentagebasiscoded_03 = "13";
+
+            //  End PAT Group 2
+            result.PATLoop1.Add(patLoop2);
+
+            //  Repeating ALC Groups
+            result.ALCLoop1 = new List<TSINVOIC_ALCLoop1>();
+
+            //  Begin ALC Group
+            var alcLoop = new TSINVOIC_ALCLoop1();
+
+            //  Charges to be paid by customer
+            alcLoop.ALC = new ALC();
+            alcLoop.ALC.Allowanceorchargequalifier_01 = "C";
+            alcLoop.ALC.Settlementcoded_03 = "6";
+            alcLoop.ALC.SPECIALSERVICESIDENTIFICATION_05 = new C214();
+            alcLoop.ALC.SPECIALSERVICESIDENTIFICATION_05.Specialservicescoded_01 = "FC";
+
+            //  Repeating MOA Groups
+            alcLoop.MOALoop1 = new List<TSINVOIC_MOALoop1>();
+
+            //  Begin MOA Group
+            var moaAlcLoop = new TSINVOIC_MOALoop1();
+
+            //  Monetary amount for the charge 120 EUR to be added
+            moaAlcLoop.MOA = new MOA();
+            moaAlcLoop.MOA.MONETARYAMOUNT_01 = new C516();
+            moaAlcLoop.MOA.MONETARYAMOUNT_01.Monetaryamounttypequalifier_01 = "23";
+            moaAlcLoop.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "120";
+
+            //  End MOA Group
+            alcLoop.MOALoop1.Add(moaAlcLoop);
+
+            //  Repeating TAX Groups
+            alcLoop.TAXLoop2 = new List<TSINVOIC_TAXLoop2>();
+
+            //  Begin TAX Group
+            var taxAlcLoop = new TSINVOIC_TAXLoop2();
+
+            //  Type of tax is value added tax at 19 %
+            taxAlcLoop.TAX = new TAX();
+            taxAlcLoop.TAX.Dutytaxfeefunctionqualifier_01 = "7";
+            taxAlcLoop.TAX.DUTYTAXFEETYPE_02 = new C241();
+            taxAlcLoop.TAX.DUTYTAXFEETYPE_02.Dutytaxfeetypecoded_01 = "VAT";
+            taxAlcLoop.TAX.DUTYTAXFEEDETAIL_05 = new C243();
+            taxAlcLoop.TAX.DUTYTAXFEEDETAIL_05.Dutytaxfeerate_04 = "19";
+            taxAlcLoop.TAX.Dutytaxfeecategorycoded_06 = "S";
+
+            //  Tax monetary amount 22.80 EUR
+            taxAlcLoop.MOA = new MOA();
+            taxAlcLoop.MOA.MONETARYAMOUNT_01 = new C516();
+            taxAlcLoop.MOA.MONETARYAMOUNT_01.Monetaryamounttypequalifier_01 = "124";
+            taxAlcLoop.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "22.80";
+
+            //  End TAX Group
+            alcLoop.TAXLoop2.Add(taxAlcLoop);
+
+            //  End ALC Group
+            result.ALCLoop1.Add(alcLoop);
+
+            //  Repeating LIN Groups
             result.LINLoop1 = new List<TSINVOIC_LINLoop1>();
 
+            //  Begin LIN Group 1
             var linLoop1 = new TSINVOIC_LINLoop1();
+
+            //  Line item 1 identified by GTIN 4000862141404
             linLoop1.LIN = new LIN();
             linLoop1.LIN.Lineitemnumber_01 = "1";
             linLoop1.LIN.ITEMNUMBERIDENTIFICATION_03 = new C212();
-            linLoop1.LIN.ITEMNUMBERIDENTIFICATION_03.Itemnumber_01 = "157870";
-            linLoop1.LIN.ITEMNUMBERIDENTIFICATION_03.Itemnumbertypecoded_02 = "IN";
+            linLoop1.LIN.ITEMNUMBERIDENTIFICATION_03.Itemnumber_01 = "4000862141404";
+            linLoop1.LIN.ITEMNUMBERIDENTIFICATION_03.Itemnumbertypecoded_02 = "SRS";
+
+            //  Repeating QTY
+            linLoop1.QTY = new List<QTY>();
+
+            //  Invoiced quantity 40
+            var qtyLin1 = new QTY();
+            qtyLin1.QUANTITYDETAILS_01 = new C186();
+            qtyLin1.QUANTITYDETAILS_01.Quantityqualifier_01 = "47";
+            qtyLin1.QUANTITYDETAILS_01.Quantity_02 = "40";
+            linLoop1.QTY.Add(qtyLin1);
+
+            //  Repeating MOA Groups
+            linLoop1.MOALoop2 = new List<TSINVOIC_MOALoop2>();
+
+            //  Begin MOA Group
+            var moaLinLoop1 = new TSINVOIC_MOALoop2();
+
+            //  Line item amount 2.160 EUR
+            moaLinLoop1.MOA = new MOA();
+            moaLinLoop1.MOA.MONETARYAMOUNT_01 = new C516();
+            moaLinLoop1.MOA.MONETARYAMOUNT_01.Monetaryamounttypequalifier_01 = "203";
+            moaLinLoop1.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "2160";
+
+            //  End MOA Group
+            linLoop1.MOALoop2.Add(moaLinLoop1);
+
+            //  Repeating PRI Groups
+            linLoop1.PRILoop1 = new List<TSINVOIC_PRILoop1>();
+
+            //  Begin PRI Group
+            var priLinLoop1 = new TSINVOIC_PRILoop1();
+
+            //  Gross calculation price of 60 which does not include any allowance or charges, from the catalogue.
+            priLinLoop1.PRI = new PRI();
+            priLinLoop1.PRI.PRICEINFORMATION_01 = new C509();
+            priLinLoop1.PRI.PRICEINFORMATION_01.Pricequalifier_01 = "AAB";
+            priLinLoop1.PRI.PRICEINFORMATION_01.Price_02 = "60";
+            priLinLoop1.PRI.PRICEINFORMATION_01.Pricetypecoded_03 = "CA";
+
+            //  End PRI Group
+            linLoop1.PRILoop1.Add(priLinLoop1);
+
+            //  Repeating TAX Groups
+            linLoop1.TAXLoop3 = new List<TSINVOIC_TAXLoop3>();
+
+            //  Begin TAX Group
+            var taxLinLoop1 = new TSINVOIC_TAXLoop3();
+
+            //  Type of tax for the line item is value added tax 21%
+            taxLinLoop1.TAX = new TAX();
+            taxLinLoop1.TAX.Dutytaxfeefunctionqualifier_01 = "7";
+            taxLinLoop1.TAX.DUTYTAXFEETYPE_02 = new C241();
+            taxLinLoop1.TAX.DUTYTAXFEETYPE_02.Dutytaxfeetypecoded_01 = "VAT";
+            taxLinLoop1.TAX.DUTYTAXFEEDETAIL_05 = new C243();
+            taxLinLoop1.TAX.DUTYTAXFEEDETAIL_05.Dutytaxfeerate_04 = "21";
+            taxLinLoop1.TAX.Dutytaxfeecategorycoded_06 = "S";
+
+            //  Tax monetary amount 453.60 EUR 
+            taxLinLoop1.MOA = new MOA();
+            taxLinLoop1.MOA.MONETARYAMOUNT_01 = new C516();
+            taxLinLoop1.MOA.MONETARYAMOUNT_01.Monetaryamounttypequalifier_01 = "124";
+            taxLinLoop1.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "453.60";
+
+            //  End TAX Group
+            linLoop1.TAXLoop3.Add(taxLinLoop1);
+
+            //  Repeating ALC Groups
+            linLoop1.ALCLoop2 = new List<TSINVOIC_ALCLoop2>();
+
+            //  Begin ALC Group
+            var alcLinLoop1 = new TSINVOIC_ALCLoop2();
+
+            //  Allowances
+            alcLinLoop1.ALC = new ALC();
+            alcLinLoop1.ALC.Allowanceorchargequalifier_01 = "A";
+            
+            //  PCD Group
+            alcLinLoop1.PCDLoop2 = new TSINVOIC_PCDLoop2();
+
+            //  Percentage information for the allowances 10 %
+            alcLinLoop1.PCDLoop2.PCD = new PCD();
+            alcLinLoop1.PCDLoop2.PCD.PERCENTAGEDETAILS_01 = new C501();
+            alcLinLoop1.PCDLoop2.PCD.PERCENTAGEDETAILS_01.Percentagequalifier_01 = "1";
+            alcLinLoop1.PCDLoop2.PCD.PERCENTAGEDETAILS_01.Percentage_02 = "10";
+            
+            //  End ALC Group
+            linLoop1.ALCLoop2.Add(alcLinLoop1);
+
+            //  End LIN Group 1
             result.LINLoop1.Add(linLoop1);
 
-            linLoop1.IMD = new List<IMD>();
-            var imd1 = new IMD();
-            imd1.Itemdescriptiontypecoded_01 = "F";
-            imd1.ITEMDESCRIPTION_03 = new C273();
-            imd1.ITEMDESCRIPTION_03.Codelistresponsibleagencycoded_03 = "100";
-            linLoop1.IMD.Add(imd1);
-
-            linLoop1.QTY = new List<QTY>();
-            var qty1 = new QTY();
-            qty1.QUANTITYDETAILS_01 = new C186();
-            qty1.QUANTITYDETAILS_01.Quantityqualifier_01 = "21";
-            qty1.QUANTITYDETAILS_01.Quantity_02 = "2";
-            qty1.QUANTITYDETAILS_01.Measureunitqualifier_03 = "EA";
-            linLoop1.QTY.Add(qty1);
-
-            linLoop1.ALI = new List<ALI>();
-            var ali1 = new ALI();
-            ali1.Countryoforigincoded_01 = "US";
-            linLoop1.ALI.Add(ali1);
-
-            linLoop1.MOALoop2 = new List<TSINVOIC_MOALoop2>();
-            var moaLoop1 = new TSINVOIC_MOALoop2();
-            moaLoop1.MOA = new MOA();
-            moaLoop1.MOA.MONETARYAMOUNT_01 = new C516();
-            moaLoop1.MOA.MONETARYAMOUNT_01.Monetaryamounttypequalifier_01 = "203";
-            moaLoop1.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "1202.58";
-            linLoop1.MOALoop2.Add(moaLoop1);
-
-            linLoop1.PRILoop1 = new List<TSINVOIC_PRILoop1>();
-            var priLoop1 = new TSINVOIC_PRILoop1();
-            priLoop1.PRI = new PRI();
-            priLoop1.PRI.PRICEINFORMATION_01 = new C509();
-            priLoop1.PRI.PRICEINFORMATION_01.Pricequalifier_01 = "INV";
-            priLoop1.PRI.PRICEINFORMATION_01.Price_02 = "1.179";
-            linLoop1.PRILoop1.Add(priLoop1);
-
+            //  Begin LIN Group 2
             var linLoop2 = new TSINVOIC_LINLoop1();
+
+            //  Line item 2 identified by GTIN 5412345111115
             linLoop2.LIN = new LIN();
             linLoop2.LIN.Lineitemnumber_01 = "2";
             linLoop2.LIN.ITEMNUMBERIDENTIFICATION_03 = new C212();
-            linLoop2.LIN.ITEMNUMBERIDENTIFICATION_03.Itemnumber_01 = "157871";
-            linLoop2.LIN.ITEMNUMBERIDENTIFICATION_03.Itemnumbertypecoded_02 = "IN";
+            linLoop2.LIN.ITEMNUMBERIDENTIFICATION_03.Itemnumber_01 = "5412345111115";
+            linLoop2.LIN.ITEMNUMBERIDENTIFICATION_03.Itemnumbertypecoded_02 = "SRS";
+
+            //  Repeating QTY
+            linLoop2.QTY = new List<QTY>();
+
+            //  Delivered quantity 5
+            var qtyLin2 = new QTY();
+            qtyLin2.QUANTITYDETAILS_01 = new C186();
+            qtyLin2.QUANTITYDETAILS_01.Quantityqualifier_01 = "46";
+            qtyLin2.QUANTITYDETAILS_01.Quantity_02 = "5";
+            linLoop2.QTY.Add(qtyLin2);
+
+            //  Invoiced quantity 12.65 Kg.
+            var qtyLin3 = new QTY();
+            qtyLin3.QUANTITYDETAILS_01 = new C186();
+            qtyLin3.QUANTITYDETAILS_01.Quantityqualifier_01 = "47";
+            qtyLin3.QUANTITYDETAILS_01.Quantity_02 = "12.65";
+            qtyLin3.QUANTITYDETAILS_01.Measureunitqualifier_03 = "KGM";
+            linLoop2.QTY.Add(qtyLin3);
+
+            //  Repeating MOA Groups
+            linLoop2.MOALoop2 = new List<TSINVOIC_MOALoop2>();
+
+            //  Begin MOA Group
+            var moaLinLoop2 = new TSINVOIC_MOALoop2();
+
+            //  Line item amount 2.530 EUR
+            moaLinLoop2.MOA = new MOA();
+            moaLinLoop2.MOA.MONETARYAMOUNT_01 = new C516();
+            moaLinLoop2.MOA.MONETARYAMOUNT_01.Monetaryamounttypequalifier_01 = "203";
+            moaLinLoop2.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "2530";
+
+            //  End MOA Group
+            linLoop2.MOALoop2.Add(moaLinLoop2);
+
+            //  Repeating PRI Groups
+            linLoop2.PRILoop1 = new List<TSINVOIC_PRILoop1>();
+
+            //  Begin PRI Group
+            var priLinLoop2 = new TSINVOIC_PRILoop1();
+
+            //  Net price of 200 per Kg from the catalogue, this price includes allowances and charges
+            priLinLoop2.PRI = new PRI();
+            priLinLoop2.PRI.PRICEINFORMATION_01 = new C509();
+            priLinLoop2.PRI.PRICEINFORMATION_01.Pricequalifier_01 = "AAA";
+            priLinLoop2.PRI.PRICEINFORMATION_01.Price_02 = "200";
+            priLinLoop2.PRI.PRICEINFORMATION_01.Pricetypecoded_03 = "CA";
+            priLinLoop2.PRI.PRICEINFORMATION_01.Unitpricebasis_05 = "1";
+            priLinLoop2.PRI.PRICEINFORMATION_01.Measureunitqualifier_06 = "KGM";
+
+            //  End PRI Group
+            linLoop2.PRILoop1.Add(priLinLoop2);
+
+            //  Repeating TAX Groups
+            linLoop2.TAXLoop3 = new List<TSINVOIC_TAXLoop3>();
+
+            //  Begin TAX Group
+            var taxLinLoop2 = new TSINVOIC_TAXLoop3();
+
+            //  Type of tax for the line item is value added tax 19 %
+            taxLinLoop2.TAX = new TAX();
+            taxLinLoop2.TAX.Dutytaxfeefunctionqualifier_01 = "7";
+            taxLinLoop2.TAX.DUTYTAXFEETYPE_02 = new C241();
+            taxLinLoop2.TAX.DUTYTAXFEETYPE_02.Dutytaxfeetypecoded_01 = "VAT";
+            taxLinLoop2.TAX.DUTYTAXFEEDETAIL_05 = new C243();
+            taxLinLoop2.TAX.DUTYTAXFEEDETAIL_05.Dutytaxfeerate_04 = "19";
+            taxLinLoop2.TAX.Dutytaxfeecategorycoded_06 = "S";
+
+            //  Tax monetary amount 480.70 EUR
+            taxLinLoop2.MOA = new MOA();
+            taxLinLoop2.MOA.MONETARYAMOUNT_01 = new C516();
+            taxLinLoop2.MOA.MONETARYAMOUNT_01.Monetaryamounttypequalifier_01 = "124";
+            taxLinLoop2.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "480.70";
+
+            //  End TAX Group
+            linLoop2.TAXLoop3.Add(taxLinLoop2);
+
+            //  End LIN Group 2
             result.LINLoop1.Add(linLoop2);
 
-            linLoop2.IMD = new List<IMD>();
-            var imd2 = new IMD();
-            imd2.Itemdescriptiontypecoded_01 = "F";
-            imd2.ITEMDESCRIPTION_03 = new C273();
-            imd2.ITEMDESCRIPTION_03.Codelistresponsibleagencycoded_03 = "101";
-            linLoop2.IMD.Add(imd2);
-
-            linLoop2.QTY = new List<QTY>();
-            var qty2 = new QTY();
-            qty2.QUANTITYDETAILS_01 = new C186();
-            qty2.QUANTITYDETAILS_01.Quantityqualifier_01 = "47";
-            qty2.QUANTITYDETAILS_01.Quantity_02 = "29";
-            qty2.QUANTITYDETAILS_01.Measureunitqualifier_03 = "EA";
-            linLoop2.QTY.Add(qty2);
-
-            linLoop2.ALI = new List<ALI>();
-            var ali2 = new ALI();
-            ali2.Countryoforigincoded_01 = "JP";
-            linLoop2.ALI.Add(ali2);
-
-            linLoop2.MOALoop2 = new List<TSINVOIC_MOALoop2>();
-            var moaLoop2 = new TSINVOIC_MOALoop2();
-            moaLoop2.MOA = new MOA();
-            moaLoop2.MOA.MONETARYAMOUNT_01 = new C516();
-            moaLoop2.MOA.MONETARYAMOUNT_01.Monetaryamounttypequalifier_01 = "203";
-            moaLoop2.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "520";
-            linLoop2.MOALoop2.Add(moaLoop2);
-
-            linLoop2.PRILoop1 = new List<TSINVOIC_PRILoop1>();
-            var priLoop2 = new TSINVOIC_PRILoop1();
-            priLoop2.PRI = new PRI();
-            priLoop2.PRI.PRICEINFORMATION_01 = new C509();
-            priLoop2.PRI.PRICEINFORMATION_01.Pricequalifier_01 = "INV";
-            priLoop2.PRI.PRICEINFORMATION_01.Price_02 = "20.3";
-            linLoop2.PRILoop1.Add(priLoop2);
-
+            //  To separate the detail section from the summary section
             result.UNS = new UNS();
             result.UNS.Sectionidentification_01 = "S";
 
+            //  Repeating CNT
+            result.CNT = new List<CNT>();
+
+            //  Total number of line items 2
+            var cnt = new CNT();
+            cnt.CONTROL_01 = new C270();
+            cnt.CONTROL_01.Controlqualifier_01 = "2";
+            cnt.CONTROL_01.Controlvalue_02 = "2";
+            result.CNT.Add(cnt);
+
+            //  Repeating MOA Groups
             result.MOALoop4 = new List<TSINVOIC_MOALoop4>();
 
+            //  Begin MOA Group 1
+            var moaLoop1 = new TSINVOIC_MOALoop4();
+
+            //  Message total monetary amount 5.767,10 EUR
+            moaLoop1.MOA = new MOA();
+            moaLoop1.MOA.MONETARYAMOUNT_01 = new C516();
+            moaLoop1.MOA.MONETARYAMOUNT_01.Monetaryamounttypequalifier_01 = "86";
+            moaLoop1.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "5767.10";
+
+            //  End MOA Group 1
+            result.MOALoop4.Add(moaLoop1);
+
+            //  Begin MOA Group 2
+            var moaLoop2 = new TSINVOIC_MOALoop4();
+
+            //  Message total line items amount 4.690 EUR
+            moaLoop2.MOA = new MOA();
+            moaLoop2.MOA.MONETARYAMOUNT_01 = new C516();
+            moaLoop2.MOA.MONETARYAMOUNT_01.Monetaryamounttypequalifier_01 = "79";
+            moaLoop2.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "4690";
+
+            //  End MOA Group 2
+            result.MOALoop4.Add(moaLoop2);
+
+            //  Begin MOA Group 3
             var moaLoop3 = new TSINVOIC_MOALoop4();
+
+            //  Total amount subject to payment discount 5.767.10 EUR
             moaLoop3.MOA = new MOA();
             moaLoop3.MOA.MONETARYAMOUNT_01 = new C516();
-            moaLoop3.MOA.MONETARYAMOUNT_01.Monetaryamounttypequalifier_01 = "39";
-            moaLoop3.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "2137.58";
+            moaLoop3.MOA.MONETARYAMOUNT_01.Monetaryamounttypequalifier_01 = "129";
+            moaLoop3.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "5767.10";
+
+            //  End MOA Group 3
             result.MOALoop4.Add(moaLoop3);
 
+            //  Begin MOA Group 4
+            var moaLoop4 = new TSINVOIC_MOALoop4();
+
+            //  Message total taxable amount 4.810 EUR
+            moaLoop4.MOA = new MOA();
+            moaLoop4.MOA.MONETARYAMOUNT_01 = new C516();
+            moaLoop4.MOA.MONETARYAMOUNT_01.Monetaryamounttypequalifier_01 = "125";
+            moaLoop4.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "4810";
+
+            //  End MOA Group 4
+            result.MOALoop4.Add(moaLoop4);
+
+            //  Begin MOA Group 5
+            var moaLoop5 = new TSINVOIC_MOALoop4();
+
+            //  Message total tax amount 957,10 EUR
+            moaLoop5.MOA = new MOA();
+            moaLoop5.MOA.MONETARYAMOUNT_01 = new C516();
+            moaLoop5.MOA.MONETARYAMOUNT_01.Monetaryamounttypequalifier_01 = "176";
+            moaLoop5.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "957.10";
+
+            //  End MOA Group 5
+            result.MOALoop4.Add(moaLoop5);
+
+            //  Begin MOA Group 6
+            var moaLoop6 = new TSINVOIC_MOALoop4();
+
+            //  Total charges/allowances 120 EUR
+            moaLoop6.MOA = new MOA();
+            moaLoop6.MOA.MONETARYAMOUNT_01 = new C516();
+            moaLoop6.MOA.MONETARYAMOUNT_01.Monetaryamounttypequalifier_01 = "131";
+            moaLoop6.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "120";
+
+            //  End MOA Group 6
+            result.MOALoop4.Add(moaLoop6);
+
+            //  Repeating TAX Groups
+            result.TAXLoop5 = new List<TSINVOIC_TAXLoop5>();
+
+            //  Begin TAX Group 1
+            var taxLoop1 = new TSINVOIC_TAXLoop5();
+
+            //  Type of tax for the total message is value added tax 19 %
+            taxLoop1.TAX = new TAX();
+            taxLoop1.TAX.Dutytaxfeefunctionqualifier_01 = "7";
+            taxLoop1.TAX.DUTYTAXFEETYPE_02 = new C241();
+            taxLoop1.TAX.DUTYTAXFEETYPE_02.Dutytaxfeetypecoded_01 = "VAT";
+            taxLoop1.TAX.DUTYTAXFEEDETAIL_05 = new C243();
+            taxLoop1.TAX.DUTYTAXFEEDETAIL_05.Dutytaxfeerate_04 = "19";
+            taxLoop1.TAX.Dutytaxfeecategorycoded_06 = "S";
+
+            //  Repeating MOA
+            taxLoop1.MOA = new List<MOA>();
+
+            //  Tax monetary amount 503.50 EUR
+            var moaTax1 = new MOA();
+            moaTax1.MONETARYAMOUNT_01 = new C516();
+            moaTax1.MONETARYAMOUNT_01.Monetaryamounttypequalifier_01 = "124";
+            moaTax1.MONETARYAMOUNT_01.Monetaryamount_02 = "503.50";
+            taxLoop1.MOA.Add(moaTax1);
+
+            //  End TAX Group 1
+            result.TAXLoop5.Add(taxLoop1);
+
+            //  Begin TAX Group 2
+            var taxLoop2 = new TSINVOIC_TAXLoop5();
+
+            //  Type of tax for the total message is value added tax 21 %
+            taxLoop2.TAX = new TAX();
+            taxLoop2.TAX.Dutytaxfeefunctionqualifier_01 = "7";
+            taxLoop2.TAX.DUTYTAXFEETYPE_02 = new C241();
+            taxLoop2.TAX.DUTYTAXFEETYPE_02.Dutytaxfeetypecoded_01 = "VAT";
+            taxLoop2.TAX.DUTYTAXFEEDETAIL_05 = new C243();
+            taxLoop2.TAX.DUTYTAXFEEDETAIL_05.Dutytaxfeerate_04 = "21";
+            taxLoop2.TAX.Dutytaxfeecategorycoded_06 = "S";
+
+            //  Repeating MOA
+            taxLoop2.MOA = new List<MOA>();
+
+            //  Tax monetary amount 453.60 EUR
+            var moaTax2 = new MOA();
+            moaTax2.MONETARYAMOUNT_01 = new C516();
+            moaTax2.MONETARYAMOUNT_01.Monetaryamounttypequalifier_01 = "124";
+            moaTax2.MONETARYAMOUNT_01.Monetaryamount_02 = "453.60";
+            taxLoop2.MOA.Add(moaTax2);
+
+            //  End TAX Group 2
+            result.TAXLoop5.Add(taxLoop2);
+
             result.ALCLoop3 = new List<TSINVOIC_ALCLoop3>();
-            var alcLoop = new TSINVOIC_ALCLoop3();
-            alcLoop.ALC = new ALC();
-            alcLoop.ALC.Allowanceorchargequalifier_01 = "C";
-            alcLoop.ALC.ALLOWANCECHARGEINFORMATION_02 = new C552();
-            alcLoop.ALC.ALLOWANCECHARGEINFORMATION_02.Allowanceorchargenumber_01 = "ABG";
 
-            alcLoop.MOA = new List<MOA>();
-            var moa = new MOA();
-            moa.MONETARYAMOUNT_01 = new C516();
-            moa.MONETARYAMOUNT_01.Monetaryamounttypequalifier_01 = "8";
-            moa.MONETARYAMOUNT_01.Monetaryamount_02 = "634";
-            alcLoop.MOA.Add(moa);
+            //  Begin ALC Group
+            var alcLoop2 = new TSINVOIC_ALCLoop3();
 
-            result.ALCLoop3.Add(alcLoop);
+            //  Freight charge 
+            alcLoop2.ALC = new ALC();
+            alcLoop2.ALC.Allowanceorchargequalifier_01 = "C";
+            alcLoop2.ALC.SPECIALSERVICESIDENTIFICATION_05 = new C214();
+            alcLoop2.ALC.SPECIALSERVICESIDENTIFICATION_05.Specialservicescoded_01 = "FC";
+
+            //  Repeating MOA 
+            alcLoop2.MOA = new List<MOA>();
+
+            //  Total charges 120 EUR
+            var moaAlc = new MOA();
+            moaAlc.MONETARYAMOUNT_01 = new C516();
+            moaAlc.MONETARYAMOUNT_01.Monetaryamounttypequalifier_01 = "131";
+            moaAlc.MONETARYAMOUNT_01.Monetaryamount_02 = "120";
+            alcLoop2.MOA.Add(moaAlc);         
+
+            //  End ALC Group
+            result.ALCLoop3.Add(alcLoop2);
 
             return result;
         }
