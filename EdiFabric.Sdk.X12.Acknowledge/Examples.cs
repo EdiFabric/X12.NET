@@ -440,7 +440,7 @@ namespace EdiFabric.Sdk.X12.Acknowledge
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var edi = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\MixedTransactions.txt");
+            var edi = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\PurchaseOrder.txt");
 
             var settings = new AckSettings
             {
@@ -459,6 +459,7 @@ namespace EdiFabric.Sdk.X12.Acknowledge
 
                         var ak1Loop = new TS999_AK1Loop();
 
+                        //  Build the custom acknowledgment
                         custom999.ST = ts999.ST;
 
                         ak1Loop.AK1 = ts999.AK1;
@@ -469,7 +470,6 @@ namespace EdiFabric.Sdk.X12.Acknowledge
 
                         var ack = X12Helpers.BuildAck(a.InterchangeHeader, a.GroupHeader, custom999, AckVersion.Hipaa_999);
                         Debug.Write(ack);
-
                     }
                 },
                 AckVersion = AckVersion.Hipaa_999,

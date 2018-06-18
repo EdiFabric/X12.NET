@@ -48,7 +48,7 @@ namespace EdiFabric.Sdk.X12.Export.Xml
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\X12.Edifact\PurchaseOrder.xml");
+            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\PurchaseOrder.xml");
 
             var xml = XElement.Load(ediStream);
             var transaction = XmlHelpers.Deserialize<TS850>(xml);

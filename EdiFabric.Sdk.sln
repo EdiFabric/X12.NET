@@ -91,7 +91,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Export Examples", "Export E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "General Usage Examples", "General Usage Examples", "{8C81FAF9-1A42-4A24-BB44-834EA9C4AB18}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transaction Examples", "Transaction Examples", "{5A3328B7-8853-4E78-B641-D8360AB538B0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12 Transaction Examples", "X12 Transaction Examples", "{5A3328B7-8853-4E78-B641-D8360AB538B0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.X12.Templates.V004010", "EdiFabric.Sdk.X12.Templates.V004010\EdiFabric.Sdk.X12.Templates.V004010.csproj", "{A29F84FD-7B81-4F4B-BC27-E24CCB7D70D7}"
 EndProject
