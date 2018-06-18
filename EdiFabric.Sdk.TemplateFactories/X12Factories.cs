@@ -1,6 +1,7 @@
 ﻿using EdiFabric.Core.Model.Edi.X12;
 using EdiFabric.Framework;
 using EdiFabric.Rules.X12_004010;
+using System;
 using System.Reflection;
 
 namespace EdiFabric.Sdk.TemplateFactories
@@ -16,19 +17,19 @@ namespace EdiFabric.Sdk.TemplateFactories
         /// <returns>The type to parse to.</returns>
         public static TypeInfo FullTemplateFactory(ISA isa, GS gs, ST st)
         {
-            if (isa.InterchangeSenderID_6 == "SPLIT1" &&
+            if (isa.InterchangeSenderID_6.StartsWith("SPLIT1", StringComparison.Ordinal) &&
                st.TransactionSetIdentifierCode_01 == "850")
                 return typeof(TS850Split).GetTypeInfo();
 
-            if (isa.InterchangeSenderID_6 == "INVALID1" &&
+            if (isa.InterchangeSenderID_6.StartsWith("INVALID1", StringComparison.Ordinal) &&
                 st.TransactionSetIdentifierCode_01 == "850")
                 return typeof(TS850Validation).GetTypeInfo();
 
-            if (isa.InterchangeSenderID_6 == "CUSTOM11" &&
+            if (isa.InterchangeSenderID_6.StartsWith("CUSTOM1", StringComparison.Ordinal) &&
                 st.TransactionSetIdentifierCode_01 == "850")
                 return typeof(TS850Custom1).GetTypeInfo();
 
-            if (isa.InterchangeSenderID_6 == "CUSTOM12" &&
+            if (isa.InterchangeSenderID_6.StartsWith("CUSTOM2", StringComparison.Ordinal) &&
                st.TransactionSetIdentifierCode_01 == "850")
                 return typeof(TS850Custom2).GetTypeInfo();
 

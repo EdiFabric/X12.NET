@@ -319,7 +319,7 @@ namespace EdiFabric.Sdk.X12.Read
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\CorruptIsa.txt");
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\CorruptIsa.txt");
 
             List<IEdiItem> ediItems;
             using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory))

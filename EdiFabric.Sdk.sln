@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vda", "Vda\Vda.csproj", "{A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Edifact and Eancom", "Edifact and Eancom", "{78842466-1FBD-415D-9A31-B3A1A3963585}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EDI Files", "EDI Files", "{608868B5-FD2E-4B4E-B8BA-D5E872D0D7C9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Edifact Files", "Edifact Files", "{608868B5-FD2E-4B4E-B8BA-D5E872D0D7C9}"
 	ProjectSection(SolutionItems) = preProject
 		Files.Edifact\CorruptUnb.txt = Files.Edifact\CorruptUnb.txt
 		Files.Edifact\CorruptUnh.txt = Files.Edifact\CorruptUnh.txt
@@ -37,7 +37,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.Ackno
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "General Usage Examples", "General Usage Examples", "{F6C9FD4F-B2B2-41F8-BE52-F7C1CA6958F5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EDI Templates", "EDI Templates", "{60232A24-9B01-4575-A78E-F82038F66B26}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Edifact Templates", "Edifact Templates", "{60232A24-9B01-4575-A78E-F82038F66B26}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.Templates.D96A", "EdiFabric.Sdk.Edifact.Templates.D96A\EdiFabric.Sdk.Edifact.Templates.D96A.csproj", "{A6B9EDE5-99E9-4696-9CEE-6B6FFF45CC12}"
 EndProject
@@ -53,7 +53,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Export Examples", "Export E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.Export.Xml", "EdiFabric.Sdk.Edifact.Export.Xml\EdiFabric.Sdk.Edifact.Export.Xml.csproj", "{E008BF36-8111-4AB9-9124-758E452D38FE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transaction Examples", "Transaction Examples", "{0A328B99-5532-41D9-AAD9-99DAFE6D00CB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Edifact Transaction Examples", "Edifact Transaction Examples", "{0A328B99-5532-41D9-AAD9-99DAFE6D00CB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.ORDERS", "EdiFabric.Sdk.Edifact.ORDERS\EdiFabric.Sdk.Edifact.ORDERS.csproj", "{56BC8D58-1A77-4CE7-A8D0-36015DB5D751}"
 EndProject
@@ -67,7 +67,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.TemplateFacto
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12 and Hipaa", "X12 and Hipaa", "{872F5ACF-78B5-439B-994E-E09FD5874793}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EDI Files", "EDI Files", "{81BD3328-5D65-437B-94B8-7AD2E0502D4A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12 Files", "X12 Files", "{81BD3328-5D65-437B-94B8-7AD2E0502D4A}"
 	ProjectSection(SolutionItems) = preProject
 		Files.X12\CorruptIsa.txt = Files.X12\CorruptIsa.txt
 		Files.X12\CorruptSt.txt = Files.X12\CorruptSt.txt
@@ -85,7 +85,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EDI Files", "EDI Files", "{
 		Files.X12\PurchaseOrders.txt = Files.X12\PurchaseOrders.txt
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EDI Templates", "EDI Templates", "{6B5CDA94-F415-4B67-AC24-E239A256C82C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12 Templates", "X12 Templates", "{6B5CDA94-F415-4B67-AC24-E239A256C82C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Export Examples", "Export Examples", "{75700E13-1CE7-4C70-B060-A9929BED47F8}"
 EndProject
