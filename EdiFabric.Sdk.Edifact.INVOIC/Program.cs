@@ -26,7 +26,7 @@ namespace EdiFabric.Sdk.Edifact.INVOIC
         {
             var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\Invoice.txt");
 
-            List<EdiItem> ediItems;
+            List<IEdiItem> ediItems;
             using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 

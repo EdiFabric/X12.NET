@@ -39,7 +39,7 @@ namespace EdiFabric.Sdk.X12
                 Assembly.GetExecutingAssembly()
                     .GetManifestResourceStream("EdiFabric.Sdk.X12.Edi.PurchaseOrder.txt");
 
-            List<EdiItem> ediItems;
+            List<IEdiItem> ediItems;
             using (var ediReader = new X12Reader(purchaseOrderStream, "EdiFabric.Sdk.X12"))
             {
                 ediItems = ediReader.ReadToEnd().ToList();

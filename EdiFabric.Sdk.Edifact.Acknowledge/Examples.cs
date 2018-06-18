@@ -56,13 +56,14 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
                 GenerateForValidMessages = true
             };
 
-            var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
+            using (var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings))
             {
-                while (ediReader.Read())
-                    ackMan.Publish(ediReader.Item);
+                using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
+                {
+                    while (ediReader.Read())
+                        ackMan.Publish(ediReader.Item);
+                }
             }
-            ackMan.Complete();
         }
 
         /// <summary>
@@ -105,13 +106,14 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
                 GenerateForValidMessages = true
             };
 
-            var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
+            using (var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings))
             {
-                while (ediReader.Read())
-                    ackMan.Publish(ediReader.Item);
+                using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
+                {
+                    while (ediReader.Read())
+                        ackMan.Publish(ediReader.Item);
+                }
             }
-            ackMan.Complete();
         }
 
         /// <summary>
@@ -156,13 +158,14 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
                 TechnicalAck = TechnicalAck.Enforce
             };
 
-            var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
+            using (var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings))
             {
-                while (ediReader.Read())
-                    ackMan.Publish(ediReader.Item);
+                using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
+                {
+                    while (ediReader.Read())
+                        ackMan.Publish(ediReader.Item);
+                }
             }
-            ackMan.Complete();
         }
 
         /// <summary>
@@ -212,13 +215,14 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
                 GroupDuplicates = true
             };
 
-            var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
+            using (var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings))
             {
-                while (ediReader.Read())
-                    ackMan.Publish(ediReader.Item);
+                using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
+                {
+                    while (ediReader.Read())
+                        ackMan.Publish(ediReader.Item);
+                }
             }
-            ackMan.Complete();
         }
 
         /// <summary>
@@ -267,13 +271,14 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
                 InterchangeDuplicates = IsDuplicate
             };
 
-            var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
+            using (var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings))
             {
-                while (ediReader.Read())
-                    ackMan.Publish(ediReader.Item);
+                using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
+                {
+                    while (ediReader.Read())
+                        ackMan.Publish(ediReader.Item);
+                }
             }
-            ackMan.Complete();
         }
 
         /// <summary>
@@ -317,14 +322,15 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
                     }
                 },
             };
-          
-            var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings);
-            using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
+
+            using (var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings))
             {
-                while (ediReader.Read())
-                    ackMan.Publish(ediReader.Item);
+                using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
+                {
+                    while (ediReader.Read())
+                        ackMan.Publish(ediReader.Item);
+                }
             }
-            ackMan.Complete();
 
             Debug.WriteLine("Last interchange control number: {0}", unbControlNumber);
             Debug.WriteLine("Last group control number: {0}", ungControlNumber);

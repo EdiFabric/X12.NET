@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using EdiFabric.Core;
 using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Edi.ErrorContexts;
 using EdiFabric.Core.Model.Edi.X12;
@@ -48,7 +49,7 @@ namespace EdiFabric.Sdk.X12
                     .GetManifestResourceStream("EdiFabric.Sdk.X12.Edi.PurchaseOrders.txt");
 
             //  2.  Read all the contents at once
-            List<EdiItem> ediItems;
+            List<IEdiItem> ediItems;
             using (var ediReader = new X12Reader(purchaseOrderStream, "EdiFabric.Sdk.X12"))
             {
                 ediItems = ediReader.ReadToEnd().ToList();
@@ -240,7 +241,7 @@ namespace EdiFabric.Sdk.X12
 
             //  Read the contents as usual
             //  The split is driven by the rule file
-            List<EdiItem> ediItems;
+            List<IEdiItem> ediItems;
             using (var ediReader = new X12Reader(purchaseOrderStream, a => Assembly.GetExecutingAssembly()))
             {
                 ediItems = ediReader.ReadToEnd().ToList();
@@ -267,7 +268,7 @@ namespace EdiFabric.Sdk.X12
                     .GetManifestResourceStream("EdiFabric.Sdk.X12.Edi.PurchaseOrderCustomValidation.txt");
 
             //  Read the contents as usual
-            List<EdiItem> ediItems;
+            List<IEdiItem> ediItems;
             using (var ediReader = new X12Reader(purchaseOrderStream, a => Assembly.GetExecutingAssembly()))
             {
                 ediItems = ediReader.ReadToEnd().ToList();
@@ -300,7 +301,7 @@ namespace EdiFabric.Sdk.X12
                     .GetManifestResourceStream("EdiFabric.Sdk.X12.Edi.PurchaseOrder.txt");
 
             //  Read the contents as usual
-            List<EdiItem> ediItems;
+            List<IEdiItem> ediItems;
             using (var ediReader = new X12Reader(purchaseOrderStream, "EdiFabric.Sdk.X12"))
             {
                 ediItems = ediReader.ReadToEnd().ToList();

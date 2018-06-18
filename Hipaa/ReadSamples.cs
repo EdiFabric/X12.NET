@@ -38,7 +38,7 @@ namespace EdiFabric.Sdk.Hipaa
                     .GetManifestResourceStream("EdiFabric.Sdk.Hipaa.Edi.ClaimPayment.txt");
 
             //  2.  Read all the contents at once
-            List<EdiItem> ediItems;
+            List<IEdiItem> ediItems;
             using (var ediReader = new X12Reader(claimStream, AssemblyLoadFactory))
             {
                 ediItems = ediReader.ReadToEnd().ToList();

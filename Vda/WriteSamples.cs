@@ -57,7 +57,7 @@ namespace EdiFabric.Sdk.Vda
                 Assembly.GetExecutingAssembly()
                     .GetManifestResourceStream("EdiFabric.Sdk.Vda.Edi.Vda_4905_02.txt");
 
-            List<EdiItem> ediItems = new List<EdiItem>();
+            List<IEdiItem> ediItems = new List<IEdiItem>();
             using (var ediReader = new VdaReader(vda4905Stream, MessageContextFactory, Encoding.UTF8, Environment.NewLine))
             {
                 ediItems = ediReader.ReadToEnd().ToList();

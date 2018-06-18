@@ -120,7 +120,7 @@ namespace EdiFabric.Rules.X12_004010
     
     [Serializable()]
     [Group(typeof(N1))]
-    public class TS850_N1Loop1Split : EdiItem
+    public class TS850_N1Loop1Split : IEdiItem
     {
         
         [Required]

@@ -41,7 +41,7 @@ namespace EdiFabric.Sdk.Vda
 
             //  2.  Read all the contents at once
             //  Remove the last parameter Environment.NewLine when reading messages without postfix
-            List<EdiItem> ediItems;
+            List<IEdiItem> ediItems;
             using (var ediReader = new VdaReader(vda4905Stream, MessageContextFactory, Encoding.UTF8, Environment.NewLine))
             {
                 ediItems = ediReader.ReadToEnd().ToList();
