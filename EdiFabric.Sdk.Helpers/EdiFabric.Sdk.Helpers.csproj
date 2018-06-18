@@ -37,6 +37,9 @@
     <Reference Include="EdiFabric.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
       <HintPath>..\packages\EdiFabric.Framework.9.7.3\lib\net45\EdiFabric.Framework.dll</HintPath>
     </Reference>
+    <Reference Include="EdiFabric.Plugins.Ack.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
+      <HintPath>..\packages\EdiFabric.Plugins.Ack.X12.9.7.3\lib\net45\EdiFabric.Plugins.Ack.X12.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,6 +52,7 @@
   <ItemGroup>
     <Compile Include="EdifactHelpers.cs" />
     <Compile Include="StreamHelpers.cs" />
+    <Compile Include="X12Helpers.cs" />
     <Compile Include="XmlHelpers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -56,6 +60,14 @@
     <ProjectReference Include="..\EdiFabric.Sdk.Edifact.Templates.D96A\EdiFabric.Sdk.Edifact.Templates.D96A.csproj">
       <Project>{a6b9ede5-99e9-4696-9cee-6b6fff45cc12}</Project>
       <Name>EdiFabric.Sdk.Edifact.Templates.D96A</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EdiFabric.Sdk.X12.Templates.V004010.Custom1\EdiFabric.Sdk.X12.Templates.V004010.Custom1.csproj">
+      <Project>{580d0da8-3ca0-44ae-8bb5-58167870a59d}</Project>
+      <Name>EdiFabric.Sdk.X12.Templates.V004010.Custom1</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EdiFabric.Sdk.X12.Templates.V004010\EdiFabric.Sdk.X12.Templates.V004010.csproj">
+      <Project>{a29f84fd-7b81-4f4b-bc27-e24ccb7d70d7}</Project>
+      <Name>EdiFabric.Sdk.X12.Templates.V004010</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

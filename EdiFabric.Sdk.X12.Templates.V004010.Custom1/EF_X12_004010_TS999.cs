@@ -3,14 +3,13 @@ namespace EdiFabric.Rules.X12_005010X231A1
     using System;
     using System.Collections.Generic;
     using EdiFabric.Core.Annotations.Edi;
-    using EdiFabric.Core.Annotations.Validation;
     using EdiFabric.Core.Model.Edi;
     using EdiFabric.Core.Model.Edi.X12;
     
     
     [Serializable()]
     [Message("X12", "005010X231A1", "999")]
-    public class Custom999 : EdiMessage
+    public class TS999Custom1 : EdiMessage
     {
 
         [Pos(1)]
@@ -33,5 +32,4 @@ namespace EdiFabric.Rules.X12_005010X231A1
         [Pos(3)]
         public AK9 AK9 { get; set; }
     }
-
 }

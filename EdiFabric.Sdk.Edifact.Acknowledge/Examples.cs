@@ -117,7 +117,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
         }
 
         /// <summary>
-        /// Detects duplicate messages.
+        /// Detect duplicate messages.
         /// </summary>
         public static void GenerateContrlWithDuplicateMessage()
         {
@@ -169,7 +169,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
         }
 
         /// <summary>
-        /// Detects duplicate groups.
+        /// Detect duplicate groups.
         /// </summary>
         public static void GenerateContrlWithDuplicateGroup()
         {
@@ -226,7 +226,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
         }
 
         /// <summary>
-        /// Detects duplicate interchanges with external method.
+        /// Detect duplicate interchanges.
         /// </summary>
         public static void GenerateContrlWithDuplicateInterchange()
         {
@@ -282,7 +282,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
         }
 
         /// <summary>
-        /// Auto increments non default control numbers.
+        /// Auto increment custom control numbers.
         /// </summary>
         public static void GenerateContrlWithControlNumbers()
         {
