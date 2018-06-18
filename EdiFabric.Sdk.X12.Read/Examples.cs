@@ -6,13 +6,13 @@ using System.Reflection;
 using System.Text;
 using EdiFabric.Core;
 using EdiFabric.Core.Model.Edi;
-using EdiFabric.Core.Model.Edi.Edifact;
 using EdiFabric.Core.Model.Edi.ErrorContexts;
+using EdiFabric.Core.Model.Edi.X12;
 using EdiFabric.Framework.Readers;
-using EdiFabric.Rules.EDIFACT_D96A;
+using EdiFabric.Rules.X12_004010;
 using EdiFabric.Sdk.TemplateFactories;
 
-namespace EdiFabric.Sdk.Edifact.Read
+namespace EdiFabric.Sdk.X12.Read
 {
     class Examples
     {
@@ -28,16 +28,16 @@ namespace EdiFabric.Sdk.Edifact.Read
             Debug.WriteLine("******************************");
 
             //  1.  Load to a stream 
-            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrders.txt");
-            
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\PurchaseOrders.txt");
+
             //  2.  Read all the contents
             List<IEdiItem> ediItems;
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
+            using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             //  3.  Pull the purchase orders
-            var purchaseOrders = ediItems.OfType<TSORDERS>();
-            
+            var purchaseOrders = ediItems.OfType<TS850>();
+
             //  4.  Validate each purchase order
             foreach (var po in purchaseOrders)
             {
@@ -74,16 +74,16 @@ namespace EdiFabric.Sdk.Edifact.Read
             Debug.WriteLine("******************************");
 
             //  1.  Load to a stream 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrders.txt");
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\PurchaseOrders.txt");
 
             //  2. Read item by item, that is each call to Read() 
-            //  brings back either a control segment (UNB, UNG, UNE or UNZ) or a transaction
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
+            //  brings back either a control segment (ISA, GS, GE or IEA) or a transaction
+            using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory))
             {
                 while (ediReader.Read())
                 {
                     //  3. Check if current item is purchase order
-                    var po = ediReader.Item as TSORDERS;
+                    var po = ediReader.Item as TS850;
                     if (po != null)
                     {
                         //  4.  Validate it
@@ -119,16 +119,16 @@ namespace EdiFabric.Sdk.Edifact.Read
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrderCustom1.txt");
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\PurchaseOrderCustom1.txt");
 
             //  Resolve custom template by partner ID in the FullTemplateFactory
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
+            using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory))
             {
                 var ediItems = ediReader.ReadToEnd().ToList();
 
                 foreach (var ediItem in ediItems)
                 {
-                    var msg = ediItem as TSORDERSCustom1;
+                    var msg = ediItem as TS850Custom1;
                     if (msg != null)
                     {
                         MessageErrorContext errorContext;
@@ -152,16 +152,16 @@ namespace EdiFabric.Sdk.Edifact.Read
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrderCustom2.txt");
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\PurchaseOrderCustom2.txt");
 
             //  Resolve custom template by partner ID in the FullTemplateFactory
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
+            using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory))
             {
                 var ediItems = ediReader.ReadToEnd().ToList();
 
                 foreach (var ediItem in ediItems)
                 {
-                    var msg = ediItem as TSORDERSCustom2;
+                    var msg = ediItem as TS850Custom2;
                     if (msg != null)
                     {
                         MessageErrorContext errorContext;
@@ -186,22 +186,23 @@ namespace EdiFabric.Sdk.Edifact.Read
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrderMultiLine.txt");
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\PurchaseOrderMultiLine.txt");
 
             //  The split is driven by setting which class to split by in the template.
             //  Set the class to inherit from EdiItem and the parser will automatically split by it.
-            //  See EF_EDIFACT_D96A_TSORDERS_Split.cs in project EdiFabric.Sdk.Edifact.Templates.D96A.Split.
+            //  See
             List<IEdiItem> ediItems;
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
+            using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
-            //  Find all LIN loops, they are all separate ediItems\EdiMessages
-            var linLoop = ediItems.OfType<TSORDERSSplit>().Where(m => m.LINLoop1 != null).SelectMany(m => m.LINLoop1);
-            Debug.WriteLine(string.Format("LIN parts {0}", linLoop.Count()));
+            //  Find all N1 loops, they are all different ediItems
+            var poLoop = ediItems.OfType<TS850Split>().Where(m => m.PO1Loop1 != null).SelectMany(m => m.PO1Loop1);
+            Debug.WriteLine(string.Format("PO parts {0}", poLoop.Count()));
         }
 
         /// <summary>
-        /// Apply custom validation.
+        /// Apply custom validation for cross segment or data element scenarios
+        /// The custom validation logic is in the rule
         /// </summary>
         public static void CrossSegmentValidation()
         {
@@ -209,28 +210,28 @@ namespace EdiFabric.Sdk.Edifact.Read
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrderInvalid.txt");
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\PurchaseOrderInvalid.txt");
 
             // The custom validation logic is applied in the template by implementing IEdiValidator.
-            // See EF_EDIFACT_D96A_TSORDERS_Validation.cs in project EdiFabric.Sdk.Edifact.Templates.D96A.Validation.
+            // See
             List<IEdiItem> ediItems;
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
+            using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             //  Get the purchase order
-            var po = ediItems.OfType<TSORDERSValidation>().Single();
+            var po = ediItems.OfType<TS850Validation>().Single();
 
             //  Check that the custom validation was triggered
             MessageErrorContext errorContext;
             if (!po.IsValid(out errorContext))
             {
-                var customValidation = errorContext.Errors.FirstOrDefault(e => e.Value == "DTM segment is missing.");
+                var customValidation = errorContext.Errors.FirstOrDefault(e => e.Value == "N2 segment is missing.");
                 Debug.WriteLine(customValidation.Value);
             }
         }
 
         /// <summary>
-        /// Validate control segments.
+        /// Validate the typed control segments
         /// </summary>
         public static void ValidateControlSegments()
         {
@@ -238,30 +239,30 @@ namespace EdiFabric.Sdk.Edifact.Read
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\Invoice.txt");
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\Invoice.txt");
 
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
+            using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory))
             {
-                while(ediReader.Read())
+                while (ediReader.Read())
                 {
-                    var unb = ediReader.Item as UNB;
-                    if(unb != null)
+                    var isa = ediReader.Item as ISA;
+                    if (isa != null)
                     {
                         //  Validate 
-                        var unbErrors = unb.Validate();
-                        //  Pull the sender id from UNB
-                        var senderId = unb.INTERCHANGESENDER_2.InterchangeSenderIdentification_1;
+                        var isaErrors = isa.Validate();
+                        //  Pull the sender id from ISA
+                        var senderId = isa.InterchangeSenderID_6;
                         Debug.WriteLine("Sender ID:");
                         Debug.WriteLine(senderId);
                     }
 
-                    var ung = ediReader.Item as UNG;
-                    if (ung != null)
+                    var gs = ediReader.Item as GS;
+                    if (gs != null)
                     {
                         //  Validate 
-                        var ungErrors = ung.Validate();
-                        //  Pull the sender id from UNG
-                        var senderId = ung.APPLICATIONSENDERIDENTIFICATION_2.ApplicationSenderIdentification_1;
+                        var gsErrors = gs.Validate();
+                        //  Pull the sender id from GS
+                        var senderId = gs.SenderIDCode_2;
                         Debug.WriteLine("Sender ID:");
                         Debug.WriteLine(senderId);
                     }
@@ -279,49 +280,49 @@ namespace EdiFabric.Sdk.Edifact.Read
             Debug.WriteLine("******************************");
 
             //  1.  Load to a stream 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\MixedTransactions.txt");
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\MixedTransactions.txt");
 
             //  2.  Read multiple transactions batched up in the same interchange
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
+            using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory))
             {
                 while (ediReader.Read())
                 {
                     //  Process purchase orders if no parsing errors
-                    var po = ediReader.Item as TSORDERS;
+                    var po = ediReader.Item as TS850;
                     if (po != null && !po.HasErrors)
                         ProcessPurchaseOrder(ediReader.CurrentInterchangeHeader, ediReader.CurrentGroupHeader, po);
 
                     //  Process invoices if no parsing errors
-                    var invoice = ediReader.Item as TSINVOIC;
+                    var invoice = ediReader.Item as TS810;
                     if (invoice != null && !invoice.HasErrors)
                         ProcessInvoice(ediReader.CurrentInterchangeHeader, ediReader.CurrentGroupHeader, invoice);
                 }
             }
         }
 
-        private static void ProcessPurchaseOrder(UNB unb, UNG ung, TSORDERS purchaseOrder)
+        private static void ProcessPurchaseOrder(ISA isa, GS gs, TS850 purchaseOrder)
         {
             //  Do something with the purchase order
         }
 
-        private static void ProcessInvoice(UNB unb, UNG ung, TSINVOIC invoice)
+        private static void ProcessInvoice(ISA isa, GS gs, TS810 invoice)
         {
             //  Do something with the invoice
         }
 
         /// <summary>
-        /// Reads file with corrupt UNB.
+        /// Reads file with corrupt ISA.
         /// </summary>
-        public static void ReadCorruptUnb()
+        public static void ReadCorruptIsa()
         {
             Debug.WriteLine("******************************");
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\CorruptUnb.txt");
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\CorruptIsa.txt");
 
             List<IEdiItem> ediItems;
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
+            using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var readerErrors = ediItems.OfType<ReaderErrorContext>();
@@ -340,11 +341,11 @@ namespace EdiFabric.Sdk.Edifact.Read
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\CorruptUnh.txt");
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\CorruptSt.txt");
 
             //  Set the continue on error flag to true
             List<IEdiItem> ediItems;
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory, Encoding.UTF8, true))
+            using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory, Encoding.UTF8, true))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var readerErrors = ediItems.OfType<ReaderErrorContext>();
@@ -354,7 +355,7 @@ namespace EdiFabric.Sdk.Edifact.Read
                 Debug.WriteLine(readerErrors.First().Exception.Message);
             }
 
-            var purchaseOrders = ediItems.OfType<TSORDERS>();
+            var purchaseOrders = ediItems.OfType<TS850>();
             foreach (var po in purchaseOrders)
             {
                 //  All valid purchase orders were extracted
