@@ -8,7 +8,7 @@ namespace EdiFabric.Sdk.Helpers.X12
         /// <summary>
         /// Build ISA.
         /// </summary>
-        public static ISA CreateIsa(string controlNumber)
+        public static ISA BuildIsa(string controlNumber)
         {
             return new ISA
             {
@@ -49,7 +49,7 @@ namespace EdiFabric.Sdk.Helpers.X12
         /// <summary>
         /// Build GS.
         /// </summary>
-        public static GS CreateGs(string controlNumber)
+        public static GS BuildGs(string controlNumber)
         {
             return new GS
             {

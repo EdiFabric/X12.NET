@@ -36,9 +36,9 @@ namespace EdiFabric.Sdk.X12.Write
                     using (var writer = new X12Writer(stream))
                     {
                         //  3.  Begin with ISA segment
-                        writer.Write(SegmentBuilders.CreateIsa("1"));
+                        writer.Write(SegmentBuilders.BuildIsa("1"));
                         //  4.  Follow up with GS segment
-                        writer.Write(SegmentBuilders.CreateGs("1"));
+                        writer.Write(SegmentBuilders.BuildGs("1"));
                         //  5.  Then write the invoice(s)
                         writer.Write(invoice);
                     }
@@ -83,8 +83,8 @@ namespace EdiFabric.Sdk.X12.Write
                 //  3.  Write directly to a file
                 using (var writer = new X12Writer(@"C:\Test\Output.txt", false))
                 {
-                    writer.Write(SegmentBuilders.CreateIsa("1"));
-                    writer.Write(SegmentBuilders.CreateGs("1"));
+                    writer.Write(SegmentBuilders.BuildIsa("1"));
+                    writer.Write(SegmentBuilders.BuildGs("1"));
                     writer.Write(invoice);
                 }
 
@@ -116,8 +116,8 @@ namespace EdiFabric.Sdk.X12.Write
                         Separators.X12.DataElement, Separators.X12.RepetitionDataElement, Separators.X12.Escape);
 
                     //  Write the ISA with the custom separator set
-                    writer.Write(SegmentBuilders.CreateIsa("1"), separators);
-                    writer.Write(SegmentBuilders.CreateGs("1"));
+                    writer.Write(SegmentBuilders.BuildIsa("1"), separators);
+                    writer.Write(SegmentBuilders.BuildGs("1"));
                     writer.Write(invoice);
                 }
 
@@ -140,8 +140,8 @@ namespace EdiFabric.Sdk.X12.Write
             {
                 using (var writer = new X12Writer(stream, Encoding.UTF8, Environment.NewLine))
                 {
-                    writer.Write(SegmentBuilders.CreateIsa("1"));
-                    writer.Write(SegmentBuilders.CreateGs("1"));
+                    writer.Write(SegmentBuilders.BuildIsa("1"));
+                    writer.Write(SegmentBuilders.BuildGs("1"));
                     writer.Write(invoice);
                 }
 
@@ -162,8 +162,8 @@ namespace EdiFabric.Sdk.X12.Write
             {
                 using (var writer = new X12Writer(stream, Encoding.Default, Environment.NewLine))
                 {
-                    writer.Write(SegmentBuilders.CreateIsa("1"));
-                    writer.Write(SegmentBuilders.CreateGs("1"));
+                    writer.Write(SegmentBuilders.BuildIsa("1"));
+                    writer.Write(SegmentBuilders.BuildGs("1"));
 
                     //  1.  Write the first invoice
                     writer.Write(TransactionBuilders.BuildInvoice("1"));
@@ -191,16 +191,16 @@ namespace EdiFabric.Sdk.X12.Write
             {
                 using (var writer = new X12Writer(stream))
                 {
-                    writer.Write(SegmentBuilders.CreateIsa("1"));
+                    writer.Write(SegmentBuilders.BuildIsa("1"));
 
                     //  1.  Write the first group               
-                    writer.Write(SegmentBuilders.CreateGs("1"));
+                    writer.Write(SegmentBuilders.BuildGs("1"));
                     //  Write the transactions...
                     writer.Write(TransactionBuilders.BuildInvoice("1"));
 
                     //  2.  Write the second group
                     //  No need to close the previous group with a GE
-                    writer.Write(SegmentBuilders.CreateGs("2"));
+                    writer.Write(SegmentBuilders.BuildGs("2"));
                     //  Write the transactions...
                     writer.Write(TransactionBuilders.BuildInvoice("2"));
                 }
@@ -223,14 +223,14 @@ namespace EdiFabric.Sdk.X12.Write
                 using (var writer = new X12Writer(stream))
                 {
                     //  1.  Write the first interchange
-                    writer.Write(SegmentBuilders.CreateIsa("1"));
-                    writer.Write(SegmentBuilders.CreateGs("1"));
+                    writer.Write(SegmentBuilders.BuildIsa("1"));
+                    writer.Write(SegmentBuilders.BuildGs("1"));
                     writer.Write(TransactionBuilders.BuildInvoice("1"));
 
                     //  2.  Write the second interchange
                     //  No need to close the previous interchange with a IEA
-                    writer.Write(SegmentBuilders.CreateIsa("2"));
-                    writer.Write(SegmentBuilders.CreateGs("1"));
+                    writer.Write(SegmentBuilders.BuildIsa("2"));
+                    writer.Write(SegmentBuilders.BuildGs("1"));
                     writer.Write(TransactionBuilders.BuildInvoice("1"));
                 }
 
@@ -258,8 +258,8 @@ namespace EdiFabric.Sdk.X12.Write
                 //  Set the PreserveWhitespace flag to true
                 using (var writer = new X12Writer(stream, null, "", true))
                 {
-                    writer.Write(SegmentBuilders.CreateIsa("1"));
-                    writer.Write(SegmentBuilders.CreateGs("1"));
+                    writer.Write(SegmentBuilders.BuildIsa("1"));
+                    writer.Write(SegmentBuilders.BuildGs("1"));
                     writer.Write(invoice);
                 }
 
@@ -290,9 +290,9 @@ namespace EdiFabric.Sdk.X12.Write
                     using (var writer = new X12Writer(stream))
                     {
                         //  3.  Begin with ISA segment
-                        writer.Write(SegmentBuilders.CreateIsa("1"));
+                        writer.Write(SegmentBuilders.BuildIsa("1"));
                         //  4.  Follow up with GS segment
-                        writer.Write(SegmentBuilders.CreateGs("1"));
+                        writer.Write(SegmentBuilders.BuildGs("1"));
                         //  5.  Then write the purchase order(s)
                         writer.Write(po);
                     }
