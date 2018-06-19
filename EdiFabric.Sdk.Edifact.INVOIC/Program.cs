@@ -4,7 +4,7 @@ using EdiFabric.Framework.Readers;
 using EdiFabric.Framework.Writers;
 using EdiFabric.Rules.EDIFACT_D96A;
 using EdiFabric.Sdk.Helpers;
-using EdiFabric.Sdk.TemplateFactories;
+using EdiFabric.Sdk.Helpers.Edifact;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -27,7 +27,7 @@ namespace EdiFabric.Sdk.Edifact.INVOIC
             var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\Invoice.txt");
 
             List<IEdiItem> ediItems;
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
+            using (var ediReader = new EdifactReader(ediStream, TemplateFactory.FullTemplateFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var transactions = ediItems.OfType<TSINVOIC>();
@@ -54,7 +54,7 @@ namespace EdiFabric.Sdk.Edifact.INVOIC
         {
             using (var stream = new MemoryStream())
             {
-                var transaction = EdifactHelpers.BuildInvoice("1");
+                var transaction = TransactionBuilders.BuildInvoice("1");
 
                 MessageErrorContext mec;
                 if (transaction.IsValid(out mec, true))
@@ -62,11 +62,11 @@ namespace EdiFabric.Sdk.Edifact.INVOIC
                     //  valid
                     using (var writer = new EdifactWriter(stream))
                     {
-                        writer.Write(EdifactHelpers.BuildUnb("1"));
+                        writer.Write(SegmentBuilders.BuildUnb("1"));
                         writer.Write(transaction);
                     }
 
-                    var ediString = StreamHelpers.LoadString(stream);
+                    var ediString = stream.LoadToString();
                 }
                 else
                 {

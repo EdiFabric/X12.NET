@@ -6,9 +6,9 @@ using System.Xml.Serialization;
 
 namespace EdiFabric.Sdk.Helpers
 {
-    public class XmlHelpers
+    public static class XmlExtensions
     {
-        public static XDocument Serialize(EdiMessage instance)
+        public static XDocument Serialize(this EdiMessage instance)
         {
             if (instance == null)
                 throw new ArgumentNullException("instance");
@@ -22,7 +22,7 @@ namespace EdiFabric.Sdk.Helpers
             }
         }
 
-        public static T Deserialize<T>(XElement xml)
+        public static T Deserialize<T>(this XElement xml)
         {
             var serializer = new XmlSerializer(typeof(T));
             return (T)serializer.Deserialize(xml.CreateReader());

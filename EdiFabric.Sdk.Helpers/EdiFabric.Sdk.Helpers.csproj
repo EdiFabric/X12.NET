@@ -34,12 +34,6 @@
     <Reference Include="EdiFabric.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
       <HintPath>..\packages\EdiFabric.Core.9.7.3\lib\net45\EdiFabric.Core.dll</HintPath>
     </Reference>
-    <Reference Include="EdiFabric.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Framework.9.7.3\lib\net45\EdiFabric.Framework.dll</HintPath>
-    </Reference>
-    <Reference Include="EdiFabric.Plugins.Ack.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Plugins.Ack.X12.9.7.3\lib\net45\EdiFabric.Plugins.Ack.X12.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,10 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EdifactHelpers.cs" />
-    <Compile Include="StreamHelpers.cs" />
-    <Compile Include="X12Helpers.cs" />
-    <Compile Include="XmlHelpers.cs" />
+    <Compile Include="StreamExtensions.cs" />
+    <Compile Include="XmlExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

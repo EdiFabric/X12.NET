@@ -3,9 +3,9 @@ using System.Text;
 
 namespace EdiFabric.Sdk.Helpers
 {
-    public class StreamHelpers
+    public static class StreamExtensions
     {
-        public static string LoadString(Stream stream)
+        public static string LoadToString(this Stream stream)
         {
             stream.Position = 0;
             using (var reader = new StreamReader(stream, Encoding.Default))

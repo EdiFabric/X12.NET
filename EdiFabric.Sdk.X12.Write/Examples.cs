@@ -7,14 +7,14 @@ using EdiFabric.Core.Model.Edi.ErrorContexts;
 using EdiFabric.Framework;
 using EdiFabric.Framework.Writers;
 using EdiFabric.Sdk.Helpers;
-using EdiFabric.Sdk.Helpers.Edifact;
+using EdiFabric.Sdk.Helpers.X12;
 
-namespace EdiFabric.Sdk.Edifact.Write
+namespace EdiFabric.Sdk.X12.Write
 {
     class Examples
     {
         /// <summary>
-        /// Generate and write EDI document to a stream.
+        /// Generate and write EDI document to a stream
         /// </summary>
         public static void WriteSingleInvoiceToStream()
         {
@@ -33,11 +33,13 @@ namespace EdiFabric.Sdk.Edifact.Write
 
                 using (var stream = new MemoryStream())
                 {
-                    using (var writer = new EdifactWriter(stream))
+                    using (var writer = new X12Writer(stream))
                     {
-                        //  3.  Begin with UNB segment
-                        writer.Write(SegmentBuilders.BuildUnb("1"));
-                        //  4.  Then write the invoice(s)
+                        //  3.  Begin with ISA segment
+                        writer.Write(SegmentBuilders.CreateIsa("1"));
+                        //  4.  Follow up with GS segment
+                        writer.Write(SegmentBuilders.CreateGs("1"));
+                        //  5.  Then write the invoice(s)
                         writer.Write(invoice);
                     }
 
@@ -60,7 +62,7 @@ namespace EdiFabric.Sdk.Edifact.Write
         }
 
         /// <summary>
-        /// Generate and write EDI document to a file.
+        /// Generate and write EDI document to a file
         /// </summary>
         public static void WriteSingleInvoiceToFile()
         {
@@ -79,9 +81,10 @@ namespace EdiFabric.Sdk.Edifact.Write
                     errorContext.ControlNumber);
 
                 //  3.  Write directly to a file
-                using (var writer = new EdifactWriter(@"C:\Test\Output.txt", false))
+                using (var writer = new X12Writer(@"C:\Test\Output.txt", false))
                 {
-                    writer.Write(SegmentBuilders.BuildUnb("1"));
+                    writer.Write(SegmentBuilders.CreateIsa("1"));
+                    writer.Write(SegmentBuilders.CreateGs("1"));
                     writer.Write(invoice);
                 }
 
@@ -95,7 +98,6 @@ namespace EdiFabric.Sdk.Edifact.Write
 
         /// <summary>
         /// Write with custom separators, by default it uses the standard separators.
-        /// UNA segment is automatically applied if any of the custom separators is different than the default.
         /// </summary>
         public static void WriteWithCustomSeparators()
         {
@@ -107,14 +109,15 @@ namespace EdiFabric.Sdk.Edifact.Write
 
             using (var stream = new MemoryStream())
             {
-                using (var writer = new EdifactWriter(stream))
+                using (var writer = new X12Writer(stream))
                 {
-                    //  Set a custom segment separator
-                    var separators = new Separators('|', Separators.Edifact.ComponentDataElement,
-                        Separators.Edifact.DataElement, Separators.Edifact.RepetitionDataElement, Separators.Edifact.Escape);
+                    //  Set a custom segment separator.
+                    var separators = new Separators('|', Separators.X12.ComponentDataElement,
+                        Separators.X12.DataElement, Separators.X12.RepetitionDataElement, Separators.X12.Escape);
 
-                    //  Write the UNB with the custom separator set
-                    writer.Write(SegmentBuilders.BuildUnb("1"), separators);
+                    //  Write the ISA with the custom separator set
+                    writer.Write(SegmentBuilders.CreateIsa("1"), separators);
+                    writer.Write(SegmentBuilders.CreateGs("1"));
                     writer.Write(invoice);
                 }
 
@@ -135,9 +138,10 @@ namespace EdiFabric.Sdk.Edifact.Write
 
             using (var stream = new MemoryStream())
             {
-                using (var writer = new EdifactWriter(stream, Encoding.UTF8, Environment.NewLine))
+                using (var writer = new X12Writer(stream, Encoding.UTF8, Environment.NewLine))
                 {
-                    writer.Write(SegmentBuilders.BuildUnb("1"));
+                    writer.Write(SegmentBuilders.CreateIsa("1"));
+                    writer.Write(SegmentBuilders.CreateGs("1"));
                     writer.Write(invoice);
                 }
 
@@ -156,9 +160,10 @@ namespace EdiFabric.Sdk.Edifact.Write
 
             using (var stream = new MemoryStream())
             {
-                using (var writer = new EdifactWriter(stream))
+                using (var writer = new X12Writer(stream, Encoding.Default, Environment.NewLine))
                 {
-                    writer.Write(SegmentBuilders.BuildUnb("1"));
+                    writer.Write(SegmentBuilders.CreateIsa("1"));
+                    writer.Write(SegmentBuilders.CreateGs("1"));
 
                     //  1.  Write the first invoice
                     writer.Write(TransactionBuilders.BuildInvoice("1"));
@@ -174,7 +179,7 @@ namespace EdiFabric.Sdk.Edifact.Write
         }
 
         /// <summary>
-        /// Batch multiple transactions under multiple functional groups in the same EDI stream.
+        /// Batch multiple transactions under multiple functional groups in the same EDI stream
         /// </summary>
         public static void WriteMultipleGroups()
         {
@@ -184,18 +189,20 @@ namespace EdiFabric.Sdk.Edifact.Write
 
             using (var stream = new MemoryStream())
             {
-                using (var writer = new EdifactWriter(stream))
+                using (var writer = new X12Writer(stream))
                 {
-                    writer.Write(SegmentBuilders.BuildUnb("1"));
+                    writer.Write(SegmentBuilders.CreateIsa("1"));
 
-                    //  1.  Write the first group      
-                    writer.Write(SegmentBuilders.BuildUng("1", "INVOIC"));
+                    //  1.  Write the first group               
+                    writer.Write(SegmentBuilders.CreateGs("1"));
+                    //  Write the transactions...
                     writer.Write(TransactionBuilders.BuildInvoice("1"));
 
                     //  2.  Write the second group
-                    //  No need to close the previous group with a UNE
-                    writer.Write(SegmentBuilders.BuildUng("2", "ORDERS"));
-                    writer.Write(TransactionBuilders.BuildPurchaseOrder("1"));
+                    //  No need to close the previous group with a GE
+                    writer.Write(SegmentBuilders.CreateGs("2"));
+                    //  Write the transactions...
+                    writer.Write(TransactionBuilders.BuildInvoice("2"));
                 }
 
                 Debug.Write(stream.LoadToString());
@@ -203,7 +210,7 @@ namespace EdiFabric.Sdk.Edifact.Write
         }
 
         /// <summary>
-        /// Batch multiple interchanges in the same EDI stream.
+        /// Batch multiple interchanges in the same EDI stream
         /// </summary>
         public static void WriteMultipleInterchanges()
         {
@@ -213,15 +220,17 @@ namespace EdiFabric.Sdk.Edifact.Write
 
             using (var stream = new MemoryStream())
             {
-                using (var writer = new EdifactWriter(stream))
+                using (var writer = new X12Writer(stream))
                 {
                     //  1.  Write the first interchange
-                    writer.Write(SegmentBuilders.BuildUnb("1"));
+                    writer.Write(SegmentBuilders.CreateIsa("1"));
+                    writer.Write(SegmentBuilders.CreateGs("1"));
                     writer.Write(TransactionBuilders.BuildInvoice("1"));
 
                     //  2.  Write the second interchange
                     //  No need to close the previous interchange with a IEA
-                    writer.Write(SegmentBuilders.BuildUnb("2"));
+                    writer.Write(SegmentBuilders.CreateIsa("2"));
+                    writer.Write(SegmentBuilders.CreateGs("1"));
                     writer.Write(TransactionBuilders.BuildInvoice("1"));
                 }
 
@@ -240,15 +249,17 @@ namespace EdiFabric.Sdk.Edifact.Write
 
             var invoice = TransactionBuilders.BuildInvoice("1");
 
-            //  Initialize a blank property
-            invoice.BGM.Responsetypecoded_04 = "";
-            
+            //  Initialize some properties with blanks
+            invoice.BIG.ReleaseNumber_05 = "";
+            invoice.BIG.ChangeOrderSequenceNumber_06 = "";
+
             using (var stream = new MemoryStream())
             {
-                //  Set PreserveWhitespace flag to true
-                using (var writer = new EdifactWriter(stream, null, "", true))
+                //  Set the PreserveWhitespace flag to true
+                using (var writer = new X12Writer(stream, null, "", true))
                 {
-                    writer.Write(SegmentBuilders.BuildUnb("1"));
+                    writer.Write(SegmentBuilders.CreateIsa("1"));
+                    writer.Write(SegmentBuilders.CreateGs("1"));
                     writer.Write(invoice);
                 }
 
@@ -257,7 +268,7 @@ namespace EdiFabric.Sdk.Edifact.Write
         }
 
         /// <summary>
-        /// Generate and write EDI document to a stream.
+        /// Generate and write EDI document to a stream
         /// </summary>
         public static void WriteSinglePurchaseOrderToStream()
         {
@@ -276,11 +287,13 @@ namespace EdiFabric.Sdk.Edifact.Write
 
                 using (var stream = new MemoryStream())
                 {
-                    using (var writer = new EdifactWriter(stream))
+                    using (var writer = new X12Writer(stream))
                     {
-                        //  3.  Begin with UNB segment
-                        writer.Write(SegmentBuilders.BuildUnb("1"));
-                        //  4.  Then write the purchase order(s)
+                        //  3.  Begin with ISA segment
+                        writer.Write(SegmentBuilders.CreateIsa("1"));
+                        //  4.  Follow up with GS segment
+                        writer.Write(SegmentBuilders.CreateGs("1"));
+                        //  5.  Then write the purchase order(s)
                         writer.Write(po);
                     }
 

@@ -9,8 +9,10 @@
             Examples.WriteWithCustomSeparators();
             Examples.WriteWithSegmetPostfix();
             Examples.WriteMultipleInvoices();
+            Examples.WriteMultipleGroups();
             Examples.WriteMultipleInterchanges();
             Examples.WriteSegmentWithWhitespace();
+            Examples.WriteSinglePurchaseOrderToStream();
         }
     }
 }

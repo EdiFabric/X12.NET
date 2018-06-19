@@ -8,7 +8,7 @@ using EdiFabric.Core.Model.Edi;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Rules.X12_004010;
 using EdiFabric.Sdk.Helpers;
-using EdiFabric.Sdk.TemplateFactories;
+using EdiFabric.Sdk.Helpers.X12;
 
 namespace EdiFabric.Sdk.X12.Export.Xml
 {
@@ -26,7 +26,7 @@ namespace EdiFabric.Sdk.X12.Export.Xml
             var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\PurchaseOrder.txt");
 
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory))
+            using (var ediReader = new X12Reader(ediStream, TemplateFactory.FullTemplateFactory))
             {
                 ediItems = ediReader.ReadToEnd().ToList();
             }
@@ -34,7 +34,7 @@ namespace EdiFabric.Sdk.X12.Export.Xml
             var transactions = ediItems.OfType<TS850>();
             foreach (var transaction in transactions)
             {
-                var xml = XmlHelpers.Serialize(transaction);
+                var xml = transaction.Serialize();
                 Debug.WriteLine(xml.Root.ToString());
             }
         }
@@ -51,7 +51,7 @@ namespace EdiFabric.Sdk.X12.Export.Xml
             var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\PurchaseOrder.xml");
 
             var xml = XElement.Load(ediStream);
-            var transaction = XmlHelpers.Deserialize<TS850>(xml);
+            var transaction = xml.Deserialize<TS850>();
         }
     }
 }

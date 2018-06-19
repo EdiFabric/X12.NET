@@ -10,7 +10,7 @@ using EdiFabric.Core.Model.Edi.ErrorContexts;
 using EdiFabric.Core.Model.Edi.X12;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Rules.X12_004010;
-using EdiFabric.Sdk.TemplateFactories;
+using EdiFabric.Sdk.Helpers.X12;
 
 namespace EdiFabric.Sdk.X12.Read
 {
@@ -32,7 +32,7 @@ namespace EdiFabric.Sdk.X12.Read
 
             //  2.  Read all the contents
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory))
+            using (var ediReader = new X12Reader(ediStream, TemplateFactory.FullTemplateFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             //  3.  Pull the purchase orders
@@ -78,7 +78,7 @@ namespace EdiFabric.Sdk.X12.Read
 
             //  2. Read item by item, that is each call to Read() 
             //  brings back either a control segment (ISA, GS, GE or IEA) or a transaction
-            using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory))
+            using (var ediReader = new X12Reader(ediStream, TemplateFactory.FullTemplateFactory))
             {
                 while (ediReader.Read())
                 {
@@ -122,7 +122,7 @@ namespace EdiFabric.Sdk.X12.Read
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\PurchaseOrderCustom1.txt");
 
             //  Resolve custom template by partner ID in the FullTemplateFactory
-            using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory))
+            using (var ediReader = new X12Reader(ediStream, TemplateFactory.FullTemplateFactory))
             {
                 var ediItems = ediReader.ReadToEnd().ToList();
 
@@ -155,7 +155,7 @@ namespace EdiFabric.Sdk.X12.Read
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\PurchaseOrderCustom2.txt");
 
             //  Resolve custom template by partner ID in the FullTemplateFactory
-            using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory))
+            using (var ediReader = new X12Reader(ediStream, TemplateFactory.FullTemplateFactory))
             {
                 var ediItems = ediReader.ReadToEnd().ToList();
 
@@ -192,7 +192,7 @@ namespace EdiFabric.Sdk.X12.Read
             //  Set the class to inherit from EdiItem and the parser will automatically split by it.
             //  See
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory))
+            using (var ediReader = new X12Reader(ediStream, TemplateFactory.FullTemplateFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             //  Find all N1 loops, they are all different ediItems
@@ -215,7 +215,7 @@ namespace EdiFabric.Sdk.X12.Read
             // The custom validation logic is applied in the template by implementing IEdiValidator.
             // See
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory))
+            using (var ediReader = new X12Reader(ediStream, TemplateFactory.FullTemplateFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             //  Get the purchase order
@@ -241,7 +241,7 @@ namespace EdiFabric.Sdk.X12.Read
 
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\Invoice.txt");
 
-            using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory))
+            using (var ediReader = new X12Reader(ediStream, TemplateFactory.FullTemplateFactory))
             {
                 while (ediReader.Read())
                 {
@@ -283,7 +283,7 @@ namespace EdiFabric.Sdk.X12.Read
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\MixedTransactions.txt");
 
             //  2.  Read multiple transactions batched up in the same interchange
-            using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory))
+            using (var ediReader = new X12Reader(ediStream, TemplateFactory.FullTemplateFactory))
             {
                 while (ediReader.Read())
                 {
@@ -322,7 +322,7 @@ namespace EdiFabric.Sdk.X12.Read
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\CorruptIsa.txt");
 
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory))
+            using (var ediReader = new X12Reader(ediStream, TemplateFactory.FullTemplateFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var readerErrors = ediItems.OfType<ReaderErrorContext>();
@@ -345,7 +345,7 @@ namespace EdiFabric.Sdk.X12.Read
 
             //  Set the continue on error flag to true
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, X12Factories.FullTemplateFactory, Encoding.UTF8, true))
+            using (var ediReader = new X12Reader(ediStream, TemplateFactory.FullTemplateFactory, Encoding.UTF8, true))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var readerErrors = ediItems.OfType<ReaderErrorContext>();

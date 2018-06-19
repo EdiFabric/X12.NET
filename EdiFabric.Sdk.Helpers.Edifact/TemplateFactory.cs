@@ -3,9 +3,9 @@ using EdiFabric.Framework;
 using EdiFabric.Rules.EDIFACT_D96A;
 using System.Reflection;
 
-namespace EdiFabric.Sdk.TemplateFactories
+namespace EdiFabric.Sdk.Helpers.Edifact
 {
-    public class EdifactFactories
+    public class TemplateFactory
     {
         /// <summary>
         /// Parse the transaction explicitly.
@@ -43,7 +43,7 @@ namespace EdiFabric.Sdk.TemplateFactories
             throw new System.Exception(string.Format("Transaction {0} for version {1} is not supported.",
                 unh.MessageIdentifier_02.MessageType_01, unh.MessageIdentifier_02.MessageVersionNumber_02));
         }
-        
+
         public static Assembly TrialTemplateFactory(MessageContext messageContext)
         {
             if (messageContext.Version == "D96A")

@@ -4,9 +4,9 @@ using EdiFabric.Rules.X12_004010;
 using System;
 using System.Reflection;
 
-namespace EdiFabric.Sdk.TemplateFactories
+namespace EdiFabric.Sdk.Helpers.X12
 {
-    public class X12Factories
+    public class TemplateFactory
     {
         /// <summary>
         /// Parse the transaction explicitly.
@@ -44,7 +44,7 @@ namespace EdiFabric.Sdk.TemplateFactories
             throw new System.Exception(string.Format("Transaction {0} for version {1} is not supported.",
                 st.TransactionSetIdentifierCode_01, gs.VersionAndRelease_8));
         }
-        
+
         public static Assembly TrialTemplateFactory(MessageContext messageContext)
         {
             if (messageContext.Version == "004010")

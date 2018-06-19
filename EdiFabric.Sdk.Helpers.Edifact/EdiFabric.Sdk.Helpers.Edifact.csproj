@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{325F4410-67E7-470C-BEEA-C04F034BCD56}</ProjectGuid>
+    <ProjectGuid>{7E894F74-9AE6-4C83-B4AA-F70BBD125B44}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EdiFabric.Sdk.TemplateFactories</RootNamespace>
-    <AssemblyName>EdiFabric.Sdk.TemplateFactories</AssemblyName>
+    <RootNamespace>EdiFabric.Sdk.Helpers.Edifact</RootNamespace>
+    <AssemblyName>EdiFabric.Sdk.Helpers.Edifact</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -47,9 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="X12Factories.cs" />
-    <Compile Include="EdifactFactories.cs" />
+    <Compile Include="AckBuilders.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SegmentBuilders.cs" />
+    <Compile Include="TemplateFactory.cs" />
+    <Compile Include="TransactionBuilders.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EdiFabric.Sdk.Edifact.Templates.D96A.Custom1\EdiFabric.Sdk.Edifact.Templates.D96A.Custom1.csproj">
@@ -72,29 +77,6 @@
       <Project>{a6b9ede5-99e9-4696-9cee-6b6fff45cc12}</Project>
       <Name>EdiFabric.Sdk.Edifact.Templates.D96A</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Sdk.X12.Templates.V004010.Custom1\EdiFabric.Sdk.X12.Templates.V004010.Custom1.csproj">
-      <Project>{580d0da8-3ca0-44ae-8bb5-58167870a59d}</Project>
-      <Name>EdiFabric.Sdk.X12.Templates.V004010.Custom1</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Sdk.X12.Templates.V004010.Custom2\EdiFabric.Sdk.X12.Templates.V004010.Custom2.csproj">
-      <Project>{e307fd34-f8c3-42fb-a45b-2469446bac88}</Project>
-      <Name>EdiFabric.Sdk.X12.Templates.V004010.Custom2</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Sdk.X12.Templates.V004010.Split\EdiFabric.Sdk.X12.Templates.V004010.Split.csproj">
-      <Project>{d746b3ce-a6e6-44aa-a25a-4a89c81afd81}</Project>
-      <Name>EdiFabric.Sdk.X12.Templates.V004010.Split</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Sdk.X12.Templates.V004010.Validation\EdiFabric.Sdk.X12.Templates.V004010.Validation.csproj">
-      <Project>{5366aa35-2e43-45f2-b3cd-f4957893c55b}</Project>
-      <Name>EdiFabric.Sdk.X12.Templates.V004010.Validation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Sdk.X12.Templates.V004010\EdiFabric.Sdk.X12.Templates.V004010.csproj">
-      <Project>{a29f84fd-7b81-4f4b-bc27-e24ccb7d70d7}</Project>
-      <Name>EdiFabric.Sdk.X12.Templates.V004010</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

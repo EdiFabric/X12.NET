@@ -11,23 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vda", "Vda\Vda.csproj", "{A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Edifact and Eancom", "Edifact and Eancom", "{78842466-1FBD-415D-9A31-B3A1A3963585}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Edifact Files", "Edifact Files", "{608868B5-FD2E-4B4E-B8BA-D5E872D0D7C9}"
-	ProjectSection(SolutionItems) = preProject
-		Files.Edifact\CorruptUnb.txt = Files.Edifact\CorruptUnb.txt
-		Files.Edifact\CorruptUnh.txt = Files.Edifact\CorruptUnh.txt
-		Files.Edifact\DuplicateGroup.txt = Files.Edifact\DuplicateGroup.txt
-		Files.Edifact\DuplicateInterchange.txt = Files.Edifact\DuplicateInterchange.txt
-		Files.Edifact\DuplicateMessage.txt = Files.Edifact\DuplicateMessage.txt
-		Files.Edifact\Invoice.txt = Files.Edifact\Invoice.txt
-		Files.Edifact\MixedTransactions.txt = Files.Edifact\MixedTransactions.txt
-		Files.Edifact\PurchaseOrder.txt = Files.Edifact\PurchaseOrder.txt
-		Files.Edifact\PurchaseOrder.xml = Files.Edifact\PurchaseOrder.xml
-		Files.Edifact\PurchaseOrderCustom1.txt = Files.Edifact\PurchaseOrderCustom1.txt
-		Files.Edifact\PurchaseOrderCustom2.txt = Files.Edifact\PurchaseOrderCustom2.txt
-		Files.Edifact\PurchaseOrderInvalid.txt = Files.Edifact\PurchaseOrderInvalid.txt
-		Files.Edifact\PurchaseOrderMultiLine.txt = Files.Edifact\PurchaseOrderMultiLine.txt
-		Files.Edifact\PurchaseOrders.txt = Files.Edifact\PurchaseOrders.txt
-	EndProjectSection
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EDI Files", "EDI Files", "{608868B5-FD2E-4B4E-B8BA-D5E872D0D7C9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.Read", "EdiFabric.Sdk.Edifact.Read\EdiFabric.Sdk.Edifact.Read.csproj", "{BC2B9848-5644-4E03-98E8-09753CE3331E}"
 EndProject
@@ -37,7 +21,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.Ackno
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "General Usage Examples", "General Usage Examples", "{F6C9FD4F-B2B2-41F8-BE52-F7C1CA6958F5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Edifact Templates", "Edifact Templates", "{60232A24-9B01-4575-A78E-F82038F66B26}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EDI Templates", "EDI Templates", "{60232A24-9B01-4575-A78E-F82038F66B26}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.Templates.D96A", "EdiFabric.Sdk.Edifact.Templates.D96A\EdiFabric.Sdk.Edifact.Templates.D96A.csproj", "{A6B9EDE5-99E9-4696-9CEE-6B6FFF45CC12}"
 EndProject
@@ -63,29 +47,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{9638AF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Helpers", "EdiFabric.Sdk.Helpers\EdiFabric.Sdk.Helpers.csproj", "{4C09FEE1-DECB-42EC-9B0A-DAD7E7232005}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.TemplateFactories", "EdiFabric.Sdk.TemplateFactories\EdiFabric.Sdk.TemplateFactories.csproj", "{325F4410-67E7-470C-BEEA-C04F034BCD56}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12 and Hipaa", "X12 and Hipaa", "{872F5ACF-78B5-439B-994E-E09FD5874793}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12 Files", "X12 Files", "{81BD3328-5D65-437B-94B8-7AD2E0502D4A}"
-	ProjectSection(SolutionItems) = preProject
-		Files.X12\CorruptIsa.txt = Files.X12\CorruptIsa.txt
-		Files.X12\CorruptSt.txt = Files.X12\CorruptSt.txt
-		Files.X12\DuplicateGroup.txt = Files.X12\DuplicateGroup.txt
-		Files.X12\DuplicateInterchange.txt = Files.X12\DuplicateInterchange.txt
-		Files.X12\DuplicateMessage.txt = Files.X12\DuplicateMessage.txt
-		Files.X12\Invoice.txt = Files.X12\Invoice.txt
-		Files.X12\MixedTransactions.txt = Files.X12\MixedTransactions.txt
-		Files.X12\PurchaseOrder.txt = Files.X12\PurchaseOrder.txt
-		Files.X12\PurchaseOrder.xml = Files.X12\PurchaseOrder.xml
-		Files.X12\PurchaseOrderCustom1.txt = Files.X12\PurchaseOrderCustom1.txt
-		Files.X12\PurchaseOrderCustom2.txt = Files.X12\PurchaseOrderCustom2.txt
-		Files.X12\PurchaseOrderInvalid.txt = Files.X12\PurchaseOrderInvalid.txt
-		Files.X12\PurchaseOrderMultiLine.txt = Files.X12\PurchaseOrderMultiLine.txt
-		Files.X12\PurchaseOrders.txt = Files.X12\PurchaseOrders.txt
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12 Templates", "X12 Templates", "{6B5CDA94-F415-4B67-AC24-E239A256C82C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Export Examples", "Export Examples", "{75700E13-1CE7-4C70-B060-A9929BED47F8}"
 EndProject
@@ -114,6 +76,54 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.X12.T810", "EdiFabric.Sdk.X12.T810\EdiFabric.Sdk.X12.T810.csproj", "{7BD537A6-10F3-4383-B6BA-4FBD1469EA28}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.X12.T850", "EdiFabric.Sdk.X12.T850\EdiFabric.Sdk.X12.T850.csproj", "{1EC23670-AE8D-4195-98E6-30EBF7F65ED9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EDI Templates", "EDI Templates", "{6EFFE41B-3082-4DF2-9E4B-FC9E0C26C0E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EDI Files", "EDI Files", "{C742A036-9230-4562-8E55-F3C26024EA18}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12", "X12", "{B861799D-D3BE-4947-93ED-52BDFEEB1255}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12", "X12", "{9AFB6CCB-C203-42A0-9686-E434C03D250F}"
+	ProjectSection(SolutionItems) = preProject
+		Files.X12\CorruptIsa.txt = Files.X12\CorruptIsa.txt
+		Files.X12\CorruptSt.txt = Files.X12\CorruptSt.txt
+		Files.X12\DuplicateGroup.txt = Files.X12\DuplicateGroup.txt
+		Files.X12\DuplicateInterchange.txt = Files.X12\DuplicateInterchange.txt
+		Files.X12\DuplicateMessage.txt = Files.X12\DuplicateMessage.txt
+		Files.X12\Invoice.txt = Files.X12\Invoice.txt
+		Files.X12\MixedTransactions.txt = Files.X12\MixedTransactions.txt
+		Files.X12\PurchaseOrder.txt = Files.X12\PurchaseOrder.txt
+		Files.X12\PurchaseOrder.xml = Files.X12\PurchaseOrder.xml
+		Files.X12\PurchaseOrderCustom1.txt = Files.X12\PurchaseOrderCustom1.txt
+		Files.X12\PurchaseOrderCustom2.txt = Files.X12\PurchaseOrderCustom2.txt
+		Files.X12\PurchaseOrderInvalid.txt = Files.X12\PurchaseOrderInvalid.txt
+		Files.X12\PurchaseOrderMultiLine.txt = Files.X12\PurchaseOrderMultiLine.txt
+		Files.X12\PurchaseOrders.txt = Files.X12\PurchaseOrders.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Edifact", "Edifact", "{43A1E0DA-F3E1-46E8-AA0E-94838BFDC35A}"
+	ProjectSection(SolutionItems) = preProject
+		Files.Edifact\CorruptUnb.txt = Files.Edifact\CorruptUnb.txt
+		Files.Edifact\CorruptUnh.txt = Files.Edifact\CorruptUnh.txt
+		Files.Edifact\DuplicateGroup.txt = Files.Edifact\DuplicateGroup.txt
+		Files.Edifact\DuplicateInterchange.txt = Files.Edifact\DuplicateInterchange.txt
+		Files.Edifact\DuplicateMessage.txt = Files.Edifact\DuplicateMessage.txt
+		Files.Edifact\Invoice.txt = Files.Edifact\Invoice.txt
+		Files.Edifact\MixedTransactions.txt = Files.Edifact\MixedTransactions.txt
+		Files.Edifact\PurchaseOrder.txt = Files.Edifact\PurchaseOrder.txt
+		Files.Edifact\PurchaseOrder.xml = Files.Edifact\PurchaseOrder.xml
+		Files.Edifact\PurchaseOrderCustom1.txt = Files.Edifact\PurchaseOrderCustom1.txt
+		Files.Edifact\PurchaseOrderCustom2.txt = Files.Edifact\PurchaseOrderCustom2.txt
+		Files.Edifact\PurchaseOrderInvalid.txt = Files.Edifact\PurchaseOrderInvalid.txt
+		Files.Edifact\PurchaseOrderMultiLine.txt = Files.Edifact\PurchaseOrderMultiLine.txt
+		Files.Edifact\PurchaseOrders.txt = Files.Edifact\PurchaseOrders.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Edifact", "Edifact", "{6A756811-C4BE-45E8-8131-76F8C00A454B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Helpers.Edifact", "EdiFabric.Sdk.Helpers.Edifact\EdiFabric.Sdk.Helpers.Edifact.csproj", "{7E894F74-9AE6-4C83-B4AA-F70BBD125B44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Helpers.X12", "EdiFabric.Sdk.Helpers.X12\EdiFabric.Sdk.Helpers.X12.csproj", "{E5B51FF3-E600-4773-839C-38DF7C1038A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -274,16 +284,6 @@ Global
 		{4C09FEE1-DECB-42EC-9B0A-DAD7E7232005}.test|Any CPU.Build.0 = Release|Any CPU
 		{4C09FEE1-DECB-42EC-9B0A-DAD7E7232005}.Trial|Any CPU.ActiveCfg = Release|Any CPU
 		{4C09FEE1-DECB-42EC-9B0A-DAD7E7232005}.Trial|Any CPU.Build.0 = Release|Any CPU
-		{325F4410-67E7-470C-BEEA-C04F034BCD56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{325F4410-67E7-470C-BEEA-C04F034BCD56}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{325F4410-67E7-470C-BEEA-C04F034BCD56}.Lite|Any CPU.ActiveCfg = Release|Any CPU
-		{325F4410-67E7-470C-BEEA-C04F034BCD56}.Lite|Any CPU.Build.0 = Release|Any CPU
-		{325F4410-67E7-470C-BEEA-C04F034BCD56}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{325F4410-67E7-470C-BEEA-C04F034BCD56}.Release|Any CPU.Build.0 = Release|Any CPU
-		{325F4410-67E7-470C-BEEA-C04F034BCD56}.test|Any CPU.ActiveCfg = Release|Any CPU
-		{325F4410-67E7-470C-BEEA-C04F034BCD56}.test|Any CPU.Build.0 = Release|Any CPU
-		{325F4410-67E7-470C-BEEA-C04F034BCD56}.Trial|Any CPU.ActiveCfg = Release|Any CPU
-		{325F4410-67E7-470C-BEEA-C04F034BCD56}.Trial|Any CPU.Build.0 = Release|Any CPU
 		{A29F84FD-7B81-4F4B-BC27-E24CCB7D70D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A29F84FD-7B81-4F4B-BC27-E24CCB7D70D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A29F84FD-7B81-4F4B-BC27-E24CCB7D70D7}.Lite|Any CPU.ActiveCfg = Release|Any CPU
@@ -394,6 +394,26 @@ Global
 		{1EC23670-AE8D-4195-98E6-30EBF7F65ED9}.test|Any CPU.Build.0 = Release|Any CPU
 		{1EC23670-AE8D-4195-98E6-30EBF7F65ED9}.Trial|Any CPU.ActiveCfg = Release|Any CPU
 		{1EC23670-AE8D-4195-98E6-30EBF7F65ED9}.Trial|Any CPU.Build.0 = Release|Any CPU
+		{7E894F74-9AE6-4C83-B4AA-F70BBD125B44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E894F74-9AE6-4C83-B4AA-F70BBD125B44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E894F74-9AE6-4C83-B4AA-F70BBD125B44}.Lite|Any CPU.ActiveCfg = Release|Any CPU
+		{7E894F74-9AE6-4C83-B4AA-F70BBD125B44}.Lite|Any CPU.Build.0 = Release|Any CPU
+		{7E894F74-9AE6-4C83-B4AA-F70BBD125B44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E894F74-9AE6-4C83-B4AA-F70BBD125B44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E894F74-9AE6-4C83-B4AA-F70BBD125B44}.test|Any CPU.ActiveCfg = Release|Any CPU
+		{7E894F74-9AE6-4C83-B4AA-F70BBD125B44}.test|Any CPU.Build.0 = Release|Any CPU
+		{7E894F74-9AE6-4C83-B4AA-F70BBD125B44}.Trial|Any CPU.ActiveCfg = Release|Any CPU
+		{7E894F74-9AE6-4C83-B4AA-F70BBD125B44}.Trial|Any CPU.Build.0 = Release|Any CPU
+		{E5B51FF3-E600-4773-839C-38DF7C1038A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5B51FF3-E600-4773-839C-38DF7C1038A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5B51FF3-E600-4773-839C-38DF7C1038A0}.Lite|Any CPU.ActiveCfg = Release|Any CPU
+		{E5B51FF3-E600-4773-839C-38DF7C1038A0}.Lite|Any CPU.Build.0 = Release|Any CPU
+		{E5B51FF3-E600-4773-839C-38DF7C1038A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5B51FF3-E600-4773-839C-38DF7C1038A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5B51FF3-E600-4773-839C-38DF7C1038A0}.test|Any CPU.ActiveCfg = Release|Any CPU
+		{E5B51FF3-E600-4773-839C-38DF7C1038A0}.test|Any CPU.Build.0 = Release|Any CPU
+		{E5B51FF3-E600-4773-839C-38DF7C1038A0}.Trial|Any CPU.ActiveCfg = Release|Any CPU
+		{E5B51FF3-E600-4773-839C-38DF7C1038A0}.Trial|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -405,34 +425,39 @@ Global
 		{18E0C858-35BA-44AE-AE1E-26382C4B2083} = {F6C9FD4F-B2B2-41F8-BE52-F7C1CA6958F5}
 		{F6C9FD4F-B2B2-41F8-BE52-F7C1CA6958F5} = {78842466-1FBD-415D-9A31-B3A1A3963585}
 		{60232A24-9B01-4575-A78E-F82038F66B26} = {78842466-1FBD-415D-9A31-B3A1A3963585}
-		{A6B9EDE5-99E9-4696-9CEE-6B6FFF45CC12} = {60232A24-9B01-4575-A78E-F82038F66B26}
-		{E5D3D04A-27B7-45BC-B6B2-4E28F36DAFF6} = {60232A24-9B01-4575-A78E-F82038F66B26}
-		{656EB62E-1C93-4F77-BBD0-B34DD9353CBA} = {60232A24-9B01-4575-A78E-F82038F66B26}
-		{811A8AA4-32D2-4A89-BFBA-27BBDC6683E9} = {60232A24-9B01-4575-A78E-F82038F66B26}
-		{07338DD9-D72E-4F8E-BCEA-D31B315A3D9A} = {60232A24-9B01-4575-A78E-F82038F66B26}
+		{A6B9EDE5-99E9-4696-9CEE-6B6FFF45CC12} = {6A756811-C4BE-45E8-8131-76F8C00A454B}
+		{E5D3D04A-27B7-45BC-B6B2-4E28F36DAFF6} = {6A756811-C4BE-45E8-8131-76F8C00A454B}
+		{656EB62E-1C93-4F77-BBD0-B34DD9353CBA} = {6A756811-C4BE-45E8-8131-76F8C00A454B}
+		{811A8AA4-32D2-4A89-BFBA-27BBDC6683E9} = {6A756811-C4BE-45E8-8131-76F8C00A454B}
+		{07338DD9-D72E-4F8E-BCEA-D31B315A3D9A} = {6A756811-C4BE-45E8-8131-76F8C00A454B}
 		{24D28221-4884-4362-B807-401E3C8E6CA1} = {78842466-1FBD-415D-9A31-B3A1A3963585}
 		{E008BF36-8111-4AB9-9124-758E452D38FE} = {24D28221-4884-4362-B807-401E3C8E6CA1}
 		{0A328B99-5532-41D9-AAD9-99DAFE6D00CB} = {78842466-1FBD-415D-9A31-B3A1A3963585}
 		{56BC8D58-1A77-4CE7-A8D0-36015DB5D751} = {0A328B99-5532-41D9-AAD9-99DAFE6D00CB}
 		{1F94DAF1-43DA-4D4B-8D28-843F4F2F4AB4} = {0A328B99-5532-41D9-AAD9-99DAFE6D00CB}
 		{4C09FEE1-DECB-42EC-9B0A-DAD7E7232005} = {9638AF1F-EE0D-4F0F-9E01-64C9F17C0438}
-		{325F4410-67E7-470C-BEEA-C04F034BCD56} = {9638AF1F-EE0D-4F0F-9E01-64C9F17C0438}
-		{81BD3328-5D65-437B-94B8-7AD2E0502D4A} = {872F5ACF-78B5-439B-994E-E09FD5874793}
-		{6B5CDA94-F415-4B67-AC24-E239A256C82C} = {872F5ACF-78B5-439B-994E-E09FD5874793}
 		{75700E13-1CE7-4C70-B060-A9929BED47F8} = {872F5ACF-78B5-439B-994E-E09FD5874793}
 		{8C81FAF9-1A42-4A24-BB44-834EA9C4AB18} = {872F5ACF-78B5-439B-994E-E09FD5874793}
 		{5A3328B7-8853-4E78-B641-D8360AB538B0} = {872F5ACF-78B5-439B-994E-E09FD5874793}
-		{A29F84FD-7B81-4F4B-BC27-E24CCB7D70D7} = {6B5CDA94-F415-4B67-AC24-E239A256C82C}
-		{580D0DA8-3CA0-44AE-8BB5-58167870A59D} = {6B5CDA94-F415-4B67-AC24-E239A256C82C}
-		{E307FD34-F8C3-42FB-A45B-2469446BAC88} = {6B5CDA94-F415-4B67-AC24-E239A256C82C}
-		{D746B3CE-A6E6-44AA-A25A-4A89C81AFD81} = {6B5CDA94-F415-4B67-AC24-E239A256C82C}
-		{5366AA35-2E43-45F2-B3CD-F4957893C55B} = {6B5CDA94-F415-4B67-AC24-E239A256C82C}
+		{A29F84FD-7B81-4F4B-BC27-E24CCB7D70D7} = {B861799D-D3BE-4947-93ED-52BDFEEB1255}
+		{580D0DA8-3CA0-44AE-8BB5-58167870A59D} = {B861799D-D3BE-4947-93ED-52BDFEEB1255}
+		{E307FD34-F8C3-42FB-A45B-2469446BAC88} = {B861799D-D3BE-4947-93ED-52BDFEEB1255}
+		{D746B3CE-A6E6-44AA-A25A-4A89C81AFD81} = {B861799D-D3BE-4947-93ED-52BDFEEB1255}
+		{5366AA35-2E43-45F2-B3CD-F4957893C55B} = {B861799D-D3BE-4947-93ED-52BDFEEB1255}
 		{957A0E98-B753-4371-B862-93BC9060FDB2} = {75700E13-1CE7-4C70-B060-A9929BED47F8}
 		{6A39B01C-93B2-4CA9-9E51-A8A75E8E3EAC} = {8C81FAF9-1A42-4A24-BB44-834EA9C4AB18}
 		{31A7753E-0346-4950-ADE8-919EEFBB8484} = {8C81FAF9-1A42-4A24-BB44-834EA9C4AB18}
 		{BBCBBAD0-6D9B-4942-9735-D0065A5AE4D3} = {8C81FAF9-1A42-4A24-BB44-834EA9C4AB18}
 		{7BD537A6-10F3-4383-B6BA-4FBD1469EA28} = {5A3328B7-8853-4E78-B641-D8360AB538B0}
 		{1EC23670-AE8D-4195-98E6-30EBF7F65ED9} = {5A3328B7-8853-4E78-B641-D8360AB538B0}
+		{6EFFE41B-3082-4DF2-9E4B-FC9E0C26C0E3} = {872F5ACF-78B5-439B-994E-E09FD5874793}
+		{C742A036-9230-4562-8E55-F3C26024EA18} = {872F5ACF-78B5-439B-994E-E09FD5874793}
+		{B861799D-D3BE-4947-93ED-52BDFEEB1255} = {6EFFE41B-3082-4DF2-9E4B-FC9E0C26C0E3}
+		{9AFB6CCB-C203-42A0-9686-E434C03D250F} = {C742A036-9230-4562-8E55-F3C26024EA18}
+		{43A1E0DA-F3E1-46E8-AA0E-94838BFDC35A} = {608868B5-FD2E-4B4E-B8BA-D5E872D0D7C9}
+		{6A756811-C4BE-45E8-8131-76F8C00A454B} = {60232A24-9B01-4575-A78E-F82038F66B26}
+		{7E894F74-9AE6-4C83-B4AA-F70BBD125B44} = {78842466-1FBD-415D-9A31-B3A1A3963585}
+		{E5B51FF3-E600-4773-839C-38DF7C1038A0} = {872F5ACF-78B5-439B-994E-E09FD5874793}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB447360-6410-4AB0-8984-1454D5AAEA49}

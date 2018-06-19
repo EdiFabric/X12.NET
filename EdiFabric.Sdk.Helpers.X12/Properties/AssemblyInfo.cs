@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EdiFabric.Sdk.TemplateFactories")]
+[assembly: AssemblyTitle("EdiFabric.Sdk.Helpers.X12")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("EdiFabric.Sdk.TemplateFactories")]
+[assembly: AssemblyProduct("EdiFabric.Sdk.Helpers.X12")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("325f4410-67e7-470c-beea-c04f034bcd56")]
+[assembly: Guid("e5b51ff3-e600-4773-839c-38df7c1038a0")]
 
 // Version information for an assembly consists of the following four values:
 //

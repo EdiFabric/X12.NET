@@ -6,11 +6,10 @@ using EdiFabric.Core.Model.Edi.X12;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Plugins.Acknowledgments.X12.Model;
 using System.Collections.Concurrent;
-using EdiFabric.Sdk.Helpers;
-using EdiFabric.Sdk.TemplateFactories;
 using EdiFabric.Rules.X12_005010X231A1;
 using System.Collections.Generic;
 using EdiFabric.Core.Model.Ack;
+using EdiFabric.Sdk.Helpers.X12;
 
 namespace EdiFabric.Sdk.X12.Acknowledge
 {
@@ -44,7 +43,7 @@ namespace EdiFabric.Sdk.X12.Acknowledge
                         //  Inspect the acknowledgment
                         var ackCode = ts999.AK9.FunctionalGroupAcknowledgeCode_01;
 
-                        var ack = X12Helpers.BuildAck(a.InterchangeHeader, a.GroupHeader, ts999, AckVersion.Hipaa_999);
+                        var ack = AckBuilders.BuildAck(a.InterchangeHeader, a.GroupHeader, ts999, AckVersion.Hipaa_999);
                         Debug.Write(ack);
                     }
                 },
@@ -63,7 +62,7 @@ namespace EdiFabric.Sdk.X12.Acknowledge
 
             using (var ackMan = new Plugins.Acknowledgments.X12.AckMan(settings))
             {
-                using (var ediReader = new X12Reader(edi, X12Factories.FullTemplateFactory))
+                using (var ediReader = new X12Reader(edi, TemplateFactory.FullTemplateFactory))
                 {
                     while (ediReader.Read())
                         ackMan.Publish(ediReader.Item);
@@ -99,7 +98,7 @@ namespace EdiFabric.Sdk.X12.Acknowledge
                         //  Inspect the acknowledgment
                         var ackCode = ts997.AK9.FunctionalGroupAcknowledgeCode_01;
 
-                        var ack = X12Helpers.BuildAck(a.InterchangeHeader, a.GroupHeader, ts997, AckVersion.X12_997);
+                        var ack = AckBuilders.BuildAck(a.InterchangeHeader, a.GroupHeader, ts997, AckVersion.X12_997);
                         Debug.Write(ack);
                     }
                 },
@@ -118,7 +117,7 @@ namespace EdiFabric.Sdk.X12.Acknowledge
 
             using (var ackMan = new Plugins.Acknowledgments.X12.AckMan(settings))
             {
-                using (var ediReader = new X12Reader(edi, X12Factories.FullTemplateFactory))
+                using (var ediReader = new X12Reader(edi, TemplateFactory.FullTemplateFactory))
                 {
                     while (ediReader.Read())
                         ackMan.Publish(ediReader.Item);
@@ -163,7 +162,7 @@ namespace EdiFabric.Sdk.X12.Acknowledge
                             }
                         }
 
-                        var ack = X12Helpers.BuildAck(a.InterchangeHeader, a.GroupHeader, ts999, AckVersion.Hipaa_999);
+                        var ack = AckBuilders.BuildAck(a.InterchangeHeader, a.GroupHeader, ts999, AckVersion.Hipaa_999);
                         Debug.Write(ack);
                     }
                 },                
@@ -194,7 +193,7 @@ namespace EdiFabric.Sdk.X12.Acknowledge
 
             using (var ackMan = new Plugins.Acknowledgments.X12.AckMan(settings))
             {
-                using (var ediReader = new X12Reader(edi, X12Factories.FullTemplateFactory))
+                using (var ediReader = new X12Reader(edi, TemplateFactory.FullTemplateFactory))
                 {
                     while (ediReader.Read())
                         ackMan.Publish(ediReader.Item);
@@ -230,7 +229,7 @@ namespace EdiFabric.Sdk.X12.Acknowledge
                         //  Inspect the acknowledgment
                         var ackCode = ts997.AK9.FunctionalGroupAcknowledgeCode_01;
 
-                        var ack = X12Helpers.BuildAck(a.InterchangeHeader, a.GroupHeader, ts997, AckVersion.X12_997);
+                        var ack = AckBuilders.BuildAck(a.InterchangeHeader, a.GroupHeader, ts997, AckVersion.X12_997);
                         Debug.Write(ack);
                     }
                 },
@@ -251,7 +250,7 @@ namespace EdiFabric.Sdk.X12.Acknowledge
 
             using (var ackMan = new Plugins.Acknowledgments.X12.AckMan(settings))
             {
-                using (var ediReader = new X12Reader(edi, X12Factories.FullTemplateFactory))
+                using (var ediReader = new X12Reader(edi, TemplateFactory.FullTemplateFactory))
                 {
                     while (ediReader.Read())
                         ackMan.Publish(ediReader.Item);
@@ -284,7 +283,7 @@ namespace EdiFabric.Sdk.X12.Acknowledge
 
                     if (ts997 != null)
                     {
-                        var ack = X12Helpers.BuildAck(a.InterchangeHeader, a.GroupHeader, ts997, AckVersion.X12_997);
+                        var ack = AckBuilders.BuildAck(a.InterchangeHeader, a.GroupHeader, ts997, AckVersion.X12_997);
                         Debug.Write(ack);
                     }
                 },
@@ -308,7 +307,7 @@ namespace EdiFabric.Sdk.X12.Acknowledge
 
             using (var ackMan = new Plugins.Acknowledgments.X12.AckMan(settings))
             {
-                using (var ediReader = new X12Reader(edi, X12Factories.FullTemplateFactory))
+                using (var ediReader = new X12Reader(edi, TemplateFactory.FullTemplateFactory))
                 {
                     while (ediReader.Read())
                         ackMan.Publish(ediReader.Item);
@@ -341,7 +340,7 @@ namespace EdiFabric.Sdk.X12.Acknowledge
 
                     if (ts997 != null)
                     {
-                        var ack = X12Helpers.BuildAck(a.InterchangeHeader, a.GroupHeader, ts997, AckVersion.X12_997);
+                        var ack = AckBuilders.BuildAck(a.InterchangeHeader, a.GroupHeader, ts997, AckVersion.X12_997);
                         Debug.Write(ack);
                     }
                 },
@@ -365,7 +364,7 @@ namespace EdiFabric.Sdk.X12.Acknowledge
 
             using (var ackMan = new Plugins.Acknowledgments.X12.AckMan(settings))
             {
-                using (var ediReader = new X12Reader(edi, X12Factories.FullTemplateFactory))
+                using (var ediReader = new X12Reader(edi, TemplateFactory.FullTemplateFactory))
                 {
                     while (ediReader.Read())
                         ackMan.Publish(ediReader.Item);
@@ -403,7 +402,7 @@ namespace EdiFabric.Sdk.X12.Acknowledge
 
                     if (ts997 != null)
                     {
-                        var ack = X12Helpers.BuildAck(a.InterchangeHeader, a.GroupHeader, ts997, AckVersion.X12_997, ++isaControlNumber, ++gsControlNumber);
+                        var ack = AckBuilders.BuildAck(a.InterchangeHeader, a.GroupHeader, ts997, AckVersion.X12_997, ++isaControlNumber, ++gsControlNumber);
                         Debug.Write(ack);
                     }
                 },
@@ -420,7 +419,7 @@ namespace EdiFabric.Sdk.X12.Acknowledge
 
             using (var ackMan = new Plugins.Acknowledgments.X12.AckMan(settings))
             {
-                using (var ediReader = new X12Reader(edi, X12Factories.FullTemplateFactory))
+                using (var ediReader = new X12Reader(edi, TemplateFactory.FullTemplateFactory))
                 {
                     while (ediReader.Read())
                         ackMan.Publish(ediReader.Item);
@@ -468,7 +467,7 @@ namespace EdiFabric.Sdk.X12.Acknowledge
 
                         custom999.AK1Loops.Add(ak1Loop);
 
-                        var ack = X12Helpers.BuildAck(a.InterchangeHeader, a.GroupHeader, custom999, AckVersion.Hipaa_999);
+                        var ack = AckBuilders.BuildAck(a.InterchangeHeader, a.GroupHeader, custom999, AckVersion.Hipaa_999);
                         Debug.Write(ack);
                     }
                 },
@@ -478,7 +477,7 @@ namespace EdiFabric.Sdk.X12.Acknowledge
 
             using (var ackMan = new Plugins.Acknowledgments.X12.AckMan(settings))
             {
-                using (var ediReader = new X12Reader(edi, X12Factories.FullTemplateFactory))
+                using (var ediReader = new X12Reader(edi, TemplateFactory.FullTemplateFactory))
                 {
                     while (ediReader.Read())
                         ackMan.Publish(ediReader.Item);

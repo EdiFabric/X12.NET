@@ -10,7 +10,7 @@ using EdiFabric.Core.Model.Edi.Edifact;
 using EdiFabric.Core.Model.Edi.ErrorContexts;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Rules.EDIFACT_D96A;
-using EdiFabric.Sdk.TemplateFactories;
+using EdiFabric.Sdk.Helpers.Edifact;
 
 namespace EdiFabric.Sdk.Edifact.Read
 {
@@ -32,7 +32,7 @@ namespace EdiFabric.Sdk.Edifact.Read
             
             //  2.  Read all the contents
             List<IEdiItem> ediItems;
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
+            using (var ediReader = new EdifactReader(ediStream, TemplateFactory.FullTemplateFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             //  3.  Pull the purchase orders
@@ -78,7 +78,7 @@ namespace EdiFabric.Sdk.Edifact.Read
 
             //  2. Read item by item, that is each call to Read() 
             //  brings back either a control segment (UNB, UNG, UNE or UNZ) or a transaction
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
+            using (var ediReader = new EdifactReader(ediStream, TemplateFactory.FullTemplateFactory))
             {
                 while (ediReader.Read())
                 {
@@ -122,7 +122,7 @@ namespace EdiFabric.Sdk.Edifact.Read
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrderCustom1.txt");
 
             //  Resolve custom template by partner ID in the FullTemplateFactory
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
+            using (var ediReader = new EdifactReader(ediStream, TemplateFactory.FullTemplateFactory))
             {
                 var ediItems = ediReader.ReadToEnd().ToList();
 
@@ -155,7 +155,7 @@ namespace EdiFabric.Sdk.Edifact.Read
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrderCustom2.txt");
 
             //  Resolve custom template by partner ID in the FullTemplateFactory
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
+            using (var ediReader = new EdifactReader(ediStream, TemplateFactory.FullTemplateFactory))
             {
                 var ediItems = ediReader.ReadToEnd().ToList();
 
@@ -192,7 +192,7 @@ namespace EdiFabric.Sdk.Edifact.Read
             //  Set the class to inherit from EdiItem and the parser will automatically split by it.
             //  See EF_EDIFACT_D96A_TSORDERS_Split.cs in project EdiFabric.Sdk.Edifact.Templates.D96A.Split.
             List<IEdiItem> ediItems;
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
+            using (var ediReader = new EdifactReader(ediStream, TemplateFactory.FullTemplateFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             //  Find all LIN loops, they are all separate ediItems\EdiMessages
@@ -214,7 +214,7 @@ namespace EdiFabric.Sdk.Edifact.Read
             // The custom validation logic is applied in the template by implementing IEdiValidator.
             // See EF_EDIFACT_D96A_TSORDERS_Validation.cs in project EdiFabric.Sdk.Edifact.Templates.D96A.Validation.
             List<IEdiItem> ediItems;
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
+            using (var ediReader = new EdifactReader(ediStream, TemplateFactory.FullTemplateFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             //  Get the purchase order
@@ -240,7 +240,7 @@ namespace EdiFabric.Sdk.Edifact.Read
 
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\Invoice.txt");
 
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
+            using (var ediReader = new EdifactReader(ediStream, TemplateFactory.FullTemplateFactory))
             {
                 while(ediReader.Read())
                 {
@@ -282,7 +282,7 @@ namespace EdiFabric.Sdk.Edifact.Read
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\MixedTransactions.txt");
 
             //  2.  Read multiple transactions batched up in the same interchange
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
+            using (var ediReader = new EdifactReader(ediStream, TemplateFactory.FullTemplateFactory))
             {
                 while (ediReader.Read())
                 {
@@ -321,7 +321,7 @@ namespace EdiFabric.Sdk.Edifact.Read
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\CorruptUnb.txt");
 
             List<IEdiItem> ediItems;
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory))
+            using (var ediReader = new EdifactReader(ediStream, TemplateFactory.FullTemplateFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var readerErrors = ediItems.OfType<ReaderErrorContext>();
@@ -344,7 +344,7 @@ namespace EdiFabric.Sdk.Edifact.Read
 
             //  Set the continue on error flag to true
             List<IEdiItem> ediItems;
-            using (var ediReader = new EdifactReader(ediStream, EdifactFactories.FullTemplateFactory, Encoding.UTF8, true))
+            using (var ediReader = new EdifactReader(ediStream, TemplateFactory.FullTemplateFactory, Encoding.UTF8, true))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var readerErrors = ediItems.OfType<ReaderErrorContext>();

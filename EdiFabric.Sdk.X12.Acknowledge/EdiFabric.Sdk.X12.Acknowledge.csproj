@@ -61,13 +61,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EdiFabric.Sdk.Helpers.X12\EdiFabric.Sdk.Helpers.X12.csproj">
+      <Project>{e5b51ff3-e600-4773-839c-38df7c1038a0}</Project>
+      <Name>EdiFabric.Sdk.Helpers.X12</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EdiFabric.Sdk.Helpers\EdiFabric.Sdk.Helpers.csproj">
       <Project>{4c09fee1-decb-42ec-9b0a-dad7e7232005}</Project>
       <Name>EdiFabric.Sdk.Helpers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Sdk.TemplateFactories\EdiFabric.Sdk.TemplateFactories.csproj">
-      <Project>{325f4410-67e7-470c-beea-c04f034bcd56}</Project>
-      <Name>EdiFabric.Sdk.TemplateFactories</Name>
     </ProjectReference>
     <ProjectReference Include="..\EdiFabric.Sdk.X12.Templates.V004010.Custom1\EdiFabric.Sdk.X12.Templates.V004010.Custom1.csproj">
       <Project>{580d0da8-3ca0-44ae-8bb5-58167870a59d}</Project>

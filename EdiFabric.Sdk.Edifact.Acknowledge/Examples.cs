@@ -2,8 +2,7 @@
 using EdiFabric.Core.Model.Edi.Edifact;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Plugins.Acknowledgments.Edifact.Model;
-using EdiFabric.Sdk.Helpers;
-using EdiFabric.Sdk.TemplateFactories;
+using EdiFabric.Sdk.Helpers.Edifact;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -40,7 +39,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
                         //  Inspect the acknowledgment
                         var ackCode = contrl.UCI.Actioncoded_04;
 
-                        var ack = EdifactHelpers.BuildAck(a.InterchangeHeader, a.GroupHeader, contrl);
+                        var ack = AckBuilders.BuildAck(a.InterchangeHeader, a.GroupHeader, contrl);
                         Debug.Write(ack);
                     }
                 },
@@ -58,7 +57,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
 
             using (var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings))
             {
-                using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
+                using (var ediReader = new EdifactReader(edi, TemplateFactory.FullTemplateFactory))
                 {
                     while (ediReader.Read())
                         ackMan.Publish(ediReader.Item);
@@ -90,7 +89,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
 
                     if (contrl != null && a.AckType == AckType.Functional)
                     {
-                        var ack = EdifactHelpers.BuildAck(a.InterchangeHeader, a.GroupHeader, contrl);
+                        var ack = AckBuilders.BuildAck(a.InterchangeHeader, a.GroupHeader, contrl);
                         Debug.Write(ack);
                     }
                 },
@@ -108,7 +107,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
 
             using (var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings))
             {
-                using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
+                using (var ediReader = new EdifactReader(edi, TemplateFactory.FullTemplateFactory))
                 {
                     while (ediReader.Read())
                         ackMan.Publish(ediReader.Item);
@@ -140,7 +139,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
 
                     if (contrl != null && a.AckType == AckType.Functional)
                     {
-                        var ack = EdifactHelpers.BuildAck(a.InterchangeHeader, a.GroupHeader, contrl);
+                        var ack = AckBuilders.BuildAck(a.InterchangeHeader, a.GroupHeader, contrl);
                         Debug.Write(ack);
                     }
                 },
@@ -160,7 +159,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
 
             using (var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings))
             {
-                using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
+                using (var ediReader = new EdifactReader(edi, TemplateFactory.FullTemplateFactory))
                 {
                     while (ediReader.Read())
                         ackMan.Publish(ediReader.Item);
@@ -192,7 +191,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
 
                     if (contrl != null && a.AckType == AckType.Functional)
                     {
-                        var ack = EdifactHelpers.BuildAck(a.InterchangeHeader, a.GroupHeader, contrl);
+                        var ack = AckBuilders.BuildAck(a.InterchangeHeader, a.GroupHeader, contrl);
                         Debug.Write(ack);
                     }
                 },
@@ -217,7 +216,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
 
             using (var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings))
             {
-                using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
+                using (var ediReader = new EdifactReader(edi, TemplateFactory.FullTemplateFactory))
                 {
                     while (ediReader.Read())
                         ackMan.Publish(ediReader.Item);
@@ -249,7 +248,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
 
                     if (contrl != null && a.AckType == AckType.Functional)
                     {
-                        var ack = EdifactHelpers.BuildAck(a.InterchangeHeader, a.GroupHeader, contrl);
+                        var ack = AckBuilders.BuildAck(a.InterchangeHeader, a.GroupHeader, contrl);
                         Debug.Write(ack);
                     }
                 },
@@ -273,7 +272,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
 
             using (var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings))
             {
-                using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
+                using (var ediReader = new EdifactReader(edi, TemplateFactory.FullTemplateFactory))
                 {
                     while (ediReader.Read())
                         ackMan.Publish(ediReader.Item);
@@ -309,7 +308,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
 
                     if (contrl != null && a.AckType == AckType.Functional)
                     {
-                        var ack = EdifactHelpers.BuildAck(a.InterchangeHeader, a.GroupHeader, contrl, ++unbControlNumber, ++ungControlNumber);
+                        var ack = AckBuilders.BuildAck(a.InterchangeHeader, a.GroupHeader, contrl, ++unbControlNumber, ++ungControlNumber);
                         Debug.Write(ack);
                     }
                 },
@@ -325,7 +324,7 @@ namespace EdiFabric.Sdk.Edifact.Acknowledge
 
             using (var ackMan = new Plugins.Acknowledgments.Edifact.AckMan(settings))
             {
-                using (var ediReader = new EdifactReader(edi, EdifactFactories.FullTemplateFactory))
+                using (var ediReader = new EdifactReader(edi, TemplateFactory.FullTemplateFactory))
                 {
                     while (ediReader.Read())
                         ackMan.Publish(ediReader.Item);
