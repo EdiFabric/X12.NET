@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hipaa", "Hipaa\Hipaa.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vda", "Vda\Vda.csproj", "{AEECE6F3-85C3-403C-8302-72F1D1C78B71}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Edifact and Eancom", "Edifact and Eancom", "{78842466-1FBD-415D-9A31-B3A1A3963585}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Edifact and Eancom", "2. Edifact and Eancom", "{78842466-1FBD-415D-9A31-B3A1A3963585}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EDI Files", "EDI Files", "{608868B5-FD2E-4B4E-B8BA-D5E872D0D7C9}"
 EndProject
@@ -41,11 +41,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.ORDER
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.INVOIC", "EdiFabric.Sdk.Edifact.INVOIC\EdiFabric.Sdk.Edifact.INVOIC.csproj", "{1F94DAF1-43DA-4D4B-8D28-843F4F2F4AB4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{9638AF1F-EE0D-4F0F-9E01-64C9F17C0438}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Common", "4. Common", "{9638AF1F-EE0D-4F0F-9E01-64C9F17C0438}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Helpers", "EdiFabric.Sdk.Helpers\EdiFabric.Sdk.Helpers.csproj", "{4C09FEE1-DECB-42EC-9B0A-DAD7E7232005}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12 and Hipaa", "X12 and Hipaa", "{872F5ACF-78B5-439B-994E-E09FD5874793}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. X12 and Hipaa", "1. X12 and Hipaa", "{872F5ACF-78B5-439B-994E-E09FD5874793}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Export Examples", "Export Examples", "{75700E13-1CE7-4C70-B060-A9929BED47F8}"
 EndProject
@@ -122,6 +122,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Helpers.Edifact", "EdiFabric.Sdk.Helpers.Edifact\EdiFabric.Sdk.Helpers.Edifact.csproj", "{7E894F74-9AE6-4C83-B4AA-F70BBD125B44}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Helpers.X12", "EdiFabric.Sdk.Helpers.X12\EdiFabric.Sdk.Helpers.X12.csproj", "{E5B51FF3-E600-4773-839C-38DF7C1038A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Vda", "3. Vda", "{B9C8C327-0210-40D2-8146-0F2BAAAF5AB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

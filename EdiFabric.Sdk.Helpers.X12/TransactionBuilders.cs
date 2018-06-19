@@ -1,6 +1,5 @@
 ﻿using EdiFabric.Core.Model.Edi.X12;
 using EdiFabric.Rules.X12_004010;
-using System;
 using System.Collections.Generic;
 
 namespace EdiFabric.Sdk.Helpers.X12
@@ -14,64 +13,84 @@ namespace EdiFabric.Sdk.Helpers.X12
         {
             var result = new TS810();
 
+            //  Indicates the start of an invoice transaction set and assigns a control number.
             result.ST = new ST();
             result.ST.TransactionSetIdentifierCode_01 = "810";
             result.ST.TransactionSetControlNumber_02 = controlNumber.PadLeft(9, '0');
 
+            //  Indicates the invoice was created on May 13, 2000 and assigned invoice number SG427254. 
+            //  The invoice is in response to a purchase order sent on May 6, 2000 with purchase order number 508517 and release number 1001.
             result.BIG = new BIG();
-            result.BIG.Date_01 = DateTime.Now.ToString("yyyyMMdd");
-            result.BIG.InvoiceNumber_02 = "123456789";
-            result.BIG.Date_03 = "20030627";
-            result.BIG.PurchaseOrderNumber_04 = "201177";
+            result.BIG.Date_01 = "20000513";
+            result.BIG.InvoiceNumber_02 = "SG427254";
+            result.BIG.Date_03 = "20000506";
+            result.BIG.PurchaseOrderNumber_04 = "508517";
+            result.BIG.ReleaseNumber_05 = "1001";
 
-            result.REF = new List<REF>();
-
-            var ref1 = new REF();
-            ref1.ReferenceIdentificationQualifier_01 = "DP";
-            ref1.ReferenceIdentification_02 = "123";
-            result.REF.Add(ref1);
-
-            var ref2 = new REF();
-            ref2.ReferenceIdentificationQualifier_01 = "IA";
-            ref2.ReferenceIdentification_02 = "456";
-            result.REF.Add(ref2);
-
+            //  Repeating N1 Loops
             result.N1Loop1 = new List<TS810_N1Loop1>();
+
+            //  Begin N1 Loop
             var n1Loop = new TS810_N1Loop1();
+
+            //  Indicates that the ship to party is ABC Aerospace Corporation. ABC's D-U-N-S+4 number is 123456789-0101.
             n1Loop.N1 = new N1();
             n1Loop.N1.EntityIdentifierCode_01 = "ST";
-            n1Loop.N1.IdentificationCodeQualifier_03 = "18";
-            n1Loop.N1.IdentificationCode_04 = "123";
+            n1Loop.N1.Name_02 = "ABC AEROSPACE CORPORATION";
+            n1Loop.N1.IdentificationCodeQualifier_03 = "9";
+            n1Loop.N1.IdentificationCode_04 = "123456789-0101";
 
+            //  Repeating N3
+            n1Loop.N3 = new List<N3>();
+
+            //  The ship to party's street address is 1000 Boardwalk Drive.
+            var n3 = new N3();
+            n3.AddressInformation_01 = "1000 BOARDWALK DRIVE";
+            n1Loop.N3.Add(n3);
+
+            //  The ship to party's city, state, and ZIP is Somewhere, CA 98898.
+            n1Loop.N4 = new N4();
+            n1Loop.N4.CityName_01 = "SOMEWHERE";
+            n1Loop.N4.StateorProvinceCode_02 = "CA";
+            n1Loop.N4.PostalCode_03 = "98898";
+
+            //  End N1 Loop
             result.N1Loop1.Add(n1Loop);
 
+            //  Repeating ITD
             result.ITD = new List<ITD>();
-            var itd = new ITD();
-            itd.TermsTypeCode_01 = "01";
-            itd.TermsBasisDateCode_02 = "3";
-            itd.TermsDiscountDaysDue_05 = "0";
-            itd.TermsNetDays_07 = "45";
 
+            //  Indicates that discounts are not applicable, the terms period is the invoice date, and the net days due is 30 days using an electronic payment system.
+            var itd = new ITD();
+            itd.TermsTypeCode_01 = "05";
+            itd.TermsBasisDateCode_02 = "3";
+            itd.TermsNetDays_07 = "30";
+            itd.PaymentMethodCode_14 = "E";
+            result.ITD.Add(itd);
+
+            //  Repeating IT1 Loops
             result.IT1Loop1 = new List<TS810_IT1Loop1>();
+
+            //  Begin IT1 Loop
             var it1Loop = new TS810_IT1Loop1();
+
+            //  Indicates that the purchase order's line number was 1. The invoice is for 48 units costing $3.00 each for manufacturer's part number R5656-2.
             it1Loop.IT1 = new IT1();
             it1Loop.IT1.AssignedIdentification_01 = "1";
-            it1Loop.IT1.QuantityInvoiced_02 = "2";
+            it1Loop.IT1.QuantityInvoiced_02 = "48";
             it1Loop.IT1.UnitorBasisforMeasurementCode_03 = "EA";
-            it1Loop.IT1.UnitPrice_04 = "120.6";
-            it1Loop.IT1.ProductServiceIDQualifier_06 = "UP";
-            it1Loop.IT1.ProductServiceID_07 = "123456789";
+            it1Loop.IT1.UnitPrice_04 = "3";
+            it1Loop.IT1.ProductServiceIDQualifier_06 = "MG";
+            it1Loop.IT1.ProductServiceID_07 = "R5656-2";
 
+            //  End IT1 Loop
             result.IT1Loop1.Add(it1Loop);
 
+            //  Indicates that the total invoice amount is $144.00.
             result.TDS = new TDS();
-            result.TDS.Amount_01 = "24012";
+            result.TDS.Amount_01 = "14400";
 
-            result.CAD = new CAD();
-            result.CAD.Routing_05 = "1234";
-            result.CAD.ReferenceIdentificationQualifier_07 = "BM";
-            result.CAD.ReferenceIdentification_08 = "9999";
-
+            //  Indicates that the invoice contained 1 line item.
             result.CTT = new CTT();
             result.CTT.NumberofLineItems_01 = "1";
 
@@ -85,178 +104,147 @@ namespace EdiFabric.Sdk.Helpers.X12
         {
             var result = new TS850();
 
+            //  Indicates the start of a purchase order transaction set and assigns a control number.
             result.ST = new ST();
             result.ST.TransactionSetIdentifierCode_01 = "850";
             result.ST.TransactionSetControlNumber_02 = controlNumber.PadLeft(9, '0');
 
+            //  Indicates that this is original purchase order number XX-1234, dated March 1, 2017, and that no acknowledgment is necessary.
             result.BEG = new BEG();
             result.BEG.TransactionSetPurposeCode_01 = "00";
             result.BEG.PurchaseOrderTypeCode_02 = "SA";
-            result.BEG.PurchaseOrderNumber_03 = "201177";
-            result.BEG.Date_05 = "20030627";
+            result.BEG.PurchaseOrderNumber_03 = "XX-1234";
+            result.BEG.Date_05 = "20170301";
+            result.BEG.AcknowledgmentType_07 = "NA";
 
-            result.REF = new List<REF>();
-            var refSegment = new REF();
-            refSegment.ReferenceIdentificationQualifier_01 = "AN";
-            refSegment.ReferenceIdentification_02 = "123456";
-            result.REF.Add(refSegment);
-
+            //  Repeating PER
             result.PER = new List<PER>();
-            var perSegment = new PER();
-            perSegment.ContactFunctionCode_01 = "BD";
-            perSegment.Name_02 = "JOHN SMITH";
-            perSegment.CommunicationNumberQualifier_03 = "TE";
-            perSegment.CommunicationNumber_04 = "1112223334";
-            result.PER.Add(perSegment);
 
-            result.FOB = new List<FOB>();
-            var fobSegment = new FOB();
-            fobSegment.ShipmentMethodofPayment_01 = "PB";
-            result.FOB.Add(fobSegment);
+            //  Indicates that the name of the Buyer is Ed Smith, and his telephone number is (800) 123-4567.
+            var per = new PER();
+            per.ContactFunctionCode_01 = "BD";
+            per.Name_02 = "ED SMITH";
+            per.CommunicationNumberQualifier_03 = "TE";
+            per.CommunicationNumber_04 = "8001234567";
+            result.PER.Add(per);
 
-            result.DTM = new List<DTM>();
+            //  Repeating TAX
+            result.TAX = new List<TAX>();
 
-            var dtmSegment1 = new DTM();
-            dtmSegment1.DateTimeQualifier_01 = "002";
-            dtmSegment1.Date_02 = "20030705";
-            result.DTM.Add(dtmSegment1);
+            //  Provides state tax exempt ID 53247765.
+            var tax = new TAX();
+            tax.TaxIdentificationNumber_01 = "53247765";
+            tax.LocationQualifier_02 = "SP";
+            tax.LocationIdentifier_03 = "CA";
+            tax.TaxExemptCode_12 = "9";
+            result.TAX.Add(tax);
 
-            var dtmSegment2 = new DTM();
-            dtmSegment2.DateTimeQualifier_01 = "118";
-            dtmSegment2.Date_02 = "20030704";
-            result.DTM.Add(dtmSegment2);
-
-            result.PKG = new List<PKG>();
-            var pkgSegment = new PKG();
-            pkgSegment.PackagingDescriptionCode_04 = "01";
-            result.PKG.Add(pkgSegment);
-
-            result.TD5 = new List<TD5>();
-            var td5Segment = new TD5();
-            td5Segment.TransportationMethodTypeCode_04 = "H";
-            td5Segment.Routing_05 = "OUR CR/T";
-            result.TD5.Add(td5Segment);
-
-            result.N9Loop1 = new List<TS850_N9Loop1>();
-            var n9Loop = new TS850_N9Loop1();
-            result.N9Loop1.Add(n9Loop);
-
-            var n9Segment = new N9();
-            n9Segment.ReferenceIdentificationQualifier_01 = "AH";
-            n9Segment.ReferenceIdentification_02 = "201177";
-            n9Loop.N9 = n9Segment;
-
-            n9Loop.MSG = new List<MSG>();
-
-            var msgSegment1 = new MSG();
-            msgSegment1.FreeFormMessageText_01 = "THIS PURCHASE ORDER IS SUBJECT TO THE SAME TERMS AND";
-            n9Loop.MSG.Add(msgSegment1);
-
-            var msgSegment2 = new MSG();
-            msgSegment2.FreeFormMessageText_01 = "CONDITIONS";
-            n9Loop.MSG.Add(msgSegment2);
-
+            //  Repeating N1 Loops  
             result.N1Loop1 = new List<TS850_N1Loop1>();
 
-            var n1Loop1 = new TS850_N1Loop1();
-            result.N1Loop1.Add(n1Loop1);
+            //  Begin N1 Loop 
+            var n1Loop = new TS850_N1Loop1();
 
-            var n1Segment1 = new N1();
-            n1Segment1.EntityIdentifierCode_01 = "ST";
-            n1Segment1.Name_02 = "COMPANY INC";
-            n1Segment1.IdentificationCodeQualifier_03 = "9";
-            n1Segment1.IdentificationCode_04 = "0012345678901";
-            n1Loop1.N1 = n1Segment1;
+            //  Indicates that the buyer is ABC Aerospace. ABC's D-U-N-S+4 number is 123456789-0101.
+            n1Loop.N1 = new N1();
+            n1Loop.N1.EntityIdentifierCode_01 = "BY";
+            n1Loop.N1.Name_02 = "ABC AEROSPACE";
+            n1Loop.N1.IdentificationCodeQualifier_03 = "9";
+            n1Loop.N1.IdentificationCode_04 = "1234567890101";
 
-            var n2Segment1 = new N2();
-            n2Segment1.Name_01 = "Name Other";
-            n1Loop1.N2 = new List<N2>();
-            n1Loop1.N2.Add(n2Segment1);
+            //  Repeating N2
+            n1Loop.N2 = new List<N2>();
 
-            var n3Segment1 = new N3();
-            n3Segment1.AddressInformation_01 = "67100 Some Road";
-            n1Loop1.N3 = new List<N3>();
-            n1Loop1.N3.Add(n3Segment1);
+            //  Provides additional name content for the buyer.
+            var n2 = new N2();
+            n2.Name_01 = "AIRCRAFT DIVISION";
+            n1Loop.N2.Add(n2);
 
-            var n4Segment1 = new N4();
-            n4Segment1.CityName_01 = "Name";
-            n4Segment1.StateorProvinceCode_02 = "CA";
-            n4Segment1.PostalCode_03 = "95376";
-            n1Loop1.N4 = new List<N4>();
-            n1Loop1.N4.Add(n4Segment1);
+            //  Repeating N3
+            n1Loop.N3 = new List<N3>();
 
-            var n1Loop2 = new TS850_N1Loop1();
-            result.N1Loop1.Add(n1Loop2);
+            //  The buyer’s street address is 2000 Jet Blvd.
+            var n3 = new N3();
+            n3.AddressInformation_01 = "2000 JET BLVD";
+            n1Loop.N3.Add(n3);
 
-            var n1Segment2 = new N1();
-            n1Segment2.EntityIdentifierCode_01 = "VN";
-            n1Segment2.Name_02 = "SAMPLE SUPPLIER INC.";
-            n1Segment2.IdentificationCodeQualifier_03 = "9";
-            n1Segment2.IdentificationCode_04 = "1234567890000";
-            n1Loop2.N1 = n1Segment2;
+            //  Repeating N4
+            n1Loop.N4 = new List<N4>();
 
-            var n3Segment2 = new N3();
-            n3Segment2.AddressInformation_01 = "P.O. BOX 12345";
-            n1Loop2.N3 = new List<N3>();
-            n1Loop2.N3.Add(n3Segment2);
+            //  The buyer’s city, state, and ZIP is Fighter Town, CA 98898.
+            var n4 = new N4();
+            n4.CityName_01 = "FIGHTER TOWN";
+            n4.StateorProvinceCode_02 = "CA";
+            n4.PostalCode_03 = "98898";
+            n1Loop.N4.Add(n4);
 
-            var n4Segment2 = new N4();
-            n4Segment2.CityName_01 = "LOS ANGELES";
-            n4Segment2.StateorProvinceCode_02 = "CA";
-            n4Segment2.PostalCode_03 = "90001";
-            n1Loop2.N4 = new List<N4>();
-            n1Loop2.N4.Add(n4Segment2);
+            //  End N1 Loop 
+            result.N1Loop1.Add(n1Loop);
 
+            //  Repeating PO1 Loops  
             result.PO1Loop1 = new List<TS850_PO1Loop1>();
-            var pO1Loop1 = new TS850_PO1Loop1();
-            result.PO1Loop1.Add(pO1Loop1);
 
-            var po1Segment = new PO1();
-            po1Segment.AssignedIdentification_01 = "2";
-            po1Segment.QuantityOrdered_02 = "120.6";
-            po1Segment.UnitorBasisforMeasurementCode_03 = "EA";
-            po1Segment.UnitPrice_04 = "9.55";
-            po1Segment.BasisofUnitPriceCode_05 = "TE";
-            po1Segment.ProductServiceIDQualifier_06 = "CB";
-            po1Segment.ProductServiceID_07 = "067504-118";
-            po1Segment.ProductServiceIDQualifier_08 = "PR";
-            po1Segment.ProductServiceID_09 = "RO";
-            po1Segment.ProductServiceIDQualifier_10 = "VN";
-            po1Segment.ProductServiceID_11 = "12345";
-            pO1Loop1.PO1 = po1Segment;
+            //  Begin PO1 Loop 
+            var pO1Loop = new TS850_PO1Loop1();
 
-            pO1Loop1.PIDLoop1 = new List<TS850_PIDLoop1>();
-            var pidLoop1 = new TS850_PIDLoop1();
-            pO1Loop1.PIDLoop1.Add(pidLoop1);
+            //  Indicates Baseline item 1 is a request to purchase 25 units, with a price of $36.00 each, of manufacturer's part number XYZ-1234.
+            pO1Loop.PO1 = new PO1();
+            pO1Loop.PO1.AssignedIdentification_01 = "1";
+            pO1Loop.PO1.QuantityOrdered_02 = "25";
+            pO1Loop.PO1.UnitorBasisforMeasurementCode_03 = "EA";
+            pO1Loop.PO1.UnitPrice_04 = "36";
+            pO1Loop.PO1.BasisofUnitPriceCode_05 = "PE";
+            pO1Loop.PO1.ProductServiceIDQualifier_06 = "MG";
+            pO1Loop.PO1.ProductServiceID_07 = "XYZ-1234";
 
-            var pidSegment = new PID();
-            pidSegment.ItemDescriptionType_01 = "F";
-            pidSegment.Description_05 = "SOME ITEM";
-            pidLoop1.PID = pidSegment;
+            //  Repeating MEA
+            pO1Loop.MEA = new List<MEA>();
 
-            pO1Loop1.PO4 = new List<PO4>();
+            //  Indicates that each unit in the order weighs 10 ounces.
+            var mea = new MEA();
+            mea.MeasurementReferenceIDCode_01 = "WT";
+            mea.MeasurementQualifier_02 = "WT";
+            mea.MeasurementValue_03 = "10";
+            mea.CompositeUnitofMeasure_04 = new C001();
+            mea.CompositeUnitofMeasure_04.UnitorBasisforMeasurementCode_01 = "OZ";
+            pO1Loop.MEA.Add(mea);
 
-            var po4Segment = new PO4();
-            po4Segment.Pack_01 = "6";
-            po4Segment.Size_02 = "6";
-            po4Segment.UnitorBasisforMeasurementCode_03 = "EA";
-            po4Segment.PackagingCode_04 = "PLT94";
-            po4Segment.GrossWeightperPack_06 = "3";
-            po4Segment.UnitorBasisforMeasurementCode_07 = "LR";
-            po4Segment.GrossVolumeperPack_08 = "10";
-            po4Segment.UnitorBasisforMeasurementCode_09 = "CT";
-            pO1Loop1.PO4.Add(po4Segment);
+            //  Indicates that no product substitution is allowed.
+            pO1Loop.IT8 = new IT8();
+            pO1Loop.IT8.ProductServiceSubstitutionCode_07 = "B0";
 
+            //  Repeating SCH Loops  
+            pO1Loop.SCHLoop1 = new List<TS850_SCHLoop1>();
+
+            //  Begin SCH Loop 
+            var schLoop = new TS850_SCHLoop1();
+
+            //  Indicates that the 25 units are required to arrive by June 15, 2017.
+            schLoop.SCH = new SCH();
+            schLoop.SCH.Quantity_01 = "25";
+            schLoop.SCH.UnitorBasisforMeasurementCode_02 = "EA";
+            schLoop.SCH.DateTimeQualifier_05 = "106";
+            schLoop.SCH.Date_06 = "20170615";
+
+            //  End SCH Loop 
+            pO1Loop.SCHLoop1.Add(schLoop);
+
+            //  End PO1 Loop 
+            result.PO1Loop1.Add(pO1Loop);
+
+            //  Begin CTT Loop   
             result.CTTLoop1 = new TS850_CTTLoop1();
 
-            var cttSegment = new CTT();
-            cttSegment.NumberofLineItems_01 = "1";
-            result.CTTLoop1.CTT = cttSegment;
+            //  Indicates that the purchase order contains 1 line item.
+            result.CTTLoop1.CTT = new CTT();
+            result.CTTLoop1.CTT.NumberofLineItems_01 = "1";
 
-            var amtSegment = new AMT();
-            amtSegment.AmountQualifierCode_01 = "1";
-            amtSegment.MonetaryAmount_02 = "240.12";
-            result.CTTLoop1.AMT = amtSegment;
+            //  Indicates that the total amount of the purchase order is $900.
+            result.CTTLoop1.AMT = new AMT();
+            result.CTTLoop1.AMT.AmountQualifierCode_01 = "TT";
+            result.CTTLoop1.AMT.MonetaryAmount_02 = "900";
+
+            //  End CTT Loop   
 
             return result;
         }
