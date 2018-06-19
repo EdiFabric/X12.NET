@@ -4,14 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EdiFabric.Sdk.Vda
+namespace EdiFabric.Sdk.Vda.Write
 {
     class Program
     {
         static void Main(string[] args)
         {
-            ReadSamples.Run();
-            WriteSamples.Run();
         }
     }
 }
