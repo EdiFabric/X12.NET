@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E5B51FF3-E600-4773-839C-38DF7C1038A0}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EdiFabric.Sdk.Helpers.X12</RootNamespace>
-    <AssemblyName>EdiFabric.Sdk.Helpers.X12</AssemblyName>
+    <ProjectGuid>{01F99FD7-E7B8-4F52-B3B8-E6796F98DA58}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>EdiFabric.Sdk.Hipaa.T837P</RootNamespace>
+    <AssemblyName>EdiFabric.Sdk.Hipaa.T837P</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -37,9 +39,6 @@
     <Reference Include="EdiFabric.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
       <HintPath>..\packages\EdiFabric.Framework.9.7.3\lib\net45\EdiFabric.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="EdiFabric.Plugins.Ack.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Plugins.Ack.X12.9.7.3\lib\net45\EdiFabric.Plugins.Ack.X12.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,40 +49,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AckBuilders.cs" />
-    <Compile Include="HipaaTransactionBuilders.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SegmentBuilders.cs" />
-    <Compile Include="TemplateFactory.cs" />
-    <Compile Include="X12TransactionBuilders.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EdiFabric.Sdk.Helpers.X12\EdiFabric.Sdk.Helpers.X12.csproj">
+      <Project>{e5b51ff3-e600-4773-839c-38df7c1038a0}</Project>
+      <Name>EdiFabric.Sdk.Helpers.X12</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EdiFabric.Sdk.Helpers\EdiFabric.Sdk.Helpers.csproj">
+      <Project>{4c09fee1-decb-42ec-9b0a-dad7e7232005}</Project>
+      <Name>EdiFabric.Sdk.Helpers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EdiFabric.Sdk.Hipaa.Templates.V005010\EdiFabric.Sdk.Hipaa.Templates.V005010.csproj">
       <Project>{ead26d12-f7da-4458-8919-fcdf4f507c9a}</Project>
       <Name>EdiFabric.Sdk.Hipaa.Templates.V005010</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Sdk.X12.Templates.V004010.Custom1\EdiFabric.Sdk.X12.Templates.V004010.Custom1.csproj">
-      <Project>{580d0da8-3ca0-44ae-8bb5-58167870a59d}</Project>
-      <Name>EdiFabric.Sdk.X12.Templates.V004010.Custom1</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Sdk.X12.Templates.V004010.Custom2\EdiFabric.Sdk.X12.Templates.V004010.Custom2.csproj">
-      <Project>{e307fd34-f8c3-42fb-a45b-2469446bac88}</Project>
-      <Name>EdiFabric.Sdk.X12.Templates.V004010.Custom2</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Sdk.X12.Templates.V004010.Split\EdiFabric.Sdk.X12.Templates.V004010.Split.csproj">
-      <Project>{d746b3ce-a6e6-44aa-a25a-4a89c81afd81}</Project>
-      <Name>EdiFabric.Sdk.X12.Templates.V004010.Split</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Sdk.X12.Templates.V004010.Validation\EdiFabric.Sdk.X12.Templates.V004010.Validation.csproj">
-      <Project>{5366aa35-2e43-45f2-b3cd-f4957893c55b}</Project>
-      <Name>EdiFabric.Sdk.X12.Templates.V004010.Validation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Sdk.X12.Templates.V004010\EdiFabric.Sdk.X12.Templates.V004010.csproj">
-      <Project>{a29f84fd-7b81-4f4b-bc27-e24ccb7d70d7}</Project>
-      <Name>EdiFabric.Sdk.X12.Templates.V004010</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

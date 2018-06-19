@@ -1,5 +1,6 @@
 ﻿using EdiFabric.Core.Model.Edi.X12;
 using EdiFabric.Framework;
+using EdiFabric.Rules.HIPAA_5010;
 using EdiFabric.Rules.X12_004010;
 using System;
 using System.Reflection;
@@ -41,7 +42,11 @@ namespace EdiFabric.Sdk.Helpers.X12
                   st.TransactionSetIdentifierCode_01 == "810")
                 return typeof(TS810).GetTypeInfo();
 
-            throw new System.Exception(string.Format("Transaction {0} for version {1} is not supported.",
+            if (gs.VersionAndRelease_8 == "005010X222A1" &&
+                  st.TransactionSetIdentifierCode_01 == "837")
+                return typeof(TS837P).GetTypeInfo();
+
+            throw new Exception(string.Format("Transaction {0} for version {1} is not supported.",
                 st.TransactionSetIdentifierCode_01, gs.VersionAndRelease_8));
         }
 
@@ -50,7 +55,7 @@ namespace EdiFabric.Sdk.Helpers.X12
             if (messageContext.Version == "004010")
                 return Assembly.Load("EdiFabric.Rules.X12004010");
 
-            throw new System.Exception(string.Format("Unsupported version {0}", messageContext.Version));
+            throw new Exception(string.Format("Unsupported version {0}", messageContext.Version));
         }
     }
 }

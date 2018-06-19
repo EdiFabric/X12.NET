@@ -54,7 +54,7 @@ namespace EdiFabric.Sdk.X12.T810
         {
             using (var stream = new MemoryStream())
             {
-                var transaction = TransactionBuilders.BuildInvoice("1");
+                var transaction = X12TransactionBuilders.BuildInvoice("1");
 
                 MessageErrorContext mec;
                 if (transaction.IsValid(out mec, true))

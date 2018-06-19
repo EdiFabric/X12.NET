@@ -4,10 +4,11 @@ using System.Collections.Generic;
 
 namespace EdiFabric.Sdk.Helpers.X12
 {
-    public static class TransactionBuilders
+    public static class X12TransactionBuilders
     {
         /// <summary>
         /// Build invoice.
+        /// Original example from http://www.x12.org/examples/004010X348/basic-invoice/
         /// </summary>
         public static TS810 BuildInvoice(string controlNumber)
         {
@@ -98,7 +99,8 @@ namespace EdiFabric.Sdk.Helpers.X12
         }
 
         /// <summary>
-        /// Build purchase order
+        /// Build purchase order.
+        /// Original example from http://www.x12.org/examples/004010X357/tax-exempt-purchase-order/
         /// </summary>
         public static TS850 BuildPurchaseOrder(string controlNumber)
         {

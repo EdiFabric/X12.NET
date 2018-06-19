@@ -23,7 +23,7 @@ namespace EdiFabric.Sdk.X12.Write
             Debug.WriteLine("******************************");
 
             //  1.  Construct the invoice
-            var invoice = TransactionBuilders.BuildInvoice("1");
+            var invoice = X12TransactionBuilders.BuildInvoice("1");
 
             //  2.  Validate it by skipping trailer validation
             MessageErrorContext errorContext;
@@ -71,7 +71,7 @@ namespace EdiFabric.Sdk.X12.Write
             Debug.WriteLine("******************************");
 
             //  1.  Construct the invoice
-            var invoice = TransactionBuilders.BuildInvoice("1");
+            var invoice = X12TransactionBuilders.BuildInvoice("1");
 
             //  2.  Validate it by skipping trailer validation
             MessageErrorContext errorContext;
@@ -105,7 +105,7 @@ namespace EdiFabric.Sdk.X12.Write
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var invoice = TransactionBuilders.BuildInvoice("1");
+            var invoice = X12TransactionBuilders.BuildInvoice("1");
 
             using (var stream = new MemoryStream())
             {
@@ -134,7 +134,7 @@ namespace EdiFabric.Sdk.X12.Write
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var invoice = TransactionBuilders.BuildInvoice("1");
+            var invoice = X12TransactionBuilders.BuildInvoice("1");
 
             using (var stream = new MemoryStream())
             {
@@ -166,10 +166,10 @@ namespace EdiFabric.Sdk.X12.Write
                     writer.Write(SegmentBuilders.BuildGs("1"));
 
                     //  1.  Write the first invoice
-                    writer.Write(TransactionBuilders.BuildInvoice("1"));
+                    writer.Write(X12TransactionBuilders.BuildInvoice("1"));
 
                     //  2.  Write the second invoice
-                    writer.Write(TransactionBuilders.BuildInvoice("2"));
+                    writer.Write(X12TransactionBuilders.BuildInvoice("2"));
 
                     //  3.  Write any subsequent invoices...
                 }
@@ -196,13 +196,13 @@ namespace EdiFabric.Sdk.X12.Write
                     //  1.  Write the first group               
                     writer.Write(SegmentBuilders.BuildGs("1"));
                     //  Write the transactions...
-                    writer.Write(TransactionBuilders.BuildInvoice("1"));
+                    writer.Write(X12TransactionBuilders.BuildInvoice("1"));
 
                     //  2.  Write the second group
                     //  No need to close the previous group with a GE
                     writer.Write(SegmentBuilders.BuildGs("2"));
                     //  Write the transactions...
-                    writer.Write(TransactionBuilders.BuildInvoice("2"));
+                    writer.Write(X12TransactionBuilders.BuildInvoice("2"));
                 }
 
                 Debug.Write(stream.LoadToString());
@@ -225,13 +225,13 @@ namespace EdiFabric.Sdk.X12.Write
                     //  1.  Write the first interchange
                     writer.Write(SegmentBuilders.BuildIsa("1"));
                     writer.Write(SegmentBuilders.BuildGs("1"));
-                    writer.Write(TransactionBuilders.BuildInvoice("1"));
+                    writer.Write(X12TransactionBuilders.BuildInvoice("1"));
 
                     //  2.  Write the second interchange
                     //  No need to close the previous interchange with a IEA
                     writer.Write(SegmentBuilders.BuildIsa("2"));
                     writer.Write(SegmentBuilders.BuildGs("1"));
-                    writer.Write(TransactionBuilders.BuildInvoice("1"));
+                    writer.Write(X12TransactionBuilders.BuildInvoice("1"));
                 }
 
                 Debug.Write(stream.LoadToString());
@@ -247,7 +247,7 @@ namespace EdiFabric.Sdk.X12.Write
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var invoice = TransactionBuilders.BuildInvoice("1");
+            var invoice = X12TransactionBuilders.BuildInvoice("1");
 
             //  Initialize some properties with blanks
             invoice.BIG.ReleaseNumber_05 = "";
@@ -277,7 +277,7 @@ namespace EdiFabric.Sdk.X12.Write
             Debug.WriteLine("******************************");
 
             //  1.  Construct the purchase order
-            var po = TransactionBuilders.BuildPurchaseOrder("1");
+            var po = X12TransactionBuilders.BuildPurchaseOrder("1");
 
             //  2.  Validate it by skipping trailer validation
             MessageErrorContext errorContext;
