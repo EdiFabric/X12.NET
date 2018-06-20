@@ -14,7 +14,7 @@ namespace EdiFabric.Sdk.Vda.Write
         /// <summary>
         /// Generate and write EDI document to a stream
         /// </summary>
-        static void Write4905()
+        public static void Write4905()
         {
             Debug.WriteLine("******************************");
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
@@ -33,7 +33,7 @@ namespace EdiFabric.Sdk.Vda.Write
                     writer.Write(vda4905);
                 }
 
-                Debug.Write(stream.LoadToString());
+                Debug.Write(stream.LoadToString());                
             }
         }
     }

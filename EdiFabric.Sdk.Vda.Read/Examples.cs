@@ -2,7 +2,6 @@
 using EdiFabric.Core.Model.Edi.ErrorContexts;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Rules.Vda;
-using EdiFabric.Sdk.Helpers;
 using EdiFabric.Sdk.Helpers.Vda;
 using System;
 using System.Collections.Generic;
