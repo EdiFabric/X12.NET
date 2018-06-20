@@ -1,4 +1,5 @@
 ﻿using EdiFabric.Framework;
+using EdiFabric.Rules.Vda;
 using System.Reflection;
 
 namespace EdiFabric.Sdk.Helpers.Vda
@@ -17,14 +18,7 @@ namespace EdiFabric.Sdk.Helpers.Vda
             switch (id)
             {
                 case "51102":
-                    var newControlNumber = segment.Substring(29, 5);
-                    //  Optional
-                    var sender = segment.Substring(15, 9);
-                    //  Optional
-                    var receiver = segment.Substring(6, 9);
-
-                    return new MessageContext("4905", newControlNumber, "1", "VDA", sender, "", receiver, "",
-                        mc => Assembly.Load("EdiFabric.Sdk.Vda.Templates"));
+                    return new MessageContext("4905", segment.Substring(29, 5), "1", "VDA", typeof(TS4905).GetTypeInfo(), null, null, null, null);
             }
 
             return null;

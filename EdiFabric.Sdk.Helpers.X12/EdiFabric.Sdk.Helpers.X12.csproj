@@ -32,13 +32,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EdiFabric.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Core.9.7.3\lib\net45\EdiFabric.Core.dll</HintPath>
+      <HintPath>..\packages\EdiFabric.Core.9.7.4\lib\net45\EdiFabric.Core.dll</HintPath>
     </Reference>
     <Reference Include="EdiFabric.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Framework.9.7.3\lib\net45\EdiFabric.Framework.dll</HintPath>
+      <HintPath>..\packages\EdiFabric.Framework.9.7.4\lib\net45\EdiFabric.Framework.dll</HintPath>
     </Reference>
     <Reference Include="EdiFabric.Plugins.Ack.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Plugins.Ack.X12.9.7.3\lib\net45\EdiFabric.Plugins.Ack.X12.dll</HintPath>
+      <HintPath>..\packages\EdiFabric.Plugins.Ack.X12.9.7.4\lib\net45\EdiFabric.Plugins.Ack.X12.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -56,9 +56,6 @@
     <Compile Include="SegmentBuilders.cs" />
     <Compile Include="TemplateFactory.cs" />
     <Compile Include="X12TransactionBuilders.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EdiFabric.Sdk.Hipaa.Templates.V005010\EdiFabric.Sdk.Hipaa.Templates.V005010.csproj">
@@ -85,6 +82,9 @@
       <Project>{a29f84fd-7b81-4f4b-bc27-e24ccb7d70d7}</Project>
       <Name>EdiFabric.Sdk.X12.Templates.V004010</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

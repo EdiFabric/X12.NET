@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EdiFabric.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Core.9.7.3\lib\net45\EdiFabric.Core.dll</HintPath>
+      <HintPath>..\packages\EdiFabric.Core.9.7.4\lib\net45\EdiFabric.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -48,9 +48,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\EdiFabric.Sdk.X12.Templates.V004010.Custom1\EdiFabric.Sdk.X12.Templates.V004010.Custom1.csproj">
       <Project>{580d0da8-3ca0-44ae-8bb5-58167870a59d}</Project>
       <Name>EdiFabric.Sdk.X12.Templates.V004010.Custom1</Name>
@@ -59,6 +56,9 @@
       <Project>{a29f84fd-7b81-4f4b-bc27-e24ccb7d70d7}</Project>
       <Name>EdiFabric.Sdk.X12.Templates.V004010</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

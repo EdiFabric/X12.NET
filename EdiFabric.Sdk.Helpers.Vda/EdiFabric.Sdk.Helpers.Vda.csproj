@@ -32,10 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EdiFabric.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Core.9.7.3\lib\net45\EdiFabric.Core.dll</HintPath>
+      <HintPath>..\packages\EdiFabric.Core.9.7.4\lib\net45\EdiFabric.Core.dll</HintPath>
     </Reference>
     <Reference Include="EdiFabric.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Framework.9.7.3\lib\net45\EdiFabric.Framework.dll</HintPath>
+      <HintPath>..\packages\EdiFabric.Framework.9.7.4\lib\net45\EdiFabric.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -52,13 +52,13 @@
     <Compile Include="TransactionBuilders.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\EdiFabric.Sdk.Vda.Templates\EdiFabric.Sdk.Vda.Templates.csproj">
       <Project>{dd838e83-efcc-42e2-a611-8a0e0b260f09}</Project>
       <Name>EdiFabric.Sdk.Vda.Templates</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
