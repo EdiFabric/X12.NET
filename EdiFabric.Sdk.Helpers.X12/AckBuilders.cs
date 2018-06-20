@@ -19,9 +19,9 @@ namespace EdiFabric.Sdk.Helpers.X12
             return new ISA
             {
                 AuthorizationInformationQualifier_1 = "00",
-                AuthorizationInformation_2 = "          ",
+                AuthorizationInformation_2 = "".PadRight(10, ' '),
                 SecurityInformationQualifier_3 = "00",
-                SecurityInformation_4 = "          ",
+                SecurityInformation_4 = "".PadRight(10, ' '),
                 SenderIDQualifier_5 = header.ReceiverIDQualifier_7.PadRight(2),
                 InterchangeSenderID_6 = header.InterchangeReceiverID_8.PadRight(15),
                 ReceiverIDQualifier_7 = header.SenderIDQualifier_5.PadRight(2),

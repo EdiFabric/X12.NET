@@ -8,26 +8,32 @@ namespace EdiFabric.Sdk.Helpers.X12
         /// <summary>
         /// Build ISA.
         /// </summary>
-        public static ISA BuildIsa(string controlNumber)
+        public static ISA BuildIsa(string controlNumber, 
+            string senderId = "SENDER1", 
+            string senderQ = "14", 
+            string receiverId = "RECEIVER1", 
+            string receiverQ = "16", 
+            string ackRequested = "1", 
+            string testIndicator = "T")
         {
             return new ISA
             {
                 //  Authorization Information Qualifier
                 AuthorizationInformationQualifier_1 = "00",
                 //  Authorization Information
-                AuthorizationInformation_2 = "          ",
+                AuthorizationInformation_2 = "".PadRight(10),
                 //  Security Information Qualifier
                 SecurityInformationQualifier_3 = "00",
                 //  Security Information
-                SecurityInformation_4 = "          ",
+                SecurityInformation_4 = "".PadRight(10),
                 //  Interchange ID Qualifier
-                SenderIDQualifier_5 = "14",
+                SenderIDQualifier_5 = senderQ,
                 //  Interchange Sender
-                InterchangeSenderID_6 = "RECEIVER1      ",
+                InterchangeSenderID_6 = senderId.PadRight(15),
                 //  Interchange ID Qualifier
-                ReceiverIDQualifier_7 = "16",
+                ReceiverIDQualifier_7 = receiverQ,
                 //  Interchange Receiver
-                InterchangeReceiverID_8 = "SENDER1        ",
+                InterchangeReceiverID_8 = receiverId.PadRight(15),
                 //  Date
                 InterchangeDate_9 = DateTime.Now.Date.ToString("yyMMdd"),
                 //  Time
@@ -40,25 +46,27 @@ namespace EdiFabric.Sdk.Helpers.X12
                 //  Interchange Control Number
                 InterchangeControlNumber_13 = controlNumber.PadLeft(9, '0'),
                 //  Acknowledgment Requested (0 or 1)
-                AcknowledgementRequested_14 = "1",
+                AcknowledgementRequested_14 = ackRequested,
                 //  Test Indicator
-                UsageIndicator_15 = "T",
+                UsageIndicator_15 = testIndicator,
             };
         }
 
         /// <summary>
         /// Build GS.
         /// </summary>
-        public static GS BuildGs(string controlNumber)
+        public static GS BuildGs(string controlNumber, 
+            string senderId = "SENDER1", 
+            string receiverId = "RECEIVER1")
         {
             return new GS
             {
                 //  Functional ID Code
                 CodeIdentifyingInformationType_1 = "IN",
                 //  Application Senders Code
-                SenderIDCode_2 = "RECEIVER1",
+                SenderIDCode_2 = senderId,
                 //  Application Receivers Code
-                ReceiverIDCode_3 = "SENDER1",
+                ReceiverIDCode_3 = receiverId,
                 //  Date
                 Date_4 = DateTime.Now.Date.ToString("yyMMdd"),
                 //  Time
