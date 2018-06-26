@@ -26,8 +26,8 @@
       <TaxExemptCode_12>9</TaxExemptCode_12>
     </TAX>
   </TAX>
-  <N1Loop1>
-    <TS850_N1Loop1>
+  <N1Loop>
+    <Loop_N1_850>
       <N1>
         <EntityIdentifierCode_01>BY</EntityIdentifierCode_01>
         <Name_02>ABC AEROSPACE</Name_02>
@@ -51,10 +51,10 @@
           <PostalCode_03>98898</PostalCode_03>
         </N4>
       </N4>
-    </TS850_N1Loop1>
-  </N1Loop1>
-  <PO1Loop1>
-    <TS850_PO1Loop1>
+    </Loop_N1_850>
+  </N1Loop>
+  <PO1Loop>
+    <Loop_PO1_850>
       <PO1>
         <AssignedIdentification_01>1</AssignedIdentification_01>
         <QuantityOrdered_02>25</QuantityOrdered_02>
@@ -77,19 +77,19 @@
       <IT8>
         <ProductServiceSubstitutionCode_07>B0</ProductServiceSubstitutionCode_07>
       </IT8>
-      <SCHLoop1>
-        <TS850_SCHLoop1>
+      <SCHLoop>
+        <Loop_SCH_850>
           <SCH>
             <Quantity_01>25</Quantity_01>
             <UnitorBasisforMeasurementCode_02>EA</UnitorBasisforMeasurementCode_02>
             <DateTimeQualifier_05>106</DateTimeQualifier_05>
             <Date_06>20170615</Date_06>
           </SCH>
-        </TS850_SCHLoop1>
-      </SCHLoop1>
-    </TS850_PO1Loop1>
-  </PO1Loop1>
-  <CTTLoop1>
+        </Loop_SCH_850>
+      </SCHLoop>
+    </Loop_PO1_850>
+  </PO1Loop>
+  <CTTLoop>
     <CTT>
       <NumberofLineItems_01>1</NumberofLineItems_01>
     </CTT>
@@ -97,7 +97,7 @@
       <AmountQualifierCode_01>TT</AmountQualifierCode_01>
       <MonetaryAmount_02>900</MonetaryAmount_02>
     </AMT>
-  </CTTLoop1>
+  </CTTLoop>
   <SE>
     <NumberofIncludedSegments_01>15</NumberofIncludedSegments_01>
     <TransactionSetControlNumber_02>0001</TransactionSetControlNumber_02>

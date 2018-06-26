@@ -39,8 +39,8 @@
       </TEXTREFERENCE_03>
     </FTX>
   </FTX>
-  <RFFLoop1>
-    <TSORDERS_RFFLoop1>
+  <RFFLoop>
+    <Loop_RFF_ORDERS>
       <RFF>
         <REFERENCE_01>
           <Referencequalifier_01>CT</Referencequalifier_01>
@@ -56,10 +56,10 @@
           </DATETIMEPERIOD_01>
         </DTM>
       </DTM>
-    </TSORDERS_RFFLoop1>
-  </RFFLoop1>
-  <NADLoop1>
-    <TSORDERS_NADLoop1>
+    </Loop_RFF_ORDERS>
+  </RFFLoop>
+  <NADLoop>
+    <Loop_NAD_ORDERS>
       <NAD>
         <Partyqualifier_01>BY</Partyqualifier_01>
         <PARTYIDENTIFICATIONDETAILS_02>
@@ -67,18 +67,18 @@
           <Codelistresponsibleagencycoded_03>9</Codelistresponsibleagencycoded_03>
         </PARTYIDENTIFICATIONDETAILS_02>
       </NAD>
-      <RFFLoop2>
-        <TSORDERS_RFFLoop2>
+      <RFFLoop>
+        <Loop_RFF_ORDERS>
           <RFF>
             <REFERENCE_01>
               <Referencequalifier_01>VA</Referencequalifier_01>
               <Referencenumber_02>87765432</Referencenumber_02>
             </REFERENCE_01>
           </RFF>
-        </TSORDERS_RFFLoop2>
-      </RFFLoop2>
-      <CTALoop1>
-        <TSORDERS_CTALoop1>
+        </Loop_RFF_ORDERS>
+      </RFFLoop>
+      <CTALoop>
+        <Loop_CTA_ORDERS>
           <CTA>
             <Contactfunctioncoded_01>OC</Contactfunctioncoded_01>
             <DEPARTMENTOREMPLOYEEDETAILS_02>
@@ -93,10 +93,10 @@
               </COMMUNICATIONCONTACT_01>
             </COM>
           </COM>
-        </TSORDERS_CTALoop1>
-      </CTALoop1>
-    </TSORDERS_NADLoop1>
-    <TSORDERS_NADLoop1>
+        </Loop_CTA_ORDERS>
+      </CTALoop>
+    </Loop_NAD_ORDERS>
+    <Loop_NAD_ORDERS>
       <NAD>
         <Partyqualifier_01>SU</Partyqualifier_01>
         <PARTYIDENTIFICATIONDETAILS_02>
@@ -104,20 +104,20 @@
           <Codelistresponsibleagencycoded_03>9</Codelistresponsibleagencycoded_03>
         </PARTYIDENTIFICATIONDETAILS_02>
       </NAD>
-      <RFFLoop2>
-        <TSORDERS_RFFLoop2>
+      <RFFLoop>
+        <Loop_RFF_ORDERS>
           <RFF>
             <REFERENCE_01>
               <Referencequalifier_01>VA</Referencequalifier_01>
               <Referencenumber_02>56225432</Referencenumber_02>
             </REFERENCE_01>
           </RFF>
-        </TSORDERS_RFFLoop2>
-      </RFFLoop2>
-    </TSORDERS_NADLoop1>
-  </NADLoop1>
-  <CUXLoop1>
-    <TSORDERS_CUXLoop1>
+        </Loop_RFF_ORDERS>
+      </RFFLoop>
+    </Loop_NAD_ORDERS>
+  </NADLoop>
+  <CUXLoop>
+    <Loop_CUX_ORDERS>
       <CUX>
         <CURRENCYDETAILS_01>
           <Currencydetailsqualifier_01>2</Currencydetailsqualifier_01>
@@ -140,10 +140,10 @@
           </DATETIMEPERIOD_01>
         </DTM>
       </DTM>
-    </TSORDERS_CUXLoop1>
-  </CUXLoop1>
-  <TDTLoop1>
-    <TSORDERS_TDTLoop1>
+    </Loop_CUX_ORDERS>
+  </CUXLoop>
+  <TDTLoop>
+    <Loop_TDT_ORDERS>
       <TDT>
         <Transportstagequalifier_01>20</Transportstagequalifier_01>
         <MODEOFTRANSPORT_03>
@@ -153,10 +153,10 @@
           <Typeofmeansoftransportidentification_01>31</Typeofmeansoftransportidentification_01>
         </TRANSPORTMEANS_04>
       </TDT>
-    </TSORDERS_TDTLoop1>
-  </TDTLoop1>
-  <TODLoop1>
-    <TSORDERS_TODLoop1>
+    </Loop_TDT_ORDERS>
+  </TDTLoop>
+  <TODLoop>
+    <Loop_TOD_ORDERS>
       <TOD>
         <Termsofdeliveryortransportfunctioncoded_01>3</Termsofdeliveryortransportfunctioncoded_01>
         <TERMSOFDELIVERYORTRANSPORT_03>
@@ -173,10 +173,10 @@
           </LOCATIONIDENTIFICATION_02>
         </LOC>
       </LOC>
-    </TSORDERS_TODLoop1>
-  </TODLoop1>
-  <LINLoop1>
-    <TSORDERS_LINLoop1>
+    </Loop_TOD_ORDERS>
+  </TODLoop>
+  <LINLoop>
+    <Loop_LIN_ORDERS>
       <LIN>
         <Lineitemnumber_01>1</Lineitemnumber_01>
         <ITEMNUMBERIDENTIFICATION_03>
@@ -218,8 +218,8 @@
           </MONETARYAMOUNT_01>
         </MOA>
       </MOA>
-      <PRILoop1>
-        <TSORDERS_PRILoop1>
+      <PRILoop>
+        <Loop_PRI_ORDERS>
           <PRI>
             <PRICEINFORMATION_01>
               <Pricequalifier_01>AAA</Pricequalifier_01>
@@ -230,10 +230,10 @@
               <Measureunitqualifier_06>KGM</Measureunitqualifier_06>
             </PRICEINFORMATION_01>
           </PRI>
-        </TSORDERS_PRILoop1>
-      </PRILoop1>
-      <RFFLoop3>
-        <TSORDERS_RFFLoop3>
+        </Loop_PRI_ORDERS>
+      </PRILoop>
+      <RFFLoop>
+        <Loop_RFF_ORDERS>
           <RFF>
             <REFERENCE_01>
               <Referencequalifier_01>PL</Referencequalifier_01>
@@ -249,10 +249,10 @@
               </DATETIMEPERIOD_01>
             </DTM>
           </DTM>
-        </TSORDERS_RFFLoop3>
-      </RFFLoop3>
-      <PACLoop2>
-        <TSORDERS_PACLoop2>
+        </Loop_RFF_ORDERS>
+      </RFFLoop>
+      <PACLoop>
+        <Loop_PAC_ORDERS_2>
           <PAC>
             <Numberofpackages_01>2</Numberofpackages_01>
             <PACKAGINGDETAILS_02>
@@ -262,17 +262,17 @@
               <Typeofpackagesidentification_01>CS</Typeofpackagesidentification_01>
             </PACKAGETYPE_03>
           </PAC>
-          <PCILoop2>
-            <TSORDERS_PCILoop2>
+          <PCILoop>
+            <Loop_PCI_ORDERS>
               <PCI>
                 <Markinginstructionscoded_01>14</Markinginstructionscoded_01>
               </PCI>
-            </TSORDERS_PCILoop2>
-          </PCILoop2>
-        </TSORDERS_PACLoop2>
-      </PACLoop2>
-      <LOCLoop2>
-        <TSORDERS_LOCLoop2>
+            </Loop_PCI_ORDERS>
+          </PCILoop>
+        </Loop_PAC_ORDERS_2>
+      </PACLoop>
+      <LOCLoop>
+        <Loop_LOC_ORDERS_2>
           <LOC>
             <Placelocationqualifier_01>7</Placelocationqualifier_01>
             <LOCATIONIDENTIFICATION_02>
@@ -295,8 +295,8 @@
               </DATETIMEPERIOD_01>
             </DTM>
           </DTM>
-        </TSORDERS_LOCLoop2>
-        <TSORDERS_LOCLoop2>
+        </Loop_LOC_ORDERS_2>
+        <Loop_LOC_ORDERS_2>
           <LOC>
             <Placelocationqualifier_01>7</Placelocationqualifier_01>
             <LOCATIONIDENTIFICATION_02>
@@ -319,10 +319,10 @@
               </DATETIMEPERIOD_01>
             </DTM>
           </DTM>
-        </TSORDERS_LOCLoop2>
-      </LOCLoop2>
-      <TAXLoop3>
-        <TSORDERS_TAXLoop3>
+        </Loop_LOC_ORDERS_2>
+      </LOCLoop>
+      <TAXLoop>
+        <Loop_TAX_ORDERS>
           <TAX>
             <Dutytaxfeefunctionqualifier_01>7</Dutytaxfeefunctionqualifier_01>
             <DUTYTAXFEETYPE_02>
@@ -333,10 +333,10 @@
             </DUTYTAXFEEDETAIL_05>
             <Dutytaxfeecategorycoded_06>S</Dutytaxfeecategorycoded_06>
           </TAX>
-        </TSORDERS_TAXLoop3>
-      </TAXLoop3>
-    </TSORDERS_LINLoop1>
-  </LINLoop1>
+        </Loop_TAX_ORDERS>
+      </TAXLoop>
+    </Loop_LIN_ORDERS>
+  </LINLoop>
   <UNS>
     <Sectionidentification_01>S</Sectionidentification_01>
   </UNS>
