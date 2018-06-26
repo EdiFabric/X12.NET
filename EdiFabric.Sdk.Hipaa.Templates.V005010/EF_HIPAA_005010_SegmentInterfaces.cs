@@ -1,7 +1,15 @@
-namespace EdiFabric.Rules.HIPAA_5010
+namespace EdiFabric.Templates.Hipaa5010
 {
+    using System;
     using System.Collections.Generic;
-
+    using EdiFabric.Core.Annotations.Edi;
+    using EdiFabric.Core.Annotations.Validation;
+    using EdiFabric.Core.Model.Edi;
+    using EdiFabric.Core.Model.Edi.X12;
+    using EdiFabric.Core.Model.Edi.ErrorContexts;
+    using System.Xml.Serialization;
+    
+    
     public interface AMT
     {
         

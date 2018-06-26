@@ -1,5 +1,15 @@
-namespace EdiFabric.Rules.HIPAA_5010
+namespace EdiFabric.Templates.Hipaa5010
 {
+    using System;
+    using System.Collections.Generic;
+    using EdiFabric.Core.Annotations.Edi;
+    using EdiFabric.Core.Annotations.Validation;
+    using EdiFabric.Core.Model.Edi;
+    using EdiFabric.Core.Model.Edi.X12;
+    using EdiFabric.Core.Model.Edi.ErrorContexts;
+    using System.Xml.Serialization;
+    
+    
     public interface C001
     {
         
@@ -52,6 +62,26 @@ namespace EdiFabric.Rules.HIPAA_5010
         string DiagnosisCodePointer_04 { get; set; }
     }
     
+    public interface C005
+    {
+        
+        string ToothSurfaceCode_01 { get; set; }
+        string ToothSurfaceCode_02 { get; set; }
+        string ToothSurfaceCode_03 { get; set; }
+        string ToothSurfaceCode_04 { get; set; }
+        string ToothSurfaceCode_05 { get; set; }
+    }
+    
+    public interface C006
+    {
+        
+        string OralCavityDesignationCode_01 { get; set; }
+        string OralCavityDesignationCode_02 { get; set; }
+        string OralCavityDesignationCode_03 { get; set; }
+        string OralCavityDesignationCode_04 { get; set; }
+        string OralCavityDesignationCode_05 { get; set; }
+    }
+    
     public interface C022
     {
         
@@ -101,6 +131,31 @@ namespace EdiFabric.Rules.HIPAA_5010
         string ReferenceIdentification_04 { get; set; }
         string ReferenceIdentificationQualifier_05 { get; set; }
         string ReferenceIdentification_06 { get; set; }
+    }
+    
+    public interface C042
+    {
+        
+        string AdjustmentReasonCode_01 { get; set; }
+        string ProviderAdjustmentIdentifier_02 { get; set; }
+    }
+    
+    public interface C043
+    {
+        
+        string HealthCareClaimStatusCategoryCode_01 { get; set; }
+        string StatusCode_02 { get; set; }
+        string EntityIdentifierCode_03 { get; set; }
+        string CodeListQualifierCode_04 { get; set; }
+    }
+    
+    public interface C052
+    {
+        
+        string MedicarePlanCode_01 { get; set; }
+        string EligibilityReasonCode_02 { get; set; }
+        string EligibilityReasonCode_03 { get; set; }
+        string EligibilityReasonCode_04 { get; set; }
     }
     
     public interface C056

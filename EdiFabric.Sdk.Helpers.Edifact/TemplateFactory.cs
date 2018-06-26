@@ -47,7 +47,7 @@ namespace EdiFabric.Sdk.Helpers.Edifact
         public static Assembly TrialTemplateFactory(MessageContext messageContext)
         {
             if (messageContext.Version == "D96A")
-                return Assembly.Load("EdiFabric.Rules.EdifactD96A");
+                return Assembly.Load("EdiFabric.Templates.Edifact");
 
             throw new System.Exception(string.Format("Unsupported version {0}", messageContext.Version));
         }

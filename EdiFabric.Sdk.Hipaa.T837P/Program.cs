@@ -3,7 +3,7 @@ using EdiFabric.Core.Model.Edi.ErrorContexts;
 using EdiFabric.Framework;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Framework.Writers;
-using EdiFabric.Rules.HIPAA_5010;
+using EdiFabric.Templates.Hipaa5010;
 using EdiFabric.Sdk.Helpers;
 using EdiFabric.Sdk.Helpers.X12;
 using System;

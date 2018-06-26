@@ -1,6 +1,6 @@
 ﻿using EdiFabric.Core.Model.Edi.X12;
 using EdiFabric.Framework;
-using EdiFabric.Rules.HIPAA_5010;
+using EdiFabric.Templates.Hipaa5010;
 using EdiFabric.Templates.X12004010;
 using System;
 using System.Reflection;
@@ -53,7 +53,7 @@ namespace EdiFabric.Sdk.Helpers.X12
         public static Assembly TrialTemplateFactory(MessageContext messageContext)
         {
             if (messageContext.Version == "004010")
-                return Assembly.Load("EdiFabric.Rules.X12004010");
+                return Assembly.Load("EdiFabric.Templates.X12");
 
             throw new Exception(string.Format("Unsupported version {0}", messageContext.Version));
         }
