@@ -3,7 +3,7 @@ using EdiFabric.Core.Model.Edi.Edifact;
 using EdiFabric.Core.Model.Edi.ErrorContexts;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Framework.Writers;
-using EdiFabric.Rules.EDIFACT_D96A;
+using EdiFabric.Templates.EdifactD96A;
 using EdiFabric.Sdk.Helpers;
 using EdiFabric.Sdk.Helpers.Edifact;
 using System.Collections.Generic;

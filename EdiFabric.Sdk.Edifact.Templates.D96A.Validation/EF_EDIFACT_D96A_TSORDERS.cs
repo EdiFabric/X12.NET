@@ -1,4 +1,4 @@
-namespace EdiFabric.Rules.EDIFACT_D96A
+namespace EdiFabric.Templates.EdifactD96A
 {
     using System;
     using System.Collections.Generic;
@@ -15,12 +15,12 @@ namespace EdiFabric.Rules.EDIFACT_D96A
     {
         [ListCount(200000)]
         [Pos(21)]
-        public new List<TSORDERS_LINLoop1Validation> LINLoop1 { get; set; }       
+        public new List<TSORDERS_LINLoop1Validation> LINLoop { get; set; }       
     }
     
     [Serializable()]
     [Group(typeof(LIN))]
-    public class TSORDERS_LINLoop1Validation : TSORDERS_LINLoop1, IEdiValidator
+    public class TSORDERS_LINLoop1Validation : Loop_LIN_ORDERS, IEdiValidator
     {
         public List<SegmentErrorContext> ValidateEdi(ValidationContext validationContext)
         {

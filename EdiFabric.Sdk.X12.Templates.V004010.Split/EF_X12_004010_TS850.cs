@@ -1,4 +1,4 @@
-namespace EdiFabric.Rules.X12_004010
+namespace EdiFabric.Templates.X12004010
 {
     using System;
     using System.Collections.Generic;
@@ -13,6 +13,6 @@ namespace EdiFabric.Rules.X12_004010
         [Required]
         [ListCount(100000)]
         [Pos(38)]
-        public new List<TS850_PO1Loop1> PO1Loop1 { get; set; }       
+        public new List<Loop_PO1_850> PO1Loop { get; set; }       
     }
 }

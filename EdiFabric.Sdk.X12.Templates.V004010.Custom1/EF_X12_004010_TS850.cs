@@ -1,4 +1,4 @@
-namespace EdiFabric.Rules.X12_004010
+namespace EdiFabric.Templates.X12004010
 {
     using System;
     using EdiFabric.Core.Annotations.Edi;

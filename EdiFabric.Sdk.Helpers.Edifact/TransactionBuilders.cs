@@ -1,5 +1,5 @@
 ﻿using EdiFabric.Core.Model.Edi.Edifact;
-using EdiFabric.Rules.EDIFACT_D96A;
+using EdiFabric.Templates.EdifactD96A;
 using System.Collections.Generic;
 
 namespace EdiFabric.Sdk.Helpers.Edifact
@@ -46,10 +46,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             result.PAI.PAYMENTINSTRUCTIONDETAILS_01.Paymentmeanscoded_03 = "42";
 
             //  Repeating RFF Groups
-            result.RFFLoop1 = new List<TSINVOIC_RFFLoop1>();
+            result.RFFLoop = new List<Loop_RFF_INVOIC>();
 
             //  Begin RFF Group 1
-            var rffLoop1 = new TSINVOIC_RFFLoop1();
+            var rffLoop1 = new Loop_RFF_INVOIC();
 
             //  Purchase order invoiced number ORD9523
             rffLoop1.RFF = new RFF();
@@ -69,10 +69,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             rffLoop1.DTM.Add(dtmRff1);
 
             //  End RFF Group 1
-            result.RFFLoop1.Add(rffLoop1);
+            result.RFFLoop.Add(rffLoop1);
 
             //  Begin RFF Group 2
-            var rffLoop2 = new TSINVOIC_RFFLoop1();
+            var rffLoop2 = new Loop_RFF_INVOIC();
 
             //  Price list reference number PL99523
             rffLoop2.RFF = new RFF();
@@ -92,10 +92,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             rffLoop2.DTM.Add(dtmRff2);
 
             //  End RFF Group 2
-            result.RFFLoop1.Add(rffLoop2);
+            result.RFFLoop.Add(rffLoop2);
 
             //  Begin RFF Group 3
-            var rffLoop3 = new TSINVOIC_RFFLoop1();
+            var rffLoop3 = new Loop_RFF_INVOIC();
 
             //  Reference delivery note number 53662
             rffLoop3.RFF = new RFF();
@@ -115,13 +115,13 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             rffLoop3.DTM.Add(dtmRff3);
 
             //  End RFF Group 3
-            result.RFFLoop1.Add(rffLoop3);
+            result.RFFLoop.Add(rffLoop3);
 
             //  Repeating NAD Groups
-            result.NADLoop1 = new List<TSINVOIC_NADLoop1>();
+            result.NADLoop = new List<Loop_NAD_INVOIC>();
 
             //  Begin NAD Group 1
-            var nadLoop1 = new TSINVOIC_NADLoop1();
+            var nadLoop1 = new Loop_NAD_INVOIC();
 
             //  Buyer identified by GLN 5412345000013
             nadLoop1.NAD = new NAD();
@@ -131,10 +131,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             nadLoop1.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistresponsibleagencycoded_03 = "9";
 
             //  Repeating RFF Groups
-            nadLoop1.RFFLoop2 = new List<TSINVOIC_RFFLoop2>();
+            nadLoop1.RFFLoop = new List<Loop_RFF_INVOIC>();
 
             //  Begin RFF Group 1
-            var rffNadLoop1 = new TSINVOIC_RFFLoop2();
+            var rffNadLoop1 = new Loop_RFF_INVOIC();
 
             //  VAT reference number of the buyer 4146023 
             rffNadLoop1.RFF = new RFF();
@@ -143,13 +143,13 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             rffNadLoop1.RFF.REFERENCE_01.Referencenumber_02 = "4146023";
 
             //  End RFF Group 1
-            nadLoop1.RFFLoop2.Add(rffNadLoop1);
+            nadLoop1.RFFLoop.Add(rffNadLoop1);
 
             //  End NAD Group 1
-            result.NADLoop1.Add(nadLoop1);
+            result.NADLoop.Add(nadLoop1);
 
             //  Begin NAD Group 2
-            var nadLoop2 = new TSINVOIC_NADLoop1();
+            var nadLoop2 = new Loop_NAD_INVOIC();
 
             //  Supplier identified by GLN 4012345500004
             nadLoop2.NAD = new NAD();
@@ -159,10 +159,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             nadLoop2.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistresponsibleagencycoded_03 = "9";
 
             //  Repeating RFF Groups
-            nadLoop2.RFFLoop2 = new List<TSINVOIC_RFFLoop2>();
+            nadLoop2.RFFLoop = new List<Loop_RFF_INVOIC>();
 
             //  Begin RFF Group 1
-            var rffNadLoop2 = new TSINVOIC_RFFLoop2();
+            var rffNadLoop2 = new Loop_RFF_INVOIC();
 
             //  VAT reference number of the supplier VR12345
             rffNadLoop2.RFF = new RFF();
@@ -171,13 +171,13 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             rffNadLoop2.RFF.REFERENCE_01.Referencenumber_02 = "VR12345";
 
             //  End RFF Group 1
-            nadLoop2.RFFLoop2.Add(rffNadLoop2);
+            nadLoop2.RFFLoop.Add(rffNadLoop2);
 
             //  End NAD Group 2
-            result.NADLoop1.Add(nadLoop2);
+            result.NADLoop.Add(nadLoop2);
 
             //  Begin NAD Group 3
-            var nadLoop3 = new TSINVOIC_NADLoop1();
+            var nadLoop3 = new Loop_NAD_INVOIC();
 
             //  Delivery party identified by GLN 5412345678908
             nadLoop3.NAD = new NAD();
@@ -187,13 +187,13 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             nadLoop3.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistresponsibleagencycoded_03 = "9";
 
             //  End NAD Group 3
-            result.NADLoop1.Add(nadLoop3);
+            result.NADLoop.Add(nadLoop3);
 
             //  Repeating CUX Groups
-            result.CUXLoop1 = new List<TSINVOIC_CUXLoop1>();
+            result.CUXLoop = new List<Loop_CUX_INVOIC>();
 
             //  Begin CUX Group
-            var cuxLoop = new TSINVOIC_CUXLoop1();
+            var cuxLoop = new Loop_CUX_INVOIC();
 
             //  Reference currency is Euros 
             cuxLoop.CUX = new CUX();
@@ -203,13 +203,13 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             cuxLoop.CUX.CURRENCYDETAILS_01.Currencyqualifier_03 = "4";
 
             //  End CUX Group
-            result.CUXLoop1.Add(cuxLoop);
+            result.CUXLoop.Add(cuxLoop);
 
             //  Repeating PAT Groups
-            result.PATLoop1 = new List<TSINVOIC_PATLoop1>();
+            result.PATLoop = new List<Loop_PAT_INVOIC>();
 
             //  Begin PAT Group 1
-            var patLoop1 = new TSINVOIC_PATLoop1();
+            var patLoop1 = new Loop_PAT_INVOIC();
 
             //  Payment terms 2 months after date of invoice
             patLoop1.PAT = new PAT();
@@ -221,10 +221,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             patLoop1.PAT.TERMSTIMEINFORMATION_03.Numberofperiods_04 = "2";
 
             //  End PAT Group 1
-            result.PATLoop1.Add(patLoop1);
+            result.PATLoop.Add(patLoop1);
 
             //  Begin PAT Group 2
-            var patLoop2 = new TSINVOIC_PATLoop1();
+            var patLoop2 = new Loop_PAT_INVOIC();
 
             //  Payment discount for payment 10 days after date of invoice
             patLoop2.PAT = new PAT();
@@ -243,13 +243,13 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             patLoop2.PCD.PERCENTAGEDETAILS_01.Percentagebasiscoded_03 = "13";
 
             //  End PAT Group 2
-            result.PATLoop1.Add(patLoop2);
+            result.PATLoop.Add(patLoop2);
 
             //  Repeating ALC Groups
-            result.ALCLoop1 = new List<TSINVOIC_ALCLoop1>();
+            result.ALCLoop = new List<Loop_ALC_INVOIC>();
 
             //  Begin ALC Group
-            var alcLoop = new TSINVOIC_ALCLoop1();
+            var alcLoop = new Loop_ALC_INVOIC();
 
             //  Charges to be paid by customer
             alcLoop.ALC = new ALC();
@@ -259,10 +259,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             alcLoop.ALC.SPECIALSERVICESIDENTIFICATION_05.Specialservicescoded_01 = "FC";
 
             //  Repeating MOA Groups
-            alcLoop.MOALoop1 = new List<TSINVOIC_MOALoop1>();
+            alcLoop.MOALoop = new List<Loop_MOA_INVOIC>();
 
             //  Begin MOA Group
-            var moaAlcLoop = new TSINVOIC_MOALoop1();
+            var moaAlcLoop = new Loop_MOA_INVOIC();
 
             //  Monetary amount for the charge 120 EUR to be added
             moaAlcLoop.MOA = new MOA();
@@ -271,13 +271,13 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             moaAlcLoop.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "120";
 
             //  End MOA Group
-            alcLoop.MOALoop1.Add(moaAlcLoop);
+            alcLoop.MOALoop.Add(moaAlcLoop);
 
             //  Repeating TAX Groups
-            alcLoop.TAXLoop2 = new List<TSINVOIC_TAXLoop2>();
+            alcLoop.TAXLoop = new List<Loop_TAX_INVOIC_2>();
 
             //  Begin TAX Group
-            var taxAlcLoop = new TSINVOIC_TAXLoop2();
+            var taxAlcLoop = new Loop_TAX_INVOIC_2();
 
             //  Type of tax is value added tax at 19 %
             taxAlcLoop.TAX = new TAX();
@@ -295,16 +295,16 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             taxAlcLoop.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "22.80";
 
             //  End TAX Group
-            alcLoop.TAXLoop2.Add(taxAlcLoop);
+            alcLoop.TAXLoop.Add(taxAlcLoop);
 
             //  End ALC Group
-            result.ALCLoop1.Add(alcLoop);
+            result.ALCLoop.Add(alcLoop);
 
             //  Repeating LIN Groups
-            result.LINLoop1 = new List<TSINVOIC_LINLoop1>();
+            result.LINLoop = new List<Loop_LIN_INVOIC>();
 
             //  Begin LIN Group 1
-            var linLoop1 = new TSINVOIC_LINLoop1();
+            var linLoop1 = new Loop_LIN_INVOIC();
 
             //  Line item 1 identified by GTIN 4000862141404
             linLoop1.LIN = new LIN();
@@ -324,10 +324,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             linLoop1.QTY.Add(qtyLin1);
 
             //  Repeating MOA Groups
-            linLoop1.MOALoop2 = new List<TSINVOIC_MOALoop2>();
+            linLoop1.MOALoop = new List<Loop_MOA_INVOIC_2>();
 
             //  Begin MOA Group
-            var moaLinLoop1 = new TSINVOIC_MOALoop2();
+            var moaLinLoop1 = new Loop_MOA_INVOIC_2();
 
             //  Line item amount 2.160 EUR
             moaLinLoop1.MOA = new MOA();
@@ -336,13 +336,13 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             moaLinLoop1.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "2160";
 
             //  End MOA Group
-            linLoop1.MOALoop2.Add(moaLinLoop1);
+            linLoop1.MOALoop.Add(moaLinLoop1);
 
             //  Repeating PRI Groups
-            linLoop1.PRILoop1 = new List<TSINVOIC_PRILoop1>();
+            linLoop1.PRILoop = new List<Loop_PRI_INVOIC>();
 
             //  Begin PRI Group
-            var priLinLoop1 = new TSINVOIC_PRILoop1();
+            var priLinLoop1 = new Loop_PRI_INVOIC();
 
             //  Gross calculation price of 60 which does not include any allowance or charges, from the catalogue.
             priLinLoop1.PRI = new PRI();
@@ -352,13 +352,13 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             priLinLoop1.PRI.PRICEINFORMATION_01.Pricetypecoded_03 = "CA";
 
             //  End PRI Group
-            linLoop1.PRILoop1.Add(priLinLoop1);
+            linLoop1.PRILoop.Add(priLinLoop1);
 
             //  Repeating TAX Groups
-            linLoop1.TAXLoop3 = new List<TSINVOIC_TAXLoop3>();
+            linLoop1.TAXLoop = new List<Loop_TAX_INVOIC>();
 
             //  Begin TAX Group
-            var taxLinLoop1 = new TSINVOIC_TAXLoop3();
+            var taxLinLoop1 = new Loop_TAX_INVOIC();
 
             //  Type of tax for the line item is value added tax 21%
             taxLinLoop1.TAX = new TAX();
@@ -376,35 +376,35 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             taxLinLoop1.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "453.60";
 
             //  End TAX Group
-            linLoop1.TAXLoop3.Add(taxLinLoop1);
+            linLoop1.TAXLoop.Add(taxLinLoop1);
 
             //  Repeating ALC Groups
-            linLoop1.ALCLoop2 = new List<TSINVOIC_ALCLoop2>();
+            linLoop1.ALCLoop = new List<Loop_ALC_INVOIC_2>();
 
             //  Begin ALC Group
-            var alcLinLoop1 = new TSINVOIC_ALCLoop2();
+            var alcLinLoop1 = new Loop_ALC_INVOIC_2();
 
             //  Allowances
             alcLinLoop1.ALC = new ALC();
             alcLinLoop1.ALC.Allowanceorchargequalifier_01 = "A";
 
             //  PCD Group
-            alcLinLoop1.PCDLoop2 = new TSINVOIC_PCDLoop2();
+            alcLinLoop1.PCDLoop = new Loop_PCD_INVOIC();
 
             //  Percentage information for the allowances 10 %
-            alcLinLoop1.PCDLoop2.PCD = new PCD();
-            alcLinLoop1.PCDLoop2.PCD.PERCENTAGEDETAILS_01 = new C501();
-            alcLinLoop1.PCDLoop2.PCD.PERCENTAGEDETAILS_01.Percentagequalifier_01 = "1";
-            alcLinLoop1.PCDLoop2.PCD.PERCENTAGEDETAILS_01.Percentage_02 = "10";
+            alcLinLoop1.PCDLoop.PCD = new PCD();
+            alcLinLoop1.PCDLoop.PCD.PERCENTAGEDETAILS_01 = new C501();
+            alcLinLoop1.PCDLoop.PCD.PERCENTAGEDETAILS_01.Percentagequalifier_01 = "1";
+            alcLinLoop1.PCDLoop.PCD.PERCENTAGEDETAILS_01.Percentage_02 = "10";
 
             //  End ALC Group
-            linLoop1.ALCLoop2.Add(alcLinLoop1);
+            linLoop1.ALCLoop.Add(alcLinLoop1);
 
             //  End LIN Group 1
-            result.LINLoop1.Add(linLoop1);
+            result.LINLoop.Add(linLoop1);
 
             //  Begin LIN Group 2
-            var linLoop2 = new TSINVOIC_LINLoop1();
+            var linLoop2 = new Loop_LIN_INVOIC();
 
             //  Line item 2 identified by GTIN 5412345111115
             linLoop2.LIN = new LIN();
@@ -432,10 +432,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             linLoop2.QTY.Add(qtyLin3);
 
             //  Repeating MOA Groups
-            linLoop2.MOALoop2 = new List<TSINVOIC_MOALoop2>();
+            linLoop2.MOALoop = new List<Loop_MOA_INVOIC_2>();
 
             //  Begin MOA Group
-            var moaLinLoop2 = new TSINVOIC_MOALoop2();
+            var moaLinLoop2 = new Loop_MOA_INVOIC_2();
 
             //  Line item amount 2.530 EUR
             moaLinLoop2.MOA = new MOA();
@@ -444,13 +444,13 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             moaLinLoop2.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "2530";
 
             //  End MOA Group
-            linLoop2.MOALoop2.Add(moaLinLoop2);
+            linLoop2.MOALoop.Add(moaLinLoop2);
 
             //  Repeating PRI Groups
-            linLoop2.PRILoop1 = new List<TSINVOIC_PRILoop1>();
+            linLoop2.PRILoop = new List<Loop_PRI_INVOIC>();
 
             //  Begin PRI Group
-            var priLinLoop2 = new TSINVOIC_PRILoop1();
+            var priLinLoop2 = new Loop_PRI_INVOIC();
 
             //  Net price of 200 per Kg from the catalogue, this price includes allowances and charges
             priLinLoop2.PRI = new PRI();
@@ -462,13 +462,13 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             priLinLoop2.PRI.PRICEINFORMATION_01.Measureunitqualifier_06 = "KGM";
 
             //  End PRI Group
-            linLoop2.PRILoop1.Add(priLinLoop2);
+            linLoop2.PRILoop.Add(priLinLoop2);
 
             //  Repeating TAX Groups
-            linLoop2.TAXLoop3 = new List<TSINVOIC_TAXLoop3>();
+            linLoop2.TAXLoop = new List<Loop_TAX_INVOIC>();
 
             //  Begin TAX Group
-            var taxLinLoop2 = new TSINVOIC_TAXLoop3();
+            var taxLinLoop2 = new Loop_TAX_INVOIC();
 
             //  Type of tax for the line item is value added tax 19 %
             taxLinLoop2.TAX = new TAX();
@@ -486,10 +486,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             taxLinLoop2.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "480.70";
 
             //  End TAX Group
-            linLoop2.TAXLoop3.Add(taxLinLoop2);
+            linLoop2.TAXLoop.Add(taxLinLoop2);
 
             //  End LIN Group 2
-            result.LINLoop1.Add(linLoop2);
+            result.LINLoop.Add(linLoop2);
 
             //  To separate the detail section from the summary section
             result.UNS = new UNS();
@@ -506,10 +506,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             result.CNT.Add(cnt);
 
             //  Repeating MOA Groups
-            result.MOALoop4 = new List<TSINVOIC_MOALoop4>();
+            result.MOALoop = new List<Loop_MOA_INVOIC_3>();
 
             //  Begin MOA Group 1
-            var moaLoop1 = new TSINVOIC_MOALoop4();
+            var moaLoop1 = new Loop_MOA_INVOIC_3();
 
             //  Message total monetary amount 5.767,10 EUR
             moaLoop1.MOA = new MOA();
@@ -518,10 +518,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             moaLoop1.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "5767.10";
 
             //  End MOA Group 1
-            result.MOALoop4.Add(moaLoop1);
+            result.MOALoop.Add(moaLoop1);
 
             //  Begin MOA Group 2
-            var moaLoop2 = new TSINVOIC_MOALoop4();
+            var moaLoop2 = new Loop_MOA_INVOIC_3();
 
             //  Message total line items amount 4.690 EUR
             moaLoop2.MOA = new MOA();
@@ -530,10 +530,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             moaLoop2.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "4690";
 
             //  End MOA Group 2
-            result.MOALoop4.Add(moaLoop2);
+            result.MOALoop.Add(moaLoop2);
 
             //  Begin MOA Group 3
-            var moaLoop3 = new TSINVOIC_MOALoop4();
+            var moaLoop3 = new Loop_MOA_INVOIC_3();
 
             //  Total amount subject to payment discount 5.767.10 EUR
             moaLoop3.MOA = new MOA();
@@ -542,10 +542,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             moaLoop3.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "5767.10";
 
             //  End MOA Group 3
-            result.MOALoop4.Add(moaLoop3);
+            result.MOALoop.Add(moaLoop3);
 
             //  Begin MOA Group 4
-            var moaLoop4 = new TSINVOIC_MOALoop4();
+            var moaLoop4 = new Loop_MOA_INVOIC_3();
 
             //  Message total taxable amount 4.810 EUR
             moaLoop4.MOA = new MOA();
@@ -554,10 +554,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             moaLoop4.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "4810";
 
             //  End MOA Group 4
-            result.MOALoop4.Add(moaLoop4);
+            result.MOALoop.Add(moaLoop4);
 
             //  Begin MOA Group 5
-            var moaLoop5 = new TSINVOIC_MOALoop4();
+            var moaLoop5 = new Loop_MOA_INVOIC_3();
 
             //  Message total tax amount 957,10 EUR
             moaLoop5.MOA = new MOA();
@@ -566,10 +566,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             moaLoop5.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "957.10";
 
             //  End MOA Group 5
-            result.MOALoop4.Add(moaLoop5);
+            result.MOALoop.Add(moaLoop5);
 
             //  Begin MOA Group 6
-            var moaLoop6 = new TSINVOIC_MOALoop4();
+            var moaLoop6 = new Loop_MOA_INVOIC_3();
 
             //  Total charges/allowances 120 EUR
             moaLoop6.MOA = new MOA();
@@ -578,13 +578,13 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             moaLoop6.MOA.MONETARYAMOUNT_01.Monetaryamount_02 = "120";
 
             //  End MOA Group 6
-            result.MOALoop4.Add(moaLoop6);
+            result.MOALoop.Add(moaLoop6);
 
             //  Repeating TAX Groups
-            result.TAXLoop5 = new List<TSINVOIC_TAXLoop5>();
+            result.TAXLoop2 = new List<Loop_TAX_INVOIC_3>();
 
             //  Begin TAX Group 1
-            var taxLoop1 = new TSINVOIC_TAXLoop5();
+            var taxLoop1 = new Loop_TAX_INVOIC_3();
 
             //  Type of tax for the total message is value added tax 19 %
             taxLoop1.TAX = new TAX();
@@ -606,10 +606,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             taxLoop1.MOA.Add(moaTax1);
 
             //  End TAX Group 1
-            result.TAXLoop5.Add(taxLoop1);
+            result.TAXLoop2.Add(taxLoop1);
 
             //  Begin TAX Group 2
-            var taxLoop2 = new TSINVOIC_TAXLoop5();
+            var taxLoop2 = new Loop_TAX_INVOIC_3();
 
             //  Type of tax for the total message is value added tax 21 %
             taxLoop2.TAX = new TAX();
@@ -631,12 +631,12 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             taxLoop2.MOA.Add(moaTax2);
 
             //  End TAX Group 2
-            result.TAXLoop5.Add(taxLoop2);
+            result.TAXLoop2.Add(taxLoop2);
 
-            result.ALCLoop3 = new List<TSINVOIC_ALCLoop3>();
+            result.ALCLoop2 = new List<Loop_ALC_INVOIC_3>();
 
             //  Begin ALC Group
-            var alcLoop2 = new TSINVOIC_ALCLoop3();
+            var alcLoop2 = new Loop_ALC_INVOIC_3();
 
             //  Freight charge 
             alcLoop2.ALC = new ALC();
@@ -655,7 +655,7 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             alcLoop2.MOA.Add(moaAlc);
 
             //  End ALC Group
-            result.ALCLoop3.Add(alcLoop2);
+            result.ALCLoop2.Add(alcLoop2);
 
             return result;
         }
@@ -713,10 +713,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             result.FTX.Add(ftx);
 
             //  Repeating RFF Groups
-            result.RFFLoop1 = new List<TSORDERS_RFFLoop1>();
+            result.RFFLoop = new List<Loop_RFF_ORDERS>();
 
             //  Begin RFF Group 
-            var rffLoop = new TSORDERS_RFFLoop1();
+            var rffLoop = new Loop_RFF_ORDERS();
 
             //  Order is based on contract number 652744
             rffLoop.RFF = new RFF();
@@ -736,13 +736,13 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             rffLoop.DTM.Add(rffDtm1);
 
             //  End RFF Group             
-            result.RFFLoop1.Add(rffLoop);
+            result.RFFLoop.Add(rffLoop);
 
             //  Repeating NAD Groups
-            result.NADLoop1 = new List<TSORDERS_NADLoop1>();
+            result.NADLoop = new List<Loop_NAD_ORDERS>();
 
             //  Begin NAD Group 1 
-            var nadLoop1 = new TSORDERS_NADLoop1();
+            var nadLoop1 = new Loop_NAD_ORDERS();
 
             //  Buyer is identified by GLN 5412345000013            
             nadLoop1.NAD = new NAD();
@@ -752,10 +752,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             nadLoop1.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistresponsibleagencycoded_03 = "9";
 
             //  Repeating RFF Groups
-            nadLoop1.RFFLoop2 = new List<TSORDERS_RFFLoop2>();
+            nadLoop1.RFFLoop = new List<Loop_RFF_ORDERS>();
 
             //  Begin RFF Group
-            var rffLoopNad = new TSORDERS_RFFLoop2();
+            var rffLoopNad = new Loop_RFF_ORDERS();
 
             //  Buyer’s VAT number is 87765432
             rffLoopNad.RFF = new RFF();
@@ -764,13 +764,13 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             rffLoopNad.RFF.REFERENCE_01.Referencenumber_02 = "87765432";
 
             //  End RFF Group
-            nadLoop1.RFFLoop2.Add(rffLoopNad);
+            nadLoop1.RFFLoop.Add(rffLoopNad);
 
             //  Repeating CTA Groups
-            nadLoop1.CTALoop1 = new List<TSORDERS_CTALoop1>();
+            nadLoop1.CTALoop = new List<Loop_CTA_ORDERS>();
 
             //  Begin CTA Group
-            var ctaLoop = new TSORDERS_CTALoop1();
+            var ctaLoop = new Loop_CTA_ORDERS();
 
             //  Order contact is PForget
             ctaLoop.CTA = new CTA();
@@ -789,13 +789,13 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             ctaLoop.COM.Add(com);
 
             //  End CTA Group
-            nadLoop1.CTALoop1.Add(ctaLoop);
+            nadLoop1.CTALoop.Add(ctaLoop);
 
             //  End NAD Group 1
-            result.NADLoop1.Add(nadLoop1);
+            result.NADLoop.Add(nadLoop1);
 
             //  Begin NAD Group 2 
-            var nadLoop2 = new TSORDERS_NADLoop1();
+            var nadLoop2 = new Loop_NAD_ORDERS();
 
             //  Supplier is identified by GLN 4012345500004
             nadLoop2.NAD = new NAD();
@@ -805,10 +805,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             nadLoop2.NAD.PARTYIDENTIFICATIONDETAILS_02.Codelistresponsibleagencycoded_03 = "9";
 
             //  Repeating RFF Groups
-            nadLoop2.RFFLoop2 = new List<TSORDERS_RFFLoop2>();
+            nadLoop2.RFFLoop = new List<Loop_RFF_ORDERS>();
 
             //  Begin RFF Group  
-            var rffLoopNad2 = new TSORDERS_RFFLoop2();
+            var rffLoopNad2 = new Loop_RFF_ORDERS();
 
             //  Supplier’s VAT number is 56225432
             rffLoopNad2.RFF = new RFF();
@@ -817,16 +817,16 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             rffLoopNad2.RFF.REFERENCE_01.Referencenumber_02 = "56225432";
 
             //  End RFF Group
-            nadLoop2.RFFLoop2.Add(rffLoopNad2);
+            nadLoop2.RFFLoop.Add(rffLoopNad2);
 
             //  End NAD Group 2
-            result.NADLoop1.Add(nadLoop2);
+            result.NADLoop.Add(nadLoop2);
 
             //  Repeating CUX Groups
-            result.CUXLoop1 = new List<TSORDERS_CUXLoop1>();
+            result.CUXLoop = new List<Loop_CUX_ORDERS>();
 
             //  Begin CUX Group  
-            var cuxLoop = new TSORDERS_CUXLoop1();
+            var cuxLoop = new Loop_CUX_ORDERS();
 
             //  Ordering currency is Pounds Sterling with the invoicing currency identified as Euros 
             //  The exchange rate between them is 1 Pound Sterling equals 1.67 Euros
@@ -854,13 +854,13 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             cuxLoop.DTM.Add(dtmCux);
 
             //  End CUX Group
-            result.CUXLoop1.Add(cuxLoop);
+            result.CUXLoop.Add(cuxLoop);
 
             //  Repeating TDT Groups
-            result.TDTLoop1 = new List<TSORDERS_TDTLoop1>();
+            result.TDTLoop = new List<Loop_TDT_ORDERS>();
 
             //  Begin TDT Group
-            var tdtLoop = new TSORDERS_TDTLoop1();
+            var tdtLoop = new Loop_TDT_ORDERS();
 
             //  Order requests that the main carriage transport used to deliver the goods is a truck
             tdtLoop.TDT = new TDT();
@@ -871,13 +871,13 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             tdtLoop.TDT.TRANSPORTMEANS_04.Typeofmeansoftransportidentification_01 = "31";
 
             //  End TDT Group
-            result.TDTLoop1.Add(tdtLoop);
+            result.TDTLoop.Add(tdtLoop);
 
             //  Repeating TOD Groups
-            result.TODLoop1 = new List<TSORDERS_TODLoop1>();
+            result.TODLoop = new List<Loop_TOD_ORDERS>();
 
             //  Begin TOD Group
-            var todLoop = new TSORDERS_TODLoop1();
+            var todLoop = new Loop_TOD_ORDERS();
 
             //  Terms of delivery are to be Cost, Insurance and Freight
             todLoop.TOD = new TOD();
@@ -898,13 +898,13 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             todLoop.LOC.Add(loc);
 
             //  End TOD Group
-            result.TODLoop1.Add(todLoop);
+            result.TODLoop.Add(todLoop);
 
             //  Repeating LIN Groups
-            result.LINLoop1 = new List<TSORDERS_LINLoop1>();
+            result.LINLoop = new List<Loop_LIN_ORDERS>();
 
             //  Begin LIN Group 1
-            var linLoop1 = new TSORDERS_LINLoop1();
+            var linLoop1 = new Loop_LIN_ORDERS();
 
             //  First product order is identified by GTIN 4000862141404
             linLoop1.LIN = new LIN();
@@ -956,10 +956,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             linLoop1.MOA.Add(moa);
 
             //  Repeating PRI Groups
-            linLoop1.PRILoop1 = new List<TSORDERS_PRILoop1>();
+            linLoop1.PRILoop = new List<Loop_PRI_ORDERS>();
 
             //  Begin PRI Group
-            var priLoop = new TSORDERS_PRILoop1();
+            var priLoop = new Loop_PRI_ORDERS();
 
             //  Fixed net calculation price is 14.58 Pounds Sterling
             priLoop.PRI = new PRI();
@@ -972,13 +972,13 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             priLoop.PRI.PRICEINFORMATION_01.Measureunitqualifier_06 = "KGM";
 
             //  End PRI Group
-            linLoop1.PRILoop1.Add(priLoop);
+            linLoop1.PRILoop.Add(priLoop);
 
             //  Repeating RFF Groups
-            linLoop1.RFFLoop3 = new List<TSORDERS_RFFLoop3>();
+            linLoop1.RFFLoop = new List<Loop_RFF_ORDERS>();
 
             //  Begin RFF Group 
-            var rffLoopLin = new TSORDERS_RFFLoop3();
+            var rffLoopLin = new Loop_RFF_ORDERS();
 
             //  Price is taken from the price list AUG93RNG04
             rffLoopLin.RFF = new RFF();
@@ -998,13 +998,13 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             rffLoopLin.DTM.Add(dtmRff);
 
             //  End RFF Group             
-            linLoop1.RFFLoop3.Add(rffLoopLin);
+            linLoop1.RFFLoop.Add(rffLoopLin);
 
             //  Repeating PAC Groups
-            linLoop1.PACLoop2 = new List<TSORDERS_PACLoop2>();
+            linLoop1.PACLoop = new List<Loop_PAC_ORDERS_2>();
 
             //  Begin PAC Group
-            var pacLoop = new TSORDERS_PACLoop2();
+            var pacLoop = new Loop_PAC_ORDERS_2();
 
             //  Two packages (cases) barcoded with ITF14
             pacLoop.PAC = new PAC();
@@ -1015,26 +1015,26 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             pacLoop.PAC.PACKAGETYPE_03.Typeofpackagesidentification_01 = "CS";
 
             //  Repeating PCI Groups
-            pacLoop.PCILoop2 = new List<TSORDERS_PCILoop2>();
+            pacLoop.PCILoop = new List<Loop_PCI_ORDERS>();
 
             //  Begin PCI Group
-            var pciLoop = new TSORDERS_PCILoop2();
+            var pciLoop = new Loop_PCI_ORDERS();
 
             //  The expiry date of the product is to be marked on it's packaging
             pciLoop.PCI = new PCI();
             pciLoop.PCI.Markinginstructionscoded_01 = "14";
 
             //  End PCI Group
-            pacLoop.PCILoop2.Add(pciLoop);
+            pacLoop.PCILoop.Add(pciLoop);
 
             //  End PAC Group
-            linLoop1.PACLoop2.Add(pacLoop);
+            linLoop1.PACLoop.Add(pacLoop);
 
             //  Repeating LOC Groups
-            linLoop1.LOCLoop2 = new List<TSORDERS_LOCLoop2>();
+            linLoop1.LOCLoop = new List<Loop_LOC_ORDERS_2>();
 
             //  Begin LOC Group 1
-            var locLoop1 = new TSORDERS_LOCLoop2();
+            var locLoop1 = new Loop_LOC_ORDERS_2();
 
             //  The second place to which the product is to be delivered is identified by GLN 3312345502000
             locLoop1.LOC = new LOC();
@@ -1061,10 +1061,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             locLoop1.DTM.Add(dtmLoc);
 
             //  End LOC Group 1
-            linLoop1.LOCLoop2.Add(locLoop1);
+            linLoop1.LOCLoop.Add(locLoop1);
 
             //  Begin LOC Group 2
-            var locLoop2 = new TSORDERS_LOCLoop2();
+            var locLoop2 = new Loop_LOC_ORDERS_2();
 
             //  The first place to which the product is to be delivered is identified by GLN 3312345501003
             locLoop2.LOC = new LOC();
@@ -1091,13 +1091,13 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             locLoop2.DTM.Add(dtmLoc2);
 
             //  End LOC Group 2
-            linLoop1.LOCLoop2.Add(locLoop2);
+            linLoop1.LOCLoop.Add(locLoop2);
 
             //  Repeating TAX Groups
-            linLoop1.TAXLoop3 = new List<TSORDERS_TAXLoop3>();
+            linLoop1.TAXLoop = new List<Loop_TAX_ORDERS>();
 
             //  Begin TAX Group
-            var taxLoop = new TSORDERS_TAXLoop3();
+            var taxLoop = new Loop_TAX_ORDERS();
 
             //  The product is subject to the standard VAT rate of 17.5%
             taxLoop.TAX = new TAX();
@@ -1109,10 +1109,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             taxLoop.TAX.Dutytaxfeecategorycoded_06 = "S";
 
             //  End TAX Group
-            linLoop1.TAXLoop3.Add(taxLoop);
+            linLoop1.TAXLoop.Add(taxLoop);
 
             //  End LIN Group 1
-            result.LINLoop1.Add(linLoop1);
+            result.LINLoop.Add(linLoop1);
 
             //  Message detail/summary separator
             result.UNS = new UNS();

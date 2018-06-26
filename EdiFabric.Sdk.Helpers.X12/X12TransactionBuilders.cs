@@ -1,5 +1,5 @@
 ﻿using EdiFabric.Core.Model.Edi.X12;
-using EdiFabric.Rules.X12_004010;
+using EdiFabric.Templates.X12004010;
 using System.Collections.Generic;
 
 namespace EdiFabric.Sdk.Helpers.X12
@@ -29,10 +29,10 @@ namespace EdiFabric.Sdk.Helpers.X12
             result.BIG.ReleaseNumber_05 = "1001";
 
             //  Repeating N1 Loops
-            result.N1Loop1 = new List<TS810_N1Loop1>();
+            result.N1Loop = new List<Loop_N1_810>();
 
             //  Begin N1 Loop
-            var n1Loop = new TS810_N1Loop1();
+            var n1Loop = new Loop_N1_810();
 
             //  Indicates that the ship to party is ABC Aerospace Corporation. ABC's D-U-N-S+4 number is 123456789-0101.
             n1Loop.N1 = new N1();
@@ -56,7 +56,7 @@ namespace EdiFabric.Sdk.Helpers.X12
             n1Loop.N4.PostalCode_03 = "98898";
 
             //  End N1 Loop
-            result.N1Loop1.Add(n1Loop);
+            result.N1Loop.Add(n1Loop);
 
             //  Repeating ITD
             result.ITD = new List<ITD>();
@@ -70,10 +70,10 @@ namespace EdiFabric.Sdk.Helpers.X12
             result.ITD.Add(itd);
 
             //  Repeating IT1 Loops
-            result.IT1Loop1 = new List<TS810_IT1Loop1>();
+            result.IT1Loop = new List<Loop_IT1_810>();
 
             //  Begin IT1 Loop
-            var it1Loop = new TS810_IT1Loop1();
+            var it1Loop = new Loop_IT1_810();
 
             //  Indicates that the purchase order's line number was 1. The invoice is for 48 units costing $3.00 each for manufacturer's part number R5656-2.
             it1Loop.IT1 = new IT1();
@@ -85,7 +85,7 @@ namespace EdiFabric.Sdk.Helpers.X12
             it1Loop.IT1.ProductServiceID_07 = "R5656-2";
 
             //  End IT1 Loop
-            result.IT1Loop1.Add(it1Loop);
+            result.IT1Loop.Add(it1Loop);
 
             //  Indicates that the total invoice amount is $144.00.
             result.TDS = new TDS();
@@ -142,10 +142,10 @@ namespace EdiFabric.Sdk.Helpers.X12
             result.TAX.Add(tax);
 
             //  Repeating N1 Loops  
-            result.N1Loop1 = new List<TS850_N1Loop1>();
+            result.N1Loop = new List<Loop_N1_850>();
 
             //  Begin N1 Loop 
-            var n1Loop = new TS850_N1Loop1();
+            var n1Loop = new Loop_N1_850();
 
             //  Indicates that the buyer is ABC Aerospace. ABC's D-U-N-S+4 number is 123456789-0101.
             n1Loop.N1 = new N1();
@@ -181,13 +181,13 @@ namespace EdiFabric.Sdk.Helpers.X12
             n1Loop.N4.Add(n4);
 
             //  End N1 Loop 
-            result.N1Loop1.Add(n1Loop);
+            result.N1Loop.Add(n1Loop);
 
             //  Repeating PO1 Loops  
-            result.PO1Loop1 = new List<TS850_PO1Loop1>();
+            result.PO1Loop = new List<Loop_PO1_850>();
 
             //  Begin PO1 Loop 
-            var pO1Loop = new TS850_PO1Loop1();
+            var pO1Loop = new Loop_PO1_850();
 
             //  Indicates Baseline item 1 is a request to purchase 25 units, with a price of $36.00 each, of manufacturer's part number XYZ-1234.
             pO1Loop.PO1 = new PO1();
@@ -216,10 +216,10 @@ namespace EdiFabric.Sdk.Helpers.X12
             pO1Loop.IT8.ProductServiceSubstitutionCode_07 = "B0";
 
             //  Repeating SCH Loops  
-            pO1Loop.SCHLoop1 = new List<TS850_SCHLoop1>();
+            pO1Loop.SCHLoop = new List<Loop_SCH_850>();
 
             //  Begin SCH Loop 
-            var schLoop = new TS850_SCHLoop1();
+            var schLoop = new Loop_SCH_850();
 
             //  Indicates that the 25 units are required to arrive by June 15, 2017.
             schLoop.SCH = new SCH();
@@ -229,22 +229,22 @@ namespace EdiFabric.Sdk.Helpers.X12
             schLoop.SCH.Date_06 = "20170615";
 
             //  End SCH Loop 
-            pO1Loop.SCHLoop1.Add(schLoop);
+            pO1Loop.SCHLoop.Add(schLoop);
 
             //  End PO1 Loop 
-            result.PO1Loop1.Add(pO1Loop);
+            result.PO1Loop.Add(pO1Loop);
 
             //  Begin CTT Loop   
-            result.CTTLoop1 = new TS850_CTTLoop1();
+            result.CTTLoop = new Loop_CTT_850();
 
             //  Indicates that the purchase order contains 1 line item.
-            result.CTTLoop1.CTT = new CTT();
-            result.CTTLoop1.CTT.NumberofLineItems_01 = "1";
+            result.CTTLoop.CTT = new CTT();
+            result.CTTLoop.CTT.NumberofLineItems_01 = "1";
 
             //  Indicates that the total amount of the purchase order is $900.
-            result.CTTLoop1.AMT = new AMT();
-            result.CTTLoop1.AMT.AmountQualifierCode_01 = "TT";
-            result.CTTLoop1.AMT.MonetaryAmount_02 = "900";
+            result.CTTLoop.AMT = new AMT();
+            result.CTTLoop.AMT.AmountQualifierCode_01 = "TT";
+            result.CTTLoop.AMT.MonetaryAmount_02 = "900";
 
             //  End CTT Loop   
 

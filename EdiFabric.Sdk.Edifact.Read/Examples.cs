@@ -9,7 +9,7 @@ using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Edi.Edifact;
 using EdiFabric.Core.Model.Edi.ErrorContexts;
 using EdiFabric.Framework.Readers;
-using EdiFabric.Rules.EDIFACT_D96A;
+using EdiFabric.Templates.EdifactD96A;
 using EdiFabric.Sdk.Helpers.Edifact;
 
 namespace EdiFabric.Sdk.Edifact.Read
@@ -196,7 +196,7 @@ namespace EdiFabric.Sdk.Edifact.Read
                 ediItems = ediReader.ReadToEnd().ToList();
 
             //  Find all LIN loops, they are all separate ediItems\EdiMessages
-            var linLoop = ediItems.OfType<TSORDERSSplit>().Where(m => m.LINLoop1 != null).SelectMany(m => m.LINLoop1);
+            var linLoop = ediItems.OfType<TSORDERSSplit>().Where(m => m.LINLoop != null).SelectMany(m => m.LINLoop);
             Debug.WriteLine(string.Format("LIN parts {0}", linLoop.Count()));
         }
 

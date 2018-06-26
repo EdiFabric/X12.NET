@@ -1,4 +1,4 @@
-namespace EdiFabric.Rules.EDIFACT_D96A
+namespace EdiFabric.Templates.EdifactD96A
 {
     using System;
     using EdiFabric.Core.Annotations.Edi;

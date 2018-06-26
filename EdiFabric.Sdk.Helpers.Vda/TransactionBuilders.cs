@@ -1,4 +1,4 @@
-﻿using EdiFabric.Rules.Vda;
+﻿using EdiFabric.Templates.Vda;
 using System.Collections.Generic;
 
 namespace EdiFabric.Sdk.Helpers.Vda

@@ -1,7 +1,7 @@
 ﻿using EdiFabric.Core.Model.Edi.X12;
 using EdiFabric.Framework;
 using EdiFabric.Rules.HIPAA_5010;
-using EdiFabric.Rules.X12_004010;
+using EdiFabric.Templates.X12004010;
 using System;
 using System.Reflection;
 

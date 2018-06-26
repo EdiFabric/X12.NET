@@ -1,4 +1,4 @@
-namespace EdiFabric.Rules.EDIFACT_D96A
+namespace EdiFabric.Templates.EdifactD96A
 {
     using System;
     using System.Collections.Generic;
@@ -12,6 +12,6 @@ namespace EdiFabric.Rules.EDIFACT_D96A
         [Splitter]
         [ListCount(200000)]
         [Pos(21)]
-        public new List<TSORDERS_LINLoop1> LINLoop1 { get; set; }       
+        public new List<Loop_LIN_ORDERS> LINLoop { get; set; }       
     }
 }

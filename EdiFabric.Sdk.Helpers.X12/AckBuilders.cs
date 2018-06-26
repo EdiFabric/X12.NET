@@ -2,7 +2,7 @@
 using EdiFabric.Core.Model.Edi.X12;
 using EdiFabric.Framework.Writers;
 using EdiFabric.Plugins.Acknowledgments.X12.Model;
-using EdiFabric.Rules.X12_005010X231A1;
+using EdiFabric.Templates.X12004010;
 using System;
 using System.IO;
 using System.Text;

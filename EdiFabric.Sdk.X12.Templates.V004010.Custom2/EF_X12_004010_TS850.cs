@@ -1,4 +1,4 @@
-namespace EdiFabric.Rules.X12_004010
+namespace EdiFabric.Templates.X12004010
 {
     using System;
     using System.Collections.Generic;
@@ -14,12 +14,12 @@ namespace EdiFabric.Rules.X12_004010
     {
         [ListCount(200)]
         [Pos(34)]
-        public new List<TS850_N1Loop1Inherited1> N1Loop1 { get; set; }
+        public new List<TS850_N1Loop1Inherited1> N1Loop { get; set; }
     }
 
     [Serializable()]
     [Group(typeof(N1))]
-    public class TS850_N1Loop1Inherited1 : TS850_N1Loop1
+    public class TS850_N1Loop1Inherited1 : Loop_N1_850
     {
         //  Swap the positions of N2 and N3
         [ListCount(2)]

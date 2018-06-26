@@ -1,5 +1,5 @@
 ﻿using EdiFabric.Framework;
-using EdiFabric.Rules.Vda;
+using EdiFabric.Templates.Vda;
 using System.Reflection;
 
 namespace EdiFabric.Sdk.Helpers.Vda

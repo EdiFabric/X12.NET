@@ -4,7 +4,7 @@ using EdiFabric.Core.Annotations.Edi;
 using EdiFabric.Core.Annotations.Validation;
 using EdiFabric.Core.Model.Edi;
 
-namespace EdiFabric.Rules.Vda
+namespace EdiFabric.Templates.Vda
 {
     [Serializable()]
     [Message("VDA", "1", "4905")]

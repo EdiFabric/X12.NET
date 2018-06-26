@@ -1,4 +1,4 @@
-namespace EdiFabric.Rules.X12_005010X231A1
+namespace EdiFabric.Templates.X12004010
 {
     using System;
     using System.Collections.Generic;

@@ -1,4 +1,4 @@
-namespace EdiFabric.Rules.X12_004010
+namespace EdiFabric.Templates.X12004010
 {
     using System;
     using System.Collections.Generic;
@@ -15,12 +15,12 @@ namespace EdiFabric.Rules.X12_004010
     {
         [ListCount(200)]
         [Pos(34)]
-        public new List<TS850_N1Loop1Validation> N1Loop1 { get; set; }
+        public new List<TS850_N1Loop1Validation> N1Loop { get; set; }
     }
 
     [Serializable()]
     [Group(typeof(N1))]
-    public class TS850_N1Loop1Validation : TS850_N1Loop1, IEdiValidator
+    public class TS850_N1Loop1Validation : Loop_N1_850, IEdiValidator
     {
         public List<SegmentErrorContext> ValidateEdi(ValidationContext validationContext)
         {

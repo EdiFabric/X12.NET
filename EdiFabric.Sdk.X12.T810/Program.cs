@@ -2,7 +2,7 @@
 using EdiFabric.Core.Model.Edi.ErrorContexts;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Framework.Writers;
-using EdiFabric.Rules.X12_004010;
+using EdiFabric.Templates.X12004010;
 using EdiFabric.Sdk.Helpers;
 using EdiFabric.Sdk.Helpers.X12;
 using System.Collections.Generic;

@@ -9,7 +9,7 @@ using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Edi.ErrorContexts;
 using EdiFabric.Core.Model.Edi.X12;
 using EdiFabric.Framework.Readers;
-using EdiFabric.Rules.X12_004010;
+using EdiFabric.Templates.X12004010;
 using EdiFabric.Sdk.Helpers.X12;
 
 namespace EdiFabric.Sdk.X12.Read
@@ -196,7 +196,7 @@ namespace EdiFabric.Sdk.X12.Read
                 ediItems = ediReader.ReadToEnd().ToList();
 
             //  Find all N1 loops, they are all different ediItems
-            var poLoop = ediItems.OfType<TS850Split>().Where(m => m.PO1Loop1 != null).SelectMany(m => m.PO1Loop1);
+            var poLoop = ediItems.OfType<TS850Split>().Where(m => m.PO1Loop != null).SelectMany(m => m.PO1Loop);
             Debug.WriteLine(string.Format("PO parts {0}", poLoop.Count()));
         }
 

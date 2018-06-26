@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Xml.Linq;
 using EdiFabric.Core.Model.Edi;
 using EdiFabric.Framework.Readers;
-using EdiFabric.Rules.EDIFACT_D96A;
+using EdiFabric.Templates.EdifactD96A;
 using EdiFabric.Sdk.Helpers;
 using EdiFabric.Sdk.Helpers.Edifact;
 

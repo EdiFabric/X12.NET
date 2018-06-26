@@ -1,6 +1,6 @@
 ﻿using EdiFabric.Core.Model.Edi.Edifact;
 using EdiFabric.Framework;
-using EdiFabric.Rules.EDIFACT_D96A;
+using EdiFabric.Templates.EdifactD96A;
 using System.Reflection;
 
 namespace EdiFabric.Sdk.Helpers.Edifact
