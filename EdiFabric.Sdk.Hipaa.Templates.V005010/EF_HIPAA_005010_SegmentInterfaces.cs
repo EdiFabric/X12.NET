@@ -10,7 +10,7 @@ namespace EdiFabric.Templates.Hipaa5010
     using System.Xml.Serialization;
     
     
-    public interface AMT
+    public interface IAMT
     {
         
         string AmountQualifierCode_01 { get; set; }
@@ -18,7 +18,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string CreditDebitFlagCode_03 { get; set; }
     }
     
-    public interface CRC
+    public interface ICRC
     {
         
         string CodeCategory_01 { get; set; }
@@ -30,7 +30,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string ConditionCode_07 { get; set; }
     }
     
-    public interface DTP
+    public interface IDTP
     {
         
         string DateTimeQualifier_01 { get; set; }
@@ -38,19 +38,19 @@ namespace EdiFabric.Templates.Hipaa5010
         string AccidentDate_03 { get; set; }
     }
     
-    public interface HI<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>
-        where T1 : C022
-        where T2 : C022
-        where T3 : C022
-        where T4 : C022
-        where T5 : C022
-        where T6 : C022
-        where T7 : C022
-        where T8 : C022
-        where T9 : C022
-        where T10 : C022
-        where T11 : C022
-        where T12 : C022
+    public interface IHI<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12>
+        where T1 : IC022
+        where T2 : IC022
+        where T3 : IC022
+        where T4 : IC022
+        where T5 : IC022
+        where T6 : IC022
+        where T7 : IC022
+        where T8 : IC022
+        where T9 : IC022
+        where T10 : IC022
+        where T11 : IC022
+        where T12 : IC022
     {
         
         T1 HealthCareCodeInformation_01 { get; set; }
@@ -67,15 +67,15 @@ namespace EdiFabric.Templates.Hipaa5010
         T12 HealthCareCodeInformation_12 { get; set; }
     }
     
-    public interface NTE
+    public interface INTE
     {
         
         string NoteReferenceCode_01 { get; set; }
         string BillingNoteText_02 { get; set; }
     }
     
-    public interface PWK<T1>
-        where T1 : C002
+    public interface IPWK<T1>
+        where T1 : IC002
     {
         
         string AttachmentReportTypeCode_01 { get; set; }
@@ -89,8 +89,8 @@ namespace EdiFabric.Templates.Hipaa5010
         string RequestCategoryCode_09 { get; set; }
     }
     
-    public interface QTY<T1>
-        where T1 : C001
+    public interface IQTY<T1>
+        where T1 : IC001
     {
         
         string QuantityQualifier_01 { get; set; }
@@ -99,8 +99,8 @@ namespace EdiFabric.Templates.Hipaa5010
         string FreeformInformation_04 { get; set; }
     }
     
-    public interface REF<T1>
-        where T1 : C040
+    public interface IREF<T1>
+        where T1 : IC040
     {
         
         string ReferenceIdentificationQualifier_01 { get; set; }
@@ -109,7 +109,7 @@ namespace EdiFabric.Templates.Hipaa5010
         T1 ReferenceIdentifier_04 { get; set; }
     }
     
-    public interface NM1
+    public interface INM1
     {
         
         string EntityIdentifierCode_01 { get; set; }
@@ -126,7 +126,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string NameLastorOrganizationName_12 { get; set; }
     }
     
-    public interface PER
+    public interface IPER
     {
         
         string ContactFunctionCode_01 { get; set; }
@@ -140,7 +140,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string ContactInquiryReference_09 { get; set; }
     }
     
-    public interface HL
+    public interface IHL
     {
         
         string HierarchicalIDNumber_01 { get; set; }
@@ -149,8 +149,8 @@ namespace EdiFabric.Templates.Hipaa5010
         string HierarchicalChildCode_04 { get; set; }
     }
     
-    public interface PRV<T1>
-        where T1 : C035
+    public interface IPRV<T1>
+        where T1 : IC035
     {
         
         string ProviderCode_01 { get; set; }
@@ -161,7 +161,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string ProviderOrganizationCode_06 { get; set; }
     }
     
-    public interface CUR
+    public interface ICUR
     {
         
         string EntityIdentifierCode_01 { get; set; }
@@ -187,7 +187,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string Time_21 { get; set; }
     }
     
-    public interface SBR
+    public interface ISBR
     {
         
         string PayerResponsibilitySequenceNumberCode_01 { get; set; }
@@ -201,7 +201,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string ClaimFilingIndicatorCode_09 { get; set; }
     }
     
-    public interface PAT
+    public interface IPAT
     {
         
         string IndividualRelationshipCode_01 { get; set; }
@@ -215,14 +215,14 @@ namespace EdiFabric.Templates.Hipaa5010
         string PregnancyIndicator_09 { get; set; }
     }
     
-    public interface N3
+    public interface IN3
     {
         
         string ResponseContactAddressLine_01 { get; set; }
         string ResponseContactAddressLine_02 { get; set; }
     }
     
-    public interface N4
+    public interface IN4
     {
         
         string AdditionalPatientInformationContactCityName_01 { get; set; }
@@ -234,8 +234,8 @@ namespace EdiFabric.Templates.Hipaa5010
         string CountrySubdivisionCode_07 { get; set; }
     }
     
-    public interface DMG<T1>
-        where T1 : C056
+    public interface IDMG<T1>
+        where T1 : IC056
     {
         
         string DateTimePeriodFormatQualifier_01 { get; set; }
@@ -251,9 +251,9 @@ namespace EdiFabric.Templates.Hipaa5010
         string IndustryCode_11 { get; set; }
     }
     
-    public interface CLM<T1, T2>
-        where T1 : C023
-        where T2 : C024
+    public interface ICLM<T1, T2>
+        where T1 : IC023
+        where T2 : IC024
     {
         
         string PatientControlNumber_01 { get; set; }
@@ -278,7 +278,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string DelayReasonCode_20 { get; set; }
     }
     
-    public interface CN1
+    public interface ICN1
     {
         
         string ContractTypeCode_01 { get; set; }
@@ -289,8 +289,8 @@ namespace EdiFabric.Templates.Hipaa5010
         string ContractVersionIdentifier_06 { get; set; }
     }
     
-    public interface K3<T1>
-        where T1 : C001
+    public interface IK3<T1>
+        where T1 : IC001
     {
         
         string FixedFormatInformation_01 { get; set; }
@@ -298,7 +298,7 @@ namespace EdiFabric.Templates.Hipaa5010
         T1 CompositeUnitofMeasure_03 { get; set; }
     }
     
-    public interface CR1
+    public interface ICR1
     {
         
         string UnitorBasisforMeasurementCode_01 { get; set; }
@@ -313,7 +313,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string StretcherPurposeDescription_10 { get; set; }
     }
     
-    public interface CR2
+    public interface ICR2
     {
         
         string Count_01 { get; set; }
@@ -330,7 +330,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string YesNoConditionorResponseCode_12 { get; set; }
     }
     
-    public interface HCP
+    public interface IHCP
     {
         
         string PricingMethodology_01 { get; set; }
@@ -350,7 +350,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string ExceptionCode_15 { get; set; }
     }
     
-    public interface CAS
+    public interface ICAS
     {
         
         string ClaimAdjustmentGroupCode_01 { get; set; }
@@ -374,7 +374,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string AdjustmentQuantity_19 { get; set; }
     }
     
-    public interface OI
+    public interface IOI
     {
         
         string ClaimFilingIndicatorCode_01 { get; set; }
@@ -385,7 +385,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string ReleaseofInformationCode_06 { get; set; }
     }
     
-    public interface MOA
+    public interface IMOA
     {
         
         string ReimbursementRate_01 { get; set; }
@@ -399,15 +399,15 @@ namespace EdiFabric.Templates.Hipaa5010
         string NonPayableProfessionalComponentBilledAmount_09 { get; set; }
     }
     
-    public interface LX
+    public interface ILX
     {
         
         string AssignedNumber_01 { get; set; }
     }
     
-    public interface SV1<T1, T2>
-        where T1 : C003
-        where T2 : C004
+    public interface ISV1<T1, T2>
+        where T1 : IC003
+        where T2 : IC004
     {
         
         T1 CompositeMedicalProcedureIdentifier_01 { get; set; }
@@ -433,8 +433,8 @@ namespace EdiFabric.Templates.Hipaa5010
         string ProviderAgreementCode_21 { get; set; }
     }
     
-    public interface SV5<T1>
-        where T1 : C003
+    public interface ISV5<T1>
+        where T1 : IC003
     {
         
         T1 CompositeMedicalProcedureIdentifier_01 { get; set; }
@@ -446,7 +446,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string PrognosisCode_07 { get; set; }
     }
     
-    public interface CR3
+    public interface ICR3
     {
         
         string CertificationTypeCode_01 { get; set; }
@@ -456,8 +456,8 @@ namespace EdiFabric.Templates.Hipaa5010
         string Description_05 { get; set; }
     }
     
-    public interface MEA<T1>
-        where T1 : C001
+    public interface IMEA<T1>
+        where T1 : IC001
     {
         
         string MeasurementReferenceIdentificationCode_01 { get; set; }
@@ -474,7 +474,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string IndustryCode_12 { get; set; }
     }
     
-    public interface PS1
+    public interface IPS1
     {
         
         string PurchasedServiceProviderIdentifier_01 { get; set; }
@@ -482,7 +482,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string StateorProvinceCode_03 { get; set; }
     }
     
-    public interface LIN
+    public interface ILIN
     {
         
         string AssignedIdentification_01 { get; set; }
@@ -518,8 +518,8 @@ namespace EdiFabric.Templates.Hipaa5010
         string ProductServiceID_31 { get; set; }
     }
     
-    public interface CTP<T1>
-        where T1 : C001
+    public interface ICTP<T1>
+        where T1 : IC001
     {
         
         string ClassofTradeCode_01 { get; set; }
@@ -535,8 +535,8 @@ namespace EdiFabric.Templates.Hipaa5010
         string MultiplePriceQuantity_11 { get; set; }
     }
     
-    public interface SVD<T1>
-        where T1 : C003
+    public interface ISVD<T1>
+        where T1 : IC003
     {
         
         string OtherPayerPrimaryIdentifier_01 { get; set; }
@@ -547,14 +547,14 @@ namespace EdiFabric.Templates.Hipaa5010
         string BundledorUnbundledLineNumber_06 { get; set; }
     }
     
-    public interface LQ
+    public interface ILQ
     {
         
         string CodeListQualifierCode_01 { get; set; }
         string FormIdentifier_02 { get; set; }
     }
     
-    public interface FRM
+    public interface IFRM
     {
         
         string QuestionNumberLetter_01 { get; set; }
@@ -564,7 +564,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string QuestionResponse_05 { get; set; }
     }
     
-    public interface BHT
+    public interface IBHT
     {
         
         string HierarchicalStructureCode_01 { get; set; }

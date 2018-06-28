@@ -332,7 +332,7 @@ namespace EdiFabric.Templates.X12004010
         /// Standard Carrier Alpha Code
         /// </summary>
         [StringLength(2, 4)]
-        [DataElement("140", typeof(X12_ID))]
+        [DataElement("140", typeof(X12_AN))]
         [Pos(4)]
         public string StandardCarrierAlphaCode_04 { get; set; }
         /// <summary>
@@ -782,7 +782,7 @@ namespace EdiFabric.Templates.X12004010
         /// </summary>
         [Required]
         [StringLength(3, 3)]
-        [DataElement("100", typeof(X12_ID))]
+        [DataElement("100", typeof(X12_AN))]
         [Pos(2)]
         public string CurrencyCode_02 { get; set; }
         /// <summary>
@@ -802,7 +802,7 @@ namespace EdiFabric.Templates.X12004010
         /// Currency Code
         /// </summary>
         [StringLength(3, 3)]
-        [DataElement("100", typeof(X12_ID))]
+        [DataElement("100", typeof(X12_AN))]
         [Pos(5)]
         public string CurrencyCode_05 { get; set; }
         /// <summary>
@@ -1016,7 +1016,7 @@ namespace EdiFabric.Templates.X12004010
         /// Country Code
         /// </summary>
         [StringLength(2, 3)]
-        [DataElement("26", typeof(X12_ID))]
+        [DataElement("26", typeof(X12_AN))]
         [Pos(7)]
         public string CountryCode_07 { get; set; }
         /// <summary>
@@ -1891,7 +1891,7 @@ namespace EdiFabric.Templates.X12004010
         /// Tariff Agency Code
         /// </summary>
         [StringLength(1, 4)]
-        [DataElement("168", typeof(X12_ID))]
+        [DataElement("168", typeof(X12_AN))]
         [Pos(2)]
         public string TariffAgencyCode_02 { get; set; }
         /// <summary>
@@ -1988,7 +1988,7 @@ namespace EdiFabric.Templates.X12004010
         /// State or Province Code
         /// </summary>
         [StringLength(2, 2)]
-        [DataElement("156", typeof(X12_ID))]
+        [DataElement("156", typeof(X12_AN))]
         [Pos(16)]
         public string StateorProvinceCode_16 { get; set; }
     }
@@ -2638,21 +2638,21 @@ namespace EdiFabric.Templates.X12004010
         /// State or Province Code
         /// </summary>
         [StringLength(2, 2)]
-        [DataElement("156", typeof(X12_ID))]
+        [DataElement("156", typeof(X12_AN))]
         [Pos(2)]
         public string StateorProvinceCode_02 { get; set; }
         /// <summary>
         /// Postal Code
         /// </summary>
         [StringLength(3, 15)]
-        [DataElement("116", typeof(X12_ID))]
+        [DataElement("116", typeof(X12_AN))]
         [Pos(3)]
         public string PostalCode_03 { get; set; }
         /// <summary>
         /// Country Code
         /// </summary>
         [StringLength(2, 3)]
-        [DataElement("26", typeof(X12_ID))]
+        [DataElement("26", typeof(X12_AN))]
         [Pos(4)]
         public string CountryCode_04 { get; set; }
         /// <summary>
@@ -2777,7 +2777,7 @@ namespace EdiFabric.Templates.X12004010
         /// County Designator
         /// </summary>
         [StringLength(5, 5)]
-        [DataElement("1096", typeof(X12_ID))]
+        [DataElement("1096", typeof(X12_AN))]
         [Pos(3)]
         public string CountyDesignator_03 { get; set; }
     }
@@ -3047,7 +3047,7 @@ namespace EdiFabric.Templates.X12004010
         /// Language Code
         /// </summary>
         [StringLength(2, 3)]
-        [DataElement("819", typeof(X12_ID))]
+        [DataElement("819", typeof(X12_AN))]
         [Pos(9)]
         public string LanguageCode_09 { get; set; }
     }
@@ -3610,7 +3610,7 @@ namespace EdiFabric.Templates.X12004010
         /// Country Code
         /// </summary>
         [StringLength(2, 3)]
-        [DataElement("26", typeof(X12_ID))]
+        [DataElement("26", typeof(X12_AN))]
         [Pos(5)]
         public string CountryCode_05 { get; set; }
         /// <summary>
@@ -3631,7 +3631,7 @@ namespace EdiFabric.Templates.X12004010
         /// State or Province Code
         /// </summary>
         [StringLength(2, 2)]
-        [DataElement("156", typeof(X12_ID))]
+        [DataElement("156", typeof(X12_AN))]
         [Pos(8)]
         public string StateorProvinceCode_08 { get; set; }
     }
@@ -3784,7 +3784,7 @@ namespace EdiFabric.Templates.X12004010
         /// Language Code
         /// </summary>
         [StringLength(2, 3)]
-        [DataElement("819", typeof(X12_ID))]
+        [DataElement("819", typeof(X12_AN))]
         [Pos(16)]
         public string LanguageCode_16 { get; set; }
     }
@@ -4865,7 +4865,7 @@ namespace EdiFabric.Templates.X12004010
         /// Equipment Type
         /// </summary>
         [StringLength(4, 4)]
-        [DataElement("24", typeof(X12_ID))]
+        [DataElement("24", typeof(X12_AN))]
         [Pos(10)]
         public string EquipmentType_10 { get; set; }
     }
@@ -5012,7 +5012,7 @@ namespace EdiFabric.Templates.X12004010
         /// Country Code
         /// </summary>
         [StringLength(2, 3)]
-        [DataElement("26", typeof(X12_ID))]
+        [DataElement("26", typeof(X12_AN))]
         [Pos(15)]
         public string CountryCode_15 { get; set; }
     }
@@ -5145,7 +5145,7 @@ namespace EdiFabric.Templates.X12004010
         /// Vessel Code
         /// </summary>
         [StringLength(1, 8)]
-        [DataElement("597", typeof(X12_ID))]
+        [DataElement("597", typeof(X12_AN))]
         [Pos(1)]
         public string VesselCode_01 { get; set; }
         /// <summary>
@@ -5159,7 +5159,7 @@ namespace EdiFabric.Templates.X12004010
         /// Country Code
         /// </summary>
         [StringLength(2, 3)]
-        [DataElement("26", typeof(X12_ID))]
+        [DataElement("26", typeof(X12_AN))]
         [Pos(3)]
         public string CountryCode_03 { get; set; }
         /// <summary>
@@ -5173,7 +5173,7 @@ namespace EdiFabric.Templates.X12004010
         /// Standard Carrier Alpha Code
         /// </summary>
         [StringLength(2, 4)]
-        [DataElement("140", typeof(X12_ID))]
+        [DataElement("140", typeof(X12_AN))]
         [Pos(5)]
         public string StandardCarrierAlphaCode_05 { get; set; }
         /// <summary>

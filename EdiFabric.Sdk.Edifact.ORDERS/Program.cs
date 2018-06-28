@@ -55,7 +55,7 @@ namespace EdiFabric.Sdk.Edifact.ORDERS
         {
             using (var stream = new MemoryStream())
             {
-                var transaction = TransactionBuilders.BuildPurchaseOrder("1");
+                var transaction = EdifactTransactionBuilders.BuildPurchaseOrder("1");
 
                 MessageErrorContext mec;
                 if (transaction.IsValid(out mec, true))

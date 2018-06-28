@@ -2,14 +2,14 @@
 using EdiFabric.Core.Model.Edi.ErrorContexts;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Framework.Writers;
-using EdiFabric.Templates.EdifactD96A;
+using EdiFabric.Templates.EancomD01B;
 using EdiFabric.Sdk.Helpers;
 using EdiFabric.Sdk.Helpers.Edifact;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace EdiFabric.Sdk.Edifact.INVOIC
+namespace EdiFabric.Sdk.Eancom.INVOIC
 {
     class Program
     {
@@ -24,7 +24,7 @@ namespace EdiFabric.Sdk.Edifact.INVOIC
         /// </summary>
         static void Read()
         {
-            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\Invoice.txt");
+            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Eancom\Invoice.txt");
 
             List<IEdiItem> ediItems;
             using (var ediReader = new EdifactReader(ediStream, TemplateFactory.FullTemplateFactory))
@@ -54,7 +54,7 @@ namespace EdiFabric.Sdk.Edifact.INVOIC
         {
             using (var stream = new MemoryStream())
             {
-                var transaction = EdifactTransactionBuilders.BuildInvoice("1");
+                var transaction = EancomTransactionBuilders.BuildInvoice("1");
 
                 MessageErrorContext mec;
                 if (transaction.IsValid(out mec, true))
@@ -72,8 +72,8 @@ namespace EdiFabric.Sdk.Edifact.INVOIC
                 {
                     //  invalid
                     var errors = mec.Flatten();
-                }                
-            }            
-        }        
+                }
+            }
+        }
     }
 }

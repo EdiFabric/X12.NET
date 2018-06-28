@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace EdiFabric.Sdk.Helpers.Edifact
 {
-    public static class TransactionBuilders
+    public static class EdifactTransactionBuilders
     {
         /// <summary>
         /// Build invoice.
@@ -1129,6 +1129,6 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             result.CNT.Add(cnt);
 
             return result;
-        }
+        }       
     }
 }

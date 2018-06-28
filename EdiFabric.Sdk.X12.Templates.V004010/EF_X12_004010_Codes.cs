@@ -19,14 +19,6 @@ namespace EdiFabric.Templates.X12004010
     }
     
     /// <summary>
-    /// Language Code
-    /// </summary>
-    [Serializable()]
-    public class X12_ID
-    {
-    }
-    
-    /// <summary>
     /// Percent Qualifier
     /// </summary>
     [Serializable()]

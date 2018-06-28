@@ -4,16 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7E894F74-9AE6-4C83-B4AA-F70BBD125B44}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EdiFabric.Sdk.Helpers.Edifact</RootNamespace>
-    <AssemblyName>EdiFabric.Sdk.Helpers.Edifact</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ProjectGuid>{BBC84F44-4F6C-4CA4-A5F1-A1CDAC5C03E1}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>EdiFabric.Sdk.Eancom.INVOIC</RootNamespace>
+    <AssemblyName>EdiFabric.Sdk.Eancom.INVOIC</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -47,41 +48,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AckBuilders.cs" />
-    <Compile Include="EancomTransactionBuilders.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SegmentBuilders.cs" />
-    <Compile Include="TemplateFactory.cs" />
-    <Compile Include="EdifactTransactionBuilders.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EdiFabric.Sdk.Eancom.Templates.D01B.Syntax3\EdiFabric.Sdk.Eancom.Templates.D01B.Syntax3.csproj">
       <Project>{cc7c424f-2a42-40b0-a840-0b58d4065624}</Project>
       <Name>EdiFabric.Sdk.Eancom.Templates.D01B.Syntax3</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Sdk.Edifact.Templates.D96A.Custom1\EdiFabric.Sdk.Edifact.Templates.D96A.Custom1.csproj">
-      <Project>{656eb62e-1c93-4f77-bbd0-b34dd9353cba}</Project>
-      <Name>EdiFabric.Sdk.Edifact.Templates.D96A.Custom1</Name>
+    <ProjectReference Include="..\EdiFabric.Sdk.Helpers.Edifact\EdiFabric.Sdk.Helpers.Edifact.csproj">
+      <Project>{7e894f74-9ae6-4c83-b4aa-f70bbd125b44}</Project>
+      <Name>EdiFabric.Sdk.Helpers.Edifact</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Sdk.Edifact.Templates.D96A.Custom2\EdiFabric.Sdk.Edifact.Templates.D96A.Custom2.csproj">
-      <Project>{811a8aa4-32d2-4a89-bfba-27bbdc6683e9}</Project>
-      <Name>EdiFabric.Sdk.Edifact.Templates.D96A.Custom2</Name>
+    <ProjectReference Include="..\EdiFabric.Sdk.Helpers\EdiFabric.Sdk.Helpers.csproj">
+      <Project>{4c09fee1-decb-42ec-9b0a-dad7e7232005}</Project>
+      <Name>EdiFabric.Sdk.Helpers</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Sdk.Edifact.Templates.D96A.Split\EdiFabric.Sdk.Edifact.Templates.D96A.Split.csproj">
-      <Project>{e5d3d04a-27b7-45bc-b6b2-4e28f36daff6}</Project>
-      <Name>EdiFabric.Sdk.Edifact.Templates.D96A.Split</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Sdk.Edifact.Templates.D96A.Validation\EdiFabric.Sdk.Edifact.Templates.D96A.Validation.csproj">
-      <Project>{07338dd9-d72e-4f8e-bcea-d31b315a3d9a}</Project>
-      <Name>EdiFabric.Sdk.Edifact.Templates.D96A.Validation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Sdk.Edifact.Templates.D96A\EdiFabric.Sdk.Edifact.Templates.D96A.csproj">
-      <Project>{a6b9ede5-99e9-4696-9cee-6b6fff45cc12}</Project>
-      <Name>EdiFabric.Sdk.Edifact.Templates.D96A</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

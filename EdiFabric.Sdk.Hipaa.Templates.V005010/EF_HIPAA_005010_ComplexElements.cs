@@ -14,7 +14,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [Composite("C022")]
-    public class C022_HealthCareCodeInformation_8 : C022
+    public class C022_HealthCareCodeInformation_8 : IC022
     {
         
         /// <summary>
@@ -88,7 +88,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [Composite("C022")]
-    public class C022_HealthCareCodeInformation_4 : C022
+    public class C022_HealthCareCodeInformation_4 : IC022
     {
         
         /// <summary>
@@ -162,7 +162,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [Composite("C022")]
-    public class C022_HealthCareCodeInformation : C022
+    public class C022_HealthCareCodeInformation : IC022
     {
         
         /// <summary>
@@ -236,7 +236,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [Composite("C022")]
-    public class C022_HealthCareCodeInformation_12 : C022
+    public class C022_HealthCareCodeInformation_12 : IC022
     {
         
         /// <summary>
@@ -310,7 +310,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [Composite("C022")]
-    public class C022_HealthCareCodeInformation_15 : C022
+    public class C022_HealthCareCodeInformation_15 : IC022
     {
         
         /// <summary>
@@ -384,7 +384,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [Composite("C022")]
-    public class C022_HealthCareCodeInformation_13 : C022
+    public class C022_HealthCareCodeInformation_13 : IC022
     {
         
         /// <summary>
@@ -458,7 +458,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [Composite("C002")]
-    public class C002_ActionsIndicated_2 : C002
+    public class C002_ActionsIndicated_2 : IC002
     {
         
         /// <summary>
@@ -499,7 +499,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [Composite("C001")]
-    public class C001_CompositeUnitofMeasure : C001
+    public class C001_CompositeUnitofMeasure : IC001
     {
         
         /// <summary>
@@ -610,7 +610,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [Composite("C040")]
-    public class C040_ReferenceIdentifier : C040
+    public class C040_ReferenceIdentifier : IC040
     {
         
         /// <summary>
@@ -663,7 +663,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [Composite("C040")]
-    public class C040_ReferenceIdentifier_7 : C040
+    public class C040_ReferenceIdentifier_7 : IC040
     {
         
         /// <summary>
@@ -715,7 +715,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [Composite("C035")]
-    public class C035_ProviderSpecialtyInformation : C035
+    public class C035_ProviderSpecialtyInformation : IC035
     {
         
         /// <summary>
@@ -744,7 +744,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [Composite("C056")]
-    public class C056_CompositeRaceorEthnicityInformation : C056
+    public class C056_CompositeRaceorEthnicityInformation : IC056
     {
         
         /// <summary>
@@ -774,7 +774,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [Composite("C023")]
-    public class C023_HealthCareServiceLocationInformation_2 : C023
+    public class C023_HealthCareServiceLocationInformation_2 : IC023
     {
         
         /// <summary>
@@ -807,7 +807,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [Composite("C024")]
-    public class C024_RelatedCausesInformation_3 : C024
+    public class C024_RelatedCausesInformation_3 : IC024
     {
         
         /// <summary>
@@ -850,7 +850,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [Composite("C040")]
-    public class C040_ReferenceIdentifier_3 : C040
+    public class C040_ReferenceIdentifier_3 : IC040
     {
         
         /// <summary>
@@ -903,7 +903,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [Composite("C003")]
-    public class C003_CompositeMedicalProcedureIdentifier_12 : C003
+    public class C003_CompositeMedicalProcedureIdentifier_12 : IC003
     {
         
         /// <summary>
@@ -970,7 +970,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [Composite("C004")]
-    public class C004_CompositeDiagnosisCodePointer : C004
+    public class C004_CompositeDiagnosisCodePointer : IC004
     {
         
         /// <summary>
@@ -1009,7 +1009,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [Composite("C003")]
-    public class C003_CompositeMedicalProcedureIdentifier_9 : C003
+    public class C003_CompositeMedicalProcedureIdentifier_9 : IC003
     {
         
         /// <summary>
@@ -1076,7 +1076,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [Composite("C001")]
-    public class C001_CompositeUnitofMeasure_2 : C001
+    public class C001_CompositeUnitofMeasure_2 : IC001
     {
         
         /// <summary>
@@ -1187,7 +1187,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [Composite("C003")]
-    public class C003_CompositeMedicalProcedureIdentifier_7 : C003
+    public class C003_CompositeMedicalProcedureIdentifier_7 : IC003
     {
         
         /// <summary>

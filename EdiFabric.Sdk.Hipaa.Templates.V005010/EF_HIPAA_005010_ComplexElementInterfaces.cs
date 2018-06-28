@@ -10,7 +10,7 @@ namespace EdiFabric.Templates.Hipaa5010
     using System.Xml.Serialization;
     
     
-    public interface C001
+    public interface IC001
     {
         
         string UnitorBasisforMeasurementCode_01 { get; set; }
@@ -30,7 +30,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string Multiplier_15 { get; set; }
     }
     
-    public interface C002
+    public interface IC002
     {
         
         string PaperworkReportActionCode_01 { get; set; }
@@ -40,7 +40,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string PaperworkReportActionCode_05 { get; set; }
     }
     
-    public interface C003
+    public interface IC003
     {
         
         string ProductorServiceIDQualifier_01 { get; set; }
@@ -53,7 +53,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string ProductServiceID_08 { get; set; }
     }
     
-    public interface C004
+    public interface IC004
     {
         
         string DiagnosisCodePointer_01 { get; set; }
@@ -62,7 +62,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string DiagnosisCodePointer_04 { get; set; }
     }
     
-    public interface C005
+    public interface IC005
     {
         
         string ToothSurfaceCode_01 { get; set; }
@@ -72,7 +72,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string ToothSurfaceCode_05 { get; set; }
     }
     
-    public interface C006
+    public interface IC006
     {
         
         string OralCavityDesignationCode_01 { get; set; }
@@ -82,7 +82,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string OralCavityDesignationCode_05 { get; set; }
     }
     
-    public interface C022
+    public interface IC022
     {
         
         string CodeListQualifierCode_01 { get; set; }
@@ -96,7 +96,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string YesNoConditionorResponseCode_09 { get; set; }
     }
     
-    public interface C023
+    public interface IC023
     {
         
         string FacilityTypeCode_01 { get; set; }
@@ -104,7 +104,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string ClaimFrequencyTypeCode_03 { get; set; }
     }
     
-    public interface C024
+    public interface IC024
     {
         
         string RelatedCausesCode_01 { get; set; }
@@ -114,7 +114,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string CountryCode_05 { get; set; }
     }
     
-    public interface C035
+    public interface IC035
     {
         
         string ProviderSpecialtyCode_01 { get; set; }
@@ -122,7 +122,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string YesNoConditionorResponseCode_03 { get; set; }
     }
     
-    public interface C040
+    public interface IC040
     {
         
         string ReferenceIdentificationQualifier_01 { get; set; }
@@ -133,14 +133,14 @@ namespace EdiFabric.Templates.Hipaa5010
         string ReferenceIdentification_06 { get; set; }
     }
     
-    public interface C042
+    public interface IC042
     {
         
         string AdjustmentReasonCode_01 { get; set; }
         string ProviderAdjustmentIdentifier_02 { get; set; }
     }
     
-    public interface C043
+    public interface IC043
     {
         
         string HealthCareClaimStatusCategoryCode_01 { get; set; }
@@ -149,7 +149,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string CodeListQualifierCode_04 { get; set; }
     }
     
-    public interface C052
+    public interface IC052
     {
         
         string MedicarePlanCode_01 { get; set; }
@@ -158,7 +158,7 @@ namespace EdiFabric.Templates.Hipaa5010
         string EligibilityReasonCode_04 { get; set; }
     }
     
-    public interface C056
+    public interface IC056
     {
         
         string RaceorEthnicityCode_01 { get; set; }

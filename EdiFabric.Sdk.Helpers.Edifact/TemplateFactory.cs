@@ -40,8 +40,17 @@ namespace EdiFabric.Sdk.Helpers.Edifact
                 unh.MessageIdentifier_02.MessageType_01 == "INVOIC")
                 return typeof(TSINVOIC).GetTypeInfo();
 
+            if (unh.MessageIdentifier_02.MessageReleaseNumber_03 == "96A" &&
+               unh.MessageIdentifier_02.MessageType_01 == "INVOIC")
+                return typeof(TSINVOIC).GetTypeInfo();
+
+            if (unh.MessageIdentifier_02.MessageReleaseNumber_03 == "01B" &&
+                unh.MessageIdentifier_02.MessageType_01 == "INVOIC" &&
+                unh.MessageIdentifier_02.AssociationAssignedCode_05.StartsWith("EAN", System.StringComparison.Ordinal))
+                return typeof(Templates.EancomD01B.TSINVOIC).GetTypeInfo();
+
             throw new System.Exception(string.Format("Transaction {0} for version {1} is not supported.",
-                unh.MessageIdentifier_02.MessageType_01, unh.MessageIdentifier_02.MessageVersionNumber_02));
+                unh.MessageIdentifier_02.MessageType_01, unh.MessageIdentifier_02.MessageVersionNumber_02 + unh.MessageIdentifier_02.MessageReleaseNumber_03));
         }
 
         public static Assembly TrialTemplateFactory(MessageContext messageContext)
