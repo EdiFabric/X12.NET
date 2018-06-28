@@ -165,6 +165,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Eancom Transaction Examples
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Eancom.INVOIC", "EdiFabric.Sdk.Eancom.INVOIC\EdiFabric.Sdk.Eancom.INVOIC.csproj", "{BBC84F44-4F6C-4CA4-A5F1-A1CDAC5C03E1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0. README", "0. README", "{008976FF-7E9C-4AC1-B144-54CBB614E2CB}"
+	ProjectSection(SolutionItems) = preProject
+		README.txt = README.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
