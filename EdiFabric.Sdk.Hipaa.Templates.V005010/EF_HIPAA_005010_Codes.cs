@@ -9,14 +9,6 @@ namespace EdiFabric.Templates.Hipaa5010
     using EdiFabric.Core.Model.Edi.ErrorContexts;
     
     
-    /// <summary>
-    /// Number of Included Segments
-    /// </summary>
-    [Serializable()]
-    public class @string
-    {
-    }
-    
     [Serializable()]
     public class X12_AN
     {

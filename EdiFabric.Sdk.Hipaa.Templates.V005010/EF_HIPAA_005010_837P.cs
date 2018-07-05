@@ -7,8 +7,44 @@ namespace EdiFabric.Templates.Hipaa5010
     using EdiFabric.Core.Model.Edi;
     using EdiFabric.Core.Model.Edi.X12;
     using EdiFabric.Core.Model.Edi.ErrorContexts;
-    
-    
+
+
+
+    /// <summary>
+    /// Health Care Claim : Professional
+    /// </summary>
+    [Serializable()]
+    [Message("X12", "005010X222A1", "837")]
+    public class TS837P : EdiMessage
+    {
+
+        /// <summary>
+        /// Transaction Set Header
+        /// </summary>
+        [Pos(1)]
+        public ST ST { get; set; }
+        /// <summary>
+        /// Beginning of Hierarchical Transaction
+        /// </summary>
+        [Required]
+        [Pos(2)]
+        public BHT_BeginningofHierarchicalTransaction_7 BHT_BeginningofHierarchicalTransaction { get; set; }
+        [Required]
+        [Pos(3)]
+        public All_NM1_837P_6 AllNM1 { get; set; }
+        /// <summary>
+        /// Loop for Billing Provider Hierarchical Level
+        /// </summary>
+        [Required]
+        [Pos(4)]
+        public List<Loop_2000A_837P> Loop2000A { get; set; }
+        /// <summary>
+        /// Transaction Set Trailer
+        /// </summary>
+        [Pos(5)]
+        public SE SE { get; set; }
+    }
+
     [Serializable()]
     [All()]
     public class All_AMT_837P
@@ -2067,40 +2103,5 @@ namespace EdiFabric.Templates.Hipaa5010
         [ListCount(99)]
         [Pos(2)]
         public List<FRM_SupportingDocumentation> FRM_SupportingDocumentation { get; set; }
-    }
-    
-    /// <summary>
-    /// Health Care Claim : Professional
-    /// </summary>
-    [Serializable()]
-    [Message("X12", "005010X222A1", "837")]
-    public class TS837P : EdiMessage
-    {
-        
-        /// <summary>
-        /// Transaction Set Header
-        /// </summary>
-        [Pos(1)]
-        public ST ST { get; set; }
-        /// <summary>
-        /// Beginning of Hierarchical Transaction
-        /// </summary>
-        [Required]
-        [Pos(2)]
-        public BHT_BeginningofHierarchicalTransaction_7 BHT_BeginningofHierarchicalTransaction { get; set; }
-        [Required]
-        [Pos(3)]
-        public All_NM1_837P_6 AllNM1 { get; set; }
-        /// <summary>
-        /// Loop for Billing Provider Hierarchical Level
-        /// </summary>
-        [Required]
-        [Pos(4)]
-        public List<Loop_2000A_837P> Loop2000A { get; set; }
-        /// <summary>
-        /// Transaction Set Trailer
-        /// </summary>
-        [Pos(5)]
-        public SE SE { get; set; }
     }
 }

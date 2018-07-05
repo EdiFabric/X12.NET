@@ -6,8 +6,193 @@ namespace EdiFabric.Templates.X12004010
     using EdiFabric.Core.Annotations.Validation;
     using EdiFabric.Core.Model.Edi;
     using EdiFabric.Core.Model.Edi.X12;
-    
-    
+
+    /// <summary>
+    /// Invoice
+    /// </summary>
+    [Serializable()]
+    [Message("X12", "004010", "810")]
+    public class TS810 : EdiMessage
+    {
+
+        /// <summary>
+        /// Transaction Set Header
+        /// </summary>
+        [Pos(1)]
+        public ST ST { get; set; }
+        /// <summary>
+        /// Beginning Segment for Invoice
+        /// </summary>
+        [Required]
+        [Pos(2)]
+        public BIG BIG { get; set; }
+        /// <summary>
+        /// Note/Special Instruction
+        /// </summary>
+        [ListCount(100)]
+        [Pos(3)]
+        public List<NTE> NTE { get; set; }
+        /// <summary>
+        /// Currency
+        /// </summary>
+        [Pos(4)]
+        public CUR CUR { get; set; }
+        /// <summary>
+        /// Reference Identification
+        /// </summary>
+        [ListCount(12)]
+        [Pos(5)]
+        public List<REF> REF { get; set; }
+        /// <summary>
+        /// Yes/No Question
+        /// </summary>
+        [ListCount(10)]
+        [Pos(6)]
+        public List<YNQ> YNQ { get; set; }
+        /// <summary>
+        /// Administrative Communications Contact
+        /// </summary>
+        [ListCount(3)]
+        [Pos(7)]
+        public List<PER> PER { get; set; }
+        /// <summary>
+        /// Loop for Name
+        /// </summary>
+        [ListCount(200)]
+        [Pos(8)]
+        public List<Loop_N1_810> N1Loop { get; set; }
+        /// <summary>
+        /// Terms of Sale/Deferred Terms of Sale
+        /// </summary>
+        [Pos(9)]
+        public List<ITD> ITD { get; set; }
+        /// <summary>
+        /// Date/Time Reference
+        /// </summary>
+        [ListCount(10)]
+        [Pos(10)]
+        public List<DTM> DTM { get; set; }
+        /// <summary>
+        /// F.O.B. Related Instructions
+        /// </summary>
+        [Pos(11)]
+        public FOB FOB { get; set; }
+        /// <summary>
+        /// Product/Item Description
+        /// </summary>
+        [ListCount(200)]
+        [Pos(12)]
+        public List<PID> PID { get; set; }
+        /// <summary>
+        /// Measurements
+        /// </summary>
+        [ListCount(40)]
+        [Pos(13)]
+        public List<MEA> MEA { get; set; }
+        /// <summary>
+        /// Paperwork
+        /// </summary>
+        [ListCount(25)]
+        [Pos(14)]
+        public List<PWK> PWK { get; set; }
+        /// <summary>
+        /// Marking, Packaging, Loading
+        /// </summary>
+        [ListCount(25)]
+        [Pos(15)]
+        public List<PKG> PKG { get; set; }
+        /// <summary>
+        /// Tariff Reference
+        /// </summary>
+        [Pos(16)]
+        public L7 L7 { get; set; }
+        /// <summary>
+        /// Balance Detail
+        /// </summary>
+        [Pos(17)]
+        public List<BAL> BAL { get; set; }
+        /// <summary>
+        /// Installment Information
+        /// </summary>
+        [Pos(18)]
+        public INC INC { get; set; }
+        /// <summary>
+        /// Period Amount
+        /// </summary>
+        [Pos(19)]
+        public List<PAM> PAM { get; set; }
+        /// <summary>
+        /// Loop for Code Source Information
+        /// </summary>
+        [ListCount(10)]
+        [Pos(20)]
+        public List<Loop_LM_810> LMLoop { get; set; }
+        /// <summary>
+        /// Loop for Reference Identification
+        /// </summary>
+        [Pos(21)]
+        public Loop_N9_810 N9Loop { get; set; }
+        /// <summary>
+        /// Loop for Vessel Identification
+        /// </summary>
+        [Pos(22)]
+        public List<Loop_V1_810> V1Loop { get; set; }
+        /// <summary>
+        /// Loop for Type of Financial Accounting Data
+        /// </summary>
+        [Pos(23)]
+        public List<Loop_FA1_810> FA1Loop { get; set; }
+        /// <summary>
+        /// Loop for Baseline Item Data (Invoice)
+        /// </summary>
+        [ListCount(200000)]
+        [Pos(24)]
+        public List<Loop_IT1_810> IT1Loop { get; set; }
+        /// <summary>
+        /// Total Monetary Value Summary
+        /// </summary>
+        [Required]
+        [Pos(25)]
+        public TDS TDS { get; set; }
+        /// <summary>
+        /// Tax Information
+        /// </summary>
+        [ListCount(10)]
+        [Pos(26)]
+        public List<TXI> TXI { get; set; }
+        /// <summary>
+        /// Carrier Detail
+        /// </summary>
+        [Pos(27)]
+        public CAD CAD { get; set; }
+        /// <summary>
+        /// Monetary Amount
+        /// </summary>
+        [Pos(28)]
+        public List<AMT> AMT { get; set; }
+        /// <summary>
+        /// Loop for Service, Promotion, Allowance, or Charge Information
+        /// </summary>
+        [ListCount(25)]
+        [Pos(29)]
+        public List<Loop_SAC_810> SACLoop { get; set; }
+        /// <summary>
+        /// Loop for Invoice Shipment Summary
+        /// </summary>
+        [Pos(30)]
+        public List<Loop_ISS_810> ISSLoop { get; set; }
+        /// <summary>
+        /// Transaction Totals
+        /// </summary>
+        [Pos(31)]
+        public CTT CTT { get; set; }
+        /// <summary>
+        /// Transaction Set Trailer
+        /// </summary>
+        [Pos(32)]
+        public SE SE { get; set; }
+    }
+
     /// <summary>
     /// Loop for Type of Financial Accounting Data
     /// </summary>
@@ -434,191 +619,5 @@ namespace EdiFabric.Templates.X12004010
         /// </summary>
         [Pos(3)]
         public List<DTM> DTM { get; set; }
-    }
-    
-    /// <summary>
-    /// Invoice
-    /// </summary>
-    [Serializable()]
-    [Message("X12", "004010", "810")]
-    public class TS810 : EdiMessage
-    {
-        
-        /// <summary>
-        /// Transaction Set Header
-        /// </summary>
-        [Pos(1)]
-        public ST ST { get; set; }
-        /// <summary>
-        /// Beginning Segment for Invoice
-        /// </summary>
-        [Required]
-        [Pos(2)]
-        public BIG BIG { get; set; }
-        /// <summary>
-        /// Note/Special Instruction
-        /// </summary>
-        [ListCount(100)]
-        [Pos(3)]
-        public List<NTE> NTE { get; set; }
-        /// <summary>
-        /// Currency
-        /// </summary>
-        [Pos(4)]
-        public CUR CUR { get; set; }
-        /// <summary>
-        /// Reference Identification
-        /// </summary>
-        [ListCount(12)]
-        [Pos(5)]
-        public List<REF> REF { get; set; }
-        /// <summary>
-        /// Yes/No Question
-        /// </summary>
-        [ListCount(10)]
-        [Pos(6)]
-        public List<YNQ> YNQ { get; set; }
-        /// <summary>
-        /// Administrative Communications Contact
-        /// </summary>
-        [ListCount(3)]
-        [Pos(7)]
-        public List<PER> PER { get; set; }
-        /// <summary>
-        /// Loop for Name
-        /// </summary>
-        [ListCount(200)]
-        [Pos(8)]
-        public List<Loop_N1_810> N1Loop { get; set; }
-        /// <summary>
-        /// Terms of Sale/Deferred Terms of Sale
-        /// </summary>
-        [Pos(9)]
-        public List<ITD> ITD { get; set; }
-        /// <summary>
-        /// Date/Time Reference
-        /// </summary>
-        [ListCount(10)]
-        [Pos(10)]
-        public List<DTM> DTM { get; set; }
-        /// <summary>
-        /// F.O.B. Related Instructions
-        /// </summary>
-        [Pos(11)]
-        public FOB FOB { get; set; }
-        /// <summary>
-        /// Product/Item Description
-        /// </summary>
-        [ListCount(200)]
-        [Pos(12)]
-        public List<PID> PID { get; set; }
-        /// <summary>
-        /// Measurements
-        /// </summary>
-        [ListCount(40)]
-        [Pos(13)]
-        public List<MEA> MEA { get; set; }
-        /// <summary>
-        /// Paperwork
-        /// </summary>
-        [ListCount(25)]
-        [Pos(14)]
-        public List<PWK> PWK { get; set; }
-        /// <summary>
-        /// Marking, Packaging, Loading
-        /// </summary>
-        [ListCount(25)]
-        [Pos(15)]
-        public List<PKG> PKG { get; set; }
-        /// <summary>
-        /// Tariff Reference
-        /// </summary>
-        [Pos(16)]
-        public L7 L7 { get; set; }
-        /// <summary>
-        /// Balance Detail
-        /// </summary>
-        [Pos(17)]
-        public List<BAL> BAL { get; set; }
-        /// <summary>
-        /// Installment Information
-        /// </summary>
-        [Pos(18)]
-        public INC INC { get; set; }
-        /// <summary>
-        /// Period Amount
-        /// </summary>
-        [Pos(19)]
-        public List<PAM> PAM { get; set; }
-        /// <summary>
-        /// Loop for Code Source Information
-        /// </summary>
-        [ListCount(10)]
-        [Pos(20)]
-        public List<Loop_LM_810> LMLoop { get; set; }
-        /// <summary>
-        /// Loop for Reference Identification
-        /// </summary>
-        [Pos(21)]
-        public Loop_N9_810 N9Loop { get; set; }
-        /// <summary>
-        /// Loop for Vessel Identification
-        /// </summary>
-        [Pos(22)]
-        public List<Loop_V1_810> V1Loop { get; set; }
-        /// <summary>
-        /// Loop for Type of Financial Accounting Data
-        /// </summary>
-        [Pos(23)]
-        public List<Loop_FA1_810> FA1Loop { get; set; }
-        /// <summary>
-        /// Loop for Baseline Item Data (Invoice)
-        /// </summary>
-        [ListCount(200000)]
-        [Pos(24)]
-        public List<Loop_IT1_810> IT1Loop { get; set; }
-        /// <summary>
-        /// Total Monetary Value Summary
-        /// </summary>
-        [Required]
-        [Pos(25)]
-        public TDS TDS { get; set; }
-        /// <summary>
-        /// Tax Information
-        /// </summary>
-        [ListCount(10)]
-        [Pos(26)]
-        public List<TXI> TXI { get; set; }
-        /// <summary>
-        /// Carrier Detail
-        /// </summary>
-        [Pos(27)]
-        public CAD CAD { get; set; }
-        /// <summary>
-        /// Monetary Amount
-        /// </summary>
-        [Pos(28)]
-        public List<AMT> AMT { get; set; }
-        /// <summary>
-        /// Loop for Service, Promotion, Allowance, or Charge Information
-        /// </summary>
-        [ListCount(25)]
-        [Pos(29)]
-        public List<Loop_SAC_810> SACLoop { get; set; }
-        /// <summary>
-        /// Loop for Invoice Shipment Summary
-        /// </summary>
-        [Pos(30)]
-        public List<Loop_ISS_810> ISSLoop { get; set; }
-        /// <summary>
-        /// Transaction Totals
-        /// </summary>
-        [Pos(31)]
-        public CTT CTT { get; set; }
-        /// <summary>
-        /// Transaction Set Trailer
-        /// </summary>
-        [Pos(32)]
-        public SE SE { get; set; }
     }
 }

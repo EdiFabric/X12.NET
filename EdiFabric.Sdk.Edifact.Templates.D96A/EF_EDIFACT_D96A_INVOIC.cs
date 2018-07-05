@@ -6,8 +6,169 @@ namespace EdiFabric.Templates.EdifactD96A
     using EdiFabric.Core.Annotations.Validation;
     using EdiFabric.Core.Model.Edi;
     using EdiFabric.Core.Model.Edi.Edifact;
-    
-    
+
+    /// <summary>
+    /// Invoice message
+    /// </summary>
+    [Serializable()]
+    [Message("EDIFACT", "D96A", "INVOIC")]
+    public class TSINVOIC : EdiMessage
+    {
+
+        /// <summary>
+        /// Message Header
+        /// </summary>
+        [Pos(1)]
+        public UNH UNH { get; set; }
+        /// <summary>
+        /// BEGINNING OF MESSAGE
+        /// </summary>
+        [Required]
+        [Pos(2)]
+        public BGM BGM { get; set; }
+        /// <summary>
+        /// DATE/TIME/PERIOD
+        /// </summary>
+        [Required]
+        [ListCount(35)]
+        [Pos(3)]
+        public List<DTM> DTM { get; set; }
+        /// <summary>
+        /// PAYMENT INSTRUCTIONS
+        /// </summary>
+        [Pos(4)]
+        public PAI PAI { get; set; }
+        /// <summary>
+        /// ADDITIONAL INFORMATION
+        /// </summary>
+        [ListCount(5)]
+        [Pos(5)]
+        public List<ALI> ALI { get; set; }
+        /// <summary>
+        /// ITEM DESCRIPTION
+        /// </summary>
+        [Pos(6)]
+        public IMD IMD { get; set; }
+        /// <summary>
+        /// FREE TEXT
+        /// </summary>
+        [ListCount(10)]
+        [Pos(7)]
+        public List<FTX> FTX { get; set; }
+        /// <summary>
+        /// Loop for REFERENCE
+        /// </summary>
+        [ListCount(99)]
+        [Pos(8)]
+        public List<Loop_RFF_INVOIC> RFFLoop { get; set; }
+        /// <summary>
+        /// Loop for NAME AND ADDRESS
+        /// </summary>
+        [ListCount(99)]
+        [Pos(9)]
+        public List<Loop_NAD_INVOIC> NADLoop { get; set; }
+        /// <summary>
+        /// Loop for DUTY/TAX/FEE DETAILS
+        /// </summary>
+        [ListCount(5)]
+        [Pos(10)]
+        public List<Loop_TAX_INVOIC> TAXLoop { get; set; }
+        /// <summary>
+        /// Loop for CURRENCIES
+        /// </summary>
+        [ListCount(5)]
+        [Pos(11)]
+        public List<Loop_CUX_INVOIC> CUXLoop { get; set; }
+        /// <summary>
+        /// Loop for PAYMENT TERMS BASIS
+        /// </summary>
+        [ListCount(10)]
+        [Pos(12)]
+        public List<Loop_PAT_INVOIC> PATLoop { get; set; }
+        /// <summary>
+        /// Loop for DETAILS OF TRANSPORT
+        /// </summary>
+        [ListCount(10)]
+        [Pos(13)]
+        public List<Loop_TDT_INVOIC> TDTLoop { get; set; }
+        /// <summary>
+        /// Loop for TERMS OF DELIVERY OR TRANSPORT
+        /// </summary>
+        [ListCount(5)]
+        [Pos(14)]
+        public List<Loop_TOD_INVOIC> TODLoop { get; set; }
+        /// <summary>
+        /// Loop for PACKAGE
+        /// </summary>
+        [ListCount(1000)]
+        [Pos(15)]
+        public List<Loop_PAC_INVOIC> PACLoop { get; set; }
+        /// <summary>
+        /// Loop for ALLOWANCE OR CHARGE
+        /// </summary>
+        [ListCount(9999)]
+        [Pos(16)]
+        public List<Loop_ALC_INVOIC> ALCLoop { get; set; }
+        /// <summary>
+        /// Loop for REQUIREMENTS AND CONDITIONS
+        /// </summary>
+        [ListCount(100)]
+        [Pos(17)]
+        public List<Loop_RCS_INVOIC> RCSLoop { get; set; }
+        /// <summary>
+        /// Loop for ADJUSTMENT DETAILS
+        /// </summary>
+        [Pos(18)]
+        public Loop_AJT_INVOIC AJTLoop { get; set; }
+        /// <summary>
+        /// Loop for PARTIES TO INSTRUCTION
+        /// </summary>
+        [Pos(19)]
+        public Loop_INP_INVOIC INPLoop { get; set; }
+        /// <summary>
+        /// Loop for LINE ITEM
+        /// </summary>
+        [ListCount(9999999)]
+        [Pos(20)]
+        public List<Loop_LIN_INVOIC> LINLoop { get; set; }
+        /// <summary>
+        /// SECTION CONTROL
+        /// </summary>
+        [Required]
+        [Pos(21)]
+        public UNS UNS { get; set; }
+        /// <summary>
+        /// CONTROL TOTAL
+        /// </summary>
+        [ListCount(10)]
+        [Pos(22)]
+        public List<CNT> CNT { get; set; }
+        /// <summary>
+        /// Loop for MONETARY AMOUNT
+        /// </summary>
+        [Required]
+        [ListCount(100)]
+        [Pos(23)]
+        public List<Loop_MOA_INVOIC_3> MOALoop { get; set; }
+        /// <summary>
+        /// Loop for DUTY/TAX/FEE DETAILS
+        /// </summary>
+        [ListCount(10)]
+        [Pos(24)]
+        public List<Loop_TAX_INVOIC_3> TAXLoop2 { get; set; }
+        /// <summary>
+        /// Loop for ALLOWANCE OR CHARGE
+        /// </summary>
+        [ListCount(15)]
+        [Pos(25)]
+        public List<Loop_ALC_INVOIC_3> ALCLoop2 { get; set; }
+        /// <summary>
+        /// Message Trailer
+        /// </summary>
+        [Pos(26)]
+        public UNT UNT { get; set; }
+    }
+
     /// <summary>
     /// Loop for ADJUSTMENT DETAILS
     /// </summary>
@@ -1037,167 +1198,5 @@ namespace EdiFabric.Templates.EdifactD96A
         [ListCount(2)]
         [Pos(2)]
         public List<LOC> LOC { get; set; }
-    }
-    
-    /// <summary>
-    /// Invoice message
-    /// </summary>
-    [Serializable()]
-    [Message("EDIFACT", "D96A", "INVOIC")]
-    public class TSINVOIC : EdiMessage
-    {
-        
-        /// <summary>
-        /// Message Header
-        /// </summary>
-        [Pos(1)]
-        public UNH UNH { get; set; }
-        /// <summary>
-        /// BEGINNING OF MESSAGE
-        /// </summary>
-        [Required]
-        [Pos(2)]
-        public BGM BGM { get; set; }
-        /// <summary>
-        /// DATE/TIME/PERIOD
-        /// </summary>
-        [Required]
-        [ListCount(35)]
-        [Pos(3)]
-        public List<DTM> DTM { get; set; }
-        /// <summary>
-        /// PAYMENT INSTRUCTIONS
-        /// </summary>
-        [Pos(4)]
-        public PAI PAI { get; set; }
-        /// <summary>
-        /// ADDITIONAL INFORMATION
-        /// </summary>
-        [ListCount(5)]
-        [Pos(5)]
-        public List<ALI> ALI { get; set; }
-        /// <summary>
-        /// ITEM DESCRIPTION
-        /// </summary>
-        [Pos(6)]
-        public IMD IMD { get; set; }
-        /// <summary>
-        /// FREE TEXT
-        /// </summary>
-        [ListCount(10)]
-        [Pos(7)]
-        public List<FTX> FTX { get; set; }
-        /// <summary>
-        /// Loop for REFERENCE
-        /// </summary>
-        [ListCount(99)]
-        [Pos(8)]
-        public List<Loop_RFF_INVOIC> RFFLoop { get; set; }
-        /// <summary>
-        /// Loop for NAME AND ADDRESS
-        /// </summary>
-        [ListCount(99)]
-        [Pos(9)]
-        public List<Loop_NAD_INVOIC> NADLoop { get; set; }
-        /// <summary>
-        /// Loop for DUTY/TAX/FEE DETAILS
-        /// </summary>
-        [ListCount(5)]
-        [Pos(10)]
-        public List<Loop_TAX_INVOIC> TAXLoop { get; set; }
-        /// <summary>
-        /// Loop for CURRENCIES
-        /// </summary>
-        [ListCount(5)]
-        [Pos(11)]
-        public List<Loop_CUX_INVOIC> CUXLoop { get; set; }
-        /// <summary>
-        /// Loop for PAYMENT TERMS BASIS
-        /// </summary>
-        [ListCount(10)]
-        [Pos(12)]
-        public List<Loop_PAT_INVOIC> PATLoop { get; set; }
-        /// <summary>
-        /// Loop for DETAILS OF TRANSPORT
-        /// </summary>
-        [ListCount(10)]
-        [Pos(13)]
-        public List<Loop_TDT_INVOIC> TDTLoop { get; set; }
-        /// <summary>
-        /// Loop for TERMS OF DELIVERY OR TRANSPORT
-        /// </summary>
-        [ListCount(5)]
-        [Pos(14)]
-        public List<Loop_TOD_INVOIC> TODLoop { get; set; }
-        /// <summary>
-        /// Loop for PACKAGE
-        /// </summary>
-        [ListCount(1000)]
-        [Pos(15)]
-        public List<Loop_PAC_INVOIC> PACLoop { get; set; }
-        /// <summary>
-        /// Loop for ALLOWANCE OR CHARGE
-        /// </summary>
-        [ListCount(9999)]
-        [Pos(16)]
-        public List<Loop_ALC_INVOIC> ALCLoop { get; set; }
-        /// <summary>
-        /// Loop for REQUIREMENTS AND CONDITIONS
-        /// </summary>
-        [ListCount(100)]
-        [Pos(17)]
-        public List<Loop_RCS_INVOIC> RCSLoop { get; set; }
-        /// <summary>
-        /// Loop for ADJUSTMENT DETAILS
-        /// </summary>
-        [Pos(18)]
-        public Loop_AJT_INVOIC AJTLoop { get; set; }
-        /// <summary>
-        /// Loop for PARTIES TO INSTRUCTION
-        /// </summary>
-        [Pos(19)]
-        public Loop_INP_INVOIC INPLoop { get; set; }
-        /// <summary>
-        /// Loop for LINE ITEM
-        /// </summary>
-        [ListCount(9999999)]
-        [Pos(20)]
-        public List<Loop_LIN_INVOIC> LINLoop { get; set; }
-        /// <summary>
-        /// SECTION CONTROL
-        /// </summary>
-        [Required]
-        [Pos(21)]
-        public UNS UNS { get; set; }
-        /// <summary>
-        /// CONTROL TOTAL
-        /// </summary>
-        [ListCount(10)]
-        [Pos(22)]
-        public List<CNT> CNT { get; set; }
-        /// <summary>
-        /// Loop for MONETARY AMOUNT
-        /// </summary>
-        [Required]
-        [ListCount(100)]
-        [Pos(23)]
-        public List<Loop_MOA_INVOIC_3> MOALoop { get; set; }
-        /// <summary>
-        /// Loop for DUTY/TAX/FEE DETAILS
-        /// </summary>
-        [ListCount(10)]
-        [Pos(24)]
-        public List<Loop_TAX_INVOIC_3> TAXLoop2 { get; set; }
-        /// <summary>
-        /// Loop for ALLOWANCE OR CHARGE
-        /// </summary>
-        [ListCount(15)]
-        [Pos(25)]
-        public List<Loop_ALC_INVOIC_3> ALCLoop2 { get; set; }
-        /// <summary>
-        /// Message Trailer
-        /// </summary>
-        [Pos(26)]
-        public UNT UNT { get; set; }
     }
 }
