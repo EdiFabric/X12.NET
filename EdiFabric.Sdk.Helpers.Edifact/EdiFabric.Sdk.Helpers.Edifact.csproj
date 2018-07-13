@@ -37,6 +37,9 @@
     <Reference Include="EdiFabric.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
       <HintPath>..\packages\EdiFabric.Framework.9.7.4\lib\net45\EdiFabric.Framework.dll</HintPath>
     </Reference>
+    <Reference Include="EdiFabric.Templates.Edifact, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
+      <HintPath>..\packages\EdiFabric.Templates.Edifact.1.0.0\lib\net45\EdiFabric.Templates.Edifact.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -78,6 +81,10 @@
     <ProjectReference Include="..\EdiFabric.Sdk.Edifact.Templates.D96A\EdiFabric.Sdk.Edifact.Templates.D96A.csproj">
       <Project>{a6b9ede5-99e9-4696-9cee-6b6fff45cc12}</Project>
       <Name>EdiFabric.Sdk.Edifact.Templates.D96A</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EdiFabric.Sdk.Edifact.Templates.Smdg\EdiFabric.Sdk.Edifact.Templates.Smdg.csproj">
+      <Project>{91ac77b6-9ebb-496b-a021-309b0980c352}</Project>
+      <Name>EdiFabric.Sdk.Edifact.Templates.Smdg</Name>
     </ProjectReference>
     <ProjectReference Include="..\EdiFabric.Sdk.Edifact.Templates.USCustoms\EdiFabric.Sdk.Edifact.Templates.USCustoms.csproj">
       <Project>{39b0a0af-494b-4803-a830-c97f3390a574}</Project>

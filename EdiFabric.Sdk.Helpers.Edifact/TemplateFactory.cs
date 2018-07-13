@@ -59,6 +59,9 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             if (messageContext.Version == "D03B" && messageContext.Name == "CUSCAR")
                 return Assembly.Load("EdiFabric.Sdk.Edifact.Templates.USCustoms");
 
+            if (messageContext.Version == "D13B" && messageContext.Name == "BAPLIE")
+                return Assembly.Load("EdiFabric.Sdk.Edifact.Templates.Smdg");
+
             if (messageContext.Format == "EDIFACT")
                 return Assembly.Load("EdiFabric.Templates.Edifact");
 

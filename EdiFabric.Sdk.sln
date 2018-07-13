@@ -97,6 +97,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12", "X12", "{9AFB6CCB-C20
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Edifact", "Edifact", "{43A1E0DA-F3E1-46E8-AA0E-94838BFDC35A}"
 	ProjectSection(SolutionItems) = preProject
+		Files.Edifact\Bayplan.txt = Files.Edifact\Bayplan.txt
 		Files.Edifact\CargoReport.txt = Files.Edifact\CargoReport.txt
 		Files.Edifact\CorruptUnb.txt = Files.Edifact\CorruptUnb.txt
 		Files.Edifact\CorruptUnh.txt = Files.Edifact\CorruptUnh.txt
@@ -177,6 +178,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.CUSCAR", "EdiFabric.Sdk.Edifact.CUSCAR\EdiFabric.Sdk.Edifact.CUSCAR.csproj", "{A7E70165-07D1-4141-8FCB-49E519958632}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.Templates.USCustoms", "EdiFabric.Sdk.Edifact.Templates.USCustoms\EdiFabric.Sdk.Edifact.Templates.USCustoms.csproj", "{39B0A0AF-494B-4803-A830-C97F3390A574}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.BAPLIE", "EdiFabric.Sdk.Edifact.BAPLIE\EdiFabric.Sdk.Edifact.BAPLIE.csproj", "{9EF9A09E-91CA-4C8D-B99E-401F9FA8AF97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.Templates.Smdg", "EdiFabric.Sdk.Edifact.Templates.Smdg\EdiFabric.Sdk.Edifact.Templates.Smdg.csproj", "{91AC77B6-9EBB-496B-A021-309B0980C352}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -547,6 +552,26 @@ Global
 		{39B0A0AF-494B-4803-A830-C97F3390A574}.test|Any CPU.Build.0 = Release|Any CPU
 		{39B0A0AF-494B-4803-A830-C97F3390A574}.Trial|Any CPU.ActiveCfg = Release|Any CPU
 		{39B0A0AF-494B-4803-A830-C97F3390A574}.Trial|Any CPU.Build.0 = Release|Any CPU
+		{9EF9A09E-91CA-4C8D-B99E-401F9FA8AF97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EF9A09E-91CA-4C8D-B99E-401F9FA8AF97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EF9A09E-91CA-4C8D-B99E-401F9FA8AF97}.Lite|Any CPU.ActiveCfg = Release|Any CPU
+		{9EF9A09E-91CA-4C8D-B99E-401F9FA8AF97}.Lite|Any CPU.Build.0 = Release|Any CPU
+		{9EF9A09E-91CA-4C8D-B99E-401F9FA8AF97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EF9A09E-91CA-4C8D-B99E-401F9FA8AF97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EF9A09E-91CA-4C8D-B99E-401F9FA8AF97}.test|Any CPU.ActiveCfg = Release|Any CPU
+		{9EF9A09E-91CA-4C8D-B99E-401F9FA8AF97}.test|Any CPU.Build.0 = Release|Any CPU
+		{9EF9A09E-91CA-4C8D-B99E-401F9FA8AF97}.Trial|Any CPU.ActiveCfg = Release|Any CPU
+		{9EF9A09E-91CA-4C8D-B99E-401F9FA8AF97}.Trial|Any CPU.Build.0 = Release|Any CPU
+		{91AC77B6-9EBB-496B-A021-309B0980C352}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91AC77B6-9EBB-496B-A021-309B0980C352}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91AC77B6-9EBB-496B-A021-309B0980C352}.Lite|Any CPU.ActiveCfg = Release|Any CPU
+		{91AC77B6-9EBB-496B-A021-309B0980C352}.Lite|Any CPU.Build.0 = Release|Any CPU
+		{91AC77B6-9EBB-496B-A021-309B0980C352}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91AC77B6-9EBB-496B-A021-309B0980C352}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91AC77B6-9EBB-496B-A021-309B0980C352}.test|Any CPU.ActiveCfg = Release|Any CPU
+		{91AC77B6-9EBB-496B-A021-309B0980C352}.test|Any CPU.Build.0 = Release|Any CPU
+		{91AC77B6-9EBB-496B-A021-309B0980C352}.Trial|Any CPU.ActiveCfg = Release|Any CPU
+		{91AC77B6-9EBB-496B-A021-309B0980C352}.Trial|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -611,6 +636,8 @@ Global
 		{DA5CEB2C-9EDA-4FFC-89C2-56F52FA930C6} = {0A328B99-5532-41D9-AAD9-99DAFE6D00CB}
 		{A7E70165-07D1-4141-8FCB-49E519958632} = {0A328B99-5532-41D9-AAD9-99DAFE6D00CB}
 		{39B0A0AF-494B-4803-A830-C97F3390A574} = {6A756811-C4BE-45E8-8131-76F8C00A454B}
+		{9EF9A09E-91CA-4C8D-B99E-401F9FA8AF97} = {0A328B99-5532-41D9-AAD9-99DAFE6D00CB}
+		{91AC77B6-9EBB-496B-A021-309B0980C352} = {6A756811-C4BE-45E8-8131-76F8C00A454B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB447360-6410-4AB0-8984-1454D5AAEA49}
