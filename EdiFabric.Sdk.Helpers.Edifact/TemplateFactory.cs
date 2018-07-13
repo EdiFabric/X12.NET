@@ -1,5 +1,6 @@
 ﻿using EdiFabric.Core.Model.Edi.Edifact;
 using EdiFabric.Framework;
+using EdiFabric.Templates.EdifactD03B;
 using EdiFabric.Templates.EdifactD96A;
 using System.Reflection;
 
@@ -42,7 +43,7 @@ namespace EdiFabric.Sdk.Helpers.Edifact
 
             if (unh.MessageIdentifier_02.MessageReleaseNumber_03 == "96A" &&
                unh.MessageIdentifier_02.MessageType_01 == "INVOIC")
-                return typeof(TSINVOIC).GetTypeInfo();
+                return typeof(TSINVOIC).GetTypeInfo();           
 
             if (unh.MessageIdentifier_02.MessageReleaseNumber_03 == "01B" &&
                 unh.MessageIdentifier_02.MessageType_01 == "INVOIC" &&
@@ -55,8 +56,14 @@ namespace EdiFabric.Sdk.Helpers.Edifact
 
         public static Assembly TrialTemplateFactory(MessageContext messageContext)
         {
-            if (messageContext.Version == "D96A")
+            if (messageContext.Version == "D03B" && messageContext.Name == "CUSCAR")
+                return Assembly.Load("EdiFabric.Sdk.Edifact.Templates.USCustoms");
+
+            if (messageContext.Format == "EDIFACT")
                 return Assembly.Load("EdiFabric.Templates.Edifact");
+
+            if (messageContext.Format == "X12")
+                return Assembly.Load("EdiFabric.Templates.X12");
 
             throw new System.Exception(string.Format("Unsupported version {0}", messageContext.Version));
         }
