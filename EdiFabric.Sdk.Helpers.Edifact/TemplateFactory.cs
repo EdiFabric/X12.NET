@@ -68,7 +68,7 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             if (messageContext.Format == "X12")
                 return Assembly.Load("EdiFabric.Templates.X12");
 
-            throw new System.Exception(string.Format("Unsupported version {0}", messageContext.Version));
+            throw new System.Exception(string.Format("Version {0} is not supported.", messageContext.Version));
         }
     }
 }

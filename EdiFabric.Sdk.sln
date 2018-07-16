@@ -105,6 +105,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Edifact", "Edifact", "{43A1
 		Files.Edifact\DuplicateGroup.txt = Files.Edifact\DuplicateGroup.txt
 		Files.Edifact\DuplicateInterchange.txt = Files.Edifact\DuplicateInterchange.txt
 		Files.Edifact\DuplicateMessage.txt = Files.Edifact\DuplicateMessage.txt
+		Files.Edifact\Instruction.txt = Files.Edifact\Instruction.txt
 		Files.Edifact\Invoice.txt = Files.Edifact\Invoice.txt
 		Files.Edifact\MixedTransactions.txt = Files.Edifact\MixedTransactions.txt
 		Files.Edifact\PurchaseOrder.txt = Files.Edifact\PurchaseOrder.txt
@@ -113,7 +114,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Edifact", "Edifact", "{43A1
 		Files.Edifact\PurchaseOrderCustom2.txt = Files.Edifact\PurchaseOrderCustom2.txt
 		Files.Edifact\PurchaseOrderInvalid.txt = Files.Edifact\PurchaseOrderInvalid.txt
 		Files.Edifact\PurchaseOrderMultiLine.txt = Files.Edifact\PurchaseOrderMultiLine.txt
+		Files.Edifact\PurchaseOrderResponse.txt = Files.Edifact\PurchaseOrderResponse.txt
 		Files.Edifact\PurchaseOrders.txt = Files.Edifact\PurchaseOrders.txt
+		Files.Edifact\TransportStatus.txt = Files.Edifact\TransportStatus.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Edifact", "Edifact", "{6A756811-C4BE-45E8-8131-76F8C00A454B}"
@@ -182,6 +185,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.BAPLIE", "EdiFabric.Sdk.Edifact.BAPLIE\EdiFabric.Sdk.Edifact.BAPLIE.csproj", "{9EF9A09E-91CA-4C8D-B99E-401F9FA8AF97}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.Templates.Smdg", "EdiFabric.Sdk.Edifact.Templates.Smdg\EdiFabric.Sdk.Edifact.Templates.Smdg.csproj", "{91AC77B6-9EBB-496B-A021-309B0980C352}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.ORDRSP", "EdiFabric.Sdk.Edifact.ORDRSP\EdiFabric.Sdk.Edifact.ORDRSP.csproj", "{51263FCE-A38E-4FBE-9FC9-32D4B969B550}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.IFTMIN", "EdiFabric.Sdk.Edifact.IFTMIN\EdiFabric.Sdk.Edifact.IFTMIN.csproj", "{C9148140-0DC1-426E-8B19-EF5705B72098}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.IFTSTA", "EdiFabric.Sdk.Edifact.IFTSTA\EdiFabric.Sdk.Edifact.IFTSTA.csproj", "{A43C7691-7358-48D7-AC5C-FF9F0FB7BB71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -572,6 +581,36 @@ Global
 		{91AC77B6-9EBB-496B-A021-309B0980C352}.test|Any CPU.Build.0 = Release|Any CPU
 		{91AC77B6-9EBB-496B-A021-309B0980C352}.Trial|Any CPU.ActiveCfg = Release|Any CPU
 		{91AC77B6-9EBB-496B-A021-309B0980C352}.Trial|Any CPU.Build.0 = Release|Any CPU
+		{51263FCE-A38E-4FBE-9FC9-32D4B969B550}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51263FCE-A38E-4FBE-9FC9-32D4B969B550}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51263FCE-A38E-4FBE-9FC9-32D4B969B550}.Lite|Any CPU.ActiveCfg = Release|Any CPU
+		{51263FCE-A38E-4FBE-9FC9-32D4B969B550}.Lite|Any CPU.Build.0 = Release|Any CPU
+		{51263FCE-A38E-4FBE-9FC9-32D4B969B550}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51263FCE-A38E-4FBE-9FC9-32D4B969B550}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51263FCE-A38E-4FBE-9FC9-32D4B969B550}.test|Any CPU.ActiveCfg = Release|Any CPU
+		{51263FCE-A38E-4FBE-9FC9-32D4B969B550}.test|Any CPU.Build.0 = Release|Any CPU
+		{51263FCE-A38E-4FBE-9FC9-32D4B969B550}.Trial|Any CPU.ActiveCfg = Release|Any CPU
+		{51263FCE-A38E-4FBE-9FC9-32D4B969B550}.Trial|Any CPU.Build.0 = Release|Any CPU
+		{C9148140-0DC1-426E-8B19-EF5705B72098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9148140-0DC1-426E-8B19-EF5705B72098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9148140-0DC1-426E-8B19-EF5705B72098}.Lite|Any CPU.ActiveCfg = Release|Any CPU
+		{C9148140-0DC1-426E-8B19-EF5705B72098}.Lite|Any CPU.Build.0 = Release|Any CPU
+		{C9148140-0DC1-426E-8B19-EF5705B72098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9148140-0DC1-426E-8B19-EF5705B72098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9148140-0DC1-426E-8B19-EF5705B72098}.test|Any CPU.ActiveCfg = Release|Any CPU
+		{C9148140-0DC1-426E-8B19-EF5705B72098}.test|Any CPU.Build.0 = Release|Any CPU
+		{C9148140-0DC1-426E-8B19-EF5705B72098}.Trial|Any CPU.ActiveCfg = Release|Any CPU
+		{C9148140-0DC1-426E-8B19-EF5705B72098}.Trial|Any CPU.Build.0 = Release|Any CPU
+		{A43C7691-7358-48D7-AC5C-FF9F0FB7BB71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43C7691-7358-48D7-AC5C-FF9F0FB7BB71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43C7691-7358-48D7-AC5C-FF9F0FB7BB71}.Lite|Any CPU.ActiveCfg = Release|Any CPU
+		{A43C7691-7358-48D7-AC5C-FF9F0FB7BB71}.Lite|Any CPU.Build.0 = Release|Any CPU
+		{A43C7691-7358-48D7-AC5C-FF9F0FB7BB71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43C7691-7358-48D7-AC5C-FF9F0FB7BB71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43C7691-7358-48D7-AC5C-FF9F0FB7BB71}.test|Any CPU.ActiveCfg = Release|Any CPU
+		{A43C7691-7358-48D7-AC5C-FF9F0FB7BB71}.test|Any CPU.Build.0 = Release|Any CPU
+		{A43C7691-7358-48D7-AC5C-FF9F0FB7BB71}.Trial|Any CPU.ActiveCfg = Release|Any CPU
+		{A43C7691-7358-48D7-AC5C-FF9F0FB7BB71}.Trial|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -638,6 +677,9 @@ Global
 		{39B0A0AF-494B-4803-A830-C97F3390A574} = {6A756811-C4BE-45E8-8131-76F8C00A454B}
 		{9EF9A09E-91CA-4C8D-B99E-401F9FA8AF97} = {0A328B99-5532-41D9-AAD9-99DAFE6D00CB}
 		{91AC77B6-9EBB-496B-A021-309B0980C352} = {6A756811-C4BE-45E8-8131-76F8C00A454B}
+		{51263FCE-A38E-4FBE-9FC9-32D4B969B550} = {0A328B99-5532-41D9-AAD9-99DAFE6D00CB}
+		{C9148140-0DC1-426E-8B19-EF5705B72098} = {0A328B99-5532-41D9-AAD9-99DAFE6D00CB}
+		{A43C7691-7358-48D7-AC5C-FF9F0FB7BB71} = {0A328B99-5532-41D9-AAD9-99DAFE6D00CB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB447360-6410-4AB0-8984-1454D5AAEA49}
