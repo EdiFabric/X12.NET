@@ -25,7 +25,7 @@ namespace EdiFabric.Sdk.Edifact.ORDRSP
         /// </summary>
         static void Read()
         {
-            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrderResponse.txt");
+            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Eancom\PurchaseOrderResponse.txt");
 
             List<IEdiItem> ediItems;
             using (var ediReader = new EdifactReader(ediStream, TemplateFactory.TrialTemplateFactory))

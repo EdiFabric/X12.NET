@@ -25,7 +25,7 @@ namespace EdiFabric.Sdk.Edifact.IFTSTA
         /// </summary>
         static void Read()
         {
-            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\TransportStatus.txt");
+            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Eancom\TransportStatus.txt");
 
             List<IEdiItem> ediItems;
             using (var ediReader = new EdifactReader(ediStream, TemplateFactory.TrialTemplateFactory))

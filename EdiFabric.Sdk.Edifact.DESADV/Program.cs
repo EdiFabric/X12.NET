@@ -25,7 +25,7 @@ namespace EdiFabric.Sdk.Edifact.DESADV
         /// </summary>
         static void Read()
         {
-            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\DespatchAdvice.txt");
+            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Eancom\DespatchAdvice.txt");
 
             List<IEdiItem> ediItems;
             using (var ediReader = new EdifactReader(ediStream, TemplateFactory.TrialTemplateFactory))

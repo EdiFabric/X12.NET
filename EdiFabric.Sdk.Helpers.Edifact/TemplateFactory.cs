@@ -2,6 +2,7 @@
 using EdiFabric.Framework;
 using EdiFabric.Templates.EdifactD03B;
 using EdiFabric.Templates.EdifactD96A;
+using EdiFabric.Templates.Padis;
 using System.Reflection;
 
 namespace EdiFabric.Sdk.Helpers.Edifact
@@ -43,7 +44,10 @@ namespace EdiFabric.Sdk.Helpers.Edifact
 
             if (unh.MessageIdentifier_02.MessageReleaseNumber_03 == "96A" &&
                unh.MessageIdentifier_02.MessageType_01 == "INVOIC")
-                return typeof(TSINVOIC).GetTypeInfo();           
+                return typeof(TSINVOIC).GetTypeInfo();
+
+            if (unh.MessageIdentifier_02.MessageType_01 == "PNRGOV")
+                return typeof(TSPNRGOV).GetTypeInfo();
 
             if (unh.MessageIdentifier_02.MessageReleaseNumber_03 == "01B" &&
                 unh.MessageIdentifier_02.MessageType_01 == "INVOIC" &&
@@ -59,8 +63,11 @@ namespace EdiFabric.Sdk.Helpers.Edifact
             if (messageContext.Version == "D03B" && messageContext.Name == "CUSCAR")
                 return Assembly.Load("EdiFabric.Sdk.Edifact.Templates.USCustoms");
 
+            if (messageContext.Version == "D03B" && messageContext.Name == "PAXLST")
+                return Assembly.Load("EdiFabric.Sdk.Edifact.Templates.USCustoms");
+
             if (messageContext.Version == "D13B" && messageContext.Name == "BAPLIE")
-                return Assembly.Load("EdiFabric.Sdk.Edifact.Templates.Smdg");
+                return Assembly.Load("EdiFabric.Sdk.Edifact.Templates.Smdg");          
 
             if (messageContext.Format == "EDIFACT")
                 return Assembly.Load("EdiFabric.Templates.Edifact");

@@ -25,7 +25,7 @@ namespace EdiFabric.Sdk.Edifact.IFTMIN
         /// </summary>
         static void Read()
         {
-            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\Instruction.txt");
+            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Eancom\Instruction.txt");
 
             List<IEdiItem> ediItems;
             using (var ediReader = new EdifactReader(ediStream, TemplateFactory.TrialTemplateFactory))

@@ -127,7 +127,37 @@ namespace EdiFabric.Templates.EdifactD03B
         [Pos(4)]
         public string Carriername_04 { get; set; }
     }
-    
+
+    /// <summary>
+    /// NATIONALITY DETAILS
+    /// </summary>
+    [Serializable()]
+    [Composite("C042")]
+    public class C042
+    {
+
+        /// <summary>
+        /// Nationality name code
+        /// </summary>
+        [Pos(1)]
+        public string Nationalitynamecode_01 { get; set; }
+        /// <summary>
+        /// Code list identification code
+        /// </summary>
+        [Pos(2)]
+        public string Codelistidentificationcode_02 { get; set; }
+        /// <summary>
+        /// Code list responsible agency code
+        /// </summary>
+        [Pos(3)]
+        public string Codelistresponsibleagencycode_03 { get; set; }
+        /// <summary>
+        /// Nationality name
+        /// </summary>
+        [Pos(4)]
+        public string Nationalityname_04 { get; set; }
+    }
+
     /// <summary>
     /// DEPARTMENT OR EMPLOYEE DETAILS
     /// </summary>
@@ -1661,5 +1691,165 @@ namespace EdiFabric.Templates.EdifactD03B
         /// </summary>
         [Pos(3)]
         public string Codelistresponsibleagencycode_03 { get; set; }
+    }
+
+    /// <summary>
+    /// EMPLOYMENT CATEGORY
+    /// </summary>
+    [Serializable()]
+    [Composite("C948")]
+    public class C948
+    {
+
+        /// <summary>
+        /// Employment category description code
+        /// </summary>
+        [Pos(1)]
+        public string Employmentcategorydescriptioncode_01 { get; set; }
+        /// <summary>
+        /// Code list identification code
+        /// </summary>
+        [Pos(2)]
+        public string Codelistidentificationcode_02 { get; set; }
+        /// <summary>
+        /// Code list responsible agency code
+        /// </summary>
+        [Pos(3)]
+        public string Codelistresponsibleagencycode_03 { get; set; }
+        /// <summary>
+        /// Employment category description
+        /// </summary>
+        [Pos(4)]
+        public string Employmentcategorydescription_04 { get; set; }
+    }
+
+    /// <summary>
+    /// QUALIFICATION CLASSIFICATION
+    /// </summary>
+    [Serializable()]
+    [Composite("C950")]
+    public class C950
+    {
+
+        /// <summary>
+        /// Qualification classification description code
+        /// </summary>
+        [Pos(1)]
+        public string Qualificationclassificationdescriptioncode_01 { get; set; }
+        /// <summary>
+        /// Code list identification code
+        /// </summary>
+        [Pos(2)]
+        public string Codelistidentificationcode_02 { get; set; }
+        /// <summary>
+        /// Code list responsible agency code
+        /// </summary>
+        [Pos(3)]
+        public string Codelistresponsibleagencycode_03 { get; set; }
+        /// <summary>
+        /// Qualification classification description
+        /// </summary>
+        [Pos(4)]
+        public string Qualificationclassificationdescription_04 { get; set; }
+        /// <summary>
+        /// Qualification classification description
+        /// </summary>
+        [Pos(5)]
+        public string Qualificationclassificationdescription_05 { get; set; }
+    }
+
+    /// <summary>
+    /// OCCUPATION
+    /// </summary>
+    [Serializable()]
+    [Composite("C951")]
+    public class C951
+    {
+
+        /// <summary>
+        /// Occupation description code
+        /// </summary>
+        [Pos(1)]
+        public string Occupationdescriptioncode_01 { get; set; }
+        /// <summary>
+        /// Code list identification code
+        /// </summary>
+        [Pos(2)]
+        public string Codelistidentificationcode_02 { get; set; }
+        /// <summary>
+        /// Code list responsible agency code
+        /// </summary>
+        [Pos(3)]
+        public string Codelistresponsibleagencycode_03 { get; set; }
+        /// <summary>
+        /// Occupation description
+        /// </summary>
+        [Pos(4)]
+        public string Occupationdescription_04 { get; set; }
+        /// <summary>
+        /// Occupation description
+        /// </summary>
+        [Pos(5)]
+        public string Occupationdescription_05 { get; set; }
+    }
+
+    /// <summary>
+    /// ATTRIBUTE TYPE
+    /// </summary>
+    [Serializable()]
+    [Composite("C955")]
+    public class C955
+    {
+
+        /// <summary>
+        /// Attribute type description code
+        /// </summary>
+        [Pos(1)]
+        public string Attributetypedescriptioncode_01 { get; set; }
+        /// <summary>
+        /// Code list identification code
+        /// </summary>
+        [Pos(2)]
+        public string Codelistidentificationcode_02 { get; set; }
+        /// <summary>
+        /// Code list responsible agency code
+        /// </summary>
+        [Pos(3)]
+        public string Codelistresponsibleagencycode_03 { get; set; }
+        /// <summary>
+        /// Attribute type description
+        /// </summary>
+        [Pos(4)]
+        public string Attributetypedescription_04 { get; set; }
+    }
+
+    /// <summary>
+    /// ATTRIBUTE DETAIL
+    /// </summary>
+    [Serializable()]
+    [Composite("C956")]
+    public class C956
+    {
+
+        /// <summary>
+        /// Attribute description code
+        /// </summary>
+        [Pos(1)]
+        public string Attributedescriptioncode_01 { get; set; }
+        /// <summary>
+        /// Code list identification code
+        /// </summary>
+        [Pos(2)]
+        public string Codelistidentificationcode_02 { get; set; }
+        /// <summary>
+        /// Code list responsible agency code
+        /// </summary>
+        [Pos(3)]
+        public string Codelistresponsibleagencycode_03 { get; set; }
+        /// <summary>
+        /// Attribute description
+        /// </summary>
+        [Pos(4)]
+        public string Attributedescription_04 { get; set; }
     }
 }

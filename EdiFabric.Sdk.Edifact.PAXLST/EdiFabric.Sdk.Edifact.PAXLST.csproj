@@ -4,15 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{39B0A0AF-494B-4803-A830-C97F3390A574}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EdiFabric.Sdk.Edifact.Templates.USCustoms</RootNamespace>
-    <AssemblyName>EdiFabric.Sdk.Edifact.Templates.USCustoms</AssemblyName>
+    <ProjectGuid>{F47F0A1D-6DA5-4252-AEFF-5EA162E90D2A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>EdiFabric.Sdk.Edifact.PAXLST</RootNamespace>
+    <AssemblyName>EdiFabric.Sdk.Edifact.PAXLST</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +22,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,6 +34,9 @@
     <Reference Include="EdiFabric.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
       <HintPath>..\packages\EdiFabric.Core.9.7.4\lib\net45\EdiFabric.Core.dll</HintPath>
     </Reference>
+    <Reference Include="EdiFabric.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
+      <HintPath>..\packages\EdiFabric.Framework.9.7.4\lib\net45\EdiFabric.Framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,15 +47,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EF_EDIFACT_D03B_Codes.cs" />
-    <Compile Include="EF_EDIFACT_D03B_ComplexElements.cs" />
-    <Compile Include="EF_EDIFACT_D03B_CUSCAR.cs" />
-    <Compile Include="EF_EDIFACT_D03B_PAXLST.cs" />
-    <Compile Include="EF_EDIFACT_D03B_Segments.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EdiFabric.Sdk.Edifact.Templates.USCustoms\EdiFabric.Sdk.Edifact.Templates.USCustoms.csproj">
+      <Project>{39b0a0af-494b-4803-a830-c97f3390a574}</Project>
+      <Name>EdiFabric.Sdk.Edifact.Templates.USCustoms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EdiFabric.Sdk.Helpers.Edifact\EdiFabric.Sdk.Helpers.Edifact.csproj">
+      <Project>{7e894f74-9ae6-4c83-b4aa-f70bbd125b44}</Project>
+      <Name>EdiFabric.Sdk.Helpers.Edifact</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EdiFabric.Sdk.Helpers\EdiFabric.Sdk.Helpers.csproj">
+      <Project>{4c09fee1-decb-42ec-9b0a-dad7e7232005}</Project>
+      <Name>EdiFabric.Sdk.Helpers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

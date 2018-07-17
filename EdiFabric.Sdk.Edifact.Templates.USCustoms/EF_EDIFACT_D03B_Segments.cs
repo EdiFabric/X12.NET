@@ -6,8 +6,33 @@ namespace EdiFabric.Templates.EdifactD03B
     using EdiFabric.Core.Annotations.Validation;
     using EdiFabric.Core.Model.Edi;
     using EdiFabric.Core.Model.Edi.Edifact;
-    
-    
+
+    /// <summary>
+    /// ATTRIBUTE
+    /// </summary>
+    [Serializable()]
+    [Segment("ATT")]
+    public class ATT
+    {
+
+        /// <summary>
+        /// Attribute function code qualifier
+        /// </summary>
+        [Pos(1)]
+        public string Attributefunctioncodequalifier_01 { get; set; }
+        /// <summary>
+        /// ATTRIBUTE TYPE
+        /// </summary>
+        [Pos(2)]
+        public C955 ATTRIBUTETYPE_02 { get; set; }
+        /// <summary>
+        /// ATTRIBUTE DETAIL
+        /// </summary>
+        [ListCount(5)]
+        [Pos(3)]
+        public List<C956> ATTRIBUTEDETAIL_03 { get; set; }
+    }
+
     /// <summary>
     /// AUTHENTICATION RESULT
     /// </summary>
@@ -357,7 +382,47 @@ namespace EdiFabric.Templates.EdifactD03B
         [Pos(5)]
         public string Documentoriginalsrequiredquantity_05 { get; set; }
     }
-    
+
+    /// <summary>
+    /// EMPLOYMENT DETAILS
+    /// </summary>
+    [Serializable()]
+    [Segment("EMP")]
+    public class EMP
+    {
+
+        /// <summary>
+        /// Employment details code qualifier
+        /// </summary>
+        [Pos(1)]
+        public string Employmentdetailscodequalifier_01 { get; set; }
+        /// <summary>
+        /// EMPLOYMENT CATEGORY
+        /// </summary>
+        [Pos(2)]
+        public C948 EMPLOYMENTCATEGORY_02 { get; set; }
+        /// <summary>
+        /// OCCUPATION
+        /// </summary>
+        [Pos(3)]
+        public C951 OCCUPATION_03 { get; set; }
+        /// <summary>
+        /// QUALIFICATION CLASSIFICATION
+        /// </summary>
+        [Pos(4)]
+        public C950 QUALIFICATIONCLASSIFICATION_04 { get; set; }
+        /// <summary>
+        /// Job title description
+        /// </summary>
+        [Pos(5)]
+        public string Jobtitledescription_05 { get; set; }
+        /// <summary>
+        /// Qualification application area code
+        /// </summary>
+        [Pos(6)]
+        public string Qualificationapplicationareacode_06 { get; set; }
+    }
+
     /// <summary>
     /// DATE/TIME/PERIOD
     /// </summary>
@@ -672,7 +737,27 @@ namespace EdiFabric.Templates.EdifactD03B
         [Pos(9)]
         public string Countrynamecode_09 { get; set; }
     }
-    
+
+    /// <summary>
+    /// NATIONALITY
+    /// </summary>
+    [Serializable()]
+    [Segment("NAT")]
+    public class NAT
+    {
+
+        /// <summary>
+        /// Nationality code qualifier
+        /// </summary>
+        [Pos(1)]
+        public string Nationalitycodequalifier_01 { get; set; }
+        /// <summary>
+        /// NATIONALITY DETAILS
+        /// </summary>
+        [Pos(2)]
+        public C042 NATIONALITYDETAILS_02 { get; set; }
+    }
+
     /// <summary>
     /// PACKAGE
     /// </summary>

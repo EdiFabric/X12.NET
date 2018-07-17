@@ -40,6 +40,9 @@
     <Reference Include="EdiFabric.Templates.Edifact, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
       <HintPath>..\packages\EdiFabric.Templates.Edifact.1.0.0\lib\net45\EdiFabric.Templates.Edifact.dll</HintPath>
     </Reference>
+    <Reference Include="EdiFabric.Templates.Padis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
+      <HintPath>..\packages\EdiFabric.Templates.Padis.1.0.0\lib\net45\EdiFabric.Templates.Padis.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
