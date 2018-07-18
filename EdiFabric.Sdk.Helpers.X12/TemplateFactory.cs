@@ -52,6 +52,15 @@ namespace EdiFabric.Sdk.Helpers.X12
 
         public static Assembly TrialTemplateFactory(MessageContext messageContext)
         {
+            if (messageContext.Version == "005010X220A1")
+                return Assembly.Load("EdiFabric.Templates.Hipaa");
+
+            if (messageContext.Version == "005010X221A1")
+                return Assembly.Load("EdiFabric.Templates.Hipaa");
+
+            if (messageContext.Version == "005010X218")
+                return Assembly.Load("EdiFabric.Templates.Hipaa");
+
             if (messageContext.Version == "004010")
                 return Assembly.Load("EdiFabric.Templates.X12");
 
