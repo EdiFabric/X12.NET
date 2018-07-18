@@ -70,12 +70,17 @@ namespace EdiFabric.Sdk.Hipaa.T820
         {
             var result = new TS820();
 
-            //  Used to indicate the start of a transaction set and to specify a transaction set control number.
+            //  Beginning of an 820 transaction set, Control number = 0001.
             result.ST = new ST();
             result.ST.TransactionSetIdentifierCode_01 = "820";
             result.ST.TransactionSetControlNumber_02 = controlNumber.PadLeft(9, '0');
             result.ST.ImplementationConventionPreference_03 = "005010X218";
 
+            //  Financial institution to include the remittance information with the payment of $19000 using a credit ACH CTX formatted payment. 
+            //  The premium payer's bank transit routing number is 999999992 and their bank account is 12345678. 
+            //  The premium payer's Tax ID with a leading 1 is 1030449999. 
+            //  The premium receiver's bank transit routing number is 199999999 and their bank account is 98765. 
+            //  The payment effective date is May 16, 2007.
             result.BPR_FinancialInformation = new BPR_FinancialInformation();
             result.BPR_FinancialInformation.TransactionHandlingCode_01 = "C";
             result.BPR_FinancialInformation.TotalPremiumPaymentAmount_02 = "19000";
@@ -93,6 +98,8 @@ namespace EdiFabric.Sdk.Hipaa.T820
             result.BPR_FinancialInformation.ReceiverBankAccountNumber_15 = "98765";
             result.BPR_FinancialInformation.CheckIssueorEFTEffectiveDate_16 = "20070516";
 
+            //  Reassociation Key provides a sender unique trace number "12345", and the sender's Tax ID number preceded by a 1. 
+            //  This Key is included in case the sending trace number is duplicated by another sender.
             result.TRN_ReassociationTraceNumber = new TRN_ReassociationTraceNumber();
             result.TRN_ReassociationTraceNumber.TraceTypeCode_01 = "1";
             result.TRN_ReassociationTraceNumber.CurrentTransactionTraceNumber_02 = "12345";
@@ -101,6 +108,7 @@ namespace EdiFabric.Sdk.Hipaa.T820
             //  Repeating REF
             result.REF_PremiumReceiversIdentificationKey = new List<REF_PremiumReceiversIdentificationKey>();
 
+            //  The master account number is 12345.
             var ref1 = new REF_PremiumReceiversIdentificationKey();
             ref1.ReferenceIdentificationQualifier_01 = "14";
             ref1.MemberGrouporPolicyNumber_02 = "12345";
@@ -112,6 +120,7 @@ namespace EdiFabric.Sdk.Hipaa.T820
             //  Begin 1000A Loop
             result.AllN1.Loop1000A = new Loop_1000A_820();
 
+            //  The premium receiver's name (DEF HEALTH CARE INC) and federal Tax ID number (012222222).
             result.AllN1.Loop1000A.N1_PremiumReceiver_Name = new N1_PayeeIdentification();
             result.AllN1.Loop1000A.N1_PremiumReceiver_Name.EntityIdentifierCode_01 = "PE";
             result.AllN1.Loop1000A.N1_PremiumReceiver_Name.PremiumPayerName_02 = "DEF HEALTH CARE INC.";
@@ -123,6 +132,7 @@ namespace EdiFabric.Sdk.Hipaa.T820
             //  Begin 1000B Loop
             result.AllN1.Loop1000B = new Loop_1000B_820();
 
+            //  The premium payer's name (ABC PLASTICS) and federal tax ID number (123456789).
             result.AllN1.Loop1000B.N1_PremiumPayer_Name = new N1_PayerIdentification();
             result.AllN1.Loop1000B.N1_PremiumPayer_Name.EntityIdentifierCode_01 = "PR";
             result.AllN1.Loop1000B.N1_PremiumPayer_Name.PremiumPayerName_02 = "ABC PLASTICS";
@@ -137,6 +147,8 @@ namespace EdiFabric.Sdk.Hipaa.T820
             //  Begin 2000A Loop
             result.AllENT.Loop2000A = new Loop_2000A_820();
 
+            //  Start of detail loop. Identifies this is a corporate entity item (summary bill payment). 
+            //  The premium payer's federal tax ID number (123456789).
             result.AllENT.Loop2000A.ENT_OrganizationSummaryRemittance = new ENT_IndividualRemittance();
             result.AllENT.Loop2000A.ENT_OrganizationSummaryRemittance.AssignedNumber_01 = "1";
             result.AllENT.Loop2000A.ENT_OrganizationSummaryRemittance.EntityIdentifierCode_02 = "2L";
@@ -149,6 +161,7 @@ namespace EdiFabric.Sdk.Hipaa.T820
             //  Begin 2300A Loop 1
             var loop23001 = new Loop_2300A_820();
 
+            //  The invoice being paid 970501001 (major medical).The amount being paid to this invoice ($16500).
             loop23001.RMR_OrganizationSummaryRemittanceDetail = new RMR_OrganizationSummaryRemittanceDetail();
             loop23001.RMR_OrganizationSummaryRemittanceDetail.ReferenceIdentificationQualifier_01 = "IK";
             loop23001.RMR_OrganizationSummaryRemittanceDetail.InsuranceRemittanceReferenceNumber_02 = "970501001";
@@ -158,6 +171,7 @@ namespace EdiFabric.Sdk.Hipaa.T820
             //  Begin 2310A Loop
             loop23001.Loop2310A = new Loop_2310A_820();
 
+            //  Start of required member counts under a summary RMR item.
             loop23001.Loop2310A.IT1_SummaryLineItem = new IT1_SummaryLineItem();
             loop23001.Loop2310A.IT1_SummaryLineItem.LineItemControlNumber_01 = "1";
 
@@ -167,6 +181,7 @@ namespace EdiFabric.Sdk.Hipaa.T820
             //  Begin 2315A Loop 1
             var loop2315a1 = new Loop_2315A_820();
 
+            //  Five of the 80 employees have individual coverage.
             loop2315a1.SLN_MemberCount = new SLN_MemberCount();
             loop2315a1.SLN_MemberCount.LineItemControlNumber_01 = "1";
             loop2315a1.SLN_MemberCount.InformationOnlyIndicator_03 = "O";
@@ -180,6 +195,7 @@ namespace EdiFabric.Sdk.Hipaa.T820
             //  Begin 2315A Loop 2
             var loop2315a2 = new Loop_2315A_820();
 
+            //  Seventy-five of the 80 employees have family coverage.
             loop2315a2.SLN_MemberCount = new SLN_MemberCount();
             loop2315a2.SLN_MemberCount.LineItemControlNumber_01 = "2";
             loop2315a2.SLN_MemberCount.InformationOnlyIndicator_03 = "O";
@@ -198,6 +214,7 @@ namespace EdiFabric.Sdk.Hipaa.T820
             //  Begin 2300A Loop 2
             var loop23002 = new Loop_2300A_820();
 
+            //  The invoice being paid 970501002 (disability). The amount being paid to this invoice ($2500).
             loop23002.RMR_OrganizationSummaryRemittanceDetail = new RMR_OrganizationSummaryRemittanceDetail();
             loop23002.RMR_OrganizationSummaryRemittanceDetail.ReferenceIdentificationQualifier_01 = "IK";
             loop23002.RMR_OrganizationSummaryRemittanceDetail.InsuranceRemittanceReferenceNumber_02 = "970501002";
@@ -207,6 +224,7 @@ namespace EdiFabric.Sdk.Hipaa.T820
             //  Begin 2310A Loop
             loop23002.Loop2310A = new Loop_2310A_820();
 
+            //  Start of required member counts under a summary RMR item.
             loop23002.Loop2310A.IT1_SummaryLineItem = new IT1_SummaryLineItem();
             loop23002.Loop2310A.IT1_SummaryLineItem.LineItemControlNumber_01 = "1";
 
@@ -216,6 +234,7 @@ namespace EdiFabric.Sdk.Hipaa.T820
             //  Begin 2315A Loop 1
             var loop2315a3 = new Loop_2315A_820();
 
+            //  Twenty-five employees have disability coverage.
             loop2315a3.SLN_MemberCount = new SLN_MemberCount();
             loop2315a3.SLN_MemberCount.LineItemControlNumber_01 = "1";
             loop2315a3.SLN_MemberCount.InformationOnlyIndicator_03 = "O";
