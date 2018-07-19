@@ -65,6 +65,54 @@ namespace EdiFabric.Sdk.Hipaa.T837I
         /// <summary>
         /// Build institutional claim.
         /// Original from http://www.x12.org/examples/005010X223/institutional/837-institutional-claim/
+        /// The patient is a different person than the subscriber. The payer is a commercial health insurance company.
+        /// Scenario:
+        /// PRIMARY PAYER SUBSCRIBER: John T Doe
+        /// SUBSCRIBER ADDRESS: 125 City Avenue, Centerville, PA 17111
+        /// SEX: M
+        /// DOB: 11/11/1926
+        /// MEDICARE INSURANCE ID#: 030005074A
+        /// PAYER ID #: 00435
+        /// PATIENT: Same as Primary Subscriber
+        /// DESTINATION PAYER: Medicare B
+        /// SUBMITTER: Jones Hospital
+        /// EDI#: 12345
+        /// RECEIVER: Medicare
+        /// EDI#: 00120
+        /// BILLING PROVIDER: Jones Hospital
+        /// NPI: 9876540809
+        /// TIN: 567891234
+        /// MEDICARE PROVIDER: #330127
+        /// ADDRESS: 225 Main Street Barkley Building, Centerville, PA 17111
+        /// ATTENDING PHYSICIAN: John J Jones
+        /// UPIN #: B99937
+        /// PATIENT ACCOUNT NUMBER: 756048Q
+        /// DATE OF ADMISSION: 09/11/96
+        /// STATEMENT PERIOD DATE: 09/11/96 - 09/11/96
+        /// PLACE OF SERVICE: Inpatient Hospital
+        /// Occurrence Codes and Dates:
+        /// A1 11/11/26
+        /// A2 11/01/91
+        /// B1 11/11/26
+        /// B2 01/01/87
+        /// Condition Codes: 09
+        /// Value Codes: A2 $15.31
+        /// PRINCIPAL DIAGNOSIS CODE: 366.9
+        /// SECONDARY DIAGNOSIS CODES:
+        /// 401.9
+        /// 794.31
+        /// NUMBER OF COVERED DAYS: 1
+        /// SERVICES:
+        /// INSTITUTIONAL SERVICES RENDERED:
+        /// REVENUE CODE: 0305 HCPCS Procedure Code: 85025 Unit: 1 Price $13.39
+        /// REVENUE CODE: 0730 HCPCS Procedure Code: 93005 Unit: 1 Price: $76.54
+        /// TOTAL CHARGES: $89.93
+        /// SECONDARY PAYER SUBSCRIBER: Jane S Doe(wife)
+        /// SUBSCRIBER ADDRESS: 125 City Avenue, Centerville, PA 17111
+        /// SEX: F
+        /// DOB: 12/11/1927
+        /// STATE TEACHERS ID#: 222004433
+        /// PAYER ID #: 1135
         /// </summary>
         static TS837I BuildInstitutionalClaim(string controlNumber)
         {
