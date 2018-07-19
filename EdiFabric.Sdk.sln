@@ -134,6 +134,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hipaa", "Hipaa", "{1CEC0FD5
 		Files.Hipaa\Payment.txt = Files.Hipaa\Payment.txt
 		Files.Hipaa\PaymentOrder.txt = Files.Hipaa\PaymentOrder.txt
 		Files.Hipaa\RequestTransmission.txt = Files.Hipaa\RequestTransmission.txt
+		Files.Hipaa\ResponseTransmission.txt = Files.Hipaa\ResponseTransmission.txt
 		Files.Hipaa\ServicesReview.txt = Files.Hipaa\ServicesReview.txt
 	EndProjectSection
 EndProject
@@ -220,6 +221,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Hipaa.T278", "EdiFabric.Sdk.Hipaa.T278\EdiFabric.Sdk.Hipaa.T278.csproj", "{00202BF5-52AE-49AA-A1E9-041DC9DC1A1E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Hipaa.T276", "EdiFabric.Sdk.Hipaa.T276\EdiFabric.Sdk.Hipaa.T276.csproj", "{2B4B2CD3-BCBA-42F4-B1DA-3752169DA23A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Hipaa.T277", "EdiFabric.Sdk.Hipaa.T277\EdiFabric.Sdk.Hipaa.T277.csproj", "{6CE68652-0136-4FEA-B93A-B27CF356B7C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -740,6 +743,16 @@ Global
 		{2B4B2CD3-BCBA-42F4-B1DA-3752169DA23A}.test|Any CPU.Build.0 = Release|Any CPU
 		{2B4B2CD3-BCBA-42F4-B1DA-3752169DA23A}.Trial|Any CPU.ActiveCfg = Release|Any CPU
 		{2B4B2CD3-BCBA-42F4-B1DA-3752169DA23A}.Trial|Any CPU.Build.0 = Release|Any CPU
+		{6CE68652-0136-4FEA-B93A-B27CF356B7C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CE68652-0136-4FEA-B93A-B27CF356B7C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CE68652-0136-4FEA-B93A-B27CF356B7C1}.Lite|Any CPU.ActiveCfg = Release|Any CPU
+		{6CE68652-0136-4FEA-B93A-B27CF356B7C1}.Lite|Any CPU.Build.0 = Release|Any CPU
+		{6CE68652-0136-4FEA-B93A-B27CF356B7C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CE68652-0136-4FEA-B93A-B27CF356B7C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CE68652-0136-4FEA-B93A-B27CF356B7C1}.test|Any CPU.ActiveCfg = Release|Any CPU
+		{6CE68652-0136-4FEA-B93A-B27CF356B7C1}.test|Any CPU.Build.0 = Release|Any CPU
+		{6CE68652-0136-4FEA-B93A-B27CF356B7C1}.Trial|Any CPU.ActiveCfg = Release|Any CPU
+		{6CE68652-0136-4FEA-B93A-B27CF356B7C1}.Trial|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -819,6 +832,7 @@ Global
 		{FF74CFBA-35A5-4AF4-889B-2FD98D5B386D} = {1975D863-B9E6-4BE4-A254-2541E7D717C2}
 		{00202BF5-52AE-49AA-A1E9-041DC9DC1A1E} = {1975D863-B9E6-4BE4-A254-2541E7D717C2}
 		{2B4B2CD3-BCBA-42F4-B1DA-3752169DA23A} = {1975D863-B9E6-4BE4-A254-2541E7D717C2}
+		{6CE68652-0136-4FEA-B93A-B27CF356B7C1} = {1975D863-B9E6-4BE4-A254-2541E7D717C2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB447360-6410-4AB0-8984-1454D5AAEA49}
