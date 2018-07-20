@@ -130,6 +130,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hipaa", "Hipaa", "{1CEC0FD5
 		Files.Hipaa\BenefitEnrollment.txt = Files.Hipaa\BenefitEnrollment.txt
 		Files.Hipaa\ClaimPayment.txt = Files.Hipaa\ClaimPayment.txt
 		Files.Hipaa\DentalClaim.txt = Files.Hipaa\DentalClaim.txt
+		Files.Hipaa\GenericRequest.txt = Files.Hipaa\GenericRequest.txt
+		Files.Hipaa\GenericResponse.txt = Files.Hipaa\GenericResponse.txt
 		Files.Hipaa\InstitutionalClaim.txt = Files.Hipaa\InstitutionalClaim.txt
 		Files.Hipaa\Payment.txt = Files.Hipaa\Payment.txt
 		Files.Hipaa\PaymentOrder.txt = Files.Hipaa\PaymentOrder.txt
@@ -223,6 +225,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Hipaa.T276", "EdiFabric.Sdk.Hipaa.T276\EdiFabric.Sdk.Hipaa.T276.csproj", "{2B4B2CD3-BCBA-42F4-B1DA-3752169DA23A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Hipaa.T277", "EdiFabric.Sdk.Hipaa.T277\EdiFabric.Sdk.Hipaa.T277.csproj", "{6CE68652-0136-4FEA-B93A-B27CF356B7C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Hipaa.T270", "EdiFabric.Sdk.Hipaa.T270\EdiFabric.Sdk.Hipaa.T270.csproj", "{3B16AA7E-EDB3-4757-8C24-070743E29204}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Hipaa.T271", "EdiFabric.Sdk.Hipaa.T271\EdiFabric.Sdk.Hipaa.T271.csproj", "{1534D9AF-5A8D-40AE-ADD4-A0217C0FF97D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -753,6 +759,26 @@ Global
 		{6CE68652-0136-4FEA-B93A-B27CF356B7C1}.test|Any CPU.Build.0 = Release|Any CPU
 		{6CE68652-0136-4FEA-B93A-B27CF356B7C1}.Trial|Any CPU.ActiveCfg = Release|Any CPU
 		{6CE68652-0136-4FEA-B93A-B27CF356B7C1}.Trial|Any CPU.Build.0 = Release|Any CPU
+		{3B16AA7E-EDB3-4757-8C24-070743E29204}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B16AA7E-EDB3-4757-8C24-070743E29204}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B16AA7E-EDB3-4757-8C24-070743E29204}.Lite|Any CPU.ActiveCfg = Release|Any CPU
+		{3B16AA7E-EDB3-4757-8C24-070743E29204}.Lite|Any CPU.Build.0 = Release|Any CPU
+		{3B16AA7E-EDB3-4757-8C24-070743E29204}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B16AA7E-EDB3-4757-8C24-070743E29204}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B16AA7E-EDB3-4757-8C24-070743E29204}.test|Any CPU.ActiveCfg = Release|Any CPU
+		{3B16AA7E-EDB3-4757-8C24-070743E29204}.test|Any CPU.Build.0 = Release|Any CPU
+		{3B16AA7E-EDB3-4757-8C24-070743E29204}.Trial|Any CPU.ActiveCfg = Release|Any CPU
+		{3B16AA7E-EDB3-4757-8C24-070743E29204}.Trial|Any CPU.Build.0 = Release|Any CPU
+		{1534D9AF-5A8D-40AE-ADD4-A0217C0FF97D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1534D9AF-5A8D-40AE-ADD4-A0217C0FF97D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1534D9AF-5A8D-40AE-ADD4-A0217C0FF97D}.Lite|Any CPU.ActiveCfg = Release|Any CPU
+		{1534D9AF-5A8D-40AE-ADD4-A0217C0FF97D}.Lite|Any CPU.Build.0 = Release|Any CPU
+		{1534D9AF-5A8D-40AE-ADD4-A0217C0FF97D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1534D9AF-5A8D-40AE-ADD4-A0217C0FF97D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1534D9AF-5A8D-40AE-ADD4-A0217C0FF97D}.test|Any CPU.ActiveCfg = Release|Any CPU
+		{1534D9AF-5A8D-40AE-ADD4-A0217C0FF97D}.test|Any CPU.Build.0 = Release|Any CPU
+		{1534D9AF-5A8D-40AE-ADD4-A0217C0FF97D}.Trial|Any CPU.ActiveCfg = Release|Any CPU
+		{1534D9AF-5A8D-40AE-ADD4-A0217C0FF97D}.Trial|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -833,6 +859,8 @@ Global
 		{00202BF5-52AE-49AA-A1E9-041DC9DC1A1E} = {1975D863-B9E6-4BE4-A254-2541E7D717C2}
 		{2B4B2CD3-BCBA-42F4-B1DA-3752169DA23A} = {1975D863-B9E6-4BE4-A254-2541E7D717C2}
 		{6CE68652-0136-4FEA-B93A-B27CF356B7C1} = {1975D863-B9E6-4BE4-A254-2541E7D717C2}
+		{3B16AA7E-EDB3-4757-8C24-070743E29204} = {1975D863-B9E6-4BE4-A254-2541E7D717C2}
+		{1534D9AF-5A8D-40AE-ADD4-A0217C0FF97D} = {1975D863-B9E6-4BE4-A254-2541E7D717C2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB447360-6410-4AB0-8984-1454D5AAEA49}

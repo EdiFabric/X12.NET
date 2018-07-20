@@ -73,6 +73,9 @@ namespace EdiFabric.Sdk.Helpers.X12
             if (messageContext.Version == "005010X212")
                 return Assembly.Load("EdiFabric.Templates.Hipaa");
 
+            if (messageContext.Version == "005010X279A1")
+                return Assembly.Load("EdiFabric.Templates.Hipaa");
+
             if (messageContext.Version == "004010")
                 return Assembly.Load("EdiFabric.Templates.X12");
 
