@@ -35,9 +35,28 @@ For VDA:			EdiFabric.Sdk.Vda.Templates
 For X12:			EdiFabric.Sdk.X12.T810
 				EdiFabric.Sdk.X12.T850
 
-For HIPAA:		EdiFabric.Sdk.Hipaa.T837P
+For HIPAA:		EdiFabric.Sdk.Hipaa.T270	
+				EdiFabric.Sdk.Hipaa.T271
+				EdiFabric.Sdk.Hipaa.T276
+				EdiFabric.Sdk.Hipaa.T277
+				EdiFabric.Sdk.Hipaa.T277
+				EdiFabric.Sdk.Hipaa.T820
+				EdiFabric.Sdk.Hipaa.T834
+				EdiFabric.Sdk.Hipaa.T835
+				EdiFabric.Sdk.Hipaa.T837D
+				EdiFabric.Sdk.Hipaa.T837I
+				EdiFabric.Sdk.Hipaa.T837P
 
-For EDIFACT:		EdiFabric.Sdk.Edifact.INVOIC
+For EDIFACT:		EdiFabric.Sdk.Edifact.BAPLIE	
+				EdiFabric.Sdk.Edifact.CUSCAR
+				EdiFabric.Sdk.Edifact.DESADV
+				EdiFabric.Sdk.Edifact.IFTMIN
+				EdiFabric.Sdk.Edifact.IFTSTA
+				EdiFabric.Sdk.Edifact.INVOIC
 				EdiFabric.Sdk.Edifact.ORDERS
+				EdiFabric.Sdk.Edifact.ORDRSP
+				EdiFabric.Sdk.Edifact.PAXLST
+				EdiFabric.Sdk.Edifact.PNRGOV
+				EdiFabric.Sdk.Edifact.PRICAT
 
 For EANCOM:		EdiFabric.Sdk.Eancom.INVOIC
