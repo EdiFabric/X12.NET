@@ -35,15 +35,10 @@ namespace EdiFabric.Sdk.X12.T855
 
             foreach (var transaction in transactions)
             {
-                MessageErrorContext mec;
-                if (transaction.IsValid(out mec))
+                if (transaction.HasErrors)
                 {
-                    //  valid
-                }
-                else
-                {
-                    //  invalid
-                    var errors = mec.Flatten();
+                    //  partially parsed
+                    var errors = transaction.ErrorContext.Flatten();
                 }
             }
         }
@@ -53,28 +48,18 @@ namespace EdiFabric.Sdk.X12.T855
         /// </summary>
         static void Write()
         {
+            var transaction = BuildPurchaseOrdersAcknowledgement("5");
+
             using (var stream = new MemoryStream())
             {
-                var transaction = BuildPurchaseOrdersAcknowledgement("5");
-
-                MessageErrorContext mec;
-                if (transaction.IsValid(out mec, true))
+                using (var writer = new X12Writer(stream))
                 {
-                    //  valid
-                    using (var writer = new X12Writer(stream))
-                    {
-                        writer.Write(SegmentBuilders.BuildIsa("1"));
-                        writer.Write(SegmentBuilders.BuildGs("1"));
-                        writer.Write(transaction);
-                    }
+                    writer.Write(SegmentBuilders.BuildIsa("1"));
+                    writer.Write(SegmentBuilders.BuildGs("1"));
+                    writer.Write(transaction);
+                }
 
-                    var ediString = stream.LoadToString();
-                }
-                else
-                {
-                    //  invalid
-                    var errors = mec.Flatten();
-                }
+                var ediString = stream.LoadToString();
             }
         }
 
