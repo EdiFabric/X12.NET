@@ -95,6 +95,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12", "X12", "{9AFB6CCB-C20
 		Files.X12\PurchaseOrderMultiLine.txt = Files.X12\PurchaseOrderMultiLine.txt
 		Files.X12\PurchaseOrders.txt = Files.X12\PurchaseOrders.txt
 		Files.X12\PurchaseOrdersAcknowledgement.txt = Files.X12\PurchaseOrdersAcknowledgement.txt
+		Files.X12\ShipBillNotice.txt = Files.X12\ShipBillNotice.txt
 		Files.X12\ShipNotice.txt = Files.X12\ShipNotice.txt
 	EndProjectSection
 EndProject
@@ -238,6 +239,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.X12.T855", "EdiFabric.Sdk.X12.T855\EdiFabric.Sdk.X12.T855.csproj", "{06CD543C-E52D-4A74-96F8-834BF04C07E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.X12.T832", "EdiFabric.Sdk.X12.T832\EdiFabric.Sdk.X12.T832.csproj", "{8AEF8986-B817-4882-A3CD-6F6C384F3944}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.X12.T857", "EdiFabric.Sdk.X12.T857\EdiFabric.Sdk.X12.T857.csproj", "{B803B449-BEF7-4C45-9CFA-B5D2A2417F47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -818,6 +821,16 @@ Global
 		{8AEF8986-B817-4882-A3CD-6F6C384F3944}.test|Any CPU.Build.0 = Release|Any CPU
 		{8AEF8986-B817-4882-A3CD-6F6C384F3944}.Trial|Any CPU.ActiveCfg = Release|Any CPU
 		{8AEF8986-B817-4882-A3CD-6F6C384F3944}.Trial|Any CPU.Build.0 = Release|Any CPU
+		{B803B449-BEF7-4C45-9CFA-B5D2A2417F47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B803B449-BEF7-4C45-9CFA-B5D2A2417F47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B803B449-BEF7-4C45-9CFA-B5D2A2417F47}.Lite|Any CPU.ActiveCfg = Release|Any CPU
+		{B803B449-BEF7-4C45-9CFA-B5D2A2417F47}.Lite|Any CPU.Build.0 = Release|Any CPU
+		{B803B449-BEF7-4C45-9CFA-B5D2A2417F47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B803B449-BEF7-4C45-9CFA-B5D2A2417F47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B803B449-BEF7-4C45-9CFA-B5D2A2417F47}.test|Any CPU.ActiveCfg = Release|Any CPU
+		{B803B449-BEF7-4C45-9CFA-B5D2A2417F47}.test|Any CPU.Build.0 = Release|Any CPU
+		{B803B449-BEF7-4C45-9CFA-B5D2A2417F47}.Trial|Any CPU.ActiveCfg = Release|Any CPU
+		{B803B449-BEF7-4C45-9CFA-B5D2A2417F47}.Trial|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -903,6 +916,7 @@ Global
 		{32CA52EA-3456-485D-82DF-D63BEA1BFA5E} = {5A3328B7-8853-4E78-B641-D8360AB538B0}
 		{06CD543C-E52D-4A74-96F8-834BF04C07E8} = {5A3328B7-8853-4E78-B641-D8360AB538B0}
 		{8AEF8986-B817-4882-A3CD-6F6C384F3944} = {5A3328B7-8853-4E78-B641-D8360AB538B0}
+		{B803B449-BEF7-4C45-9CFA-B5D2A2417F47} = {5A3328B7-8853-4E78-B641-D8360AB538B0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB447360-6410-4AB0-8984-1454D5AAEA49}
