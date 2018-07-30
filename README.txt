@@ -1,5 +1,7 @@
 SDK Contents: 
 
+0.	For a quick translation of EDI files, go to EdiFabric.Sdk.Demo project
+
 1.	For examples on how to translate\parse\read EDI files, search for the following projects:
 
 For X12 or HIPAA:		EdiFabric.Sdk.X12.Read
@@ -27,13 +29,24 @@ For EDIFACT or EANCOM:	EdiFabric.Sdk.Edifact.Export.Xml
 For X12:			EdiFabric.Sdk.X12.Templates.V004010
 For HIPAA:		EdiFabric.Sdk.Hipaa.Templates.V005010
 For EDIFACT:		EdiFabric.Sdk.Edifact.Templates.D96A
+				EdiFabric.Sdk.Edifact.Templates.Smdg
+				EdiFabric.Sdk.Edifact.Templates.USCustoms
 For EANCOM:		EdiFabric.Sdk.Eancom.Templates.D01B.Syntax3
 For VDA:			EdiFabric.Sdk.Vda.Templates
 
 6.	For transaction specific examples, search for the following projects:
 
-For X12:			EdiFabric.Sdk.X12.T810
+For X12:			EdiFabric.Sdk.X12.T210
+				EdiFabric.Sdk.X12.T214
+				EdiFabric.Sdk.X12.T404
+				EdiFabric.Sdk.X12.T810
+				EdiFabric.Sdk.X12.T824
+				EdiFabric.Sdk.X12.T832
 				EdiFabric.Sdk.X12.T850
+				EdiFabric.Sdk.X12.T855
+				EdiFabric.Sdk.X12.T856
+				EdiFabric.Sdk.X12.T857
+				EdiFabric.Sdk.X12.T861
 
 For HIPAA:		EdiFabric.Sdk.Hipaa.T270	
 				EdiFabric.Sdk.Hipaa.T271

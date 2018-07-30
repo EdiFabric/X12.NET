@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Edifact and Eancom", "4. Edifact and Eancom", "{78842466-1FBD-415D-9A31-B3A1A3963585}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Edifact and Eancom Examples", "4. Edifact and Eancom Examples", "{78842466-1FBD-415D-9A31-B3A1A3963585}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EDI Files", "EDI Files", "{608868B5-FD2E-4B4E-B8BA-D5E872D0D7C9}"
 EndProject
@@ -41,7 +41,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Common", "2. Common", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Helpers", "EdiFabric.Sdk.Helpers\EdiFabric.Sdk.Helpers.csproj", "{4C09FEE1-DECB-42EC-9B0A-DAD7E7232005}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. X12 and Hipaa", "3. X12 and Hipaa", "{872F5ACF-78B5-439B-994E-E09FD5874793}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. X12 and Hipaa Examples", "3. X12 and Hipaa Examples", "{872F5ACF-78B5-439B-994E-E09FD5874793}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Export Examples", "Export Examples", "{75700E13-1CE7-4C70-B060-A9929BED47F8}"
 EndProject
@@ -132,7 +132,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Helpers.Edifa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Helpers.X12", "EdiFabric.Sdk.Helpers.X12\EdiFabric.Sdk.Helpers.X12.csproj", "{E5B51FF3-E600-4773-839C-38DF7C1038A0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Vda", "5. Vda", "{B9C8C327-0210-40D2-8146-0F2BAAAF5AB3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Vda Examples", "5. Vda Examples", "{B9C8C327-0210-40D2-8146-0F2BAAAF5AB3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hipaa", "Hipaa", "{1CEC0FD5-5E73-4980-990D-8B37A15A1BFB}"
 	ProjectSection(SolutionItems) = preProject
