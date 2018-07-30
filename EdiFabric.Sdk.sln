@@ -99,6 +99,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12", "X12", "{9AFB6CCB-C20
 		Files.X12\PurchaseOrdersAcknowledgement.txt = Files.X12\PurchaseOrdersAcknowledgement.txt
 		Files.X12\ReceivingAdvice.txt = Files.X12\ReceivingAdvice.txt
 		Files.X12\ShipBillNotice.txt = Files.X12\ShipBillNotice.txt
+		Files.X12\ShipmentStatus.txt = Files.X12\ShipmentStatus.txt
 		Files.X12\ShipNotice.txt = Files.X12\ShipNotice.txt
 	EndProjectSection
 EndProject
@@ -250,6 +251,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.X12.T210", "EdiFabric.Sdk.X12.T210\EdiFabric.Sdk.X12.T210.csproj", "{2BDD91E1-EEA2-4395-B2B0-20A2CE9B7F17}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.X12.T824", "EdiFabric.Sdk.X12.T824\EdiFabric.Sdk.X12.T824.csproj", "{364F92CA-4194-4853-8F82-3D65AB8612E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.X12.T214", "EdiFabric.Sdk.X12.T214\EdiFabric.Sdk.X12.T214.csproj", "{E2BE226B-4BB0-43BA-A434-6D424EA33E20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -870,6 +873,16 @@ Global
 		{364F92CA-4194-4853-8F82-3D65AB8612E7}.test|Any CPU.Build.0 = Release|Any CPU
 		{364F92CA-4194-4853-8F82-3D65AB8612E7}.Trial|Any CPU.ActiveCfg = Release|Any CPU
 		{364F92CA-4194-4853-8F82-3D65AB8612E7}.Trial|Any CPU.Build.0 = Release|Any CPU
+		{E2BE226B-4BB0-43BA-A434-6D424EA33E20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2BE226B-4BB0-43BA-A434-6D424EA33E20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2BE226B-4BB0-43BA-A434-6D424EA33E20}.Lite|Any CPU.ActiveCfg = Release|Any CPU
+		{E2BE226B-4BB0-43BA-A434-6D424EA33E20}.Lite|Any CPU.Build.0 = Release|Any CPU
+		{E2BE226B-4BB0-43BA-A434-6D424EA33E20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2BE226B-4BB0-43BA-A434-6D424EA33E20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2BE226B-4BB0-43BA-A434-6D424EA33E20}.test|Any CPU.ActiveCfg = Release|Any CPU
+		{E2BE226B-4BB0-43BA-A434-6D424EA33E20}.test|Any CPU.Build.0 = Release|Any CPU
+		{E2BE226B-4BB0-43BA-A434-6D424EA33E20}.Trial|Any CPU.ActiveCfg = Release|Any CPU
+		{E2BE226B-4BB0-43BA-A434-6D424EA33E20}.Trial|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -959,6 +972,7 @@ Global
 		{C2474BCB-A0A9-4BBA-81D0-A315A09FF9DC} = {5A3328B7-8853-4E78-B641-D8360AB538B0}
 		{2BDD91E1-EEA2-4395-B2B0-20A2CE9B7F17} = {5A3328B7-8853-4E78-B641-D8360AB538B0}
 		{364F92CA-4194-4853-8F82-3D65AB8612E7} = {5A3328B7-8853-4E78-B641-D8360AB538B0}
+		{E2BE226B-4BB0-43BA-A434-6D424EA33E20} = {5A3328B7-8853-4E78-B641-D8360AB538B0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB447360-6410-4AB0-8984-1454D5AAEA49}
