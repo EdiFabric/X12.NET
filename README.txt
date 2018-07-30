@@ -2,6 +2,13 @@ SDK Contents:
 
 0.	For a quick translation of EDI files, go to EdiFabric.Sdk.Demo project
 
+TRIAL LIMITATIONS:
+All trial products (Demo and SDK) grant you evaluation license for 14 days.
+The performance of the trial version is slower than the real version.
+The size of the assemblies in the trial version is larger than the real assemblies.
+The trial supports .NET Framework 4.5 and .NET Core 2.0.
+The trial has a file size limitation of 2 KB.
+
 1.	For examples on how to translate\parse\read EDI files, search for the following projects:
 
 For X12 or HIPAA:		EdiFabric.Sdk.X12.Read
@@ -73,3 +80,19 @@ For EDIFACT:		EdiFabric.Sdk.Edifact.BAPLIE
 				EdiFabric.Sdk.Edifact.PRICAT
 
 For EANCOM:		EdiFabric.Sdk.Eancom.INVOIC
+
+7.	For additional EDI Templates (that do not support validation), install from NuGet:
+
+For HIPAA:		Install-Package EdiFabric.Templates.Hipaa -Version 1.0.0
+
+For X12:			Install-Package EdiFabric.Templates.X12 -Version 1.0.0
+
+For EDIFACT:		Install-Package EdiFabric.Templates.Edifact -Version 1.0.0
+
+For VDA:			Install-Package EdiFabric.Templates.Vda -Version 1.0.0
+
+For PNRGOV:		Install-Package EdiFabric.Templates.Padis -Version 1.0.0
+
+
+
+If you have any questions, please do not hesitate to contact us at office@edifabric.com
