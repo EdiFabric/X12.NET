@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Edifact and Eancom", "2. Edifact and Eancom", "{78842466-1FBD-415D-9A31-B3A1A3963585}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Edifact and Eancom", "4. Edifact and Eancom", "{78842466-1FBD-415D-9A31-B3A1A3963585}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EDI Files", "EDI Files", "{608868B5-FD2E-4B4E-B8BA-D5E872D0D7C9}"
 EndProject
@@ -37,11 +37,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.ORDER
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.INVOIC", "EdiFabric.Sdk.Edifact.INVOIC\EdiFabric.Sdk.Edifact.INVOIC.csproj", "{1F94DAF1-43DA-4D4B-8D28-843F4F2F4AB4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Common", "4. Common", "{9638AF1F-EE0D-4F0F-9E01-64C9F17C0438}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Common", "2. Common", "{9638AF1F-EE0D-4F0F-9E01-64C9F17C0438}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Helpers", "EdiFabric.Sdk.Helpers\EdiFabric.Sdk.Helpers.csproj", "{4C09FEE1-DECB-42EC-9B0A-DAD7E7232005}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. X12 and Hipaa", "1. X12 and Hipaa", "{872F5ACF-78B5-439B-994E-E09FD5874793}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. X12 and Hipaa", "3. X12 and Hipaa", "{872F5ACF-78B5-439B-994E-E09FD5874793}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Export Examples", "Export Examples", "{75700E13-1CE7-4C70-B060-A9929BED47F8}"
 EndProject
@@ -132,7 +132,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Helpers.Edifa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Helpers.X12", "EdiFabric.Sdk.Helpers.X12\EdiFabric.Sdk.Helpers.X12.csproj", "{E5B51FF3-E600-4773-839C-38DF7C1038A0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Vda", "3. Vda", "{B9C8C327-0210-40D2-8146-0F2BAAAF5AB3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. Vda", "5. Vda", "{B9C8C327-0210-40D2-8146-0F2BAAAF5AB3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hipaa", "Hipaa", "{1CEC0FD5-5E73-4980-990D-8B37A15A1BFB}"
 	ProjectSection(SolutionItems) = preProject
@@ -256,6 +256,20 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.X12.T214", "EdiFabric.Sdk.X12.T214\EdiFabric.Sdk.X12.T214.csproj", "{E2BE226B-4BB0-43BA-A434-6D424EA33E20}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.X12.T404", "EdiFabric.Sdk.X12.T404\EdiFabric.Sdk.X12.T404.csproj", "{CC278648-4CF0-4E7F-A37A-983D6B4F7E7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. EDI Translation Demo", "1. EDI Translation Demo", "{66296C4D-4128-47E8-B76D-E807310E522C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Demo", "EdiFabric.Sdk.Demo\EdiFabric.Sdk.Demo.csproj", "{9AFF9B6C-36D2-407E-9676-844F8C8011E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EDI Files", "EDI Files", "{15984429-7DAB-443D-8A50-BCC3E2E41F1B}"
+	ProjectSection(SolutionItems) = preProject
+		Files.Demo\EdifactD96AInvoic.txt = Files.Demo\EdifactD96AInvoic.txt
+		Files.Demo\EdifactD96APurchaseOrder.txt = Files.Demo\EdifactD96APurchaseOrder.txt
+		Files.Demo\Hipaa005010BenefitEnrollment.txt = Files.Demo\Hipaa005010BenefitEnrollment.txt
+		Files.Demo\Hipaa005010ClaimPayment.txt = Files.Demo\Hipaa005010ClaimPayment.txt
+		Files.Demo\X12004010Invoice.txt = Files.Demo\X12004010Invoice.txt
+		Files.Demo\X12004010PurchaseOrders.txt = Files.Demo\X12004010PurchaseOrders.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -896,6 +910,16 @@ Global
 		{CC278648-4CF0-4E7F-A37A-983D6B4F7E7F}.test|Any CPU.Build.0 = Release|Any CPU
 		{CC278648-4CF0-4E7F-A37A-983D6B4F7E7F}.Trial|Any CPU.ActiveCfg = Release|Any CPU
 		{CC278648-4CF0-4E7F-A37A-983D6B4F7E7F}.Trial|Any CPU.Build.0 = Release|Any CPU
+		{9AFF9B6C-36D2-407E-9676-844F8C8011E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AFF9B6C-36D2-407E-9676-844F8C8011E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AFF9B6C-36D2-407E-9676-844F8C8011E5}.Lite|Any CPU.ActiveCfg = Release|Any CPU
+		{9AFF9B6C-36D2-407E-9676-844F8C8011E5}.Lite|Any CPU.Build.0 = Release|Any CPU
+		{9AFF9B6C-36D2-407E-9676-844F8C8011E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AFF9B6C-36D2-407E-9676-844F8C8011E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AFF9B6C-36D2-407E-9676-844F8C8011E5}.test|Any CPU.ActiveCfg = Release|Any CPU
+		{9AFF9B6C-36D2-407E-9676-844F8C8011E5}.test|Any CPU.Build.0 = Release|Any CPU
+		{9AFF9B6C-36D2-407E-9676-844F8C8011E5}.Trial|Any CPU.ActiveCfg = Release|Any CPU
+		{9AFF9B6C-36D2-407E-9676-844F8C8011E5}.Trial|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -987,6 +1011,8 @@ Global
 		{364F92CA-4194-4853-8F82-3D65AB8612E7} = {5A3328B7-8853-4E78-B641-D8360AB538B0}
 		{E2BE226B-4BB0-43BA-A434-6D424EA33E20} = {5A3328B7-8853-4E78-B641-D8360AB538B0}
 		{CC278648-4CF0-4E7F-A37A-983D6B4F7E7F} = {5A3328B7-8853-4E78-B641-D8360AB538B0}
+		{9AFF9B6C-36D2-407E-9676-844F8C8011E5} = {66296C4D-4128-47E8-B76D-E807310E522C}
+		{15984429-7DAB-443D-8A50-BCC3E2E41F1B} = {66296C4D-4128-47E8-B76D-E807310E522C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB447360-6410-4AB0-8984-1454D5AAEA49}
