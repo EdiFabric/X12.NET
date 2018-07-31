@@ -138,7 +138,7 @@ namespace EdiFabric.Sdk.X12.Write
 
             using (var stream = new MemoryStream())
             {
-                using (var writer = new X12Writer(stream, Encoding.UTF8, Environment.NewLine))
+                using (var writer = new X12Writer(stream, new X12WriterSettings() { Postfix = Environment.NewLine }))
                 {
                     writer.Write(SegmentBuilders.BuildIsa("1"));
                     writer.Write(SegmentBuilders.BuildGs("1"));
@@ -160,7 +160,7 @@ namespace EdiFabric.Sdk.X12.Write
 
             using (var stream = new MemoryStream())
             {
-                using (var writer = new X12Writer(stream, Encoding.Default, Environment.NewLine))
+                using (var writer = new X12Writer(stream, new X12WriterSettings() { Postfix = Environment.NewLine }))
                 {
                     writer.Write(SegmentBuilders.BuildIsa("1"));
                     writer.Write(SegmentBuilders.BuildGs("1"));
@@ -256,7 +256,7 @@ namespace EdiFabric.Sdk.X12.Write
             using (var stream = new MemoryStream())
             {
                 //  Set the PreserveWhitespace flag to true
-                using (var writer = new X12Writer(stream, null, "", true))
+                using (var writer = new X12Writer(stream, new X12WriterSettings() { PreserveWhitespace = true }))
                 {
                     writer.Write(SegmentBuilders.BuildIsa("1"));
                     writer.Write(SegmentBuilders.BuildGs("1"));
@@ -312,6 +312,28 @@ namespace EdiFabric.Sdk.X12.Write
                 {
                     Debug.WriteLine(error);
                 }
+            }
+        }
+
+        /// <summary>
+        ///  Writes to stream without envelopes - no ISA, GS, GE or IEA
+        /// </summary>
+        public static void WriteWithoutEnvelopes()
+        {
+            Debug.WriteLine("******************************");
+            Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
+            Debug.WriteLine("******************************");
+
+            using (var stream = new MemoryStream())
+            {
+                //  Set the separators
+                using (var writer = new X12Writer(stream, new X12WriterSettings() { Separators = Separators.X12 }))
+                {
+                    writer.Write(X12TransactionBuilders.BuildInvoice("1"));
+                    writer.Write(X12TransactionBuilders.BuildInvoice("2"));
+                }
+
+                Debug.Write(stream.LoadToString());
             }
         }
     }

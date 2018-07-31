@@ -345,7 +345,7 @@ namespace EdiFabric.Sdk.X12.Read
 
             //  Set the continue on error flag to true
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, TemplateFactory.FullTemplateFactory, Encoding.UTF8, true))
+            using (var ediReader = new X12Reader(ediStream, TemplateFactory.FullTemplateFactory, new X12ReaderSettings() { ContinueOnError = true }))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var readerErrors = ediItems.OfType<ReaderErrorContext>();
@@ -359,6 +359,28 @@ namespace EdiFabric.Sdk.X12.Read
             foreach (var po in purchaseOrders)
             {
                 //  All valid purchase orders were extracted
+            }
+        }
+
+        /// <summary>
+        /// Reads file without envelopes - no ISA, GS, GE or IEA
+        /// </summary>
+        public static void ReadWithoutEnvelopes()
+        {
+            Debug.WriteLine("******************************");
+            Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
+            Debug.WriteLine("******************************");
+
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\MixedTransactionsNoEnvelopes.txt");
+
+            //  Set the NoEnvelope flag to true
+            List<IEdiItem> ediItems;
+            using (var ediReader = new X12Reader(ediStream, TemplateFactory.FullTemplateFactory, new X12ReaderSettings() { NoEnvelope = true }))
+                ediItems = ediReader.ReadToEnd().ToList();            
+
+            var items = ediItems.OfType<EdiMessage>();
+            foreach (var item in items)
+            {
             }
         }
     }

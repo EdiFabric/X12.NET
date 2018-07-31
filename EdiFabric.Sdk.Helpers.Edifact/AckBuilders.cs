@@ -90,7 +90,7 @@ namespace EdiFabric.Sdk.Helpers.Edifact
         {
             var memoryStream = new MemoryStream();
 
-            using (var writer = new EdifactWriter(memoryStream, Encoding.Default, Environment.NewLine))
+            using (var writer = new EdifactWriter(memoryStream, new EdifactWriterSettings() { Encoding = Encoding.Default, Postfix = Environment.NewLine }))
             {
                 writer.Write(originalUnb.ToAckUnb(unbControlNumber.ToString()));
                 if (originalUng != null)

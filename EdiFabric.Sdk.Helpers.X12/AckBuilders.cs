@@ -82,7 +82,7 @@ namespace EdiFabric.Sdk.Helpers.X12
         {
             var memoryStream = new MemoryStream();
 
-            using (var writer = new X12Writer(memoryStream, Encoding.Default, Environment.NewLine))
+            using (var writer = new X12Writer(memoryStream, new X12WriterSettings() { Encoding = Encoding.Default, Postfix = Environment.NewLine }))
             {
                 writer.Write(originalIsa.ToAckIsa(isaControlNumber.ToString().PadLeft(9, '0'), ackVersion));
                 writer.Write(originalGs.ToAckGs(gsControlNumber.ToString(), ackVersion));

@@ -65,7 +65,7 @@ namespace EdiFabric.Sdk.Hipaa.T837P
                     var separators = new Separators(Separators.X12.Segment, ':', Separators.X12.DataElement, Separators.X12.RepetitionDataElement, Separators.X12.Escape);
 
                     //  valid
-                    using (var writer = new X12Writer(stream, Encoding.UTF8, Environment.NewLine))
+                    using (var writer = new X12Writer(stream, new X12WriterSettings() { Postfix = Environment.NewLine }))
                     {
                         writer.Write(SegmentBuilders.BuildIsa("1"), separators);
                         writer.Write(SegmentBuilders.BuildGs("1"));

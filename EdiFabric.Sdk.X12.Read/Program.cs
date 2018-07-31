@@ -14,6 +14,7 @@
             Examples.ReadMixedTransactions();
             Examples.ReadCorruptIsa();
             Examples.ReadWithContinueOnError();
+            Examples.ReadWithoutEnvelopes();
         }
     }
 }

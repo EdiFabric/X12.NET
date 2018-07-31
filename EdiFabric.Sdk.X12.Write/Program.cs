@@ -13,6 +13,7 @@
             Examples.WriteMultipleInterchanges();
             Examples.WriteSegmentWithWhitespace();
             Examples.WriteSinglePurchaseOrderToStream();
+            Examples.WriteWithoutEnvelopes();
         }
     }
 }

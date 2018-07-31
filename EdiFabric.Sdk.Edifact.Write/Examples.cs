@@ -135,7 +135,7 @@ namespace EdiFabric.Sdk.Edifact.Write
 
             using (var stream = new MemoryStream())
             {
-                using (var writer = new EdifactWriter(stream, Encoding.UTF8, Environment.NewLine))
+                using (var writer = new EdifactWriter(stream, new EdifactWriterSettings() { Postfix = Environment.NewLine }))
                 {
                     writer.Write(SegmentBuilders.BuildUnb("1"));
                     writer.Write(invoice);
@@ -246,7 +246,7 @@ namespace EdiFabric.Sdk.Edifact.Write
             using (var stream = new MemoryStream())
             {
                 //  Set PreserveWhitespace flag to true
-                using (var writer = new EdifactWriter(stream, null, "", true))
+                using (var writer = new EdifactWriter(stream, new EdifactWriterSettings() { PreserveWhitespace = true }))
                 {
                     writer.Write(SegmentBuilders.BuildUnb("1"));
                     writer.Write(invoice);
@@ -299,6 +299,28 @@ namespace EdiFabric.Sdk.Edifact.Write
                 {
                     Debug.WriteLine(error);
                 }
+            }
+        }
+
+        /// <summary>
+        /// Write to stream without envelopes - no UNB, UNG, UNE or UNZ.
+        /// </summary>
+        public static void WriteWithoutEnvelopes()
+        {
+            Debug.WriteLine("******************************");
+            Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
+            Debug.WriteLine("******************************");
+
+            using (var stream = new MemoryStream())
+            {
+                //  Set the separators 
+                using (var writer = new EdifactWriter(stream, new EdifactWriterSettings() { Separators = Separators.Edifact }))
+                {                    
+                    writer.Write(EdifactTransactionBuilders.BuildInvoice("1"));                    
+                    writer.Write(EdifactTransactionBuilders.BuildInvoice("2"));
+                }
+
+                Debug.Write(stream.LoadToString());
             }
         }
     }

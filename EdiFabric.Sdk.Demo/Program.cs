@@ -24,7 +24,7 @@ namespace EdiFabric.Sdk.Demo
             //  var x12Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Demo\X12004010PurchaseOrders.txt");
             var x12Stream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Demo\X12004010Invoice.txt");
             List<IEdiItem> x12Items;
-            using (var ediReader = new X12Reader(x12Stream, LoadFactory, Encoding.UTF8, true))
+            using (var ediReader = new X12Reader(x12Stream, LoadFactory, new X12ReaderSettings() { ContinueOnError = true }))
                 x12Items = ediReader.ReadToEnd().ToList();
 
             var x12Transactions = x12Items.OfType<TS810>();
@@ -33,7 +33,7 @@ namespace EdiFabric.Sdk.Demo
             //  var hipaaStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Demo\Hipaa005010BenefitEnrollment.txt");
             var hipaaStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Demo\Hipaa005010ClaimPayment.txt");
             List<IEdiItem> hipaaItems;
-            using (var ediReader = new X12Reader(hipaaStream, LoadFactory, Encoding.UTF8, true))
+            using (var ediReader = new X12Reader(hipaaStream, LoadFactory, new X12ReaderSettings() { ContinueOnError = true }))
                 hipaaItems = ediReader.ReadToEnd().ToList();
 
             var hipaaTransactions = hipaaItems.OfType<TS837P>();
@@ -42,7 +42,7 @@ namespace EdiFabric.Sdk.Demo
             //  var edifactStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Demo\EdifactD96APurchaseOrder.txt");
             var edifactStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Demo\EdifactD96AInvoic.txt");
             List<IEdiItem> edifactItems;
-            using (var ediReader = new EdifactReader(edifactStream, LoadFactory, Encoding.UTF8, true))
+            using (var ediReader = new EdifactReader(edifactStream, LoadFactory, new EdifactReaderSettings() { ContinueOnError = true }))
                 edifactItems = ediReader.ReadToEnd().ToList();
 
             var edifactTransactions = edifactItems.OfType<TSINVOIC>();

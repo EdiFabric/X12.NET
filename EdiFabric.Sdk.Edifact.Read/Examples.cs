@@ -344,7 +344,7 @@ namespace EdiFabric.Sdk.Edifact.Read
 
             //  Set the continue on error flag to true
             List<IEdiItem> ediItems;
-            using (var ediReader = new EdifactReader(ediStream, TemplateFactory.FullTemplateFactory, Encoding.UTF8, true))
+            using (var ediReader = new EdifactReader(ediStream, TemplateFactory.FullTemplateFactory, new EdifactReaderSettings() { ContinueOnError = true }))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var readerErrors = ediItems.OfType<ReaderErrorContext>();
@@ -358,6 +358,28 @@ namespace EdiFabric.Sdk.Edifact.Read
             foreach (var po in purchaseOrders)
             {
                 //  All valid purchase orders were extracted
+            }
+        }
+
+        /// <summary>
+        /// Reads file without envelopes - no UNB, UNG, UNE or UNZ
+        /// </summary>
+        public static void ReadWithoutEnvelopes()
+        {
+            Debug.WriteLine("******************************");
+            Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
+            Debug.WriteLine("******************************");
+
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\MixedTransactionsNoEnvelopes.txt");
+
+            //  Set the NoEnvelope flag to true
+            List<IEdiItem> ediItems;
+            using (var ediReader = new EdifactReader(ediStream, TemplateFactory.FullTemplateFactory, new EdifactReaderSettings() { NoEnvelope = true }))
+                ediItems = ediReader.ReadToEnd().ToList();
+
+            var items = ediItems.OfType<EdiMessage>();
+            foreach (var item in items)
+            {
             }
         }
     }
