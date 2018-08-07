@@ -8,6 +8,8 @@ With EdiFabric EDI Toolkit you can:
 * Validate EDI files for compliance
 * Automatically generate EDI acknowledgments
 * Customize EDI templates per customer and comply with any format
+* Import\Export to\from XML
+* Import\Export to\from JSON
 
 EDI Templates are included for the following standards:
 
