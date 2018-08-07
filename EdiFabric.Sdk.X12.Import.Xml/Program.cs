@@ -1,10 +1,10 @@
-﻿namespace EdiFabric.Sdk.Edifact.Export.Xml
+﻿namespace EdiFabric.Sdk.X12.Import.Xml
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Examples.SerializeToXml();
+            Examples.DeserializeFromXml();
         }
     }
 }

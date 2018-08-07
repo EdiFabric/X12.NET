@@ -1,0 +1,309 @@
+{
+  "ST": {
+    "TransactionSetIdentifierCode_01": "850",
+    "TransactionSetControlNumber_02": "0001",
+    "ImplementationConventionPreference_03": null
+  },
+  "BEG": {
+    "TransactionSetPurposeCode_01": "00",
+    "PurchaseOrderTypeCode_02": "SA",
+    "PurchaseOrderNumber_03": "XX-1234",
+    "ReleaseNumber_04": null,
+    "Date_05": "20170301",
+    "ContractNumber_06": null,
+    "AcknowledgmentType_07": "NA",
+    "InvoiceTypeCode_08": null,
+    "ContractTypeCode_09": null,
+    "PurchaseCategory_10": null,
+    "SecurityLevelCode_11": null,
+    "TransactionTypeCode_12": null
+  },
+  "CUR": null,
+  "REF": null,
+  "PER": [
+    {
+      "ContactFunctionCode_01": "BD",
+      "Name_02": "ED SMITH",
+      "CommunicationNumberQualifier_03": "TE",
+      "CommunicationNumber_04": "8001234567",
+      "CommunicationNumberQualifier_05": null,
+      "CommunicationNumber_06": null,
+      "CommunicationNumberQualifier_07": null,
+      "CommunicationNumber_08": null,
+      "ContactInquiryReference_09": null
+    }
+  ],
+  "TAX": [
+    {
+      "TaxIdentificationNumber_01": "53247765",
+      "LocationQualifier_02": "SP",
+      "LocationIdentifier_03": "CA",
+      "LocationQualifier_04": null,
+      "LocationIdentifier_05": null,
+      "LocationQualifier_06": null,
+      "LocationIdentifier_07": null,
+      "LocationQualifier_08": null,
+      "LocationIdentifier_09": null,
+      "LocationQualifier_10": null,
+      "LocationIdentifier_11": null,
+      "TaxExemptCode_12": "9",
+      "CustomsEntryTypeGroupCode_13": null
+    }
+  ],
+  "FOB": null,
+  "CTP": null,
+  "PAM": null,
+  "CSH": null,
+  "TC2": null,
+  "SACLoop": null,
+  "ITD": null,
+  "DIS": null,
+  "INC": null,
+  "DTM": null,
+  "LDT": null,
+  "LIN": null,
+  "SI": null,
+  "PID": null,
+  "MEA": null,
+  "PWK": null,
+  "PKG": null,
+  "TD1": null,
+  "TD5": null,
+  "TD3": null,
+  "TD4": null,
+  "MAN": null,
+  "PCT": null,
+  "CTB": null,
+  "TXI": null,
+  "AMTLoop": null,
+  "N9Loop": null,
+  "N1Loop": [
+    {
+      "N1": {
+        "EntityIdentifierCode_01": "BY",
+        "Name_02": "ABC AEROSPACE",
+        "IdentificationCodeQualifier_03": "9",
+        "IdentificationCode_04": "1234567890101",
+        "EntityRelationshipCode_05": null,
+        "EntityIdentifierCode_06": null
+      },
+      "N2": [
+        {
+          "Name_01": "AIRCRAFT DIVISION",
+          "Name_02": null
+        }
+      ],
+      "N3": [
+        {
+          "AddressInformation_01": "2000 JET BLVD",
+          "AddressInformation_02": null
+        }
+      ],
+      "N4": [
+        {
+          "CityName_01": "FIGHTER TOWN",
+          "StateorProvinceCode_02": "CA",
+          "PostalCode_03": "98898",
+          "CountryCode_04": null,
+          "LocationQualifier_05": null,
+          "LocationIdentifier_06": null
+        }
+      ],
+      "NX2": null,
+      "REF": null,
+      "PER": null,
+      "SI": null,
+      "FOB": null,
+      "TD1": null,
+      "TD5": null,
+      "TD3": null,
+      "TD4": null,
+      "PKG": null
+    }
+  ],
+  "LMLoop": null,
+  "SPILoop": null,
+  "ADVLoop": null,
+  "PO1Loop": [
+    {
+      "PO1": {
+        "AssignedIdentification_01": "1",
+        "QuantityOrdered_02": "25",
+        "UnitorBasisforMeasurementCode_03": "EA",
+        "UnitPrice_04": "36",
+        "BasisofUnitPriceCode_05": "PE",
+        "ProductServiceIDQualifier_06": "MG",
+        "ProductServiceID_07": "XYZ-1234",
+        "ProductServiceIDQualifier_08": null,
+        "ProductServiceID_09": null,
+        "ProductServiceIDQualifier_10": null,
+        "ProductServiceID_11": null,
+        "ProductServiceIDQualifier_12": null,
+        "ProductServiceID_13": null,
+        "ProductServiceIDQualifier_14": null,
+        "ProductServiceID_15": null,
+        "ProductServiceIDQualifier_16": null,
+        "ProductServiceID_17": null,
+        "ProductServiceIDQualifier_18": null,
+        "ProductServiceID_19": null,
+        "ProductServiceIDQualifier_20": null,
+        "ProductServiceID_21": null,
+        "ProductServiceIDQualifier_22": null,
+        "ProductServiceID_23": null,
+        "ProductServiceIDQualifier_24": null,
+        "ProductServiceID_25": null
+      },
+      "LIN": null,
+      "SI": null,
+      "CUR": null,
+      "CN1": null,
+      "PO3": null,
+      "CTPLoop": null,
+      "PAM": null,
+      "MEA": [
+        {
+          "MeasurementReferenceIDCode_01": "WT",
+          "MeasurementQualifier_02": "WT",
+          "MeasurementValue_03": "10",
+          "CompositeUnitofMeasure_04": {
+            "UnitorBasisforMeasurementCode_01": "OZ",
+            "Exponent_02": null,
+            "Multiplier_03": null,
+            "UnitorBasisforMeasurementCode_04": null,
+            "Exponent_05": null,
+            "Multiplier_06": null,
+            "UnitorBasisforMeasurementCode_07": null,
+            "Exponent_08": null,
+            "Multiplier_09": null,
+            "UnitorBasisforMeasurementCode_10": null,
+            "Exponent_11": null,
+            "Multiplier_12": null,
+            "UnitorBasisforMeasurementCode_13": null,
+            "Exponent_14": null,
+            "Multiplier_15": null
+          },
+          "RangeMinimum_05": null,
+          "RangeMaximum_06": null,
+          "MeasurementSignificanceCode_07": null,
+          "MeasurementAttributeCode_08": null,
+          "SurfaceLayerPositionCode_09": null,
+          "MeasurementMethodorDevice_10": null
+        }
+      ],
+      "PIDLoop": null,
+      "PWK": null,
+      "PO4": null,
+      "REF": null,
+      "PER": null,
+      "SACLoop": null,
+      "IT8": {
+        "SalesRequirementCode_01": null,
+        "ActionCode_02": null,
+        "Amount_03": null,
+        "AccountNumber_04": null,
+        "Date_05": null,
+        "AgencyQualifierCode_06": null,
+        "ProductServiceSubstitutionCode_07": "B0",
+        "ProductServiceIDQualifier_08": null,
+        "ProductServiceID_09": null,
+        "ProductServiceIDQualifier_10": null,
+        "ProductServiceID_11": null,
+        "ProductServiceIDQualifier_12": null,
+        "ProductServiceID_13": null,
+        "ProductServiceIDQualifier_14": null,
+        "ProductServiceID_15": null,
+        "ProductServiceIDQualifier_16": null,
+        "ProductServiceID_17": null,
+        "ProductServiceIDQualifier_18": null,
+        "ProductServiceID_19": null,
+        "ProductServiceIDQualifier_20": null,
+        "ProductServiceID_21": null,
+        "ProductServiceIDQualifier_22": null,
+        "ProductServiceID_23": null,
+        "ProductServiceIDQualifier_24": null,
+        "ProductServiceID_25": null,
+        "ProductServiceIDQualifier_26": null,
+        "ProductServiceID_27": null
+      },
+      "CSH": null,
+      "ITD": null,
+      "DIS": null,
+      "INC": null,
+      "TAX": null,
+      "FOB": null,
+      "SDQ": null,
+      "IT3": null,
+      "DTM": null,
+      "TC2": null,
+      "TD1": null,
+      "TD5": null,
+      "TD3": null,
+      "TD4": null,
+      "PCT": null,
+      "MAN": null,
+      "MSG": null,
+      "SPI": null,
+      "TXI": null,
+      "CTB": null,
+      "QTYLoop": null,
+      "SCHLoop": [
+        {
+          "SCH": {
+            "Quantity_01": "25",
+            "UnitorBasisforMeasurementCode_02": "EA",
+            "EntityIdentifierCode_03": null,
+            "Name_04": null,
+            "DateTimeQualifier_05": "106",
+            "Date_06": "20170615",
+            "Time_07": null,
+            "DateTimeQualifier_08": null,
+            "Date_09": null,
+            "Time_10": null,
+            "RequestReferenceNumber_11": null,
+            "AssignedIdentification_12": null
+          },
+          "TD1": null,
+          "TD5": null,
+          "TD3": null,
+          "TD4": null,
+          "REF": null
+        }
+      ],
+      "PKGLoop": null,
+      "LSLoop": null,
+      "N9Loop": null,
+      "N1Loop": null,
+      "SLNLoop": null,
+      "AMTLoop": null,
+      "LMLoop": null
+    }
+  ],
+  "CTTLoop": {
+    "CTT": {
+      "NumberofLineItems_01": "1",
+      "HashTotal_02": null,
+      "Weight_03": null,
+      "UnitorBasisforMeasurementCode_04": null,
+      "Volume_05": null,
+      "UnitorBasisforMeasurementCode_06": null,
+      "Description_07": null
+    },
+    "AMT": {
+      "AmountQualifierCode_01": "TT",
+      "MonetaryAmount_02": "900",
+      "CreditDebitFlagCode_03": null
+    }
+  },
+  "SE": {
+    "NumberofIncludedSegments_01": "15",
+    "TransactionSetControlNumber_02": "0001"
+  },
+  "Name": "850",
+  "Version": "004010",
+  "Format": "X12",
+  "SplitterProperty": null,
+  "PartsCount": 0,
+  "IsPart": false,
+  "SplitPostion": 0,
+  "HasErrors": false
+}

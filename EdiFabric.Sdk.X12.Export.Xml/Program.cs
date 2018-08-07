@@ -5,7 +5,6 @@
         static void Main(string[] args)
         {
             Examples.SerializeToXml();
-            Examples.DeserializeFromXml();
         }
     }
 }
