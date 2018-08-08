@@ -6,7 +6,6 @@ using EdiFabric.Templates.Edifact;
 using EdiFabric.Sdk.Helpers;
 using System.Linq;
 using System.Collections.Generic;
-using EdiFabric.Framework.Writers;
 
 namespace EdiFabric.Sdk.Edifact.Import.Csv
 {
@@ -25,11 +24,6 @@ namespace EdiFabric.Sdk.Edifact.Import.Csv
             var csv = ediStream.LoadToString();
             var lines = csv.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries);
             var transaction = ImportFromCsv(lines);
-
-            using (var writer = new EdifactWriter(@"C:\Test\test.txt", false, new EdifactWriterSettings() { Postfix = Environment.NewLine }))
-            {
-                writer.Write(transaction);
-            }
         }
 
         private static TSORDERS ImportFromCsv(string[] lines)
