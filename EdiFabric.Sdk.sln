@@ -123,8 +123,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Edifact", "Edifact", "{43A1
 		Files.Edifact\MixedTransactionsNoEnvelopes.txt = Files.Edifact\MixedTransactionsNoEnvelopes.txt
 		Files.Edifact\PassengerData.txt = Files.Edifact\PassengerData.txt
 		Files.Edifact\PassengerList.txt = Files.Edifact\PassengerList.txt
+		Files.Edifact\PurchaseOrder.csv = Files.Edifact\PurchaseOrder.csv
 		Files.Edifact\PurchaseOrder.txt = Files.Edifact\PurchaseOrder.txt
 		Files.Edifact\PurchaseOrder.xml = Files.Edifact\PurchaseOrder.xml
+		Files.Edifact\PurchaseOrderCSV.txt = Files.Edifact\PurchaseOrderCSV.txt
 		Files.Edifact\PurchaseOrderCustom1.txt = Files.Edifact\PurchaseOrderCustom1.txt
 		Files.Edifact\PurchaseOrderCustom2.txt = Files.Edifact\PurchaseOrderCustom2.txt
 		Files.Edifact\PurchaseOrderInvalid.txt = Files.Edifact\PurchaseOrderInvalid.txt
@@ -298,6 +300,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.X12.Export.Csv", "EdiFabric.Sdk.X12.Export.Csv\EdiFabric.Sdk.X12.Export.Csv.csproj", "{BA3E0D4A-AF21-4A8E-A2F4-580E43A987BB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.X12.Import.Csv", "EdiFabric.Sdk.X12.Import.Csv\EdiFabric.Sdk.X12.Import.Csv.csproj", "{DF6D5B8B-B0FA-4FE6-A99A-734619BE6EAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.Export.Csv", "EdiFabric.Sdk.Edifact.Export.Csv\EdiFabric.Sdk.Edifact.Export.Csv.csproj", "{C8755845-675D-4B90-BABB-4EE4004C4E5F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1028,6 +1032,16 @@ Global
 		{DF6D5B8B-B0FA-4FE6-A99A-734619BE6EAC}.test|Any CPU.Build.0 = Release|Any CPU
 		{DF6D5B8B-B0FA-4FE6-A99A-734619BE6EAC}.Trial|Any CPU.ActiveCfg = Release|Any CPU
 		{DF6D5B8B-B0FA-4FE6-A99A-734619BE6EAC}.Trial|Any CPU.Build.0 = Release|Any CPU
+		{C8755845-675D-4B90-BABB-4EE4004C4E5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8755845-675D-4B90-BABB-4EE4004C4E5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8755845-675D-4B90-BABB-4EE4004C4E5F}.Lite|Any CPU.ActiveCfg = Release|Any CPU
+		{C8755845-675D-4B90-BABB-4EE4004C4E5F}.Lite|Any CPU.Build.0 = Release|Any CPU
+		{C8755845-675D-4B90-BABB-4EE4004C4E5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8755845-675D-4B90-BABB-4EE4004C4E5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8755845-675D-4B90-BABB-4EE4004C4E5F}.test|Any CPU.ActiveCfg = Release|Any CPU
+		{C8755845-675D-4B90-BABB-4EE4004C4E5F}.test|Any CPU.Build.0 = Release|Any CPU
+		{C8755845-675D-4B90-BABB-4EE4004C4E5F}.Trial|Any CPU.ActiveCfg = Release|Any CPU
+		{C8755845-675D-4B90-BABB-4EE4004C4E5F}.Trial|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1131,6 +1145,7 @@ Global
 		{AF2099A1-E55A-4D28-BB9D-D9870E6D23A4} = {2FE4EBB7-1FF6-4DE1-A875-62F44631635A}
 		{BA3E0D4A-AF21-4A8E-A2F4-580E43A987BB} = {75700E13-1CE7-4C70-B060-A9929BED47F8}
 		{DF6D5B8B-B0FA-4FE6-A99A-734619BE6EAC} = {2FE4EBB7-1FF6-4DE1-A875-62F44631635A}
+		{C8755845-675D-4B90-BABB-4EE4004C4E5F} = {24D28221-4884-4362-B807-401E3C8E6CA1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB447360-6410-4AB0-8984-1454D5AAEA49}

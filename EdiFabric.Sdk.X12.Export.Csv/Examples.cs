@@ -15,6 +15,7 @@ namespace EdiFabric.Sdk.X12.Export.Csv
     {
         /// <summary>
         /// Export an EDI object to CSV
+        /// Original from https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/Mapping%20and%20Translation/page/EDI%20to%20CSV%20mapping
         /// </summary>
         public static void ExportToCsv()
         {
@@ -43,13 +44,28 @@ namespace EdiFabric.Sdk.X12.Export.Csv
             var result = new StringBuilder();
             result.AppendLine("LINE_NUMBER,UPC_NUMBER,QUANTITY,PRICE,UOM,PO_NUMBER,PO_DATE,CUSTOMER_NAME,CUSTOMER_NUMBER,ADDRESS,CITY,STATE,POSTAL_CODE");
 
+            string customer = "";
+            string customerNr = "";
+            string address = "";
+            string city = "";
+            string state = "";
+            string postCode = "";
+
             var n1Loop = po.N1Loop.Where(n1 => n1.N1.EntityIdentifierCode_01 == "ST").FirstOrDefault();
-            N3 n3 = null;
-            N4 n4 = null;
             if (n1Loop != null)
             {
-                n3 = n1Loop.N3.FirstOrDefault();
-                n4 = n1Loop.N4.FirstOrDefault();
+                customer = n1Loop.N1.Name_02;
+                customerNr = n1Loop.N1.IdentificationCode_04;
+                var n3 = n1Loop.N3.FirstOrDefault();
+                if (n3 != null)
+                    address = n3.AddressInformation_01;
+                var n4 = n1Loop.N4.FirstOrDefault();
+                if (n4 != null)
+                {
+                    city = n4.CityName_01;
+                    state = n4.StateorProvinceCode_02;
+                    postCode = n4.PostalCode_03;
+                }
             }
 
             foreach (var po1Loop in po.PO1Loop)
@@ -68,28 +84,18 @@ namespace EdiFabric.Sdk.X12.Export.Csv
                 line += po.BEG.PurchaseOrderNumber_03 + ",";
                 //  Add po date
                 line += po.BEG.Date_05 + ",";
-                
-                if (n1Loop != null)
-                {
-                    //  Add customer name
-                    line += n1Loop.N1.Name_02 + ",";
-                    //  Add customer number
-                    line += n1Loop.N1.IdentificationCode_04 + ",";
-                    if (n3 != null)
-                    {
-                        //  Add address line 1
-                        line += n3.AddressInformation_01 + ",";
-                    }
-                    if (n4 != null)
-                    {
-                        //  Add city
-                        line += n4.CityName_01 + ",";
-                        //  Add state
-                        line += n4.StateorProvinceCode_02 + ",";
-                        //  Add postal code
-                        line += n4.PostalCode_03 + ",";
-                    }
-                }
+                //  Add customer name
+                line += customer + ",";
+                //  Add customer number
+                line += customerNr + ",";
+                //  Add address line 1
+                line += address + ",";
+                //  Add city
+                line += city + ",";
+                //  Add state
+                line += state + ",";
+                //  Add postal code
+                line += postCode + ",";
 
                 result.AppendLine(line.TrimEnd(new[] { ',' }));
             }

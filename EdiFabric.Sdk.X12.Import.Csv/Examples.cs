@@ -13,6 +13,7 @@ namespace EdiFabric.Sdk.X12.Import.Csv
     {
         /// <summary>
         /// Import to an EDI object from CSV
+        /// Original from https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/Mapping%20and%20Translation/page/EDI%20to%20CSV%20mapping
         /// </summary>
         public static void ImportFromCsv()
         {
