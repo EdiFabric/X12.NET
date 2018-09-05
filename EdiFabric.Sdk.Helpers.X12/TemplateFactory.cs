@@ -50,6 +50,18 @@ namespace EdiFabric.Sdk.Helpers.X12
                 st.TransactionSetIdentifierCode_01, gs.VersionAndRelease_8));
         }
 
+        public static TypeInfo NoEnvelopeTemplateFactory(ISA isa, GS gs, ST st)
+        {
+            if (st.TransactionSetIdentifierCode_01 == "850")
+                return typeof(TS850).GetTypeInfo();
+
+            if (st.TransactionSetIdentifierCode_01 == "810")
+                return typeof(TS810).GetTypeInfo();
+
+            throw new Exception(string.Format("Transaction {0} is not supported.",
+                st.TransactionSetIdentifierCode_01));
+        }
+
         public static Assembly TrialTemplateFactory(MessageContext messageContext)
         {
             if (messageContext.Version == "005010X220A1")
@@ -79,7 +91,7 @@ namespace EdiFabric.Sdk.Helpers.X12
             if (messageContext.Version == "004010")
                 return Assembly.Load("EdiFabric.Templates.X12");
 
-            throw new Exception(string.Format("Unsupported version {0}", messageContext.Version));
+            throw new Exception(string.Format("Version {0} is not supported.", messageContext.Version));
         }
     }
 }

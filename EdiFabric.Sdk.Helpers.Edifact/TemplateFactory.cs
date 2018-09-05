@@ -58,6 +58,20 @@ namespace EdiFabric.Sdk.Helpers.Edifact
                 unh.MessageIdentifier_02.MessageType_01, unh.MessageIdentifier_02.MessageVersionNumber_02 + unh.MessageIdentifier_02.MessageReleaseNumber_03));
         }
 
+        public static TypeInfo NoEnvelopeTemplateFactory(UNB unb, UNG ung, UNH unh)
+        {
+            if (unh.MessageIdentifier_02.MessageReleaseNumber_03 == "96A" &&
+                unh.MessageIdentifier_02.MessageType_01 == "ORDERS")
+                return typeof(TSORDERS).GetTypeInfo();
+
+            if (unh.MessageIdentifier_02.MessageReleaseNumber_03 == "96A" &&
+                unh.MessageIdentifier_02.MessageType_01 == "INVOIC")
+                return typeof(TSINVOIC).GetTypeInfo();            
+
+            throw new System.Exception(string.Format("Transaction {0} for version {1} is not supported.",
+                unh.MessageIdentifier_02.MessageType_01, unh.MessageIdentifier_02.MessageVersionNumber_02 + unh.MessageIdentifier_02.MessageReleaseNumber_03));
+        }
+
         public static Assembly TrialTemplateFactory(MessageContext messageContext)
         {
             if (messageContext.Version == "D03B" && messageContext.Name == "CUSCAR")
