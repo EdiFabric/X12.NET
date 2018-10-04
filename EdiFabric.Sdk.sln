@@ -107,6 +107,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12", "X12", "{9AFB6CCB-C20
 		Files.X12\ShipBillNotice.txt = Files.X12\ShipBillNotice.txt
 		Files.X12\ShipmentStatus.txt = Files.X12\ShipmentStatus.txt
 		Files.X12\ShipNotice.txt = Files.X12\ShipNotice.txt
+		Files.X12\WarehouseShippingAdvice.txt = Files.X12\WarehouseShippingAdvice.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Edifact", "Edifact", "{43A1E0DA-F3E1-46E8-AA0E-94838BFDC35A}"
@@ -304,6 +305,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.Export.Csv", "EdiFabric.Sdk.Edifact.Export.Csv\EdiFabric.Sdk.Edifact.Export.Csv.csproj", "{C8755845-675D-4B90-BABB-4EE4004C4E5F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.Edifact.Import.Csv", "EdiFabric.Sdk.Edifact.Import.Csv\EdiFabric.Sdk.Edifact.Import.Csv.csproj", "{DAAF1174-A245-48F5-91C0-A71B9D8C8F56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Sdk.X12.T945", "EdiFabric.Sdk.X12.T945\EdiFabric.Sdk.X12.T945.csproj", "{14F57CB5-3BA5-47C2-A1FE-D47AF09E2B7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1054,6 +1057,16 @@ Global
 		{DAAF1174-A245-48F5-91C0-A71B9D8C8F56}.test|Any CPU.Build.0 = Release|Any CPU
 		{DAAF1174-A245-48F5-91C0-A71B9D8C8F56}.Trial|Any CPU.ActiveCfg = Release|Any CPU
 		{DAAF1174-A245-48F5-91C0-A71B9D8C8F56}.Trial|Any CPU.Build.0 = Release|Any CPU
+		{14F57CB5-3BA5-47C2-A1FE-D47AF09E2B7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14F57CB5-3BA5-47C2-A1FE-D47AF09E2B7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14F57CB5-3BA5-47C2-A1FE-D47AF09E2B7C}.Lite|Any CPU.ActiveCfg = Release|Any CPU
+		{14F57CB5-3BA5-47C2-A1FE-D47AF09E2B7C}.Lite|Any CPU.Build.0 = Release|Any CPU
+		{14F57CB5-3BA5-47C2-A1FE-D47AF09E2B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14F57CB5-3BA5-47C2-A1FE-D47AF09E2B7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14F57CB5-3BA5-47C2-A1FE-D47AF09E2B7C}.test|Any CPU.ActiveCfg = Release|Any CPU
+		{14F57CB5-3BA5-47C2-A1FE-D47AF09E2B7C}.test|Any CPU.Build.0 = Release|Any CPU
+		{14F57CB5-3BA5-47C2-A1FE-D47AF09E2B7C}.Trial|Any CPU.ActiveCfg = Release|Any CPU
+		{14F57CB5-3BA5-47C2-A1FE-D47AF09E2B7C}.Trial|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1159,6 +1172,7 @@ Global
 		{DF6D5B8B-B0FA-4FE6-A99A-734619BE6EAC} = {2FE4EBB7-1FF6-4DE1-A875-62F44631635A}
 		{C8755845-675D-4B90-BABB-4EE4004C4E5F} = {24D28221-4884-4362-B807-401E3C8E6CA1}
 		{DAAF1174-A245-48F5-91C0-A71B9D8C8F56} = {3F8787A7-E962-4235-92E8-B6262BA3442D}
+		{14F57CB5-3BA5-47C2-A1FE-D47AF09E2B7C} = {5A3328B7-8853-4E78-B641-D8360AB538B0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB447360-6410-4AB0-8984-1454D5AAEA49}
