@@ -14,9 +14,9 @@ namespace EdiFabric.Sdk.Edifact.Export.Xml
     class Examples
     {
         /// <summary>
-        /// Serialize an EDI object to XML
+        /// Serialize an EDI object to XML using XmlSerializer
         /// </summary>
-        public static void SerializeToXml()
+        public static void SerializeToXmlWithXmlSerializer()
         {
             Debug.WriteLine("******************************");
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
@@ -36,7 +36,32 @@ namespace EdiFabric.Sdk.Edifact.Export.Xml
                 var xml = transaction.Serialize();
                 Debug.WriteLine(xml.Root.ToString());
             }
-        }       
+        }
+
+        /// <summary>
+        /// Serialize an EDI object to XML using DataContractSerializer
+        /// </summary>
+        public static void SerializeToXmlWithDataContractSerializer()
+        {
+            Debug.WriteLine("******************************");
+            Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
+            Debug.WriteLine("******************************");
+
+            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.Edifact\PurchaseOrder.txt");
+
+            List<IEdiItem> ediItems;
+            using (var ediReader = new EdifactReader(ediStream, TemplateFactory.FullTemplateFactory))
+            {
+                ediItems = ediReader.ReadToEnd().ToList();
+            }
+
+            var transactions = ediItems.OfType<TSORDERS>();
+            foreach (var transaction in transactions)
+            {
+                var xml = transaction.SerializeDataContract();
+                Debug.WriteLine(xml.Root.ToString());
+            }
+        }
     }
 }
 

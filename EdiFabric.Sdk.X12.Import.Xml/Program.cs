@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Examples.DeserializeFromXml();
+            Examples.DeserializeFromXmlWithXmlSerializer();
+            Examples.DeserializeFromXmlWithDataContractSerializer();
         }
     }
 }

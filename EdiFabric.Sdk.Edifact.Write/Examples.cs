@@ -3,6 +3,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
+using EdiFabric.Core.Model.Edi.Edifact;
 using EdiFabric.Core.Model.Edi.ErrorContexts;
 using EdiFabric.Framework;
 using EdiFabric.Framework.Writers;
@@ -39,6 +41,52 @@ namespace EdiFabric.Sdk.Edifact.Write
                         writer.Write(SegmentBuilders.BuildUnb("1"));
                         //  4.  Then write the invoice(s)
                         writer.Write(invoice);
+                    }
+
+                    Debug.Write(stream.LoadToString());
+                }
+            }
+            else
+            {
+                //  The invoice is invalid
+                Debug.WriteLine("Message {0} with control number {1} is invalid with errors:", errorContext.Name,
+                    errorContext.ControlNumber);
+
+                //  List all error messages
+                var errors = errorContext.Flatten();
+                foreach (var error in errors)
+                {
+                    Debug.WriteLine(error);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Generate and write EDI document to a stream async.
+        /// </summary>
+        public static async void WriteSingleInvoiceToStreamAsync()
+        {
+            Debug.WriteLine("******************************");
+            Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
+            Debug.WriteLine("******************************");
+
+            //  1.  Construct the invoice
+            var invoice = EdifactTransactionBuilders.BuildInvoice("1");
+
+            //  2.  Validate it by skipping trailer validation
+            MessageErrorContext errorContext;
+            if (invoice.IsValid(out errorContext, true))
+            {
+                Debug.WriteLine("Message {0} with control number {1} is valid.", errorContext.Name, errorContext.ControlNumber);
+
+                using (var stream = new MemoryStream())
+                {
+                    using (var writer = new EdifactWriter(stream))
+                    {
+                        //  3.  Begin with UNB segment
+                        await writer.WriteAsync(SegmentBuilders.BuildUnb("1"));
+                        //  4.  Then write the invoice(s)
+                        await writer.WriteAsync(invoice);
                     }
 
                     Debug.Write(stream.LoadToString());
@@ -321,6 +369,39 @@ namespace EdiFabric.Sdk.Edifact.Write
                 }
 
                 Debug.Write(stream.LoadToString());
+            }
+        }
+
+        /// <summary>
+        /// Write without auto trailers
+        /// </summary>
+        public static void WriteWithoutAutoTrailers()
+        {
+            Debug.WriteLine("******************************");
+            Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
+            Debug.WriteLine("******************************");
+
+            using (var stream = new MemoryStream())
+            {
+                //  Set AutoTrailers to false
+                using (var writer = new EdifactWriter(stream, new EdifactWriterSettings { AutoTrailers = false }))
+                {
+                    writer.Write(SegmentBuilders.BuildUnb("1"));
+                    writer.Write(EdifactTransactionBuilders.BuildInvoice("1"));
+                    //  trailers need to be manually written   
+                }
+
+                using (var writer = new StreamWriter(stream))
+                {
+                    var unz = new UNZ();
+                    unz.InterchangeControlCount_1 = "1";
+                    unz.InterchangeControlReference_2 = "000000001";
+                    writer.Write(unz.ToEdi(Separators.Edifact));
+
+                    writer.Flush();
+
+                    Debug.Write(stream.LoadToString());
+                }
             }
         }
     }

@@ -4,6 +4,7 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using EdiFabric.Core.Model.Edi.ErrorContexts;
+using EdiFabric.Core.Model.Edi.X12;
 using EdiFabric.Framework;
 using EdiFabric.Framework.Writers;
 using EdiFabric.Sdk.Helpers;
@@ -41,6 +42,54 @@ namespace EdiFabric.Sdk.X12.Write
                         writer.Write(SegmentBuilders.BuildGs("1"));
                         //  5.  Then write the invoice(s)
                         writer.Write(invoice);
+                    }
+
+                    Debug.Write(stream.LoadToString());
+                }
+            }
+            else
+            {
+                //  The invoice is invalid
+                Debug.WriteLine("Message {0} with control number {1} is invalid with errors:", errorContext.Name,
+                    errorContext.ControlNumber);
+
+                //  List all error messages
+                var errors = errorContext.Flatten();
+                foreach (var error in errors)
+                {
+                    Debug.WriteLine(error);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Generate and write EDI document to a stream async
+        /// </summary>
+        public static async void WriteSingleInvoiceToStreamAsync()
+        {
+            Debug.WriteLine("******************************");
+            Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
+            Debug.WriteLine("******************************");
+
+            //  1.  Construct the invoice
+            var invoice = X12TransactionBuilders.BuildInvoice("1");
+
+            //  2.  Validate it by skipping trailer validation
+            MessageErrorContext errorContext;
+            if (invoice.IsValid(out errorContext, true))
+            {
+                Debug.WriteLine("Message {0} with control number {1} is valid.", errorContext.Name, errorContext.ControlNumber);
+
+                using (var stream = new MemoryStream())
+                {
+                    using (var writer = new X12Writer(stream))
+                    {
+                        //  3.  Begin with ISA segment
+                        await writer.WriteAsync(SegmentBuilders.BuildIsa("1"));
+                        //  4.  Follow up with GS segment
+                        await writer.WriteAsync(SegmentBuilders.BuildGs("1"));
+                        //  5.  Then write the invoice(s)
+                        await writer.WriteAsync(invoice);
                     }
 
                     Debug.Write(stream.LoadToString());
@@ -334,6 +383,45 @@ namespace EdiFabric.Sdk.X12.Write
                 }
 
                 Debug.Write(stream.LoadToString());
+            }
+        }
+
+        /// <summary>
+        /// Write without auto trailers
+        /// </summary>
+        public static void WriteWithoutAutoTrailers()
+        {
+            Debug.WriteLine("******************************");
+            Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
+            Debug.WriteLine("******************************");
+
+            using (var stream = new MemoryStream())
+            {
+                //  Set AutoTrailers to false
+                using (var writer = new X12Writer(stream, new X12WriterSettings { AutoTrailers = false }))
+                {
+                    writer.Write(SegmentBuilders.BuildIsa("1"));
+                    writer.Write(SegmentBuilders.BuildGs("1"));
+                    writer.Write(X12TransactionBuilders.BuildInvoice("1"));
+                    //  trailers need to be manually written                    
+                }
+
+                using (var writer = new StreamWriter(stream))
+                {
+                    var ge = new GE();
+                    ge.NumberOfIncludedSets_1 = "1";
+                    ge.GroupControlNumber_2 = "000000001";
+                    writer.Write(ge.ToEdi(Separators.X12));
+
+                    var iea = new IEA();
+                    iea.NumberOfIncludedGroups_1 = "1";
+                    iea.InterchangeControlNumber_2 = "000000001";
+                    writer.Write(iea.ToEdi(Separators.X12));
+
+                    writer.Flush();
+
+                    Debug.Write(stream.LoadToString());
+                }                
             }
         }
     }

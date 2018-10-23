@@ -10,9 +10,9 @@ namespace EdiFabric.Sdk.X12.Import.Xml
     class Examples
     {
         /// <summary>
-        /// De-serialize to an EDI object from XML
+        /// De-serialize to an EDI object from XML using XmlSerializer
         /// </summary>
-        public static void DeserializeFromXml()
+        public static void DeserializeFromXmlWithXmlSerializer()
         {
             Debug.WriteLine("******************************");
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
@@ -22,6 +22,21 @@ namespace EdiFabric.Sdk.X12.Import.Xml
 
             var xml = XElement.Load(ediStream);
             var transaction = xml.Deserialize<TS850>();
+        }
+
+        /// <summary>
+        /// De-serialize to an EDI object from XML using DataContractSerializer
+        /// </summary>
+        public static void DeserializeFromXmlWithDataContractSerializer()
+        {
+            Debug.WriteLine("******************************");
+            Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
+            Debug.WriteLine("******************************");
+
+            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\PurchaseOrder2.xml");
+
+            var xml = XElement.Load(ediStream);
+            var transaction = xml.DeserializeDataContract<TS850>();
         }
     }
 }

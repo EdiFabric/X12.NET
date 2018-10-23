@@ -63,6 +63,55 @@ namespace EdiFabric.Sdk.X12.Read
         }
 
         /// <summary>
+        /// Reads the EDI stream from start to end async.
+        /// This method loads the file into memory. Do not use for large files. 
+        /// The sample file contains two purchase orders - a valid one and an invalid one.
+        /// </summary>
+        public static async void ReadAllPurchaseOrdersAsync()
+        {
+            Debug.WriteLine("******************************");
+            Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
+            Debug.WriteLine("******************************");
+
+            //  1.  Load to a stream 
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\PurchaseOrders.txt");
+
+            //  2.  Read all the contents
+            List<IEdiItem> ediItems;
+            using (var ediReader = new X12Reader(ediStream, TemplateFactory.FullTemplateFactory))
+            {
+                var items = await ediReader.ReadToEndAsync();
+                ediItems = items.ToList();
+            }
+
+            //  3.  Pull the purchase orders
+            var purchaseOrders = ediItems.OfType<TS850>();
+
+            //  4.  Validate each purchase order
+            foreach (var po in purchaseOrders)
+            {
+                MessageErrorContext errorContext;
+                if (po.IsValid(out errorContext))
+                {
+                    //  The purchase order is valid, process it downstream
+                }
+                else
+                {
+                    //  The purchase order is invalid
+                    Debug.WriteLine("Message {0} with control number {1} is invalid with errors:", errorContext.Name,
+                        errorContext.ControlNumber);
+
+                    //  List all error messages
+                    var errors = errorContext.Flatten();
+                    foreach (var error in errors)
+                    {
+                        Debug.WriteLine(error);
+                    }
+                }
+            }
+        }
+
+        /// <summary>
         /// Reads one item at a time from the EDI stream.
         /// Use for interchanges containing multiple transactions.
         /// The sample file contains two purchase orders - a valid one and an invalid one.
@@ -81,6 +130,54 @@ namespace EdiFabric.Sdk.X12.Read
             using (var ediReader = new X12Reader(ediStream, TemplateFactory.FullTemplateFactory))
             {
                 while (ediReader.Read())
+                {
+                    //  3. Check if current item is purchase order
+                    var po = ediReader.Item as TS850;
+                    if (po != null)
+                    {
+                        //  4.  Validate it
+                        MessageErrorContext errorContext;
+                        if (po.IsValid(out errorContext))
+                        {
+                            //  The purchase order is valid, process it downstream
+                        }
+                        else
+                        {
+                            //  The purchase order is invalid
+                            Debug.WriteLine("Message {0} with control number {1} is invalid with errors:", errorContext.Name,
+                                errorContext.ControlNumber);
+
+                            //  List all error messages
+                            var errors = errorContext.Flatten();
+                            foreach (var error in errors)
+                            {
+                                Debug.WriteLine(error);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Reads one item at a time from the EDI stream async.
+        /// Use for interchanges containing multiple transactions.
+        /// The sample file contains two purchase orders - a valid one and an invalid one.
+        /// </summary>
+        public static async void ReadPurchaseOrdersOneAtATimeAsync()
+        {
+            Debug.WriteLine("******************************");
+            Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
+            Debug.WriteLine("******************************");
+
+            //  1.  Load to a stream 
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files.X12\PurchaseOrders.txt");
+
+            //  2. Read item by item, that is each call to Read() 
+            //  brings back either a control segment (ISA, GS, GE or IEA) or a transaction
+            using (var ediReader = new X12Reader(ediStream, TemplateFactory.FullTemplateFactory))
+            {
+                while (await ediReader.ReadAsync())
                 {
                     //  3. Check if current item is purchase order
                     var po = ediReader.Item as TS850;

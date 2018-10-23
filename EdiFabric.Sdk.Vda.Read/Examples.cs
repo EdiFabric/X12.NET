@@ -30,14 +30,14 @@ namespace EdiFabric.Sdk.Vda.Read
            
             //  2.  Read all the contents at once
             //  Remove the last parameter Environment.NewLine when reading messages without postfix
-            List<IEdiItem> ediItems;
-            using (var ediReader = new VdaReader(vdaStream, TemplateFactory.FullTemplateFactory, Encoding.UTF8, Environment.NewLine))
+            List<IEdiItem> vdaItems;
+            using (var vdaReader = new VdaReader(vdaStream, TemplateFactory.FullTemplateFactory, Encoding.UTF8, Environment.NewLine))
             {
-                ediItems = ediReader.ReadToEnd().ToList();
-            }
+                vdaItems = vdaReader.ReadToEnd().ToList();
+            }            
 
             //  3. Check that the stream contains a recognizable message and the contents can be parsed
-            var readerErrors = ediItems.OfType<ReaderErrorContext>();
+            var readerErrors = vdaItems.OfType<ReaderErrorContext>();
             if (readerErrors.Any())
             {
                 //  The stream is corrupt. Reject it and report back to the sender
@@ -49,7 +49,30 @@ namespace EdiFabric.Sdk.Vda.Read
             }
 
             //  4.  Pull the transactions that are needed
-            var vda4905s = ediItems.OfType<TS4905>();
+            var vda4905s = vdaItems.OfType<TS4905>();
+
+            //  5.  Validate each 4950
+            foreach (var item in vda4905s)
+            {
+                MessageErrorContext errorContext;
+                if (item.IsValid(out errorContext))
+                {
+                    //  The 4950 is valid, process it downstream
+                }
+                else
+                {
+                    //  The 4950 order is invalid
+                    Debug.WriteLine("Message {0} with control number {1} is invalid with errors:", errorContext.Name,
+                        errorContext.ControlNumber);
+
+                    //  List all error messages
+                    var errors = errorContext.Flatten();
+                    foreach (var error in errors)
+                    {
+                        Debug.WriteLine(error);
+                    }
+                }
+            }
         }
     }
 }

@@ -2,6 +2,7 @@ namespace EdiFabric.Templates.X12004010
 {
     using System;
     using System.Collections.Generic;
+    using System.Runtime.Serialization;
     using EdiFabric.Core.Annotations.Edi;
     using EdiFabric.Core.Annotations.Validation;
     using EdiFabric.Core.Model.Edi;
@@ -12,6 +13,7 @@ namespace EdiFabric.Templates.X12004010
     /// Composite Unit of Measure
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [Composite("C001")]
     public class C001
     {
@@ -19,6 +21,7 @@ namespace EdiFabric.Templates.X12004010
         /// <summary>
         /// Unit or Basis for Measurement Code
         /// </summary>
+        [DataMember]
         [Required]
         [DataElement("355", typeof(X12_ID_355))]
         [Pos(1)]
@@ -26,6 +29,7 @@ namespace EdiFabric.Templates.X12004010
         /// <summary>
         /// Exponent
         /// </summary>
+        [DataMember]
         [StringLength(1, 15)]
         [DataElement("1018", typeof(X12_R))]
         [Pos(2)]
@@ -33,6 +37,7 @@ namespace EdiFabric.Templates.X12004010
         /// <summary>
         /// Multiplier
         /// </summary>
+        [DataMember]
         [StringLength(1, 10)]
         [DataElement("649", typeof(X12_R))]
         [Pos(3)]
@@ -40,12 +45,14 @@ namespace EdiFabric.Templates.X12004010
         /// <summary>
         /// Unit or Basis for Measurement Code
         /// </summary>
+        [DataMember]
         [DataElement("355", typeof(X12_ID_355))]
         [Pos(4)]
         public string UnitorBasisforMeasurementCode_04 { get; set; }
         /// <summary>
         /// Exponent
         /// </summary>
+        [DataMember]
         [StringLength(1, 15)]
         [DataElement("1018", typeof(X12_R))]
         [Pos(5)]
@@ -53,6 +60,7 @@ namespace EdiFabric.Templates.X12004010
         /// <summary>
         /// Multiplier
         /// </summary>
+        [DataMember]
         [StringLength(1, 10)]
         [DataElement("649", typeof(X12_R))]
         [Pos(6)]
@@ -60,12 +68,14 @@ namespace EdiFabric.Templates.X12004010
         /// <summary>
         /// Unit or Basis for Measurement Code
         /// </summary>
+        [DataMember]
         [DataElement("355", typeof(X12_ID_355))]
         [Pos(7)]
         public string UnitorBasisforMeasurementCode_07 { get; set; }
         /// <summary>
         /// Exponent
         /// </summary>
+        [DataMember]
         [StringLength(1, 15)]
         [DataElement("1018", typeof(X12_R))]
         [Pos(8)]
@@ -73,6 +83,7 @@ namespace EdiFabric.Templates.X12004010
         /// <summary>
         /// Multiplier
         /// </summary>
+        [DataMember]
         [StringLength(1, 10)]
         [DataElement("649", typeof(X12_R))]
         [Pos(9)]
@@ -80,12 +91,14 @@ namespace EdiFabric.Templates.X12004010
         /// <summary>
         /// Unit or Basis for Measurement Code
         /// </summary>
+        [DataMember]
         [DataElement("355", typeof(X12_ID_355))]
         [Pos(10)]
         public string UnitorBasisforMeasurementCode_10 { get; set; }
         /// <summary>
         /// Exponent
         /// </summary>
+        [DataMember]
         [StringLength(1, 15)]
         [DataElement("1018", typeof(X12_R))]
         [Pos(11)]
@@ -93,6 +106,7 @@ namespace EdiFabric.Templates.X12004010
         /// <summary>
         /// Multiplier
         /// </summary>
+        [DataMember]
         [StringLength(1, 10)]
         [DataElement("649", typeof(X12_R))]
         [Pos(12)]
@@ -100,12 +114,14 @@ namespace EdiFabric.Templates.X12004010
         /// <summary>
         /// Unit or Basis for Measurement Code
         /// </summary>
+        [DataMember]
         [DataElement("355", typeof(X12_ID_355))]
         [Pos(13)]
         public string UnitorBasisforMeasurementCode_13 { get; set; }
         /// <summary>
         /// Exponent
         /// </summary>
+        [DataMember]
         [StringLength(1, 15)]
         [DataElement("1018", typeof(X12_R))]
         [Pos(14)]
@@ -113,6 +129,7 @@ namespace EdiFabric.Templates.X12004010
         /// <summary>
         /// Multiplier
         /// </summary>
+        [DataMember]
         [StringLength(1, 10)]
         [DataElement("649", typeof(X12_R))]
         [Pos(15)]
@@ -123,6 +140,7 @@ namespace EdiFabric.Templates.X12004010
     /// Actions Indicated
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [Composite("C002")]
     public class C002
     {
@@ -130,6 +148,7 @@ namespace EdiFabric.Templates.X12004010
         /// <summary>
         /// Paperwork/Report Action Code
         /// </summary>
+        [DataMember]
         [Required]
         [DataElement("704", typeof(X12_ID_704))]
         [Pos(1)]
@@ -137,24 +156,28 @@ namespace EdiFabric.Templates.X12004010
         /// <summary>
         /// Paperwork/Report Action Code
         /// </summary>
+        [DataMember]
         [DataElement("704", typeof(X12_ID_704))]
         [Pos(2)]
         public string PaperworkReportActionCode_02 { get; set; }
         /// <summary>
         /// Paperwork/Report Action Code
         /// </summary>
+        [DataMember]
         [DataElement("704", typeof(X12_ID_704))]
         [Pos(3)]
         public string PaperworkReportActionCode_03 { get; set; }
         /// <summary>
         /// Paperwork/Report Action Code
         /// </summary>
+        [DataMember]
         [DataElement("704", typeof(X12_ID_704))]
         [Pos(4)]
         public string PaperworkReportActionCode_04 { get; set; }
         /// <summary>
         /// Paperwork/Report Action Code
         /// </summary>
+        [DataMember]
         [DataElement("704", typeof(X12_ID_704))]
         [Pos(5)]
         public string PaperworkReportActionCode_05 { get; set; }
@@ -164,6 +187,7 @@ namespace EdiFabric.Templates.X12004010
     /// Reference Identifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [Composite("C040")]
     public class C040
     {
@@ -171,6 +195,7 @@ namespace EdiFabric.Templates.X12004010
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
+        [DataMember]
         [Required]
         [DataElement("128", typeof(X12_ID_128))]
         [Pos(1)]
@@ -178,6 +203,7 @@ namespace EdiFabric.Templates.X12004010
         /// <summary>
         /// Reference Identification
         /// </summary>
+        [DataMember]
         [Required]
         [StringLength(1, 30)]
         [DataElement("127", typeof(X12_AN))]
@@ -186,12 +212,14 @@ namespace EdiFabric.Templates.X12004010
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
+        [DataMember]
         [DataElement("128", typeof(X12_ID_128))]
         [Pos(3)]
         public string ReferenceIdentificationQualifier_03 { get; set; }
         /// <summary>
         /// Reference Identification
         /// </summary>
+        [DataMember]
         [StringLength(1, 30)]
         [DataElement("127", typeof(X12_AN))]
         [Pos(4)]
@@ -199,12 +227,14 @@ namespace EdiFabric.Templates.X12004010
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
+        [DataMember]
         [DataElement("128", typeof(X12_ID_128))]
         [Pos(5)]
         public string ReferenceIdentificationQualifier_05 { get; set; }
         /// <summary>
         /// Reference Identification
         /// </summary>
+        [DataMember]
         [StringLength(1, 30)]
         [DataElement("127", typeof(X12_AN))]
         [Pos(6)]

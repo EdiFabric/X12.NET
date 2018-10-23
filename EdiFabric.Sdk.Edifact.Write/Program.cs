@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             Examples.WriteSingleInvoiceToStream();
+            Examples.WriteSingleInvoiceToStreamAsync();
             Examples.WriteSingleInvoiceToFile();
             Examples.WriteWithCustomSeparators();
             Examples.WriteWithSegmetPostfix();
@@ -14,6 +15,7 @@
             Examples.WriteSegmentWithWhitespace();
             Examples.WriteSinglePurchaseOrderToStream();
             Examples.WriteWithoutEnvelopes();
+            Examples.WriteWithoutAutoTrailers();
         }
     }
 }

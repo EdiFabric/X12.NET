@@ -2,6 +2,7 @@ namespace EdiFabric.Templates.X12004010
 {
     using System;
     using System.Collections.Generic;
+    using System.Runtime.Serialization;
     using EdiFabric.Core.Annotations.Edi;
     using EdiFabric.Core.Annotations.Validation;
     using EdiFabric.Core.Model.Edi;
@@ -9,11 +10,13 @@ namespace EdiFabric.Templates.X12004010
     
     
     [Serializable()]
+    [DataContract()]
     public class X12_AN
     {
     }
     
     [Serializable()]
+    [DataContract()]
     public class X12_DT
     {
     }
@@ -22,6 +25,7 @@ namespace EdiFabric.Templates.X12004010
     /// Percent Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",01,02,05,06,07,08,09,1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,3,30,31,32,33,34,35,36,37,38,4,40,41,42,43,44,45,46,47,48,49,5,50,51,52,53,59,6,60,61,62,63,64,65,66,67,68,69,7,70,71,72,76,77,78,79,8,80,81,82,83,84,85,86,87,88,89,9,90,91,92,93,94,95,96,97,98,99,A,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AP,AR,AT,B,BA,BB,BC,BD,BE,BF,BG,BH,BP,BS,BU,C,CA,CB,CH,CJ,CN,CO,CP,CR,CS,CU,D,DF,DY,E,EA,EF,EP,F,FT,FV,GA,IA,IN,KA,KB,LM,M,MA,MN,MS,MX,N,NA,NH,O,OC,OF,OH,OP,P,PA,PC,PD,PF,PH,PM,PN,PP,PR,PT,PV,R,RA,RB,RC,RD,RF,RG,RI,RL,RO,RP,RQ,RR,RS,S,SA,SC,SD,SE,SF,SG,T,TP,W,WI,WK,X,X1,XT,")]
     public class X12_ID_1004
     {
@@ -31,6 +35,7 @@ namespace EdiFabric.Templates.X12004010
     /// Hierarchical Structure Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",0001,0002,0003,0004,0010,0011,0012,0013,0014,0015,0016,0017,0018,0019,0020,0021,0022,0023,0035,0036,0055,0056,0057,0058,0059,0060,0061,0062,0063,0064,0065,0066,0067,0068,0069,0070,0071,0072,0073,0074,0075,0076,0077,0078,0079,0080,0081,0082,0083,0200,0201,0202,0203,0204,0205,0206,0207,0208,0209,0210,ZZZZ,")]
     public class X12_ID_1005
     {
@@ -40,6 +45,7 @@ namespace EdiFabric.Templates.X12004010
     /// Invoice Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",IBM,IEL,INR,")]
     public class X12_ID_1019
     {
@@ -49,6 +55,7 @@ namespace EdiFabric.Templates.X12004010
     /// Ownership Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",L,N,R,S,T,")]
     public class X12_ID_102
     {
@@ -58,6 +65,7 @@ namespace EdiFabric.Templates.X12004010
     /// Citizenship Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,")]
     public class X12_ID_1066
     {
@@ -67,6 +75,7 @@ namespace EdiFabric.Templates.X12004010
     /// Marital Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,I,K,M,R,S,U,W,X,")]
     public class X12_ID_1067
     {
@@ -76,6 +85,7 @@ namespace EdiFabric.Templates.X12004010
     /// Gender Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,F,M,N,U,X,")]
     public class X12_ID_1068
     {
@@ -85,6 +95,7 @@ namespace EdiFabric.Templates.X12004010
     /// Payment Method Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,8,A,AA,AB,AC,AD,AE,AF,AG,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y" +
         ",")]
     public class X12_ID_107
@@ -95,6 +106,7 @@ namespace EdiFabric.Templates.X12004010
     /// Yes/No Condition or Response Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",N,U,W,Y,")]
     public class X12_ID_1073
     {
@@ -104,6 +116,7 @@ namespace EdiFabric.Templates.X12004010
     /// Address Component Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27" +
         ",28,29,30,31,32,33,34,35,36,37,38,39,40,41,51,52,53,54,56,57,58,59,60,61,62,63,6" +
         "4,65,66,67,68,69,71,74,79,80,90,91,92,93,94,96,97,")]
@@ -115,6 +128,7 @@ namespace EdiFabric.Templates.X12004010
     /// Race or Ethnicity Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",7,8,A,B,C,D,E,F,G,H,I,J,N,O,P,Z,")]
     public class X12_ID_1109
     {
@@ -124,6 +138,7 @@ namespace EdiFabric.Templates.X12004010
     /// Code Category
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,A1,A2,A3,A4,A5,A7,A8,A9,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AP,AQ,AR,AS,AT,AU,AV,AW,AX,AY,AZ,B1,B2,B3,B4,B5,B6,B7,B8,B9,BA,BB,BC,BD,BE,BF,BG,BH,BI,BJ,BK,BL,BM,BN,BP,BQ,BR,BS,BT,BU,BV,BW,BX,BY,BZ,CA,CB,CC,CD,CE,CF,CG,CH,CI,CJ,CK,CL,CM,CN,CO,CP,CQ,CR,CS,CT,CU,CV,CW,CX,CY,CZ,DA,DB,DC,DD,DE,DF,DG,DH,DI,DP,DR,DV,E1,E2,E3,E4,E5,EB,EC,ED,EE,EF,EG,EH,EI,EJ,FA,FC,FH,FI,FP,FR,FT,GD,GS,GU,HA,HB,HC,HD,HE,HF,HG,HH,HI,HJ,HK,HL,HM,HN,HO,HP,HQ,HR,HS,HT,HY,HZ,IC,ID,IH,IM,IN,LA,LE,LL,LR,LS,LT,LZ,MA,MI,MN,MO,MP,MS,MT,NC,NS,NW,OA,OC,OF,ON,OP,OT,OU,PA,PB,PC,PD,PE,PF,PG,PI,PN,PO,PR,PS,PT,R1,R2,R3,R4,R5,RC,RE,RI,RL,RM,RN,RR,RS,RT,RU,RV,SA,SD,SE,SI,SJ,SL,SN,SP,SR,SS,ST,SU,SW,SZ,TB,TE,TF,TH,TI,TM,TN,TP,TR,TW,UP,VA,VC,VD,VO,WA,WM,ZZ,")]
     public class X12_ID_1136
     {
@@ -133,6 +148,7 @@ namespace EdiFabric.Templates.X12004010
     /// Port or Terminal Function Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,V,W,Y,")]
     public class X12_ID_115
     {
@@ -142,6 +158,7 @@ namespace EdiFabric.Templates.X12004010
     /// Contract Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,09,AB,AC,AD,AE,AF,AG,AH,AI,AJ,CA,CB,CH,CP,CS,CW,CX,CY,DI,EA,ER" +
         ",FA,FB,FC,FD,FE,FF,FG,FH,FI,FJ,FK,FL,FM,FR,FX,LA,LE,LH,OC,PR,SP,TM,ZZ,")]
     public class X12_ID_1166
@@ -152,6 +169,7 @@ namespace EdiFabric.Templates.X12004010
     /// Customs Entry Type Group Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",C,W,")]
     public class X12_ID_1179
     {
@@ -161,6 +179,7 @@ namespace EdiFabric.Templates.X12004010
     /// Breakdown Structure Detail Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,70,71,72,73,74,75,77,78,79,80,81,82,83,84,85,86,87,88,A1,A2,A3,A4,A5,A6,A7,A8,A9,AT,B1,B2,B3,B4,B5,BL,BY,C1,C2,C3,C4,CM,CY,D1,D2,D3,D4,D5,D6,D7,E1,E2,E3,E4,EH,ES,EX,F1,F2,F3,F4,FE,FP,FR,G1,G2,G3,G4,G5,H1,H2,H3,H4,H5,I1,IN,J1,J2,K6,L1,LM,M1,MD,MR,N1,NP,P1,P2,P3,P4,P5,P6,RL,SC,TA,TC,TD,TR,TU,UB,ZZ,")]
     public class X12_ID_1196
     {
@@ -170,6 +189,7 @@ namespace EdiFabric.Templates.X12004010
     /// Purchase Category
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AE,CN,DR,ER,HW,IR,MD,OV,RD,RE,SB,SP,SU,SV,TE,UT,")]
     public class X12_ID_1232
     {
@@ -179,6 +199,7 @@ namespace EdiFabric.Templates.X12004010
     /// Date Time Period Format Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",CC,CD,CM,CQ,CY,D6,D8,DA,DB,DD,DT,DTS,EH,KA,MD,MM,RD,RD2,RD4,RD5,RD6,RD8,RDM,RDT," +
         "RMD,RMY,RTM,RTS,TC,TM,TQ,TR,TS,TT,TU,UN,YM,YMM,YY,")]
     public class X12_ID_1250
@@ -189,6 +210,7 @@ namespace EdiFabric.Templates.X12004010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0,1,10,100,101,102,103,104,105,106,107,108,109,11,12,13,14,16,17,19,2,20,21,22,2" +
         "3,24,25,26,27,28,29,3,30,32,33,34,35,36,37,38,39,4,40,41,42,43,44,45,46,47,48,49" +
         ",5,52,53,54,55,56,57,58,59,6,60,61,62,63,66,67,69,7,71,74,75,78,79,8,80,81,82,83" +
@@ -219,6 +241,7 @@ namespace EdiFabric.Templates.X12004010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,0A,0B,0D,0E,0F,0G,0H,0I,0J,0K,0L,0M,0N,0P,10,11,12,13" +
         ",14,15,16,17,18,19,1A,1B,1C,1D,1E,1F,1G,1H,1I,1J,1K,1L,1M,1N,1O,1P,1Q,1R,1S,1T,1" +
         "U,1V,1W,1X,1Y,1Z,20,21,22,23,24,25,26,27,28,29,2A,2B,2C,2D,2E,2F,2G,2H,2I,2J,2K," +
@@ -287,6 +310,7 @@ namespace EdiFabric.Templates.X12004010
     /// Service, Promotion, Allowance, or Charge Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A010,A020,A030,A040,A050,A060,A070,A080,A090,A100,A110,A112,A120,A121,A122,A130," +
         "A140,A150,A160,A170,A172,A180,A190,A200,A210,A220,A230,A240,A250,A260,A270,A280," +
         "A290,A300,A310,A320,A330,A340,A350,A360,A370,A380,A390,A400,A410,A420,A430,A440," +
@@ -361,6 +385,7 @@ namespace EdiFabric.Templates.X12004010
     /// Acquisition Data Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,K1,K2,K3,K4,K5,K6,KH,KI,KJ,KK,KL,KM,KN,KO,KP,KQ,KR,KS,KT,KU,KV,KW,KX,KY,KZ,L2,")]
     public class X12_ID_1309
     {
@@ -370,6 +395,7 @@ namespace EdiFabric.Templates.X12004010
     /// Financing Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,G,P,")]
     public class X12_ID_1310
     {
@@ -379,6 +405,7 @@ namespace EdiFabric.Templates.X12004010
     /// Condition Indicator
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,1A,1B,1C,1D,1E,1F,1G,1H" +
         ",1I,1J,1K,1L,1M,1N,1O,1P,1Q,1R,1S,1T,1U,1V,1W,1X,1Y,1Z,20,21,22,23,24,25,26,27,2" +
         "8,29,2A,2B,2C,2D,2E,2F,2G,2H,2I,2J,2K,2L,2M,2N,2O,2P,2Q,2R,2S,2T,2U,2V,2W,2X,2Y," +
@@ -428,6 +455,7 @@ namespace EdiFabric.Templates.X12004010
     /// Certification Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,A,B,C,D,E,I,R,S,")]
     public class X12_ID_1322
     {
@@ -437,6 +465,7 @@ namespace EdiFabric.Templates.X12004010
     /// Routing Sequence Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,9,A,B,D,H,I,JD,JO,M,O,R,S,V,X,Z,")]
     public class X12_ID_133
     {
@@ -446,6 +475,7 @@ namespace EdiFabric.Templates.X12004010
     /// Measurement Method or Device
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BM,BO,DM,FT,MA,MM,OM,PT,TM,VA,VB,VC,")]
     public class X12_ID_1373
     {
@@ -455,6 +485,7 @@ namespace EdiFabric.Templates.X12004010
     /// Proposal Data Detail Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AP,")]
     public class X12_ID_1401
     {
@@ -464,6 +495,7 @@ namespace EdiFabric.Templates.X12004010
     /// Shipment Method of Payment
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",11,BP,CA,CC,CD,CF,DE,DF,FO,HP,MX,NC,NR,PA,PB,PC,PD,PE,PL,PO,PP,PS,PU,RC,RF,RS,TP" +
         ",WC,")]
     public class X12_ID_146
@@ -474,6 +506,7 @@ namespace EdiFabric.Templates.X12004010
     /// Special Handling Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",045,15,170,25,35,45,510,520,550,555,565,570,585,665,670,675,761,A1M,A3M,A5M,AAS," +
         "AB,ADL,AFN,AGG,AGS,AIB,AK,ALP,ALT,AMM,ANC,APD,APL,ARC,ARG,ARR,ART,ASY,AT,AUX,AV," +
         "AW,BA,BCP,BKA,BL,BLK,BLS,BN,BNS,BOX,BU2,BU4,BUA,BW,CA2,CA4,CAR,CC,CCB,CCH,CCS,CD" +
@@ -507,6 +540,7 @@ namespace EdiFabric.Templates.X12004010
     /// Request Category Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AR,BA,HS,IN,PR,RE,SC,")]
     public class X12_ID_1525
     {
@@ -516,6 +550,7 @@ namespace EdiFabric.Templates.X12004010
     /// Weight Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,A1,A2,A3,A4,B,C,CD,CE,D,DR,E,F,FR,G,H,I,J,K,L,LC,M,N,ND,NI,NR,NT,O,P,PA,Q,R,RG" +
         ",RN,RT,S,SF,SI,SK,SO,T,U,V,W,WA,WB,WG,WJ,X,Y,Z,")]
     public class X12_ID_187
@@ -526,6 +561,7 @@ namespace EdiFabric.Templates.X12004010
     /// Hazardous Material Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",4,6,9,A,C,D,E,F,I,R,T,U,X,")]
     public class X12_ID_208
     {
@@ -535,6 +571,7 @@ namespace EdiFabric.Templates.X12004010
     /// Commodity Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",2,3,A,B,C,D,E,F,G,H,I,J,K,L,M,N,P,Q,S,T,U,V,Z,")]
     public class X12_ID_23
     {
@@ -544,6 +581,7 @@ namespace EdiFabric.Templates.X12004010
     /// Product/Service ID Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",A1,A2,A3,A4,A5,A6,A7,A8,A9,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AP,AQ,AR,AS,AT,AU,AV,AW,AX,AY,AZ,B1,B2,B3,B4,B5,B6,B7,B8,B9,BA,BB,BC,BD,BE,BF,BG,BH,BI,BJ,BK,BL,BM,BN,BO,BP,BQ,BR,BS,BT,BU,BV,BW,BX,BY,BZ,C1,C2,C3,C4,C5,C6,C7,C8,C9,CA,CB,CC,CD,CE,CF,CG,CH,CI,CJ,CK,CL,CM,CN,CO,CP,CQ,CR,CS,CT,CU,CV,CW,CX,CY,CZ,D1,D2,D3,D4,D5,DD,DE,DF,DG,DI,DL,DM,DN,DO,DP,DQ,DR,DS,DT,DU,DV,DW,DX,DY,DZ,E1,E2,E3,E4,E5,E6,EA,EB,EC,ED,EE,EF,EG,EH,EI,EJ,EK,EL,EM,EN,EP,EQ,ER,ES,EU,EX,EZ,F1,F2,F3,F4,F5,F6,F7,F8,F9,FA,FB,FC,FD,FE,FF,FG,FI,FL,FM,FN,FP,FS,FT,FW,GA,GC,GD,GE,GI,GK,GN,GQ,GR,GS,GU,HC,HD,HI,HN,IA,IB,IC,ID,IE,IF,IG,IM,IN,IP,IQ,IR,IS,IT,IV,IW,IZ,JA,JB,JC,JD,JN,JP,JS,KA,KB,KD,KE,KF,KG,KI,KJ,KK,KL,KM,KN,KP,L1,L2,L3,L4,L5,LA,LB,LC,LD,LG,LP,LR,LS,LT,LU,MA,MB,MC,MD,ME,MF,MG,MH,MI,MJ,MK,MM,MN,MO,MP,MQ,MR,MS,MT,MU,MV,MW,MX,N1,N2,N3,N4,N5,N6,NC,ND,NE,NH,NM,NR,NU,NW,NZ,OA,OB,OC,OD,OE,OF,OG,OH,OI,OL,ON,OO,OP,OR,OT,P1,P2,P3,P4,P5,P7,P8,P9,PA,PB,PC,PD,PE,PF,PG,PH,PI,PJ,PK,PL,PM,PN,PO,PP,PQ,PR,PS,PT,PU,PV,PW,PX,PY,PZ,R1,R2,RA,RB,RC,RD,RE,RF,RG,RH,RI,RJ,RK,RL,RM,RN,RO,RP,RR,RS,RT,RU,RV,RW,RY,RZ,S2,S3,S4,S5,S6,S7,S8,SA,SB,SC,SD,SE,SF,SG,SH,SI,SJ,SK,SL,SM,SN,SO,SP,SQ,SR,SS,ST,SU,SV,SW,SX,SY,SZ,T2,T3,TA,TB,TC,TD,TE,TF,TG,TH,TI,TJ,TM,TN,TP,TR,TS,TT,TU,TV,TW,TX,TY,TZ,U2,U3,U5,U6,UA,UB,UC,UD,UE,UF,UG,UH,UI,UJ,UK,UL,UM,UN,UO,UP,UQ,UR,US,UT,UV,UX,VA,VB,VC,VE,VI,VM,VN,VO,VP,VS,VT,VU,VV,VX,W1,W2,W5,W6,W7,WA,WC,WL,WR,WS,XA,XC,XP,XQ,XZ,YP,ZB,ZR,ZZ,")]
     public class X12_ID_235
     {
@@ -553,6 +591,7 @@ namespace EdiFabric.Templates.X12004010
     /// Price Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",ACT,AGC,ALT,AWP,BBP,BCH,C01,C02,C03,C04,C05,C06,C07,C08,C09,C10,C11,C12,C13,C14,C15,C16,C17,C18,C19,C20,C21,C22,C23,C24,C25,C26,C27,C28,C29,C30,CAN,CAT,CDF,CDV,CHG,CON,CUP,CUS,D01,D02,D03,DAP,DIS,DPR,DSC,DSD,DSP,EDM,EDP,EDS,EDW,ELC,EST,EUP,FCH,FCP,FDS,FET,FGP,FSP,FUL,FUP,GAP,GDP,GOV,GSP,GTP,ICL,IND,INS,INV,LAR,LPP,LPR,MAP,MAS,MAX,MIN,MNC,MNR,MOD,MPR,MSR,MXR,N01,N02,N03,N04,N05,N06,N07,N08,N09,N10,N11,N12,N13,N14,N15,N16,N17,N18,N19,N20,N21,N22,N23,N24,N25,N26,N27,N28,N29,N30,N31,NET,OAP,OPP,PAP,PAQ,PBQ,PBR,PHS,PIE,PLT,PPA,PPD,PRF,PRO,PRP,PUR,QTE,REG,RES,RPA,RPM,RPP,RSH,RTL,SAC,SDP,SFP,SHD,SLP,SPC,SPE,STA,SUM,SWP,THP,TOT,TRF,UCP,ULC,WAR,WHL,WSP,ZNP,")]
     public class X12_ID_236
     {
@@ -562,6 +601,7 @@ namespace EdiFabric.Templates.X12004010
     /// Allowance or Charge Indicator
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,C,N,P,Q,R,S,")]
     public class X12_ID_248
     {
@@ -571,6 +611,7 @@ namespace EdiFabric.Templates.X12004010
     /// Vessel Requirement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",F,M,O,R,S,")]
     public class X12_ID_249
     {
@@ -580,6 +621,7 @@ namespace EdiFabric.Templates.X12004010
     /// Service Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,09,3D,9A,AC,AE,AM,BC,CB,CE,CG,CX,D1,D2,D3,DC,DF,DR,DS,DT,ES,ET,FC,G2,GP,GT,IA" +
         ",IE,IX,ME,MW,ND,NF,NH,NM,NS,ON,PA,PB,PC,PI,PM,PN,PO,PR,PS,R1,R2,R3,R4,R5,R6,R7,R" +
         "8,RS,SA,SC,SD,SE,SG,SH,SI,SM,SP,ST,ZZ,")]
@@ -591,6 +633,7 @@ namespace EdiFabric.Templates.X12004010
     /// Distance Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,D,F,K,L,M,T,X,")]
     public class X12_ID_295
     {
@@ -600,6 +643,7 @@ namespace EdiFabric.Templates.X12004010
     /// Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,31,32,34,35,36,37,38,39,4,40,41,42,43,44,45,46,47,48,49,5,50,51,52,53,54,55,56,57,58,59,6,60,61,62,63,64,65,66,67,68,69,7,70,71,72,73,74,75,76,77,78,79,8,80,81,82,83,84,85,86,87,88,89,9,90,A,A1,A2,A3,A4,A5,A6,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AL,AP,AQ,AR,AS,AT,AV,AW,AX,B,BD,BI,BO,C,C1,C2,CA,CB,CC,CD,CE,CF,CG,CL,CM,CN,CO,CP,CS,CT,CU,CV,CX,D,D1,D2,DA,DB,DC,DD,DE,DF,DG,DH,DI,DJ,DK,DL,DP,DR,DS,DT,DX,E,EA,EB,EC,ED,EE,EN,EP,ER,EV,EX,F,F1,FA,FC,FI,FO,FR,G,GR,H,HR,I,I1,IA,IM,IN,IS,IT,J,JA,JO,JU,K,KA,L,LC,LQ,M,ME,MO,N,NA,ND,NP,NS,O,OD,OP,OR,OT,P,P1,PA,PB,PC,PD,PF,PI,PJ,PO,PP,PR,PS,PT,PU,PV,Q,R,R1,R2,R3,R4,R5,R6,R7,R8,R9,RA,RB,RC,RD,RE,RF,RG,RH,RI,RJ,RK,RL,RM,RN,RO,RP,RQ,RR,RS,RT,RU,RV,RW,RX,S,S1,S2,SA,SB,SC,SD,SE,SL,SR,SS,SU,SV,SZ,T,TD,TE,TG,TN,TP,TR,TS,TU,U,V,VA,W,W1,WD,WI,WQ,WV,X,Y,Z,")]
     public class X12_ID_306
     {
@@ -609,6 +653,7 @@ namespace EdiFabric.Templates.X12004010
     /// Location Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",10,11,12,13,14,18,19,20,21,22,27,28,29,30,31,32,33,34,35,36,38,39,40,41,42,43,44,45,46,47,48,49,50,52,53,54,55,57,58,59,60,93,94,A,A1,AA,AC,AP,AR,B,B1,BE,BL,BS,C,C2,CA,CB,CC,CD,CE,CI,CL,CO,CR,CS,CY,D,DC,DE,DL,DO,DP,DR,DT,E,EA,EL,F,FA,FE,FF,FI,FR,FS,FT,FV,GL,H,I,IA,IB,IM,IP,IS,IT,K,KE,KL,KP,L,LO,M,MI,MS,MZ,NS,O,OA,OF,OL,OP,OR,OV,P,PA,PB,PC,PD,PE,PF,PG,PH,PL,PO,PP,PQ,PR,PS,PT,PU,RA,RC,RE,RG,RJ,RL,RS,RT,SA,SB,SC,SD,SE,SG,SH,SL,SN,SP,SS,ST,SW,TA,TC,TL,TM,TN,TP,TR,TX,UN,UR,UT,VA,VI,VS,W,WF,WH,WI,ZN,ZZ,")]
     public class X12_ID_309
     {
@@ -618,6 +663,7 @@ namespace EdiFabric.Templates.X12004010
     /// Allowance or Charge Method of Handling Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,10,11,12,13,15,18,20,21,25,CA,CC,PP,ZZ,")]
     public class X12_ID_331
     {
@@ -627,6 +673,7 @@ namespace EdiFabric.Templates.X12004010
     /// Terms Basis Date Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",09,1,10,11,12,13,14,15,16,2,3,4,5,6,7,8,ZZ,")]
     public class X12_ID_333
     {
@@ -636,6 +683,7 @@ namespace EdiFabric.Templates.X12004010
     /// Transportation Terms Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,ZZ,")]
     public class X12_ID_334
     {
@@ -645,6 +693,7 @@ namespace EdiFabric.Templates.X12004010
     /// Transportation Terms Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",CAF,CFR,CIF,CIP,CPT,DAF,DDP,DDU,DEQ,DES,DOM,DUP,EXQ,EXS,EXW,FAS,FCA,FCI,FCP,FOB," +
         "FOR,FOT,NPF,PPF,ZZZ,")]
     public class X12_ID_335
@@ -655,6 +704,7 @@ namespace EdiFabric.Templates.X12004010
     /// Terms Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27" +
         ",28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,52,54,55,5" +
         "6,57,58,61,63,64,65,CA,CO,NC,PP,ZZ,")]
@@ -666,6 +716,7 @@ namespace EdiFabric.Templates.X12004010
     /// Unit of Time Period or Interval
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,AD,AM,AN,AP,AY,BD,BM,BW,CC,CY,DA,DW,DY,EL,F1,F2,FY,HR,ID,KK,KL,LN,LT,MD,MI,MO" +
         ",MS,MT,NX,PA,PD,PM,PR,Q1,Q2,Q3,Q4,QY,SA,SD,SH,SM,SP,TY,WK,WW,WY,YD,ZZ,")]
     public class X12_ID_344
@@ -676,6 +727,7 @@ namespace EdiFabric.Templates.X12004010
     /// Lead Time Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AP,AR,AS,AT,AU,AV,AW,AX,AY,AZ,BA,BB,BC,BD" +
         ",BE,BF,BG,")]
     public class X12_ID_345
@@ -686,6 +738,7 @@ namespace EdiFabric.Templates.X12004010
     /// Item Description Type
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",F,S,X,")]
     public class X12_ID_349
     {
@@ -695,6 +748,7 @@ namespace EdiFabric.Templates.X12004010
     /// Transaction Set Purpose Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",00,01,02,03,04,05,06,07,08,10,11,12,13,14,15,16,17,18,19,20,21,22,24,25,26,27,28" +
         ",30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,5" +
         "6,5C,77,CN,CO,EX,GR,PR,RH,RV,SU,ZZ,")]
@@ -706,6 +760,7 @@ namespace EdiFabric.Templates.X12004010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,1A,1B,1C,1D,1E,1F,1G,1H" +
         ",1I,1J,1K,1L,1M,1N,1O,1P,1Q,1R,1X,20,21,22,23,24,25,26,27,28,29,2A,2B,2C,2F,2G,2" +
         "H,2I,2J,2K,2L,2M,2N,2P,2Q,2R,2U,2V,2W,2X,2Y,2Z,30,31,32,33,34,35,36,37,38,39,3B," +
@@ -744,6 +799,7 @@ namespace EdiFabric.Templates.X12004010
     /// Note Reference Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",AAA,AAB,AAC,AAD,AAE,AAF,ABN,ACC,ACI,ACN,ACS,ACT,ADD,AES,AET,ALG,ALL,ALT,AMN,AOO,APN,APS,BBD,BBF,BBH,BBN,BBO,BBT,BFD,BOL,BUR,CAA,CAB,CAC,CAD,CAE,CAF,CAG,CAH,CAI,CAJ,CAK,CAL,CAM,CAN,CAO,CAP,CAQ,CAR,CAS,CAT,CAU,CAV,CAW,CAX,CAZ,CBA,CBB,CBC,CBH,CBI,CCA,CCB,CCC,CCD,CCE,CCF,CCG,CCN,CDD,CER,CHG,CIG,CLN,CLR,CMP,CMT,COD,COM,CON,CRA,CRK,CRN,CUS,DCP,DEE,DEL,DEP,DFR,DFS,DGN,DME,DOD,DOI,ECD,ECM,ECN,ECT,EED,EFD,ELE,EMC,EMD,ENR,ERN,EVL,EXE,EXR,EXT,FEE,FUT,GEN,GPI,GSI,HHI,ICN,IDT,IID,IIE,IIR,IMP,INS,INT,INV,IVC,JVD,LAB,LBD,LBS,LEN,LIN,LIQ,LLA,LLB,LLC,LOC,LOI,LSD,MCD,MDO,MED,MFG,MKN,MMD,MSD,NCD,NPD,NTR,OBI,OBL,OCA,OCC,OCL,OCP,OCR,ODT,OLS,OPO,ORA,ORE,ORI,OTH,OTN,OTS,PAY,PCS,PDS,PED,PEN,PES,PID,PKG,PMT,POB,POC,POL,PPC,PRI,PRN,PRO,PRR,PSY,PUR,QUL,QUT,RDI,REC,REG,REP,REV,RFL,RHB,RLA,RLH,RNH,RNI,ROU,RPT,RST,RVC,SAN,SCN,SDD,SET,SFM,SMD,SOB,SOW,SPH,SPT,SPV,SSA,SSC,SSD,SSE,SSG,SSH,SSI,SSS,SST,TAF,TCF,TDA,TES,TIL,TLF,TLR,TPO,TRA,TRE,TRF,TRS,TSD,TSF,TST,UPI,VEC,VNN,WHI,WRP,ZZZ,")]
     public class X12_ID_363
     {
@@ -753,6 +809,7 @@ namespace EdiFabric.Templates.X12004010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,AB,AC,AD,AP,AS,AU,BN,BT,CA,CP,DN,ED,EM,EX,FT,FU,FX,HF,HP,IT,MN,NP,OF,OT,PA,PC" +
         ",PP,PS,SP,TE,TL,TM,TN,TX,UR,VM,WC,WF,WP,")]
     public class X12_ID_365
@@ -763,6 +820,7 @@ namespace EdiFabric.Templates.X12004010
     /// Contact Function Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",1A,1B,1C,1D,1E,1F,1G,1H,3A,A1,A2,A3,A4,A5,AA,AB,AC,AD,AE,AF,AG,AH,AI,AL,AM,AN,AP,AR,AS,AT,AU,AV,BA,BB,BC,BD,BI,BJ,BK,BL,BM,BP,BS,BU,C2,CA,CB,CC,CD,CE,CF,CG,CH,CI,CJ,CK,CL,CM,CN,CO,CP,CR,CS,CT,CU,CV,CW,CX,CY,CZ,DA,DC,DD,DE,DF,DI,DM,DN,DV,E1,E2,EA,EB,EC,ED,EF,EG,EM,EN,EO,EP,ES,EV,EX,FA,FB,FC,FD,FF,FL,FM,FN,FO,FP,FQ,FR,GA,GB,GC,GE,GR,HM,HR,IC,IO,IP,IS,KA,KB,KC,KP,KT,LD,MA,MB,MC,MD,ME,MG,MK,ML,MM,NA,NC,NP,NT,OA,OC,OD,OS,OW,PA,PB,PC,PD,PE,PF,PG,PH,PI,PJ,PK,PL,PM,PN,PO,PP,PQ,PR,PS,PT,PU,PV,PW,PX,PY,PZ,QA,QC,QI,QM,QP,QR,QY,RA,RB,RC,RD,RE,RF,RG,RP,RQ,RS,RZ,SA,SB,SC,SD,SE,SF,SG,SH,SI,SJ,SK,SL,SM,SN,SO,SP,SQ,SR,SS,ST,SU,SV,SW,SY,TA,TB,TC,TD,TE,TH,TM,TN,TP,TR,TY,UG,UP,UQ,UR,VM,VP,WH,WI,WR,ZZ,")]
     public class X12_ID_366
     {
@@ -772,6 +830,7 @@ namespace EdiFabric.Templates.X12004010
     /// Shipment/Order Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",AA,AB,AN,AP,AS,AU,AV,BK,BM,BO,BP,BT,BW,CA,CB,CC,CD,CE,CF,CI,CK,CL,CM,CN,CO,CP,CS,CT,CU,DA,DD,DE,DI,DO,DP,DR,DS,EC,ED,EW,EX,FS,HQ,IC,ID,IN,IP,IS,LM,LS,LW,MC,NF,NN,NS,NY,OB,OF,OP,OR,PA,PC,PD,PH,PI,PK,PL,PN,PO,PP,PR,PS,PT,QN,QP,RC,RD,RI,RT,RW,SA,SB,SC,SD,SE,SF,SG,SH,SI,SJ,SK,SL,SP,SQ,SS,ST,SU,UB,UN,UR,WS,ZZ,")]
     public class X12_ID_368
     {
@@ -781,6 +840,7 @@ namespace EdiFabric.Templates.X12004010
     /// Change Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AQ,BB,BD,C1,C2,C3,C4,C5,C6,DC,EV,FE,GU,GW,LD,MC,MP,PC,PQ,PS,QH,QO,QP,QT,SC,UM,UP" +
         ",WD,WO,ZZ,")]
     public class X12_ID_371
@@ -791,6 +851,7 @@ namespace EdiFabric.Templates.X12004010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",001,002,003,004,005,006,007,008,009,010,011,012,013,014,015,016,017,018,019,020," +
         "021,022,023,024,025,026,027,028,029,030,031,032,033,034,035,036,037,038,039,040," +
         "041,042,043,044,045,046,047,048,049,050,051,052,053,054,055,056,057,058,059,060," +
@@ -855,6 +916,7 @@ namespace EdiFabric.Templates.X12004010
     /// Allowance/Charge Percent Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,9,A,Z,")]
     public class X12_ID_378
     {
@@ -864,6 +926,7 @@ namespace EdiFabric.Templates.X12004010
     /// Equipment Description Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",20,2B,2D,2E,2F,2G,40,4B,AC,AF,AL,AP,AT,BC,BE,BF,BG,BH,BJ,BK,BO,BR,BX,CA,CB,CC,CD,CG,CH,CI,CJ,CK,CL,CM,CN,CP,CQ,CR,CS,CT,CU,CV,CW,CX,CZ,DD,DF,DT,DX,ET,FF,FH,FN,FP,FR,FS,FT,FX,GS,HB,HC,HO,HP,HT,HV,HY,ID,IX,LO,LS,LU,NX,OB,OT,OV,PL,PP,PT,PU,RA,RC,RD,RE,RF,RG,RI,RO,RR,RS,RT,SA,SC,SD,SK,SL,SR,SS,ST,SV,TA,TB,TC,TF,TG,TH,TI,TJ,TK,TL,TM,TN,TO,TP,TQ,TR,TT,TU,TV,TW,UA,UB,UC,UD,UE,UL,UP,VA,VE,VL,VR,VS,VT,WR,WY,")]
     public class X12_ID_40
     {
@@ -873,6 +936,7 @@ namespace EdiFabric.Templates.X12004010
     /// Unit Load Option Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,10,11,ZZ,")]
     public class X12_ID_400
     {
@@ -882,6 +946,7 @@ namespace EdiFabric.Templates.X12004010
     /// Seal Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,")]
     public class X12_ID_407
     {
@@ -891,6 +956,7 @@ namespace EdiFabric.Templates.X12004010
     /// Tax Exempt Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,")]
     public class X12_ID_441
     {
@@ -900,6 +966,7 @@ namespace EdiFabric.Templates.X12004010
     /// Credit/Debit Flag Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",C,D,")]
     public class X12_ID_478
     {
@@ -909,6 +976,7 @@ namespace EdiFabric.Templates.X12004010
     /// Amount Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,0A,0B,0C,0D,0E,0F,0G,0H,0I,0J,0K,0L,0M,0N,0P,0Q,0R,0S" +
         ",0T,0U,1,10,11,12,13,14,15,16,17,18,19,1A,1B,1C,1D,1E,1F,1G,1H,1J,1K,1L,1M,1N,1P" +
         ",1Q,1R,1S,1T,1U,1V,1W,1X,1Y,1Z,2,20,21,22,23,24,25,26,27,28,29,2A,2B,2C,2D,2E,2F" +
@@ -974,6 +1042,7 @@ namespace EdiFabric.Templates.X12004010
     /// Risk of Loss Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BY,FE,IM,IR,LR,PP,SE,SR,ZZ,")]
     public class X12_ID_54
     {
@@ -983,6 +1052,7 @@ namespace EdiFabric.Templates.X12004010
     /// Agency Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,93,94,A1,A2,A3,A4,AA,AB,AC,AD,AE,AG,AH,AI,AJ,AL,AM,AP,AQ,AS,AT,AW,AX,AY,BE,BF,BI,CA,CB,CC,CE,CI,CL,CM,CO,CR,CS,CU,CX,DA,DD,DE,DF,DI,DL,DN,DO,DR,DS,DX,DY,DZ,EI,EP,ES,ET,EU,EX,FA,FC,FD,FG,FH,FI,GC,GS,GU,HC,HI,HS,HU,IA,IB,IC,IM,IN,IS,JA,LA,LB,LI,MA,MB,MC,ME,MI,MP,MS,MV,NA,NB,NC,NE,NF,NG,NI,NR,NS,NT,NU,NW,OI,OP,OS,PA,PC,SA,SE,SL,SP,ST,TA,TB,TC,TD,TI,TM,TP,TR,TX,UC,UN,VI,WH,ZZ,")]
     public class X12_ID_559
     {
@@ -992,6 +1062,7 @@ namespace EdiFabric.Templates.X12004010
     /// Special Services Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",A0010,A0020,A0030,AC,AD,AF,AG,AM,AO,B0020,B0040,BH,BI,BOP,C0012,C0032,C0036,C0038,C1,C2,CA,CC,CD,CH,CI,CM,CN,CO,CS,CT,CU,CY,CZ,D0020,D0024,D0031,D0032,D1,D2,DA,DE,DH,DI,DL,DS,DV,E0030,EG,EM,EN,ER,EU,EX,F1,FG,FS,G0010,G0052,GI,GP,GU,H1,HC,HH,HS,I0012,I0013,I0021,I0022,IC,ID,IG,IK,IL,IM,IN,IO,IP,IQ,IR,IS,IT,KO,L1,LA,LL,LS,M0010,M0042,MI,ML,MNTAN,MNTMN,MNTON,N0020,N0021,N0032,NC,OA,ON,OP,P0012,P0014,P0016,P0018,P0022,PA,PB,PC,PE,PF,PL,PLI,PM,PO,PP,PSF,R0072,R0076,R0077,R0110,RD,RE,RM,RP,S0014,S0016,S0022,S0024,S0050,S0052,S0054,S0056,S0080,S1,S2,S3,SD,SG,SH,SJ,SLP,SPI,SR,SS,ST,SU,SV,SW,T0070,T1,TC,TE,TH,TM,TO,UN,US,V1,V2,W0010,WC,WH,X0010,XP,XX,YY,ZZ,")]
     public class X12_ID_560
     {
@@ -1001,6 +1072,7 @@ namespace EdiFabric.Templates.X12004010
     /// Sales Requirement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",8A,AI,AS,B,BC,BK,C,D,E,EI,F,FT,GS,IP,IS,K,LS,MY,N,NS,O,P,P2,P3,P4,Q,QB,QE,QI,QM," +
         "QP,R,S,SC,SE,SF,SG,SI,SP,SQ,SS,ST,SU,SV,SW,T,UC,UL,UP,W,WY,Y,YI,Z,")]
     public class X12_ID_563
@@ -1011,6 +1083,7 @@ namespace EdiFabric.Templates.X12004010
     /// Product/Service Substitution Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B0,B1,B2,B3,B4,X,Y,ZZ,")]
     public class X12_ID_566
     {
@@ -1020,6 +1093,7 @@ namespace EdiFabric.Templates.X12004010
     /// Acknowledgment Type
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AC,AD,AE,AH,AK,AP,AT,NA,RD,RF,RJ,RN,RO,RV,ZZ,")]
     public class X12_ID_587
     {
@@ -1029,6 +1103,7 @@ namespace EdiFabric.Templates.X12004010
     /// Time Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,AD,AS,AT" +
         ",CD,CS,CT,ED,ES,ET,GM,HD,HS,HT,LT,MD,MS,MT,ND,NS,NT,PD,PS,PT,TD,TS,TT,UT,")]
     public class X12_ID_623
@@ -1039,6 +1114,7 @@ namespace EdiFabric.Templates.X12004010
     /// Basis of Unit Price Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",AA,AB,AP,AW,BD,BR,BW,CA,CP,CR,CT,DI,DP,DR,DS,EC,EH,ES,FB,FO,FX,HF,HP,HT,KA,KP,KR,LC,LD,LE,LM,LR,ME,ML,NC,NE,NQ,NS,NT,PA,PB,PD,PE,PF,PG,PK,PL,PM,PN,PO,PP,PQ,PR,PS,PT,PU,PV,PY,QE,QH,QR,QS,QT,RC,RD,RE,RM,RS,RT,SA,SC,SM,SR,ST,SW,TB,TC,TD,TE,TF,TM,TP,TT,UM,VQ,WC,WD,WE,WH,WI,WM,")]
     public class X12_ID_639
     {
@@ -1048,6 +1124,7 @@ namespace EdiFabric.Templates.X12004010
     /// Transaction Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",01,02,03,04,05,06,07,08,09,10,11,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,33,34,35,36,37,38,39,3M,40,41,60,62,63,64,65,66,67,68,69,6A,6C,6N,6R,6S,70,71,72,73,74,75,76,77,78,79,80,81,82,83,85,87,88,91,94,95,97,98,99,A0,A1,A3,A4,A5,A6,A7,AA,AB,AC,AD,AE,AF,AG,AI,AM,AN,AP,AQ,AR,AS,AT,AV,AW,AZ,BA,BB,BD,BF,BH,BJ,BK,BL,BM,BN,BO,BP,BR,BS,BT,BU,BV,BW,C0,C1,C2,C3,CA,CB,CC,CD,CE,CF,CG,CH,CI,CJ,CK,CL,CM,CN,CO,CP,CR,CS,CT,CU,CV,CW,CX,CY,CZ,D1,D4,DA,DB,DC,DD,DE,DF,DG,DH,DI,DK,DL,DN,DO,DP,DQ,DR,DS,DT,DU,EA,EB,EF,EI,EM,EP,ER,EX,FA,FB,FC,FD,FE,FF,FG,FI,FL,FM,FN,FP,FR,FS,FT,GA,GI,GR,HP,I1,IA,IB,IC,ID,IE,IF,II,IM,IN,IO,IR,IU,IW,IX,IZ,JM,JO,JR,JS,JU,JX,KB,KC,KD,KE,KF,KG,KH,KI,KJ,KK,KL,KM,KN,KS,KT,LC,LD,LE,LF,LN,LO,LP,LR,LV,M1,MA,MB,MC,MD,ME,MF,MI,ML,MM,MP,MR,MS,MU,N1,N2,N3,N4,N5,N6,N7,N8,NA,NB,NC,ND,NE,NF,NG,NH,NI,NJ,NK,NL,NM,NO,NP,NQ,NR,NT,NU,OC,OF,OP,OR,P1,PA,PB,PC,PD,PE,PF,PG,PI,PL,PM,PO,PP,PR,PS,PT,PU,PV,PW,PX,PZ,QA,QB,QC,QD,QE,QF,QG,QH,QJ,QK,QL,QP,QR,R1,R2,R3,R4,R5,R6,R7,R8,RA,RB,RC,RD,RE,RF,RG,RH,RK,RM,RP,RQ,RS,RT,RU,RZ,S1,S2,S3,S4,SA,SB,SC,SD,SE,SF,SG,SH,SL,SM,SO,SP,SQ,SR,SS,ST,SU,SV,TD,TG,TH,TI,TJ,TK,TP,TR,TS,TT,TX,U1,U2,U4,U5,U9,UA,UC,UD,UF,UI,UM,UO,UP,UR,UT,V1,VH,VJ,VL,VM,VN,VO,VP,VQ,VR,W1,W4,W5,WA,WC,WD,WH,WO,WS,WT,X1,XA,XB,XC,XD,XX,XY,XZ,YI,YR,ZA,ZB,ZC,ZD,ZE,ZF,ZG,ZH,ZI,ZJ,ZK,ZL,ZM,ZN,ZO,ZP,ZQ,ZR,ZS,ZT,ZU,ZW,ZZ,")]
     public class X12_ID_640
     {
@@ -1057,6 +1134,7 @@ namespace EdiFabric.Templates.X12004010
     /// Price Multiplier Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",CSD,CSR,DIS,ILP,PSP,SEL,")]
     public class X12_ID_648
     {
@@ -1066,6 +1144,7 @@ namespace EdiFabric.Templates.X12004010
     /// Discount Terms Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AMT,CSH,DOR,DPU,DSH,DSV,POR,PPU,PSH,PSV,UNT,ZZZ,")]
     public class X12_ID_653
     {
@@ -1075,6 +1154,7 @@ namespace EdiFabric.Templates.X12004010
     /// Discount Base Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",CA,PC,UN,ZZ,")]
     public class X12_ID_654
     {
@@ -1084,6 +1164,7 @@ namespace EdiFabric.Templates.X12004010
     /// Discount Control Limit Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DAT,DOF,")]
     public class X12_ID_656
     {
@@ -1093,6 +1174,7 @@ namespace EdiFabric.Templates.X12004010
     /// Basis of Verification Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,9,A,B,")]
     public class X12_ID_659
     {
@@ -1102,6 +1184,7 @@ namespace EdiFabric.Templates.X12004010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,31,32,33,34,35,36,37,38,39,4,40,41,42,43,44,45,46,47,48,49,5,50,53,54,55,56,57,58,59,6,61,62,63,64,7,71,72,73,74,75,76,77,78,8,81,82,9,90,91,92,93,94,95,96,97,98,99,A,A1,A2,A3,A4,A5,A6,AA,AB,AC,AD,AE,AL,AP,BC,BD,BE,BG,BP,BS,C,C1,C2,C5,CA,CB,CC,CD,CE,CF,CI,CL,CM,CP,CR,CS,CT,D,DG,DL,DN,DP,DS,E,EC,EH,EI,EP,EQ,ER,ES,F,FA,FB,FC,FD,FI,FJ,FN,G,GA,GC,HC,HN,I,J,K,L,LC,LD,LE,LI,LN,M3,M4,M5,M6,MA,MB,MC,MD,MI,MK,ML,MN,MP,MR,N,NA,ND,NI,NO,OC,OP,PA,PB,PC,PI,PP,PR,RA,RB,RC,RD,RE,RT,S,SA,SB,SD,SF,SI,SJ,SL,SP,ST,SV,SW,TA,TC,TZ,UC,UL,UM,UP,UR,US,WR,XV,XX,ZC,ZN,ZY,ZZ,")]
     public class X12_ID_66
     {
@@ -1111,6 +1194,7 @@ namespace EdiFabric.Templates.X12004010
     /// Relationship Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,D,I,O,S,")]
     public class X12_ID_662
     {
@@ -1120,6 +1204,7 @@ namespace EdiFabric.Templates.X12004010
     /// Currency Market/Exchange Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",IMF,LNF,LNS,NYC,PHI,ZUR,")]
     public class X12_ID_669
     {
@@ -1129,6 +1214,7 @@ namespace EdiFabric.Templates.X12004010
     /// Quantity Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,1A,1B,1C,1D,1E,1F,1G,1H" +
         ",1I,1J,1K,1L,1M,1N,1O,1P,1Q,1R,1S,1T,1U,1V,1W,1X,1Y,1Z,20,21,22,23,24,25,26,27,2" +
         "8,29,2A,2B,2C,2D,2E,2F,2G,2H,2I,2J,2K,2L,2M,2N,2O,2P,2Q,2R,2S,2T,2U,2V,2W,2X,2Y," +
@@ -1169,6 +1255,7 @@ namespace EdiFabric.Templates.X12004010
     /// Class of Trade Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,AB,AC,AD,AG,AI,AP,AS,BG,BR,CB,CN,CO,CR,CX,CY,DE,DF,DI,DR,EX,FS,GA,GM,GR,GV,HS" +
         ",ID,IN,IR,JB,LC,MC,MF,ML,OE,OF,ON,PF,PH,PT,PY,RS,SA,SB,SE,ST,TR,WA,WC,WH,WS,")]
     public class X12_ID_687
@@ -1179,6 +1266,7 @@ namespace EdiFabric.Templates.X12004010
     /// Restrictions/Conditions Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,DO,DW,NR,NS,OR,SP,SR,WO,")]
     public class X12_ID_688
     {
@@ -1188,6 +1276,7 @@ namespace EdiFabric.Templates.X12004010
     /// Paperwork/Report Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,CH,CO,DM,NT,ON,OR,PV,SG,")]
     public class X12_ID_704
     {
@@ -1197,6 +1286,7 @@ namespace EdiFabric.Templates.X12004010
     /// Entity Relationship Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,")]
     public class X12_ID_706
     {
@@ -1206,6 +1296,7 @@ namespace EdiFabric.Templates.X12004010
     /// Transit Direction Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BS,SB,SC,SD,SF,SS,ZZ,")]
     public class X12_ID_731
     {
@@ -1215,6 +1306,7 @@ namespace EdiFabric.Templates.X12004010
     /// Transit Time Direction Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,AD,CD,CW,HO,SD,SH,WD,WW,ZZ,")]
     public class X12_ID_732
     {
@@ -1224,6 +1316,7 @@ namespace EdiFabric.Templates.X12004010
     /// Measurement Reference ID Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",9L,AA,AB,AC,AE,AF,AG,AH,AI,AJ,AK,AM,AN,AO,AP,AQ,AR,AV,BA,BB,BC,BD,BL,BM,BN,BO,BP,BR,BT,BZ,C1,CA,CB,CC,CF,CG,CH,CJ,CK,CL,CM,CN,CO,CP,CQ,CS,CT,CU,CV,CW,CY,DE,DN,DT,EA,EE,EF,EL,EN,FC,FD,FH,FJ,FV,FZ,GC,GL,GO,GP,HC,HR,ID,IN,IR,LC,LD,LG,LL,LM,LP,LS,LT,MP,MR,NC,NE,NX,OD,OG,OL,OP,P1,PA,PB,PC,PD,PI,PJ,PK,PL,PM,PO,PR,PS,PT,PU,PY,QR,QV,R1,R2,RA,RG,RL,RN,RO,RP,RQ,RS,RT,SA,SB,SC,SD,SE,SF,SH,SJ,SK,SL,SM,SP,SR,ST,SU,SZ,TA,TD,TE,TI,TL,TO,TP,TR,TS,TT,VT,WA,WR,WT,ZA,ZP,")]
     public class X12_ID_737
     {
@@ -1233,6 +1326,7 @@ namespace EdiFabric.Templates.X12004010
     /// Measurement Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,10,11,12,13,14,15,16,18,19,1F,2,20,21,22,23,24,25,26,27,28,29,2F,3,30,31,32,33" +
         ",34,35,36,37,38,39,3A,3B,3C,3D,3E,3F,3G,3H,3I,3J,4,40,41,42,43,44,4F,5,5F,6,6F,7" +
         ",8,8F,A,A1,A2,A3,A4,A5,A6,A7,A9,AA,AAP,AB,ABO,ABR,ABS,AC,ACN,AD,ADH,ADM,AE,AF,AG" +
@@ -1280,6 +1374,7 @@ namespace EdiFabric.Templates.X12004010
     /// Product/Process Characteristic Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",01,02,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,28,29,30,32,33,34,35,36,37,38,39,40,41,42,43,54,55,56,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,99,9A,9B,9C,9D,AF,AG,AGE,AT,B8,BC,BCC,BES,BEV,BLM,BND,BPI,BRG,BW,C2,C3,C4,C5,C6,CCN,CD,CFC,CH,CHF,CL,CLT,CM,CMS,CO,CP,CS,CU,CW,DAC,DAF,DE,DF,DIR,DM,EC,EN,FA,FC,FCD,FDD,FL,FLV,FMR,FQ,GD,GEN,GM,GS,HB,HY,HZ,HZR,ING,INJ,KI,LC,LO,MA,MAC,MB,MBU,MS,MSG,NH,OC,OD,ODR,OR,OT,P6,PD,PF,PFA,PFC,PFG,PFI,PFK,PFL,PFM,PFN,PFP,PFS,PFT,PG,PP,PR,PRI,PRO,PSC,PUB,PUR,QAS,R3,RA,RCC,RM,RR,RSD,RSE,RX,SC,SE,SEC,SF,SIZ,SLM,SOL,ST,STL,SYN,TC,TE,TF,THR,TIF,TIR,TP,TR,TRN,TWF,TZ,VA,VC,VI,WD,WF,WLC,WT,WTT,ZZ,")]
     public class X12_ID_750
     {
@@ -1289,6 +1384,7 @@ namespace EdiFabric.Templates.X12004010
     /// Surface/Layer/Position Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",1S,2S,A1,AL,AO,AS,B1,BC,BI,BK,BL,BR,BS,BT,CH,CT,DO,DT,DU,EX,FR,FS,GF,IN,IT,KB,LC,LO,LT,M1,MC,MD,NS,NT,OA,OS,OT,R0,R1,R2,R3,R4,R5,R6,R7,R8,R9,RA,RB,RC,RD,RE,RF,RG,RH,RI,RJ,RK,RL,RM,RN,RO,RP,RQ,RR,RS,RT,RU,RV,RW,RX,RY,RZ,S1,S2,S3,S4,S5,S6,S7,S8,S9,SA,SB,SC,SD,SE,SF,SN,SP,SS,ST,SU,TB,TP,TS,UC,UN,UP,UT,WF,")]
     public class X12_ID_752
     {
@@ -1298,6 +1394,7 @@ namespace EdiFabric.Templates.X12004010
     /// Packaging Characteristic Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,10,11,12,13,34,35,36,37,38,39,40,42,43,44,45,60,61,62,63,65,66,67,68,CB,CC,CD" +
         ",CS,CT,CUD,HM,IC,IP,LP,OPI,PK,PM,PML,PN,SMK,UC,UCL,UP,WM,")]
     public class X12_ID_753
@@ -1308,6 +1405,7 @@ namespace EdiFabric.Templates.X12004010
     /// Report Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27" +
         ",28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,5" +
         "4,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80," +
@@ -1336,6 +1434,7 @@ namespace EdiFabric.Templates.X12004010
     /// Report Transmission Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,9,AA,AC,AE,AM,AS,AT,AU,BE,BM,BW,CD,CF,CP,CT,DA,EL,EM,FT,FX,GS,HL" +
         ",IA,IE,IM,MB,MD,MN,MP,MT,NS,OL,PO,SE,SM,SN,SW,TA,TE,TM,TX,VO,WS,")]
     public class X12_ID_756
@@ -1346,6 +1445,7 @@ namespace EdiFabric.Templates.X12004010
     /// Security Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",00,01,02,03,04,05,06,09,11,20,21,90,92,93,94,99,ZZ,")]
     public class X12_ID_786
     {
@@ -1355,6 +1455,7 @@ namespace EdiFabric.Templates.X12004010
     /// Entity Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,E,F,G,H,J,K,L,M,N,P,Z,")]
     public class X12_ID_792
     {
@@ -1364,6 +1465,7 @@ namespace EdiFabric.Templates.X12004010
     /// Vessel Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BC,BD,BI,BK,BL,BO,CB,CT,DG,DP,FH,GC,GT,MT,PC,PS,RR,SP,TG,VH,")]
     public class X12_ID_854
     {
@@ -1373,6 +1475,7 @@ namespace EdiFabric.Templates.X12004010
     /// Marks and Numbers Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,AI,CA,CP,DZ,GM,L,MC,PB,R,S,SI,SM,SR,SS,UC,UP,W,X,ZZ,")]
     public class X12_ID_88
     {
@@ -1382,6 +1485,7 @@ namespace EdiFabric.Templates.X12004010
     /// Vessel Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",B,C,L,Z,")]
     public class X12_ID_897
     {
@@ -1391,6 +1495,7 @@ namespace EdiFabric.Templates.X12004010
     /// Transportation Method/Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",6,7,A,AC,AE,AF,AH,AR,B,BP,BU,C,CE,D,DA,DW,E,ED,F,FA,FL,GG,GR,GS,H,HH,I,J,K,L,LA," +
         "LT,M,MB,MP,N,O,P,PA,PG,PL,PP,PR,PT,Q,R,RC,RR,S,SB,SC,SD,SE,SR,SS,ST,T,TA,TC,TT,U" +
         ",VA,VE,VL,W,WP,X,Y,Y1,Y2,ZZ,")]
@@ -1402,6 +1507,7 @@ namespace EdiFabric.Templates.X12004010
     /// Purchase Order Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AB,AC,AO,BD,BE,BH,BK,BL,BQ,BY,CA,CC,CF,CN,CO,CP,CR,DR,DS,EO,FH,IN,JL,KA,KB,KC,KD" +
         ",KE,KG,KI,KN,KO,KP,KQ,KR,KS,KT,LB,LS,NE,NO,NP,NS,OS,PR,RA,RC,RE,RL,RN,RO,RR,RT,R" +
         "U,RW,SA,SO,SP,SS,ST,SW,TC,TM,TR,UD,UE,US,WO,ZZ,")]
@@ -1413,6 +1519,7 @@ namespace EdiFabric.Templates.X12004010
     /// Printer Carriage Control Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,AT,DS,LC,NP,NS,SS,")]
     public class X12_ID_934
     {
@@ -1422,6 +1529,7 @@ namespace EdiFabric.Templates.X12004010
     /// Measurement Significance Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,34,35,36,37,38,39,40,41,42,43,44,45,46,47,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,ZZ,")]
     public class X12_ID_935
     {
@@ -1431,6 +1539,7 @@ namespace EdiFabric.Templates.X12004010
     /// Measurement Attribute Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27" +
         ",28,29,40,41,42,44,45,46,48,49,50,51,52,Q1,Q2,TA,TB,ZZ,")]
     public class X12_ID_936
@@ -1441,6 +1550,7 @@ namespace EdiFabric.Templates.X12004010
     /// Balance Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,AM,C,CD,M,N,P,Q,Y,")]
     public class X12_ID_951
     {
@@ -1450,6 +1560,7 @@ namespace EdiFabric.Templates.X12004010
     /// Tax Jurisdiction Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",CD,VD,VE,")]
     public class X12_ID_955
     {
@@ -1459,6 +1570,7 @@ namespace EdiFabric.Templates.X12004010
     /// Tax Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,AB,AT,BP,CA,CB,CG,CI,CP,CR,CS,CT,CV,DL,EQ,ET,EV,F1,F2,F3,FD,FF,FI,FL,FR,FS,FT" +
         ",GR,GS,HS,HT,HZ,LB,LO,LS,LT,LU,LV,MA,MN,MP,MS,MT,OH,OT,PG,PS,SA,SB,SC,SE,SF,SL,S" +
         "P,SR,SS,ST,SU,SX,T1,T2,TD,TT,TX,UL,UT,VA,WS,ZA,ZB,ZC,ZD,ZE,ZZ,")]
@@ -1470,6 +1582,7 @@ namespace EdiFabric.Templates.X12004010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",001,002,003,004,005,006,007,01,02,03,04,05,06,07,08,09,0A,0B,0D,0E,0F,0H,10,11,1" +
         "2,13,14,15,16,17,18,19,1A,1B,1C,1D,1E,1F,1G,1H,1I,1J,1K,1L,1M,1N,1O,1P,1Q,1R,1S," +
         "1T,1U,1V,1W,1X,1Y,1Z,20,21,22,23,24,25,26,27,28,29,2A,2B,2C,2D,2E,2F,2G,2H,2I,2J" +
@@ -1526,21 +1639,25 @@ namespace EdiFabric.Templates.X12004010
     }
     
     [Serializable()]
+    [DataContract()]
     public class X12_N0
     {
     }
     
     [Serializable()]
+    [DataContract()]
     public class X12_N2
     {
     }
     
     [Serializable()]
+    [DataContract()]
     public class X12_R
     {
     }
     
     [Serializable()]
+    [DataContract()]
     public class X12_TM
     {
     }

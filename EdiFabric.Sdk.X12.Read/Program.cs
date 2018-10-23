@@ -5,7 +5,9 @@
         static void Main(string[] args)
         {
             Examples.ReadAllPurchaseOrders();
+            Examples.ReadAllPurchaseOrdersAsync();
             Examples.ReadPurchaseOrdersOneAtATime();
+            Examples.ReadPurchaseOrdersOneAtATimeAsync();
             Examples.ReadCustomTemplate1();
             Examples.ReadCustomTemplate2();
             Examples.ReadWithSplitting();
