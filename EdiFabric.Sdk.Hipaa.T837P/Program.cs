@@ -60,7 +60,7 @@ namespace EdiFabric.Sdk.Hipaa.T837P
                 var transaction = HipaaTransactionBuilders.BuildClaim("1");
 
                 MessageErrorContext mec;
-                if (transaction.IsValid(out mec, true))
+                if (transaction.IsValid(out mec, new ValidationSettings { SkipTrailerValidation = true }))
                 {
                     var separators = new Separators(Separators.X12.Segment, ':', Separators.X12.DataElement, Separators.X12.RepetitionDataElement, Separators.X12.Escape);
 

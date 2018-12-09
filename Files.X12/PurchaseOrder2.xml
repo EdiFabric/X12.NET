@@ -7,6 +7,7 @@
     <a:Name>850</a:Name>
     <a:Version>004010</a:Version>
   </ErrorContext>
+  <Template xmlns="http://schemas.datacontract.org/2004/07/EdiFabric.Core.Model.Edi">EdiFabric.Templates.X12004010.TS850, EdiFabric.Sdk.X12.Templates.V004010, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Template>
   <ADVLoop i:nil="true" />
   <AMTLoop i:nil="true" />
   <BEG>

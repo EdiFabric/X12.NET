@@ -57,7 +57,7 @@ namespace EdiFabric.Sdk.X12.T850
                 var transaction = X12TransactionBuilders.BuildPurchaseOrder("1");
 
                 MessageErrorContext mec;
-                if (transaction.IsValid(out mec, true))
+                if (transaction.IsValid(out mec, new ValidationSettings { SkipTrailerValidation = true }))
                 {
                     //  valid
                     using (var writer = new X12Writer(stream))

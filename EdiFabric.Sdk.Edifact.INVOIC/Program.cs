@@ -57,7 +57,7 @@ namespace EdiFabric.Sdk.Edifact.INVOIC
                 var transaction = EdifactTransactionBuilders.BuildInvoice("1");
 
                 MessageErrorContext mec;
-                if (transaction.IsValid(out mec, true))
+                if (transaction.IsValid(out mec, new ValidationSettings { SkipTrailerValidation = true }))
                 {
                     //  valid
                     using (var writer = new EdifactWriter(stream))

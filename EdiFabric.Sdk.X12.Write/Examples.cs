@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Text;
+using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Edi.ErrorContexts;
 using EdiFabric.Core.Model.Edi.X12;
 using EdiFabric.Framework;
@@ -28,7 +29,7 @@ namespace EdiFabric.Sdk.X12.Write
 
             //  2.  Validate it by skipping trailer validation
             MessageErrorContext errorContext;
-            if (invoice.IsValid(out errorContext, true))
+            if (invoice.IsValid(out errorContext, new ValidationSettings { SkipTrailerValidation = true }))
             {
                 Debug.WriteLine("Message {0} with control number {1} is valid.", errorContext.Name, errorContext.ControlNumber);
 
@@ -76,7 +77,7 @@ namespace EdiFabric.Sdk.X12.Write
 
             //  2.  Validate it by skipping trailer validation
             MessageErrorContext errorContext;
-            if (invoice.IsValid(out errorContext, true))
+            if (invoice.IsValid(out errorContext, new ValidationSettings { SkipTrailerValidation = true }))
             {
                 Debug.WriteLine("Message {0} with control number {1} is valid.", errorContext.Name, errorContext.ControlNumber);
 
@@ -124,7 +125,7 @@ namespace EdiFabric.Sdk.X12.Write
 
             //  2.  Validate it by skipping trailer validation
             MessageErrorContext errorContext;
-            if (invoice.IsValid(out errorContext, true))
+            if (invoice.IsValid(out errorContext, new ValidationSettings { SkipTrailerValidation = true }))
             {
                 Debug.WriteLine("Message {0} with control number {1} is valid.", errorContext.Name,
                     errorContext.ControlNumber);
@@ -330,7 +331,7 @@ namespace EdiFabric.Sdk.X12.Write
 
             //  2.  Validate it by skipping trailer validation
             MessageErrorContext errorContext;
-            if (po.IsValid(out errorContext, true))
+            if (po.IsValid(out errorContext, new ValidationSettings { SkipTrailerValidation = true }))
             {
                 Debug.WriteLine("Message {0} with control number {1} is valid.", errorContext.Name, errorContext.ControlNumber);
 

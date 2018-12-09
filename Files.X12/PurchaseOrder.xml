@@ -1,4 +1,12 @@
 <TS850 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Template>EdiFabric.Templates.X12004010.TS850, EdiFabric.Sdk.X12.Templates.V004010, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Template>
+  <ErrorContext>
+    <Name>850</Name>
+    <ControlNumber>0001</ControlNumber>
+    <Version>004010</Version>
+    <Codes />
+    <Errors />
+  </ErrorContext>
   <ST>
     <TransactionSetIdentifierCode_01>850</TransactionSetIdentifierCode_01>
     <TransactionSetControlNumber_02>0001</TransactionSetControlNumber_02>

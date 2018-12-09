@@ -7,6 +7,7 @@
     <a:Name>ORDERS</a:Name>
     <a:Version>D96A</a:Version>
   </ErrorContext>
+  <Template xmlns="http://schemas.datacontract.org/2004/07/EdiFabric.Core.Model.Edi">EdiFabric.Templates.EdifactD96A.TSORDERS, EdiFabric.Sdk.Edifact.Templates.D96A, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Template>
   <ALCLoop i:nil="true" />
   <ALCLoop2 i:nil="true" />
   <ALI i:nil="true" />

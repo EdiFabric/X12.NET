@@ -513,9 +513,7 @@
       "STGLoop": null
     }
   ],
-  "UNS": {
-    "Sectionidentification_01": "S"
-  },
+  "UNS": { "Sectionidentification_01": "S" },
   "MOA": null,
   "CNT": [
     {
@@ -534,9 +532,18 @@
   "Name": "ORDERS",
   "Version": "D96A",
   "Format": "EDIFACT",
-  "SplitterProperty": null,
+  "Template": "EdiFabric.Templates.EdifactD96A.TSORDERS, EdiFabric.Sdk.Edifact.Templates.D96A, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
   "PartsCount": 0,
   "IsPart": false,
   "SplitPostion": 0,
+  "ErrorContext": {
+    "Name": "ORDERS",
+    "ControlNumber": "000000101",
+    "Version": "D96A",
+    "Codes": [],
+    "Errors": [],
+    "HasErrors": false,
+    "Message": null
+  },
   "HasErrors": false
 }

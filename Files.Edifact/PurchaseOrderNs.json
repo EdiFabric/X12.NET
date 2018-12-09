@@ -1,6 +1,5 @@
 {
   "UNH": {
-    "MessageReferenceNumber_01": "000000101",
     "MessageIdentifier_02": {
       "MessageType_01": "ORDERS",
       "MessageVersionNumber_02": "D",
@@ -513,9 +512,7 @@
       "STGLoop": null
     }
   ],
-  "UNS": {
-    "Sectionidentification_01": "S"
-  },
+  "UNS": { "Sectionidentification_01": "S" },
   "MOA": null,
   "CNT": [
     {
@@ -531,12 +528,13 @@
     "NumberofSegmentsinaMessage_01": "38",
     "MessageReferenceNumber_02": "000000101"
   },
-  "Name": "ORDERS",
-  "Version": "D96A",
-  "Format": "EDIFACT",
-  "SplitterProperty": null,
-  "PartsCount": 0,
-  "IsPart": false,
-  "SplitPostion": 0,
-  "HasErrors": false
+  "Template": "EdiFabric.Templates.EdifactD96A.TSORDERS, EdiFabric.Sdk.Edifact.Templates.D96A, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+  "ErrorContext": {
+    "Name": "ORDERS",
+    "ControlNumber": "000000101",
+    "Version": "D96A",
+    "Codes": [],
+    "Errors": [],
+    "Message": null
+  }
 }

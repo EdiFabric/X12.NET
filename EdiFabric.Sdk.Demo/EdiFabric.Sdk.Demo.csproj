@@ -32,25 +32,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EdiFabric.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Core.9.7.9\lib\net45\EdiFabric.Core.dll</HintPath>
+      <HintPath>..\packages\EdiFabric.Core.9.8.0\lib\net45\EdiFabric.Core.dll</HintPath>
     </Reference>
     <Reference Include="EdiFabric.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Framework.9.7.9\lib\net45\EdiFabric.Framework.dll</HintPath>
+      <HintPath>..\packages\EdiFabric.Framework.9.8.0\lib\net45\EdiFabric.Framework.dll</HintPath>
     </Reference>
     <Reference Include="EdiFabric.Templates.Edifact, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Templates.Edifact.1.0.0\lib\net45\EdiFabric.Templates.Edifact.dll</HintPath>
+      <HintPath>..\packages\EdiFabric.Templates.Edifact.1.1.0\lib\net45\EdiFabric.Templates.Edifact.dll</HintPath>
     </Reference>
     <Reference Include="EdiFabric.Templates.Hipaa, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Templates.Hipaa.1.0.0\lib\net45\EdiFabric.Templates.Hipaa.dll</HintPath>
+      <HintPath>..\packages\EdiFabric.Templates.Hipaa.1.1.0\lib\net45\EdiFabric.Templates.Hipaa.dll</HintPath>
     </Reference>
     <Reference Include="EdiFabric.Templates.Padis, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Templates.Padis.1.0.0\lib\net45\EdiFabric.Templates.Padis.dll</HintPath>
+      <HintPath>..\packages\EdiFabric.Templates.Padis.1.1.0\lib\net45\EdiFabric.Templates.Padis.dll</HintPath>
     </Reference>
     <Reference Include="EdiFabric.Templates.Vda, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Templates.Vda.1.0.0\lib\net45\EdiFabric.Templates.Vda.dll</HintPath>
+      <HintPath>..\packages\EdiFabric.Templates.Vda.1.1.0\lib\net45\EdiFabric.Templates.Vda.dll</HintPath>
     </Reference>
     <Reference Include="EdiFabric.Templates.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Templates.X12.1.0.0\lib\net45\EdiFabric.Templates.X12.dll</HintPath>
+      <HintPath>..\packages\EdiFabric.Templates.X12.1.1.0\lib\net45\EdiFabric.Templates.X12.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

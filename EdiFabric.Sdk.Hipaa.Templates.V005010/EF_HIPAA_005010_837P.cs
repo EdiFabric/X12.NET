@@ -9,7 +9,6 @@ namespace EdiFabric.Templates.Hipaa5010
     using EdiFabric.Core.Model.Edi.ErrorContexts;
 
 
-
     /// <summary>
     /// Health Care Claim : Professional
     /// </summary>

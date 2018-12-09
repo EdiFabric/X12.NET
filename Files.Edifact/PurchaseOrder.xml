@@ -1,4 +1,12 @@
 <TSORDERS xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Template>EdiFabric.Templates.EdifactD96A.TSORDERS, EdiFabric.Sdk.Edifact.Templates.D96A, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</Template>
+  <ErrorContext>
+    <Name>ORDERS</Name>
+    <ControlNumber>000000101</ControlNumber>
+    <Version>D96A</Version>
+    <Codes />
+    <Errors />
+  </ErrorContext>
   <UNH>
     <MessageReferenceNumber_01>000000101</MessageReferenceNumber_01>
     <MessageIdentifier_02>

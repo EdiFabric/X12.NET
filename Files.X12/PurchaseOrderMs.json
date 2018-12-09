@@ -301,9 +301,18 @@
   "Name": "850",
   "Version": "004010",
   "Format": "X12",
-  "SplitterProperty": null,
+  "Template": "EdiFabric.Templates.X12004010.TS850, EdiFabric.Sdk.X12.Templates.V004010, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
   "PartsCount": 0,
   "IsPart": false,
   "SplitPostion": 0,
+  "ErrorContext": {
+    "Name": "850",
+    "ControlNumber": "0001",
+    "Version": "004010",
+    "Codes": [],
+    "Errors": [],
+    "HasErrors": false,
+    "Message": null
+  },
   "HasErrors": false
 }
