@@ -1,9 +1,8 @@
 ## [THE FREE EDI API](https://www.edifabric.com/edi-api.html)
 
-### EDI Developer Tools that rock. Focus on what you love - building great apps
-#### Includes high-performance .NET EDI libraries plus 5000+ fully customizable EDI templates. 
+## [EDI Tools for .NET](https://www.edifabric.com/edi-framework-features.html)
 
-With EdiFabric EDI Toolkit you can:
+With the EDI API or EDI Tools for .NET you can:
 
 * Parse\Read\Translate any EDI file
 * Create\Write\Generate EDI files
