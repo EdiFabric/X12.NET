@@ -1,4 +1,4 @@
-## [FREE EDI API](https://www.edifabric.com/edi-api.html)
+## [THE FREE EDI API](https://www.edifabric.com/edi-api.html)
 
 ### EDI Developer Tools that rock. Focus on what you love - building great apps
 #### Includes high-performance .NET EDI libraries plus 5000+ fully customizable EDI templates. 
