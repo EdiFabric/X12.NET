@@ -15,7 +15,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Composite("C001")]
-    public class C001
+    public class C001 : I_C001
     {
         
         /// <summary>
@@ -142,7 +142,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Composite("C002")]
-    public class C002
+    public class C002 : I_C002
     {
         
         /// <summary>
@@ -189,7 +189,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Composite("C040")]
-    public class C040
+    public class C040 : I_C040
     {
         
         /// <summary>

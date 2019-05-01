@@ -15,7 +15,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("ADV")]
-    public class ADV
+    public class ADV : I_ADV
     {
         
         /// <summary>
@@ -83,7 +83,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("AMT")]
-    public class AMT
+    public class AMT : I_AMT
     {
         
         /// <summary>
@@ -118,7 +118,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("BAL")]
-    public class BAL
+    public class BAL : I_BAL
     {
         
         /// <summary>
@@ -154,7 +154,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("BEG")]
-    public class BEG
+    public class BEG : I_BEG
     {
         
         /// <summary>
@@ -257,7 +257,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("BIG")]
-    public class BIG
+    public class BIG : I_BIG
     {
         
         /// <summary>
@@ -347,7 +347,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("CAD")]
-    public class CAD
+    public class CAD : I_CAD
     {
         
         /// <summary>
@@ -426,7 +426,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("CB1")]
-    public class CB1
+    public class CB1 : I_CB1
     {
         
         /// <summary>
@@ -452,7 +452,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("CN1")]
-    public class CN1
+    public class CN1 : I_CN1
     {
         
         /// <summary>
@@ -511,7 +511,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("CRC")]
-    public class CRC
+    public class CRC : I_CRC
     {
         
         /// <summary>
@@ -574,7 +574,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("CSH")]
-    public class CSH
+    public class CSH : I_CSH
     {
         
         /// <summary>
@@ -659,7 +659,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("CTB")]
-    public class CTB
+    public class CTB : I_CTB
     {
         
         /// <summary>
@@ -716,7 +716,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("CTP")]
-    public class CTP
+    public class CTP : I_CTP<C001>
     {
         
         /// <summary>
@@ -809,7 +809,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("CTT")]
-    public class CTT
+    public class CTT : I_CTT
     {
         
         /// <summary>
@@ -875,7 +875,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("CUR")]
-    public class CUR
+    public class CUR : I_CUR
     {
         
         /// <summary>
@@ -1048,7 +1048,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("DIS")]
-    public class DIS
+    public class DIS : I_DIS
     {
         
         /// <summary>
@@ -1109,7 +1109,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("DMG")]
-    public class DMG
+    public class DMG : I_DMG
     {
         
         /// <summary>
@@ -1186,7 +1186,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("DTM")]
-    public class DTM
+    public class DTM : I_DTM
     {
         
         /// <summary>
@@ -1243,7 +1243,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("FA1")]
-    public class FA1
+    public class FA1 : I_FA1
     {
         
         /// <summary>
@@ -1276,7 +1276,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("FA2")]
-    public class FA2
+    public class FA2 : I_FA2
     {
         
         /// <summary>
@@ -1304,7 +1304,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("FOB")]
-    public class FOB
+    public class FOB : I_FOB
     {
         
         /// <summary>
@@ -1382,7 +1382,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("G61")]
-    public class G61
+    public class G61 : I_G61
     {
         
         /// <summary>
@@ -1433,7 +1433,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("INC")]
-    public class INC
+    public class INC : I_INC<C001>
     {
         
         /// <summary>
@@ -1485,7 +1485,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("ISS")]
-    public class ISS
+    public class ISS : I_ISS
     {
         
         /// <summary>
@@ -1557,7 +1557,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("IT1")]
-    public class IT1
+    public class IT1 : I_IT1
     {
         
         /// <summary>
@@ -1756,7 +1756,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("IT3")]
-    public class IT3
+    public class IT3 : I_IT3
     {
         
         /// <summary>
@@ -1804,7 +1804,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("IT8")]
-    public class IT8
+    public class IT8 : I_IT8
     {
         
         /// <summary>
@@ -2017,7 +2017,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("ITD")]
-    public class ITD
+    public class ITD : I_ITD
     {
         
         /// <summary>
@@ -2145,7 +2145,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("L7")]
-    public class L7
+    public class L7 : I_L7
     {
         
         /// <summary>
@@ -2283,7 +2283,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("LDT")]
-    public class LDT
+    public class LDT : I_LDT
     {
         
         /// <summary>
@@ -2327,7 +2327,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("LE")]
-    public class LE
+    public class LE : I_LE
     {
         
         /// <summary>
@@ -2347,7 +2347,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("LIN")]
-    public class LIN
+    public class LIN : I_LIN
     {
         
         /// <summary>
@@ -2593,7 +2593,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("LM")]
-    public class LM
+    public class LM : I_LM
     {
         
         /// <summary>
@@ -2620,7 +2620,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("LQ")]
-    public class LQ
+    public class LQ : I_LQ
     {
         
         /// <summary>
@@ -2646,7 +2646,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("LS")]
-    public class LS
+    public class LS : I_LS
     {
         
         /// <summary>
@@ -2666,7 +2666,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("MAN")]
-    public class MAN
+    public class MAN : I_MAN
     {
         
         /// <summary>
@@ -2725,7 +2725,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("MEA")]
-    public class MEA
+    public class MEA : I_MEA<C001>
     {
         
         /// <summary>
@@ -2808,7 +2808,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("MSG")]
-    public class MSG
+    public class MSG : I_MSG
     {
         
         /// <summary>
@@ -2843,7 +2843,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("MTX")]
-    public class MTX
+    public class MTX : I_MTX
     {
         
         /// <summary>
@@ -2884,7 +2884,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("N1")]
-    public class N1
+    public class N1 : I_N1
     {
         
         /// <summary>
@@ -2940,7 +2940,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("N2")]
-    public class N2
+    public class N2 : I_N2
     {
         
         /// <summary>
@@ -2968,7 +2968,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("N3")]
-    public class N3
+    public class N3 : I_N3
     {
         
         /// <summary>
@@ -2996,7 +2996,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("N4")]
-    public class N4
+    public class N4 : I_N4
     {
         
         /// <summary>
@@ -3054,7 +3054,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("N9")]
-    public class N9
+    public class N9 : I_N9<C040>
     {
         
         /// <summary>
@@ -3118,7 +3118,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("NTE")]
-    public class NTE
+    public class NTE : I_NTE
     {
         
         /// <summary>
@@ -3145,7 +3145,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("NX2")]
-    public class NX2
+    public class NX2 : I_NX2
     {
         
         /// <summary>
@@ -3181,7 +3181,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("PAM")]
-    public class PAM
+    public class PAM : I_PAM<C001>
     {
         
         /// <summary>
@@ -3303,7 +3303,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("PCT")]
-    public class PCT
+    public class PCT : I_PCT
     {
         
         /// <summary>
@@ -3331,7 +3331,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("PER")]
-    public class PER
+    public class PER : I_PER
     {
         
         /// <summary>
@@ -3411,7 +3411,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("PID")]
-    public class PID
+    public class PID : I_PID
     {
         
         /// <summary>
@@ -3490,7 +3490,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("PKG")]
-    public class PKG
+    public class PKG : I_PKG
     {
         
         /// <summary>
@@ -3545,7 +3545,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("PO1")]
-    public class PO1
+    public class PO1 : I_PO1
     {
         
         /// <summary>
@@ -3744,7 +3744,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("PO3")]
-    public class PO3
+    public class PO3 : I_PO3
     {
         
         /// <summary>
@@ -3818,7 +3818,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("PO4")]
-    public class PO4
+    public class PO4 : I_PO4
     {
         
         /// <summary>
@@ -3967,7 +3967,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("PWK")]
-    public class PWK
+    public class PWK : I_PWK<C002>
     {
         
         /// <summary>
@@ -4044,7 +4044,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("QTY")]
-    public class QTY
+    public class QTY : I_QTY<C001>
     {
         
         /// <summary>
@@ -4085,7 +4085,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("R4")]
-    public class R4
+    public class R4 : I_R4
     {
         
         /// <summary>
@@ -4159,7 +4159,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("REF")]
-    public class REF
+    public class REF : I_REF<C040>
     {
         
         /// <summary>
@@ -4200,7 +4200,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("SAC")]
-    public class SAC
+    public class SAC : I_SAC
     {
         
         /// <summary>
@@ -4334,7 +4334,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("SCH")]
-    public class SCH
+    public class SCH : I_SCH
     {
         
         /// <summary>
@@ -4441,7 +4441,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("SDQ")]
-    public class SDQ
+    public class SDQ : I_SDQ
     {
         
         /// <summary>
@@ -4637,7 +4637,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("SI")]
-    public class SI
+    public class SI : I_SI
     {
         
         /// <summary>
@@ -4818,7 +4818,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("SLN")]
-    public class SLN
+    public class SLN : I_SLN<C001>
     {
         
         /// <summary>
@@ -5040,7 +5040,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("SPI")]
-    public class SPI
+    public class SPI : I_SPI
     {
         
         /// <summary>
@@ -5162,7 +5162,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("SR")]
-    public class SR
+    public class SR : I_SR
     {
         
         /// <summary>
@@ -5261,7 +5261,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("TAX")]
-    public class TAX
+    public class TAX : I_TAX
     {
         
         /// <summary>
@@ -5369,7 +5369,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("TC2")]
-    public class TC2
+    public class TC2 : I_TC2
     {
         
         /// <summary>
@@ -5397,7 +5397,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("TD1")]
-    public class TD1
+    public class TD1 : I_TD1
     {
         
         /// <summary>
@@ -5484,7 +5484,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("TD3")]
-    public class TD3
+    public class TD3 : I_TD3
     {
         
         /// <summary>
@@ -5570,7 +5570,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("TD4")]
-    public class TD4
+    public class TD4 : I_TD4
     {
         
         /// <summary>
@@ -5618,7 +5618,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("TD5")]
-    public class TD5
+    public class TD5 : I_TD5
     {
         
         /// <summary>
@@ -5739,7 +5739,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("TDS")]
-    public class TDS
+    public class TDS : I_TDS
     {
         
         /// <summary>
@@ -5783,7 +5783,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("TXI")]
-    public class TXI
+    public class TXI : I_TXI
     {
         
         /// <summary>
@@ -5871,7 +5871,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("V1")]
-    public class V1
+    public class V1 : I_V1
     {
         
         /// <summary>
@@ -5950,7 +5950,7 @@ namespace EdiFabric.Templates.X12004010
     [Serializable()]
     [DataContract()]
     [Segment("YNQ")]
-    public class YNQ
+    public class YNQ : I_YNQ
     {
         
         /// <summary>
