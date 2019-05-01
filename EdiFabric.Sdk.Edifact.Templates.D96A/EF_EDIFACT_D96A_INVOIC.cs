@@ -10,6 +10,31 @@ namespace EdiFabric.Templates.EdifactD96A
     
     
     /// <summary>
+    /// Loop for ADJUSTMENT DETAILS
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Group(typeof(AJT))]
+    public class Loop_AJT_INVOIC
+    {
+        
+        /// <summary>
+        /// ADJUSTMENT DETAILS
+        /// </summary>
+        [DataMember]
+        [Required]
+        [Pos(1)]
+        public AJT AJT { get; set; }
+        /// <summary>
+        /// FREE TEXT
+        /// </summary>
+        [DataMember]
+        [ListCount(5)]
+        [Pos(2)]
+        public List<FTX> FTX { get; set; }
+    }
+    
+    /// <summary>
     /// Loop for ALLOWANCE OR CHARGE
     /// </summary>
     [Serializable()]
@@ -26,37 +51,51 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(1)]
         public ALC ALC { get; set; }
         /// <summary>
+        /// ADDITIONAL INFORMATION
+        /// </summary>
+        [DataMember]
+        [ListCount(5)]
+        [Pos(2)]
+        public List<ALI> ALI { get; set; }
+        /// <summary>
+        /// Loop for REFERENCE
+        /// </summary>
+        [DataMember]
+        [ListCount(5)]
+        [Pos(3)]
+        public List<Loop_RFF_INVOIC> RFFLoop { get; set; }
+        /// <summary>
         /// Loop for QUANTITY
         /// </summary>
         [DataMember]
-        [Pos(2)]
+        [Pos(4)]
         public Loop_QTY_INVOIC QTYLoop { get; set; }
         /// <summary>
         /// Loop for PERCENTAGE DETAILS
         /// </summary>
         [DataMember]
-        [Pos(3)]
+        [Pos(5)]
         public Loop_PCD_INVOIC PCDLoop { get; set; }
         /// <summary>
         /// Loop for MONETARY AMOUNT
         /// </summary>
         [DataMember]
         [ListCount(2)]
-        [Pos(4)]
+        [Pos(6)]
         public List<Loop_MOA_INVOIC> MOALoop { get; set; }
         /// <summary>
         /// Loop for RATE DETAILS
         /// </summary>
         [DataMember]
-        [Pos(5)]
+        [Pos(7)]
         public Loop_RTE_INVOIC RTELoop { get; set; }
         /// <summary>
         /// Loop for DUTY/TAX/FEE DETAILS
         /// </summary>
         [DataMember]
         [ListCount(5)]
-        [Pos(6)]
-        public List<Loop_TAX_INVOIC> TAXLoop { get; set; }
+        [Pos(8)]
+        public List<Loop_TAX_INVOIC_2> TAXLoop { get; set; }
     }
     
     /// <summary>
@@ -83,37 +122,44 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(2)]
         public List<ALI> ALI { get; set; }
         /// <summary>
+        /// DATE/TIME/PERIOD
+        /// </summary>
+        [DataMember]
+        [ListCount(5)]
+        [Pos(3)]
+        public List<DTM> DTM { get; set; }
+        /// <summary>
         /// Loop for QUANTITY
         /// </summary>
         [DataMember]
-        [Pos(3)]
+        [Pos(4)]
         public Loop_QTY_INVOIC QTYLoop { get; set; }
         /// <summary>
         /// Loop for PERCENTAGE DETAILS
         /// </summary>
         [DataMember]
-        [Pos(4)]
+        [Pos(5)]
         public Loop_PCD_INVOIC PCDLoop { get; set; }
         /// <summary>
         /// Loop for MONETARY AMOUNT
         /// </summary>
         [DataMember]
         [ListCount(2)]
-        [Pos(5)]
+        [Pos(6)]
         public List<Loop_MOA_INVOIC> MOALoop { get; set; }
         /// <summary>
         /// Loop for RATE DETAILS
         /// </summary>
         [DataMember]
-        [Pos(6)]
+        [Pos(7)]
         public Loop_RTE_INVOIC RTELoop { get; set; }
         /// <summary>
         /// Loop for DUTY/TAX/FEE DETAILS
         /// </summary>
         [DataMember]
         [ListCount(5)]
-        [Pos(7)]
-        public List<Loop_TAX_INVOIC> TAXLoop { get; set; }
+        [Pos(8)]
+        public List<Loop_TAX_INVOIC_2> TAXLoop { get; set; }
     }
     
     /// <summary>
@@ -198,6 +244,56 @@ namespace EdiFabric.Templates.EdifactD96A
     }
     
     /// <summary>
+    /// Loop for DOCUMENT/MESSAGE DETAILS
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Group(typeof(DOC))]
+    public class Loop_DOC_INVOIC
+    {
+        
+        /// <summary>
+        /// DOCUMENT/MESSAGE DETAILS
+        /// </summary>
+        [DataMember]
+        [Required]
+        [Pos(1)]
+        public DOC DOC { get; set; }
+        /// <summary>
+        /// DATE/TIME/PERIOD
+        /// </summary>
+        [DataMember]
+        [ListCount(5)]
+        [Pos(2)]
+        public List<DTM> DTM { get; set; }
+    }
+    
+    /// <summary>
+    /// Loop for PARTIES TO INSTRUCTION
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Group(typeof(INP))]
+    public class Loop_INP_INVOIC
+    {
+        
+        /// <summary>
+        /// PARTIES TO INSTRUCTION
+        /// </summary>
+        [DataMember]
+        [Required]
+        [Pos(1)]
+        public INP INP { get; set; }
+        /// <summary>
+        /// FREE TEXT
+        /// </summary>
+        [DataMember]
+        [ListCount(5)]
+        [Pos(2)]
+        public List<FTX> FTX { get; set; }
+    }
+    
+    /// <summary>
     /// Loop for LINE ITEM
     /// </summary>
     [Serializable()]
@@ -242,102 +338,142 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(5)]
         public List<QTY> QTY { get; set; }
         /// <summary>
+        /// PERCENTAGE DETAILS
+        /// </summary>
+        [DataMember]
+        [Pos(6)]
+        public PCD PCD { get; set; }
+        /// <summary>
         /// ADDITIONAL INFORMATION
         /// </summary>
         [DataMember]
         [ListCount(5)]
-        [Pos(6)]
+        [Pos(7)]
         public List<ALI> ALI { get; set; }
         /// <summary>
         /// DATE/TIME/PERIOD
         /// </summary>
         [DataMember]
         [ListCount(35)]
-        [Pos(7)]
+        [Pos(8)]
         public List<DTM> DTM { get; set; }
+        /// <summary>
+        /// GOODS IDENTITY NUMBER
+        /// </summary>
+        [DataMember]
+        [ListCount(1000)]
+        [Pos(9)]
+        public List<GIN> GIN { get; set; }
+        /// <summary>
+        /// RELATED IDENTIFICATION NUMBERS
+        /// </summary>
+        [DataMember]
+        [ListCount(1000)]
+        [Pos(10)]
+        public List<GIR> GIR { get; set; }
         /// <summary>
         /// QUANTITY VARIANCES
         /// </summary>
         [DataMember]
-        [Pos(8)]
+        [Pos(11)]
         public QVR QVR { get; set; }
+        /// <summary>
+        /// EQUIPMENT DETAILS
+        /// </summary>
+        [DataMember]
+        [Pos(12)]
+        public EQD EQD { get; set; }
         /// <summary>
         /// FREE TEXT
         /// </summary>
         [DataMember]
         [ListCount(5)]
-        [Pos(9)]
+        [Pos(13)]
         public List<FTX> FTX { get; set; }
         /// <summary>
         /// Loop for MONETARY AMOUNT
         /// </summary>
         [DataMember]
         [ListCount(5)]
-        [Pos(10)]
-        public List<Loop_MOA_INVOIC> MOALoop { get; set; }
+        [Pos(14)]
+        public List<Loop_MOA_INVOIC_2> MOALoop { get; set; }
         /// <summary>
         /// Loop for PAYMENT TERMS BASIS
         /// </summary>
         [DataMember]
         [ListCount(10)]
-        [Pos(11)]
-        public List<Loop_PAT_INVOIC> PATLoop { get; set; }
+        [Pos(15)]
+        public List<Loop_PAT_INVOIC_2> PATLoop { get; set; }
         /// <summary>
         /// Loop for PRICE DETAILS
         /// </summary>
         [DataMember]
         [ListCount(25)]
-        [Pos(12)]
+        [Pos(16)]
         public List<Loop_PRI_INVOIC> PRILoop { get; set; }
         /// <summary>
         /// Loop for REFERENCE
         /// </summary>
         [DataMember]
         [ListCount(10)]
-        [Pos(13)]
+        [Pos(17)]
         public List<Loop_RFF_INVOIC> RFFLoop { get; set; }
         /// <summary>
         /// Loop for PACKAGE
         /// </summary>
         [DataMember]
         [ListCount(10)]
-        [Pos(14)]
-        public List<Loop_PAC_INVOIC_2> PACLoop { get; set; }
+        [Pos(18)]
+        public List<Loop_PAC_INVOIC> PACLoop { get; set; }
         /// <summary>
         /// Loop for PLACE/LOCATION IDENTIFICATION
         /// </summary>
         [DataMember]
         [ListCount(9999)]
-        [Pos(15)]
-        public List<Loop_LOC_INVOIC> LOCLoop { get; set; }
+        [Pos(19)]
+        public List<Loop_LOC_INVOIC_2> LOCLoop { get; set; }
         /// <summary>
         /// Loop for DUTY/TAX/FEE DETAILS
         /// </summary>
         [DataMember]
         [ListCount(99)]
-        [Pos(16)]
+        [Pos(20)]
         public List<Loop_TAX_INVOIC> TAXLoop { get; set; }
         /// <summary>
         /// Loop for NAME AND ADDRESS
         /// </summary>
         [DataMember]
         [ListCount(20)]
-        [Pos(17)]
+        [Pos(21)]
         public List<Loop_NAD_INVOIC_2> NADLoop { get; set; }
         /// <summary>
         /// Loop for ALLOWANCE OR CHARGE
         /// </summary>
         [DataMember]
         [ListCount(15)]
-        [Pos(18)]
+        [Pos(22)]
         public List<Loop_ALC_INVOIC_2> ALCLoop { get; set; }
         /// <summary>
         /// Loop for DETAILS OF TRANSPORT
         /// </summary>
         [DataMember]
         [ListCount(10)]
-        [Pos(19)]
-        public List<Loop_TDT_INVOIC> TDTLoop { get; set; }
+        [Pos(23)]
+        public List<Loop_TDT_INVOIC_2> TDTLoop { get; set; }
+        /// <summary>
+        /// Loop for TERMS OF DELIVERY OR TRANSPORT
+        /// </summary>
+        [DataMember]
+        [ListCount(5)]
+        [Pos(24)]
+        public List<Loop_TOD_INVOIC> TODLoop { get; set; }
+        /// <summary>
+        /// Loop for REQUIREMENTS AND CONDITIONS
+        /// </summary>
+        [DataMember]
+        [ListCount(100)]
+        [Pos(25)]
+        public List<Loop_RCS_INVOIC> RCSLoop { get; set; }
     }
     
     /// <summary>
@@ -347,6 +483,31 @@ namespace EdiFabric.Templates.EdifactD96A
     [DataContract()]
     [Group(typeof(LOC))]
     public class Loop_LOC_INVOIC
+    {
+        
+        /// <summary>
+        /// PLACE/LOCATION IDENTIFICATION
+        /// </summary>
+        [DataMember]
+        [Required]
+        [Pos(1)]
+        public LOC LOC { get; set; }
+        /// <summary>
+        /// DATE/TIME/PERIOD
+        /// </summary>
+        [DataMember]
+        [ListCount(5)]
+        [Pos(2)]
+        public List<DTM> DTM { get; set; }
+    }
+    
+    /// <summary>
+    /// Loop for PLACE/LOCATION IDENTIFICATION
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Group(typeof(LOC))]
+    public class Loop_LOC_INVOIC_2
     {
         
         /// <summary>
@@ -388,6 +549,12 @@ namespace EdiFabric.Templates.EdifactD96A
         [Required]
         [Pos(1)]
         public MOA MOA { get; set; }
+        /// <summary>
+        /// RANGE DETAILS
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public RNG RNG { get; set; }
     }
     
     /// <summary>
@@ -397,6 +564,30 @@ namespace EdiFabric.Templates.EdifactD96A
     [DataContract()]
     [Group(typeof(MOA))]
     public class Loop_MOA_INVOIC_2
+    {
+        
+        /// <summary>
+        /// MONETARY AMOUNT
+        /// </summary>
+        [DataMember]
+        [Required]
+        [Pos(1)]
+        public MOA MOA { get; set; }
+        /// <summary>
+        /// CURRENCIES
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public CUX CUX { get; set; }
+    }
+    
+    /// <summary>
+    /// Loop for MONETARY AMOUNT
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Group(typeof(MOA))]
+    public class Loop_MOA_INVOIC_3
     {
         
         /// <summary>
@@ -431,25 +622,39 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(1)]
         public NAD NAD { get; set; }
         /// <summary>
+        /// PLACE/LOCATION IDENTIFICATION
+        /// </summary>
+        [DataMember]
+        [ListCount(25)]
+        [Pos(2)]
+        public List<LOC> LOC { get; set; }
+        /// <summary>
         /// FINANCIAL INSTITUTION INFORMATION
         /// </summary>
         [DataMember]
         [ListCount(5)]
-        [Pos(2)]
+        [Pos(3)]
         public List<FII> FII { get; set; }
         /// <summary>
         /// Loop for REFERENCE
         /// </summary>
         [DataMember]
         [ListCount(9999)]
-        [Pos(3)]
-        public List<Loop_RFF_INVOIC_2> RFFLoop { get; set; }
+        [Pos(4)]
+        public List<Loop_RFF_INVOIC> RFFLoop { get; set; }
+        /// <summary>
+        /// Loop for DOCUMENT/MESSAGE DETAILS
+        /// </summary>
+        [DataMember]
+        [ListCount(5)]
+        [Pos(5)]
+        public List<Loop_DOC_INVOIC> DOCLoop { get; set; }
         /// <summary>
         /// Loop for CONTACT INFORMATION
         /// </summary>
         [DataMember]
         [ListCount(5)]
-        [Pos(4)]
+        [Pos(6)]
         public List<Loop_CTA_INVOIC> CTALoop { get; set; }
     }
     
@@ -470,12 +675,33 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(1)]
         public NAD NAD { get; set; }
         /// <summary>
-        /// Loop for REFERENCE
+        /// PLACE/LOCATION IDENTIFICATION
         /// </summary>
         [DataMember]
         [ListCount(5)]
         [Pos(2)]
-        public List<Loop_RFF_INVOIC_2> RFFLoop { get; set; }
+        public List<LOC> LOC { get; set; }
+        /// <summary>
+        /// Loop for REFERENCE
+        /// </summary>
+        [DataMember]
+        [ListCount(5)]
+        [Pos(3)]
+        public List<Loop_RFF_INVOIC> RFFLoop { get; set; }
+        /// <summary>
+        /// Loop for DOCUMENT/MESSAGE DETAILS
+        /// </summary>
+        [DataMember]
+        [ListCount(5)]
+        [Pos(4)]
+        public List<Loop_DOC_INVOIC> DOCLoop { get; set; }
+        /// <summary>
+        /// Loop for CONTACT INFORMATION
+        /// </summary>
+        [DataMember]
+        [ListCount(5)]
+        [Pos(5)]
+        public List<Loop_CTA_INVOIC> CTALoop { get; set; }
     }
     
     /// <summary>
@@ -494,36 +720,18 @@ namespace EdiFabric.Templates.EdifactD96A
         [Required]
         [Pos(1)]
         public PAC PAC { get; set; }
-    }
-    
-    /// <summary>
-    /// Loop for PACKAGE
-    /// </summary>
-    [Serializable()]
-    [DataContract()]
-    [Group(typeof(PAC))]
-    public class Loop_PAC_INVOIC_2
-    {
-        
-        /// <summary>
-        /// PACKAGE
-        /// </summary>
-        [DataMember]
-        [Required]
-        [Pos(1)]
-        public PAC PAC { get; set; }
         /// <summary>
         /// MEASUREMENTS
         /// </summary>
         [DataMember]
-        [ListCount(10)]
+        [ListCount(5)]
         [Pos(2)]
         public List<MEA> MEA { get; set; }
         /// <summary>
         /// Loop for PACKAGE IDENTIFICATION
         /// </summary>
         [DataMember]
-        [ListCount(10)]
+        [ListCount(5)]
         [Pos(3)]
         public List<Loop_PCI_INVOIC> PCILoop { get; set; }
     }
@@ -535,6 +743,55 @@ namespace EdiFabric.Templates.EdifactD96A
     [DataContract()]
     [Group(typeof(PAT))]
     public class Loop_PAT_INVOIC
+    {
+        
+        /// <summary>
+        /// PAYMENT TERMS BASIS
+        /// </summary>
+        [DataMember]
+        [Required]
+        [Pos(1)]
+        public PAT PAT { get; set; }
+        /// <summary>
+        /// DATE/TIME/PERIOD
+        /// </summary>
+        [DataMember]
+        [ListCount(5)]
+        [Pos(2)]
+        public List<DTM> DTM { get; set; }
+        /// <summary>
+        /// PERCENTAGE DETAILS
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public PCD PCD { get; set; }
+        /// <summary>
+        /// MONETARY AMOUNT
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public MOA MOA { get; set; }
+        /// <summary>
+        /// PAYMENT INSTRUCTIONS
+        /// </summary>
+        [DataMember]
+        [Pos(5)]
+        public PAI PAI { get; set; }
+        /// <summary>
+        /// FINANCIAL INSTITUTION INFORMATION
+        /// </summary>
+        [DataMember]
+        [Pos(6)]
+        public FII FII { get; set; }
+    }
+    
+    /// <summary>
+    /// Loop for PAYMENT TERMS BASIS
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Group(typeof(PAT))]
+    public class Loop_PAT_INVOIC_2
     {
         
         /// <summary>
@@ -581,6 +838,12 @@ namespace EdiFabric.Templates.EdifactD96A
         [Required]
         [Pos(1)]
         public PCD PCD { get; set; }
+        /// <summary>
+        /// RANGE DETAILS
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public RNG RNG { get; set; }
     }
     
     /// <summary>
@@ -600,11 +863,24 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(1)]
         public PCI PCI { get; set; }
         /// <summary>
+        /// REFERENCE
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public RFF RFF { get; set; }
+        /// <summary>
+        /// DATE/TIME/PERIOD
+        /// </summary>
+        [DataMember]
+        [ListCount(5)]
+        [Pos(3)]
+        public List<DTM> DTM { get; set; }
+        /// <summary>
         /// GOODS IDENTITY NUMBER
         /// </summary>
         [DataMember]
-        [ListCount(10)]
-        [Pos(2)]
+        [ListCount(5)]
+        [Pos(4)]
         public List<GIN> GIN { get; set; }
     }
     
@@ -624,6 +900,25 @@ namespace EdiFabric.Templates.EdifactD96A
         [Required]
         [Pos(1)]
         public PRI PRI { get; set; }
+        /// <summary>
+        /// ADDITIONAL PRICE INFORMATION
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public APR APR { get; set; }
+        /// <summary>
+        /// RANGE DETAILS
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public RNG RNG { get; set; }
+        /// <summary>
+        /// DATE/TIME/PERIOD
+        /// </summary>
+        [DataMember]
+        [ListCount(5)]
+        [Pos(4)]
+        public List<DTM> DTM { get; set; }
     }
     
     /// <summary>
@@ -642,6 +937,51 @@ namespace EdiFabric.Templates.EdifactD96A
         [Required]
         [Pos(1)]
         public QTY QTY { get; set; }
+        /// <summary>
+        /// RANGE DETAILS
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public RNG RNG { get; set; }
+    }
+    
+    /// <summary>
+    /// Loop for REQUIREMENTS AND CONDITIONS
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Group(typeof(RCS))]
+    public class Loop_RCS_INVOIC
+    {
+        
+        /// <summary>
+        /// REQUIREMENTS AND CONDITIONS
+        /// </summary>
+        [DataMember]
+        [Required]
+        [Pos(1)]
+        public RCS RCS { get; set; }
+        /// <summary>
+        /// REFERENCE
+        /// </summary>
+        [DataMember]
+        [ListCount(5)]
+        [Pos(2)]
+        public List<RFF> RFF { get; set; }
+        /// <summary>
+        /// DATE/TIME/PERIOD
+        /// </summary>
+        [DataMember]
+        [ListCount(5)]
+        [Pos(3)]
+        public List<DTM> DTM { get; set; }
+        /// <summary>
+        /// FREE TEXT
+        /// </summary>
+        [DataMember]
+        [ListCount(5)]
+        [Pos(4)]
+        public List<FTX> FTX { get; set; }
     }
     
     /// <summary>
@@ -670,24 +1010,6 @@ namespace EdiFabric.Templates.EdifactD96A
     }
     
     /// <summary>
-    /// Loop for REFERENCE
-    /// </summary>
-    [Serializable()]
-    [DataContract()]
-    [Group(typeof(RFF))]
-    public class Loop_RFF_INVOIC_2
-    {
-        
-        /// <summary>
-        /// REFERENCE
-        /// </summary>
-        [DataMember]
-        [Required]
-        [Pos(1)]
-        public RFF RFF { get; set; }
-    }
-    
-    /// <summary>
     /// Loop for RATE DETAILS
     /// </summary>
     [Serializable()]
@@ -703,6 +1025,12 @@ namespace EdiFabric.Templates.EdifactD96A
         [Required]
         [Pos(1)]
         public RTE RTE { get; set; }
+        /// <summary>
+        /// RANGE DETAILS
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public RNG RNG { get; set; }
     }
     
     /// <summary>
@@ -727,6 +1055,13 @@ namespace EdiFabric.Templates.EdifactD96A
         [DataMember]
         [Pos(2)]
         public MOA MOA { get; set; }
+        /// <summary>
+        /// PLACE/LOCATION IDENTIFICATION
+        /// </summary>
+        [DataMember]
+        [ListCount(5)]
+        [Pos(3)]
+        public List<LOC> LOC { get; set; }
     }
     
     /// <summary>
@@ -736,6 +1071,30 @@ namespace EdiFabric.Templates.EdifactD96A
     [DataContract()]
     [Group(typeof(TAX))]
     public class Loop_TAX_INVOIC_2
+    {
+        
+        /// <summary>
+        /// DUTY/TAX/FEE DETAILS
+        /// </summary>
+        [DataMember]
+        [Required]
+        [Pos(1)]
+        public TAX TAX { get; set; }
+        /// <summary>
+        /// MONETARY AMOUNT
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public MOA MOA { get; set; }
+    }
+    
+    /// <summary>
+    /// Loop for DUTY/TAX/FEE DETAILS
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Group(typeof(TAX))]
+    public class Loop_TAX_INVOIC_3
     {
         
         /// <summary>
@@ -770,6 +1129,45 @@ namespace EdiFabric.Templates.EdifactD96A
         [Required]
         [Pos(1)]
         public TDT TDT { get; set; }
+        /// <summary>
+        /// Loop for PLACE/LOCATION IDENTIFICATION
+        /// </summary>
+        [DataMember]
+        [ListCount(10)]
+        [Pos(2)]
+        public List<Loop_LOC_INVOIC> LOCLoop { get; set; }
+        /// <summary>
+        /// Loop for REFERENCE
+        /// </summary>
+        [DataMember]
+        [ListCount(9999)]
+        [Pos(3)]
+        public List<Loop_RFF_INVOIC> RFFLoop { get; set; }
+    }
+    
+    /// <summary>
+    /// Loop for DETAILS OF TRANSPORT
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Group(typeof(TDT))]
+    public class Loop_TDT_INVOIC_2
+    {
+        
+        /// <summary>
+        /// DETAILS OF TRANSPORT
+        /// </summary>
+        [DataMember]
+        [Required]
+        [Pos(1)]
+        public TDT TDT { get; set; }
+        /// <summary>
+        /// Loop for PLACE/LOCATION IDENTIFICATION
+        /// </summary>
+        [DataMember]
+        [ListCount(10)]
+        [Pos(2)]
+        public List<Loop_LOC_INVOIC> LOCLoop { get; set; }
     }
     
     /// <summary>
@@ -841,95 +1239,120 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(5)]
         public List<ALI> ALI { get; set; }
         /// <summary>
+        /// ITEM DESCRIPTION
+        /// </summary>
+        [DataMember]
+        [Pos(6)]
+        public IMD IMD { get; set; }
+        /// <summary>
         /// FREE TEXT
         /// </summary>
         [DataMember]
         [ListCount(10)]
-        [Pos(6)]
+        [Pos(7)]
         public List<FTX> FTX { get; set; }
         /// <summary>
         /// Loop for REFERENCE
         /// </summary>
         [DataMember]
         [ListCount(99)]
-        [Pos(7)]
+        [Pos(8)]
         public List<Loop_RFF_INVOIC> RFFLoop { get; set; }
         /// <summary>
         /// Loop for NAME AND ADDRESS
         /// </summary>
         [DataMember]
         [ListCount(99)]
-        [Pos(8)]
+        [Pos(9)]
         public List<Loop_NAD_INVOIC> NADLoop { get; set; }
         /// <summary>
         /// Loop for DUTY/TAX/FEE DETAILS
         /// </summary>
         [DataMember]
         [ListCount(5)]
-        [Pos(9)]
+        [Pos(10)]
         public List<Loop_TAX_INVOIC> TAXLoop { get; set; }
         /// <summary>
         /// Loop for CURRENCIES
         /// </summary>
         [DataMember]
         [ListCount(5)]
-        [Pos(10)]
+        [Pos(11)]
         public List<Loop_CUX_INVOIC> CUXLoop { get; set; }
         /// <summary>
         /// Loop for PAYMENT TERMS BASIS
         /// </summary>
         [DataMember]
         [ListCount(10)]
-        [Pos(11)]
+        [Pos(12)]
         public List<Loop_PAT_INVOIC> PATLoop { get; set; }
         /// <summary>
         /// Loop for DETAILS OF TRANSPORT
         /// </summary>
         [DataMember]
         [ListCount(10)]
-        [Pos(12)]
+        [Pos(13)]
         public List<Loop_TDT_INVOIC> TDTLoop { get; set; }
         /// <summary>
         /// Loop for TERMS OF DELIVERY OR TRANSPORT
         /// </summary>
         [DataMember]
         [ListCount(5)]
-        [Pos(13)]
+        [Pos(14)]
         public List<Loop_TOD_INVOIC> TODLoop { get; set; }
         /// <summary>
         /// Loop for PACKAGE
         /// </summary>
         [DataMember]
         [ListCount(1000)]
-        [Pos(14)]
+        [Pos(15)]
         public List<Loop_PAC_INVOIC> PACLoop { get; set; }
         /// <summary>
         /// Loop for ALLOWANCE OR CHARGE
         /// </summary>
         [DataMember]
         [ListCount(9999)]
-        [Pos(15)]
+        [Pos(16)]
         public List<Loop_ALC_INVOIC> ALCLoop { get; set; }
+        /// <summary>
+        /// Loop for REQUIREMENTS AND CONDITIONS
+        /// </summary>
+        [DataMember]
+        [ListCount(100)]
+        [Pos(17)]
+        public List<Loop_RCS_INVOIC> RCSLoop { get; set; }
+        /// <summary>
+        /// Loop for ADJUSTMENT DETAILS
+        /// </summary>
+        [DataMember]
+        [Pos(18)]
+        public Loop_AJT_INVOIC AJTLoop { get; set; }
+        /// <summary>
+        /// Loop for PARTIES TO INSTRUCTION
+        /// </summary>
+        [DataMember]
+        [Pos(19)]
+        public Loop_INP_INVOIC INPLoop { get; set; }
         /// <summary>
         /// Loop for LINE ITEM
         /// </summary>
         [DataMember]
         [ListCount(9999999)]
-        [Pos(16)]
+        [Pos(20)]
         public List<Loop_LIN_INVOIC> LINLoop { get; set; }
         /// <summary>
         /// SECTION CONTROL
         /// </summary>
         [DataMember]
         [Required]
-        [Pos(17)]
+        [Pos(21)]
         public UNS UNS { get; set; }
         /// <summary>
         /// CONTROL TOTAL
         /// </summary>
         [DataMember]
         [ListCount(10)]
-        [Pos(18)]
+        [Pos(22)]
         public List<CNT> CNT { get; set; }
         /// <summary>
         /// Loop for MONETARY AMOUNT
@@ -937,27 +1360,27 @@ namespace EdiFabric.Templates.EdifactD96A
         [DataMember]
         [Required]
         [ListCount(100)]
-        [Pos(19)]
-        public List<Loop_MOA_INVOIC_2> MOALoop { get; set; }
+        [Pos(23)]
+        public List<Loop_MOA_INVOIC_3> MOALoop { get; set; }
         /// <summary>
         /// Loop for DUTY/TAX/FEE DETAILS
         /// </summary>
         [DataMember]
         [ListCount(10)]
-        [Pos(20)]
-        public List<Loop_TAX_INVOIC_2> TAXLoop2 { get; set; }
+        [Pos(24)]
+        public List<Loop_TAX_INVOIC_3> TAXLoop2 { get; set; }
         /// <summary>
         /// Loop for ALLOWANCE OR CHARGE
         /// </summary>
         [DataMember]
         [ListCount(15)]
-        [Pos(21)]
+        [Pos(25)]
         public List<Loop_ALC_INVOIC_3> ALCLoop2 { get; set; }
         /// <summary>
         /// Message Trailer
         /// </summary>
         [DataMember]
-        [Pos(22)]
+        [Pos(26)]
         public UNT UNT { get; set; }
     }
 }

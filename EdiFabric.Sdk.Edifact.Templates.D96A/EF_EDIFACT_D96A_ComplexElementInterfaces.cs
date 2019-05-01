@@ -158,6 +158,13 @@ namespace EdiFabric.Templates.EdifactD96A
         string Measureunitqualifier_04 { get; set; }
     }
     
+    public interface I_C138
+    {
+        
+        string Pricemultiplier_01 { get; set; }
+        string Pricemultiplierqualifier_02 { get; set; }
+    }
+    
     public interface I_C174
     {
         
@@ -183,6 +190,14 @@ namespace EdiFabric.Templates.EdifactD96A
         string Codelistqualifier_02 { get; set; }
         string Codelistresponsibleagencycoded_03 { get; set; }
         string Typeofpackages_04 { get; set; }
+    }
+    
+    public interface I_C206
+    {
+        
+        string Identitynumber_01 { get; set; }
+        string Identitynumberqualifier_02 { get; set; }
+        string Statuscoded_03 { get; set; }
     }
     
     public interface I_C208
@@ -226,6 +241,14 @@ namespace EdiFabric.Templates.EdifactD96A
         string Specialservice_05 { get; set; }
     }
     
+    public interface I_C218
+    {
+        
+        string Hazardousmaterialclasscodeidentification_01 { get; set; }
+        string Codelistqualifier_02 { get; set; }
+        string Codelistresponsibleagencycoded_03 { get; set; }
+    }
+    
     public interface I_C220
     {
         
@@ -243,11 +266,39 @@ namespace EdiFabric.Templates.EdifactD96A
         string Nationalityofmeansoftransportcoded_05 { get; set; }
     }
     
+    public interface I_C224
+    {
+        
+        string Equipmentsizeandtypeidentification_01 { get; set; }
+        string Codelistqualifier_02 { get; set; }
+        string Codelistresponsibleagencycoded_03 { get; set; }
+        string Equipmentsizeandtype_04 { get; set; }
+    }
+    
     public interface I_C228
     {
         
         string Typeofmeansoftransportidentification_01 { get; set; }
         string Typeofmeansoftransport_02 { get; set; }
+    }
+    
+    public interface I_C237
+    {
+        
+        string Equipmentidentificationnumber_01 { get; set; }
+        string Codelistqualifier_02 { get; set; }
+        string Codelistresponsibleagencycoded_03 { get; set; }
+        string Countrycoded_04 { get; set; }
+    }
+    
+    public interface I_C240
+    {
+        
+        string Characteristicidentification_01 { get; set; }
+        string Codelistqualifier_02 { get; set; }
+        string Codelistresponsibleagencycoded_03 { get; set; }
+        string Characteristic_04 { get; set; }
+        string Characteristic_05 { get; set; }
     }
     
     public interface I_C241
@@ -305,6 +356,14 @@ namespace EdiFabric.Templates.EdifactD96A
         string Rangemaximum_03 { get; set; }
     }
     
+    public interface I_C329
+    {
+        
+        string Frequencycoded_01 { get; set; }
+        string Despatchpatterncoded_02 { get; set; }
+        string Despatchpatterntimingcoded_03 { get; set; }
+    }
+    
     public interface I_C401
     {
         
@@ -340,6 +399,15 @@ namespace EdiFabric.Templates.EdifactD96A
         string Measurementsignificancecoded_02 { get; set; }
         string Measurementattributecoded_03 { get; set; }
         string Measurementattribute_04 { get; set; }
+    }
+    
+    public interface I_C503
+    {
+        
+        string Documentmessagenumber_01 { get; set; }
+        string Documentmessagestatuscoded_02 { get; set; }
+        string Documentmessagesource_03 { get; set; }
+        string Languagecoded_04 { get; set; }
     }
     
     public interface I_C504
@@ -407,6 +475,25 @@ namespace EdiFabric.Templates.EdifactD96A
         string Relatedplacelocationone_04 { get; set; }
     }
     
+    public interface I_C522
+    {
+        
+        string Instructionqualifier_01 { get; set; }
+        string Instructioncoded_02 { get; set; }
+        string Codelistqualifier_03 { get; set; }
+        string Codelistresponsibleagencycoded_04 { get; set; }
+        string Instruction_05 { get; set; }
+    }
+    
+    public interface I_C524
+    {
+        
+        string Handlinginstructionscoded_01 { get; set; }
+        string Codelistqualifier_02 { get; set; }
+        string Codelistresponsibleagencycoded_03 { get; set; }
+        string Handlinginstructions_04 { get; set; }
+    }
+    
     public interface I_C531
     {
         
@@ -441,6 +528,15 @@ namespace EdiFabric.Templates.EdifactD96A
         string Paymentchannelcoded_06 { get; set; }
     }
     
+    public interface I_C550
+    {
+        
+        string Requirementconditionidentification_01 { get; set; }
+        string Codelistqualifier_02 { get; set; }
+        string Codelistresponsibleagencycoded_03 { get; set; }
+        string Requirementorcondition_04 { get; set; }
+    }
+    
     public interface I_C552
     {
         
@@ -470,6 +566,30 @@ namespace EdiFabric.Templates.EdifactD96A
         
         string Sublineindicatorcoded_01 { get; set; }
         string Lineitemnumber_02 { get; set; }
+    }
+    
+    public interface I_C849
+    {
+        
+        string Partyenactinginstructionidentification_01 { get; set; }
+        string Recipientoftheinstructionidentification_02 { get; set; }
+    }
+    
+    public interface I_C850
+    {
+        
+        string Statuscoded_01 { get; set; }
+        string Partyname_02 { get; set; }
+    }
+    
+    public interface I_C889
+    {
+        
+        string Characteristicvaluecoded_01 { get; set; }
+        string Codelistqualifier_02 { get; set; }
+        string Codelistresponsibleagencycoded_03 { get; set; }
+        string Characteristicvalue_04 { get; set; }
+        string Characteristicvalue_05 { get; set; }
     }
     
     public interface I_C960

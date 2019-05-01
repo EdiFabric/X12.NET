@@ -10,6 +10,33 @@ namespace EdiFabric.Templates.EdifactD96A
     
     
     /// <summary>
+    /// ADJUSTMENT DETAILS
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("AJT")]
+    public class AJT : I_AJT
+    {
+        
+        /// <summary>
+        /// Adjustment reason, coded
+        /// </summary>
+        [DataMember]
+        [Required]
+        [DataElement("4465", typeof(EDIFACT_ID_4465))]
+        [Pos(1)]
+        public string Adjustmentreasoncoded_01 { get; set; }
+        /// <summary>
+        /// Line item number
+        /// </summary>
+        [DataMember]
+        [StringLength(1, 6)]
+        [DataElement("1082", typeof(EDIFACT_N))]
+        [Pos(2)]
+        public string Lineitemnumber_02 { get; set; }
+    }
+    
+    /// <summary>
     /// ALLOWANCE OR CHARGE
     /// </summary>
     [Serializable()]
@@ -19,13 +46,13 @@ namespace EdiFabric.Templates.EdifactD96A
     {
         
         /// <summary>
-        /// ALLOWANCE OR CHARGE QUALIFIER
+        /// Allowance or charge qualifier
         /// </summary>
         [DataMember]
         [Required]
         [DataElement("5463", typeof(EDIFACT_ID_5463))]
         [Pos(1)]
-        public string ALLOWANCEORCHARGEQUALIFIER_01 { get; set; }
+        public string Allowanceorchargequalifier_01 { get; set; }
         /// <summary>
         /// ALLOWANCE/CHARGE INFORMATION
         /// </summary>
@@ -33,19 +60,19 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(2)]
         public C552 ALLOWANCECHARGEINFORMATION_02 { get; set; }
         /// <summary>
-        /// SETTLEMENT, CODED
+        /// Settlement, coded
         /// </summary>
         [DataMember]
         [DataElement("4471", typeof(EDIFACT_ID_4471))]
         [Pos(3)]
-        public string SETTLEMENTCODED_03 { get; set; }
+        public string Settlementcoded_03 { get; set; }
         /// <summary>
-        /// CALCULATION SEQUENCE INDICATOR, CODED
+        /// Calculation sequence indicator, coded
         /// </summary>
         [DataMember]
         [DataElement("1227", typeof(EDIFACT_ID_1227))]
         [Pos(4)]
-        public string CALCULATIONSEQUENCEINDICATORCODED_04 { get; set; }
+        public string Calculationsequenceindicatorcoded_04 { get; set; }
         /// <summary>
         /// SPECIAL SERVICES IDENTIFICATION
         /// </summary>
@@ -64,55 +91,85 @@ namespace EdiFabric.Templates.EdifactD96A
     {
         
         /// <summary>
-        /// COUNTRY OF ORIGIN, CODED
+        /// Country of origin, coded
         /// </summary>
         [DataMember]
         [StringLength(1, 3)]
         [DataElement("3239", typeof(EDIFACT_AN))]
         [Pos(1)]
-        public string COUNTRYOFORIGINCODED_01 { get; set; }
+        public string Countryoforigincoded_01 { get; set; }
         /// <summary>
-        /// TYPE OF DUTY REGIME, CODED
+        /// Type of duty regime, coded
         /// </summary>
         [DataMember]
         [DataElement("9213", typeof(EDIFACT_ID_9213))]
         [Pos(2)]
-        public string TYPEOFDUTYREGIMECODED_02 { get; set; }
+        public string Typeofdutyregimecoded_02 { get; set; }
         /// <summary>
-        /// SPECIAL CONDITIONS, CODED
+        /// Special conditions, coded
         /// </summary>
         [DataMember]
         [DataElement("4183", typeof(EDIFACT_ID_4183))]
         [Pos(3)]
-        public string SPECIALCONDITIONSCODED_03 { get; set; }
+        public string Specialconditionscoded_03 { get; set; }
         /// <summary>
-        /// SPECIAL CONDITIONS, CODED
+        /// Special conditions, coded
         /// </summary>
         [DataMember]
         [DataElement("4183", typeof(EDIFACT_ID_4183))]
         [Pos(4)]
-        public string SPECIALCONDITIONSCODED_04 { get; set; }
+        public string Specialconditionscoded_04 { get; set; }
         /// <summary>
-        /// SPECIAL CONDITIONS, CODED
+        /// Special conditions, coded
         /// </summary>
         [DataMember]
         [DataElement("4183", typeof(EDIFACT_ID_4183))]
         [Pos(5)]
-        public string SPECIALCONDITIONSCODED_05 { get; set; }
+        public string Specialconditionscoded_05 { get; set; }
         /// <summary>
-        /// SPECIAL CONDITIONS, CODED
+        /// Special conditions, coded
         /// </summary>
         [DataMember]
         [DataElement("4183", typeof(EDIFACT_ID_4183))]
         [Pos(6)]
-        public string SPECIALCONDITIONSCODED_06 { get; set; }
+        public string Specialconditionscoded_06 { get; set; }
         /// <summary>
-        /// SPECIAL CONDITIONS, CODED
+        /// Special conditions, coded
         /// </summary>
         [DataMember]
         [DataElement("4183", typeof(EDIFACT_ID_4183))]
         [Pos(7)]
-        public string SPECIALCONDITIONSCODED_07 { get; set; }
+        public string Specialconditionscoded_07 { get; set; }
+    }
+    
+    /// <summary>
+    /// ADDITIONAL PRICE INFORMATION
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("APR")]
+    public class APR : I_APR<C138, C960>
+    {
+        
+        /// <summary>
+        /// Class of trade, coded
+        /// </summary>
+        [DataMember]
+        [DataElement("4043", typeof(EDIFACT_ID_4043))]
+        [Pos(1)]
+        public string Classoftradecoded_01 { get; set; }
+        /// <summary>
+        /// PRICE MULTIPLIER INFORMATION
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public C138 PRICEMULTIPLIERINFORMATION_02 { get; set; }
+        /// <summary>
+        /// REASON FOR CHANGE
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public C960 REASONFORCHANGE_03 { get; set; }
     }
     
     /// <summary>
@@ -131,27 +188,75 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(1)]
         public C002 DOCUMENTMESSAGENAME_01 { get; set; }
         /// <summary>
-        /// DOCUMENT/MESSAGE NUMBER
+        /// Document/message number
         /// </summary>
         [DataMember]
         [StringLength(1, 35)]
         [DataElement("1004", typeof(EDIFACT_AN))]
         [Pos(2)]
-        public string DOCUMENTMESSAGENUMBER_02 { get; set; }
+        public string Documentmessagenumber_02 { get; set; }
         /// <summary>
-        /// MESSAGE FUNCTION, CODED
+        /// Message function, coded
         /// </summary>
         [DataMember]
         [DataElement("1225", typeof(EDIFACT_ID_1225))]
         [Pos(3)]
-        public string MESSAGEFUNCTIONCODED_03 { get; set; }
+        public string Messagefunctioncoded_03 { get; set; }
         /// <summary>
-        /// RESPONSE TYPE, CODED
+        /// Response type, coded
         /// </summary>
         [DataMember]
         [DataElement("4343", typeof(EDIFACT_ID_4343))]
         [Pos(4)]
-        public string RESPONSETYPECODED_04 { get; set; }
+        public string Responsetypecoded_04 { get; set; }
+    }
+    
+    /// <summary>
+    /// CHARACTERISTIC VALUE
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("CAV")]
+    public class CAV : I_CAV<C889>
+    {
+        
+        /// <summary>
+        /// CHARACTERISTIC VALUE
+        /// </summary>
+        [DataMember]
+        [Required]
+        [Pos(1)]
+        public C889 CHARACTERISTICVALUE_01 { get; set; }
+    }
+    
+    /// <summary>
+    /// CHARACTERISTIC/CLASS ID
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("CCI")]
+    public class CCI : I_CCI<C502, C240>
+    {
+        
+        /// <summary>
+        /// Property class, coded
+        /// </summary>
+        [DataMember]
+        [DataElement("7059", typeof(EDIFACT_ID_7059))]
+        [Pos(1)]
+        public string Propertyclasscoded_01 { get; set; }
+        /// <summary>
+        /// MEASUREMENT DETAILS
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public C502 MEASUREMENTDETAILS_02 { get; set; }
+        /// <summary>
+        /// PRODUCT CHARACTERISTIC
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public C240 PRODUCTCHARACTERISTIC_03 { get; set; }
     }
     
     /// <summary>
@@ -200,12 +305,12 @@ namespace EdiFabric.Templates.EdifactD96A
     {
         
         /// <summary>
-        /// CONTACT FUNCTION, CODED
+        /// Contact function, coded
         /// </summary>
         [DataMember]
         [DataElement("3139", typeof(EDIFACT_ID_3139))]
         [Pos(1)]
-        public string CONTACTFUNCTIONCODED_01 { get; set; }
+        public string Contactfunctioncoded_01 { get; set; }
         /// <summary>
         /// DEPARTMENT OR EMPLOYEE DETAILS
         /// </summary>
@@ -236,20 +341,67 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(2)]
         public C504 CURRENCYDETAILS_02 { get; set; }
         /// <summary>
-        /// RATE OF EXCHANGE
+        /// Rate of exchange
         /// </summary>
         [DataMember]
         [StringLength(1, 12)]
         [DataElement("5402", typeof(EDIFACT_N))]
         [Pos(3)]
-        public string RATEOFEXCHANGE_03 { get; set; }
+        public string Rateofexchange_03 { get; set; }
         /// <summary>
-        /// CURRENCY MARKET EXCHANGE, CODED
+        /// Currency market exchange, coded
         /// </summary>
         [DataMember]
         [DataElement("6341", typeof(EDIFACT_ID_6341))]
         [Pos(4)]
-        public string CURRENCYMARKETEXCHANGECODED_04 { get; set; }
+        public string Currencymarketexchangecoded_04 { get; set; }
+    }
+    
+    /// <summary>
+    /// DOCUMENT/MESSAGE DETAILS
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("DOC")]
+    public class DOC : I_DOC<C002, C503>
+    {
+        
+        /// <summary>
+        /// DOCUMENT/MESSAGE NAME
+        /// </summary>
+        [DataMember]
+        [Required]
+        [Pos(1)]
+        public C002 DOCUMENTMESSAGENAME_01 { get; set; }
+        /// <summary>
+        /// DOCUMENT/MESSAGE DETAILS
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public C503 DOCUMENTMESSAGEDETAILS_02 { get; set; }
+        /// <summary>
+        /// Communication channel identifier, coded
+        /// </summary>
+        [DataMember]
+        [DataElement("3153", typeof(EDIFACT_ID_3153))]
+        [Pos(3)]
+        public string Communicationchannelidentifiercoded_03 { get; set; }
+        /// <summary>
+        /// Number of copies of document required
+        /// </summary>
+        [DataMember]
+        [StringLength(1, 2)]
+        [DataElement("1220", typeof(EDIFACT_N))]
+        [Pos(4)]
+        public string Numberofcopiesofdocumentrequired_04 { get; set; }
+        /// <summary>
+        /// Number of originals of document required
+        /// </summary>
+        [DataMember]
+        [StringLength(1, 2)]
+        [DataElement("1218", typeof(EDIFACT_N))]
+        [Pos(5)]
+        public string Numberoforiginalsofdocumentrequired_05 { get; set; }
     }
     
     /// <summary>
@@ -271,6 +423,58 @@ namespace EdiFabric.Templates.EdifactD96A
     }
     
     /// <summary>
+    /// EQUIPMENT DETAILS
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("EQD")]
+    public class EQD : I_EQD<C237, C224>
+    {
+        
+        /// <summary>
+        /// Equipment qualifier
+        /// </summary>
+        [DataMember]
+        [Required]
+        [DataElement("8053", typeof(EDIFACT_ID_8053))]
+        [Pos(1)]
+        public string Equipmentqualifier_01 { get; set; }
+        /// <summary>
+        /// EQUIPMENT IDENTIFICATION
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public C237 EQUIPMENTIDENTIFICATION_02 { get; set; }
+        /// <summary>
+        /// EQUIPMENT SIZE AND TYPE
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public C224 EQUIPMENTSIZEANDTYPE_03 { get; set; }
+        /// <summary>
+        /// Equipment supplier, coded
+        /// </summary>
+        [DataMember]
+        [DataElement("8077", typeof(EDIFACT_ID_8077))]
+        [Pos(4)]
+        public string Equipmentsuppliercoded_04 { get; set; }
+        /// <summary>
+        /// Equipment status, coded
+        /// </summary>
+        [DataMember]
+        [DataElement("8249", typeof(EDIFACT_ID_8249))]
+        [Pos(5)]
+        public string Equipmentstatuscoded_05 { get; set; }
+        /// <summary>
+        /// Full/empty indicator, coded
+        /// </summary>
+        [DataMember]
+        [DataElement("8169", typeof(EDIFACT_ID_8169))]
+        [Pos(6)]
+        public string Fullemptyindicatorcoded_06 { get; set; }
+    }
+    
+    /// <summary>
     /// FINANCIAL INSTITUTION INFORMATION
     /// </summary>
     [Serializable()]
@@ -280,13 +484,13 @@ namespace EdiFabric.Templates.EdifactD96A
     {
         
         /// <summary>
-        /// PARTY QUALIFIER
+        /// Party qualifier
         /// </summary>
         [DataMember]
         [Required]
         [DataElement("3035", typeof(EDIFACT_ID_3035))]
         [Pos(1)]
-        public string PARTYQUALIFIER_01 { get; set; }
+        public string Partyqualifier_01 { get; set; }
         /// <summary>
         /// ACCOUNT IDENTIFICATION
         /// </summary>
@@ -300,12 +504,13 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(3)]
         public C088 INSTITUTIONIDENTIFICATION_03 { get; set; }
         /// <summary>
-        /// COUNTRY, CODED
+        /// Country, coded
         /// </summary>
         [DataMember]
-        [DataElement("3207", typeof(EDIFACT_ID_3207))]
+        [StringLength(1, 3)]
+        [DataElement("3207", typeof(EDIFACT_AN))]
         [Pos(4)]
-        public string COUNTRYCODED_04 { get; set; }
+        public string Countrycoded_04 { get; set; }
     }
     
     /// <summary>
@@ -318,20 +523,20 @@ namespace EdiFabric.Templates.EdifactD96A
     {
         
         /// <summary>
-        /// TEXT SUBJECT QUALIFIER
+        /// Text subject qualifier
         /// </summary>
         [DataMember]
         [Required]
         [DataElement("4451", typeof(EDIFACT_ID_4451))]
         [Pos(1)]
-        public string TEXTSUBJECTQUALIFIER_01 { get; set; }
+        public string Textsubjectqualifier_01 { get; set; }
         /// <summary>
-        /// TEXT FUNCTION, CODED
+        /// Text function, coded
         /// </summary>
         [DataMember]
         [DataElement("4453", typeof(EDIFACT_ID_4453))]
         [Pos(2)]
-        public string TEXTFUNCTIONCODED_02 { get; set; }
+        public string Textfunctioncoded_02 { get; set; }
         /// <summary>
         /// TEXT REFERENCE
         /// </summary>
@@ -345,12 +550,13 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(4)]
         public C108 TEXTLITERAL_04 { get; set; }
         /// <summary>
-        /// LANGUAGE, CODED
+        /// Language, coded
         /// </summary>
         [DataMember]
-        [DataElement("3453", typeof(EDIFACT_ID_3453))]
+        [StringLength(1, 3)]
+        [DataElement("3453", typeof(EDIFACT_AN))]
         [Pos(5)]
-        public string LANGUAGECODED_05 { get; set; }
+        public string Languagecoded_05 { get; set; }
     }
     
     /// <summary>
@@ -363,13 +569,13 @@ namespace EdiFabric.Templates.EdifactD96A
     {
         
         /// <summary>
-        /// IDENTITY NUMBER QUALIFIER
+        /// Identity number qualifier
         /// </summary>
         [DataMember]
         [Required]
         [DataElement("7405", typeof(EDIFACT_ID_7405))]
         [Pos(1)]
-        public string IDENTITYNUMBERQUALIFIER_01 { get; set; }
+        public string Identitynumberqualifier_01 { get; set; }
         /// <summary>
         /// IDENTITY NUMBER RANGE
         /// </summary>
@@ -404,6 +610,79 @@ namespace EdiFabric.Templates.EdifactD96A
     }
     
     /// <summary>
+    /// RELATED IDENTIFICATION NUMBERS
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("GIR")]
+    public class GIR : I_GIR<C206, C206, C206, C206, C206>
+    {
+        
+        /// <summary>
+        /// Set identification qualifier
+        /// </summary>
+        [DataMember]
+        [Required]
+        [DataElement("7297", typeof(EDIFACT_ID_7297))]
+        [Pos(1)]
+        public string Setidentificationqualifier_01 { get; set; }
+        /// <summary>
+        /// IDENTIFICATION NUMBER
+        /// </summary>
+        [DataMember]
+        [Required]
+        [Pos(2)]
+        public C206 IDENTIFICATIONNUMBER_02 { get; set; }
+        /// <summary>
+        /// IDENTIFICATION NUMBER
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public C206 IDENTIFICATIONNUMBER_03 { get; set; }
+        /// <summary>
+        /// IDENTIFICATION NUMBER
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public C206 IDENTIFICATIONNUMBER_04 { get; set; }
+        /// <summary>
+        /// IDENTIFICATION NUMBER
+        /// </summary>
+        [DataMember]
+        [Pos(5)]
+        public C206 IDENTIFICATIONNUMBER_05 { get; set; }
+        /// <summary>
+        /// IDENTIFICATION NUMBER
+        /// </summary>
+        [DataMember]
+        [Pos(6)]
+        public C206 IDENTIFICATIONNUMBER_06 { get; set; }
+    }
+    
+    /// <summary>
+    /// HANDLING INSTRUCTIONS
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("HAN")]
+    public class HAN : I_HAN<C524, C218>
+    {
+        
+        /// <summary>
+        /// HANDLING INSTRUCTIONS
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public C524 HANDLINGINSTRUCTIONS_01 { get; set; }
+        /// <summary>
+        /// HAZARDOUS MATERIAL
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public C218 HAZARDOUSMATERIAL_02 { get; set; }
+    }
+    
+    /// <summary>
     /// ITEM DESCRIPTION
     /// </summary>
     [Serializable()]
@@ -413,19 +692,19 @@ namespace EdiFabric.Templates.EdifactD96A
     {
         
         /// <summary>
-        /// ITEM DESCRIPTION TYPE, CODED
+        /// Item description type, coded
         /// </summary>
         [DataMember]
         [DataElement("7077", typeof(EDIFACT_ID_7077))]
         [Pos(1)]
-        public string ITEMDESCRIPTIONTYPECODED_01 { get; set; }
+        public string Itemdescriptiontypecoded_01 { get; set; }
         /// <summary>
-        /// ITEM CHARACTERISTIC, CODED
+        /// Item characteristic, coded
         /// </summary>
         [DataMember]
         [DataElement("7081", typeof(EDIFACT_ID_7081))]
         [Pos(2)]
-        public string ITEMCHARACTERISTICCODED_02 { get; set; }
+        public string Itemcharacteristiccoded_02 { get; set; }
         /// <summary>
         /// ITEM DESCRIPTION
         /// </summary>
@@ -433,12 +712,48 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(3)]
         public C273 ITEMDESCRIPTION_03 { get; set; }
         /// <summary>
-        /// SURFACE/LAYER INDICATOR, CODED
+        /// Surface/layer indicator, coded
         /// </summary>
         [DataMember]
         [DataElement("7383", typeof(EDIFACT_ID_7383))]
         [Pos(4)]
-        public string SURFACELAYERINDICATORCODED_04 { get; set; }
+        public string Surfacelayerindicatorcoded_04 { get; set; }
+    }
+    
+    /// <summary>
+    /// PARTIES TO INSTRUCTION
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("INP")]
+    public class INP : I_INP<C849, C522, C850>
+    {
+        
+        /// <summary>
+        /// PARTIES TO INSTRUCTION
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public C849 PARTIESTOINSTRUCTION_01 { get; set; }
+        /// <summary>
+        /// INSTRUCTION
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public C522 INSTRUCTION_02 { get; set; }
+        /// <summary>
+        /// STATUS OF INSTRUCTION
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public C850 STATUSOFINSTRUCTION_03 { get; set; }
+        /// <summary>
+        /// Action request/notification, coded
+        /// </summary>
+        [DataMember]
+        [DataElement("1229", typeof(EDIFACT_ID_1229))]
+        [Pos(4)]
+        public string Actionrequestnotificationcoded_04 { get; set; }
     }
     
     /// <summary>
@@ -451,20 +766,20 @@ namespace EdiFabric.Templates.EdifactD96A
     {
         
         /// <summary>
-        /// LINE ITEM NUMBER
+        /// Line item number
         /// </summary>
         [DataMember]
         [StringLength(1, 6)]
         [DataElement("1082", typeof(EDIFACT_N))]
         [Pos(1)]
-        public string LINEITEMNUMBER_01 { get; set; }
+        public string Lineitemnumber_01 { get; set; }
         /// <summary>
-        /// ACTION REQUEST/NOTIFICATION, CODED
+        /// Action request/notification, coded
         /// </summary>
         [DataMember]
         [DataElement("1229", typeof(EDIFACT_ID_1229))]
         [Pos(2)]
-        public string ACTIONREQUESTNOTIFICATIONCODED_02 { get; set; }
+        public string Actionrequestnotificationcoded_02 { get; set; }
         /// <summary>
         /// ITEM NUMBER IDENTIFICATION
         /// </summary>
@@ -478,20 +793,20 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(4)]
         public C829 SUBLINEINFORMATION_04 { get; set; }
         /// <summary>
-        /// CONFIGURATION LEVEL
+        /// Configuration level
         /// </summary>
         [DataMember]
         [StringLength(1, 2)]
         [DataElement("1222", typeof(EDIFACT_N))]
         [Pos(5)]
-        public string CONFIGURATIONLEVEL_05 { get; set; }
+        public string Configurationlevel_05 { get; set; }
         /// <summary>
-        /// CONFIGURATION, CODED
+        /// Configuration, coded
         /// </summary>
         [DataMember]
         [DataElement("7083", typeof(EDIFACT_ID_7083))]
         [Pos(6)]
-        public string CONFIGURATIONCODED_06 { get; set; }
+        public string Configurationcoded_06 { get; set; }
     }
     
     /// <summary>
@@ -504,13 +819,13 @@ namespace EdiFabric.Templates.EdifactD96A
     {
         
         /// <summary>
-        /// PLACE/LOCATION QUALIFIER
+        /// Place/location qualifier
         /// </summary>
         [DataMember]
         [Required]
         [DataElement("3227", typeof(EDIFACT_ID_3227))]
         [Pos(1)]
-        public string PLACELOCATIONQUALIFIER_01 { get; set; }
+        public string Placelocationqualifier_01 { get; set; }
         /// <summary>
         /// LOCATION IDENTIFICATION
         /// </summary>
@@ -530,13 +845,13 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(4)]
         public C553 RELATEDLOCATIONTWOIDENTIFICATION_04 { get; set; }
         /// <summary>
-        /// RELATION, CODED
+        /// Relation, coded
         /// </summary>
         [DataMember]
         [StringLength(1, 3)]
         [DataElement("5479", typeof(EDIFACT_AN))]
         [Pos(5)]
-        public string RELATIONCODED_05 { get; set; }
+        public string Relationcoded_05 { get; set; }
     }
     
     /// <summary>
@@ -549,13 +864,13 @@ namespace EdiFabric.Templates.EdifactD96A
     {
         
         /// <summary>
-        /// MEASUREMENT APPLICATION QUALIFIER
+        /// Measurement application qualifier
         /// </summary>
         [DataMember]
         [Required]
         [DataElement("6311", typeof(EDIFACT_ID_6311))]
         [Pos(1)]
-        public string MEASUREMENTAPPLICATIONQUALIFIER_01 { get; set; }
+        public string Measurementapplicationqualifier_01 { get; set; }
         /// <summary>
         /// MEASUREMENT DETAILS
         /// </summary>
@@ -569,12 +884,12 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(3)]
         public C174 VALUERANGE_03 { get; set; }
         /// <summary>
-        /// SURFACE/LAYER INDICATOR, CODED
+        /// Surface/layer indicator, coded
         /// </summary>
         [DataMember]
         [DataElement("7383", typeof(EDIFACT_ID_7383))]
         [Pos(4)]
-        public string SURFACELAYERINDICATORCODED_04 { get; set; }
+        public string Surfacelayerindicatorcoded_04 { get; set; }
     }
     
     /// <summary>
@@ -605,13 +920,13 @@ namespace EdiFabric.Templates.EdifactD96A
     {
         
         /// <summary>
-        /// PARTY QUALIFIER
+        /// Party qualifier
         /// </summary>
         [DataMember]
         [Required]
         [DataElement("3035", typeof(EDIFACT_ID_3035))]
         [Pos(1)]
-        public string PARTYQUALIFIER_01 { get; set; }
+        public string Partyqualifier_01 { get; set; }
         /// <summary>
         /// PARTY IDENTIFICATION DETAILS
         /// </summary>
@@ -637,36 +952,37 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(5)]
         public C059 STREET_05 { get; set; }
         /// <summary>
-        /// CITY NAME
+        /// City name
         /// </summary>
         [DataMember]
         [StringLength(1, 35)]
         [DataElement("3164", typeof(EDIFACT_AN))]
         [Pos(6)]
-        public string CITYNAME_06 { get; set; }
+        public string Cityname_06 { get; set; }
         /// <summary>
-        /// COUNTRY SUB-ENTITY IDENTIFICATION
+        /// Country sub-entity identification
         /// </summary>
         [DataMember]
         [StringLength(1, 9)]
         [DataElement("3229", typeof(EDIFACT_AN))]
         [Pos(7)]
-        public string COUNTRYSUBENTITYIDENTIFICATION_07 { get; set; }
+        public string Countrysubentityidentification_07 { get; set; }
         /// <summary>
-        /// POSTCODE IDENTIFICATION
+        /// Postcode identification
         /// </summary>
         [DataMember]
         [StringLength(1, 9)]
         [DataElement("3251", typeof(EDIFACT_AN))]
         [Pos(8)]
-        public string POSTCODEIDENTIFICATION_08 { get; set; }
+        public string Postcodeidentification_08 { get; set; }
         /// <summary>
-        /// COUNTRY, CODED
+        /// Country, coded
         /// </summary>
         [DataMember]
-        [DataElement("3207", typeof(EDIFACT_ID_3207))]
+        [StringLength(1, 3)]
+        [DataElement("3207", typeof(EDIFACT_AN))]
         [Pos(9)]
-        public string COUNTRYCODED_09 { get; set; }
+        public string Countrycoded_09 { get; set; }
     }
     
     /// <summary>
@@ -679,13 +995,13 @@ namespace EdiFabric.Templates.EdifactD96A
     {
         
         /// <summary>
-        /// NUMBER OF PACKAGES
+        /// Number of packages
         /// </summary>
         [DataMember]
         [StringLength(1, 8)]
         [DataElement("7224", typeof(EDIFACT_N))]
         [Pos(1)]
-        public string NUMBEROFPACKAGES_01 { get; set; }
+        public string Numberofpackages_01 { get; set; }
         /// <summary>
         /// PACKAGING DETAILS
         /// </summary>
@@ -740,13 +1056,13 @@ namespace EdiFabric.Templates.EdifactD96A
     {
         
         /// <summary>
-        /// PAYMENT TERMS TYPE QUALIFIER
+        /// Payment terms type qualifier
         /// </summary>
         [DataMember]
         [Required]
         [DataElement("4279", typeof(EDIFACT_ID_4279))]
         [Pos(1)]
-        public string PAYMENTTERMSTYPEQUALIFIER_01 { get; set; }
+        public string Paymenttermstypequalifier_01 { get; set; }
         /// <summary>
         /// PAYMENT TERMS
         /// </summary>
@@ -789,12 +1105,12 @@ namespace EdiFabric.Templates.EdifactD96A
     {
         
         /// <summary>
-        /// MARKING INSTRUCTIONS, CODED
+        /// Marking instructions, coded
         /// </summary>
         [DataMember]
         [DataElement("4233", typeof(EDIFACT_ID_4233))]
         [Pos(1)]
-        public string MARKINGINSTRUCTIONSCODED_01 { get; set; }
+        public string Markinginstructionscoded_01 { get; set; }
         /// <summary>
         /// MARKS & LABELS
         /// </summary>
@@ -802,12 +1118,12 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(2)]
         public C210 MARKSLABELS_02 { get; set; }
         /// <summary>
-        /// CONTAINER/PACKAGE STATUS, CODED
+        /// Container/package status, coded
         /// </summary>
         [DataMember]
         [DataElement("8275", typeof(EDIFACT_ID_8275))]
         [Pos(3)]
-        public string CONTAINERPACKAGESTATUSCODED_03 { get; set; }
+        public string Containerpackagestatuscoded_03 { get; set; }
         /// <summary>
         /// TYPE OF MARKING
         /// </summary>
@@ -826,13 +1142,13 @@ namespace EdiFabric.Templates.EdifactD96A
     {
         
         /// <summary>
-        /// PRODUCT ID. FUNCTION QUALIFIER
+        /// Product id. function qualifier
         /// </summary>
         [DataMember]
         [Required]
         [DataElement("4347", typeof(EDIFACT_ID_4347))]
         [Pos(1)]
-        public string PRODUCTIDFUNCTIONQUALIFIER_01 { get; set; }
+        public string Productidfunctionqualifier_01 { get; set; }
         /// <summary>
         /// ITEM NUMBER IDENTIFICATION
         /// </summary>
@@ -882,12 +1198,12 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(1)]
         public C509 PRICEINFORMATION_01 { get; set; }
         /// <summary>
-        /// SUB-LINE PRICE CHANGE, CODED
+        /// Sub-line price change, coded
         /// </summary>
         [DataMember]
         [DataElement("5213", typeof(EDIFACT_ID_5213))]
         [Pos(2)]
-        public string SUBLINEPRICECHANGECODED_02 { get; set; }
+        public string Sublinepricechangecoded_02 { get; set; }
     }
     
     /// <summary>
@@ -924,18 +1240,50 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(1)]
         public C279 QUANTITYDIFFERENCEINFORMATION_01 { get; set; }
         /// <summary>
-        /// DISCREPANCY, CODED
+        /// Discrepancy, coded
         /// </summary>
         [DataMember]
         [DataElement("4221", typeof(EDIFACT_ID_4221))]
         [Pos(2)]
-        public string DISCREPANCYCODED_02 { get; set; }
+        public string Discrepancycoded_02 { get; set; }
         /// <summary>
         /// REASON FOR CHANGE
         /// </summary>
         [DataMember]
         [Pos(3)]
         public C960 REASONFORCHANGE_03 { get; set; }
+    }
+    
+    /// <summary>
+    /// REQUIREMENTS AND CONDITIONS
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("RCS")]
+    public class RCS : I_RCS<C550>
+    {
+        
+        /// <summary>
+        /// Sector/subject identification qualifier
+        /// </summary>
+        [DataMember]
+        [Required]
+        [DataElement("7293", typeof(EDIFACT_ID_7293))]
+        [Pos(1)]
+        public string Sectorsubjectidentificationqualifier_01 { get; set; }
+        /// <summary>
+        /// REQUIREMENT/CONDITION IDENTIFICATION
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public C550 REQUIREMENTCONDITIONIDENTIFICATION_02 { get; set; }
+        /// <summary>
+        /// Action request/notification, coded
+        /// </summary>
+        [DataMember]
+        [DataElement("1229", typeof(EDIFACT_ID_1229))]
+        [Pos(3)]
+        public string Actionrequestnotificationcoded_03 { get; set; }
     }
     
     /// <summary>
@@ -966,13 +1314,13 @@ namespace EdiFabric.Templates.EdifactD96A
     {
         
         /// <summary>
-        /// RANGE TYPE QUALIFIER
+        /// Range type qualifier
         /// </summary>
         [DataMember]
         [Required]
         [DataElement("6167", typeof(EDIFACT_ID_6167))]
         [Pos(1)]
-        public string RANGETYPEQUALIFIER_01 { get; set; }
+        public string Rangetypequalifier_01 { get; set; }
         /// <summary>
         /// RANGE
         /// </summary>
@@ -1000,6 +1348,74 @@ namespace EdiFabric.Templates.EdifactD96A
     }
     
     /// <summary>
+    /// SCHEDULING CONDITIONS
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("SCC")]
+    public class SCC : I_SCC<C329>
+    {
+        
+        /// <summary>
+        /// Delivery plan status indicator, coded
+        /// </summary>
+        [DataMember]
+        [Required]
+        [DataElement("4017", typeof(EDIFACT_ID_4017))]
+        [Pos(1)]
+        public string Deliveryplanstatusindicatorcoded_01 { get; set; }
+        /// <summary>
+        /// Delivery requirements, coded
+        /// </summary>
+        [DataMember]
+        [DataElement("4493", typeof(EDIFACT_ID_4493))]
+        [Pos(2)]
+        public string Deliveryrequirementscoded_02 { get; set; }
+        /// <summary>
+        /// PATTERN DESCRIPTION
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public C329 PATTERNDESCRIPTION_03 { get; set; }
+    }
+    
+    /// <summary>
+    /// STAGES
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("STG")]
+    public class STG : I_STG
+    {
+        
+        /// <summary>
+        /// Stages qualifier
+        /// </summary>
+        [DataMember]
+        [Required]
+        [StringLength(1, 3)]
+        [DataElement("9421", typeof(EDIFACT_AN))]
+        [Pos(1)]
+        public string Stagesqualifier_01 { get; set; }
+        /// <summary>
+        /// Number of stages
+        /// </summary>
+        [DataMember]
+        [StringLength(1, 2)]
+        [DataElement("6426", typeof(EDIFACT_N))]
+        [Pos(2)]
+        public string Numberofstages_02 { get; set; }
+        /// <summary>
+        /// Actual stage count
+        /// </summary>
+        [DataMember]
+        [StringLength(1, 2)]
+        [DataElement("6428", typeof(EDIFACT_N))]
+        [Pos(3)]
+        public string Actualstagecount_03 { get; set; }
+    }
+    
+    /// <summary>
     /// DUTY/TAX/FEE DETAILS
     /// </summary>
     [Serializable()]
@@ -1009,13 +1425,13 @@ namespace EdiFabric.Templates.EdifactD96A
     {
         
         /// <summary>
-        /// DUTY/TAX/FEE FUNCTION QUALIFIER
+        /// Duty/tax/fee function qualifier
         /// </summary>
         [DataMember]
         [Required]
         [DataElement("5283", typeof(EDIFACT_ID_5283))]
         [Pos(1)]
-        public string DUTYTAXFEEFUNCTIONQUALIFIER_01 { get; set; }
+        public string Dutytaxfeefunctionqualifier_01 { get; set; }
         /// <summary>
         /// DUTY/TAX/FEE TYPE
         /// </summary>
@@ -1029,13 +1445,13 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(3)]
         public C533 DUTYTAXFEEACCOUNTDETAIL_03 { get; set; }
         /// <summary>
-        /// DUTY/TAX/FEE ASSESSMENT BASIS
+        /// Duty/tax/fee assessment basis
         /// </summary>
         [DataMember]
         [StringLength(1, 15)]
         [DataElement("5286", typeof(EDIFACT_AN))]
         [Pos(4)]
-        public string DUTYTAXFEEASSESSMENTBASIS_04 { get; set; }
+        public string Dutytaxfeeassessmentbasis_04 { get; set; }
         /// <summary>
         /// DUTY/TAX/FEE DETAIL
         /// </summary>
@@ -1043,20 +1459,20 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(5)]
         public C243 DUTYTAXFEEDETAIL_05 { get; set; }
         /// <summary>
-        /// DUTY/TAX/FEE CATEGORY, CODED
+        /// Duty/tax/fee category, coded
         /// </summary>
         [DataMember]
         [DataElement("5305", typeof(EDIFACT_ID_5305))]
         [Pos(6)]
-        public string DUTYTAXFEECATEGORYCODED_06 { get; set; }
+        public string Dutytaxfeecategorycoded_06 { get; set; }
         /// <summary>
-        /// PARTY TAX IDENTIFICATION NUMBER
+        /// Party tax identification number
         /// </summary>
         [DataMember]
         [StringLength(1, 20)]
         [DataElement("3446", typeof(EDIFACT_AN))]
         [Pos(7)]
-        public string PARTYTAXIDENTIFICATIONNUMBER_07 { get; set; }
+        public string Partytaxidentificationnumber_07 { get; set; }
     }
     
     /// <summary>
@@ -1069,21 +1485,21 @@ namespace EdiFabric.Templates.EdifactD96A
     {
         
         /// <summary>
-        /// TRANSPORT STAGE QUALIFIER
+        /// Transport stage qualifier
         /// </summary>
         [DataMember]
         [Required]
         [DataElement("8051", typeof(EDIFACT_ID_8051))]
         [Pos(1)]
-        public string TRANSPORTSTAGEQUALIFIER_01 { get; set; }
+        public string Transportstagequalifier_01 { get; set; }
         /// <summary>
-        /// CONVEYANCE REFERENCE NUMBER
+        /// Conveyance reference number
         /// </summary>
         [DataMember]
         [StringLength(1, 17)]
         [DataElement("8028", typeof(EDIFACT_AN))]
         [Pos(2)]
-        public string CONVEYANCEREFERENCENUMBER_02 { get; set; }
+        public string Conveyancereferencenumber_02 { get; set; }
         /// <summary>
         /// MODE OF TRANSPORT
         /// </summary>
@@ -1103,12 +1519,12 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(5)]
         public C040 CARRIER_05 { get; set; }
         /// <summary>
-        /// TRANSIT DIRECTION, CODED
+        /// Transit direction, coded
         /// </summary>
         [DataMember]
         [DataElement("8101", typeof(EDIFACT_ID_8101))]
         [Pos(6)]
-        public string TRANSITDIRECTIONCODED_06 { get; set; }
+        public string Transitdirectioncoded_06 { get; set; }
         /// <summary>
         /// EXCESS TRANSPORTATION INFORMATION
         /// </summary>
@@ -1122,12 +1538,12 @@ namespace EdiFabric.Templates.EdifactD96A
         [Pos(8)]
         public C222 TRANSPORTIDENTIFICATION_08 { get; set; }
         /// <summary>
-        /// TRANSPORT OWNERSHIP, CODED
+        /// Transport ownership, coded
         /// </summary>
         [DataMember]
         [DataElement("8281", typeof(EDIFACT_ID_8281))]
         [Pos(9)]
-        public string TRANSPORTOWNERSHIPCODED_09 { get; set; }
+        public string Transportownershipcoded_09 { get; set; }
     }
     
     /// <summary>
@@ -1140,19 +1556,19 @@ namespace EdiFabric.Templates.EdifactD96A
     {
         
         /// <summary>
-        /// TERMS OF DELIVERY OR TRANSPORT FUNCTION, CODED
+        /// Terms of delivery or transport function, coded
         /// </summary>
         [DataMember]
         [DataElement("4055", typeof(EDIFACT_ID_4055))]
         [Pos(1)]
-        public string TERMSOFDELIVERYORTRANSPORTFUNCTIONCODED_01 { get; set; }
+        public string Termsofdeliveryortransportfunctioncoded_01 { get; set; }
         /// <summary>
-        /// TRANSPORT CHARGES METHOD OF PAYMENT, CODED
+        /// Transport charges method of payment, coded
         /// </summary>
         [DataMember]
         [DataElement("4215", typeof(EDIFACT_ID_4215))]
         [Pos(2)]
-        public string TRANSPORTCHARGESMETHODOFPAYMENTCODED_02 { get; set; }
+        public string Transportchargesmethodofpaymentcoded_02 { get; set; }
         /// <summary>
         /// TERMS OF DELIVERY OR TRANSPORT
         /// </summary>
@@ -1171,13 +1587,13 @@ namespace EdiFabric.Templates.EdifactD96A
     {
         
         /// <summary>
-        /// SECTION IDENTIFICATION
+        /// Section identification
         /// </summary>
         [DataMember]
         [Required]
         [StringLength(1, 1)]
         [DataElement("0081", typeof(EDIFACT_A))]
         [Pos(1)]
-        public string SECTIONIDENTIFICATION_01 { get; set; }
+        public string Sectionidentification_01 { get; set; }
     }
 }
