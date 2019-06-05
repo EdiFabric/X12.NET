@@ -38,16 +38,16 @@ HIPAA
 
 X12
 * [X12 210](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T210/Program.cs)
-* [X12 214](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.X12.T214)
-* [X12 404](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.X12.T404)
-* [X12 810](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.X12.T810)
-* [X12 824](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.X12.T824)
-* [X12 832](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.X12.T832)
-* [X12 850](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.X12.T850)
-* [X12 855](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.X12.T855)
-* [X12 856](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.X12.T856)
-* [X12 857](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.X12.T857)
-* [X12 861](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.X12.T861)
+* [X12 214](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T214/Program.cs)
+* [X12 404](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T404/Program.cs)
+* [X12 810](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T810/Program.cs)
+* [X12 824](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T824/Program.cs)
+* [X12 832](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T832/Program.cs)
+* [X12 850](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T850/Program.cs)
+* [X12 855](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T855/Program.cs)
+* [X12 856](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T856/Program.cs)
+* [X12 857](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T857/Program.cs)
+* [X12 861](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T861/Program.cs)
 
 EdiFabric EDI Toolkit supports:
 
