@@ -14,6 +14,8 @@ With the EDI Tools for .NET you can:
 * Use the templates as entityFramework POCOs (X12 only)
 * Generate DB structure wiht Code First (X12 only)
 
+#### [Quickstart - Translate EDI file](https://support.edifabric.com/hc/en-us/articles/360000280532)
+
 EDI Templates are included for the following standards:
 
 * [X12](https://support.edifabric.com/hc/en-us/sections/360000067292-X12-Resources)
