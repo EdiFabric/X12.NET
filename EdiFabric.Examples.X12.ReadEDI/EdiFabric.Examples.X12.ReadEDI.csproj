@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FD38A6D4-0F1A-4071-A781-041E66FA5D5A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>EdiFabric.Examples.X12.ReadEDI</RootNamespace>
+    <AssemblyName>EdiFabric.Examples.X12.ReadEDI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EdiFabric.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
+      <HintPath>..\packages\EdiFabric.Core.9.8.5\lib\net45\EdiFabric.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EdiFabric.Framework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
+      <HintPath>..\packages\EdiFabric.Framework.9.8.5\lib\net45\EdiFabric.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadEDIFileBatch.cs" />
+    <Compile Include="ReadEDIFileCorrupt.cs" />
+    <Compile Include="ReadEDIFileSplitting.cs" />
+    <Compile Include="ReadEDIFileStreaming.cs" />
+    <Compile Include="ReadEDIFileStreamingAsync.cs" />
+    <Compile Include="ReadEDIFileToEnd.cs" />
+    <Compile Include="ReadEDIFileToEndAsync.cs" />
+    <Compile Include="ReadEDIFileTransactionOnly.cs" />
+    <Compile Include="ReadEDIFileWithInheritedTemplate.cs" />
+    <Compile Include="ReadEDIFileWithCustomTemplate.cs" />
+    <Compile Include="ReadEDIFileWithErrors.cs" />
+    <Compile Include="ReadEDIFileWithTemplateResolution.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EdiFabric.Examples.X12.Common\EdiFabric.Examples.X12.Common.csproj">
+      <Project>{bc167c5d-d762-4d14-8788-5eef0fbe4a12}</Project>
+      <Name>EdiFabric.Examples.X12.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EdiFabric.Examples.X12.Templates.V4010.Common\EdiFabric.Examples.X12.Templates.V4010.Common.csproj">
+      <Project>{8f106c0d-4ad9-4139-b299-6d59af3badd2}</Project>
+      <Name>EdiFabric.Examples.X12.Templates.V4010.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EdiFabric.Examples.X12.Templates.V4010.PartnerB\EdiFabric.Examples.X12.Templates.V4010.PartnerB.csproj">
+      <Project>{b7a4a86c-b107-4f62-a931-0b046bc881e4}</Project>
+      <Name>EdiFabric.Examples.X12.Templates.V4010.PartnerB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EdiFabric.Examples.X12.Templates.V4010.PartnerC\EdiFabric.Examples.X12.Templates.V4010.PartnerC.csproj">
+      <Project>{4fa4f041-345c-4d30-a098-4b97192b68eb}</Project>
+      <Name>EdiFabric.Examples.X12.Templates.V4010.PartnerC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EdiFabric.Examples.X12.Templates.V4010\EdiFabric.Examples.X12.Templates.V4010.csproj">
+      <Project>{c8c0e28b-7ba8-4c81-a1a1-1aa86171aba5}</Project>
+      <Name>EdiFabric.Examples.X12.Templates.V4010</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

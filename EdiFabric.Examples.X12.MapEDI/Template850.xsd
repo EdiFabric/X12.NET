@@ -1,0 +1,1623 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="TS850" nillable="true" type="TS850" />
+  <xs:complexType name="TS850">
+    <xs:complexContent mixed="false">
+      <xs:extension base="EdiMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="ST" type="ST" />
+          <xs:element minOccurs="0" maxOccurs="1" name="BEG" type="BEG" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CUR" type="CUR" />
+          <xs:element minOccurs="0" maxOccurs="1" name="REF" type="ArrayOfREF" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PER" type="ArrayOfPER" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TAX" type="ArrayOfTAX" />
+          <xs:element minOccurs="0" maxOccurs="1" name="FOB" type="ArrayOfFOB" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CTP" type="ArrayOfCTP" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PAM" type="ArrayOfPAM" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CSH" type="ArrayOfCSH" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TC2" type="ArrayOfTC2" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SACLoop" type="ArrayOfLoop_SAC_850" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ITD" type="ArrayOfITD" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DIS" type="ArrayOfDIS" />
+          <xs:element minOccurs="0" maxOccurs="1" name="INC" type="INC" />
+          <xs:element minOccurs="0" maxOccurs="1" name="DTM" type="ArrayOfDTM" />
+          <xs:element minOccurs="0" maxOccurs="1" name="LDT" type="ArrayOfLDT" />
+          <xs:element minOccurs="0" maxOccurs="1" name="LIN" type="ArrayOfLIN" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SI" type="ArrayOfSI" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PID" type="ArrayOfPID" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MEA" type="ArrayOfMEA" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PWK" type="ArrayOfPWK" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PKG" type="ArrayOfPKG" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TD1" type="ArrayOfTD1" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TD5" type="ArrayOfTD5" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TD3" type="ArrayOfTD3" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TD4" type="ArrayOfTD4" />
+          <xs:element minOccurs="0" maxOccurs="1" name="MAN" type="ArrayOfMAN" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PCT" type="ArrayOfPCT" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CTB" type="ArrayOfCTB" />
+          <xs:element minOccurs="0" maxOccurs="1" name="TXI" type="ArrayOfTXI" />
+          <xs:element minOccurs="0" maxOccurs="1" name="AMTLoop" type="ArrayOfLoop_AMT_850" />
+          <xs:element minOccurs="0" maxOccurs="1" name="N9Loop" type="ArrayOfLoop_N9_850" />
+          <xs:element minOccurs="0" maxOccurs="1" name="N1Loop" type="ArrayOfLoop_N1_850" />
+          <xs:element minOccurs="0" maxOccurs="1" name="LMLoop" type="ArrayOfLoop_LM_850" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SPILoop" type="ArrayOfLoop_SPI_850" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ADVLoop" type="ArrayOfLoop_ADV_850" />
+          <xs:element minOccurs="0" maxOccurs="1" name="PO1Loop" type="ArrayOfLoop_PO1_850" />
+          <xs:element minOccurs="0" maxOccurs="1" name="CTTLoop" type="Loop_CTT_850" />
+          <xs:element minOccurs="0" maxOccurs="1" name="SE" type="SE" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="EdiMessage" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ErrorContext" type="MessageErrorContext" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MessageErrorContext">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ErrorContext">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="ControlNumber" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Version" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Codes" type="ArrayOfMessageErrorCode" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Errors" type="ArrayOfSegmentErrorContext" />
+          <xs:element minOccurs="1" maxOccurs="1" name="HasErrors" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ErrorContext" abstract="true">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DataElementErrorContext">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ErrorContext">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Position" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Code" type="DataElementErrorCode" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Value" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="ComponentPosition" type="xs:int" />
+          <xs:element minOccurs="1" maxOccurs="1" name="RepetitionPosition" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="DataElementErrorCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="RequiredDataElementMissing" />
+      <xs:enumeration value="ConditionalRequiredDataElementMissing" />
+      <xs:enumeration value="TooManyDataElements" />
+      <xs:enumeration value="DataElementTooShort" />
+      <xs:enumeration value="DataElementTooLong" />
+      <xs:enumeration value="InvalidCharacterInDataElement" />
+      <xs:enumeration value="InvalidCodeValue" />
+      <xs:enumeration value="InvalidDate" />
+      <xs:enumeration value="InvalidTime" />
+      <xs:enumeration value="ExclusionConditionViolated" />
+      <xs:enumeration value="TooManyRepetitions" />
+      <xs:enumeration value="TooManyComponents" />
+      <xs:enumeration value="TooFewRepetitions" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SegmentErrorContext">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ErrorContext">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="1" name="Name" type="xs:string" />
+          <xs:element minOccurs="1" maxOccurs="1" name="Position" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Value" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Codes" type="ArrayOfSegmentErrorCode" />
+          <xs:element minOccurs="0" maxOccurs="1" name="Errors" type="ArrayOfDataElementErrorContext" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfSegmentErrorCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SegmentErrorCode" type="SegmentErrorCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="SegmentErrorCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UnrecognizedSegment" />
+      <xs:enumeration value="RequiredSegmentMissing" />
+      <xs:enumeration value="LoopExceedsMaximumUse" />
+      <xs:enumeration value="SegmentExceedsMaximumUse" />
+      <xs:enumeration value="SegmentNotInProperSequence" />
+      <xs:enumeration value="LoopBelowMinimumUse" />
+      <xs:enumeration value="SegmentBelowMinimumUse" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ArrayOfDataElementErrorContext">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataElementErrorContext" nillable="true" type="DataElementErrorContext" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfMessageErrorCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MessageErrorCode" type="MessageErrorCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="MessageErrorCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="TransactionSetNotSupported" />
+      <xs:enumeration value="MessageTrailerMissing" />
+      <xs:enumeration value="ControlNumberNotMatching" />
+      <xs:enumeration value="SegmentsCountNotMatching" />
+      <xs:enumeration value="MessageWithErrors" />
+      <xs:enumeration value="MissingOrInvalidTransactionSet" />
+      <xs:enumeration value="MissingOrInvalidControlNumber" />
+      <xs:enumeration value="DuplicateMessageControlNumber" />
+      <xs:enumeration value="FunctionalGroupVersionNotSupported" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ArrayOfSegmentErrorContext">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SegmentErrorContext" nillable="true" type="SegmentErrorContext" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ST">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="TransactionSetIdentifierCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TransactionSetControlNumber_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ImplementationConventionPreference_03" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BEG">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="TransactionSetPurposeCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PurchaseOrderTypeCode_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PurchaseOrderNumber_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReleaseNumber_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Date_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ContractNumber_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AcknowledgmentType_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="InvoiceTypeCode_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ContractTypeCode_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PurchaseCategory_10" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SecurityLevelCode_11" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TransactionTypeCode_12" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CUR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="EntityIdentifierCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CurrencyCode_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ExchangeRate_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EntityIdentifierCode_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CurrencyCode_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CurrencyMarketExchangeCode_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DateTimeQualifier_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Date_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Time_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DateTimeQualifier_10" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Date_11" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Time_12" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DateTimeQualifier_13" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Date_14" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Time_15" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DateTimeQualifier_16" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Date_17" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Time_18" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DateTimeQualifier_19" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Date_20" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Time_21" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfREF">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="REF" nillable="true" type="REF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="REF">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferenceIdentificationQualifier_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferenceIdentification_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Description_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferenceIdentifier_04" type="C040" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="C040">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferenceIdentificationQualifier_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferenceIdentification_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferenceIdentificationQualifier_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferenceIdentification_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferenceIdentificationQualifier_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferenceIdentification_06" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfPER">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PER" nillable="true" type="PER" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PER">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ContactFunctionCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Name_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CommunicationNumberQualifier_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CommunicationNumber_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CommunicationNumberQualifier_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CommunicationNumber_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CommunicationNumberQualifier_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CommunicationNumber_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ContactInquiryReference_09" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTAX">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TAX" nillable="true" type="TAX" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TAX">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="TaxIdentificationNumber_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LocationQualifier_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LocationIdentifier_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LocationQualifier_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LocationIdentifier_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LocationQualifier_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LocationIdentifier_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LocationQualifier_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LocationIdentifier_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LocationQualifier_10" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LocationIdentifier_11" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TaxExemptCode_12" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CustomsEntryTypeGroupCode_13" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfFOB">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FOB" nillable="true" type="FOB" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FOB">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ShipmentMethodofPayment_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LocationQualifier_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Description_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TransportationTermsQualifierCode_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TransportationTermsCode_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LocationQualifier_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Description_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RiskofLossCode_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Description_09" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfCTP">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CTP" nillable="true" type="CTP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CTP">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ClassofTradeCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PriceIdentifierCode_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitPrice_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CompositeUnitofMeasure_05" type="C001" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PriceMultiplierQualifier_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Multiplier_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MonetaryAmount_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BasisofUnitPriceCode_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ConditionValue_10" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MultiplePriceQuantity_11" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="C001">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitorBasisforMeasurementCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Exponent_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Multiplier_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitorBasisforMeasurementCode_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Exponent_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Multiplier_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitorBasisforMeasurementCode_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Exponent_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Multiplier_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitorBasisforMeasurementCode_10" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Exponent_11" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Multiplier_12" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitorBasisforMeasurementCode_13" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Exponent_14" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Multiplier_15" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfPAM">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PAM" nillable="true" type="PAM" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PAM">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="QuantityQualifier_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CompositeUnitofMeasure_03" type="C001" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AmountQualifierCode_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MonetaryAmount_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitofTimePeriodorInterval_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DateTimeQualifier_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Date_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Time_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DateTimeQualifier_10" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Date_11" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Time_12" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PercentQualifier_13" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Percent_14" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="YesNoConditionorResponseCode_15" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfCSH">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CSH" nillable="true" type="CSH" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CSH">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SalesRequirementCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ActionCode_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Amount_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AccountNumber_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Date_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AgencyQualifierCode_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SpecialServicesCode_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceSubstitutionCode_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Percent_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PercentQualifier_10" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTC2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TC2" nillable="true" type="TC2" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TC2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CommodityCodeQualifier_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CommodityCode_02" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_SAC_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_SAC_850" nillable="true" type="Loop_SAC_850" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_SAC_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SAC" type="SAC" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CUR" type="CUR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SAC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AllowanceorChargeIndicator_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServicePromotionAllowanceorChargeCode_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AgencyQualifierCode_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AgencyServicePromotionAllowanceorChargeCode_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Amount_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AllowanceChargePercentQualifier_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Percent_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Rate_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitorBasisforMeasurementCode_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_10" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_11" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AllowanceorChargeMethodofHandlingCode_12" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferenceIdentification_13" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OptionNumber_14" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Description_15" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LanguageCode_16" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfITD">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ITD" nillable="true" type="ITD" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ITD">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="TermsTypeCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TermsBasisDateCode_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TermsDiscountPercent_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TermsDiscountDueDate_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TermsDiscountDaysDue_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TermsNetDueDate_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TermsNetDays_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TermsDiscountAmount_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TermsDeferredDueDate_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DeferredAmountDue_10" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PercentofInvoicePayable_11" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Description_12" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DayofMonth_13" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PaymentMethodCode_14" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Percent_15" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfDIS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DIS" nillable="true" type="DIS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DIS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="DiscountTermsTypeCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DiscountBaseQualifier_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DiscountBaseValue_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DiscountControlLimitQualifier_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DiscountControlLimit_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DiscountControlLimit_06" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="INC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="TermsTypeCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CompositeUnitofMeasure_02" type="C001" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MonetaryAmount_05" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfDTM">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DTM" nillable="true" type="DTM" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DTM">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="DateTimeQualifier_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Date_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Time_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TimeCode_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DateTimePeriodFormatQualifier_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DateTimePeriod_06" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLDT">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LDT" nillable="true" type="LDT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LDT">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="LeadTimeCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitofTimePeriodorInterval_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Date_04" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLIN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LIN" nillable="true" type="LIN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LIN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AssignedIdentification_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_10" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_11" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_12" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_13" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_14" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_15" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_16" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_17" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_18" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_19" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_20" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_21" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_22" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_23" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_24" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_25" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_26" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_27" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_28" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_29" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_30" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_31" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfSI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SI" nillable="true" type="SI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AgencyQualifierCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceCharacteristicsQualifier_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceCharacteristicsQualifier_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceCharacteristicsQualifier_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceCharacteristicsQualifier_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceCharacteristicsQualifier_10" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_11" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceCharacteristicsQualifier_12" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_13" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceCharacteristicsQualifier_14" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_15" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceCharacteristicsQualifier_16" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_17" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceCharacteristicsQualifier_18" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_19" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceCharacteristicsQualifier_20" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_21" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfPID">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PID" nillable="true" type="PID" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PID">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ItemDescriptionType_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductProcessCharacteristicCode_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AgencyQualifierCode_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductDescriptionCode_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Description_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SurfaceLayerPositionCode_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SourceSubqualifier_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="YesNoConditionorResponseCode_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LanguageCode_09" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfMEA">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MEA" nillable="true" type="MEA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MEA">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="MeasurementReferenceIDCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MeasurementQualifier_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MeasurementValue_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CompositeUnitofMeasure_04" type="C001" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RangeMinimum_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RangeMaximum_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MeasurementSignificanceCode_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MeasurementAttributeCode_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SurfaceLayerPositionCode_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MeasurementMethodorDevice_10" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfPWK">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PWK" nillable="true" type="PWK" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PWK">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ReportTypeCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReportTransmissionCode_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReportCopiesNeeded_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EntityIdentifierCode_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdentificationCodeQualifier_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdentificationCode_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Description_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ActionsIndicated_08" type="C002" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RequestCategoryCode_09" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="C002">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PaperworkReportActionCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PaperworkReportActionCode_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PaperworkReportActionCode_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PaperworkReportActionCode_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PaperworkReportActionCode_05" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfPKG">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PKG" nillable="true" type="PKG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PKG">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ItemDescriptionType_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PackagingCharacteristicCode_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AgencyQualifierCode_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PackagingDescriptionCode_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Description_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitLoadOptionCode_06" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTD1">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TD1" nillable="true" type="TD1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TD1">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PackagingCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LadingQuantity_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CommodityCodeQualifier_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CommodityCode_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LadingDescription_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WeightQualifier_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Weight_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitorBasisforMeasurementCode_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Volume_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitorBasisforMeasurementCode_10" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTD5">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TD5" nillable="true" type="TD5" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TD5">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="RoutingSequenceCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdentificationCodeQualifier_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdentificationCode_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TransportationMethodTypeCode_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Routing_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ShipmentOrderStatusCode_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LocationQualifier_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LocationIdentifier_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TransitDirectionCode_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TransitTimeDirectionQualifier_10" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TransitTime_11" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceLevelCode_12" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceLevelCode_13" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceLevelCode_14" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CountryCode_15" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTD3">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TD3" nillable="true" type="TD3" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TD3">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="EquipmentDescriptionCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EquipmentInitial_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EquipmentNumber_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WeightQualifier_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Weight_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitorBasisforMeasurementCode_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="OwnershipCode_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SealStatusCode_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SealNumber_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EquipmentType_10" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTD4">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TD4" nillable="true" type="TD4" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TD4">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SpecialHandlingCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="HazardousMaterialCodeQualifier_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="HazardousMaterialClassCode_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Description_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="YesNoConditionorResponseCode_05" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfMAN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MAN" nillable="true" type="MAN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MAN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="MarksandNumbersQualifier_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MarksandNumbers_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MarksandNumbers_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MarksandNumbersQualifier_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MarksandNumbers_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MarksandNumbers_06" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfPCT">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PCT" nillable="true" type="PCT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PCT">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PercentQualifier_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Percent_02" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfCTB">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CTB" nillable="true" type="CTB" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CTB">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="RestrictionsConditionsQualifier_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Description_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="QuantityQualifier_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AmountQualifierCode_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Amount_06" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTXI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TXI" nillable="true" type="TXI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TXI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="TaxTypeCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MonetaryAmount_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Percent_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TaxJurisdictionCodeQualifier_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TaxJurisdictionCode_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TaxExemptCode_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RelationshipCode_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DollarBasisForPercent_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TaxIdentificationNumber_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AssignedIdentification_10" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_AMT_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_AMT_850" nillable="true" type="Loop_AMT_850" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_AMT_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AMT" type="AMT" />
+      <xs:element minOccurs="0" maxOccurs="1" name="REF" type="ArrayOfREF" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DTM" type="DTM" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PCT" type="ArrayOfPCT" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FA1Loop" type="ArrayOfLoop_FA1_850" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AMT">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AmountQualifierCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MonetaryAmount_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CreditDebitFlagCode_03" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_FA1_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_FA1_850" nillable="true" type="Loop_FA1_850" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_FA1_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="FA1" type="FA1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FA2" type="ArrayOfFA2" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FA1">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AgencyQualifierCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServicePromotionAllowanceorChargeCode_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AllowanceorChargeIndicator_03" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfFA2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FA2" nillable="true" type="FA2" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FA2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="BreakdownStructureDetailCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FinancialInformationCode_02" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_N9_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_N9_850" nillable="true" type="Loop_N9_850" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_N9_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="N9" type="N9" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DTM" type="ArrayOfDTM" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MSG" type="ArrayOfMSG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="N9">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferenceIdentificationQualifier_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferenceIdentification_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FreeformDescription_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Date_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Time_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TimeCode_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferenceIdentifier_07" type="C040" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfMSG">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MSG" nillable="true" type="MSG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MSG">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="FreeFormMessageText_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PrinterCarriageControlCode_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Number_03" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_N1_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_N1_850" nillable="true" type="Loop_N1_850" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_N1_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="N1" type="N1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="N2" type="ArrayOfN2" />
+      <xs:element minOccurs="0" maxOccurs="1" name="N3" type="ArrayOfN3" />
+      <xs:element minOccurs="0" maxOccurs="1" name="N4" type="ArrayOfN4" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NX2" type="ArrayOfNX2" />
+      <xs:element minOccurs="0" maxOccurs="1" name="REF" type="ArrayOfREF" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PER" type="ArrayOfPER" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SI" type="ArrayOfSI" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FOB" type="FOB" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TD1" type="ArrayOfTD1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TD5" type="ArrayOfTD5" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TD3" type="ArrayOfTD3" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TD4" type="ArrayOfTD4" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PKG" type="ArrayOfPKG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="N1">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="EntityIdentifierCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Name_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdentificationCodeQualifier_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdentificationCode_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EntityRelationshipCode_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EntityIdentifierCode_06" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfN2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="N2" nillable="true" type="N2" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="N2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Name_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Name_02" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfN3">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="N3" nillable="true" type="N3" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="N3">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AddressInformation_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AddressInformation_02" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfN4">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="N4" nillable="true" type="N4" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="N4">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CityName_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="StateorProvinceCode_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PostalCode_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CountryCode_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LocationQualifier_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LocationIdentifier_06" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfNX2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NX2" nillable="true" type="NX2" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NX2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AddressComponentQualifier_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AddressInformation_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CountyDesignator_03" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_LM_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_LM_850" nillable="true" type="Loop_LM_850" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_LM_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="LM" type="LM" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LQ" type="ArrayOfLQ" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LM">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AgencyQualifierCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SourceSubqualifier_02" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLQ">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LQ" nillable="true" type="LQ" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LQ">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CodeListQualifierCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IndustryCode_02" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_SPI_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_SPI_850" nillable="true" type="Loop_SPI_850" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_SPI_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SPI" type="SPI" />
+      <xs:element minOccurs="0" maxOccurs="1" name="REF" type="ArrayOfREF" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DTM" type="ArrayOfDTM" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MSG" type="ArrayOfMSG" />
+      <xs:element minOccurs="0" maxOccurs="1" name="N1Loop" type="ArrayOfLoop_N1_850_2" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CB1Loop" type="ArrayOfLoop_CB1_850" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SPI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SecurityLevelCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferenceIdentificationQualifier_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferenceIdentification_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EntityTitle_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EntityPurpose_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EntityStatusCode_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TransactionSetPurposeCode_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReportTypeCode_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SecurityLevelCode_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AgencyQualifierCode_10" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SourceSubqualifier_11" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AssignedNumber_12" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CertificationTypeCode_13" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProposalDataDetailIdentifierCode_14" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="HierarchicalStructureCode_15" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_N1_850_2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_N1_850_2" nillable="true" type="Loop_N1_850_2" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_N1_850_2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="N1" type="N1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="N2" type="ArrayOfN2" />
+      <xs:element minOccurs="0" maxOccurs="1" name="N3" type="ArrayOfN3" />
+      <xs:element minOccurs="0" maxOccurs="1" name="N4" type="N4" />
+      <xs:element minOccurs="0" maxOccurs="1" name="REF" type="ArrayOfREF" />
+      <xs:element minOccurs="0" maxOccurs="1" name="G61" type="G61" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MSG" type="ArrayOfMSG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="G61">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ContactFunctionCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Name_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CommunicationNumberQualifier_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CommunicationNumber_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ContactInquiryReference_05" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_CB1_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_CB1_850" nillable="true" type="Loop_CB1_850" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_CB1_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CB1" type="CB1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="REF" type="ArrayOfREF" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DTM" type="ArrayOfDTM" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LDT" type="LDT" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MSG" type="ArrayOfMSG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CB1">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AcquisitionDataCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FinancingTypeCode_02" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_ADV_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_ADV_850" nillable="true" type="Loop_ADV_850" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_ADV_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ADV" type="ADV" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DTM" type="ArrayOfDTM" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MTX" type="ArrayOfMTX" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ADV">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AgencyQualifierCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceCharacteristicsQualifier_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RangeMinimum_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RangeMaximum_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Category_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ServiceCharacteristicsQualifier_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MeasurementValue_07" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfMTX">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MTX" nillable="true" type="MTX" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MTX">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="NoteReferenceCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MessageText_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MessageText_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PrinterCarriageControlCode_04" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_PO1_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_PO1_850" nillable="true" type="Loop_PO1_850" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_PO1_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PO1" type="PO1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LIN" type="ArrayOfLIN" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SI" type="ArrayOfSI" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CUR" type="CUR" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CN1" type="CN1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PO3" type="ArrayOfPO3" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CTPLoop" type="ArrayOfLoop_CTP_850" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PAM" type="ArrayOfPAM" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MEA" type="ArrayOfMEA" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PIDLoop" type="ArrayOfLoop_PID_850" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PWK" type="ArrayOfPWK" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PO4" type="ArrayOfPO4" />
+      <xs:element minOccurs="0" maxOccurs="1" name="REF" type="ArrayOfREF" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PER" type="ArrayOfPER" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SACLoop" type="ArrayOfLoop_SAC_850_2" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IT8" type="IT8" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CSH" type="ArrayOfCSH" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ITD" type="ArrayOfITD" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DIS" type="ArrayOfDIS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="INC" type="INC" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TAX" type="ArrayOfTAX" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FOB" type="ArrayOfFOB" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SDQ" type="ArrayOfSDQ" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IT3" type="ArrayOfIT3" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DTM" type="ArrayOfDTM" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TC2" type="ArrayOfTC2" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TD1" type="TD1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TD5" type="ArrayOfTD5" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TD3" type="ArrayOfTD3" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TD4" type="ArrayOfTD4" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PCT" type="ArrayOfPCT" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MAN" type="ArrayOfMAN" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MSG" type="ArrayOfMSG" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SPI" type="ArrayOfSPI" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TXI" type="ArrayOfTXI" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CTB" type="ArrayOfCTB" />
+      <xs:element minOccurs="0" maxOccurs="1" name="QTYLoop" type="ArrayOfLoop_QTY_850" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SCHLoop" type="ArrayOfLoop_SCH_850" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PKGLoop" type="ArrayOfLoop_PKG_850" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LSLoop" type="Loop_LS_850" />
+      <xs:element minOccurs="0" maxOccurs="1" name="N9Loop" type="ArrayOfLoop_N9_850_2" />
+      <xs:element minOccurs="0" maxOccurs="1" name="N1Loop" type="ArrayOfLoop_N1_850_3" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SLNLoop" type="ArrayOfLoop_SLN_850" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AMTLoop" type="ArrayOfLoop_AMT_850_2" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LMLoop" type="ArrayOfLoop_LM_850" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PO1">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AssignedIdentification_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="QuantityOrdered_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitorBasisforMeasurementCode_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitPrice_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BasisofUnitPriceCode_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_10" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_11" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_12" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_13" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_14" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_15" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_16" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_17" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_18" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_19" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_20" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_21" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_22" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_23" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_24" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_25" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CN1">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ContractTypeCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MonetaryAmount_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Percent_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ReferenceIdentification_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TermsDiscountPercent_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="VersionIdentifier_06" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfPO3">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PO3" nillable="true" type="PO3" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PO3">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="ChangeReasonCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Date_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PriceIdentifierCode_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitPrice_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BasisofUnitPriceCode_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitorBasisforMeasurementCode_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Description_08" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_CTP_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_CTP_850" nillable="true" type="Loop_CTP_850" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_CTP_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CTP" type="CTP" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CUR" type="CUR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_PID_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_PID_850" nillable="true" type="Loop_PID_850" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_PID_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PID" type="PID" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MEA" type="ArrayOfMEA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfPO4">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PO4" nillable="true" type="PO4" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PO4">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Pack_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Size_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitorBasisforMeasurementCode_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PackagingCode_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WeightQualifier_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="GrossWeightperPack_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitorBasisforMeasurementCode_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="GrossVolumeperPack_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitorBasisforMeasurementCode_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Length_10" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Width_11" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Height_12" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitorBasisforMeasurementCode_13" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="InnerPack_14" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SurfaceLayerPositionCode_15" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AssignedIdentification_16" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AssignedIdentification_17" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Number_18" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_SAC_850_2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_SAC_850_2" nillable="true" type="Loop_SAC_850_2" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_SAC_850_2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SAC" type="SAC" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CUR" type="CUR" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CTP" type="CTP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IT8">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SalesRequirementCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ActionCode_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Amount_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AccountNumber_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Date_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AgencyQualifierCode_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceSubstitutionCode_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_10" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_11" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_12" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_13" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_14" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_15" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_16" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_17" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_18" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_19" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_20" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_21" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_22" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_23" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_24" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_25" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_26" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_27" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfSDQ">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SDQ" nillable="true" type="SDQ" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SDQ">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitorBasisforMeasurementCode_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdentificationCodeQualifier_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdentificationCode_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdentificationCode_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdentificationCode_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdentificationCode_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_10" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdentificationCode_11" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_12" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdentificationCode_13" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_14" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdentificationCode_15" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_16" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdentificationCode_17" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_18" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdentificationCode_19" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_20" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="IdentificationCode_21" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_22" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LocationIdentifier_23" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfIT3">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IT3" nillable="true" type="IT3" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IT3">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="NumberofUnitsShipped_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitorBasisforMeasurementCode_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ShipmentOrderStatusCode_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="QuantityDifference_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ChangeReasonCode_05" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfSPI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SPI" nillable="true" type="SPI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_QTY_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_QTY_850" nillable="true" type="Loop_QTY_850" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_QTY_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="QTY" type="QTY" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SI" type="ArrayOfSI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="QTY">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="QuantityQualifier_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CompositeUnitofMeasure_03" type="C001" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FreeFormMessage_04" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_SCH_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_SCH_850" nillable="true" type="Loop_SCH_850" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_SCH_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SCH" type="SCH" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TD1" type="ArrayOfTD1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TD5" type="ArrayOfTD5" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TD3" type="ArrayOfTD3" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TD4" type="ArrayOfTD4" />
+      <xs:element minOccurs="0" maxOccurs="1" name="REF" type="ArrayOfREF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SCH">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitorBasisforMeasurementCode_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="EntityIdentifierCode_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Name_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DateTimeQualifier_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Date_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Time_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DateTimeQualifier_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Date_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Time_10" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RequestReferenceNumber_11" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AssignedIdentification_12" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_PKG_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_PKG_850" nillable="true" type="Loop_PKG_850" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_PKG_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PKG" type="PKG" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MEA" type="ArrayOfMEA" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_LS_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="LS" type="LS" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LDTLoop" type="ArrayOfLoop_LDT_850" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LE" type="LE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="LoopIdentifierCode_01" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_LDT_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_LDT_850" nillable="true" type="Loop_LDT_850" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_LDT_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="LDT" type="LDT" />
+      <xs:element minOccurs="0" maxOccurs="1" name="QTY" type="ArrayOfQTY" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MSG" type="MSG" />
+      <xs:element minOccurs="0" maxOccurs="1" name="REF" type="ArrayOfREF" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LMLoop" type="ArrayOfLoop_LM_850" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfQTY">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QTY" nillable="true" type="QTY" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="LE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="LoopIdentifierCode_01" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_N9_850_2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_N9_850_2" nillable="true" type="Loop_N9_850_2" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_N9_850_2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="N9" type="N9" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DTM" type="ArrayOfDTM" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MEA" type="ArrayOfMEA" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MSG" type="ArrayOfMSG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_N1_850_3">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_N1_850_3" nillable="true" type="Loop_N1_850_3" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_N1_850_3">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="N1" type="N1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="N2" type="ArrayOfN2" />
+      <xs:element minOccurs="0" maxOccurs="1" name="N3" type="ArrayOfN3" />
+      <xs:element minOccurs="0" maxOccurs="1" name="N4" type="N4" />
+      <xs:element minOccurs="0" maxOccurs="1" name="QTY" type="ArrayOfQTY" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NX2" type="ArrayOfNX2" />
+      <xs:element minOccurs="0" maxOccurs="1" name="REF" type="ArrayOfREF" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PER" type="ArrayOfPER" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SI" type="ArrayOfSI" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DTM" type="DTM" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FOB" type="FOB" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SCH" type="ArrayOfSCH" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TD1" type="ArrayOfTD1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TD5" type="ArrayOfTD5" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TD3" type="ArrayOfTD3" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TD4" type="ArrayOfTD4" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PKG" type="ArrayOfPKG" />
+      <xs:element minOccurs="0" maxOccurs="1" name="LDTLoop" type="ArrayOfLoop_LDT_850_2" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfSCH">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SCH" nillable="true" type="SCH" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_LDT_850_2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_LDT_850_2" nillable="true" type="Loop_LDT_850_2" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_LDT_850_2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="LDT" type="LDT" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MAN" type="ArrayOfMAN" />
+      <xs:element minOccurs="0" maxOccurs="1" name="QTY" type="ArrayOfQTY" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MSG" type="MSG" />
+      <xs:element minOccurs="0" maxOccurs="1" name="REF" type="ArrayOfREF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_SLN_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_SLN_850" nillable="true" type="Loop_SLN_850" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_SLN_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SLN" type="SLN" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MSG" type="ArrayOfMSG" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SI" type="ArrayOfSI" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PID" type="ArrayOfPID" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PO3" type="ArrayOfPO3" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TC2" type="ArrayOfTC2" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ADV" type="ArrayOfADV" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DTM" type="ArrayOfDTM" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CTP" type="ArrayOfCTP" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PAM" type="ArrayOfPAM" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PO4" type="PO4" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TAX" type="ArrayOfTAX" />
+      <xs:element minOccurs="0" maxOccurs="1" name="N9Loop" type="ArrayOfLoop_N9_850_3" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SACLoop" type="ArrayOfLoop_SAC_850_2" />
+      <xs:element minOccurs="0" maxOccurs="1" name="QTYLoop" type="ArrayOfLoop_QTY_850" />
+      <xs:element minOccurs="0" maxOccurs="1" name="N1Loop" type="ArrayOfLoop_N1_850_4" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SLN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AssignedIdentification_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AssignedIdentification_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RelationshipCode_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Quantity_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="CompositeUnitofMeasure_05" type="C001" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitPrice_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BasisofUnitPriceCode_07" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="RelationshipCode_08" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_09" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_10" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_11" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_12" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_13" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_14" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_15" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_16" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_17" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_18" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_19" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_20" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_21" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_22" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_23" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_24" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_25" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_26" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceIDQualifier_27" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ProductServiceID_28" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfADV">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ADV" nillable="true" type="ADV" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_N9_850_3">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_N9_850_3" nillable="true" type="Loop_N9_850_3" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_N9_850_3">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="N9" type="N9" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DTM" type="ArrayOfDTM" />
+      <xs:element minOccurs="0" maxOccurs="1" name="MSG" type="ArrayOfMSG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_N1_850_4">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_N1_850_4" nillable="true" type="Loop_N1_850_4" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_N1_850_4">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="N1" type="N1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="N2" type="ArrayOfN2" />
+      <xs:element minOccurs="0" maxOccurs="1" name="N3" type="ArrayOfN3" />
+      <xs:element minOccurs="0" maxOccurs="1" name="N4" type="N4" />
+      <xs:element minOccurs="0" maxOccurs="1" name="NX2" type="ArrayOfNX2" />
+      <xs:element minOccurs="0" maxOccurs="1" name="REF" type="ArrayOfREF" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PER" type="ArrayOfPER" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SI" type="ArrayOfSI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfLoop_AMT_850_2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Loop_AMT_850_2" nillable="true" type="Loop_AMT_850_2" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_AMT_850_2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="AMT" type="AMT" />
+      <xs:element minOccurs="0" maxOccurs="1" name="REF" type="REF" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PCT" type="ArrayOfPCT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Loop_CTT_850">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="CTT" type="CTT" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AMT" type="AMT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CTT">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="NumberofLineItems_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="HashTotal_02" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Weight_03" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitorBasisforMeasurementCode_04" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Volume_05" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UnitorBasisforMeasurementCode_06" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Description_07" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="NumberofIncludedSegments_01" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TransactionSetControlNumber_02" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
