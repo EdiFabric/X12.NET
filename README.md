@@ -11,8 +11,8 @@ With the EDI Tools for .NET you can:
 * Customize EDI templates per customer and comply with any format
 * Import\Export to\from XML
 * Import\Export to\from JSON
-* Use the templates as entityFramework POCOs
-* Generate DB structure wiht Code First
+* Use the templates as entityFramework POCOs (X12 only)
+* Generate DB structure wiht Code First (X12 only)
 
 EDI Templates are included for the following standards:
 
