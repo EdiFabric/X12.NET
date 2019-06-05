@@ -1,8 +1,8 @@
-## [THE FREE EDI API](https://www.edifabric.com/edi-api.html)
+#### [Free Online EDI Translator](https://www.edifabric.com/edi-api.html)
 
-## [EDI Tools for .NET](https://www.edifabric.com/edi-framework-features.html)
+## [EDI Tools for .NET](https://www.edifabric.com/edi-framework-features.html) 
 
-With the EDI API or EDI Tools for .NET you can:
+With the EDI Tools for .NET you can:
 
 * Parse\Read\Translate any EDI file
 * Create\Write\Generate EDI files
@@ -11,35 +11,15 @@ With the EDI API or EDI Tools for .NET you can:
 * Customize EDI templates per customer and comply with any format
 * Import\Export to\from XML
 * Import\Export to\from JSON
+* Use the templates as entityFramework POCOs
+* Generate DB structure wiht Code First
 
 EDI Templates are included for the following standards:
 
-* [EDIFACT](https://support.edifabric.com/hc/en-us/sections/360000070531-EDIFACT-Resources)
-* [EANCOM](https://support.edifabric.com/hc/en-us/articles/360000349012-EANCOM-templates-for-versions-D93A-D96A-and-D01B-)
-* [PNRGOV](https://support.edifabric.com/hc/en-us/articles/360000349592-PNRGOV-templates)
 * [X12](https://support.edifabric.com/hc/en-us/sections/360000067292-X12-Resources)
 * [HIPAA](https://support.edifabric.com/hc/en-us/articles/360000372751-HIPAA-templates-270-271-276-277-278-834-835-837)
-* [VDA](https://support.edifabric.com/hc/en-us/articles/360000367932-VDA-templates-4905-4906-4908-4913-4915)
-
-Custom EDI Templates for US Customs ([CUSCAR](https://github.com/EdiFabric/Sdk/blob/master/EdiFabric.Sdk.Edifact.Templates.USCustoms/EF_EDIFACT_D03B_CUSCAR.cs) and [PAXLST](https://github.com/EdiFabric/Sdk/blob/master/EdiFabric.Sdk.Edifact.Templates.USCustoms/EF_EDIFACT_D03B_PAXLST.cs)) and SMDG ([BAPLIE](https://github.com/EdiFabric/Sdk/blob/master/EdiFabric.Sdk.Edifact.Templates.Smdg/EF_EDIFACT_D13B_BAPLIE.cs))
 
 Examples are included for the following transactions:
-
-EDIFACT
-* [EDIFACT BAPLIE](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Edifact.BAPLIE)
-* [EDIFACT CUSCAR](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Edifact.CUSCAR)
-* [EDIFACT DESADV](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Edifact.DESADV)
-* [EDIFACT IFTMIN](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Edifact.IFTMIN)
-* [EDIFACT IFTSTA](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Edifact.IFTSTA)
-* [EDIFACT INVOIC](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Edifact.INVOIC)
-* [EDIFACT ORDERS](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Edifact.ORDERS)
-* [EDIFACT ORDRSP](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Edifact.ORDRSP)
-* [EDIFACT PAXLST](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Edifact.PAXLST)
-* [IATA PNRGOV](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Edifact.PNRGOV)
-* [EDIFACT PRICAT](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Edifact.PRICAT)
-
-EANCOM
-* [EANCOM INVOIC](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Eancom.INVOIC)
 
 HIPAA
 * [HIPAA 270](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Hipaa.T270)
