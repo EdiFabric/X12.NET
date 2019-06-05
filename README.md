@@ -37,7 +37,7 @@ HIPAA
 * [HIPAA 837D](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Hipaa.T837D)
 
 X12
-* [X12 210](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.X12.T210)
+* [X12 210](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T210/Program.cs)
 * [X12 214](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.X12.T214)
 * [X12 404](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.X12.T404)
 * [X12 810](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.X12.T810)
