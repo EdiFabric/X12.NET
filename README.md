@@ -24,17 +24,17 @@ EDI Templates are included for the following standards:
 Examples are included for the following transactions:
 
 HIPAA
-* [HIPAA 270](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Hipaa.T270)
-* [HIPAA 271](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Hipaa.T271)
-* [HIPAA 276](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Hipaa.T276)
-* [HIPAA 277](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Hipaa.T277)
-* [HIPAA 278](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Hipaa.T278)
-* [HIPAA 820](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Hipaa.T820)
-* [HIPAA 834](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Hipaa.T834)
-* [HIPAA 835](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Hipaa.T835)
-* [HIPAA 837P](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Hipaa.T837P)
-* [HIPAA 837I](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Hipaa.T837I)
-* [HIPAA 837D](https://github.com/EdiFabric/Sdk/tree/master/EdiFabric.Sdk.Hipaa.T837D)
+* [HIPAA 270](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T270/Program.cs)
+* [HIPAA 271](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T271/Program.cs)
+* [HIPAA 276](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T276/Program.cs)
+* [HIPAA 277](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T277/Program.cs)
+* [HIPAA 278](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T278/Program.cs)
+* [HIPAA 820](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T820/Program.cs)
+* [HIPAA 834](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T834/Program.cs)
+* [HIPAA 835](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T835/Program.cs)
+* [HIPAA 837P](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T837P/Program.cs)
+* [HIPAA 837I](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T837I/Program.cs)
+* [HIPAA 837D](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T837D/Program.cs)
 
 X12
 * [X12 210](https://github.com/EdiFabric/X12-Examples/blob/master/EdiFabric.Examples.X12.T210/Program.cs)
