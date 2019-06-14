@@ -2,6 +2,7 @@
 
 #### [Free Online EDI Translator](https://www.edifabric.com/edi-api.html)
 #### [Quickstart - Translate EDI file](https://support.edifabric.com/hc/en-us/articles/360000280532)
+#### [Tutorial](https://support.edifabric.com/hc/en-us/articles/360000291511-Tutorial-EDI-NET-Tools-Basics)
 #### [Benchmark](https://support.edifabric.com/hc/en-us/articles/360002327372-EDI-Parser-Benchmark)
 #### [Documentation](https://support.edifabric.com/hc/en-us)
 ----
