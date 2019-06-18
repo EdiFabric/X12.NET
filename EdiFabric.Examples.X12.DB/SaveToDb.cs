@@ -21,18 +21,17 @@ namespace EdiFabric.Examples.X12.DB
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\PurchaseOrder.txt");
+
+            List<IEdiItem> ediItems;
+            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V4010.NoValidation"))
+                ediItems = ediReader.ReadToEnd().ToList();
+
+            var purchaseOrders = ediItems.OfType<TS850>();
+
             using (var db = new X12Context())
             {
-                Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\PurchaseOrder.txt");
-
-                List<IEdiItem> ediItems;
-                using (var ediReader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V4010.NoValidation"))
-                    ediItems = ediReader.ReadToEnd().ToList();
-
-                var purchaseOrders = ediItems.OfType<TS850>();
-
                 db.TS850.AddRange(purchaseOrders);
-
                 db.SaveChanges();
             }
         }

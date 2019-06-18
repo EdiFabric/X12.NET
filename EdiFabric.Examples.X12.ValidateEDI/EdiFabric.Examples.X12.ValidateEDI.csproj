@@ -52,6 +52,7 @@
     <Compile Include="Validate810.cs" />
     <Compile Include="Validate837P.cs" />
     <Compile Include="Validate850.cs" />
+    <Compile Include="ValidateDataElementTypes.cs" />
     <Compile Include="ValidateCustomEDICodes.cs" />
     <Compile Include="ValidateEDITransationsWithCustomCode.cs" />
     <Compile Include="Program.cs" />

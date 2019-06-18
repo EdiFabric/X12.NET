@@ -16,6 +16,10 @@
             //  Validate transactions with custom code
             ValidateEDITransationsWithCustomCode.Run();
 
+            //  Validate data element alpha and alphanumeric data types
+            ValidateDataElementTypes.Basic();
+            ValidateDataElementTypes.Extended();
+
             //  Validate control segments, ISA and GS
             ValidateISAorGS.Run();
 
