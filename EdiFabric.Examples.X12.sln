@@ -5,6 +5,7 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12 Sample Files", "X12 Sample Files", "{C742A036-9230-4562-8E55-F3C26024EA18}"
 	ProjectSection(SolutionItems) = preProject
+		Files\X12\997.txt = Files\X12\997.txt
 		Files\X12\ApplicationAdvice.txt = Files\X12\ApplicationAdvice.txt
 		Files\X12\CorruptIsa.txt = Files\X12\CorruptIsa.txt
 		Files\X12\CorruptSt.txt = Files\X12\CorruptSt.txt

@@ -17,6 +17,8 @@
 
             //  Generate 997 with explicit control numbers
             Generate997WithCustomControlNumbers.Run();
+
+            Read997.Run();
         }
     }
 }

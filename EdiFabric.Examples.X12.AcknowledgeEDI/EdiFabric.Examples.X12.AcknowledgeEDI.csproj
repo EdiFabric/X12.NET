@@ -57,6 +57,7 @@
     <Compile Include="Generate997ForDuplicateTransaction.cs" />
     <Compile Include="Generate997WithCustomControlNumbers.cs" />
     <Compile Include="GenerateInvalid997.cs" />
+    <Compile Include="Read997.cs" />
     <Compile Include="GenerateValid997.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
