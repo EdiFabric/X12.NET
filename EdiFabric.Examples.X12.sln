@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12 Sample Files", "X12 Sample Files", "{C742A036-9230-4562-8E55-F3C26024EA18}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12 Files", "X12 Files", "{C742A036-9230-4562-8E55-F3C26024EA18}"
 	ProjectSection(SolutionItems) = preProject
 		Files\X12\997.txt = Files\X12\997.txt
 		Files\X12\ApplicationAdvice.txt = Files\X12\ApplicationAdvice.txt
@@ -50,7 +50,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.Writ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.AcknowledgeEDI", "EdiFabric.Examples.X12.AcknowledgeEDI\EdiFabric.Examples.X12.AcknowledgeEDI.csproj", "{DB6CB5CD-0C7B-46DE-B3FB-A3BE07B0DF2E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12 Sample Templates", "X12 Sample Templates", "{C9632B8F-1BD8-4563-894D-CE8A373C191D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12 Templates", "X12 Templates", "{C9632B8F-1BD8-4563-894D-CE8A373C191D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.CSV", "EdiFabric.Examples.X12.CSV\EdiFabric.Examples.X12.CSV.csproj", "{10CC4110-53B0-4492-A021-70F71D22C30B}"
 EndProject
@@ -72,7 +72,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.Temp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.Templates.V4010.NoValidation", "EdiFabric.Examples.X12.Templates.V4010.NoValidation\EdiFabric.Examples.X12.Templates.V4010.NoValidation.csproj", "{D2F91E2E-85BB-449F-9AB4-8F69A0F00907}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12 Sample Transactions", "X12 Sample Transactions", "{959E4FE3-739E-45BF-AF9F-33667E57D02B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12 Transaction Examples", "X12 Transaction Examples", "{959E4FE3-739E-45BF-AF9F-33667E57D02B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T210", "EdiFabric.Examples.X12.T210\EdiFabric.Examples.X12.T210.csproj", "{95EC54BC-C5F7-4A38-BFF7-855550B61392}"
 EndProject
@@ -98,7 +98,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T861
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T945", "EdiFabric.Examples.X12.T945\EdiFabric.Examples.X12.T945.csproj", "{DE7423BA-F0E8-4176-A695-613AC11842EE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HIPAA Sample Files", "HIPAA Sample Files", "{F3987D29-0500-4262-BF7C-777B29B36B81}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HIPAA Files", "HIPAA Files", "{F3987D29-0500-4262-BF7C-777B29B36B81}"
 	ProjectSection(SolutionItems) = preProject
 		Files\HIPAA\BenefitEnrollment.txt = Files\HIPAA\BenefitEnrollment.txt
 		Files\HIPAA\ClaimPayment.txt = Files\HIPAA\ClaimPayment.txt
@@ -113,9 +113,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HIPAA Sample Files", "HIPAA
 		Files\HIPAA\ServicesReview.txt = Files\HIPAA\ServicesReview.txt
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HIPAA Sample Templates", "HIPAA Sample Templates", "{C3D4C94F-8AD1-484C-9406-9E2CEE64CF01}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HIPAA Templates", "HIPAA Templates", "{C3D4C94F-8AD1-484C-9406-9E2CEE64CF01}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HIPAA Sample Transactions", "HIPAA Sample Transactions", "{7A8FC005-457B-49C1-98FB-858A2972D180}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HIPAA Transaction Examples", "HIPAA Transaction Examples", "{7A8FC005-457B-49C1-98FB-858A2972D180}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.Templates.V5010", "EdiFabric.Examples.X12.Templates.V5010\EdiFabric.Examples.X12.Templates.V5010.csproj", "{BD94C9CA-090C-457C-8672-404E1499D461}"
 EndProject
