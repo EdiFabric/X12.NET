@@ -5,6 +5,8 @@
 #### [Tutorial](https://support.edifabric.com/hc/en-us/articles/360000291511-Tutorial-EDI-NET-Tools-Basics)
 #### [Benchmark](https://support.edifabric.com/hc/en-us/articles/360002327372-EDI-Parser-Benchmark)
 #### [Documentation](https://support.edifabric.com/hc/en-us)
+#### [HIPAA Templates](https://sowl.co/ieNni)
+#### [X12 Templates](https://sowl.co/nfHiX)
 ----
 
 With the EDI Tools for .NET you can:
