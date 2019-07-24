@@ -102,6 +102,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HIPAA Files", "HIPAA Files"
 	ProjectSection(SolutionItems) = preProject
 		Files\HIPAA\BenefitEnrollment.txt = Files\HIPAA\BenefitEnrollment.txt
 		Files\HIPAA\ClaimPayment.txt = Files\HIPAA\ClaimPayment.txt
+		Files\HIPAA\ClaimPaymentEVV.txt = Files\HIPAA\ClaimPaymentEVV.txt
 		Files\HIPAA\DentalClaim.txt = Files\HIPAA\DentalClaim.txt
 		Files\HIPAA\GenericRequest.txt = Files\HIPAA\GenericRequest.txt
 		Files\HIPAA\GenericResponse.txt = Files\HIPAA\GenericResponse.txt

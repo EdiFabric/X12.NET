@@ -1,31 +1,24 @@
-﻿using EdiFabric.Framework.Readers;
+﻿using EdiFabric.Core.Model.Edi;
+using EdiFabric.Core.Model.Edi.X12;
+using EdiFabric.Examples.X12.Common;
+using EdiFabric.Framework.Readers;
 using EdiFabric.Framework.Writers;
 using EdiFabric.Templates.Hipaa5010;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using EdiFabric.Core.Model.Edi;
-using EdiFabric.Core.Model.Edi.X12;
-using EdiFabric.Examples.X12.Common;
 
 namespace EdiFabric.Examples.X12.T837P
 {
-    class Program
+    class EVVExample
     {
-        static void Main(string[] args)
-        {
-            Read();
-            Write();
-            EVVExample.Read();
-            EVVExample.Write();
-        }
-
         /// <summary>
         /// Read Claim
         /// </summary>
-        static void Read()
+        public static void Read()
         {
-            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\Hipaa\ClaimPayment.txt");
+            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\Hipaa\ClaimPaymentEVV.txt");
 
             List<IEdiItem> ediItems;
             using (var ediReader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V5010.NoValidation"))
@@ -35,6 +28,8 @@ namespace EdiFabric.Examples.X12.T837P
 
             foreach (var transaction in transactions)
             {
+                var xml = transaction.Serialize();                
+
                 if (transaction.HasErrors)
                 {
                     //  partially parsed
@@ -46,13 +41,13 @@ namespace EdiFabric.Examples.X12.T837P
         /// <summary>
         /// Write Claim
         /// </summary>
-        static void Write()
+        public static void Write()
         {
             var transaction = BuildClaim("1");
 
             using (var stream = new MemoryStream())
             {
-                using (var writer = new X12Writer(stream))
+                using (var writer = new X12Writer(stream, new X12WriterSettings { Postfix = Environment.NewLine }))
                 {
                     writer.Write(SegmentBuilders.BuildIsa("1"));
                     writer.Write(SegmentBuilders.BuildGs("1"));
@@ -63,9 +58,10 @@ namespace EdiFabric.Examples.X12.T837P
             }
         }
 
+
         /// <summary>
-        /// Build claim.
-        /// Original from http://www.x12.org/examples/005010X222/commercial-health-insurance/
+        /// Build claim with EVV.
+        /// Original from https://www.dmas.virginia.gov/files/links/685/AD%20Services%20837P%20with%20EVV%20Information%20Example%20(01.29.2019).pdf
         /// </summary>
         public static TS837P BuildClaim(string controlNumber)
         {
@@ -226,14 +222,15 @@ namespace EdiFabric.Examples.X12.T837P
             //  Begin 2010BA Loop SUBSCRIBER 
             loop2000B.AllNM1.Loop2010BA = new Loop_2010BA_837P();
 
-            //  SUBSCRIBER name is Jane Smith
+            //  1)EVV- The Individual Receiving the Service(s), Medicaid ID
             loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName = new NM1_InsuredName();
             loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName.EntityIdentifierCode_01 = "IL";
             loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName.EntityTypeQualifier_02 = "1";
-            loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName.ResponseContactLastorOrganizationName_03 = "SMITH";
-            loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName.ResponseContactFirstName_04 = "JANE";
+            loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName.ResponseContactLastorOrganizationName_03 = "SOLO";
+            loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName.ResponseContactFirstName_04 = "HANS";
+            loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName.ResponseContactMiddleName_05 = "RYAN";
             loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName.IdentificationCodeQualifier_08 = "MI";
-            loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName.ResponseContactIdentifier_09 = "JS00111223333";
+            loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName.ResponseContactIdentifier_09 = "123456789012";
 
             //  SUBSCRIBER SEX: F and DOB: 05 / 01 / 43
             loop2000B.AllNM1.Loop2010BA.DMG_SubscriberDemographicInformation = new DMG_DependentDemographicInformation();
@@ -360,119 +357,84 @@ namespace EdiFabric.Examples.X12.T837P
             loop24001.LX_ServiceLineNumber = new LX_HeaderNumber();
             loop24001.LX_ServiceLineNumber.AssignedNumber_01 = "1";
 
-            //  SERVICES: Office visit, intermediate service, established patient, throat culture.
-            //  CHARGES: Office first visit = $40.00
+            //  2)EVV- The Type of Service Performed, Service Line Procedure Code SV101-1
+            //  3)EVV - The Time the Services Begins and Ends, Service Line Description SV101-7
             loop24001.SV1_ProfessionalService = new SV1_ProfessionalService();
             loop24001.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01 = new C003_CompositeMedicalProcedureIdentifier();
             loop24001.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProductorServiceIDQualifier_01 = "HC";
-            loop24001.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProcedureCode_02 = "99213";
-            loop24001.SV1_ProfessionalService.LineItemChargeAmount_02 = "40";
+            loop24001.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProcedureCode_02 = "S5135";
+            loop24001.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProductServiceID_08 = "1230-1630";
+            loop24001.SV1_ProfessionalService.LineItemChargeAmount_02 = "50";
             loop24001.SV1_ProfessionalService.UnitorBasisforMeasurementCode_03 = "UN";
-            loop24001.SV1_ProfessionalService.ServiceUnitCount_04 = "1";
+            loop24001.SV1_ProfessionalService.ServiceUnitCount_04 = "2";
+            loop24001.SV1_ProfessionalService.PlaceofServiceCode_05 = "11";
             loop24001.SV1_ProfessionalService.CompositeDiagnosisCodePointer_07 = new C004_CompositeDiagnosisCodePointer();
             loop24001.SV1_ProfessionalService.CompositeDiagnosisCodePointer_07.DiagnosisCodePointer_01 = "1";
 
             //  Occurrence of DTP in any order
             loop24001.AllDTP = new All_DTP_837P();
 
-            //  INITIAL VISIT: DOS=10/03/06. POS=Office
+            //  4)EVV- The Date(s) of Service Performed, Service Line Dates of Service 
             loop24001.AllDTP.DTP_Date_ServiceDate = new DTP_ClaimLevelServiceDate();
             loop24001.AllDTP.DTP_Date_ServiceDate.DateTimeQualifier_01 = "472";
-            loop24001.AllDTP.DTP_Date_ServiceDate.DateTimePeriodFormatQualifier_02 = "D8";
-            loop24001.AllDTP.DTP_Date_ServiceDate.AccidentDate_03 = "20061003";
+            loop24001.AllDTP.DTP_Date_ServiceDate.DateTimePeriodFormatQualifier_02 = "RD8";
+            loop24001.AllDTP.DTP_Date_ServiceDate.AccidentDate_03 = "20160302-20160302";
+
+            //  5)EVV- The Individual Providing the Services (2 Segments)
+            loop24001.AllNM1 = new All_NM1_837P_5();
+
+            loop24001.AllNM1.Loop2420D = new Loop_2420D_837P();
+
+            //  Attendant's Name
+            loop24001.AllNM1.Loop2420D.NM1_SupervisingProviderName = new NM1_OtherPayerSupervisingProvider();
+            loop24001.AllNM1.Loop2420D.NM1_SupervisingProviderName.EntityIdentifierCode_01 = "DQ";
+            loop24001.AllNM1.Loop2420D.NM1_SupervisingProviderName.EntityTypeQualifier_02 = "1";
+            loop24001.AllNM1.Loop2420D.NM1_SupervisingProviderName.ResponseContactLastorOrganizationName_03 = "JONES";
+            loop24001.AllNM1.Loop2420D.NM1_SupervisingProviderName.ResponseContactFirstName_04 = "DEVIL";
+
+            loop24001.AllNM1.Loop2420D.REF_SupervisingProviderSecondaryIdentification = new List<REF_AssistantSurgeonSecondaryIdentification>();
+
+            //  Attendant's ID 
+            var refAssistantSurgeonSecondaryIdentification = new REF_AssistantSurgeonSecondaryIdentification();
+            refAssistantSurgeonSecondaryIdentification.ReferenceIdentificationQualifier_01 = "LU";
+            refAssistantSurgeonSecondaryIdentification.MemberGrouporPolicyNumber_02 = "1234567890";
+            loop24001.AllNM1.Loop2420D.REF_SupervisingProviderSecondaryIdentification.Add(refAssistantSurgeonSecondaryIdentification);
+
+            //  6)EVV- The Beginning/Ending Location of the Service Delivery (3 Address Segments each)
+
+            //  Beginning Location of Service
+            loop24001.AllNM1.Loop2420G = new Loop_2420G_837P();
+
+            loop24001.AllNM1.Loop2420G.NM1_AmbulancePick_Location = new NM1_AmbulancePick();
+            loop24001.AllNM1.Loop2420G.NM1_AmbulancePick_Location.EntityIdentifierCode_01 = "PW";
+            loop24001.AllNM1.Loop2420G.NM1_AmbulancePick_Location.EntityTypeQualifier_02 = "2";
+
+            loop24001.AllNM1.Loop2420G.N3_AmbulancePick_LocationAddress = new N3_AdditionalPatientInformationContactAddress();
+            loop24001.AllNM1.Loop2420G.N3_AmbulancePick_LocationAddress.ResponseContactAddressLine_01 = "2777 HOOCH LANE";
+            loop24001.AllNM1.Loop2420G.N3_AmbulancePick_LocationAddress.ResponseContactAddressLine_02 = "APT 2005";
+
+            loop24001.AllNM1.Loop2420G.N4_AmbulancePick_LocationCity_State_ZipCode = new N4_AdditionalPatientInformationContactCity();
+            loop24001.AllNM1.Loop2420G.N4_AmbulancePick_LocationCity_State_ZipCode.AdditionalPatientInformationContactCityName_01 = "CLARICE";
+            loop24001.AllNM1.Loop2420G.N4_AmbulancePick_LocationCity_State_ZipCode.AdditionalPatientInformationContactStateCode_02 = "VA";
+            loop24001.AllNM1.Loop2420G.N4_AmbulancePick_LocationCity_State_ZipCode.AdditionalPatientInformationContactPostalZoneorZIPCode_03 = "22554";
+
+            //  Ending Location of Service (may be same or different from Beginning Location of Service) 
+            loop24001.AllNM1.Loop2420H = new Loop_2420H_837P();
+
+            loop24001.AllNM1.Loop2420H.NM1_AmbulanceDrop_Location = new NM1_AmbulanceDrop();
+            loop24001.AllNM1.Loop2420H.NM1_AmbulanceDrop_Location.EntityIdentifierCode_01 = "45";
+            loop24001.AllNM1.Loop2420H.NM1_AmbulanceDrop_Location.EntityTypeQualifier_02 = "2";
+
+            loop24001.AllNM1.Loop2420H.N3_AmbulanceDrop_LocationAddress = new N3_AdditionalPatientInformationContactAddress();
+            loop24001.AllNM1.Loop2420H.N3_AmbulanceDrop_LocationAddress.ResponseContactAddressLine_01 = "4545 RETURN ST";
+
+            loop24001.AllNM1.Loop2420H.N4_AmbulanceDrop_LocationCity_State_ZipCode = new N4_AdditionalPatientInformationContactCity();
+            loop24001.AllNM1.Loop2420H.N4_AmbulanceDrop_LocationCity_State_ZipCode.AdditionalPatientInformationContactCityName_01 = "NUCHOL";
+            loop24001.AllNM1.Loop2420H.N4_AmbulanceDrop_LocationCity_State_ZipCode.AdditionalPatientInformationContactStateCode_02 = "VA";
+            loop24001.AllNM1.Loop2420H.N4_AmbulanceDrop_LocationCity_State_ZipCode.AdditionalPatientInformationContactPostalZoneorZIPCode_03 = "22554";
 
             //  End 2400 Loop SERVICE LINE 1
             loop2300.Loop2400.Add(loop24001);
-
-            //  Begin 2400 Loop SERVICE LINE 2
-            var loop24002 = new Loop_2400_837P();
-
-            loop24002.LX_ServiceLineNumber = new LX_HeaderNumber();
-            loop24002.LX_ServiceLineNumber.AssignedNumber_01 = "2";
-
-            //  SERVICES: Office visit, intermediate service, established patient, throat culture.
-            //  CHARGES: Lab test for strep = $15.00
-            loop24002.SV1_ProfessionalService = new SV1_ProfessionalService();
-            loop24002.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01 = new C003_CompositeMedicalProcedureIdentifier();
-            loop24002.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProductorServiceIDQualifier_01 = "HC";
-            loop24002.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProcedureCode_02 = "87070";
-            loop24002.SV1_ProfessionalService.LineItemChargeAmount_02 = "15";
-            loop24002.SV1_ProfessionalService.UnitorBasisforMeasurementCode_03 = "UN";
-            loop24002.SV1_ProfessionalService.ServiceUnitCount_04 = "1";
-            loop24002.SV1_ProfessionalService.CompositeDiagnosisCodePointer_07 = new C004_CompositeDiagnosisCodePointer();
-            loop24002.SV1_ProfessionalService.CompositeDiagnosisCodePointer_07.DiagnosisCodePointer_01 = "1";
-
-            //  Occurrence of DTP in any order
-            loop24002.AllDTP = new All_DTP_837P();
-
-            //  INITIAL VISIT: DOS=10/03/06. POS=Office
-            loop24002.AllDTP.DTP_Date_ServiceDate = new DTP_ClaimLevelServiceDate();
-            loop24002.AllDTP.DTP_Date_ServiceDate.DateTimeQualifier_01 = "472";
-            loop24002.AllDTP.DTP_Date_ServiceDate.DateTimePeriodFormatQualifier_02 = "D8";
-            loop24002.AllDTP.DTP_Date_ServiceDate.AccidentDate_03 = "20061003";
-
-            //  End 2400 Loop SERVICE LINE 2
-            loop2300.Loop2400.Add(loop24002);
-
-            //  Begin 2400 Loop SERVICE LINE 3
-            var loop24003 = new Loop_2400_837P();
-
-            loop24003.LX_ServiceLineNumber = new LX_HeaderNumber();
-            loop24003.LX_ServiceLineNumber.AssignedNumber_01 = "3";
-
-            //  SERVICES: Office visit, intermediate service, established patient, mono screening.
-            //  CHARGES: Follow-up visit = $35.00
-            loop24003.SV1_ProfessionalService = new SV1_ProfessionalService();
-            loop24003.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01 = new C003_CompositeMedicalProcedureIdentifier();
-            loop24003.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProductorServiceIDQualifier_01 = "HC";
-            loop24003.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProcedureCode_02 = "99214";
-            loop24003.SV1_ProfessionalService.LineItemChargeAmount_02 = "35";
-            loop24003.SV1_ProfessionalService.UnitorBasisforMeasurementCode_03 = "UN";
-            loop24003.SV1_ProfessionalService.ServiceUnitCount_04 = "1";
-            loop24003.SV1_ProfessionalService.CompositeDiagnosisCodePointer_07 = new C004_CompositeDiagnosisCodePointer();
-            loop24003.SV1_ProfessionalService.CompositeDiagnosisCodePointer_07.DiagnosisCodePointer_01 = "2";
-
-            //  Occurrence of DTP in any order
-            loop24003.AllDTP = new All_DTP_837P();
-
-            //  FOLLOW-UP VISIT: DOS=10/10/06 POS=Office
-            loop24003.AllDTP.DTP_Date_ServiceDate = new DTP_ClaimLevelServiceDate();
-            loop24003.AllDTP.DTP_Date_ServiceDate.DateTimeQualifier_01 = "472";
-            loop24003.AllDTP.DTP_Date_ServiceDate.DateTimePeriodFormatQualifier_02 = "D8";
-            loop24003.AllDTP.DTP_Date_ServiceDate.AccidentDate_03 = "20061010";
-
-            //  End 2400 Loop SERVICE LINE 3
-            loop2300.Loop2400.Add(loop24003);
-
-            //  Begin 2400 Loop SERVICE LINE 4
-            var loop24004 = new Loop_2400_837P();
-
-            loop24004.LX_ServiceLineNumber = new LX_HeaderNumber();
-            loop24004.LX_ServiceLineNumber.AssignedNumber_01 = "4";
-
-            //  SERVICES: Office visit, intermediate service, established patient, mono screening.
-            //  CHARGES: Lab test for mono = $10.00
-            loop24004.SV1_ProfessionalService = new SV1_ProfessionalService();
-            loop24004.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01 = new C003_CompositeMedicalProcedureIdentifier();
-            loop24004.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProductorServiceIDQualifier_01 = "HC";
-            loop24004.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProcedureCode_02 = "86663";
-            loop24004.SV1_ProfessionalService.LineItemChargeAmount_02 = "10";
-            loop24004.SV1_ProfessionalService.UnitorBasisforMeasurementCode_03 = "UN";
-            loop24004.SV1_ProfessionalService.ServiceUnitCount_04 = "1";
-            loop24004.SV1_ProfessionalService.CompositeDiagnosisCodePointer_07 = new C004_CompositeDiagnosisCodePointer();
-            loop24004.SV1_ProfessionalService.CompositeDiagnosisCodePointer_07.DiagnosisCodePointer_01 = "2";
-
-            //  Occurrence of DTP in any order
-            loop24004.AllDTP = new All_DTP_837P();
-
-            //  FOLLOW-UP VISIT: DOS=10/10/06 POS=Office
-            loop24004.AllDTP.DTP_Date_ServiceDate = new DTP_ClaimLevelServiceDate();
-            loop24004.AllDTP.DTP_Date_ServiceDate.DateTimeQualifier_01 = "472";
-            loop24004.AllDTP.DTP_Date_ServiceDate.DateTimePeriodFormatQualifier_02 = "D8";
-            loop24004.AllDTP.DTP_Date_ServiceDate.AccidentDate_03 = "20061010";
-
-            //  End 2400 Loop SERVICE LINE 4
-            loop2300.Loop2400.Add(loop24004);
 
             //  End 2300 Loop CLAIM
             loop2000C.Loop2300.Add(loop2300);
