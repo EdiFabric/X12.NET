@@ -363,7 +363,7 @@ namespace EdiFabric.Examples.X12.T837P
             loop24001.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01 = new C003_CompositeMedicalProcedureIdentifier();
             loop24001.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProductorServiceIDQualifier_01 = "HC";
             loop24001.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProcedureCode_02 = "S5135";
-            loop24001.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProductServiceID_08 = "1230-1630";
+            loop24001.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.Description_07 = "1230-1630";
             loop24001.SV1_ProfessionalService.LineItemChargeAmount_02 = "50";
             loop24001.SV1_ProfessionalService.UnitorBasisforMeasurementCode_03 = "UN";
             loop24001.SV1_ProfessionalService.ServiceUnitCount_04 = "2";
