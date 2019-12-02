@@ -89,12 +89,12 @@ namespace EdiFabric.Examples.X12.T276
             result.ST.TransactionSetControlNumber_02 = controlNumber.PadLeft(9, '0');
             result.ST.ImplementationConventionPreference_03 = "005010X212";
 
-            result.BHT_BeginningofHierarchicalTransaction = new BHT_BeginningofHierarchicalTransaction_3();
-            result.BHT_BeginningofHierarchicalTransaction.HierarchicalStructureCode_01 = "0010";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionSetPurposeCode_02 = "13";
-            result.BHT_BeginningofHierarchicalTransaction.SubmitterTransactionIdentifier_03 = "ABC276XXX";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionSetCreationDate_04 = "20050915";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionSetCreationTime_05 = "1425";
+            result.BHT_BeginningOfHierarchicalTransaction = new BHT_BeginningOfHierarchicalTransaction_3();
+            result.BHT_BeginningOfHierarchicalTransaction.HierarchicalStructureCode_01 = "0010";
+            result.BHT_BeginningOfHierarchicalTransaction.TransactionSetPurposeCode_02 = "13";
+            result.BHT_BeginningOfHierarchicalTransaction.SubmitterTransactionIdentifier_03 = "ABC276XXX";
+            result.BHT_BeginningOfHierarchicalTransaction.TransactionSetCreationDate_04 = "20050915";
+            result.BHT_BeginningOfHierarchicalTransaction.TransactionSetCreationTime_05 = "1425";
 
             //  Repeating 2000A Loops
             result.Loop2000A = new List<Loop_2000A_276>();
@@ -110,7 +110,7 @@ namespace EdiFabric.Examples.X12.T276
             //  Begin 2100A Loop
             loop2000A.Loop2100A = new Loop_2100A_276();
 
-            loop2000A.Loop2100A.NM1_PayerName = new NM1_CorrectedPriorityPayerName();
+            loop2000A.Loop2100A.NM1_PayerName = new NM1_OtherPayerName();
             loop2000A.Loop2100A.NM1_PayerName.EntityIdentifierCode_01 = "PR";
             loop2000A.Loop2100A.NM1_PayerName.EntityTypeQualifier_02 = "2";
             loop2000A.Loop2100A.NM1_PayerName.ResponseContactLastorOrganizationName_03 = "ABC INSURANCE";
@@ -134,7 +134,7 @@ namespace EdiFabric.Examples.X12.T276
             //  Begin 2100B Loop
             loop2000B.Loop2100B = new Loop_2100B_276();
 
-            loop2000B.Loop2100B.NM1_InformationReceiverName = new NM1_InformationReceiverName_2();
+            loop2000B.Loop2100B.NM1_InformationReceiverName = new NM1_InformationReceiverName_3();
             loop2000B.Loop2100B.NM1_InformationReceiverName.EntityIdentifierCode_01 = "41";
             loop2000B.Loop2100B.NM1_InformationReceiverName.EntityTypeQualifier_02 = "2";
             loop2000B.Loop2100B.NM1_InformationReceiverName.ResponseContactLastorOrganizationName_03 = "XYZ SERVICE";
@@ -149,7 +149,7 @@ namespace EdiFabric.Examples.X12.T276
             //  Begin 2000C Loop 1
             var loop2000C1 = new Loop_2000C_276();
 
-            loop2000C1.HL_ServiceProviderLevel = new HL_BillingProviderOfServiceLevel();
+            loop2000C1.HL_ServiceProviderLevel = new HL_ServiceProviderLevel();
             loop2000C1.HL_ServiceProviderLevel.HierarchicalIDNumber_01 = "3";
             loop2000C1.HL_ServiceProviderLevel.HierarchicalParentIDNumber_02 = "2";
             loop2000C1.HL_ServiceProviderLevel.HierarchicalLevelCode_03 = "19";
@@ -183,7 +183,7 @@ namespace EdiFabric.Examples.X12.T276
             loop2000D1.HL_SubscriberLevel.HierarchicalLevelCode_03 = "22";
             loop2000D1.HL_SubscriberLevel.HierarchicalChildCode_04 = "0";
 
-            loop2000D1.DMG_SubscriberDemographicInformation = new DMG_DependentDemographicInformation();
+            loop2000D1.DMG_SubscriberDemographicInformation = new DMG_DependentDemographicInformation_3();
             loop2000D1.DMG_SubscriberDemographicInformation.DateTimePeriodFormatQualifier_01 = "D8";
             loop2000D1.DMG_SubscriberDemographicInformation.DependentBirthDate_02 = "19301210";
             loop2000D1.DMG_SubscriberDemographicInformation.DependentGenderCode_03 = "M";
@@ -191,7 +191,7 @@ namespace EdiFabric.Examples.X12.T276
             //  Begin 2100D Loop
             loop2000D1.Loop2100D = new Loop_2100D_276();
 
-            loop2000D1.Loop2100D.NM1_SubscriberName = new NM1_InsuredName();
+            loop2000D1.Loop2100D.NM1_SubscriberName = new NM1_SubscriberName_2();
             loop2000D1.Loop2100D.NM1_SubscriberName.EntityIdentifierCode_01 = "IL";
             loop2000D1.Loop2100D.NM1_SubscriberName.EntityTypeQualifier_02 = "1";
             loop2000D1.Loop2100D.NM1_SubscriberName.ResponseContactLastorOrganizationName_03 = "SMITH";
@@ -229,7 +229,7 @@ namespace EdiFabric.Examples.X12.T276
             loop2200D.DTP_ClaimServiceDate = new DTP_ClaimLevelServiceDate();
             loop2200D.DTP_ClaimServiceDate.DateTimeQualifier_01 = "472";
             loop2200D.DTP_ClaimServiceDate.DateTimePeriodFormatQualifier_02 = "RD8";
-            loop2200D.DTP_ClaimServiceDate.AccidentDate_03 = "20050831-20050906";
+            loop2200D.DTP_ClaimServiceDate.DateTimePeriod_03 = "20050831-20050906";
 
             //  End 2200D Loop
             loop2000D1.Loop2200D.Add(loop2200D);
@@ -246,7 +246,7 @@ namespace EdiFabric.Examples.X12.T276
             loop2000D2.HL_SubscriberLevel.HierarchicalLevelCode_03 = "22";
             loop2000D2.HL_SubscriberLevel.HierarchicalChildCode_04 = "0";
 
-            loop2000D2.DMG_SubscriberDemographicInformation = new DMG_DependentDemographicInformation();
+            loop2000D2.DMG_SubscriberDemographicInformation = new DMG_DependentDemographicInformation_3();
             loop2000D2.DMG_SubscriberDemographicInformation.DateTimePeriodFormatQualifier_01 = "D8";
             loop2000D2.DMG_SubscriberDemographicInformation.DependentBirthDate_02 = "19301115";
             loop2000D2.DMG_SubscriberDemographicInformation.DependentGenderCode_03 = "F";
@@ -254,7 +254,7 @@ namespace EdiFabric.Examples.X12.T276
             //  Begin 2100D Loop
             loop2000D2.Loop2100D = new Loop_2100D_276();
 
-            loop2000D2.Loop2100D.NM1_SubscriberName = new NM1_InsuredName();
+            loop2000D2.Loop2100D.NM1_SubscriberName = new NM1_SubscriberName_2();
             loop2000D2.Loop2100D.NM1_SubscriberName.EntityIdentifierCode_01 = "IL";
             loop2000D2.Loop2100D.NM1_SubscriberName.EntityTypeQualifier_02 = "1";
             loop2000D2.Loop2100D.NM1_SubscriberName.ResponseContactLastorOrganizationName_03 = "JONES";
@@ -292,7 +292,7 @@ namespace EdiFabric.Examples.X12.T276
             loop2200D2.DTP_ClaimServiceDate = new DTP_ClaimLevelServiceDate();
             loop2200D2.DTP_ClaimServiceDate.DateTimeQualifier_01 = "472";
             loop2200D2.DTP_ClaimServiceDate.DateTimePeriodFormatQualifier_02 = "RD8";
-            loop2200D2.DTP_ClaimServiceDate.AccidentDate_03 = "20050731-20050809";
+            loop2200D2.DTP_ClaimServiceDate.DateTimePeriod_03 = "20050731-20050809";
 
             //  End 2200D Loop
             loop2000D2.Loop2200D.Add(loop2200D2);
@@ -306,7 +306,7 @@ namespace EdiFabric.Examples.X12.T276
             //  Begin 2000C Loop 2
             var loop2000C2 = new Loop_2000C_276();
 
-            loop2000C2.HL_ServiceProviderLevel = new HL_BillingProviderOfServiceLevel();
+            loop2000C2.HL_ServiceProviderLevel = new HL_ServiceProviderLevel();
             loop2000C2.HL_ServiceProviderLevel.HierarchicalIDNumber_01 = "6";
             loop2000C2.HL_ServiceProviderLevel.HierarchicalParentIDNumber_02 = "2";
             loop2000C2.HL_ServiceProviderLevel.HierarchicalLevelCode_03 = "19";
@@ -343,7 +343,7 @@ namespace EdiFabric.Examples.X12.T276
             //  Begin 2100D Loop
             loop2000D3.Loop2100D = new Loop_2100D_276();
 
-            loop2000D3.Loop2100D.NM1_SubscriberName = new NM1_InsuredName();
+            loop2000D3.Loop2100D.NM1_SubscriberName = new NM1_SubscriberName_2();
             loop2000D3.Loop2100D.NM1_SubscriberName.EntityIdentifierCode_01 = "IL";
             loop2000D3.Loop2100D.NM1_SubscriberName.EntityTypeQualifier_02 = "1";
             loop2000D3.Loop2100D.NM1_SubscriberName.ResponseContactLastorOrganizationName_03 = "MANN";
@@ -359,12 +359,12 @@ namespace EdiFabric.Examples.X12.T276
             //  Begin 2000E Loop
             var loop2000E = new Loop_2000E_276();
 
-            loop2000E.HL_DependentLevel = new HL_DependentLevel();
+            loop2000E.HL_DependentLevel = new HL_DependentLevel_2();
             loop2000E.HL_DependentLevel.HierarchicalIDNumber_01 = "8";
             loop2000E.HL_DependentLevel.HierarchicalParentIDNumber_02 = "7";
             loop2000E.HL_DependentLevel.HierarchicalLevelCode_03 = "23";
 
-            loop2000E.DMG_DependentDemographicInformation = new DMG_DependentDemographicInformation();
+            loop2000E.DMG_DependentDemographicInformation = new DMG_DependentDemographicInformation_3();
             loop2000E.DMG_DependentDemographicInformation.DateTimePeriodFormatQualifier_01 = "D8";
             loop2000E.DMG_DependentDemographicInformation.DependentBirthDate_02 = "19951101";
             loop2000E.DMG_DependentDemographicInformation.DependentGenderCode_03 = "M";
@@ -404,7 +404,7 @@ namespace EdiFabric.Examples.X12.T276
             var loop2210E = new Loop_2210E_276();
 
             loop2210E.SVC_ServiceLineInformation = new SVC_ServiceLineInformation();
-            loop2210E.SVC_ServiceLineInformation.CompositeMedicalProcedureIdentifier_01 = new C003_CompositeMedicalProcedureIdentifier();
+            loop2210E.SVC_ServiceLineInformation.CompositeMedicalProcedureIdentifier_01 = new C003_CompositeMedicalProcedureIdentifier_6();
             loop2210E.SVC_ServiceLineInformation.CompositeMedicalProcedureIdentifier_01.ProductorServiceIDQualifier_01 = "HC";
             loop2210E.SVC_ServiceLineInformation.CompositeMedicalProcedureIdentifier_01.ProcedureCode_02 = "99203";
             loop2210E.SVC_ServiceLineInformation.LineItemChargeAmount_02 = "150";
@@ -413,7 +413,7 @@ namespace EdiFabric.Examples.X12.T276
             loop2210E.DTP_ServiceLineDate = new DTP_ClaimLevelServiceDate();
             loop2210E.DTP_ServiceLineDate.DateTimeQualifier_01 = "472";
             loop2210E.DTP_ServiceLineDate.DateTimePeriodFormatQualifier_02 = "D8";
-            loop2210E.DTP_ServiceLineDate.AccidentDate_03 = "20050501";
+            loop2210E.DTP_ServiceLineDate.DateTimePeriod_03 = "20050501";
 
             //  End 2210E Loop
             loop2200E.Loop2210E.Add(loop2210E);

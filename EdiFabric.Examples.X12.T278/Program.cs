@@ -80,12 +80,12 @@ namespace EdiFabric.Examples.X12.T278
 
             //  This transaction is a request using hierarchical structure 0007 (information source, information receiver, subscriber, dependent, event, services). 
             //  The originating system has assigned the Submitter Transaction Identifier “A12345" along with the transaction set creation date and time.
-            result.LoopBHT.BHT_BeginningofHierarchicalTransaction = new BHT_BeginningofHierarchicalTransaction_5();
-            result.LoopBHT.BHT_BeginningofHierarchicalTransaction.HierarchicalStructureCode_01 = "0007";
-            result.LoopBHT.BHT_BeginningofHierarchicalTransaction.TransactionSetPurposeCode_02 = "13";
-            result.LoopBHT.BHT_BeginningofHierarchicalTransaction.SubmitterTransactionIdentifier_03 = "A12345";
-            result.LoopBHT.BHT_BeginningofHierarchicalTransaction.TransactionSetCreationDate_04 = "20050502";
-            result.LoopBHT.BHT_BeginningofHierarchicalTransaction.TransactionSetCreationTime_05 = "1101";
+            result.LoopBHT.BHT_BeginningOfHierarchicalTransaction = new BHT_BeginningOfHierarchicalTransaction_6();
+            result.LoopBHT.BHT_BeginningOfHierarchicalTransaction.HierarchicalStructureCode_01 = "0007";
+            result.LoopBHT.BHT_BeginningOfHierarchicalTransaction.TransactionSetPurposeCode_02 = "13";
+            result.LoopBHT.BHT_BeginningOfHierarchicalTransaction.SubmitterTransactionIdentifier_03 = "A12345";
+            result.LoopBHT.BHT_BeginningOfHierarchicalTransaction.TransactionSetCreationDate_04 = "20050502";
+            result.LoopBHT.BHT_BeginningOfHierarchicalTransaction.TransactionSetCreationTime_05 = "1101";
 
             //  Begin 2000A Loop hierarchical level identifies the Insurance Company.
             result.LoopBHT.Loop2000A = new Loop_2000A_278();
@@ -149,7 +149,7 @@ namespace EdiFabric.Examples.X12.T278
             result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2010C = new Loop_2010C_278();
 
             //  The patient’s name is Joe Smith; his Member Identification Number is 12345678901.
-            result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2010C.NM1_SubscriberName = new NM1_SubscriberName();
+            result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2010C.NM1_SubscriberName = new NM1_SubscriberName_3();
             result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2010C.NM1_SubscriberName.EntityIdentifierCode_01 = "IL";
             result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2010C.NM1_SubscriberName.EntityTypeQualifier_02 = "1";
             result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2010C.NM1_SubscriberName.ResponseContactLastorOrganizationName_03 = "SMITH";
@@ -186,14 +186,14 @@ namespace EdiFabric.Examples.X12.T278
             result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2000E.UM_HealthCareServicesReviewInformation.RequestCategoryCode_01 = "SC";
             result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2000E.UM_HealthCareServicesReviewInformation.CertificationTypeCode_02 = "I";
             result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2000E.UM_HealthCareServicesReviewInformation.ServiceTypeCode_03 = "3";
-            result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2000E.UM_HealthCareServicesReviewInformation.ValuesenteredattheServiceLeveloverridesthevalueatthePatientEventLevelforthisservice_04 = new C023_HealthCareServiceLocationInformation();
-            result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2000E.UM_HealthCareServicesReviewInformation.ValuesenteredattheServiceLeveloverridesthevalueatthePatientEventLevelforthisservice_04.FacilityTypeCode_01 = "11";
-            result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2000E.UM_HealthCareServicesReviewInformation.ValuesenteredattheServiceLeveloverridesthevalueatthePatientEventLevelforthisservice_04.FacilityCodeQualifier_02 = "B";
+            result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2000E.UM_HealthCareServicesReviewInformation.ValuesEntered_04 = new C023_HealthCareServiceLocationInformation_4();
+            result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2000E.UM_HealthCareServicesReviewInformation.ValuesEntered_04.FacilityTypeCode_01 = "11";
+            result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2000E.UM_HealthCareServicesReviewInformation.ValuesEntered_04.FacilityCodeQualifier_02 = "B";
             result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2000E.UM_HealthCareServicesReviewInformation.ReleaseofInformationCode_09 = "Y";
 
             //  The patient has been diagnosed with acute myocardial infarction; unspecified site.
             result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2000E.HI_PatientDiagnosis = new HI_PatientDiagnosis();
-            result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2000E.HI_PatientDiagnosis.HealthCareCodeInformation_01 = new C022_HealthCareCodeInformation();
+            result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2000E.HI_PatientDiagnosis.HealthCareCodeInformation_01 = new C022_HealthCareCodeInformation_24();
             result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2000E.HI_PatientDiagnosis.HealthCareCodeInformation_01.CodeListQualifierCode_01 = "BF";
             result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2000E.HI_PatientDiagnosis.HealthCareCodeInformation_01.IndustryCode_02 = "41090";
             result.LoopBHT.Loop2000A.Loop2000B.Loop2000C.Loop2000E.HI_PatientDiagnosis.HealthCareCodeInformation_01.DateTimePeriodFormatQualifier_03 = "D8";

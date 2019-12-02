@@ -86,7 +86,7 @@ namespace EdiFabric.Examples.X12.T835
             result.BPR_FinancialInformation.PaymentMethodCode_04 = "CHK";
             result.BPR_FinancialInformation.CheckIssueorEFTEffectiveDate_16 = "20050318";
 
-            result.TRN_ReassociationTraceNumber = new TRN_ClaimStatusTrackingNumber();
+            result.TRN_ReassociationTraceNumber = new TRN_DependentTraceNumber();
             result.TRN_ReassociationTraceNumber.TraceTypeCode_01 = "1";
             result.TRN_ReassociationTraceNumber.CurrentTransactionTraceNumber_02 = "0063158ABC";
             result.TRN_ReassociationTraceNumber.OriginatingCompanyIdentifier_03 = "1566339911";
@@ -190,7 +190,7 @@ namespace EdiFabric.Examples.X12.T835
             //  Occurrence of NM1 Segments in any order
             loop2100.AllNM1 = new All_NM1_835();
 
-            loop2100.AllNM1.NM1_PatientName = new NM1_DependentName_2();
+            loop2100.AllNM1.NM1_PatientName = new NM1_PatientName_2();
             loop2100.AllNM1.NM1_PatientName.EntityIdentifierCode_01 = "QC";
             loop2100.AllNM1.NM1_PatientName.EntityTypeQualifier_02 = "1";
             loop2100.AllNM1.NM1_PatientName.ResponseContactLastorOrganizationName_03 = "BURCK";
@@ -199,7 +199,7 @@ namespace EdiFabric.Examples.X12.T835
             loop2100.AllNM1.NM1_PatientName.IdentificationCodeQualifier_08 = "MI";
             loop2100.AllNM1.NM1_PatientName.ResponseContactIdentifier_09 = "987654321";
 
-            loop2100.AllNM1.NM1_ServiceProviderName = new NM1_OtherPayerRenderingProvider_2();
+            loop2100.AllNM1.NM1_ServiceProviderName = new NM1_ServiceProviderName_3();
             loop2100.AllNM1.NM1_ServiceProviderName.EntityIdentifierCode_01 = "82";
             loop2100.AllNM1.NM1_ServiceProviderName.EntityTypeQualifier_02 = "2";
             loop2100.AllNM1.NM1_ServiceProviderName.ResponseContactLastorOrganizationName_03 = "PROFESSIONAL TEST 1";
@@ -229,7 +229,7 @@ namespace EdiFabric.Examples.X12.T835
             var loop2110 = new Loop_2110_835();
 
             loop2110.SVC_ServicePaymentInformation = new SVC_ServicePaymentInformation();
-            loop2110.SVC_ServicePaymentInformation.CompositeMedicalProcedureIdentifier_01 = new C003_CompositeMedicalProcedureIdentifier();
+            loop2110.SVC_ServicePaymentInformation.CompositeMedicalProcedureIdentifier_01 = new C003_CompositeMedicalProcedureIdentifier_16();
             loop2110.SVC_ServicePaymentInformation.CompositeMedicalProcedureIdentifier_01.ProductorServiceIDQualifier_01 = "HC";
             loop2110.SVC_ServicePaymentInformation.CompositeMedicalProcedureIdentifier_01.ProcedureCode_02 = "55669";
             loop2110.SVC_ServicePaymentInformation.LineItemChargeAmount_02 = "541";

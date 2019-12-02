@@ -82,12 +82,12 @@ namespace EdiFabric.Examples.X12.T270
             //  Reference Identification = 10001234
             //  Date = 20060501(May 1, 2006)
             //  Time = 1:19 PM
-            result.BHT_BeginningofHierarchicalTransaction = new BHT_BeginningofHierarchicalTransaction();
-            result.BHT_BeginningofHierarchicalTransaction.HierarchicalStructureCode_01 = "0022";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionSetPurposeCode_02 = "13";
-            result.BHT_BeginningofHierarchicalTransaction.SubmitterTransactionIdentifier_03 = "10001234";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionSetCreationDate_04 = "20060501";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionSetCreationTime_05 = "1319";
+            result.BHT_BeginningOfHierarchicalTransaction = new BHT_BeginningOfHierarchicalTransaction();
+            result.BHT_BeginningOfHierarchicalTransaction.HierarchicalStructureCode_01 = "0022";
+            result.BHT_BeginningOfHierarchicalTransaction.TransactionSetPurposeCode_02 = "13";
+            result.BHT_BeginningOfHierarchicalTransaction.SubmitterTransactionIdentifier_03 = "10001234";
+            result.BHT_BeginningOfHierarchicalTransaction.TransactionSetCreationDate_04 = "20060501";
+            result.BHT_BeginningOfHierarchicalTransaction.TransactionSetCreationTime_05 = "1319";
 
             //  Repeating 2000A Loops
             result.Loop2000A = new List<Loop_2000A_270>();
@@ -179,13 +179,13 @@ namespace EdiFabric.Examples.X12.T270
             loop2000C1.HL_SubscriberLevel.HierarchicalChildCode_04 = "0";
 
             //  Repeating TRN
-            loop2000C1.TRN_SubscriberTraceNumber = new List<TRN_ClaimStatusTrackingNumber>();
+            loop2000C1.TRN_SubscriberTraceNumber = new List<TRN_DependentTraceNumber>();
 
             //  Trace Type Code = 1 (Current Transaction Trace Number)
             //  Reference Identification = 93175 - 012547
             //  Originating Company Identifier = 9877281234
             //  Reference Identification = *not used
-            var trn = new TRN_ClaimStatusTrackingNumber();
+            var trn = new TRN_DependentTraceNumber();
             trn.TraceTypeCode_01 = "1";
             trn.CurrentTransactionTraceNumber_02 = "93175-012547";
             trn.OriginatingCompanyIdentifier_03 = "9877281234";
@@ -203,7 +203,7 @@ namespace EdiFabric.Examples.X12.T270
             //  Name Suffix = *not used
             //  Identification Code Qualifier = MI(Member Identification Number)
             //  Identification Code = 11122333301
-            loop2000C1.Loop2100C.NM1_SubscriberName = new NM1_InsuredName();
+            loop2000C1.Loop2100C.NM1_SubscriberName = new NM1_SubscriberName();
             loop2000C1.Loop2100C.NM1_SubscriberName.EntityIdentifierCode_01 = "IL";
             loop2000C1.Loop2100C.NM1_SubscriberName.EntityTypeQualifier_02 = "1";
             loop2000C1.Loop2100C.NM1_SubscriberName.ResponseContactLastorOrganizationName_03 = "SMITH";
@@ -218,15 +218,15 @@ namespace EdiFabric.Examples.X12.T270
             loop2000C1.Loop2100C.DMG_SubscriberDemographicInformation.DependentBirthDate_02 = "19430519";
 
             //  Repeating DTP
-            loop2000C1.Loop2100C.DTP_SubscriberDate = new List<DTP_DependentDate>();
+            loop2000C1.Loop2100C.DTP_SubscriberDate = new List<DTP_SubscriberOrDependentDate>();
 
             //  Date/Time Qualifier = 291 (Plan)
             //  Date Time Period Format Qualifier D8(Dates Expressed in Format CCYYMMDD)
             //  Date Time Period = 20060501(May 1, 2006)
-            var dtp = new DTP_DependentDate();
+            var dtp = new DTP_SubscriberOrDependentDate();
             dtp.DateTimeQualifier_01 = "291";
             dtp.DateTimePeriodFormatQualifier_02 = "D8";
-            dtp.AccidentDate_03 = "20060501";
+            dtp.DateTimePeriod_03 = "20060501";
             loop2000C1.Loop2100C.DTP_SubscriberDate.Add(dtp);
 
             //  Repeating 2110C Loops
@@ -236,7 +236,7 @@ namespace EdiFabric.Examples.X12.T270
             var loop2110C = new Loop_2110C_270();
 
             //  Service Type Code = 30 (Health Benefit Plan Coverage
-            loop2110C.EQ_SubscriberEligibilityorBenefitInquiry = new EQ_DependentEligibilityorBenefitInquiry();
+            loop2110C.EQ_SubscriberEligibilityorBenefitInquiry = new EQ_SubscriberEligibilityorBenefitInquiry();
             loop2110C.EQ_SubscriberEligibilityorBenefitInquiry.ServiceTypeCode_01 = new List<string> { "30" };
 
             //  End 2110C Loop  

@@ -78,13 +78,13 @@ namespace EdiFabric.Examples.X12.T837P
             result.ST.ImplementationConventionPreference_03 = "005010X222A1";
 
             //  Indicates the claim was created on October 15, 2006 and submitter is identified with 244579. 
-            result.BHT_BeginningofHierarchicalTransaction = new BHT_BeginningofHierarchicalTransaction_7();
-            result.BHT_BeginningofHierarchicalTransaction.HierarchicalStructureCode_01 = "0019";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionSetPurposeCode_02 = "00";
-            result.BHT_BeginningofHierarchicalTransaction.SubmitterTransactionIdentifier_03 = "244579";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionSetCreationDate_04 = "20061015";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionSetCreationTime_05 = "1023";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionTypeCode_06 = "CH";
+            result.BHT_BeginningOfHierarchicalTransaction = new BHT_BeginningOfHierarchicalTransaction_8();
+            result.BHT_BeginningOfHierarchicalTransaction.HierarchicalStructureCode_01 = "0019";
+            result.BHT_BeginningOfHierarchicalTransaction.TransactionSetPurposeCode_02 = "00";
+            result.BHT_BeginningOfHierarchicalTransaction.SubmitterTransactionIdentifier_03 = "244579";
+            result.BHT_BeginningOfHierarchicalTransaction.TransactionSetCreationDate_04 = "20061015";
+            result.BHT_BeginningOfHierarchicalTransaction.TransactionSetCreationTime_05 = "1023";
+            result.BHT_BeginningOfHierarchicalTransaction.TransactionTypeCode_06 = "CH";
 
             //  Occurrence of NM1 Loops in any order
             result.AllNM1 = new All_NM1_837P_6();
@@ -93,7 +93,7 @@ namespace EdiFabric.Examples.X12.T837P
             result.AllNM1.Loop1000A = new Loop_1000A_837P();
 
             //  Premier Billing Service with EDI# TGJ23
-            result.AllNM1.Loop1000A.NM1_SubmitterName = new NM1_InformationReceiverName_2();
+            result.AllNM1.Loop1000A.NM1_SubmitterName = new NM1_InformationReceiverName_4();
             result.AllNM1.Loop1000A.NM1_SubmitterName.EntityIdentifierCode_01 = "41";
             result.AllNM1.Loop1000A.NM1_SubmitterName.EntityTypeQualifier_02 = "2";
             result.AllNM1.Loop1000A.NM1_SubmitterName.ResponseContactLastorOrganizationName_03 = "PREMIER BILLING SERVICE";
@@ -101,10 +101,10 @@ namespace EdiFabric.Examples.X12.T837P
             result.AllNM1.Loop1000A.NM1_SubmitterName.ResponseContactIdentifier_09 = "TGJ23";
 
             //  Repeating PER
-            result.AllNM1.Loop1000A.PER_SubmitterEDIContactInformation = new List<PER_AdditionalPatientInformationContactInformation>();
+            result.AllNM1.Loop1000A.PER_SubmitterEDIContactInformation = new List<PER_BillingProviderContactInformation>();
 
             //  CONTACT PERSON AND PHONE NUMBER: JERRY, 305-555-2222 ext. 231
-            var perLoop1000A = new PER_AdditionalPatientInformationContactInformation();
+            var perLoop1000A = new PER_BillingProviderContactInformation();
             perLoop1000A.ContactFunctionCode_01 = "IC";
             perLoop1000A.ResponseContactName_02 = "JERRY";
             perLoop1000A.CommunicationNumberQualifier_03 = "TE";
@@ -153,7 +153,7 @@ namespace EdiFabric.Examples.X12.T837P
             loop2000A.AllNM1.Loop2010AA = new Loop_2010AA_837P();
 
             //  Name is BEN KILDARE SERVICE with NPI: 9876543210
-            loop2000A.AllNM1.Loop2010AA.NM1_BillingProviderName = new NM1_BillingProviderName();
+            loop2000A.AllNM1.Loop2010AA.NM1_BillingProviderName = new NM1_BillingProviderName_2();
             loop2000A.AllNM1.Loop2010AA.NM1_BillingProviderName.EntityIdentifierCode_01 = "85";
             loop2000A.AllNM1.Loop2010AA.NM1_BillingProviderName.EntityTypeQualifier_02 = "2";
             loop2000A.AllNM1.Loop2010AA.NM1_BillingProviderName.ResponseContactLastorOrganizationName_03 = "BEN KILDARE SERVICE";
@@ -227,7 +227,7 @@ namespace EdiFabric.Examples.X12.T837P
             loop2000B.AllNM1.Loop2010BA = new Loop_2010BA_837P();
 
             //  SUBSCRIBER name is Jane Smith
-            loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName = new NM1_InsuredName();
+            loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName = new NM1_SubscriberName_5();
             loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName.EntityIdentifierCode_01 = "IL";
             loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName.EntityTypeQualifier_02 = "1";
             loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName.ResponseContactLastorOrganizationName_03 = "SMITH";
@@ -236,7 +236,7 @@ namespace EdiFabric.Examples.X12.T837P
             loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName.ResponseContactIdentifier_09 = "JS00111223333";
 
             //  SUBSCRIBER SEX: F and DOB: 05 / 01 / 43
-            loop2000B.AllNM1.Loop2010BA.DMG_SubscriberDemographicInformation = new DMG_DependentDemographicInformation();
+            loop2000B.AllNM1.Loop2010BA.DMG_SubscriberDemographicInformation = new DMG_PatientDemographicInformation();
             loop2000B.AllNM1.Loop2010BA.DMG_SubscriberDemographicInformation.DateTimePeriodFormatQualifier_01 = "D8";
             loop2000B.AllNM1.Loop2010BA.DMG_SubscriberDemographicInformation.DependentBirthDate_02 = "19430501";
             loop2000B.AllNM1.Loop2010BA.DMG_SubscriberDemographicInformation.DependentGenderCode_03 = "F";
@@ -247,7 +247,7 @@ namespace EdiFabric.Examples.X12.T837P
             loop2000B.AllNM1.Loop2010BB = new Loop_2010BB_837P();
 
             //  Payer name is Key Insurance Company with PAYER ID: 999996666
-            loop2000B.AllNM1.Loop2010BB.NM1_PayerName = new NM1_CorrectedPriorityPayerName();
+            loop2000B.AllNM1.Loop2010BB.NM1_PayerName = new NM1_OtherPayerName();
             loop2000B.AllNM1.Loop2010BB.NM1_PayerName.EntityIdentifierCode_01 = "PR";
             loop2000B.AllNM1.Loop2010BB.NM1_PayerName.EntityTypeQualifier_02 = "2";
             loop2000B.AllNM1.Loop2010BB.NM1_PayerName.ResponseContactLastorOrganizationName_03 = "KEY INSURANCE COMPANY";
@@ -288,7 +288,7 @@ namespace EdiFabric.Examples.X12.T837P
             loop2000C.Loop2010CA = new Loop_2010CA_837P();
 
             //  PATIENT name is Ted Smith
-            loop2000C.Loop2010CA.NM1_PatientName = new NM1_DependentName_2();
+            loop2000C.Loop2010CA.NM1_PatientName = new NM1_PatientName_3();
             loop2000C.Loop2010CA.NM1_PatientName.EntityIdentifierCode_01 = "QC";
             loop2000C.Loop2010CA.NM1_PatientName.EntityTypeQualifier_02 = "1";
             loop2000C.Loop2010CA.NM1_PatientName.ResponseContactLastorOrganizationName_03 = "SMITH";
@@ -305,7 +305,7 @@ namespace EdiFabric.Examples.X12.T837P
             loop2000C.Loop2010CA.N4_PatientCity_State_ZIPCode.AdditionalPatientInformationContactPostalZoneorZIPCode_03 = "33413";
 
             //  PATIENT SEX: M and DOB: 05 / 01 / 73
-            loop2000C.Loop2010CA.DMG_PatientDemographicInformation = new DMG_DependentDemographicInformation();
+            loop2000C.Loop2010CA.DMG_PatientDemographicInformation = new DMG_PatientDemographicInformation();
             loop2000C.Loop2010CA.DMG_PatientDemographicInformation.DateTimePeriodFormatQualifier_01 = "D8";
             loop2000C.Loop2010CA.DMG_PatientDemographicInformation.DependentBirthDate_02 = "19730501";
             loop2000C.Loop2010CA.DMG_PatientDemographicInformation.DependentGenderCode_03 = "M";
@@ -319,10 +319,10 @@ namespace EdiFabric.Examples.X12.T837P
             var loop2300 = new Loop_2300_837P();
 
             //  PATIENT ACCOUNT NUMBER: 2-646-3774 
-            loop2300.CLM_ClaimInformation = new CLM_ClaimInformation();
+            loop2300.CLM_ClaimInformation = new CLM_ClaimInformation_3();
             loop2300.CLM_ClaimInformation.PatientControlNumber_01 = "26463774";
             loop2300.CLM_ClaimInformation.TotalClaimChargeAmount_02 = "100";
-            loop2300.CLM_ClaimInformation.HealthCareServiceLocationInformation_05 = new C023_HealthCareServiceLocationInformation();
+            loop2300.CLM_ClaimInformation.HealthCareServiceLocationInformation_05 = new C023_HealthCareServiceLocationInformation_2();
             loop2300.CLM_ClaimInformation.HealthCareServiceLocationInformation_05.FacilityTypeCode_01 = "11";
             loop2300.CLM_ClaimInformation.HealthCareServiceLocationInformation_05.FacilityCodeQualifier_02 = "B";
             loop2300.CLM_ClaimInformation.HealthCareServiceLocationInformation_05.ClaimFrequencyTypeCode_03 = "1";
@@ -335,7 +335,7 @@ namespace EdiFabric.Examples.X12.T837P
             loop2300.AllREF = new All_REF_837P_6();
 
             //  ELECTRONIC ROUTE: Billing provider (sender), to VAN to Key Insurance Company (receiver). VAN claim identification number = 17312345600006351.
-            loop2300.AllREF.REF_ClaimIdentifierForTransmissionIntermediaries = new REF_ClaimIdentificationNumberForClearinghousesandOtherTransmissionIntermediaries();
+            loop2300.AllREF.REF_ClaimIdentifierForTransmissionIntermediaries = new REF_ClaimIdentificationNumberForClearinghousesAndOtherTransmissionIntermediaries();
             loop2300.AllREF.REF_ClaimIdentifierForTransmissionIntermediaries.ReferenceIdentificationQualifier_01 = "D9";
             loop2300.AllREF.REF_ClaimIdentifierForTransmissionIntermediaries.MemberGrouporPolicyNumber_02 = "17312345600006351";
 
@@ -344,10 +344,10 @@ namespace EdiFabric.Examples.X12.T837P
 
             //  CASE: Patient has sore throat.
             loop2300.AllHI.HI_HealthCareDiagnosisCode = new HI_DependentHealthCareDiagnosisCode();
-            loop2300.AllHI.HI_HealthCareDiagnosisCode.HealthCareCodeInformation_01 = new C022_HealthCareCodeInformation();
+            loop2300.AllHI.HI_HealthCareDiagnosisCode.HealthCareCodeInformation_01 = new C022_HealthCareCodeInformation_8();
             loop2300.AllHI.HI_HealthCareDiagnosisCode.HealthCareCodeInformation_01.CodeListQualifierCode_01 = "BK";
             loop2300.AllHI.HI_HealthCareDiagnosisCode.HealthCareCodeInformation_01.IndustryCode_02 = "0340";
-            loop2300.AllHI.HI_HealthCareDiagnosisCode.HealthCareCodeInformation_02 = new C022_HealthCareCodeInformation();
+            loop2300.AllHI.HI_HealthCareDiagnosisCode.HealthCareCodeInformation_02 = new C022_HealthCareCodeInformation_4();
             loop2300.AllHI.HI_HealthCareDiagnosisCode.HealthCareCodeInformation_02.CodeListQualifierCode_01 = "BF";
             loop2300.AllHI.HI_HealthCareDiagnosisCode.HealthCareCodeInformation_02.IndustryCode_02 = "V7389";
 
@@ -363,7 +363,7 @@ namespace EdiFabric.Examples.X12.T837P
             //  SERVICES: Office visit, intermediate service, established patient, throat culture.
             //  CHARGES: Office first visit = $40.00
             loop24001.SV1_ProfessionalService = new SV1_ProfessionalService();
-            loop24001.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01 = new C003_CompositeMedicalProcedureIdentifier();
+            loop24001.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01 = new C003_CompositeMedicalProcedureIdentifier_12();
             loop24001.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProductorServiceIDQualifier_01 = "HC";
             loop24001.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProcedureCode_02 = "99213";
             loop24001.SV1_ProfessionalService.LineItemChargeAmount_02 = "40";
@@ -379,7 +379,7 @@ namespace EdiFabric.Examples.X12.T837P
             loop24001.AllDTP.DTP_Date_ServiceDate = new DTP_ClaimLevelServiceDate();
             loop24001.AllDTP.DTP_Date_ServiceDate.DateTimeQualifier_01 = "472";
             loop24001.AllDTP.DTP_Date_ServiceDate.DateTimePeriodFormatQualifier_02 = "D8";
-            loop24001.AllDTP.DTP_Date_ServiceDate.AccidentDate_03 = "20061003";
+            loop24001.AllDTP.DTP_Date_ServiceDate.DateTimePeriod_03 = "20061003";
 
             //  End 2400 Loop SERVICE LINE 1
             loop2300.Loop2400.Add(loop24001);
@@ -393,7 +393,7 @@ namespace EdiFabric.Examples.X12.T837P
             //  SERVICES: Office visit, intermediate service, established patient, throat culture.
             //  CHARGES: Lab test for strep = $15.00
             loop24002.SV1_ProfessionalService = new SV1_ProfessionalService();
-            loop24002.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01 = new C003_CompositeMedicalProcedureIdentifier();
+            loop24002.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01 = new C003_CompositeMedicalProcedureIdentifier_12();
             loop24002.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProductorServiceIDQualifier_01 = "HC";
             loop24002.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProcedureCode_02 = "87070";
             loop24002.SV1_ProfessionalService.LineItemChargeAmount_02 = "15";
@@ -409,7 +409,7 @@ namespace EdiFabric.Examples.X12.T837P
             loop24002.AllDTP.DTP_Date_ServiceDate = new DTP_ClaimLevelServiceDate();
             loop24002.AllDTP.DTP_Date_ServiceDate.DateTimeQualifier_01 = "472";
             loop24002.AllDTP.DTP_Date_ServiceDate.DateTimePeriodFormatQualifier_02 = "D8";
-            loop24002.AllDTP.DTP_Date_ServiceDate.AccidentDate_03 = "20061003";
+            loop24002.AllDTP.DTP_Date_ServiceDate.DateTimePeriod_03 = "20061003";
 
             //  End 2400 Loop SERVICE LINE 2
             loop2300.Loop2400.Add(loop24002);
@@ -423,7 +423,7 @@ namespace EdiFabric.Examples.X12.T837P
             //  SERVICES: Office visit, intermediate service, established patient, mono screening.
             //  CHARGES: Follow-up visit = $35.00
             loop24003.SV1_ProfessionalService = new SV1_ProfessionalService();
-            loop24003.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01 = new C003_CompositeMedicalProcedureIdentifier();
+            loop24003.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01 = new C003_CompositeMedicalProcedureIdentifier_12();
             loop24003.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProductorServiceIDQualifier_01 = "HC";
             loop24003.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProcedureCode_02 = "99214";
             loop24003.SV1_ProfessionalService.LineItemChargeAmount_02 = "35";
@@ -439,7 +439,7 @@ namespace EdiFabric.Examples.X12.T837P
             loop24003.AllDTP.DTP_Date_ServiceDate = new DTP_ClaimLevelServiceDate();
             loop24003.AllDTP.DTP_Date_ServiceDate.DateTimeQualifier_01 = "472";
             loop24003.AllDTP.DTP_Date_ServiceDate.DateTimePeriodFormatQualifier_02 = "D8";
-            loop24003.AllDTP.DTP_Date_ServiceDate.AccidentDate_03 = "20061010";
+            loop24003.AllDTP.DTP_Date_ServiceDate.DateTimePeriod_03 = "20061010";
 
             //  End 2400 Loop SERVICE LINE 3
             loop2300.Loop2400.Add(loop24003);
@@ -453,7 +453,7 @@ namespace EdiFabric.Examples.X12.T837P
             //  SERVICES: Office visit, intermediate service, established patient, mono screening.
             //  CHARGES: Lab test for mono = $10.00
             loop24004.SV1_ProfessionalService = new SV1_ProfessionalService();
-            loop24004.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01 = new C003_CompositeMedicalProcedureIdentifier();
+            loop24004.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01 = new C003_CompositeMedicalProcedureIdentifier_12();
             loop24004.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProductorServiceIDQualifier_01 = "HC";
             loop24004.SV1_ProfessionalService.CompositeMedicalProcedureIdentifier_01.ProcedureCode_02 = "86663";
             loop24004.SV1_ProfessionalService.LineItemChargeAmount_02 = "10";
@@ -469,7 +469,7 @@ namespace EdiFabric.Examples.X12.T837P
             loop24004.AllDTP.DTP_Date_ServiceDate = new DTP_ClaimLevelServiceDate();
             loop24004.AllDTP.DTP_Date_ServiceDate.DateTimeQualifier_01 = "472";
             loop24004.AllDTP.DTP_Date_ServiceDate.DateTimePeriodFormatQualifier_02 = "D8";
-            loop24004.AllDTP.DTP_Date_ServiceDate.AccidentDate_03 = "20061010";
+            loop24004.AllDTP.DTP_Date_ServiceDate.DateTimePeriod_03 = "20061010";
 
             //  End 2400 Loop SERVICE LINE 4
             loop2300.Loop2400.Add(loop24004);

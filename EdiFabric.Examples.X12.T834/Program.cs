@@ -142,7 +142,7 @@ namespace EdiFabric.Examples.X12.T834
             var dtp1 = new DTP_MemberLevelDates();
             dtp1.DateTimeQualifier_01 = "356";
             dtp1.DateTimePeriodFormatQualifier_02 = "D8";
-            dtp1.AccidentDate_03 = "19960523";
+            dtp1.DateTimePeriod_03 = "19960523";
             loop2000.DTP_MemberLevelDates.Add(dtp1);
 
             //  Occurrence of N1 Loops in any order
@@ -175,7 +175,7 @@ namespace EdiFabric.Examples.X12.T834
             loop2000.AllNM1.Loop2100A.N3_MemberResidenceStreetAddress.ResponseContactAddressLine_02 = "APT 3G";
 
             //  This is John's city, state zip code and county.
-            loop2000.AllNM1.Loop2100A.N4_MemberCity_State_ZIPCode = new N4_AdditionalPatientInformationContactCity();
+            loop2000.AllNM1.Loop2100A.N4_MemberCity_State_ZIPCode = new N4_MemberCity();
             loop2000.AllNM1.Loop2100A.N4_MemberCity_State_ZIPCode.AdditionalPatientInformationContactCityName_01 = "CAMP HILL";
             loop2000.AllNM1.Loop2100A.N4_MemberCity_State_ZIPCode.AdditionalPatientInformationContactStateCode_02 = "PA";
             loop2000.AllNM1.Loop2100A.N4_MemberCity_State_ZIPCode.AdditionalPatientInformationContactPostalZoneorZIPCode_03 = "17011";
@@ -183,7 +183,7 @@ namespace EdiFabric.Examples.X12.T834
             loop2000.AllNM1.Loop2100A.N4_MemberCity_State_ZIPCode.LocationIdentifier_06 = "CUMBERLAND";
 
             //  This is John's date of birth and gender.
-            loop2000.AllNM1.Loop2100A.DMG_MemberDemographics = new DMG_DependentDemographicInformation();
+            loop2000.AllNM1.Loop2100A.DMG_MemberDemographics = new DMG_MemberDemographics();
             loop2000.AllNM1.Loop2100A.DMG_MemberDemographics.DateTimePeriodFormatQualifier_01 = "D8";
             loop2000.AllNM1.Loop2100A.DMG_MemberDemographics.DependentBirthDate_02 = "19400816";
             loop2000.AllNM1.Loop2100A.DMG_MemberDemographics.DependentGenderCode_03 = "M";
@@ -208,7 +208,7 @@ namespace EdiFabric.Examples.X12.T834
             var dtp2 = new DTP_HealthCoverageDates();
             dtp2.DateTimeQualifier_01 = "348";
             dtp2.DateTimePeriodFormatQualifier_02 = "D8";
-            dtp2.AccidentDate_03 = "19960601";
+            dtp2.DateTimePeriod_03 = "19960601";
             loop23001.DTP_HealthCoverageDates.Add(dtp2);
 
             //  Repeating 2320 Loops
@@ -244,7 +244,7 @@ namespace EdiFabric.Examples.X12.T834
             var dtp3 = new DTP_HealthCoverageDates();
             dtp3.DateTimeQualifier_01 = "348";
             dtp3.DateTimePeriodFormatQualifier_02 = "D8";
-            dtp3.AccidentDate_03 = "19960601";
+            dtp3.DateTimePeriod_03 = "19960601";
             loop23002.DTP_HealthCoverageDates.Add(dtp3);            
 
             //  End 2300 Loop 2
@@ -265,7 +265,7 @@ namespace EdiFabric.Examples.X12.T834
             var dtp4 = new DTP_HealthCoverageDates();
             dtp4.DateTimeQualifier_01 = "348";
             dtp4.DateTimePeriodFormatQualifier_02 = "D8";
-            dtp4.AccidentDate_03 = "19960601";
+            dtp4.DateTimePeriod_03 = "19960601";
             loop23003.DTP_HealthCoverageDates.Add(dtp4);
 
             //  End 2300 Loop 3

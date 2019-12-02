@@ -2,19 +2,32 @@ namespace EdiFabric.Templates.Hipaa5010
 {
     using System;
     using System.Collections.Generic;
+    using System.Runtime.Serialization;
     using EdiFabric.Core.Annotations.Edi;
     using EdiFabric.Core.Annotations.Validation;
     using EdiFabric.Core.Model.Edi;
     using EdiFabric.Core.Model.Edi.X12;
     using EdiFabric.Core.Model.Edi.ErrorContexts;
+    using System.Xml.Serialization;
     
+    
+    /// <summary>
+    /// Number of Included Segments
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    public class @string
+    {
+    }
     
     [Serializable()]
+    [DataContract()]
     public class X12_AN
     {
     }
     
     [Serializable()]
+    [DataContract()]
     public class X12_DT
     {
     }
@@ -23,6 +36,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Structure Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0022,")]
     public class X12_ID_1005
     {
@@ -32,6 +46,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Structure Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0010,")]
     public class X12_ID_1005_2
     {
@@ -41,6 +56,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Structure Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0085,")]
     public class X12_ID_1005_3
     {
@@ -50,6 +66,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Structure Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0007,")]
     public class X12_ID_1005_4
     {
@@ -59,6 +76,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Structure Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0019,")]
     public class X12_ID_1005_5
     {
@@ -68,6 +86,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Structure Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0007,")]
     public class X12_ID_1005_6
     {
@@ -77,6 +96,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Claim Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,19,2,20,21,22,23,25,3,4,")]
     public class X12_ID_1029
     {
@@ -86,6 +106,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Claim Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,4,5,6,7,8,9" +
         ",AD,AP,CC,CL,CP,I,RA,RB,RC,RD,RO,")]
     public class X12_ID_1029_2
@@ -96,6 +117,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Claim Filing Indicator Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,31,32,33,AM,BL" +
         ",CH,CI,CN,DS,FI,HM,LI,LM,MA,MB,MC,MH,OF,SA,TV,VA,WB,WC,WD,WE,ZZ,")]
     public class X12_ID_1032
@@ -106,6 +128,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Claim Filing Indicator Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",12,13,14,15,16,17,AM,CH,DS,HM,LM,MA,MB,MC,OF,TV,VA,WC,ZZ,")]
     public class X12_ID_1032_2
     {
@@ -115,6 +138,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Claim Filing Indicator Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",11,12,13,14,15,16,17,AM,BL,CH,CI,DS,FI,HM,LM,MA,MB,MC,OF,TV,VA,WC,ZZ,")]
     public class X12_ID_1032_3
     {
@@ -124,6 +148,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Claim Adjustment Group Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",CO,OA,PI,PR,")]
     public class X12_ID_1033
     {
@@ -133,6 +158,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Claim Adjustment Group Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",CO,CR,OA,PI,PR,")]
     public class X12_ID_1033_2
     {
@@ -142,6 +168,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Business Function Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",COL,CON,DBT,PCS,PEN,PRL,RYL,TAX,VEN,")]
     public class X12_ID_1048
     {
@@ -151,6 +178,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Type Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,")]
     public class X12_ID_1065
     {
@@ -160,6 +188,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Type Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,")]
     public class X12_ID_1065_2
     {
@@ -169,6 +198,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Type Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",2,")]
     public class X12_ID_1065_3
     {
@@ -178,6 +208,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Type Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,")]
     public class X12_ID_1065_4
     {
@@ -187,6 +218,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Type Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",2,")]
     public class X12_ID_1065_5
     {
@@ -196,6 +228,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Type Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,")]
     public class X12_ID_1065_6
     {
@@ -205,6 +238,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Citizenship Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,I,")]
     public class X12_ID_1066
     {
@@ -214,6 +248,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Citizenship Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,")]
     public class X12_ID_1066_2
     {
@@ -223,6 +258,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Citizenship Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,I,")]
     public class X12_ID_1066_3
     {
@@ -232,6 +268,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Marital Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,I,K,M,R,S,U,W,X,")]
     public class X12_ID_1067
     {
@@ -241,6 +278,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Marital Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",B,D,I,M,R,S,U,W,X,")]
     public class X12_ID_1067_2
     {
@@ -250,6 +288,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Marital Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,I,K,M,R,S,U,W,X,")]
     public class X12_ID_1067_3
     {
@@ -259,6 +298,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Gender Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",F,M,")]
     public class X12_ID_1068
     {
@@ -268,6 +308,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Gender Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",F,M,U,")]
     public class X12_ID_1068_2
     {
@@ -277,6 +318,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Gender Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",F,M,U,")]
     public class X12_ID_1068_3
     {
@@ -286,6 +328,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Individual Relationship Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,19,34,")]
     public class X12_ID_1069
     {
@@ -295,6 +338,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Individual Relationship Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,19,20,21,39,40,53,G8,")]
     public class X12_ID_1069_2
     {
@@ -304,6 +348,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Individual Relationship Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,19,G8,")]
     public class X12_ID_1069_3
     {
@@ -313,6 +358,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Individual Relationship Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,18,19,20,21,39,40,53,G8,")]
     public class X12_ID_1069_4
     {
@@ -322,6 +368,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Individual Relationship Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,36,37,38,39,40,41,43,45,46,47,48,49,50,51,52,53,55,56,57,58,59,60,61,62,63,64,65,66,67,68,70,71,72,73,74,75,76,78,79,80,81,82,83,84,86,87,88,90,91,92,93,94,95,96,97,98,99,A1,A2,A3,A4,A5,A6,A7,A8,A9,B1,B2,B3,B4,B5,B6,B7,B8,B9,C1,C2,C3,C4,C5,C8,C9,D1,D2,D3,D4,D5,D6,D7,D8,D9,E1,E2,E3,E4,E5,E6,E7,E8,E9,F1,F2,F3,F6,F7,F8,F9,G2,G3,G4,G5,G6,G7,G8,G9,H1,H4,N1,OT,ZZ,")]
     public class X12_ID_1069_5
     {
@@ -331,6 +378,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Individual Relationship Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",18,")]
     public class X12_ID_1069_6
     {
@@ -340,6 +388,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Individual Relationship Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,23,24,25,26,31,38,53,60,D2" +
         ",G8,G9,")]
     public class X12_ID_1069_7
@@ -350,6 +399,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Individual Relationship Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,19,G8,")]
     public class X12_ID_1069_8
     {
@@ -359,6 +409,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Individual Relationship Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",18,")]
     public class X12_ID_1069_9
     {
@@ -368,6 +419,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Payment Method Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,8,A,AA,AB,AC,AD,AE,AF,AG,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y" +
         ",")]
     public class X12_ID_107
@@ -378,6 +430,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Yes/No Condition or Response Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",Y,")]
     public class X12_ID_1073
     {
@@ -387,6 +440,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Yes/No Condition or Response Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",N,Y,")]
     public class X12_ID_1073_10
     {
@@ -396,6 +450,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Yes/No Condition or Response Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",W,")]
     public class X12_ID_1073_11
     {
@@ -405,6 +460,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Yes/No Condition or Response Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",N,U,W,Y,")]
     public class X12_ID_1073_12
     {
@@ -414,6 +470,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Yes/No Condition or Response Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",N,U,W,Y,")]
     public class X12_ID_1073_2
     {
@@ -423,6 +480,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Yes/No Condition or Response Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",N,")]
     public class X12_ID_1073_3
     {
@@ -432,6 +490,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Yes/No Condition or Response Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",N,Y,")]
     public class X12_ID_1073_4
     {
@@ -441,6 +500,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Yes/No Condition or Response Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",N,W,Y,")]
     public class X12_ID_1073_5
     {
@@ -450,6 +510,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Yes/No Condition or Response Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",N,U,Y,")]
     public class X12_ID_1073_6
     {
@@ -459,6 +520,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Yes/No Condition or Response Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",W,")]
     public class X12_ID_1073_7
     {
@@ -468,6 +530,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Yes/No Condition or Response Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",Y,")]
     public class X12_ID_1073_8
     {
@@ -477,6 +540,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Yes/No Condition or Response Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",N,")]
     public class X12_ID_1073_9
     {
@@ -486,6 +550,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Race or Ethnicity Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",7,8,A,B,C,D,E,F,G,H,I,J,N,O,P,Q,R,S,T,U,V,W,Z,")]
     public class X12_ID_1109
     {
@@ -495,6 +560,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Race or Ethnicity Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",7,8,A,B,C,D,E,F,G,H,I,J,N,O,P,Z,")]
     public class X12_ID_1109_2
     {
@@ -504,6 +570,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Race or Ethnicity Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",7,8,A,B,C,D,E,F,G,H,I,J,N,O,P,Q,R,S,T,U,V,W,Z,")]
     public class X12_ID_1109_3
     {
@@ -513,6 +580,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code Category
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",E1,E2,E3,")]
     public class X12_ID_1136
     {
@@ -522,6 +590,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code Category
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",09,")]
     public class X12_ID_1136_10
     {
@@ -531,6 +600,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code Category
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",11,")]
     public class X12_ID_1136_11
     {
@@ -540,6 +610,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code Category
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",75,")]
     public class X12_ID_1136_12
     {
@@ -549,6 +620,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code Category
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",76,")]
     public class X12_ID_1136_13
     {
@@ -558,6 +630,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code Category
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",77,")]
     public class X12_ID_1136_14
     {
@@ -567,6 +640,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code Category
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",07,")]
     public class X12_ID_1136_15
     {
@@ -576,6 +650,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code Category
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",75,")]
     public class X12_ID_1136_2
     {
@@ -585,6 +660,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code Category
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ZZ,")]
     public class X12_ID_1136_3
     {
@@ -594,6 +670,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code Category
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",70,")]
     public class X12_ID_1136_4
     {
@@ -603,6 +680,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code Category
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",09,")]
     public class X12_ID_1136_5
     {
@@ -612,6 +690,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code Category
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",00,01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,A0,A1,A2,A3,A4,A5,A6,A7,A8,A9,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AP,AQ,AR,AS,AT,AU,AV,AW,AX,AY,AZ,B1,B2,B3,B4,B5,B6,B7,B8,B9,BA,BB,BC,BD,BE,BF,BG,BH,BI,BJ,BK,BL,BM,BN,BO,BP,BQ,BR,BS,BT,BU,BV,BW,BX,BY,BZ,C1,C2,C3,C4,C5,C6,C7,C8,C9,CA,CB,CC,CD,CE,CF,CG,CH,CI,CJ,CK,CL,CM,CN,CO,CP,CQ,CR,CS,CT,CU,CV,CW,CX,CY,CZ,D1,D2,D3,D4,DA,DB,DC,DD,DE,DF,DG,DH,DI,DJ,DK,DL,DM,DN,DO,DP,DR,DV,E1,E2,E3,E4,E5,EB,EC,ED,EE,EF,EG,EH,EI,EJ,EK,EL,EM,ER,ET,FA,FC,FH,FI,FL,FP,FR,FT,GD,GS,GU,HA,HB,HC,HD,HE,HF,HG,HH,HI,HJ,HK,HL,HM,HN,HO,HP,HQ,HR,HS,HT,HU,HY,HZ,IC,ID,IH,IM,IN,LA,LC,LE,LI,LL,LR,LS,LT,LZ,MA,MI,ML,MN,MO,MP,MS,MT,NC,NL,NS,NW,OA,OC,OF,OI,ON,OP,OT,OU,PA,PB,PC,PD,PE,PF,PG,PI,PJ,PN,PO,PR,PS,PT,PX,R1,R2,R3,R4,R5,RC,RE,RI,RL,RM,RN,RP,RR,RS,RT,RU,RV,S1,S2,S3,S4,S5,SA,SD,SE,SI,SJ,SL,SN,SP,SR,SS,ST,SU,SW,SZ,TB,TE,TF,TH,TI,TM,TN,TP,TR,TW,TX,UA,UB,UC,UD,UE,UF,UG,UH,UI,UJ,UK,UL,UM,UN,UO,UP,UQ,VA,VD,VO,WA,WB,WD,WE,WF,WG,WH,WI,WK,WL,WM,WN,WO,WP,WQ,WR,WS,WT,X1,X2,X3,X4,X5,X6,X7,X8,YR,YT,ZZ,")]
     public class X12_ID_1136_6
     {
@@ -621,6 +700,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code Category
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",44,")]
     public class X12_ID_1136_7
     {
@@ -630,6 +710,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code Category
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",07,")]
     public class X12_ID_1136_8
     {
@@ -639,6 +720,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code Category
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",08,")]
     public class X12_ID_1136_9
     {
@@ -648,6 +730,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Payer Responsibility Sequence Number Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",P,S,T,U,")]
     public class X12_ID_1138
     {
@@ -657,6 +740,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Payer Responsibility Sequence Number Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,E,F,G,H,P,S,T,U,")]
     public class X12_ID_1138_2
     {
@@ -666,6 +750,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Coordination of Benefits Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,5,6,")]
     public class X12_ID_1143
     {
@@ -675,6 +760,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Coordination of Benefits Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,9,")]
     public class X12_ID_1143_2
     {
@@ -684,6 +770,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Disability Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,")]
     public class X12_ID_1146
     {
@@ -693,6 +780,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Work Intensity Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",H,L,M,R,")]
     public class X12_ID_1154
     {
@@ -702,6 +790,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Product Option Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,10,11,12,13,14,15,2,28,29,3,30,31,4,5,6,7,8,9,A,B,BA,C,D,GA,N,NC,O,PD,S,")]
     public class X12_ID_1161
     {
@@ -711,6 +800,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Confidentiality Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",O,R,U,")]
     public class X12_ID_1165
     {
@@ -720,6 +810,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Confidentiality Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",R,U,")]
     public class X12_ID_1165_2
     {
@@ -729,6 +820,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Confidentiality Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",O,R,U,")]
     public class X12_ID_1165_3
     {
@@ -738,6 +830,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Contract Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",02,03,04,05,06,09,")]
     public class X12_ID_1166
     {
@@ -747,6 +840,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Contract Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,09,")]
     public class X12_ID_1166_2
     {
@@ -756,6 +850,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Employment Class Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,10,11,12,17,18,19,20,21,22,23,")]
     public class X12_ID_1176
     {
@@ -765,6 +860,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Information Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,C,L,O,P,S,T,")]
     public class X12_ID_1201
     {
@@ -774,6 +870,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Information Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,E,L,O,P,S,T,")]
     public class X12_ID_1201_2
     {
@@ -783,6 +880,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Maintenance Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,4A,4B,4C,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AL,EC,XB,XI,XL,XM,XN,XT,ZZ,")]
     public class X12_ID_1203
     {
@@ -792,6 +890,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Maintenance Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",14,22,46,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,")]
     public class X12_ID_1203_2
     {
@@ -801,6 +900,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Maintenance Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",25,")]
     public class X12_ID_1203_3
     {
@@ -810,6 +910,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Maintenance Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,10,11,14,15,16,17,18,20,21,22,25,26,27,28,29,31,32,33" +
         ",37,38,39,40,41,43,59,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AL,EC,XN,XT,")]
     public class X12_ID_1203_4
@@ -820,6 +921,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Maintenance Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,4A,4B,4C,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AL,EC,XB,XI,XL,XM,XN,XT,ZZ,")]
     public class X12_ID_1203_5
     {
@@ -829,6 +931,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Insurance Line Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AG,AH,AJ,AK,DCP,DEN,EPO,FAC,HE,HLT,HMO,LTC,LTD,MM,MOD,PDG,POS,PPO,PRA,STD,UR,VIS" +
         ",")]
     public class X12_ID_1205
@@ -839,6 +942,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Coverage Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",CHD,DEP,E1D,E2D,E3D,E5D,E6D,E7D,E8D,E9D,ECH,EMP,ESP,FAM,IND,S1C,S5C,S6C,SPC,SPO," +
         "SS1,SS5,SS6,SSP,TWO,")]
     public class X12_ID_1207
@@ -849,6 +953,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Coverage Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",CHD,DEP,ECH,ESP,FAM,IND,SPC,SPO,")]
     public class X12_ID_1207_2
     {
@@ -858,6 +963,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Coverage Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",FAM,")]
     public class X12_ID_1207_3
     {
@@ -867,6 +973,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Coverage Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",CHD,DEP,ECH,EMP,ESP,FAM,IND,SPC,SPO,")]
     public class X12_ID_1207_4
     {
@@ -876,6 +983,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Coverage Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",CHD,DEP,E1D,E2D,E3D,E5D,E6D,E7D,E8D,E9D,ECH,EMP,ESP,FAM,IND,SPC,SPO,TWO,")]
     public class X12_ID_1207_5
     {
@@ -885,6 +993,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Underwriting Decision Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,I,N,S,")]
     public class X12_ID_1209
     {
@@ -894,6 +1003,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Drug House Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AM,BAX,FLR,HCS,NP,PCS,THR,ZZ,")]
     public class X12_ID_1211
     {
@@ -903,6 +1013,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Health-Related Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",N,S,T,U,X,")]
     public class X12_ID_1212
     {
@@ -912,6 +1023,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Current Health Condition Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,9,E,F,G,P,")]
     public class X12_ID_1213
     {
@@ -921,6 +1033,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Current Health Condition Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,9,E,F,G,P,")]
     public class X12_ID_1213_2
     {
@@ -930,6 +1043,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Card Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",D,H,P,")]
     public class X12_ID_1215
     {
@@ -939,6 +1053,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Benefit Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,C,S,T,")]
     public class X12_ID_1216
     {
@@ -948,6 +1063,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Benefit Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,C,I,S,T,V,")]
     public class X12_ID_1216_2
     {
@@ -957,6 +1073,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Benefit Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,C,I,S,T,V,")]
     public class X12_ID_1216_3
     {
@@ -966,6 +1083,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Medicare Plan Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,E,")]
     public class X12_ID_1218
     {
@@ -975,6 +1093,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Medicare Plan Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,E,")]
     public class X12_ID_1218_2
     {
@@ -984,6 +1103,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Consolidated Omnibus Budget Reconciliation Act (COBRA) Qualifying Event Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,10,2,3,4,5,6,7,8,9,ZZ,")]
     public class X12_ID_1219
     {
@@ -993,6 +1113,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Consolidated Omnibus Budget Reconciliation Act (COBRA) Qualifying Event Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,10,2,3,4,5,6,7,8,9,ZZ,")]
     public class X12_ID_1219_2
     {
@@ -1002,6 +1123,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Student Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",F,N,P,")]
     public class X12_ID_1220
     {
@@ -1011,6 +1133,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Student Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",F,N,P,")]
     public class X12_ID_1220_2
     {
@@ -1020,6 +1143,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Provider Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AD,AT,BI,CO,CV,H,HH,LA,OT,P1,P2,PC,PE,R,RF,SK,SU,")]
     public class X12_ID_1221
     {
@@ -1029,6 +1153,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Provider Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BI,")]
     public class X12_ID_1221_10
     {
@@ -1038,6 +1163,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Provider Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AD,AS,AT,OP,OR,OT,PC,PE,RF,")]
     public class X12_ID_1221_11
     {
@@ -1047,6 +1173,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Provider Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AS,OP,OR,OT,PC,PE,")]
     public class X12_ID_1221_12
     {
@@ -1056,6 +1183,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Provider Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AD,AS,AT,CO,CV,OP,OR,OT,PC,PE,RF,")]
     public class X12_ID_1221_13
     {
@@ -1065,6 +1193,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Provider Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AD,AS,AT,OP,OR,OT,PC,PE,RF,")]
     public class X12_ID_1221_2
     {
@@ -1074,6 +1203,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Provider Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",RF,")]
     public class X12_ID_1221_3
     {
@@ -1083,6 +1213,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Provider Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AT,")]
     public class X12_ID_1221_4
     {
@@ -1092,6 +1223,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Provider Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",PE,")]
     public class X12_ID_1221_5
     {
@@ -1101,6 +1233,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Provider Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AS,OP,OR,OT,PC,PE,")]
     public class X12_ID_1221_6
     {
@@ -1110,6 +1243,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Provider Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AS,")]
     public class X12_ID_1221_7
     {
@@ -1119,6 +1253,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Provider Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AD,AT,BI,CO,CV,H,HH,LA,OT,P1,P2,PC,PE,R,RF,SB,SK,SU,")]
     public class X12_ID_1221_8
     {
@@ -1128,6 +1263,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Provider Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AD,AS,AT,CO,CV,OP,OR,OT,PC,PE,RF,")]
     public class X12_ID_1221_9
     {
@@ -1137,6 +1273,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Provider Specialty Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DEN,DGP,END,IHG,OPY,ORT,OSY,PDT,PED,PHD,PST,")]
     public class X12_ID_1222
     {
@@ -1146,6 +1283,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Provider Specialty Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DEN,DGP,END,IHG,OPY,ORT,OSY,PDT,PED,PHD,PST,")]
     public class X12_ID_1222_2
     {
@@ -1155,6 +1293,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Provider Organization Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",001,002,003,004,005,006,007,008,")]
     public class X12_ID_1223
     {
@@ -1164,6 +1303,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Provider Organization Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",001,002,003,004,005,006,007,008,")]
     public class X12_ID_1223_2
     {
@@ -1173,6 +1313,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date Time Period Format Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",CC,CD,CM,CQ,CY,D6,D8,DA,DB,DD,DDT,DT,DTD,DTS,EH,KA,MCY,MD,MM,RD,RD2,RD4,RD5,RD6," +
         "RD8,RDM,RDT,RMD,RMY,RTM,RTS,TC,TM,TQ,TR,TS,TT,TU,UN,YM,YMM,YY,")]
     public class X12_ID_1250
@@ -1183,6 +1324,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date Time Period Format Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",D8,")]
     public class X12_ID_1250_10
     {
@@ -1192,6 +1334,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date Time Period Format Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",D8,RD8,")]
     public class X12_ID_1250_2
     {
@@ -1201,6 +1344,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date Time Period Format Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",RD8,")]
     public class X12_ID_1250_3
     {
@@ -1210,6 +1354,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date Time Period Format Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",TM,")]
     public class X12_ID_1250_4
     {
@@ -1219,6 +1364,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date Time Period Format Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",D8,DT,")]
     public class X12_ID_1250_5
     {
@@ -1228,6 +1374,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date Time Period Format Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",D8,")]
     public class X12_ID_1250_6
     {
@@ -1237,6 +1384,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date Time Period Format Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",CC,CD,CM,CQ,CY,D6,D8,DA,DB,DD,DDT,DT,DTD,DTS,EH,KA,MCY,MD,MM,RD,RD2,RD4,RD5,RD6," +
         "RD8,RDM,RDT,RMD,RMY,RTM,RTS,TC,TM,TQ,TR,TS,TT,TU,UN,YM,YMM,YY,")]
     public class X12_ID_1250_7
@@ -1247,6 +1395,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date Time Period Format Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",D8,RD8,")]
     public class X12_ID_1250_8
     {
@@ -1256,6 +1405,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date Time Period Format Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",RD8,")]
     public class X12_ID_1250_9
     {
@@ -1265,6 +1415,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,")]
     public class X12_ID_127
     {
@@ -1274,6 +1425,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",N,Y,")]
     public class X12_ID_127_2
     {
@@ -1283,6 +1435,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BI,")]
     public class X12_ID_1270
     {
@@ -1292,6 +1445,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",JP,")]
     public class X12_ID_1270_10
     {
@@ -1301,6 +1455,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ABF,BF,")]
     public class X12_ID_1270_11
     {
@@ -1310,6 +1465,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ABF,ABJ,APR,BF,BJ,DR,LOI,PR,")]
     public class X12_ID_1270_12
     {
@@ -1319,6 +1475,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ABK,BK,TQ,")]
     public class X12_ID_1270_13
     {
@@ -1328,6 +1485,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ABJ,BJ,")]
     public class X12_ID_1270_14
     {
@@ -1337,6 +1495,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ZZ,")]
     public class X12_ID_1270_15
     {
@@ -1346,6 +1505,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",GR,NI,ZZ,")]
     public class X12_ID_1270_16
     {
@@ -1355,6 +1515,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ABF,APR,BF,DR,LOI,PR,")]
     public class X12_ID_1270_17
     {
@@ -1364,6 +1525,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ABF,BF,TQ,")]
     public class X12_ID_1270_18
     {
@@ -1373,6 +1535,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",APR,PR,")]
     public class X12_ID_1270_19
     {
@@ -1382,6 +1545,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BH,")]
     public class X12_ID_1270_2
     {
@@ -1391,6 +1555,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BP,")]
     public class X12_ID_1270_20
     {
@@ -1400,6 +1565,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",LOI,")]
     public class X12_ID_1270_21
     {
@@ -1409,6 +1575,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ABN,BN,")]
     public class X12_ID_1270_22
     {
@@ -1418,6 +1585,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BO,")]
     public class X12_ID_1270_23
     {
@@ -1427,6 +1595,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DR,")]
     public class X12_ID_1270_24
     {
@@ -1436,6 +1605,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AS,UT,")]
     public class X12_ID_1270_25
     {
@@ -1445,6 +1615,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BBR,BR,CAH,")]
     public class X12_ID_1270_26
     {
@@ -1454,6 +1625,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BBQ,BQ,")]
     public class X12_ID_1270_27
     {
@@ -1463,6 +1635,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0,1,10,100,101,102,103,104,105,106,107,108,109,11,12,13,14,15,16,17,18,19,20,21," +
         "22,23,24,25,26,27,28,29,3,30,31,32,33,34,35,36,37,38,39,4,40,41,42,43,44,45,46,4" +
         "7,48,49,5,50,52,53,54,55,56,57,58,59,60,61,62,63,65,66,67,68,69,7,71,72,73,74,75" +
@@ -1512,6 +1685,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",RET,")]
     public class X12_ID_1270_29
     {
@@ -1521,6 +1695,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BE,")]
     public class X12_ID_1270_3
     {
@@ -1530,6 +1705,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",HE,RX,")]
     public class X12_ID_1270_30
     {
@@ -1539,6 +1715,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ABF,ABJ,ABK,APR,BF,BJ,BK,DR,PR,")]
     public class X12_ID_1270_31
     {
@@ -1548,6 +1725,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ABF,ABJ,APR,BF,BJ,DR,PR,")]
     public class X12_ID_1270_32
     {
@@ -1557,6 +1735,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ABF,APR,BF,DR,PR,")]
     public class X12_ID_1270_33
     {
@@ -1566,6 +1745,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",JP,")]
     public class X12_ID_1270_34
     {
@@ -1575,6 +1755,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0,1,10,100,101,102,103,104,105,106,107,108,109,11,12,13,14,15,16,17,18,19,20,21," +
         "22,23,24,25,26,27,28,29,3,30,31,32,33,34,35,36,37,38,39,4,40,41,42,43,44,45,46,4" +
         "7,48,49,5,50,52,53,54,55,56,57,58,59,60,61,62,63,65,66,67,68,69,7,71,72,73,74,75" +
@@ -1624,6 +1805,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BG,")]
     public class X12_ID_1270_4
     {
@@ -1633,6 +1815,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",TC,")]
     public class X12_ID_1270_5
     {
@@ -1642,6 +1825,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ABK,BK,")]
     public class X12_ID_1270_6
     {
@@ -1651,6 +1835,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",RX,")]
     public class X12_ID_1270_7
     {
@@ -1660,6 +1845,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ABF,ABJ,ABK,APR,BF,BJ,BK,DR,LOI,PR,")]
     public class X12_ID_1270_8
     {
@@ -1669,6 +1855,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Code List Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",REC,")]
     public class X12_ID_1270_9
     {
@@ -1678,6 +1865,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0B,1A,1B,1C,1D,1G,1H,1J,D3,G2,HPI,SY,TJ,")]
     public class X12_ID_128
     {
@@ -1687,6 +1875,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",9A,")]
     public class X12_ID_128_10
     {
@@ -1696,6 +1885,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EW,")]
     public class X12_ID_128_11
     {
@@ -1705,6 +1895,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",9C,")]
     public class X12_ID_128_12
     {
@@ -1714,6 +1905,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",LX,")]
     public class X12_ID_128_13
     {
@@ -1723,6 +1915,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",D9,")]
     public class X12_ID_128_14
     {
@@ -1732,6 +1925,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",LU,")]
     public class X12_ID_128_15
     {
@@ -1741,6 +1935,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",X4,")]
     public class X12_ID_128_16
     {
@@ -1750,6 +1945,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EA,")]
     public class X12_ID_128_17
     {
@@ -1759,6 +1955,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0B,1G,G2,")]
     public class X12_ID_128_18
     {
@@ -1768,6 +1965,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",P4,")]
     public class X12_ID_128_19
     {
@@ -1777,6 +1975,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",G2,LU,")]
     public class X12_ID_128_2
     {
@@ -1786,6 +1985,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",00,01,01A,01B,01C,01D,01E,01G,01H,02,03,04,05,06,07,08,09,0A,0B,0D,0E,0F,0G,0H,0" +
         "I,0J,0K,0L,0M,0N,0P,10,11,12,13,14,15,16,17,18,19,1A,1B,1C,1D,1E,1F,1G,1H,1I,1J," +
         "1K,1L,1M,1N,1O,1P,1Q,1R,1S,1T,1U,1V,1W,1X,1Y,1Z,20,21,22,23,24,25,26,27,28,29,2A" +
@@ -1865,6 +2065,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EI,SY,")]
     public class X12_ID_128_21
     {
@@ -1874,6 +2075,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EI,")]
     public class X12_ID_128_22
     {
@@ -1883,6 +2085,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0B,1G,G2,LU,")]
     public class X12_ID_128_23
     {
@@ -1892,6 +2095,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",G4,")]
     public class X12_ID_128_24
     {
@@ -1901,6 +2105,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0B,G2,LU,")]
     public class X12_ID_128_25
     {
@@ -1910,6 +2115,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",T4,")]
     public class X12_ID_128_26
     {
@@ -1919,6 +2125,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",2U,")]
     public class X12_ID_128_27
     {
@@ -1928,6 +2135,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",6R,")]
     public class X12_ID_128_28
     {
@@ -1937,6 +2145,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1J,")]
     public class X12_ID_128_29
     {
@@ -1946,6 +2155,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",9F,")]
     public class X12_ID_128_3
     {
@@ -1955,6 +2165,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1G,G2,LU,")]
     public class X12_ID_128_30
     {
@@ -1964,6 +2175,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1W,SY,")]
     public class X12_ID_128_31
     {
@@ -1973,6 +2185,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",9B,")]
     public class X12_ID_128_32
     {
@@ -1982,6 +2195,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",9D,")]
     public class X12_ID_128_33
     {
@@ -1991,6 +2205,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",VY,XZ,")]
     public class X12_ID_128_34
     {
@@ -2000,6 +2215,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",PXC,")]
     public class X12_ID_128_35
     {
@@ -2009,6 +2225,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BLT,")]
     public class X12_ID_128_36
     {
@@ -2018,6 +2235,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1K,")]
     public class X12_ID_128_37
     {
@@ -2027,6 +2245,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",11,1L,CT,IK,")]
     public class X12_ID_128_38
     {
@@ -2036,6 +2255,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0F,")]
     public class X12_ID_128_39
     {
@@ -2045,6 +2265,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0K,")]
     public class X12_ID_128_4
     {
@@ -2054,6 +2275,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",F2,")]
     public class X12_ID_128_40
     {
@@ -2063,6 +2285,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",F4,")]
     public class X12_ID_128_41
     {
@@ -2072,6 +2295,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BT,")]
     public class X12_ID_128_42
     {
@@ -2081,6 +2305,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",18,1L,1W,3H,6P,CT,EA,EJ,F6,GH,HJ,IG,N6,NQ,SY,Y4,")]
     public class X12_ID_128_43
     {
@@ -2090,6 +2315,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",18,1L,1W,3H,49,6P,CE,CT,EA,EJ,F6,GH,HJ,IF,IG,N6,NQ,Q4,SY,Y4,")]
     public class X12_ID_128_44
     {
@@ -2099,6 +2325,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EJ,")]
     public class X12_ID_128_45
     {
@@ -2108,6 +2335,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1L,3L,6P,DP,EJ,F6,HJ,IG,N6,NQ,SY,")]
     public class X12_ID_128_46
     {
@@ -2117,6 +2345,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",14,17,18,2F,38,E9,LB,LU,ZZ,")]
     public class X12_ID_128_47
     {
@@ -2126,6 +2355,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1L,")]
     public class X12_ID_128_48
     {
@@ -2135,6 +2365,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",2U,EO,HI,NF,")]
     public class X12_ID_128_49
     {
@@ -2144,6 +2375,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",G3,")]
     public class X12_ID_128_5
     {
@@ -2153,6 +2385,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0B,1G,")]
     public class X12_ID_128_50
     {
@@ -2162,6 +2395,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",2U,FY,NF,")]
     public class X12_ID_128_51
     {
@@ -2171,6 +2405,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",9K,D3,EI,HPI,PXC,SY,TJ,")]
     public class X12_ID_128_52
     {
@@ -2180,6 +2415,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",18,1L,1W,49,6P,9F,ALS,CLI,F6,FO,G1,IG,M7,N6,NQ,")]
     public class X12_ID_128_53
     {
@@ -2189,6 +2425,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",6P,")]
     public class X12_ID_128_54
     {
@@ -2198,6 +2435,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",XZ,")]
     public class X12_ID_128_55
     {
@@ -2207,6 +2445,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EJ,SY,")]
     public class X12_ID_128_56
     {
@@ -2216,6 +2455,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",11,9J,AZ,B7,CT,ID,IG,IK,KW,")]
     public class X12_ID_128_57
     {
@@ -2225,6 +2465,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",17,23,3H,4A,6O,ABB,D3,DX,F6,P5,Q4,QQ,ZZ,")]
     public class X12_ID_128_58
     {
@@ -2234,6 +2475,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0B,D3,PQ,TJ,")]
     public class X12_ID_128_59
     {
@@ -2243,6 +2485,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",G1,")]
     public class X12_ID_128_6
     {
@@ -2252,6 +2495,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",SY,")]
     public class X12_ID_128_60
     {
@@ -2261,6 +2505,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",9F,G1,")]
     public class X12_ID_128_61
     {
@@ -2270,6 +2515,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",18,1L,1W,49,6P,CE,CT,EA,EJ,F6,GH,HJ,IF,IG,MRC,N6,NQ,Q4,SY,Y4,")]
     public class X12_ID_128_62
     {
@@ -2279,6 +2525,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",VV,")]
     public class X12_ID_128_63
     {
@@ -2288,6 +2535,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",FJ,")]
     public class X12_ID_128_64
     {
@@ -2297,6 +2545,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",NT,")]
     public class X12_ID_128_65
     {
@@ -2306,6 +2555,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",14,18,2F,38,E9,LU,ZZ,")]
     public class X12_ID_128_66
     {
@@ -2315,6 +2565,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",17,1L,9V,CE,E8,M7,PID,RB,X9,XM,XX1,XX2,ZX,ZZ,")]
     public class X12_ID_128_67
     {
@@ -2324,6 +2575,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1L,1W,28,6P,9A,9C,BB,CE,EA,F8,G1,G3,IG,SY,")]
     public class X12_ID_128_68
     {
@@ -2333,6 +2585,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",Y4,")]
     public class X12_ID_128_69
     {
@@ -2342,6 +2595,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",4N,")]
     public class X12_ID_128_7
     {
@@ -2351,6 +2605,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",18,1L,1W,6P,CT,EA,EJ,F6,GH,HJ,IF,IG,MRC,N6,SY,Y4,")]
     public class X12_ID_128_70
     {
@@ -2360,6 +2615,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",18,1L,1W,49,6P,9F,ALS,CLI,F6,FO,G1,IG,N6,NQ,")]
     public class X12_ID_128_71
     {
@@ -2369,6 +2625,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BB,")]
     public class X12_ID_128_72
     {
@@ -2378,6 +2635,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",QQ,")]
     public class X12_ID_128_73
     {
@@ -2387,6 +2645,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0B,1A,1B,1C,1D,1G,1H,1J,D3,G2,LU,")]
     public class X12_ID_128_74
     {
@@ -2396,6 +2655,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",2U,EI,FY,NF,")]
     public class X12_ID_128_75
     {
@@ -2405,6 +2665,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0B,1G,1J,EI,N5,N7,SY,ZH,")]
     public class X12_ID_128_76
     {
@@ -2414,6 +2675,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",60,6P,SY,ZZ,")]
     public class X12_ID_128_77
     {
@@ -2423,6 +2685,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1S,APC,BB,E9,G1,G3,LU,RB,")]
     public class X12_ID_128_78
     {
@@ -2432,6 +2695,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0B,1G,1J,EI,G5,N5,N7,SY,ZH,")]
     public class X12_ID_128_79
     {
@@ -2441,6 +2705,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",F8,")]
     public class X12_ID_128_8
     {
@@ -2450,6 +2715,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",00,17,18,19,26,3L,6M,9V,9X,GE,LU,PID,XX1,XX2,YY,ZZ,")]
     public class X12_ID_128_80
     {
@@ -2459,6 +2725,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0B,1C,1D,1J,4A,CT,EL,EO,HPI,JD,N5,N7,Q4,SY,TJ,")]
     public class X12_ID_128_81
     {
@@ -2468,6 +2735,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0B,1G,G2,LU,SY,TJ,")]
     public class X12_ID_128_82
     {
@@ -2477,6 +2745,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1G,1J,EI,G5,N5,N7,SY,ZH,")]
     public class X12_ID_128_83
     {
@@ -2486,6 +2755,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",14,17,18,2F,38,72,LB,")]
     public class X12_ID_128_84
     {
@@ -2495,6 +2765,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",38,")]
     public class X12_ID_128_85
     {
@@ -2504,6 +2775,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EV,")]
     public class X12_ID_128_86
     {
@@ -2513,6 +2785,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",00,01,01A,01B,01C,01D,01E,01G,01H,02,03,04,05,06,07,08,09,0A,0B,0D,0E,0F,0G,0H,0" +
         "I,0J,0K,0L,0M,0N,0P,10,11,12,13,14,15,16,17,18,19,1A,1B,1C,1D,1E,1F,1G,1H,1I,1J," +
         "1K,1L,1M,1N,1O,1P,1Q,1R,1S,1T,1U,1V,1W,1X,1Y,1Z,20,21,22,23,24,25,26,27,28,29,2A" +
@@ -2592,6 +2865,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",PXC,")]
     public class X12_ID_128_88
     {
@@ -2601,6 +2875,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1L,3L,6P,DP,EJ,F6,HJ,IG,N6,NQ,SY,")]
     public class X12_ID_128_89
     {
@@ -2610,6 +2885,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",F5,")]
     public class X12_ID_128_9
     {
@@ -2619,6 +2895,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EJ,SY,")]
     public class X12_ID_128_90
     {
@@ -2628,6 +2905,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BB,")]
     public class X12_ID_128_91
     {
@@ -2637,6 +2915,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",NT,")]
     public class X12_ID_128_92
     {
@@ -2646,6 +2925,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0B,1G,1J,EI,N5,N7,SY,ZH,")]
     public class X12_ID_128_93
     {
@@ -2655,6 +2935,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ZZ,")]
     public class X12_ID_128_94
     {
@@ -2664,6 +2945,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reference Identification Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1G,1J,EI,G5,N5,N7,SY,ZH,")]
     public class X12_ID_128_95
     {
@@ -2673,6 +2955,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Service, Promotion, Allowance, or Charge Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A172,B680,D940,G740,")]
     public class X12_ID_1300
     {
@@ -2682,6 +2965,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Use of Language Indicator
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",5,6,7,8,")]
     public class X12_ID_1303
     {
@@ -2691,6 +2975,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Ambulance Transport Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",I,R,T,X,")]
     public class X12_ID_1316
     {
@@ -2700,6 +2985,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Ambulance Transport Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",I,R,T,X,")]
     public class X12_ID_1316_2
     {
@@ -2709,6 +2995,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Ambulance Transport Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,E,F,")]
     public class X12_ID_1317
     {
@@ -2718,6 +3005,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Ambulance Transport Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,E,")]
     public class X12_ID_1317_2
     {
@@ -2727,6 +3015,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Ambulance Transport Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,E,F,")]
     public class X12_ID_1317_3
     {
@@ -2736,6 +3025,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Condition Indicator
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",00,000,01,02,03,04,05,06,07,08,09,0A,0B,0C,0D,0E,0F,0G,0H,0I,0J,0K,0L,0M,0N,0O,0" +
         "P,0Q,0R,0S,0T,0U,0V,0W,0X,0Y,0Z,10,11,12,13,14,15,16,17,18,19,1A,1B,1C,1D,1E,1F," +
         "1G,1H,1I,1J,1K,1L,1M,1N,1O,1P,1Q,1R,1S,1T,1U,1V,1W,1X,1Y,1Z,20,21,22,23,24,25,26" +
@@ -2794,6 +3084,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Condition Indicator
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",06,16,17,25,33,37,39,5A,9J,9K,DY,")]
     public class X12_ID_1321_10
     {
@@ -2803,6 +3094,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Condition Indicator
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",02,03,04,05,06,11,12,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,30,31,32,35,37" +
         ",39,40,41,42,43,44,45,46,5A,68,69,9E,9F,9H,AA,AL,BL,BPD,BTD,CA,CB,CNJ,CO,DY,EL,E" +
         "P,HL,LB,LE,OL,PA,PW,SL,TNJ,WA,WR,")]
@@ -2814,6 +3106,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Condition Indicator
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",10,13,19,21,22,27,31,40,BR,CA,CB,CR,EL,EP,IH,NR,PA,PW,TR,UT,WA,WR,")]
     public class X12_ID_1321_12
     {
@@ -2823,6 +3116,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Condition Indicator
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,05,07,13,20,22,23,26,33,34,5A,68,69,9E,9F,9J,9K,AG,BPD,BTD,CB,CM,DI,DP,FO,HO," +
         "LE,MC,OT,UN,")]
     public class X12_ID_1321_13
@@ -2833,6 +3127,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Condition Indicator
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,41,43,5A,60,9D,")]
     public class X12_ID_1321_14
     {
@@ -2842,6 +3137,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Condition Indicator
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",L1,L2,L3,L4,L5,")]
     public class X12_ID_1321_2
     {
@@ -2851,6 +3147,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Condition Indicator
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",IH,")]
     public class X12_ID_1321_3
     {
@@ -2860,6 +3157,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Condition Indicator
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AV,NU,S2,ST,")]
     public class X12_ID_1321_4
     {
@@ -2869,6 +3167,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Condition Indicator
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",65,")]
     public class X12_ID_1321_5
     {
@@ -2878,6 +3177,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Condition Indicator
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",38,ZV,")]
     public class X12_ID_1321_6
     {
@@ -2887,6 +3187,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Condition Indicator
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,04,05,06,07,08,09,12,")]
     public class X12_ID_1321_7
     {
@@ -2896,6 +3197,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Condition Indicator
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",11,12,14,24,25,27,30,")]
     public class X12_ID_1321_8
     {
@@ -2905,6 +3207,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Condition Indicator
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27" +
         ",29,30,31,32,33,35,37,38,40,41,42,43,44,45,46,58,59,60,9D,9H,9J,9K,IH,LB,SL,")]
     public class X12_ID_1321_9
@@ -2915,6 +3218,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Certification Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,A,B,C,D,E,I,N,R,S,")]
     public class X12_ID_1322
     {
@@ -2924,6 +3228,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Certification Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,I,R,S,")]
     public class X12_ID_1322_2
     {
@@ -2933,6 +3238,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Certification Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,I,N,R,S,")]
     public class X12_ID_1322_3
     {
@@ -2942,6 +3248,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Certification Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",I,R,S,")]
     public class X12_ID_1322_4
     {
@@ -2951,6 +3258,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Certification Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,A,B,C,D,E,I,N,R,S,")]
     public class X12_ID_1322_5
     {
@@ -2960,6 +3268,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Certification Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,6,I,R,S,")]
     public class X12_ID_1322_6
     {
@@ -2969,6 +3278,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Certification Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,I,N,R,S,")]
     public class X12_ID_1322_7
     {
@@ -2978,6 +3288,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Copay Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0,1,2,3,")]
     public class X12_ID_1327
     {
@@ -2987,6 +3298,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Copay Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0,")]
     public class X12_ID_1327_2
     {
@@ -2996,6 +3308,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Copay Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0,1,2,3,")]
     public class X12_ID_1327_3
     {
@@ -3005,6 +3318,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Facility Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,")]
     public class X12_ID_1332
     {
@@ -3014,6 +3328,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Facility Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",B,")]
     public class X12_ID_1332_2
     {
@@ -3023,6 +3338,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Facility Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,")]
     public class X12_ID_1332_3
     {
@@ -3032,6 +3348,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Facility Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,")]
     public class X12_ID_1332_4
     {
@@ -3041,6 +3358,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Record Format Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",C,D,E,F,P,S,")]
     public class X12_ID_1333
     {
@@ -3050,6 +3368,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Insulin Dependent Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,N,")]
     public class X12_ID_1335
     {
@@ -3059,6 +3378,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Insurance Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",12,13,14,15,16,41,42,43,47,AP,C1,CO,CP,D,DB,E,EP,FF,GP,HM,HN,HS,IN,IP,LC,LD,LI,L" +
         "T,MA,MB,MC,MH,MI,MP,OT,PE,PL,PP,PR,PS,QM,RP,SP,TF,U,WC,WU,")]
     public class X12_ID_1336
@@ -3069,6 +3389,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Insurance Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",12,13,14,15,16,41,42,43,47,AP,C1,CO,CP,D,DB,EP,FF,GP,HM,HN,HS,IN,IP,LC,LD,LI,LT," +
         "MA,MB,MC,MH,MI,MP,OT,PE,PL,PP,PR,PS,QM,RP,SP,TF,WC,WU,")]
     public class X12_ID_1336_2
@@ -3079,6 +3400,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Insurance Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",12,13,14,15,16,41,42,43,47,")]
     public class X12_ID_1336_3
     {
@@ -3088,6 +3410,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Level of Care Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,")]
     public class X12_ID_1337
     {
@@ -3097,6 +3420,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Level of Care Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,")]
     public class X12_ID_1337_2
     {
@@ -3106,6 +3430,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Level of Service Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",00,01,02,03,04,05,06,09,10,11,E,F1,F2,I,L,NBC,R,U,")]
     public class X12_ID_1338
     {
@@ -3115,6 +3440,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Level of Service Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",03,E,U,")]
     public class X12_ID_1338_2
     {
@@ -3124,6 +3450,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Level of Service Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",00,01,02,03,04,05,06,09,10,11,E,F1,F2,I,L,NBC,R,U,")]
     public class X12_ID_1338_3
     {
@@ -3133,6 +3460,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Level of Service Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",03,E,U,")]
     public class X12_ID_1338_4
     {
@@ -3142,6 +3470,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Multiple Procedure Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",N,P,S,")]
     public class X12_ID_1340
     {
@@ -3151,6 +3480,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Multiple Procedure Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",N,P,S,")]
     public class X12_ID_1340_2
     {
@@ -3160,6 +3490,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Nature of Condition Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,C,D,E,F,G,M,")]
     public class X12_ID_1342
     {
@@ -3169,6 +3500,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Nature of Condition Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,C,D,E,F,G,M,")]
     public class X12_ID_1342_2
     {
@@ -3178,6 +3510,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Non-Institutional Claim Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,AA,AM,AN,CF,CH,CS,DA,DD,DM,DN,ER,HH,HS,IF,IL,L,LT,MD,MF,MH,MI,MO,MS,NM,NP,NS,O" +
         ",OC,OP,OT,OX,P,PA,PD,PE,PF,PS,PT,RX,S,SC,SN,ST,T,TX,V,")]
     public class X12_ID_1343
@@ -3188,6 +3521,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Nursing Home Residential Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,9,")]
     public class X12_ID_1345
     {
@@ -3197,6 +3531,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Nursing Home Residential Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,9,")]
     public class X12_ID_1345_2
     {
@@ -3206,6 +3541,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Oxygen Equipment Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,E,O,")]
     public class X12_ID_1348
     {
@@ -3215,6 +3551,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Oxygen Equipment Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,E,O,")]
     public class X12_ID_1348_2
     {
@@ -3224,6 +3561,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Oxygen Test Condition Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",E,N,O,R,S,W,X,")]
     public class X12_ID_1349
     {
@@ -3233,6 +3571,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Oxygen Test Condition Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",E,N,O,R,S,W,X,")]
     public class X12_ID_1349_2
     {
@@ -3242,6 +3581,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Oxygen Test Findings Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,")]
     public class X12_ID_1350
     {
@@ -3251,6 +3591,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Oxygen Test Findings Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,")]
     public class X12_ID_1350_2
     {
@@ -3260,6 +3601,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Patient Signature Source Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",P,")]
     public class X12_ID_1351
     {
@@ -3269,6 +3611,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Patient Signature Source Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",B,C,M,P,S,")]
     public class X12_ID_1351_2
     {
@@ -3278,6 +3621,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Prosthesis, Crown or Inlay Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",I,R,")]
     public class X12_ID_1358
     {
@@ -3287,6 +3631,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Prosthesis, Crown or Inlay Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",I,R,")]
     public class X12_ID_1358_2
     {
@@ -3296,6 +3641,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Provider Accept Assignment Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,C,")]
     public class X12_ID_1359
     {
@@ -3305,6 +3651,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Provider Accept Assignment Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,")]
     public class X12_ID_1359_2
     {
@@ -3314,6 +3661,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Provider Agreement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",D,E,H,I,N,P,Y,")]
     public class X12_ID_1360
     {
@@ -3323,6 +3671,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Provider Agreement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",D,E,H,I,N,P,Y,")]
     public class X12_ID_1360_2
     {
@@ -3332,6 +3681,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Related-Causes Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,AB,AP,EM,OA,ZZ,")]
     public class X12_ID_1362
     {
@@ -3341,6 +3691,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Related-Causes Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,EM,OA,")]
     public class X12_ID_1362_2
     {
@@ -3350,6 +3701,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Related-Causes Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AP,EM,")]
     public class X12_ID_1362_3
     {
@@ -3359,6 +3711,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Related-Causes Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AP,")]
     public class X12_ID_1362_4
     {
@@ -3368,6 +3721,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Related-Causes Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,AB,AP,EM,OA,ZZ,")]
     public class X12_ID_1362_5
     {
@@ -3377,6 +3731,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Related-Causes Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,AP,EM,")]
     public class X12_ID_1362_6
     {
@@ -3386,6 +3741,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Release of Information Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,I,M,N,O,Y,")]
     public class X12_ID_1363
     {
@@ -3395,6 +3751,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Release of Information Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",I,Y,")]
     public class X12_ID_1363_2
     {
@@ -3404,6 +3761,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Release of Information Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,I,M,N,O,Y,")]
     public class X12_ID_1363_3
     {
@@ -3413,6 +3771,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Release of Information Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",M,Y,")]
     public class X12_ID_1363_4
     {
@@ -3422,6 +3781,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Review Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,E,F,L,N,")]
     public class X12_ID_1364
     {
@@ -3431,6 +3791,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Review Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,E,F,L,N,")]
     public class X12_ID_1364_2
     {
@@ -3440,6 +3801,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Service Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",1,11,12,14,15,16,17,18,2,20,21,23,24,25,26,27,28,3,33,35,36,37,38,39,4,40,42,44,45,46,5,54,56,6,61,62,63,64,65,66,67,68,69,7,70,71,72,73,74,75,76,77,78,79,8,80,82,83,84,85,86,87,88,93,A4,A6,A9,AD,AE,AF,AG,AI,AJ,AK,AL,AR,B1,BB,BC,BD,BE,BF,BG,BL,BN,BP,BQ,BS,BY,BZ,C1,GY,IC,MH,NI,ON,PT,PU,RN,RT,TC,TN,")]
     public class X12_ID_1365
     {
@@ -3449,6 +3811,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Service Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,3,30,31,32,33,34,35,36,37,38,39,4,40,41,42,43,44,45,46,47,48,49,5,50,51,52,53,54,55,56,57,58,59,6,60,61,62,63,64,65,66,67,68,69,7,70,71,72,73,74,75,76,77,78,79,8,80,81,82,83,84,85,86,87,88,89,9,90,91,92,93,94,95,96,97,98,99,A0,A1,A2,A3,A4,A5,A6,A7,A8,A9,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AQ,AR,B,B1,B2,B3,BA,BB,BC,BD,BE,BF,BG,BH,BI,BJ,BK,BL,BM,BN,BP,BQ,BR,BS,BT,BU,BV,BW,BX,BY,BZ,C,C1,CA,CB,CC,CD,CE,CF,CG,CH,CI,CJ,CK,CL,CM,CN,CO,CP,CQ,DG,DM,DS,GF,GN,GY,IC,MH,NI,ON,PT,PU,RN,RT,TC,TN,UC,")]
     public class X12_ID_1365_2
     {
@@ -3458,6 +3821,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Service Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,3,30,32,33,34,35,36,37,38,39,4,40,41,42,43,44,45,46,47,48,49,5,50,51,52,53,54,55,56,57,58,59,6,60,61,62,63,64,65,66,67,68,69,7,70,71,72,73,74,75,76,77,78,79,8,80,81,82,83,84,85,86,87,88,89,9,90,91,92,93,94,95,96,97,98,99,A0,A1,A2,A3,A4,A5,A6,A7,A8,A9,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AQ,AR,B1,B2,B3,BA,BB,BC,BD,BE,BF,BG,BH,BI,BJ,BK,BL,BM,BN,BP,BQ,BR,BS,BT,BU,BV,BW,BX,BY,BZ,C1,CA,CB,CC,CD,CE,CF,CG,CH,CI,CJ,CK,CL,CM,CN,CO,CP,CQ,DG,DM,DS,GF,GN,GY,IC,MH,NI,ON,PT,PU,RN,RT,TC,TN,UC,")]
     public class X12_ID_1365_3
     {
@@ -3467,6 +3831,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Service Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",1,11,12,14,15,16,17,18,2,20,21,23,24,25,26,27,28,3,33,35,36,37,38,39,4,40,42,44,45,46,5,54,56,6,61,62,63,64,65,66,67,68,69,7,70,71,72,73,74,75,76,77,78,79,8,80,82,83,84,85,86,87,88,93,A4,A6,A9,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AR,B1,BB,BC,BD,BE,BF,BG,BL,BN,BP,BQ,BS,BY,BZ,C1,CQ,GY,IC,MH,NI,ON,PT,PU,RN,RT,TC,TN,")]
     public class X12_ID_1365_4
     {
@@ -3476,6 +3841,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Service Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,35,48,50,54,89,90,A4,AG,AL,BB,")]
     public class X12_ID_1365_5
     {
@@ -3485,6 +3851,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Service Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",1,11,12,14,15,16,17,18,2,20,21,23,24,25,26,27,28,3,33,35,36,37,38,39,4,40,42,44,45,46,5,54,56,6,61,62,63,64,65,66,67,68,69,7,70,71,72,73,74,75,76,77,78,79,8,80,82,83,84,85,86,87,88,93,A4,A6,A9,AD,AE,AF,AG,AI,AJ,AK,AL,AR,B1,BB,BC,BD,BE,BF,BG,BL,BN,BP,BQ,BS,BY,BZ,C1,GY,IC,MH,NI,ON,PT,PU,RN,RT,TC,TN,")]
     public class X12_ID_1365_6
     {
@@ -3494,6 +3861,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Service Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,3,30,31,32,33,34,35,36,37,38,39,4,40,41,42,43,44,45,46,47,48,49,5,50,51,52,53,54,55,56,57,58,59,6,60,61,62,63,64,65,66,67,68,69,7,70,71,72,73,74,75,76,77,78,79,8,80,81,82,83,84,85,86,87,88,89,9,90,91,92,93,94,95,96,97,98,99,A0,A1,A2,A3,A4,A5,A6,A7,A8,A9,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AQ,AR,B,B1,B2,B3,BA,BB,BC,BD,BE,BF,BG,BH,BI,BJ,BK,BL,BM,BN,BP,BQ,BR,BS,BT,BU,BV,BW,BX,BY,BZ,C,C1,CA,CB,CC,CD,CE,CF,CG,CH,CI,CJ,CK,CL,CM,CN,CO,CP,CQ,DG,DM,DS,GF,GN,GY,IC,MH,NI,ON,PT,PU,RN,RT,TC,TN,UC,")]
     public class X12_ID_1365_7
     {
@@ -3503,6 +3871,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Service Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",1,11,12,14,15,16,17,18,2,20,21,23,24,25,26,27,28,3,33,35,36,37,38,39,4,40,42,44,45,46,5,54,56,6,61,62,63,64,65,66,67,68,69,7,70,71,72,73,74,75,76,77,78,79,8,80,82,83,84,85,86,87,88,93,A4,A6,A9,AD,AE,AF,AG,AI,AJ,AK,AL,AR,B1,BB,BC,BD,BE,BF,BG,BL,BN,BP,BQ,BS,BY,BZ,C1,CQ,GY,IC,MH,NI,ON,PT,PU,RN,RT,TC,TN,")]
     public class X12_ID_1365_8
     {
@@ -3512,6 +3881,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Special Program Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,05,")]
     public class X12_ID_1366
     {
@@ -3521,6 +3891,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Special Program Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,10,")]
     public class X12_ID_1366_2
     {
@@ -3530,6 +3901,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Special Program Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",02,03,05,09,")]
     public class X12_ID_1366_3
     {
@@ -3539,6 +3911,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Subluxation Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",C1,C2,C3,C4,C5,C6,C7,CO,IL,L1,L2,L3,L4,L5,OC,SA,T1,T10,T11,T12,T2,T3,T4,T5,T6,T7" +
         ",T8,T9,")]
     public class X12_ID_1367
@@ -3549,6 +3922,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Subluxation Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",C1,C2,C3,C4,C5,C6,C7,CO,IL,L1,L2,L3,L4,L5,OC,SA,T1,T10,T11,T12,T2,T3,T4,T5,T6,T7" +
         ",T8,T9,")]
     public class X12_ID_1367_2
@@ -3559,6 +3933,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Tooth Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",E,M,")]
     public class X12_ID_1368
     {
@@ -3568,6 +3943,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Tooth Surface Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",B,D,F,I,L,M,O,")]
     public class X12_ID_1369
     {
@@ -3577,6 +3953,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Tooth Surface Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",B,D,F,I,L,M,O,")]
     public class X12_ID_1369_2
     {
@@ -3586,6 +3963,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Measurement Method or Device
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BM,BO,DM,FT,HN,MA,MM,OM,OU,PT,TM,VA,VB,VC,")]
     public class X12_ID_1373
     {
@@ -3595,6 +3973,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Oxygen Delivery System Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,E,")]
     public class X12_ID_1382
     {
@@ -3604,6 +3983,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Claim Submission Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",00,01,02,03,05,07,08,09,15,16,17,18,20,22,27,28,29,PB,")]
     public class X12_ID_1383
     {
@@ -3613,6 +3993,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Claim Submission Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",PB,")]
     public class X12_ID_1383_2
     {
@@ -3622,6 +4003,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Patient Location Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,E,F,G,H,L,M,O,P,R,S,T,")]
     public class X12_ID_1384
     {
@@ -3631,6 +4013,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Patient Location Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,E,F,G,H,L,M,O,P,R,S,T,")]
     public class X12_ID_1384_2
     {
@@ -3640,6 +4023,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Eligibility or Benefit Information Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,A,B,C,CB,D,E,F,G,H,I,J,K,L,M,MC,N,O,P,Q,R,S,T,U,V,W,X,Y,")]
     public class X12_ID_1390
     {
@@ -3649,6 +4033,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Set Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",270,")]
     public class X12_ID_143
     {
@@ -3658,6 +4043,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Set Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",271,")]
     public class X12_ID_143_2
     {
@@ -3667,6 +4053,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Set Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",276,")]
     public class X12_ID_143_3
     {
@@ -3676,6 +4063,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Set Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",277,")]
     public class X12_ID_143_4
     {
@@ -3685,6 +4073,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Set Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",820,")]
     public class X12_ID_143_5
     {
@@ -3694,6 +4083,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Set Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",834,")]
     public class X12_ID_143_6
     {
@@ -3703,6 +4093,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Set Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",835,")]
     public class X12_ID_143_7
     {
@@ -3712,6 +4103,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Set Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",837,")]
     public class X12_ID_143_8
     {
@@ -3721,6 +4113,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Set Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",278,")]
     public class X12_ID_143_9
     {
@@ -3730,6 +4123,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Pricing Methodology
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",00,01,02,03,04,05,06,07,08,09,10,11,12,13,14,")]
     public class X12_ID_1473
     {
@@ -3739,6 +4133,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Pricing Methodology
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",00,01,02,03,04,05,07,08,09,10,11,12,13,14,")]
     public class X12_ID_1473_2
     {
@@ -3748,6 +4143,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Language Proficiency Indicator
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,A,B,C,D,E,")]
     public class X12_ID_1476
     {
@@ -3757,6 +4153,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Delay Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,10,11,15,16,17,2,3,4,5,6,7,8,9,")]
     public class X12_ID_1514
     {
@@ -3766,6 +4163,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Delay Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,10,11,15,2,3,4,5,6,7,8,9,")]
     public class X12_ID_1514_2
     {
@@ -3775,6 +4173,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Delay Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,10,11,15,16,17,2,3,4,5,6,7,8,9,")]
     public class X12_ID_1514_3
     {
@@ -3784,6 +4183,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Delay Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,10,11,15,16,17,2,3,4,7,8,")]
     public class X12_ID_1514_4
     {
@@ -3793,6 +4193,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Request Category Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AR,BA,HS,IN,PR,RE,SC,")]
     public class X12_ID_1525
     {
@@ -3802,6 +4203,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Request Category Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",HS,SC,")]
     public class X12_ID_1525_2
     {
@@ -3811,6 +4213,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Request Category Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AR,HS,IN,SC,")]
     public class X12_ID_1525_3
     {
@@ -3820,6 +4223,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Request Category Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AR,BA,HS,IN,PR,RE,SC,")]
     public class X12_ID_1525_4
     {
@@ -3829,6 +4233,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Request Category Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",HS,SC,")]
     public class X12_ID_1525_5
     {
@@ -3838,6 +4243,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Request Category Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AR,HS,IN,SC,")]
     public class X12_ID_1525_6
     {
@@ -3847,6 +4253,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Policy Compliance Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,")]
     public class X12_ID_1526
     {
@@ -3856,6 +4263,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Exception Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,")]
     public class X12_ID_1527
     {
@@ -3865,6 +4273,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Government Service Affiliation Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,Q,R,S,U,W,")]
     public class X12_ID_1595
     {
@@ -3874,6 +4283,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Military Service Rank Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A1,A2,A3,B1,B2,C1,C2,C3,C4,C5,C6,C7,C8,C9,E1,F1,F2,F3,F4,G1,G4,L1,L2,L3,L4,L5,L6" +
         ",M1,M2,M3,M4,M5,M6,P1,P2,P3,P4,P5,R1,R2,S1,S2,S3,S4,S5,S6,S7,S8,S9,SA,SB,SC,T1,V" +
         "1,W1,")]
@@ -3885,6 +4295,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Eligibility Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0,1,2,")]
     public class X12_ID_1701
     {
@@ -3894,6 +4305,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Eligibility Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0,1,2,")]
     public class X12_ID_1701_2
     {
@@ -3903,6 +4315,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Implementation Convention Reference
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",005010X279A1,")]
     public class X12_ID_1705
     {
@@ -3912,6 +4325,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Implementation Convention Reference
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",005010X212,")]
     public class X12_ID_1705_2
     {
@@ -3921,6 +4335,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Implementation Convention Reference
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",005010X214,")]
     public class X12_ID_1705_3
     {
@@ -3930,6 +4345,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Implementation Convention Reference
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",005010X218,")]
     public class X12_ID_1705_4
     {
@@ -3939,6 +4355,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Implementation Convention Reference
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",005010X220A1,")]
     public class X12_ID_1705_5
     {
@@ -3948,6 +4365,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Implementation Convention Reference
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",005010X224A2,")]
     public class X12_ID_1705_6
     {
@@ -3957,6 +4375,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Implementation Convention Reference
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",005010X223A2,")]
     public class X12_ID_1705_7
     {
@@ -3966,6 +4385,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Implementation Convention Reference
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",005010X222A1,")]
     public class X12_ID_1705_8
     {
@@ -3975,6 +4395,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Implementation Convention Reference
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",005010X217,")]
     public class X12_ID_1705_9
     {
@@ -3984,6 +4405,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Product/Service ID Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",00,A1,A2,A3,A4,A5,A6,A7,A8,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AP,AQ,AR,AS" +
         ",AT,AU,AV,AW,AX,AY,AZ,B1,B2,B3,B4,B5,B6,B7,B8,B9,BA,BB,BC,BD,BE,BF,BG,BH,BI,BJ,B" +
         "K,BL,BM,BN,BO,BP,BQ,BR,BS,BT,BU,BV,BW,BX,BY,BZ,C1,C2,C3,C4,C5,C6,C7,C8,C9,CA,CB," +
@@ -4012,6 +4434,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Product/Service ID Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",HC,")]
     public class X12_ID_235_10
     {
@@ -4021,6 +4444,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Product/Service ID Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EN,EO,HI,N4,ON,UK,UP,")]
     public class X12_ID_235_11
     {
@@ -4030,12 +4454,14 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Product/Service ID Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AD,CJ,HC,ID,IV,N4,ZZ,")]
     public class X12_ID_235_12
     {
     }
     
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AD,ER,HC,HP,IV,NU,WK,")]
     public class X12_ID_235_13
     {
@@ -4045,6 +4471,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Product/Service ID Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DX,ZZ,")]
     public class X12_ID_235_14
     {
@@ -4054,6 +4481,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Product/Service ID Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AD,ER,HC,HP,IV,N4,N6,NU,UI,WK,")]
     public class X12_ID_235_15
     {
@@ -4063,6 +4491,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Product/Service ID Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",HC,IV,N4,WK,")]
     public class X12_ID_235_16
     {
@@ -4072,6 +4501,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Product/Service ID Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",HC,ID,IV,N4,WK,ZZ,")]
     public class X12_ID_235_17
     {
@@ -4081,6 +4511,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Product/Service ID Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AD,")]
     public class X12_ID_235_18
     {
@@ -4090,6 +4521,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Product/Service ID Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",HC,ID,")]
     public class X12_ID_235_19
     {
@@ -4099,6 +4531,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Product/Service ID Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",HC,IV,N4,WK,")]
     public class X12_ID_235_2
     {
@@ -4108,6 +4541,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Product/Service ID Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AD,ER,HC,HP,IV,N4,NU,WK,")]
     public class X12_ID_235_3
     {
@@ -4117,6 +4551,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Product/Service ID Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AD,")]
     public class X12_ID_235_4
     {
@@ -4126,6 +4561,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Product/Service ID Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ER,HC,HP,IV,WK,")]
     public class X12_ID_235_5
     {
@@ -4135,6 +4571,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Product/Service ID Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ER,HC,IV,WK,")]
     public class X12_ID_235_6
     {
@@ -4144,6 +4581,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Product/Service ID Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",HC,ID,IV,N4,WK,ZZ,")]
     public class X12_ID_235_7
     {
@@ -4153,6 +4591,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Product/Service ID Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AD,ER,")]
     public class X12_ID_235_8
     {
@@ -4162,6 +4601,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Product/Service ID Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",N4,")]
     public class X12_ID_235_9
     {
@@ -4171,6 +4611,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Price Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",ACT,AGC,ALT,AWP,BBP,BCH,BID,C01,C02,C03,C04,C05,C06,C07,C08,C09,C10,C11,C12,C13,C14,C15,C16,C17,C18,C19,C20,C21,C22,C23,C24,C25,C26,C27,C28,C29,C30,CAN,CAT,CDF,CDV,CHG,CON,CUP,CUS,D01,D02,D03,DAP,DIS,DPR,DSC,DSD,DSP,EDM,EDP,EDS,EDW,ELC,EST,EUP,FCH,FCP,FDS,FET,FGP,FOR,FSP,FUL,FUP,GAP,GDP,GOV,GSP,GTP,ICL,IND,INS,INV,LAR,LCP,LPP,LPR,MAP,MAS,MAX,MIN,MNC,MNR,MOD,MPR,MSR,MXR,N01,N02,N03,N04,N05,N06,N07,N08,N09,N10,N11,N12,N13,N14,N15,N16,N17,N18,N19,N20,N21,N22,N23,N24,N25,N26,N27,N28,N29,N30,N31,NET,OAP,OPP,PAP,PAQ,PBQ,PBR,PHS,PIE,PLT,PPA,PPD,PRF,PRO,PRP,PUR,QTE,REG,RES,RPA,RPM,RPP,RSH,RTL,SAC,SDP,SFP,SHD,SLP,SPC,SPE,SSP,STA,SUM,SWP,THP,TOT,TRF,UCP,ULC,WAR,WHL,WSP,ZNP,")]
     public class X12_ID_236
     {
@@ -4180,6 +4621,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Allowance or Charge Indicator
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",C,")]
     public class X12_ID_248
     {
@@ -4189,6 +4631,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Handling Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",C,D,I,P,U,X,")]
     public class X12_ID_305
     {
@@ -4198,6 +4641,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Handling Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",C,D,H,I,P,U,X,")]
     public class X12_ID_305_2
     {
@@ -4207,6 +4651,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",U,")]
     public class X12_ID_306
     {
@@ -4216,6 +4661,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A1,A3,A4,A6,C,CT,NA,")]
     public class X12_ID_306_2
     {
@@ -4225,6 +4671,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,RX,")]
     public class X12_ID_306_3
     {
@@ -4234,6 +4681,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",2,")]
     public class X12_ID_306_4
     {
@@ -4243,6 +4691,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",0,00,1,10,11,12,13,14,15,16,17,18,19,2,20,21,22,23,24,25,26,27,28,29,3,30,31,32,33,34,35,36,37,38,39,4,40,41,42,43,44,45,46,47,48,49,5,50,51,52,53,54,55,56,57,58,59,6,60,61,62,63,64,65,66,67,68,69,7,70,71,72,73,74,75,76,77,78,79,8,80,81,82,83,84,85,86,87,88,89,9,90,91,92,93,94,95,96,97,A,A1,A2,A3,A4,A5,A6,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AL,AP,AQ,AR,AS,AT,AV,AW,AX,B,BD,BE,BF,BG,BH,BI,BJ,BK,BL,BM,BN,BO,C,C1,C2,CA,CB,CC,CD,CE,CF,CG,CL,CM,CN,CO,CP,CR,CS,CT,CU,CV,CX,D,D1,D2,DA,DB,DC,DD,DE,DF,DG,DH,DI,DJ,DK,DL,DP,DR,DS,DT,DX,E,EA,EB,EC,ED,EE,EN,EP,ER,EV,EX,EZ,F,F1,FA,FC,FI,FO,FR,G,GR,H,HM,HR,I,I1,IA,IM,IN,IS,IT,J,JA,JO,JU,K,KA,L,LC,LQ,M,ME,MO,N,NA,NC,ND,NP,NS,O,OD,OP,OR,OT,P,P1,PA,PB,PC,PD,PF,PI,PJ,PO,PP,PR,PS,PT,PU,PV,Q,R,R1,R2,R3,R4,R5,R6,R7,R8,R9,RA,RB,RC,RD,RE,RF,RG,RH,RI,RJ,RK,RL,RM,RN,RO,RP,RQ,RR,RS,RT,RU,RV,RW,RX,RZ,S,S1,S2,SA,SB,SC,SD,SE,SL,SR,SS,SU,SV,SZ,T,TD,TE,TG,TN,TP,TR,TS,TU,U,V,VA,W,W1,WD,WI,WQ,WV,X,Y,Z,")]
     public class X12_ID_306_5
     {
@@ -4252,6 +4701,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Status Information Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",U,WQ,")]
     public class X12_ID_306_6
     {
@@ -4261,6 +4711,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A1,A2,A3,A4,A6,C,CT,NA,")]
     public class X12_ID_306_7
     {
@@ -4270,6 +4721,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",2,4,RX,")]
     public class X12_ID_306_8
     {
@@ -4279,6 +4731,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Location Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",RJ,")]
     public class X12_ID_309
     {
@@ -4288,6 +4741,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Location Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",10,11,12,13,14,18,19,20,21,22,27,28,29,30,31,32,33,34,35,36,38,39,40,41,42,43,44,45,46,47,48,49,50,52,53,54,55,57,58,59,60,93,94,A,A1,AA,AC,AP,AR,B,B1,BE,BL,BS,C,C2,CA,CB,CC,CD,CE,CG,CI,CL,CM,CO,CR,CS,CY,D,DC,DE,DL,DO,DP,DR,DT,E,EA,EB,EL,F,FA,FE,FF,FI,FR,FS,FT,FV,G,GL,H,I,IA,IB,IM,IP,IS,IT,J,K,KE,KL,KP,L,LO,M,MI,MO,MS,MZ,NS,O,OA,OF,OL,OP,OR,OV,P,PA,PB,PC,PD,PE,PF,PG,PH,PL,PM,PO,PP,PQ,PR,PS,PT,PU,PV,PZ,Q,RA,RC,RE,RG,RJ,RL,RS,RT,SA,SB,SC,SD,SE,SG,SH,SL,SN,SP,SS,ST,SW,TA,TC,TI,TL,TM,TN,TP,TR,TX,UN,UR,UT,VA,VI,VS,W,WF,WH,WI,X1,ZN,ZZ,")]
     public class X12_ID_309_2
     {
@@ -4297,6 +4751,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Location Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",60,CY,RJ,")]
     public class X12_ID_309_3
     {
@@ -4306,6 +4761,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Location Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",60,CY,")]
     public class X12_ID_309_4
     {
@@ -4315,6 +4771,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Location Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",10,11,12,13,14,18,19,20,21,22,27,28,29,30,31,32,33,34,35,36,38,39,40,41,42,43,44,45,46,47,48,49,50,52,53,54,55,57,58,59,60,93,94,A,A1,AA,AC,AP,AR,B,B1,BE,BL,BS,C,C2,CA,CB,CC,CD,CE,CG,CI,CL,CM,CO,CR,CS,CY,D,DC,DE,DL,DO,DP,DR,DT,E,EA,EB,EL,F,FA,FE,FF,FI,FR,FS,FT,FV,G,GL,H,I,IA,IB,IM,IP,IS,IT,J,K,KE,KL,KP,L,LO,M,MI,MO,MS,MZ,NS,O,OA,OF,OL,OP,OR,OV,P,PA,PB,PC,PD,PE,PF,PG,PH,PL,PM,PO,PP,PQ,PR,PS,PT,PU,PV,PZ,Q,RA,RC,RE,RG,RJ,RL,RS,RT,SA,SB,SC,SD,SE,SG,SH,SL,SN,SP,SS,ST,SW,TA,TC,TI,TL,TM,TN,TP,TR,TX,UN,UR,UT,VA,VI,VS,W,WF,WH,WI,X1,ZN,ZZ,")]
     public class X12_ID_309_5
     {
@@ -4324,6 +4781,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Allowance or Charge Method of Handling Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,10,11,12,13,15,18,20,21,25,CA,CC,PP,ZZ,")]
     public class X12_ID_331
     {
@@ -4333,6 +4791,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Set Purpose Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,13,")]
     public class X12_ID_353
     {
@@ -4342,6 +4801,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Set Purpose Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",06,11,")]
     public class X12_ID_353_2
     {
@@ -4351,6 +4811,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Set Purpose Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",13,")]
     public class X12_ID_353_3
     {
@@ -4360,6 +4821,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Set Purpose Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",08,")]
     public class X12_ID_353_4
     {
@@ -4369,6 +4831,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Set Purpose Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",11,")]
     public class X12_ID_353_5
     {
@@ -4378,6 +4841,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Set Purpose Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",00,15,22,")]
     public class X12_ID_353_6
     {
@@ -4387,6 +4851,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Set Purpose Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",00,18,")]
     public class X12_ID_353_7
     {
@@ -4396,6 +4861,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Set Purpose Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,13,36,")]
     public class X12_ID_353_8
     {
@@ -4405,6 +4871,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,1A,1B,1C,1D,1E,1F,1G,1H" +
         ",1I,1J,1K,1L,1M,1N,1O,1P,1Q,1R,1T,1X,20,21,22,23,24,25,26,27,28,29,2A,2B,2C,2D,2" +
         "F,2G,2H,2I,2J,2K,2L,2M,2N,2P,2Q,2R,2U,2V,2W,2X,2Y,2Z,30,31,32,33,34,35,36,37,38," +
@@ -4445,6 +4912,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DA,F2,UN,")]
     public class X12_ID_355_10
     {
@@ -4454,6 +4922,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",MJ,UN,")]
     public class X12_ID_355_11
     {
@@ -4463,6 +4932,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DA,")]
     public class X12_ID_355_12
     {
@@ -4472,6 +4942,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",MO,")]
     public class X12_ID_355_13
     {
@@ -4481,6 +4952,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DA,MO,VS,WK,YR,")]
     public class X12_ID_355_14
     {
@@ -4490,6 +4962,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DA,MO,WK,")]
     public class X12_ID_355_15
     {
@@ -4499,6 +4972,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,")]
     public class X12_ID_355_16
     {
@@ -4508,6 +4982,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",KG,LB,")]
     public class X12_ID_355_17
     {
@@ -4517,6 +4992,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DH,DK,")]
     public class X12_ID_355_18
     {
@@ -4526,6 +5002,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,1A,1B,1C,1D,1E,1F,1G,1H" +
         ",1I,1J,1K,1L,1M,1N,1O,1P,1Q,1R,1T,1X,20,21,22,23,24,25,26,27,28,29,2A,2B,2C,2D,2" +
         "F,2G,2H,2I,2J,2K,2L,2M,2N,2P,2Q,2R,2U,2V,2W,2X,2Y,2Z,30,31,32,33,34,35,36,37,38," +
@@ -4566,6 +5043,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",10,IE,PR,")]
     public class X12_ID_355_2
     {
@@ -4575,6 +5053,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",F2,MJ,UN,")]
     public class X12_ID_355_20
     {
@@ -4584,6 +5063,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DA,F2,UN,")]
     public class X12_ID_355_21
     {
@@ -4593,6 +5073,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DA,MO,WK,")]
     public class X12_ID_355_22
     {
@@ -4602,6 +5083,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",UN,")]
     public class X12_ID_355_3
     {
@@ -4611,6 +5093,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DA,UN,")]
     public class X12_ID_355_4
     {
@@ -4620,6 +5103,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DH,DK,")]
     public class X12_ID_355_5
     {
@@ -4629,6 +5113,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",F2,GR,ME,ML,UN,")]
     public class X12_ID_355_6
     {
@@ -4638,6 +5123,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",LB,")]
     public class X12_ID_355_7
     {
@@ -4647,6 +5133,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",F2,MJ,UN,")]
     public class X12_ID_355_8
     {
@@ -4656,6 +5143,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Unit or Basis for Measurement Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DH,")]
     public class X12_ID_355_9
     {
@@ -4665,6 +5153,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Note Reference Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ADD,")]
     public class X12_ID_363
     {
@@ -4674,6 +5163,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Note Reference Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ADD,DCP,")]
     public class X12_ID_363_2
     {
@@ -4683,6 +5173,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Note Reference Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",TPO,")]
     public class X12_ID_363_3
     {
@@ -4692,6 +5183,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Note Reference Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ALG,DCP,DGN,DME,MED,NTR,ODT,RHB,RLH,RNH,SET,SFM,SPT,UPI,")]
     public class X12_ID_363_4
     {
@@ -4701,6 +5193,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Note Reference Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ADD,CER,DCP,DGN,TPO,")]
     public class X12_ID_363_5
     {
@@ -4710,6 +5203,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ED,EM,EX,FX,TE,UR,")]
     public class X12_ID_365
     {
@@ -4719,6 +5213,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AP,BN,CP,EM,EX,HP,TE,WP,")]
     public class X12_ID_365_10
     {
@@ -4728,6 +5223,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EM,TE,UR,")]
     public class X12_ID_365_11
     {
@@ -4737,6 +5233,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,AB,AC,AD,AE,AP,AS,AU,BN,BT,CA,CP,DN,EA,ED,EM,EX,FT,FU,FX,HF,HP,IT,MN,NP,OF,OT" +
         ",PA,PC,PP,PS,SP,TE,TL,TM,TN,TX,UR,VM,WC,WF,WP,")]
     public class X12_ID_365_12
@@ -4747,6 +5244,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EM,EX,FX,UR,")]
     public class X12_ID_365_13
     {
@@ -4756,6 +5254,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",UR,")]
     public class X12_ID_365_14
     {
@@ -4765,6 +5264,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ED,EM,FX,TE,UR,")]
     public class X12_ID_365_15
     {
@@ -4774,6 +5274,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ED,EM,FX,TE,")]
     public class X12_ID_365_16
     {
@@ -4783,6 +5284,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EM,FX,TE,UR,")]
     public class X12_ID_365_17
     {
@@ -4792,6 +5294,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EM,FX,TE,")]
     public class X12_ID_365_18
     {
@@ -4801,6 +5304,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AP,BN,CP,EM,EX,FX,HP,TE,WP,")]
     public class X12_ID_365_19
     {
@@ -4810,6 +5314,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ED,EM,EX,FX,TE,")]
     public class X12_ID_365_2
     {
@@ -4819,6 +5324,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EM,EX,FX,TE,UR,")]
     public class X12_ID_365_20
     {
@@ -4828,6 +5334,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EM,FX,TE,UR,")]
     public class X12_ID_365_21
     {
@@ -4837,6 +5344,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EM,EX,FX,TE,UR,")]
     public class X12_ID_365_3
     {
@@ -4846,6 +5354,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EM,EX,FX,TE,")]
     public class X12_ID_365_4
     {
@@ -4855,6 +5364,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AP,BN,CP,EM,EX,FX,TE,")]
     public class X12_ID_365_5
     {
@@ -4864,6 +5374,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ED,EM,FX,TE,UR,WP,")]
     public class X12_ID_365_6
     {
@@ -4873,6 +5384,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EX,")]
     public class X12_ID_365_7
     {
@@ -4882,6 +5394,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",TE,")]
     public class X12_ID_365_8
     {
@@ -4891,6 +5404,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Communication Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ED,EM,EX,FX,TE,UR,WP,")]
     public class X12_ID_365_9
     {
@@ -4900,6 +5414,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Contact Function Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EP,")]
     public class X12_ID_366
     {
@@ -4909,6 +5424,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Contact Function Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",IC,")]
     public class X12_ID_366_10
     {
@@ -4918,6 +5434,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Contact Function Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BL,")]
     public class X12_ID_366_2
     {
@@ -4927,6 +5444,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Contact Function Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",SK,")]
     public class X12_ID_366_3
     {
@@ -4936,6 +5454,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Contact Function Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",IC,")]
     public class X12_ID_366_4
     {
@@ -4945,6 +5464,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Contact Function Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",PQ,")]
     public class X12_ID_366_5
     {
@@ -4954,6 +5474,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Contact Function Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",RP,")]
     public class X12_ID_366_6
     {
@@ -4963,6 +5484,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Contact Function Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",CN,")]
     public class X12_ID_366_7
     {
@@ -4972,6 +5494,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Contact Function Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",IP,")]
     public class X12_ID_366_8
     {
@@ -4981,6 +5504,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Contact Function Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",CX,")]
     public class X12_ID_366_9
     {
@@ -4990,6 +5514,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",007,")]
     public class X12_ID_374
     {
@@ -4999,6 +5524,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",444,")]
     public class X12_ID_374_10
     {
@@ -5008,6 +5534,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",050,")]
     public class X12_ID_374_11
     {
@@ -5017,6 +5544,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",573,")]
     public class X12_ID_374_12
     {
@@ -5026,6 +5554,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",291,")]
     public class X12_ID_374_13
     {
@@ -5035,6 +5564,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",096,193,194,198,290,291,292,295,304,307,318,346,348,349,356,357,435,472,636,771," +
         "")]
     public class X12_ID_374_14
@@ -5045,6 +5575,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",009,")]
     public class X12_ID_374_15
     {
@@ -5054,6 +5585,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",484,")]
     public class X12_ID_374_16
     {
@@ -5063,6 +5595,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",050,286,296,297,300,301,303,336,337,338,339,340,341,350,351,356,357,383,385,386," +
         "393,394,473,474,")]
     public class X12_ID_374_17
@@ -5073,6 +5606,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",405,")]
     public class X12_ID_374_18
     {
@@ -5082,6 +5616,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",439,")]
     public class X12_ID_374_19
     {
@@ -5091,6 +5626,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",198,")]
     public class X12_ID_374_2
     {
@@ -5100,6 +5636,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",431,")]
     public class X12_ID_374_20
     {
@@ -5109,6 +5646,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",607,")]
     public class X12_ID_374_21
     {
@@ -5118,6 +5656,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",463,")]
     public class X12_ID_374_22
     {
@@ -5127,6 +5666,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",461,")]
     public class X12_ID_374_23
     {
@@ -5136,6 +5676,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",738,739,")]
     public class X12_ID_374_24
     {
@@ -5145,6 +5686,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",011,")]
     public class X12_ID_374_25
     {
@@ -5154,6 +5696,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ABC,")]
     public class X12_ID_374_26
     {
@@ -5163,6 +5706,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",035,")]
     public class X12_ID_374_27
     {
@@ -5172,6 +5716,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",360,361,")]
     public class X12_ID_374_28
     {
@@ -5181,6 +5726,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",232,233,")]
     public class X12_ID_374_29
     {
@@ -5190,6 +5736,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",314,360,361,")]
     public class X12_ID_374_3
     {
@@ -5199,6 +5746,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",452,")]
     public class X12_ID_374_30
     {
@@ -5208,6 +5756,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",434,")]
     public class X12_ID_374_31
     {
@@ -5217,6 +5766,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",454,")]
     public class X12_ID_374_32
     {
@@ -5226,6 +5776,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",582,")]
     public class X12_ID_374_33
     {
@@ -5235,6 +5786,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",300,303,343,348,349,543,695,")]
     public class X12_ID_374_34
     {
@@ -5244,6 +5796,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",036,")]
     public class X12_ID_374_35
     {
@@ -5253,6 +5806,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",304,")]
     public class X12_ID_374_36
     {
@@ -5262,6 +5816,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AAH,")]
     public class X12_ID_374_37
     {
@@ -5271,6 +5826,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",097,")]
     public class X12_ID_374_38
     {
@@ -5280,6 +5836,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",344,345,")]
     public class X12_ID_374_39
     {
@@ -5289,6 +5846,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",472,")]
     public class X12_ID_374_4
     {
@@ -5298,6 +5856,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",453,")]
     public class X12_ID_374_40
     {
@@ -5307,6 +5866,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",582,AAG,")]
     public class X12_ID_374_41
     {
@@ -5316,6 +5876,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",150,151,472,")]
     public class X12_ID_374_42
     {
@@ -5325,6 +5886,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",139,441,")]
     public class X12_ID_374_43
     {
@@ -5334,6 +5896,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",102,")]
     public class X12_ID_374_44
     {
@@ -5343,6 +5906,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",446,")]
     public class X12_ID_374_45
     {
@@ -5352,6 +5916,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",455,")]
     public class X12_ID_374_46
     {
@@ -5361,6 +5926,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",196,")]
     public class X12_ID_374_47
     {
@@ -5370,6 +5936,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",471,")]
     public class X12_ID_374_48
     {
@@ -5379,6 +5946,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",102,291,")]
     public class X12_ID_374_49
     {
@@ -5388,6 +5956,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",297,")]
     public class X12_ID_374_5
     {
@@ -5397,6 +5966,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",096,102,152,291,307,318,340,341,342,343,346,347,356,357,382,435,442,458,472,539," +
         "540,636,771,")]
     public class X12_ID_374_50
@@ -5407,6 +5977,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",001,002,003,004,005,006,007,008,009,010,011,012,013,014,015,016,017,018,019,020," +
         "021,022,023,024,025,026,027,028,029,030,031,032,033,034,035,036,037,038,039,040," +
         "041,042,043,044,045,046,047,048,049,050,051,052,053,054,055,056,057,058,059,060," +
@@ -5480,6 +6051,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",007,090,091,303,382,388,")]
     public class X12_ID_374_52
     {
@@ -5489,6 +6061,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",484,")]
     public class X12_ID_374_53
     {
@@ -5498,6 +6071,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ABC,")]
     public class X12_ID_374_54
     {
@@ -5507,6 +6081,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",431,")]
     public class X12_ID_374_55
     {
@@ -5516,6 +6091,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AAH,")]
     public class X12_ID_374_56
     {
@@ -5525,6 +6101,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",435,")]
     public class X12_ID_374_57
     {
@@ -5534,6 +6111,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",096,")]
     public class X12_ID_374_58
     {
@@ -5543,6 +6121,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",598,")]
     public class X12_ID_374_59
     {
@@ -5552,6 +6131,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",296,")]
     public class X12_ID_374_6
     {
@@ -5561,6 +6141,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",472,")]
     public class X12_ID_374_60
     {
@@ -5570,6 +6151,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",439,")]
     public class X12_ID_374_61
     {
@@ -5579,6 +6161,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",435,")]
     public class X12_ID_374_7
     {
@@ -5588,6 +6171,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",096,")]
     public class X12_ID_374_8
     {
@@ -5597,6 +6181,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Date/Time Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",090,091,")]
     public class X12_ID_374_9
     {
@@ -5606,6 +6191,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Allowance/Charge Percent Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0,1,2,3,4,5,6,7,8,9,A,B,C,D,H,Z,")]
     public class X12_ID_378
     {
@@ -5615,6 +6201,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Adjustment Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",00,01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,A1,A2,A3,A4,A5,A6,A7,A8,A9,AA,AB,AC,AD,AE,AF,AG,AH,AL,AM,AN,AO,AP,AQ,AR,AS,AT,AU,AV,AW,AX,AY,AZ,B1,B2,B3,B4,B5,B6,B7,B8,B9,BA,BB,BC,BD,BE,BF,BG,BH,BI,BJ,BK,BL,BM,BN,BO,BP,BR,BS,C1,C2,C3,C4,C5,C6,C7,C8,C9,CA,CB,CE,CK,CM,CO,CP,CQ,CR,CS,CT,CU,CV,CW,D1,D2,D3,D4,D5,D6,D7,D8,D9,DA,DB,DC,DD,DE,DF,DG,DH,DI,DJ,DK,DL,DM,DO,DP,DR,DS,DT,DU,DV,DW,DX,DY,E1,E2,E3,E4,E5,E6,E7,E8,E9,EE,EP,ER,EX,F1,F3,F4,F5,F6,F7,F8,F9,FA,FB,FC,FI,FR,FT,FU,G1,G2,G3,G4,G5,G6,G7,G8,G9,GA,GB,GC,GD,GE,GF,GG,GH,GJ,GK,GL,GM,GN,GO,GR,H1,H2,H3,H4,H5,H6,H7,H8,H9,HA,HB,HC,HD,HE,HF,HG,HI,HM,IA,IC,IE,IF,IL,IN,IP,IR,IS,J1,J2,J3,J4,J5,J6,J7,J8,J9,JE,K1,K2,K3,L1,L2,L3,L4,L5,L6,L7,L8,L9,LA,LE,LF,LO,LP,LS,M1,M2,M3,M4,MA,MB,MC,MD,ME,MF,MG,MH,MI,MJ,MK,ML,MM,MN,MO,MP,MQ,MR,MV,N1,N2,N3,N4,N5,N6,N7,NA,NB,NC,ND,NL,NO,NP,NR,OA,OB,OC,OL,OP,OT,P1,P2,P3,PA,PB,PC,PD,PE,PF,PG,PH,PI,PJ,PK,PL,PM,PN,PO,PP,PQ,PR,PS,PT,PU,PV,PW,PX,PY,PZ,R1,R2,R3,R4,R5,R6,RA,RB,RC,RD,RE,RF,RG,RH,RI,RJ,RK,RL,RM,RN,RO,RP,RQ,RR,RS,RT,RU,RV,RW,RX,RY,RZ,SA,SC,SD,SE,SF,SG,SH,SI,SJ,SK,SL,SM,SN,SO,SP,SR,SS,ST,SU,SV,SW,SX,SY,TA,TD,TI,TL,UB,UL,VC,VD,VO,W6,W8,W9,WA,WB,WC,WE,WH,WO,WR,WS,WT,WU,WW,WX,WY,WZ,XA,XB,XC,XD,XE,XF,ZZ,")]
     public class X12_ID_426
     {
@@ -5624,6 +6211,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Adjustment Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",20,52,53,AA,AX,H1,H6,IA,J3,")]
     public class X12_ID_426_2
     {
@@ -5633,6 +6221,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Adjustment Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",52,53,80,81,86,BJ,H1,H6,RU,WO,")]
     public class X12_ID_426_3
     {
@@ -5642,6 +6231,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Adjustment Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",52,53,80,81,86,BJ,H1,H6,RU,WO,WW,")]
     public class X12_ID_426_4
     {
@@ -5651,6 +6241,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Adjustment Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",50,51,72,90,AH,AM,AP,B2,B3,BD,BN,C5,CR,CS,CT,CV,CW,DM,E3,FB,FC,GO,HM,IP,IR,IS,J1" +
         ",L3,L6,LE,LS,OA,OB,PI,PL,RA,RE,SL,TL,WO,WU,")]
     public class X12_ID_426_5
@@ -5661,6 +6252,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Credit/Debit Flag Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",C,D,")]
     public class X12_ID_478
     {
@@ -5670,6 +6262,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Credit/Debit Flag Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",C,")]
     public class X12_ID_478_2
     {
@@ -5679,6 +6272,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Trace Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,")]
     public class X12_ID_481
     {
@@ -5688,6 +6282,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Trace Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",2,")]
     public class X12_ID_481_2
     {
@@ -5697,6 +6292,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Trace Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,")]
     public class X12_ID_481_3
     {
@@ -5706,6 +6302,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Trace Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,3,")]
     public class X12_ID_481_4
     {
@@ -5715,6 +6312,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Payment Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AJ,ER,FL,NS,PA,PI,PO,PP,PR,")]
     public class X12_ID_482
     {
@@ -5724,6 +6322,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Payment Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",PA,PI,PO,PP,")]
     public class X12_ID_482_2
     {
@@ -5733,6 +6332,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// (DFI) ID Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,ZZ,")]
     public class X12_ID_506
     {
@@ -5742,6 +6342,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// (DFI) ID Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,04,")]
     public class X12_ID_506_2
     {
@@ -5751,6 +6352,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// (DFI) ID Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,04,")]
     public class X12_ID_506_3
     {
@@ -5760,6 +6362,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Amount Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",PB,")]
     public class X12_ID_522
     {
@@ -5769,6 +6372,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Amount Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",F4,")]
     public class X12_ID_522_10
     {
@@ -5778,6 +6382,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Amount Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",R,")]
     public class X12_ID_522_11
     {
@@ -5787,6 +6392,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Amount Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",T3,")]
     public class X12_ID_522_12
     {
@@ -5796,6 +6402,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Amount Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",YU,")]
     public class X12_ID_522_13
     {
@@ -5805,6 +6412,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Amount Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",B9,C1,D2,EBA,FK,P3,R,")]
     public class X12_ID_522_14
     {
@@ -5814,6 +6422,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Amount Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AU,D8,DY,F5,I,NL,T,T2,ZK,ZL,ZM,ZN,ZO,")]
     public class X12_ID_522_15
     {
@@ -5823,6 +6432,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Amount Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",F5,")]
     public class X12_ID_522_16
     {
@@ -5832,6 +6442,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Amount Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",F3,")]
     public class X12_ID_522_17
     {
@@ -5841,6 +6452,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Amount Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",YY,")]
     public class X12_ID_522_2
     {
@@ -5850,6 +6462,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Amount Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",B6,KH,T,T2,ZK,ZL,ZM,ZN,ZO,")]
     public class X12_ID_522_3
     {
@@ -5859,6 +6472,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Amount Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",D,")]
     public class X12_ID_522_4
     {
@@ -5868,6 +6482,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Amount Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EAF,")]
     public class X12_ID_522_5
     {
@@ -5877,6 +6492,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Amount Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A8,")]
     public class X12_ID_522_6
     {
@@ -5886,6 +6502,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Amount Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",T,")]
     public class X12_ID_522_7
     {
@@ -5895,6 +6512,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Amount Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",GT,")]
     public class X12_ID_522_8
     {
@@ -5904,6 +6522,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Amount Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",N8,")]
     public class X12_ID_522_9
     {
@@ -5913,6 +6532,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Agency Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,64,65,66,93,94,A1,A2,A3,A4,AA,AB,AC,AD,AE,AF,AG,AH,AJ,AL,AM,AP,AQ,AR,AS,AT,AW,AX,AY,BA,BE,BF,BI,CA,CB,CC,CE,CI,CL,CM,CO,CP,CR,CS,CU,CX,DA,DD,DE,DF,DH,DI,DL,DN,DO,DR,DS,DX,DY,DZ,EI,EP,ES,ET,EU,EX,FA,FC,FD,FG,FH,FI,GC,GI,GS,GU,HC,HF,HI,HS,HU,IA,IB,IC,IM,IN,IS,JA,LA,LB,LI,MA,MB,MC,ME,MI,MP,MS,MV,NA,NB,NC,NE,NF,NG,NI,NP,NR,NS,NT,NU,NW,OI,OP,OS,PA,PC,PI,RN,SA,SE,SL,SP,ST,TA,TB,TC,TD,TI,TM,TP,TR,TX,UA,UC,UI,UL,UN,UT,VI,WH,ZZ,")]
     public class X12_ID_559
     {
@@ -5922,6 +6542,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Agency Qualifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,64,65,66,93,94,A1,A2,A3,A4,AA,AB,AC,AD,AE,AF,AG,AH,AJ,AL,AM,AP,AQ,AR,AS,AT,AW,AX,AY,BA,BE,BF,BI,CA,CB,CC,CE,CI,CL,CM,CO,CP,CR,CS,CU,CX,DA,DD,DE,DF,DH,DI,DL,DN,DO,DR,DS,DX,DY,DZ,EI,EP,ES,ET,EU,EX,FA,FC,FD,FG,FH,FI,GC,GI,GS,GU,HC,HF,HI,HS,HU,IA,IB,IC,IM,IN,IS,JA,LA,LB,LI,MA,MB,MC,ME,MI,MP,MS,MV,NA,NB,NC,NE,NF,NG,NI,NP,NR,NS,NT,NU,NW,OI,OP,OS,PA,PC,PI,RN,SA,SE,SL,SP,ST,TA,TB,TC,TD,TI,TM,TP,TR,TX,UA,UC,UI,UL,UN,UT,VI,WH,ZZ,")]
     public class X12_ID_559_2
     {
@@ -5931,6 +6552,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Account Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DA,SG,")]
     public class X12_ID_569
     {
@@ -5940,6 +6562,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Account Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,03,05,06,07,08,1,10,11,12,13,14,2,3,4,5,6,7,8,9,AG,ALC,ANN,AP,BA,CB,CC,CDM,CD" +
         "S,CM,CRU,DA,DC,EC,EPC,GL,LN,LTD,MUT,PRI,RD,REL,RS,SG,SKA,Z,ZB1,ZB2,")]
     public class X12_ID_569_2
@@ -5950,6 +6573,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Account Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ALC,DA,")]
     public class X12_ID_569_3
     {
@@ -5959,6 +6583,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Account Number Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DA,")]
     public class X12_ID_569_4
     {
@@ -5968,6 +6593,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Employment Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AE,AO,AS,AT,AU,CC,DD,HD,IR,LX,PE,RE,RM,RR,RU,")]
     public class X12_ID_584
     {
@@ -5977,6 +6603,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Employment Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",00,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AO,AP,AQ,AS,AT,AU,CA,CC,CO,CT,DC,DD,DI,DQ,DR,DS,EO,FA,FB,FC,FO,FT,HD,IA,IR,L1,L2,L3,L4,L5,L6,L7,LA,LE,LF,LM,LO,LS,LU,LW,LX,NE,OS,OT,PA,PC,PE,PM,PN,PR,PT,PV,PW,RA,RB,RC,RD,RE,RI,RM,RP,RR,RT,RU,RW,SA,SB,SE,SL,SU,TE,TF,TM,TN,TP,TR,UK,VO,XD,ZZ,")]
     public class X12_ID_584_2
     {
@@ -5986,6 +6613,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Employment Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AO,AU,DI,PV,RU,")]
     public class X12_ID_584_3
     {
@@ -5995,6 +6623,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Employment Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AC,AO,AU,FT,L1,PT,RT,TE,")]
     public class X12_ID_584_4
     {
@@ -6004,6 +6633,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Employment Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",00,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AO,AP,AQ,AS,AT,AU,CA,CC,CO,CT,DC,DD,DI,DQ,DR,DS,EO,FA,FB,FC,FO,FT,HD,IA,IR,L1,L2,L3,L4,L5,L6,L7,LA,LE,LF,LM,LO,LS,LU,LW,LX,NE,OS,OT,PA,PC,PE,PM,PN,PR,PT,PV,PW,RA,RB,RC,RD,RE,RI,RM,RP,RR,RT,RU,RW,SA,SB,SE,SL,SU,TE,TF,TM,TN,TP,TR,UK,VO,XD,ZZ,")]
     public class X12_ID_584_5
     {
@@ -6013,6 +6643,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Employment Status Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AO,AU,DI,PV,RU,")]
     public class X12_ID_584_6
     {
@@ -6022,6 +6653,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Payment Method Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ACH,BKW,BOP,CAS,CCC,CCF,CCH,CDA,CHK,CLH,CPC,CWT,DCC,DCD,DDP,DEB,DLC,DLD,DXC,DXD," +
         "DYC,DYD,DZC,DZD,EBX,EXC,FEW,FWT,FXP,IWT,NON,PAC,PBD,PDC,PDD,PDE,PRO,QDR,QIR,REV," +
         "SCC,SCD,SDC,SDD,SWT,SXC,SXD,SYC,SZC,SZD,TRA,VIS,X12,ZZZ,")]
@@ -6033,6 +6665,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Payment Method Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ACH,BOP,CHK,FWT,NON,SWT,")]
     public class X12_ID_591_2
     {
@@ -6042,6 +6675,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Payment Method Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ACH,BOP,CHK,FWT,NON,")]
     public class X12_ID_591_3
     {
@@ -6051,6 +6685,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Frequency Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,6,7,8,9,B,C,H,Q,S,U,")]
     public class X12_ID_594
     {
@@ -6060,6 +6695,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Frequency Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,4,6,")]
     public class X12_ID_594_2
     {
@@ -6069,6 +6705,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Time Period Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,6,7,")]
     public class X12_ID_615
     {
@@ -6078,6 +6715,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Time Period Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",21,26,27,29,34,35,6,7,")]
     public class X12_ID_615_2
     {
@@ -6087,6 +6725,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Time Period Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",13,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,6,7,")]
     public class X12_ID_615_3
     {
@@ -6096,6 +6735,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Time Period Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",21,26,27,34,35,6,7,")]
     public class X12_ID_615_4
     {
@@ -6105,6 +6745,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Time Period Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",21,26,27,34,35,6,7,")]
     public class X12_ID_615_5
     {
@@ -6114,6 +6755,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Time Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,AD,AS,AT" +
         ",CD,CS,CT,ED,ES,ET,GM,HD,HS,HT,LT,MD,MS,MT,ND,NS,NT,PD,PS,PT,TD,TS,TT,UT,")]
     public class X12_ID_623
@@ -6124,6 +6766,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Basis of Unit Price Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",AA,AB,AP,AW,BD,BR,BW,CA,CP,CR,CT,DI,DP,DR,DS,EC,EH,ES,FB,FO,FX,HF,HP,HT,KA,KP,KR,LC,LD,LE,LM,LR,ME,ML,NC,NE,NQ,NS,NT,PA,PB,PD,PE,PF,PG,PK,PL,PM,PN,PO,PP,PQ,PR,PS,PT,PU,PV,PY,QE,QH,QR,QS,QT,RC,RD,RE,RM,RS,RT,SA,SC,SM,SR,ST,SW,TB,TC,TD,TE,TF,TM,TP,TT,UM,VQ,WC,WD,WE,WH,WI,WM,")]
     public class X12_ID_639
     {
@@ -6133,6 +6776,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",RT,")]
     public class X12_ID_640
     {
@@ -6142,6 +6786,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,1A,1B,20,21,22,23,24,25" +
         ",26,27,28,30,31,33,34,35,36,37,38,39,3M,40,41,42,43,44,45,46,47,48,49,50,51,52,5" +
         "4,55,56,57,58,60,62,63,64,65,66,67,68,69,6A,6C,6N,6R,6S,70,71,72,73,74,75,76,77," +
@@ -6171,6 +6816,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DG,")]
     public class X12_ID_640_3
     {
@@ -6180,6 +6826,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",TH,")]
     public class X12_ID_640_4
     {
@@ -6189,6 +6836,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",18,19,AT,RU,")]
     public class X12_ID_640_5
     {
@@ -6198,6 +6846,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",31,CH,RP,")]
     public class X12_ID_640_6
     {
@@ -6207,6 +6856,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Transaction Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",RU,")]
     public class X12_ID_640_7
     {
@@ -6216,6 +6866,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Price Multiplier Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",CSD,CSR,DIS,ILP,PSP,SEL,")]
     public class X12_ID_648
     {
@@ -6225,6 +6876,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Basis of Verification Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,I,J,K,")]
     public class X12_ID_659
     {
@@ -6234,6 +6886,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Basis of Verification Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,I,J,K,")]
     public class X12_ID_659_2
     {
@@ -6243,6 +6896,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",24,34,FI,PI,PP,SV,XV,XX,")]
     public class X12_ID_66
     {
@@ -6252,6 +6906,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",FI,XX,")]
     public class X12_ID_66_10
     {
@@ -6261,6 +6916,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",31,57,94,A3,A4,A6,CF,G,PA,")]
     public class X12_ID_66_11
     {
@@ -6270,6 +6926,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",0,1,10,11,12,13,15,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,31,32,33,34,35,36,37,38,39,4,40,41,42,43,44,45,46,47,48,49,50,51,53,54,55,56,57,58,59,6,61,62,63,64,7,71,72,73,74,75,76,77,78,81,82,83,9,90,91,92,93,94,95,96,97,98,99,A,A1,A2,A3,A4,A5,A6,A7,AA,AB,AC,AD,AE,AF,AI,AL,AP,BC,BD,BE,BG,BN,BP,BS,C,C1,C2,C5,CA,CB,CC,CD,CE,CF,CI,CL,CM,CN,CP,CR,CS,CT,D,DG,DL,DN,DO,DP,DR,DS,E,EC,EH,EI,EL,EP,EQ,ER,ES,ET,F,FA,FB,FC,FD,FE,FI,FJ,FL,FN,G,GA,GC,HC,HN,HS,I,ID,II,IP,J,K,L,LC,LD,LE,LI,LN,M,M3,M4,M5,M6,MA,MB,MC,MD,MI,MK,ML,MN,MO,MP,MR,N,NA,ND,NI,NO,NR,OC,OP,PA,PB,PC,PI,PP,PR,RA,RB,RC,RD,RE,RI,RP,RT,S,SA,SB,SD,SF,SI,SJ,SK,SL,SP,ST,SV,SW,TA,TC,TL,TS,TZ,UC,UI,UL,UP,UR,US,UT,WR,WS,X1,XV,XX,XY,ZC,ZN,ZY,ZZ,")]
     public class X12_ID_66_12
     {
@@ -6279,6 +6936,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",34,HN,II,MI,MR,")]
     public class X12_ID_66_13
     {
@@ -6288,6 +6946,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",24,34,46,FA,FI,II,MI,NI,PI,PP,SV,XV,XX,")]
     public class X12_ID_66_14
     {
@@ -6297,6 +6956,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",24,II,MI,")]
     public class X12_ID_66_15
     {
@@ -6306,6 +6966,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AC,")]
     public class X12_ID_66_16
     {
@@ -6315,6 +6976,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,24,9,FI,")]
     public class X12_ID_66_17
     {
@@ -6324,6 +6986,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",34,ZZ,")]
     public class X12_ID_66_18
     {
@@ -6333,6 +6996,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",FI,II,MI,")]
     public class X12_ID_66_19
     {
@@ -6342,6 +7006,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",46,")]
     public class X12_ID_66_2
     {
@@ -6351,6 +7016,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",PI,XV,")]
     public class X12_ID_66_20
     {
@@ -6360,6 +7026,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",MI,ZZ,")]
     public class X12_ID_66_21
     {
@@ -6369,6 +7036,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",24,34,46,PI,XV,XX,")]
     public class X12_ID_66_22
     {
@@ -6378,6 +7046,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",LD,LE,")]
     public class X12_ID_66_23
     {
@@ -6387,6 +7056,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",C,")]
     public class X12_ID_66_24
     {
@@ -6396,6 +7066,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",34,EI,II,")]
     public class X12_ID_66_25
     {
@@ -6405,6 +7076,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",24,34,")]
     public class X12_ID_66_26
     {
@@ -6414,6 +7086,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BD,BS,FI,MC,PC,SL,UP,XX,")]
     public class X12_ID_66_27
     {
@@ -6423,6 +7096,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",34,EI,N,")]
     public class X12_ID_66_28
     {
@@ -6432,6 +7106,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",34,FI,SV,XX,")]
     public class X12_ID_66_29
     {
@@ -6441,6 +7116,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",24,34,46,XX,")]
     public class X12_ID_66_3
     {
@@ -6450,6 +7126,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AD,FI,NI,PI,PP,XV,")]
     public class X12_ID_66_30
     {
@@ -6459,6 +7136,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",FI,NI,XV,")]
     public class X12_ID_66_31
     {
@@ -6468,6 +7146,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",24,46,FI,NI,PI,XV,XX,")]
     public class X12_ID_66_32
     {
@@ -6477,6 +7156,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",46,FI,PI,XV,")]
     public class X12_ID_66_33
     {
@@ -6486,6 +7166,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",24,34,46,PI,XV,")]
     public class X12_ID_66_34
     {
@@ -6495,6 +7176,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,9,EQ,FI,XV,")]
     public class X12_ID_66_35
     {
@@ -6504,6 +7186,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",24,94,FI,")]
     public class X12_ID_66_36
     {
@@ -6513,6 +7196,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",XV,")]
     public class X12_ID_66_37
     {
@@ -6522,6 +7206,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",24,34,46,XV,XX,")]
     public class X12_ID_66_38
     {
@@ -6531,6 +7216,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",II,MI,")]
     public class X12_ID_66_39
     {
@@ -6540,6 +7226,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,24,75,9,EQ,FI,PI,")]
     public class X12_ID_66_4
     {
@@ -6549,6 +7236,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",0,1,10,11,12,13,15,16,17,19,2,20,21,22,23,24,25,26,27,28,29,3,30,31,32,33,34,35,36,37,38,39,4,40,41,42,43,44,45,46,47,48,49,50,51,53,54,55,56,57,58,59,6,61,62,63,64,7,71,72,73,74,75,76,77,78,81,82,83,9,90,91,92,93,94,95,96,97,98,99,A,A1,A2,A3,A4,A5,A6,A7,AA,AB,AC,AD,AE,AF,AI,AL,AP,BC,BD,BE,BG,BN,BP,BS,C,C1,C2,C5,CA,CB,CC,CD,CE,CF,CI,CL,CM,CN,CP,CR,CS,CT,D,DG,DL,DN,DO,DP,DR,DS,E,EC,EH,EI,EL,EP,EQ,ER,ES,ET,F,FA,FB,FC,FD,FE,FI,FJ,FL,FN,G,GA,GC,HC,HN,HS,I,ID,II,IP,J,K,L,LC,LD,LE,LI,LN,M,M3,M4,M5,M6,MA,MB,MC,MD,MI,MK,ML,MN,MO,MP,MR,N,NA,ND,NI,NO,NR,OC,OP,PA,PB,PC,PI,PP,PR,RA,RB,RC,RD,RE,RI,RP,RT,S,SA,SB,SD,SF,SI,SJ,SK,SL,SP,ST,SV,SW,TA,TC,TL,TS,TZ,UC,UI,UL,UP,UR,US,UT,WR,WS,X1,XV,XX,XY,ZC,ZN,ZY,ZZ,")]
     public class X12_ID_66_40
     {
@@ -6558,6 +7246,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AC,")]
     public class X12_ID_66_41
     {
@@ -6567,6 +7256,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",24,34,46,XX,")]
     public class X12_ID_66_42
     {
@@ -6576,6 +7266,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",24,34,46,PI,XV,")]
     public class X12_ID_66_43
     {
@@ -6585,6 +7276,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",94,FI,XV,")]
     public class X12_ID_66_5
     {
@@ -6594,6 +7286,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",FI,XV,XX,")]
     public class X12_ID_66_6
     {
@@ -6603,6 +7296,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",XX,")]
     public class X12_ID_66_7
     {
@@ -6612,6 +7306,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",II,MI,")]
     public class X12_ID_66_8
     {
@@ -6621,6 +7316,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Identification Code Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",FI,SV,XX,")]
     public class X12_ID_66_9
     {
@@ -6630,6 +7326,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Relationship Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,D,I,O,S,")]
     public class X12_ID_662
     {
@@ -6639,6 +7336,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Relationship Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",O,")]
     public class X12_ID_662_2
     {
@@ -6648,6 +7346,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Currency Market/Exchange Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",IMF,LNF,LNS,NYC,PHI,ZUR,")]
     public class X12_ID_669
     {
@@ -6657,6 +7356,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Quantity Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DY,FL,HS,MN,VS,")]
     public class X12_ID_673
     {
@@ -6666,6 +7366,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Quantity Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",CA,CD,LA,LE,NE,NR,OU,PS,VS,ZK,ZL,ZM,ZN,ZO,")]
     public class X12_ID_673_10
     {
@@ -6675,6 +7376,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Quantity Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",PT,")]
     public class X12_ID_673_11
     {
@@ -6684,6 +7386,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Quantity Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DY,FL,HS,MN,VS,")]
     public class X12_ID_673_12
     {
@@ -6693,6 +7396,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Quantity Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,")]
     public class X12_ID_673_2
     {
@@ -6702,6 +7406,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Quantity Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ZK,ZL,ZM,ZN,ZO,")]
     public class X12_ID_673_3
     {
@@ -6711,6 +7416,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Quantity Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",FL,")]
     public class X12_ID_673_4
     {
@@ -6720,6 +7426,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Quantity Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",QA,")]
     public class X12_ID_673_5
     {
@@ -6729,6 +7436,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Quantity Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",QC,")]
     public class X12_ID_673_6
     {
@@ -6738,6 +7446,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Quantity Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",8H,99,CA,CE,D3,DB,DY,HS,LA,LE,M2,MN,P6,QA,S7,S8,VS,YY,")]
     public class X12_ID_673_7
     {
@@ -6747,6 +7456,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Quantity Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",90,")]
     public class X12_ID_673_8
     {
@@ -6756,6 +7466,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Quantity Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DT,ET,TO,")]
     public class X12_ID_673_9
     {
@@ -6765,6 +7476,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Ship/Delivery or Calendar Pattern Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,J,K,L,M,N,O,P,Q,R,S,SA,SB,SC,SD,SG,SL,SP,SX,SY" +
         ",SZ,T,U,V,W,X,Y,")]
     public class X12_ID_678
@@ -6775,6 +7487,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Ship/Delivery or Calendar Pattern Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,J,K,L,M,N,O,P,Q,R,S,SG,SL,SP,SX,SY,SZ,T,U,V,W," +
         "X,Y,")]
     public class X12_ID_678_2
@@ -6785,6 +7498,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Ship/Delivery or Calendar Pattern Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,J,K,L,M,N,O,P,Q,R,S,SA,SB,SC,SD,SG,SL,SP,SX,SY" +
         ",SZ,T,U,V,W,WE,X,Y,")]
     public class X12_ID_678_3
@@ -6795,6 +7509,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Ship/Delivery or Calendar Pattern Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,J,K,L,M,N,O,P,Q,R,S,SA,SB,SC,SD,SG,SL,SP,SX,SY" +
         ",SZ,T,U,V,W,X,Y,")]
     public class X12_ID_678_4
@@ -6805,6 +7520,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Ship/Delivery Pattern Time Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,E,F,G,Y,")]
     public class X12_ID_679
     {
@@ -6814,6 +7530,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Ship/Delivery Pattern Time Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",A,B,C,D,E,F,G,Y,")]
     public class X12_ID_679_2
     {
@@ -6823,6 +7540,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Class of Trade Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AL,AM,AN,AO,AP,AQ,AR,AS,BG,BR,CB,CN,CO,CR,CX,CY,DE" +
         ",DF,DI,DR,EX,FS,GA,GM,GR,GV,HS,ID,IN,IR,JB,LC,MC,MF,ML,OE,OF,ON,PF,PH,PT,PY,RS,S" +
         "A,SB,SE,ST,TR,WA,WC,WH,WS,")]
@@ -6834,6 +7552,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Paperwork/Report Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,CH,CO,DM,NT,ON,OR,PV,SG,")]
     public class X12_ID_704
     {
@@ -6843,6 +7562,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Paperwork/Report Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,CH,CO,DM,NT,ON,OR,PV,SG,")]
     public class X12_ID_704_2
     {
@@ -6852,6 +7572,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Relationship Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,27,41,48,65,72,")]
     public class X12_ID_706
     {
@@ -6861,6 +7582,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Relationship Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",25,26,72,")]
     public class X12_ID_706_2
     {
@@ -6870,6 +7592,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Relationship Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AP,AQ,AR,AS,AT,AU,AV,AW,CP,OP,PI,")]
     public class X12_ID_706_3
     {
@@ -6879,6 +7602,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Relationship Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AP,AQ,AR,AS,AT,AU,AV,AW,CP,OP,PI,")]
     public class X12_ID_706_4
     {
@@ -6888,6 +7612,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",21,")]
     public class X12_ID_735
     {
@@ -6897,6 +7622,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",22,")]
     public class X12_ID_735_10
     {
@@ -6906,6 +7632,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",23,")]
     public class X12_ID_735_11
     {
@@ -6915,6 +7642,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EV,")]
     public class X12_ID_735_12
     {
@@ -6924,6 +7652,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",SS,")]
     public class X12_ID_735_13
     {
@@ -6933,6 +7662,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",20,")]
     public class X12_ID_735_14
     {
@@ -6942,6 +7672,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",22,")]
     public class X12_ID_735_2
     {
@@ -6951,6 +7682,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",19,")]
     public class X12_ID_735_3
     {
@@ -6960,6 +7692,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",23,")]
     public class X12_ID_735_4
     {
@@ -6969,6 +7702,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",PT,")]
     public class X12_ID_735_5
     {
@@ -6978,6 +7712,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",EV,")]
     public class X12_ID_735_6
     {
@@ -6987,6 +7722,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",SS,")]
     public class X12_ID_735_7
     {
@@ -6996,6 +7732,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",20,")]
     public class X12_ID_735_8
     {
@@ -7005,6 +7742,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",21,")]
     public class X12_ID_735_9
     {
@@ -7014,6 +7752,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Child Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0,1,")]
     public class X12_ID_736
     {
@@ -7023,6 +7762,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Child Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0,")]
     public class X12_ID_736_2
     {
@@ -7032,6 +7772,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Child Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,")]
     public class X12_ID_736_3
     {
@@ -7041,6 +7782,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Child Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0,1,")]
     public class X12_ID_736_4
     {
@@ -7050,6 +7792,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Hierarchical Child Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",0,")]
     public class X12_ID_736_5
     {
@@ -7059,6 +7802,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Measurement Reference ID Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",OG,TR,")]
     public class X12_ID_737
     {
@@ -7068,6 +7812,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Measurement Qualifier
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",HT,R1,R2,R3,R4,")]
     public class X12_ID_738
     {
@@ -7077,6 +7822,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Surface/Layer/Position Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",1S,2S,A1,A2,A3,A4,A5,A6,A7,A8,A9,AL,AO,AS,B1,BC,BI,BK,BL,BR,BS,BT,CH,CT,DO,DT,DU,EX,FR,FS,GF,IN,IT,KB,LC,LO,LT,M1,MC,MD,NS,NT,OA,OS,OT,R0,R1,R2,R3,R4,R5,R6,R7,R8,R9,RA,RB,RC,RD,RE,RF,RG,RH,RI,RJ,RK,RL,RM,RN,RO,RP,RQ,RR,RS,RT,RU,RV,RW,RX,RY,RZ,S1,S2,S3,S4,S5,S6,S7,S8,S9,SA,SB,SC,SD,SE,SF,SN,SP,SS,ST,SU,TB,TP,TS,UC,UN,UP,UT,WF,")]
     public class X12_ID_752
     {
@@ -7086,6 +7832,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Report Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",03,04,05,06,07,08,09,10,11,13,15,21,A3,A4,AM,AS,B2,B3,B4,BR,BS,BT,CB,CK,CT,D2,DA" +
         ",DB,DG,DJ,DS,EB,HC,HR,I5,IR,LA,M1,MT,NN,OB,OC,OD,OE,OX,OZ,P4,P5,PE,PN,PO,PQ,PY,P" +
         "Z,RB,RR,RT,RX,SG,V5,XP,")]
@@ -7097,6 +7844,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Report Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",CT,")]
     public class X12_ID_755_2
     {
@@ -7106,6 +7854,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Report Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",03,04,05,06,07,08,09,10,11,13,15,21,48,55,59,77,A3,A4,AM,AS,AT,B2,B3,BR,BS,BT,CB" +
         ",CK,D2,DA,DB,DG,DJ,DS,FM,HC,HR,I5,IR,LA,M1,NN,OB,OC,OD,OE,OX,P4,P5,P6,P7,PE,PN,P" +
         "O,PQ,PY,PZ,QC,QR,RB,RR,RT,RX,SG,V5,XP,")]
@@ -7117,6 +7866,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Report Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",B4,DA,DG,EB,OZ,P6,RB,RR,")]
     public class X12_ID_755_4
     {
@@ -7126,6 +7876,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Report Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",03,04,05,06,07,08,09,10,11,13,15,21,77,A3,A4,AM,AS,B2,B3,B4,BR,BS,BT,CB,CK,CT,D2" +
         ",DA,DB,DG,DJ,DS,EB,HC,HR,I5,IR,LA,M1,MT,NN,OB,OC,OD,OE,OX,OZ,P4,P5,PE,PN,PO,PQ,P" +
         "Y,PZ,RB,RR,RT,RX,SG,V5,XP,")]
@@ -7137,6 +7888,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Report Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",03,04,05,06,07,08,09,10,11,13,15,21,48,55,59,77,A3,A4,AM,AS,AT,B2,B3,BR,BS,BT,CB" +
         ",CK,D2,DA,DB,DG,DJ,DS,FM,HC,HR,I5,IR,LA,M1,NN,OB,OC,OD,OE,OX,P4,P5,P6,P7,PE,PN,P" +
         "O,PQ,PY,PZ,QC,QR,RB,RR,RT,RX,SG,V5,XP,")]
@@ -7148,6 +7900,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Report Transmission Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AB,AD,AF,AG,NS,")]
     public class X12_ID_756
     {
@@ -7157,6 +7910,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Report Transmission Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BM,EL,EM,FX,VO,")]
     public class X12_ID_756_2
     {
@@ -7166,6 +7920,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Report Transmission Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BM,EM,FT,FX,IA,OL,")]
     public class X12_ID_756_3
     {
@@ -7175,6 +7930,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Report Transmission Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BM,EM,FT,OL,")]
     public class X12_ID_756_4
     {
@@ -7184,6 +7940,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Report Transmission Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,BM,EL,EM,FT,FX,")]
     public class X12_ID_756_5
     {
@@ -7193,6 +7950,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Report Transmission Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,BM,EL,EM,FX,VO,")]
     public class X12_ID_756_6
     {
@@ -7202,6 +7960,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Security Level Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",00,01,02,03,04,05,06,09,11,20,21,90,92,93,94,99,ZZ,")]
     public class X12_ID_786
     {
@@ -7211,6 +7970,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Payment Format Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",CCP,CTX,")]
     public class X12_ID_812
     {
@@ -7220,6 +7980,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Maintenance Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",001,002,021,024,025,026,030,032,")]
     public class X12_ID_875
     {
@@ -7229,6 +7990,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Maintenance Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",001,002,003,004,005,006,007,008,009,010,011,012,013,014,015,016,017,018,019,020,021,022,023,024,025,026,028,029,030,031,032,033,050,051,052,053,054,055,056,057,059,060,061,062,063,064,065,066,067,068,069,070,071,072,073,074,075,076,077,078,079,080,081,082,083,084,085,100,101,102,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,CEP,PRI,TBV,ZZZ,")]
     public class X12_ID_875_2
     {
@@ -7238,6 +8000,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Maintenance Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",001,")]
     public class X12_ID_875_3
     {
@@ -7247,6 +8010,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Maintenance Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",001,021,024,025,030,")]
     public class X12_ID_875_4
     {
@@ -7256,6 +8020,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Maintenance Type Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",001,002,003,004,005,006,007,008,009,010,011,012,013,014,015,016,017,018,019,020,021,022,023,024,025,026,028,029,030,031,032,033,050,051,052,053,054,055,056,057,059,060,061,062,063,064,065,066,067,068,069,070,071,072,073,074,075,076,077,078,079,080,081,082,083,084,085,100,101,102,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,CEP,PRI,TBV,ZZZ,")]
     public class X12_ID_875_5
     {
@@ -7265,6 +8030,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Follow-up Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",C,N,P,R,S,W,X,Y,")]
     public class X12_ID_889
     {
@@ -7274,6 +8040,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Follow-up Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",N,P,Y,")]
     public class X12_ID_889_2
     {
@@ -7283,6 +8050,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Follow-up Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",C,N,R,S,W,X,Y,")]
     public class X12_ID_889_3
     {
@@ -7292,6 +8060,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Follow-up Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",C,N,R,")]
     public class X12_ID_889_4
     {
@@ -7301,6 +8070,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Follow-up Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",C,N,R,W,X,Y,")]
     public class X12_ID_889_5
     {
@@ -7310,6 +8080,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Follow-up Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",C,N,")]
     public class X12_ID_889_6
     {
@@ -7319,6 +8090,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Follow-up Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",C,N,P,R,S,Y,")]
     public class X12_ID_889_7
     {
@@ -7328,6 +8100,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Follow-up Action Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",C,N,P,Y,")]
     public class X12_ID_889_8
     {
@@ -7337,6 +8110,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reject Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",04,41,42,79,80,T4,")]
     public class X12_ID_901
     {
@@ -7346,6 +8120,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reject Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",15,33,52,56,57,60,61,62,AA,AF,AH,AI,AJ,AK,AM,AN,T5,")]
     public class X12_ID_901_10
     {
@@ -7355,6 +8130,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reject Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",15,33,35,41,43,44,45,46,47,49,51,52,79,97,IP,")]
     public class X12_ID_901_11
     {
@@ -7364,6 +8140,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reject Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",15,33,47,97,")]
     public class X12_ID_901_12
     {
@@ -7373,6 +8150,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reject Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",15,33,52,57,60,61,62,AA,AG,T5,")]
     public class X12_ID_901_13
     {
@@ -7382,6 +8160,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reject Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",04,41,42,79,")]
     public class X12_ID_901_14
     {
@@ -7391,6 +8170,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reject Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",T1,T2,T3,T4,T5,T6,")]
     public class X12_ID_901_15
     {
@@ -7400,6 +8180,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reject Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",42,79,80,T4,")]
     public class X12_ID_901_2
     {
@@ -7409,6 +8190,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reject Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",15,41,43,44,45,46,47,48,50,51,79,97,T4,")]
     public class X12_ID_901_3
     {
@@ -7418,6 +8200,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reject Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",15,35,41,43,44,45,46,47,49,51,79,97,")]
     public class X12_ID_901_4
     {
@@ -7427,6 +8210,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reject Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",15,35,42,43,45,47,48,49,51,52,56,57,58,60,61,62,63,71,72,73,74,75,76,78,")]
     public class X12_ID_901_5
     {
@@ -7436,6 +8220,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reject Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",58,64,65,66,67,68,71,72,73,74,75,76,77,78,79,95,")]
     public class X12_ID_901_6
     {
@@ -7445,6 +8230,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reject Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",15,33,52,53,54,55,56,57,60,61,62,63,69,70,98,AA,AE,AF,AG,AO,CI,E8,IA,MA,")]
     public class X12_ID_901_7
     {
@@ -7454,6 +8240,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reject Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",15,33,58,64,65,66,67,68,71,77,95,")]
     public class X12_ID_901_8
     {
@@ -7463,6 +8250,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Reject Reason Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",15,35,42,43,45,47,48,49,51,52,56,57,58,60,61,62,63,64,65,66,67,68,71,77,")]
     public class X12_ID_901_9
     {
@@ -7472,6 +8260,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Prognosis Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1,2,3,4,5,6,7,8,")]
     public class X12_ID_923
     {
@@ -7481,6 +8270,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Printer Carriage Control Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,AT,DS,LC,NP,NS,SS,")]
     public class X12_ID_934
     {
@@ -7490,6 +8280,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Printer Carriage Control Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AA,AT,DS,LC,NP,NS,SS,")]
     public class X12_ID_934_2
     {
@@ -7499,6 +8290,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Measurement Significance Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,34,35,36,37,38,39,40,41,42,43,44,45,46,47,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,AA,AB,AC,AD,AE,AF,AG,AH,AI,AJ,AK,AL,AM,AN,AO,AP,AQ,AR,AS,AT,AU,AV,AW,AX,AY,AZ,BA,BB,BC,BD,BE,BF,ZZ,")]
     public class X12_ID_935
     {
@@ -7508,6 +8300,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Measurement Attribute Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",01,02,03,04,05,06,07,08,09,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27" +
         ",28,29,30,31,32,33,40,41,42,44,45,46,48,49,50,51,52,53,54,56,BA,FL,NA,ND,NS,PR,Q" +
         "1,Q2,TA,TB,WS,ZZ,")]
@@ -7519,6 +8312,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",S3,")]
     public class X12_ID_98
     {
@@ -7528,6 +8322,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1X,3D,80,FA,OD,P3,QA,QN,Y2,")]
     public class X12_ID_98_10
     {
@@ -7537,6 +8332,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",PW,")]
     public class X12_ID_98_11
     {
@@ -7546,6 +8342,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1P,")]
     public class X12_ID_98_12
     {
@@ -7555,6 +8352,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",QC,")]
     public class X12_ID_98_13
     {
@@ -7564,6 +8362,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DN,")]
     public class X12_ID_98_14
     {
@@ -7573,6 +8372,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",36,GW,IN,")]
     public class X12_ID_98_15
     {
@@ -7582,6 +8382,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",QB,")]
     public class X12_ID_98_16
     {
@@ -7591,6 +8392,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",75,")]
     public class X12_ID_98_17
     {
@@ -7600,6 +8402,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DK,")]
     public class X12_ID_98_18
     {
@@ -7609,6 +8412,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",00,001,002,003,004,005,006,007,008,01,02,03,04,05,06,07,08,09,0A,0B,0D,0E,0F,0G," +
         "0H,0I,0J,0P,10,11,12,13,14,15,16,17,18,19,1A,1B,1C,1D,1E,1F,1G,1H,1I,1J,1K,1L,1M" +
         ",1N,1O,1P,1Q,1R,1S,1T,1U,1V,1W,1X,1Y,1Z,20,21,22,23,24,25,26,27,28,29,2A,2B,2C,2" +
@@ -7677,6 +8481,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",82,")]
     public class X12_ID_98_2
     {
@@ -7686,6 +8491,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1P,2B,36,80,FA,GP,P5,PR,")]
     public class X12_ID_98_20
     {
@@ -7695,6 +8501,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",41,")]
     public class X12_ID_98_21
     {
@@ -7704,6 +8511,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1P,FA,")]
     public class X12_ID_98_22
     {
@@ -7713,6 +8521,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",PE,")]
     public class X12_ID_98_23
     {
@@ -7722,6 +8531,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",IN,")]
     public class X12_ID_98_24
     {
@@ -7731,6 +8541,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",40,")]
     public class X12_ID_98_25
     {
@@ -7740,6 +8551,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",IL,")]
     public class X12_ID_98_26
     {
@@ -7749,12 +8561,14 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",41,AY,PR,")]
     public class X12_ID_98_27
     {
     }
     
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",36,40,41,AY,PR,")]
     public class X12_ID_98_28
     {
@@ -7764,6 +8578,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",PR,")]
     public class X12_ID_98_29
     {
@@ -7773,6 +8588,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",72,")]
     public class X12_ID_98_3
     {
@@ -7782,6 +8598,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",BO,TV,")]
     public class X12_ID_98_30
     {
@@ -7791,6 +8608,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",85,")]
     public class X12_ID_98_31
     {
@@ -7800,6 +8618,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",03,")]
     public class X12_ID_98_32
     {
@@ -7809,6 +8628,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",13,1I,1P,2B,36,73,FA,GP,GW,I3,IL,LR,OC,P3,P4,P5,PR,PRP,SEP,TTP,VER,VN,VY,X3,Y2,")]
     public class X12_ID_98_33
     {
@@ -7818,6 +8638,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",04,0B,8W,AK,BE,BK,C1,C2,IAT,MJ,RB,Z6,ZB,ZL,")]
     public class X12_ID_98_34
     {
@@ -7827,6 +8648,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",74,IL,")]
     public class X12_ID_98_35
     {
@@ -7836,12 +8658,14 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",87,")]
     public class X12_ID_98_36
     {
     }
     
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",36,40,41,77,82,85,87,AY,PR,")]
     public class X12_ID_98_37
     {
@@ -7851,6 +8675,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",71,72,73,77,AAJ,DD,DK,DN,FA,G3,P3,QB,QV,SJ,")]
     public class X12_ID_98_38
     {
@@ -7860,6 +8685,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",2L,AG,NH,RGA,UN,")]
     public class X12_ID_98_39
     {
@@ -7869,6 +8695,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",6Y,9K,E1,EI,EXS,GB,GD,J6,LR,QD,S1,TZ,X4,")]
     public class X12_ID_98_4
     {
@@ -7878,6 +8705,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",70,")]
     public class X12_ID_98_40
     {
@@ -7887,6 +8715,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",74,")]
     public class X12_ID_98_41
     {
@@ -7896,6 +8725,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(@",03,13,17,1E,1G,1H,1I,1O,1P,1Q,1R,1S,1T,1U,1V,1W,1X,1Y,1Z,28,2A,2B,2D,2E,2I,2K,2P,2Q,2S,2Z,30,36,3A,3C,3D,3E,3F,3G,3H,3I,3J,3K,3L,3M,3N,3O,3P,3Q,3R,3S,3T,3U,3V,3W,3X,3Y,3Z,40,43,44,4A,4B,4C,4D,4E,4F,4G,4H,4I,4J,4L,4M,4N,4O,4P,4Q,4R,4S,4U,4V,4W,4X,4Y,4Z,5A,5B,5C,5D,5E,5F,5G,5H,5I,5J,5K,5L,5M,5N,5O,5P,5Q,5R,5S,5T,5U,5V,5W,5X,5Y,5Z,61,6A,6B,6C,6D,6E,6F,6G,6H,6I,6J,6K,6L,6M,6N,6O,6P,6Q,6R,6S,6U,6V,6W,6X,6Y,71,72,73,74,77,7C,80,82,84,85,87,95,CK,CZ,D2,DD,DJ,DK,DN,DO,DQ,E1,E2,E7,E9,FA,FD,FE,G0,G3,GB,GD,GI,GJ,GK,GM,GY,HF,HH,I3,IJ,IL,IN,LI,LR,MR,MSC,OB,OD,OX,P0,P2,P3,P4,P6,P7,PRP,PT,PV,PW,QA,QB,QC,QD,QE,QH,QK,QL,QN,QO,QS,QV,QY,RC,RW,S4,SEP,SJ,SU,T4,TL,TQ,TT,TTP,TU,UH,X3,X4,X5,ZZ,")]
     public class X12_ID_98_42
     {
@@ -7905,6 +8735,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",L5,")]
     public class X12_ID_98_43
     {
@@ -7914,6 +8745,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",2J,")]
     public class X12_ID_98_44
     {
@@ -7923,12 +8755,14 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",31,")]
     public class X12_ID_98_45
     {
     }
     
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",03,1P,1Z,40,41,71,72,73,77,82,85,87,DK,DN,DQ,FA,GB,HK,IL,LI,MSC,PR,PRP,QB,QC,QD," +
         "SEP,TL,TTP,TU,")]
     public class X12_ID_98_46
@@ -7939,6 +8773,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",45,FS,ND,PW,R3,")]
     public class X12_ID_98_47
     {
@@ -7948,6 +8783,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DO,EY,IL,QE,")]
     public class X12_ID_98_48
     {
@@ -7957,6 +8793,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",36,")]
     public class X12_ID_98_49
     {
@@ -7966,6 +8803,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",77,")]
     public class X12_ID_98_5
     {
@@ -7975,6 +8813,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",TT,")]
     public class X12_ID_98_50
     {
@@ -7984,6 +8823,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",72,73,77,DD,DK,DQ,FA,G3,P3,QB,QV,SJ,")]
     public class X12_ID_98_51
     {
@@ -7993,6 +8833,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",M8,")]
     public class X12_ID_98_52
     {
@@ -8002,6 +8843,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",GB,")]
     public class X12_ID_98_53
     {
@@ -8011,6 +8853,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DN,P3,")]
     public class X12_ID_98_54
     {
@@ -8020,6 +8863,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",71,")]
     public class X12_ID_98_55
     {
@@ -8029,6 +8873,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",2B,36,GP,P5,PR,")]
     public class X12_ID_98_56
     {
@@ -8038,6 +8883,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",AY,PR,")]
     public class X12_ID_98_57
     {
@@ -8047,6 +8893,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",2B,36,PR,X3,")]
     public class X12_ID_98_58
     {
@@ -8056,6 +8903,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",2B,PR,")]
     public class X12_ID_98_59
     {
@@ -8065,6 +8913,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",ZZ,")]
     public class X12_ID_98_6
     {
@@ -8074,6 +8923,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",P5,")]
     public class X12_ID_98_60
     {
@@ -8083,6 +8933,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",00,001,002,003,004,005,006,007,008,01,02,03,04,05,06,07,08,09,0A,0B,0D,0E,0F,0G," +
         "0H,0I,0J,0P,10,11,12,13,14,15,16,17,18,19,1A,1B,1C,1D,1E,1F,1G,1H,1I,1J,1K,1L,1M" +
         ",1N,1O,1P,1Q,1R,1S,1T,1U,1V,1W,1X,1Y,1Z,20,21,22,23,24,25,26,27,28,29,2A,2B,2C,2" +
@@ -8151,6 +9002,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1P,2B,36,FA,PR,")]
     public class X12_ID_98_62
     {
@@ -8160,6 +9012,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",IL,")]
     public class X12_ID_98_63
     {
@@ -8169,6 +9022,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",QC,")]
     public class X12_ID_98_64
     {
@@ -8178,6 +9032,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",71,72,73,77,AAJ,DD,DK,DN,FA,G3,P3,QB,QV,SJ,")]
     public class X12_ID_98_65
     {
@@ -8187,6 +9042,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",45,FS,ND,PW,R3,")]
     public class X12_ID_98_66
     {
@@ -8196,6 +9052,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",00,CA,GG,")]
     public class X12_ID_98_67
     {
@@ -8205,6 +9062,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",1T,72,73,77,DD,DK,DQ,FA,G3,P3,QB,QV,SJ,")]
     public class X12_ID_98_68
     {
@@ -8214,6 +9072,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",2B,36,PR,X3,")]
     public class X12_ID_98_69
     {
@@ -8223,6 +9082,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",45,")]
     public class X12_ID_98_7
     {
@@ -8232,6 +9092,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DD,")]
     public class X12_ID_98_8
     {
@@ -8241,27 +9102,32 @@ namespace EdiFabric.Templates.Hipaa5010
     /// Entity Identifier Code
     /// </summary>
     [Serializable()]
+    [DataContract()]
     [EdiCodes(",DQ,")]
     public class X12_ID_98_9
     {
     }
     
     [Serializable()]
+    [DataContract()]
     public class X12_N0
     {
     }
     
     [Serializable()]
+    [DataContract()]
     public class X12_N2
     {
     }
     
     [Serializable()]
+    [DataContract()]
     public class X12_R
     {
     }
     
     [Serializable()]
+    [DataContract()]
     public class X12_TM
     {
     }

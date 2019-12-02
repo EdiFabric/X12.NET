@@ -7,131 +7,169 @@ namespace EdiFabric.Templates.Hipaa5010_999
     using EdiFabric.Core.Model.Edi;
     using EdiFabric.Core.Model.Edi.X12;
     using EdiFabric.Core.Model.Edi.ErrorContexts;
-    
-    
+    using System.Runtime.Serialization;
+
     [Serializable()]
     [Message("X12", "005010X231A1", "999")]
     public class TS999 : EdiMessage
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public ST ST { get; set; }
+        [DataMember()]
         [Pos(2)]
         public AK1 AK1 { get; set; }
+        [DataMember()]
         [Pos(3)]
         public List<Loop_2000> Loop_2000 { get; set; }
+        [DataMember()]
         [Pos(4)]
         public AK9 AK9 { get; set; }
+        [DataMember()]
         [Pos(5)]
         public SE SE { get; set; }
     }
     
+    [DataContract()]
     [Serializable()]
     public class X12_ID
     {
     }
     
+    [DataContract()]
     [Serializable()]
     [EdiCodes(",A,E,M,P,R,W,X,")]
     public class X12_ID_715
     {
     }
     
+    [DataContract()]
     [Serializable()]
     public class X12_N0
     {
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Segment("AK9", typeof(X12_ID_715))]
     public class AK9
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public string FunctionalGroupAcknowledgeCode_01 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public string NumberofTransactionSetsIncluded_02 { get; set; }
+        [DataMember()]
         [Pos(3)]
         public string NumberofReceivedTransactionSets_03 { get; set; }
+        [DataMember()]
         [Pos(4)]
         public string NumberofAcceptedTransactionSets_04 { get; set; }
+        [DataMember()]
         [Pos(5)]
         public string FunctionalGroupSyntaxErrorCode_05 { get; set; }
+        [DataMember()]
         [Pos(6)]
         public string FunctionalGroupSyntaxErrorCode_06 { get; set; }
+        [DataMember()]
         [Pos(7)]
         public string FunctionalGroupSyntaxErrorCode_07 { get; set; }
+        [DataMember()]
         [Pos(8)]
         public string FunctionalGroupSyntaxErrorCode_08 { get; set; }
+        [DataMember()]
         [Pos(9)]
         public string FunctionalGroupSyntaxErrorCode_09 { get; set; }
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Group(typeof(AK2))]
     public class Loop_2000
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public AK2 AK2 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public List<Loop_2100> Loop_2100 { get; set; }
+        [DataMember()]
         [Pos(3)]
         public IK5 IK5 { get; set; }
     }
     
+    [DataContract()]
     [Serializable()]
     [EdiCodes(",A,E,M,R,W,X,")]
     public class X12_ID_717
     {
     }
     
+    [DataContract()]
     [Serializable()]
     [EdiCodes(",1,2,3,4,5,6,7,8,9,10,11,12,13,15,16,17,18,19,23,24,25,26,27,I5,I6,")]
     public class X12_ID_618
     {
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Segment("IK5", typeof(X12_ID_717), typeof(X12_ID_618))]
     public class IK5
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public string TransactionSetAcknowledgmentCode_01 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public string ImplementationTransactionSetSyntaxErrorCode_02 { get; set; }
+        [DataMember()]
         [Pos(3)]
         public string ImplementationTransactionSetSyntaxErrorCode_03 { get; set; }
+        [DataMember()]
         [Pos(4)]
         public string ImplementationTransactionSetSyntaxErrorCode_04 { get; set; }
+        [DataMember()]
         [Pos(5)]
         public string ImplementationTransactionSetSyntaxErrorCode_05 { get; set; }
+        [DataMember()]
         [Pos(6)]
         public string ImplementationTransactionSetSyntaxErrorCode_06 { get; set; }
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Group(typeof(IK3))]
     public class Loop_2100
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public IK3 IK3 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public List<CTX_Seg> CTX_Seg { get; set; }
+        [DataMember()]
         [Pos(3)]
         public CTX_BU CTX_BU { get; set; }
+        [DataMember()]
         [Pos(4)]
         public List<Loop_2110> Loop_2110 { get; set; }
     }
     
+    [DataContract()]
     [Serializable()]
     [EdiCodes(",SITUATIONAL TRIGGER,")]
     public class X12_ID_9999
     {
     }
     
+    [DataContract()]
     [Serializable()]
     [EdiCodes(",AAA,ACD,ACK,ACS,ACT,AD1,ADI,ADJ,ADT,ADV,ADX,AEI,AES,AIN,AK1,AK2,AK3,AK4,AK5,AK9," +
         "AM1,AMT,ANI,AOC,AOI,AOL,AOR,AP1,APE,API,APR,ARC,ARS,ASI,ASL,ASM,ASO,AST,AT1,AT2," +
@@ -187,251 +225,328 @@ namespace EdiFabric.Templates.Hipaa5010_999
     {
     }
     
+    [DataContract()]
     [Serializable()]
     [EdiCodes(",TRN02,NM109,PATIENT NAME NM109,SUBSCRIBER NAME NM109,ENT01,SUBSCRIBER NUMBER REF" +
         "02,CLM01,")]
     public class X12_ID_9999_2
     {
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Group(typeof(IK4))]
     public class Loop_2110
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public IK4 IK4 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public List<CTX_Ele> CTX_Ele { get; set; }
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Segment("CTX", typeof(X12_ID_9999), typeof(X12_ID_721))]
     public class CTX_Ele
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public List<CTX_Ele1> Ele_01 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public string Ele_02 { get; set; }
+        [DataMember()]
         [Pos(3)]
         public string Ele_03 { get; set; }
+        [DataMember()]
         [Pos(4)]
         public string Ele_04 { get; set; }
+        [DataMember()]
         [Pos(5)]
         public CTX_Ele5 Ele_05 { get; set; }
+        [DataMember()]
         [Pos(6)]
         public CTX_Ele6 Ele_06 { get; set; }
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Composite("CTX_Ele6")]
     public class CTX_Ele6
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public string Ele_01 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public string Ele_02 { get; set; }
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Composite("CTX_Ele5")]
     public class CTX_Ele5
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public string Ele_01 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public string Ele_02 { get; set; }
+        [DataMember()]
         [Pos(3)]
         public string Ele_03 { get; set; }
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Composite("CTX_Ele1")]
     public class CTX_Ele1
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public string Ele_01 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public string Ele_02 { get; set; }
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Segment("IK4")]
     public class IK4
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public C030_PositionInSegment PositionInSegment_01 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public string DataElementReferenceNumber_02 { get; set; }
+        [DataMember()]
         [Pos(3)]
         public string ImplementationDataElementSyntaxErrorCode_03 { get; set; }
+        [DataMember()]
         [Pos(4)]
         public string CopyofBadDataElement_04 { get; set; }
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Composite("C030_PositionInSegment")]
     public class C030_PositionInSegment
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public string ElementPositionInSegment_01 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public string ComponentDataElementPositionInComposite_02 { get; set; }
+        [DataMember()]
         [Pos(3)]
         public string RepeatingDataElementPosition_03 { get; set; }
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Segment("CTX", typeof(X12_ID_9999_2), typeof(X12_ID_721))]
     public class CTX_BU
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public List<CTX_BU1> BU_01 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public string BU_02 { get; set; }
+        [DataMember()]
         [Pos(3)]
         public string BU_03 { get; set; }
+        [DataMember()]
         [Pos(4)]
         public string BU_04 { get; set; }
+        [DataMember()]
         [Pos(5)]
         public CTX_BU5 BU_05 { get; set; }
+        [DataMember()]
         [Pos(6)]
         public CTX_BU6 BU_06 { get; set; }
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Composite("CTX_BU6")]
     public class CTX_BU6
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public string BU_01 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public string BU_02 { get; set; }
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Composite("CTX_BU5")]
     public class CTX_BU5
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public string BU_01 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public string BU_02 { get; set; }
+        [DataMember()]
         [Pos(3)]
         public string BU_03 { get; set; }
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Composite("CTX_BU1")]
     public class CTX_BU1
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public string BU_01 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public string BU_02 { get; set; }
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Segment("CTX", typeof(X12_ID_9999), typeof(X12_ID_721))]
     public class CTX_Seg
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public List<CTX_Seg1> Seg_01 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public string Seg_02 { get; set; }
+        [DataMember()]
         [Pos(3)]
         public string Seg_03 { get; set; }
+        [DataMember()]
         [Pos(4)]
         public string Seg_04 { get; set; }
+        [DataMember()]
         [Pos(5)]
         public CTX_Seg5 Seg_05 { get; set; }
+        [DataMember()]
         [Pos(6)]
         public CTX_Seg6 Seg_06 { get; set; }
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Composite("CTX_Seg6")]
     public class CTX_Seg6
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public string Seg_01 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public string Seg_02 { get; set; }
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Composite("CTX_Seg5")]
     public class CTX_Seg5
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public string Seg_01 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public string Seg_02 { get; set; }
+        [DataMember()]
         [Pos(3)]
         public string Seg_03 { get; set; }
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Composite("CTX_Seg1")]
     public class CTX_Seg1
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public string Seg_01 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public string Seg_02 { get; set; }
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Segment("IK3")]
     public class IK3
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public string SegmentIDCode_01 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public string SegmentPositioninTransactionSet_02 { get; set; }
+        [DataMember()]
         [Pos(3)]
         public string LoopIdentifierCode_03 { get; set; }
+        [DataMember()]
         [Pos(4)]
         public string ImplementationSegmentSyntaxErrorCode_04 { get; set; }
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Segment("AK2")]
     public class AK2
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public string TransactionSetIdentifierCode_01 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public string TransactionSetControlNumber_02 { get; set; }
+        [DataMember()]
         [Pos(3)]
         public string ImplementationConventionReference_03 { get; set; }
     }
-    
+
+    [DataContract()]
     [Serializable()]
     [Segment("AK1")]
     public class AK1
     {
-        
+
+        [DataMember()]
         [Pos(1)]
         public string FunctionalIdentifierCode_01 { get; set; }
+        [DataMember()]
         [Pos(2)]
         public string GroupControlNumber_02 { get; set; }
+        [DataMember()]
         [Pos(3)]
         public string VersionReleaseorIndustryIdentifierCode_03 { get; set; }
     }

@@ -120,7 +120,7 @@ namespace EdiFabric.Examples.X12.T820
             result.AllN1.Loop1000A = new Loop_1000A_820();
 
             //  The premium receiver's name (DEF HEALTH CARE INC) and federal Tax ID number (012222222).
-            result.AllN1.Loop1000A.N1_PremiumReceiver_Name = new N1_PayeeIdentification();
+            result.AllN1.Loop1000A.N1_PremiumReceiver_Name = new N1_PremiumReceiver();
             result.AllN1.Loop1000A.N1_PremiumReceiver_Name.EntityIdentifierCode_01 = "PE";
             result.AllN1.Loop1000A.N1_PremiumReceiver_Name.PremiumPayerName_02 = "DEF HEALTH CARE INC.";
             result.AllN1.Loop1000A.N1_PremiumReceiver_Name.IdentificationCodeQualifier_03 = "FI";
@@ -132,7 +132,7 @@ namespace EdiFabric.Examples.X12.T820
             result.AllN1.Loop1000B = new Loop_1000B_820();
 
             //  The premium payer's name (ABC PLASTICS) and federal tax ID number (123456789).
-            result.AllN1.Loop1000B.N1_PremiumPayer_Name = new N1_PayerIdentification();
+            result.AllN1.Loop1000B.N1_PremiumPayer_Name = new N1_PremiumPayer();
             result.AllN1.Loop1000B.N1_PremiumPayer_Name.EntityIdentifierCode_01 = "PR";
             result.AllN1.Loop1000B.N1_PremiumPayer_Name.PremiumPayerName_02 = "ABC PLASTICS";
             result.AllN1.Loop1000B.N1_PremiumPayer_Name.IdentificationCodeQualifier_03 = "FI";
@@ -148,7 +148,7 @@ namespace EdiFabric.Examples.X12.T820
 
             //  Start of detail loop. Identifies this is a corporate entity item (summary bill payment). 
             //  The premium payer's federal tax ID number (123456789).
-            result.AllENT.Loop2000A.ENT_OrganizationSummaryRemittance = new ENT_IndividualRemittance();
+            result.AllENT.Loop2000A.ENT_OrganizationSummaryRemittance = new ENT_OrganizationSummaryRemittance();
             result.AllENT.Loop2000A.ENT_OrganizationSummaryRemittance.AssignedNumber_01 = "1";
             result.AllENT.Loop2000A.ENT_OrganizationSummaryRemittance.EntityIdentifierCode_02 = "2L";
             result.AllENT.Loop2000A.ENT_OrganizationSummaryRemittance.IdentificationCodeQualifier_03 = "FI";
@@ -185,8 +185,8 @@ namespace EdiFabric.Examples.X12.T820
             loop2315a1.SLN_MemberCount.LineItemControlNumber_01 = "1";
             loop2315a1.SLN_MemberCount.InformationOnlyIndicator_03 = "O";
             loop2315a1.SLN_MemberCount.HeadCount_04 = "5";
-            loop2315a1.SLN_MemberCount.CompositeUnitofMeasure_05 = new C001_CompositeUnitofMeasure();
-            loop2315a1.SLN_MemberCount.CompositeUnitofMeasure_05.UnitorBasisforMeasurementCode_01 = "IE";
+            loop2315a1.SLN_MemberCount.CompositeUnitOfMeasure_05 = new C001_CompositeUnitOfMeasure_4();
+            loop2315a1.SLN_MemberCount.CompositeUnitOfMeasure_05.UnitorBasisforMeasurementCode_01 = "IE";
 
             //  End 2315A Loop 1
             loop23001.Loop2310A.Loop2315A.Add(loop2315a1);
@@ -199,8 +199,8 @@ namespace EdiFabric.Examples.X12.T820
             loop2315a2.SLN_MemberCount.LineItemControlNumber_01 = "2";
             loop2315a2.SLN_MemberCount.InformationOnlyIndicator_03 = "O";
             loop2315a2.SLN_MemberCount.HeadCount_04 = "75";
-            loop2315a2.SLN_MemberCount.CompositeUnitofMeasure_05 = new C001_CompositeUnitofMeasure();
-            loop2315a2.SLN_MemberCount.CompositeUnitofMeasure_05.UnitorBasisforMeasurementCode_01 = "10";
+            loop2315a2.SLN_MemberCount.CompositeUnitOfMeasure_05 = new C001_CompositeUnitOfMeasure_4();
+            loop2315a2.SLN_MemberCount.CompositeUnitOfMeasure_05.UnitorBasisforMeasurementCode_01 = "10";
 
             //  End 2315A Loop 2
             loop23001.Loop2310A.Loop2315A.Add(loop2315a2);
@@ -238,8 +238,8 @@ namespace EdiFabric.Examples.X12.T820
             loop2315a3.SLN_MemberCount.LineItemControlNumber_01 = "1";
             loop2315a3.SLN_MemberCount.InformationOnlyIndicator_03 = "O";
             loop2315a3.SLN_MemberCount.HeadCount_04 = "25";
-            loop2315a3.SLN_MemberCount.CompositeUnitofMeasure_05 = new C001_CompositeUnitofMeasure();
-            loop2315a3.SLN_MemberCount.CompositeUnitofMeasure_05.UnitorBasisforMeasurementCode_01 = "IE";
+            loop2315a3.SLN_MemberCount.CompositeUnitOfMeasure_05 = new C001_CompositeUnitOfMeasure_4();
+            loop2315a3.SLN_MemberCount.CompositeUnitOfMeasure_05.UnitorBasisforMeasurementCode_01 = "IE";
 
             //  End 2315A Loop 1
             loop23002.Loop2310A.Loop2315A.Add(loop2315a3);            

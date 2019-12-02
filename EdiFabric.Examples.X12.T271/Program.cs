@@ -82,12 +82,12 @@ namespace EdiFabric.Examples.X12.T271
             //  Reference Identification = 10001234
             //  Date = 20060501(May 1, 2006)
             //  Time = 1:19 PM
-            result.BHT_BeginningofHierarchicalTransaction = new BHT_BeginningofHierarchicalTransaction_2();
-            result.BHT_BeginningofHierarchicalTransaction.HierarchicalStructureCode_01 = "0022";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionSetPurposeCode_02 = "11";
-            result.BHT_BeginningofHierarchicalTransaction.SubmitterTransactionIdentifier_03 = "10001234";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionSetCreationDate_04 = "20060501";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionSetCreationTime_05 = "1319";
+            result.BHT_BeginningOfHierarchicalTransaction = new BHT_BeginningOfHierarchicalTransaction_2();
+            result.BHT_BeginningOfHierarchicalTransaction.HierarchicalStructureCode_01 = "0022";
+            result.BHT_BeginningOfHierarchicalTransaction.TransactionSetPurposeCode_02 = "11";
+            result.BHT_BeginningOfHierarchicalTransaction.SubmitterTransactionIdentifier_03 = "10001234";
+            result.BHT_BeginningOfHierarchicalTransaction.TransactionSetCreationDate_04 = "20060501";
+            result.BHT_BeginningOfHierarchicalTransaction.TransactionSetCreationTime_05 = "1319";
 
             //  Repeating 2000A Loops
             result.Loop2000A = new List<Loop_2000A_271>();
@@ -99,7 +99,7 @@ namespace EdiFabric.Examples.X12.T271
             //  Hierarchical Parent ID Number = *not used
             //  Hierarchical Level Code = 20(Information Source)
             //  Hierarchical Child Code = 1
-            loop2000A.HL_InformationSourceLevel = new HL_BillingProviderHierarchicalLevel();
+            loop2000A.HL_InformationSourceLevel = new HL_InformationSourceLevel();
             loop2000A.HL_InformationSourceLevel.HierarchicalIDNumber_01 = "1";
             loop2000A.HL_InformationSourceLevel.HierarchicalLevelCode_03 = "20";
             loop2000A.HL_InformationSourceLevel.HierarchicalChildCode_04 = "1";
@@ -135,7 +135,7 @@ namespace EdiFabric.Examples.X12.T271
             //  Hierarchical Parent ID Number = 1
             //  Hierarchical Level Code = 21(Information Receiver)
             //  Hierarchical Child Code = 1
-            loop2000B.HL_InformationReceiverLevel = new HL_InformationReceiverLevel();
+            loop2000B.HL_InformationReceiverLevel = new HL_InformationReceiverLevel_2();
             loop2000B.HL_InformationReceiverLevel.HierarchicalIDNumber_01 = "2";
             loop2000B.HL_InformationReceiverLevel.HierarchicalParentIDNumber_02 = "1";
             loop2000B.HL_InformationReceiverLevel.HierarchicalLevelCode_03 = "21";
@@ -153,7 +153,7 @@ namespace EdiFabric.Examples.X12.T271
             //  Name Suffix = *not used
             //  Identification Code Qualifier = SV(Service Provider Number)
             //  Identification Code = 2000035
-            loop2000B.Loop2100B.NM1_InformationReceiverName = new NM1_InformationReceiverName();
+            loop2000B.Loop2100B.NM1_InformationReceiverName = new NM1_InformationReceiverName_2();
             loop2000B.Loop2100B.NM1_InformationReceiverName.EntityIdentifierCode_01 = "1P";
             loop2000B.Loop2100B.NM1_InformationReceiverName.EntityTypeQualifier_02 = "2";
             loop2000B.Loop2100B.NM1_InformationReceiverName.ResponseContactLastorOrganizationName_03 = "BONE AND JOINT CLINIC";
@@ -179,13 +179,13 @@ namespace EdiFabric.Examples.X12.T271
             loop2000C1.HL_SubscriberLevel.HierarchicalChildCode_04 = "0";
 
             //  Repeating TRN
-            loop2000C1.TRN_SubscriberTraceNumber = new List<TRN_DependentTraceNumber>();
+            loop2000C1.TRN_SubscriberTraceNumber = new List<TRN_DependentTraceNumber_2>();
 
             //  Trace Type Code = 2 (Referenced Transaction Trace Number)
             //  Reference Identification = 93175 - 012547
             //  Originating Company Identifier = 9877281234
             //  Reference Identification = *not used
-            var trn = new TRN_DependentTraceNumber();
+            var trn = new TRN_DependentTraceNumber_2();
             trn.TraceTypeCode_01 = "2";
             trn.CurrentTransactionTraceNumber_02 = "93175-012547";
             trn.OriginatingCompanyIdentifier_03 = "9877281234";
@@ -203,7 +203,7 @@ namespace EdiFabric.Examples.X12.T271
             //  Name Suffix = *not used
             //  Identification Code Qualifier = MI(Member Identification)
             //  Identification Code = 123456789
-            loop2000C1.Loop2100C.NM1_SubscriberName = new NM1_InsuredName();
+            loop2000C1.Loop2100C.NM1_SubscriberName = new NM1_SubscriberName();
             loop2000C1.Loop2100C.NM1_SubscriberName.EntityIdentifierCode_01 = "IL";
             loop2000C1.Loop2100C.NM1_SubscriberName.EntityTypeQualifier_02 = "1";
             loop2000C1.Loop2100C.NM1_SubscriberName.ResponseContactLastorOrganizationName_03 = "SMITH";
@@ -228,21 +228,21 @@ namespace EdiFabric.Examples.X12.T271
             //  Date Time Period Format = D8 (Date Expressed in Format CCYYMMDD)
             //  Date Time Period = 19630519
             //  Gender Code = M(Male)
-            loop2000C1.Loop2100C.DMG_SubscriberDemographicInformation = new DMG_DependentDemographicInformation();
+            loop2000C1.Loop2100C.DMG_SubscriberDemographicInformation = new DMG_DependentDemographicInformation_2();
             loop2000C1.Loop2100C.DMG_SubscriberDemographicInformation.DateTimePeriodFormatQualifier_01 = "D8";
             loop2000C1.Loop2100C.DMG_SubscriberDemographicInformation.DependentBirthDate_02 = "19630519";
             loop2000C1.Loop2100C.DMG_SubscriberDemographicInformation.DependentGenderCode_03 = "M";
 
             //  Repeating DTP
-            loop2000C1.Loop2100C.DTP_SubscriberDate = new List<DTP_DependentDate_2>();
+            loop2000C1.Loop2100C.DTP_SubscriberDate = new List<DTP_EligibilityOrBenefitDate>();
 
             //  Date/Time Qualifier = 346 (Plan Begin)
             //  Date Time Period Format Qualifier D8(Dates Expressed in Format CCYYMMDD)
             //  Date Time Period = 20060101(January 1, 2006)
-            var dtp = new DTP_DependentDate_2();
+            var dtp = new DTP_EligibilityOrBenefitDate();
             dtp.DateTimeQualifier_01 = "346";
             dtp.DateTimePeriodFormatQualifier_02 = "D8";
-            dtp.AccidentDate_03 = "20060101";
+            dtp.DateTimePeriod_03 = "20060101";
             loop2000C1.Loop2100C.DTP_SubscriberDate.Add(dtp);
 
             //  Repeating 2110C Loops

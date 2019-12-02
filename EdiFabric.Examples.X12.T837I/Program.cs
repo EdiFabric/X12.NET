@@ -124,13 +124,13 @@ namespace EdiFabric.Examples.X12.T837I
             result.ST.ImplementationConventionPreference_03 = "005010X223A2";
 
             //  BHT BEGINNING OF HIERARCHICAL TRANSACTION
-            result.BHT_BeginningofHierarchicalTransaction = new BHT_BeginningofHierarchicalTransaction_7();
-            result.BHT_BeginningofHierarchicalTransaction.HierarchicalStructureCode_01 = "0019";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionSetPurposeCode_02 = "00";
-            result.BHT_BeginningofHierarchicalTransaction.SubmitterTransactionIdentifier_03 = "0123";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionSetCreationDate_04 = "19960918";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionSetCreationTime_05 = "0932";
-            result.BHT_BeginningofHierarchicalTransaction.TransactionTypeCode_06 = "CH";
+            result.BHT_BeginningOfHierarchicalTransaction = new BHT_BeginningOfHierarchicalTransaction_8();
+            result.BHT_BeginningOfHierarchicalTransaction.HierarchicalStructureCode_01 = "0019";
+            result.BHT_BeginningOfHierarchicalTransaction.TransactionSetPurposeCode_02 = "00";
+            result.BHT_BeginningOfHierarchicalTransaction.SubmitterTransactionIdentifier_03 = "0123";
+            result.BHT_BeginningOfHierarchicalTransaction.TransactionSetCreationDate_04 = "19960918";
+            result.BHT_BeginningOfHierarchicalTransaction.TransactionSetCreationTime_05 = "0932";
+            result.BHT_BeginningOfHierarchicalTransaction.TransactionTypeCode_06 = "CH";
 
             //  Occurrence of NM1 Loops in any order
             result.AllNM1 = new All_NM1_837I_6();
@@ -139,7 +139,7 @@ namespace EdiFabric.Examples.X12.T837I
             result.AllNM1.Loop1000A = new Loop_1000A_837I();
 
             //  NM1 SUBMITTER NAME
-            result.AllNM1.Loop1000A.NM1_SubmitterName = new NM1_InformationReceiverName_2();
+            result.AllNM1.Loop1000A.NM1_SubmitterName = new NM1_InformationReceiverName_4();
             result.AllNM1.Loop1000A.NM1_SubmitterName.EntityIdentifierCode_01 = "41";
             result.AllNM1.Loop1000A.NM1_SubmitterName.EntityTypeQualifier_02 = "2";
             result.AllNM1.Loop1000A.NM1_SubmitterName.ResponseContactLastorOrganizationName_03 = "JONES HOSPITAL";
@@ -147,10 +147,10 @@ namespace EdiFabric.Examples.X12.T837I
             result.AllNM1.Loop1000A.NM1_SubmitterName.ResponseContactIdentifier_09 = "12345";
 
             //  Repeating PER Patient information
-            result.AllNM1.Loop1000A.PER_SubmitterEDIContactInformation = new List<PER_AdditionalPatientInformationContactInformation>();
+            result.AllNM1.Loop1000A.PER_SubmitterEDIContactInformation = new List<PER_BillingProviderContactInformation>();
 
             //  PER SUBMITTER EDI CONTACT INFORMATION
-            var per1 = new PER_AdditionalPatientInformationContactInformation();
+            var per1 = new PER_BillingProviderContactInformation();
             per1.ContactFunctionCode_01 = "IC";
             per1.ResponseContactName_02 = "JANE DOE";
             per1.CommunicationNumberQualifier_03 = "TE";
@@ -197,7 +197,7 @@ namespace EdiFabric.Examples.X12.T837I
             loop2000A.AllNM1.Loop2010AA = new Loop_2010AA_837I();
 
             //  NM1 BILLING PROVIDER NAME INCLUDING NATIONAL PROVIDER ID
-            loop2000A.AllNM1.Loop2010AA.NM1_BillingProviderName = new NM1_BillingProviderName_2();
+            loop2000A.AllNM1.Loop2010AA.NM1_BillingProviderName = new NM1_BillingProviderName_3();
             loop2000A.AllNM1.Loop2010AA.NM1_BillingProviderName.EntityIdentifierCode_01 = "85";
             loop2000A.AllNM1.Loop2010AA.NM1_BillingProviderName.EntityTypeQualifier_02 = "2";
             loop2000A.AllNM1.Loop2010AA.NM1_BillingProviderName.ResponseContactLastorOrganizationName_03 = "JONES HOSPITAL";
@@ -220,10 +220,10 @@ namespace EdiFabric.Examples.X12.T837I
             loop2000A.AllNM1.Loop2010AA.REF_BillingProviderTaxIdentification.MemberGrouporPolicyNumber_02 = "567891234";
 
             //  Repeating PER billing provider contact information
-            loop2000A.AllNM1.Loop2010AA.PER_BillingProviderContactInformation = new List<PER_AdditionalPatientInformationContactInformation>();
+            loop2000A.AllNM1.Loop2010AA.PER_BillingProviderContactInformation = new List<PER_BillingProviderContactInformation>();
 
             //  PER BILLING PROVIDER CONTACT INFORMATION
-            var per2 = new PER_AdditionalPatientInformationContactInformation();
+            var per2 = new PER_BillingProviderContactInformation();
             per2.ContactFunctionCode_01 = "IC";
             per2.ResponseContactName_02 = "CONNIE";
             per2.CommunicationNumberQualifier_03 = "TE";
@@ -246,7 +246,7 @@ namespace EdiFabric.Examples.X12.T837I
             loop2000B.HL_SubscriberHierarchicalLevel.HierarchicalChildCode_04 = "0";
 
             //  SBR SUBSCRIBER INFORMATION
-            loop2000B.SBR_SubscriberInformation = new SBR_SubscriberInformation();
+            loop2000B.SBR_SubscriberInformation = new SBR_SubscriberInformation_2();
             loop2000B.SBR_SubscriberInformation.PayerResponsibilitySequenceNumberCode_01 = "P";
             loop2000B.SBR_SubscriberInformation.IndividualRelationshipCode_02 = "18";
             loop2000B.SBR_SubscriberInformation.ClaimFilingIndicatorCode_09 = "MB";
@@ -258,7 +258,7 @@ namespace EdiFabric.Examples.X12.T837I
             loop2000B.AllNM1.Loop2010BA = new Loop_2010BA_837I();
 
             //  NM1 SUBSCRIBER NAME
-            loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName = new NM1_InsuredName();
+            loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName = new NM1_SubscriberName_5();
             loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName.EntityIdentifierCode_01 = "IL";
             loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName.EntityTypeQualifier_02 = "1";
             loop2000B.AllNM1.Loop2010BA.NM1_SubscriberName.ResponseContactLastorOrganizationName_03 = "DOE";
@@ -278,7 +278,7 @@ namespace EdiFabric.Examples.X12.T837I
             loop2000B.AllNM1.Loop2010BA.N4_SubscriberCity_State_ZIPCode.AdditionalPatientInformationContactPostalZoneorZIPCode_03 = "17111";
 
             //  DMG SUBSCRIBER DEMOGRAPHIC INFORMATION
-            loop2000B.AllNM1.Loop2010BA.DMG_SubscriberDemographicInformation = new DMG_DependentDemographicInformation();
+            loop2000B.AllNM1.Loop2010BA.DMG_SubscriberDemographicInformation = new DMG_PatientDemographicInformation();
             loop2000B.AllNM1.Loop2010BA.DMG_SubscriberDemographicInformation.DateTimePeriodFormatQualifier_01 = "D8";
             loop2000B.AllNM1.Loop2010BA.DMG_SubscriberDemographicInformation.DependentBirthDate_02 = "19261111";
             loop2000B.AllNM1.Loop2010BA.DMG_SubscriberDemographicInformation.DependentGenderCode_03 = "M";
@@ -289,7 +289,7 @@ namespace EdiFabric.Examples.X12.T837I
             loop2000B.AllNM1.Loop2010BB = new Loop_2010BB_837I();
 
             //  NM1 PAYER NAME
-            loop2000B.AllNM1.Loop2010BB.NM1_PayerName = new NM1_CorrectedPriorityPayerName();
+            loop2000B.AllNM1.Loop2010BB.NM1_PayerName = new NM1_OtherPayerName();
             loop2000B.AllNM1.Loop2010BB.NM1_PayerName.EntityIdentifierCode_01 = "PR";
             loop2000B.AllNM1.Loop2010BB.NM1_PayerName.EntityTypeQualifier_02 = "2";
             loop2000B.AllNM1.Loop2010BB.NM1_PayerName.ResponseContactLastorOrganizationName_03 = "MEDICARE B";
@@ -313,14 +313,14 @@ namespace EdiFabric.Examples.X12.T837I
             var loop2300 = new Loop_2300_837I_2();
 
             //  CLM CLAIM LEVEL INFORMATION
-            loop2300.CLM_Claiminformation = new CLM_ClaimInformation();
-            loop2300.CLM_Claiminformation.PatientControlNumber_01 = "756048Q";
-            loop2300.CLM_Claiminformation.TotalClaimChargeAmount_02 = "89.93";
-            loop2300.CLM_Claiminformation.NonInstitutionalClaimTypeCode_04 = "14:A:1";
-            loop2300.CLM_Claiminformation.HealthCareServiceLocationInformation_05 = new C023_HealthCareServiceLocationInformation();
-            loop2300.CLM_Claiminformation.HealthCareServiceLocationInformation_05.FacilityTypeCode_01 = "A";
-            loop2300.CLM_Claiminformation.ProviderorSupplierSignatureIndicator_06 = "Y";
-            loop2300.CLM_Claiminformation.AssignmentorPlanParticipationCode_07 = "Y";
+            loop2300.CLM_ClaimInformation = new CLM_ClaimInformation_2();
+            loop2300.CLM_ClaimInformation.PatientControlNumber_01 = "756048Q";
+            loop2300.CLM_ClaimInformation.TotalClaimChargeAmount_02 = "89.93";
+            loop2300.CLM_ClaimInformation.NonInstitutionalClaimTypeCode_04 = "14:A:1";
+            loop2300.CLM_ClaimInformation.HealthCareServiceLocationInformation_05 = new C023_HealthCareServiceLocationInformation_3();
+            loop2300.CLM_ClaimInformation.HealthCareServiceLocationInformation_05.FacilityTypeCode_01 = "A";
+            loop2300.CLM_ClaimInformation.ProviderorSupplierSignatureIndicator_06 = "Y";
+            loop2300.CLM_ClaimInformation.AssignmentorPlanParticipationCode_07 = "Y";
 
             //  Occurrence of DTP Segments in any order
             loop2300.AllDTP = new All_DTP_837I();
@@ -329,7 +329,7 @@ namespace EdiFabric.Examples.X12.T837I
             loop2300.AllDTP.DTP_StatementDates = new DTP_StatementDates();
             loop2300.AllDTP.DTP_StatementDates.DateTimeQualifier_01 = "434";
             loop2300.AllDTP.DTP_StatementDates.DateTimePeriodFormatQualifier_02 = "RD8";
-            loop2300.AllDTP.DTP_StatementDates.AccidentDate_03 = "19960911";
+            loop2300.AllDTP.DTP_StatementDates.DateTimePeriod_03 = "19960911";
 
             //  CL1 INSTITUTIONAL CLAIM CODE
             loop2300.CL1_InstitutionalClaimCode = new CL1_InstitutionalClaimCode();
@@ -341,7 +341,7 @@ namespace EdiFabric.Examples.X12.T837I
 
             //  HI PRINCIPAL DIAGNOSIS CODES
             loop2300.AllHI.HI_PrincipalDiagnosis = new HI_PrincipalDiagnosis();
-            loop2300.AllHI.HI_PrincipalDiagnosis.HealthCareCodeInformation_01 = new C022_HealthCareCodeInformation();
+            loop2300.AllHI.HI_PrincipalDiagnosis.HealthCareCodeInformation_01 = new C022_HealthCareCodeInformation_8();
             loop2300.AllHI.HI_PrincipalDiagnosis.HealthCareCodeInformation_01.CodeListQualifierCode_01 = "BK";
             loop2300.AllHI.HI_PrincipalDiagnosis.HealthCareCodeInformation_01.IndustryCode_02 = "3669";
 
@@ -350,10 +350,10 @@ namespace EdiFabric.Examples.X12.T837I
 
             //  HI OTHER DIAGNOSIS INFORMATION
             var hi1 = new HI_OtherDiagnosisInformation();
-            hi1.HealthCareCodeInformation_01 = new C022_HealthCareCodeInformation();
+            hi1.HealthCareCodeInformation_01 = new C022_HealthCareCodeInformation_4();
             hi1.HealthCareCodeInformation_01.CodeListQualifierCode_01 = "BF";
             hi1.HealthCareCodeInformation_01.IndustryCode_02 = "4019";
-            hi1.HealthCareCodeInformation_02 = new C022_HealthCareCodeInformation();
+            hi1.HealthCareCodeInformation_02 = new C022_HealthCareCodeInformation_4();
             hi1.HealthCareCodeInformation_02.CodeListQualifierCode_01 = "BF";
             hi1.HealthCareCodeInformation_02.IndustryCode_02 = "79431";
             loop2300.AllHI.HI_OtherDiagnosisInformation.Add(hi1);
@@ -363,23 +363,23 @@ namespace EdiFabric.Examples.X12.T837I
 
             //  HI OCCURRENCE INFORMATION
             var hi3 = new HI_OccurrenceInformation();
-            hi3.HealthCareCodeInformation_01 = new C022_HealthCareCodeInformation();
+            hi3.HealthCareCodeInformation_01 = new C022_HealthCareCodeInformation_6();
             hi3.HealthCareCodeInformation_01.CodeListQualifierCode_01 = "BH";
             hi3.HealthCareCodeInformation_01.IndustryCode_02 = "A1";
             hi3.HealthCareCodeInformation_01.DateTimePeriodFormatQualifier_03 = "D8";
             hi3.HealthCareCodeInformation_01.DateTimePeriod_04 = "19261111";
-            hi3.HealthCareCodeInformation_02 = new C022_HealthCareCodeInformation();
+            hi3.HealthCareCodeInformation_02 = new C022_HealthCareCodeInformation_6();
             hi3.HealthCareCodeInformation_02.CodeListQualifierCode_01 = "BH";
             hi3.HealthCareCodeInformation_02.IndustryCode_02 = "A2";
             hi3.HealthCareCodeInformation_02.DateTimePeriodFormatQualifier_03 = "D8";
             hi3.HealthCareCodeInformation_02.DateTimePeriod_04 = "19911101";
-            hi3.HealthCareCodeInformation_03 = new C022_HealthCareCodeInformation();
-            hi3.HealthCareCodeInformation_03 = new C022_HealthCareCodeInformation();
+            hi3.HealthCareCodeInformation_03 = new C022_HealthCareCodeInformation_6();
+            hi3.HealthCareCodeInformation_03 = new C022_HealthCareCodeInformation_6();
             hi3.HealthCareCodeInformation_03.CodeListQualifierCode_01 = "BH";
             hi3.HealthCareCodeInformation_03.IndustryCode_02 = "B1";
             hi3.HealthCareCodeInformation_03.DateTimePeriodFormatQualifier_03 = "D8";
             hi3.HealthCareCodeInformation_03.DateTimePeriod_04 = "19261111";
-            hi3.HealthCareCodeInformation_04 = new C022_HealthCareCodeInformation();
+            hi3.HealthCareCodeInformation_04 = new C022_HealthCareCodeInformation_6();
             hi3.HealthCareCodeInformation_04.CodeListQualifierCode_01 = "BH";
             hi3.HealthCareCodeInformation_04.IndustryCode_02 = "B2";
             hi3.HealthCareCodeInformation_04.DateTimePeriodFormatQualifier_03 = "D8";
@@ -391,7 +391,7 @@ namespace EdiFabric.Examples.X12.T837I
 
             //  HI VALUE INFORMATION
             var hi7 = new HI_ValueInformation();
-            hi7.HealthCareCodeInformation_01 = new C022_HealthCareCodeInformation();
+            hi7.HealthCareCodeInformation_01 = new C022_HealthCareCodeInformation_7();
             hi7.HealthCareCodeInformation_01.CodeListQualifierCode_01 = "BE";
             hi7.HealthCareCodeInformation_01.IndustryCode_02 = "A2";
             hi7.HealthCareCodeInformation_01.MonetaryAmount_05 = "15.31";
@@ -402,7 +402,7 @@ namespace EdiFabric.Examples.X12.T837I
 
             //  HI CONDITION INFORMATION
             var hi8 = new HI_ConditionInformation();
-            hi8.HealthCareCodeInformation_01 = new C022_HealthCareCodeInformation();
+            hi8.HealthCareCodeInformation_01 = new C022_HealthCareCodeInformation_13();
             hi8.HealthCareCodeInformation_01.CodeListQualifierCode_01 = "BG";
             hi8.HealthCareCodeInformation_01.IndustryCode_02 = "09";
             loop2300.AllHI.HI_ConditionInformation.Add(hi8);
@@ -439,7 +439,7 @@ namespace EdiFabric.Examples.X12.T837I
             var loop2320 = new Loop_2320_837I();
 
             //  SBR OTHER SUBSCRIBER INFORMATION
-            loop2320.SBR_OtherSubscriberInformation = new SBR_OtherSubscriberInformation();
+            loop2320.SBR_OtherSubscriberInformation = new SBR_OtherSubscriberInformation_2();
             loop2320.SBR_OtherSubscriberInformation.PayerResponsibilitySequenceNumberCode_01 = "S";
             loop2320.SBR_OtherSubscriberInformation.IndividualRelationshipCode_02 = "01";
             loop2320.SBR_OtherSubscriberInformation.InsuredGrouporPolicyNumber_03 = "351630";
@@ -447,7 +447,7 @@ namespace EdiFabric.Examples.X12.T837I
             loop2320.SBR_OtherSubscriberInformation.ClaimFilingIndicatorCode_09 = "CI";
 
             //  OI OTHER INSURANCE COVERAGE INFORMATION
-            loop2320.OI_OtherInsuranceCoverageInformation = new OI_OtherInsuranceCoverageInformation();
+            loop2320.OI_OtherInsuranceCoverageInformation = new OI_OtherInsuranceCoverageInformation_2();
             loop2320.OI_OtherInsuranceCoverageInformation.BenefitsAssignmentCertificationIndicator_03 = "Y";
             loop2320.OI_OtherInsuranceCoverageInformation.ReleaseofInformationCode_06 = "Y";
 
@@ -458,7 +458,7 @@ namespace EdiFabric.Examples.X12.T837I
             loop2320.AllNM1.Loop2330A = new Loop_2330A_837I();
 
             //  NM1 OTHER SUBSCRIBER NAME
-            loop2320.AllNM1.Loop2330A.NM1_OtherSubscriberName = new NM1_InsuredName();
+            loop2320.AllNM1.Loop2330A.NM1_OtherSubscriberName = new NM1_OtherSubscriberName();
             loop2320.AllNM1.Loop2330A.NM1_OtherSubscriberName.EntityIdentifierCode_01 = "IL";
             loop2320.AllNM1.Loop2330A.NM1_OtherSubscriberName.EntityTypeQualifier_02 = "1";
             loop2320.AllNM1.Loop2330A.NM1_OtherSubscriberName.ResponseContactLastorOrganizationName_03 = "DOE";
@@ -483,7 +483,7 @@ namespace EdiFabric.Examples.X12.T837I
             loop2320.AllNM1.Loop2330B = new Loop_2330B_837I();
 
             //  NM1 OTHER PAYER NAME
-            loop2320.AllNM1.Loop2330B.NM1_OtherPayerName = new NM1_CorrectedPriorityPayerName();
+            loop2320.AllNM1.Loop2330B.NM1_OtherPayerName = new NM1_OtherPayerName();
             loop2320.AllNM1.Loop2330B.NM1_OtherPayerName.EntityIdentifierCode_01 = "PR";
             loop2320.AllNM1.Loop2330B.NM1_OtherPayerName.EntityTypeQualifier_02 = "2";
             loop2320.AllNM1.Loop2330B.NM1_OtherPayerName.ResponseContactLastorOrganizationName_03 = "STATE TEACHERS";
@@ -508,7 +508,7 @@ namespace EdiFabric.Examples.X12.T837I
             //  SV2 INSTITUTIONAL SERVICE
             loop24001.SV2_InstitutionalServiceLine = new SV2_InstitutionalServiceLine();
             loop24001.SV2_InstitutionalServiceLine.ServiceLineRevenueCode_01 = "0305";
-            loop24001.SV2_InstitutionalServiceLine.CompositeMedicalProcedureIdentifier_02 = new C003_CompositeMedicalProcedureIdentifier();
+            loop24001.SV2_InstitutionalServiceLine.CompositeMedicalProcedureIdentifier_02 = new C003_CompositeMedicalProcedureIdentifier_8();
             loop24001.SV2_InstitutionalServiceLine.CompositeMedicalProcedureIdentifier_02.ProductorServiceIDQualifier_01 = "HC";
             loop24001.SV2_InstitutionalServiceLine.CompositeMedicalProcedureIdentifier_02.ProcedureCode_02 = "85025";
             loop24001.SV2_InstitutionalServiceLine.LineItemChargeAmount_03 = "13.39";
@@ -519,7 +519,7 @@ namespace EdiFabric.Examples.X12.T837I
             loop24001.DTP_Date_ServiceDate = new DTP_ClaimLevelServiceDate();
             loop24001.DTP_Date_ServiceDate.DateTimeQualifier_01 = "472";
             loop24001.DTP_Date_ServiceDate.DateTimePeriodFormatQualifier_02 = "D8";
-            loop24001.DTP_Date_ServiceDate.AccidentDate_03 = "19960911";
+            loop24001.DTP_Date_ServiceDate.DateTimePeriod_03 = "19960911";
 
             //  End 2400 Loop 1
             loop2300.Loop2400.Add(loop24001);
@@ -534,7 +534,7 @@ namespace EdiFabric.Examples.X12.T837I
             //  SV2 INSTITUTIONAL SERVICE
             loop24002.SV2_InstitutionalServiceLine = new SV2_InstitutionalServiceLine();
             loop24002.SV2_InstitutionalServiceLine.ServiceLineRevenueCode_01 = "0730";
-            loop24002.SV2_InstitutionalServiceLine.CompositeMedicalProcedureIdentifier_02 = new C003_CompositeMedicalProcedureIdentifier();
+            loop24002.SV2_InstitutionalServiceLine.CompositeMedicalProcedureIdentifier_02 = new C003_CompositeMedicalProcedureIdentifier_8();
             loop24002.SV2_InstitutionalServiceLine.CompositeMedicalProcedureIdentifier_02.ProductorServiceIDQualifier_01 = "HC";
             loop24002.SV2_InstitutionalServiceLine.CompositeMedicalProcedureIdentifier_02.ProcedureCode_02 = "93005";
             loop24002.SV2_InstitutionalServiceLine.LineItemChargeAmount_03 = "76.54";
@@ -545,7 +545,7 @@ namespace EdiFabric.Examples.X12.T837I
             loop24002.DTP_Date_ServiceDate = new DTP_ClaimLevelServiceDate();
             loop24002.DTP_Date_ServiceDate.DateTimeQualifier_01 = "472";
             loop24002.DTP_Date_ServiceDate.DateTimePeriodFormatQualifier_02 = "D8";
-            loop24002.DTP_Date_ServiceDate.AccidentDate_03 = "19960911";
+            loop24002.DTP_Date_ServiceDate.DateTimePeriod_03 = "19960911";
 
             //  End 2400 Loop 2
             loop2300.Loop2400.Add(loop24002);
