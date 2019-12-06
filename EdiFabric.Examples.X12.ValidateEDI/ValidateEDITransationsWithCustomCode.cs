@@ -36,7 +36,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             MessageErrorContext errorContext;
             if (!po.IsValid(out errorContext))
             {
-                var customValidation = errorContext.Errors.FirstOrDefault(e => e.Value == "N2 segment is missing.");
+                var customValidation = errorContext.Errors.FirstOrDefault(e => e.Message == "N2 segment is missing.");
                 Debug.WriteLine(customValidation.Value);
             }
         }
