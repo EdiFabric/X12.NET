@@ -1,18 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FE3C9814-61B1-4DE4-AD04-501D44F8B22D}</ProjectGuid>
+    <ProjectGuid>{F560BE17-37A1-4D0A-A500-4E2368207FFF}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>EdiFabric.Examples.X12.ValidateEDI</RootNamespace>
-    <AssemblyName>EdiFabric.Examples.X12.ValidateEDI</AssemblyName>
+    <RootNamespace>EdiFabric.Examples.X12.T837P.DB</RootNamespace>
+    <AssemblyName>EdiFabric.Examples.X12.T837P.DB</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -40,9 +41,17 @@
     <Reference Include="EdiFabric.Framework, Version=9.8.7.1, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
       <HintPath>..\packages\EdiFabric.Framework.9.8.7.1\lib\net45\EdiFabric.Framework.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,40 +60,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Validate810.cs" />
-    <Compile Include="Validate837P.cs" />
-    <Compile Include="Validate850.cs" />
-    <Compile Include="ValidateDataElementTypes.cs" />
-    <Compile Include="ValidateCustomEDICodes.cs" />
-    <Compile Include="ValidateEDITransationsAsync.cs" />
-    <Compile Include="ValidateEDITransationsWithCustomCode.cs" />
+    <Compile Include="EF_HIPAA_005010_837P_DbContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ValidateEDITransationsBeforeWrite.cs" />
-    <Compile Include="ValidateEDITransationsAfterRead.cs" />
-    <Compile Include="ValidateISAorGS.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EdiFabric.Examples.X12.Templates.V4010.Common\EdiFabric.Examples.X12.Templates.V4010.Common.csproj">
-      <Project>{8f106c0d-4ad9-4139-b299-6d59af3badd2}</Project>
-      <Name>EdiFabric.Examples.X12.Templates.V4010.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Examples.X12.Templates.V4010.PartnerA\EdiFabric.Examples.X12.Templates.V4010.PartnerA.csproj">
-      <Project>{c083f5bd-5e3e-4363-853e-9e5dffc14d2e}</Project>
-      <Name>EdiFabric.Examples.X12.Templates.V4010.PartnerA</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Examples.X12.Templates.V4010\EdiFabric.Examples.X12.Templates.V4010.csproj">
-      <Project>{c8c0e28b-7ba8-4c81-a1a1-1aa86171aba5}</Project>
-      <Name>EdiFabric.Examples.X12.Templates.V4010</Name>
-    </ProjectReference>
     <ProjectReference Include="..\EdiFabric.Examples.X12.Templates.V5010\EdiFabric.Examples.X12.Templates.V5010.csproj">
-      <Project>{BD94C9CA-090C-457C-8672-404E1499D461}</Project>
+      <Project>{bd94c9ca-090c-457c-8672-404e1499d461}</Project>
       <Name>EdiFabric.Examples.X12.Templates.V5010</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
 </Project>

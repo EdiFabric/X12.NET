@@ -27,6 +27,9 @@
             Validate810.Run();
             Validate850.Run();
             Validate837P.Run();
+
+            //  Validate async
+            ValidateEDITransationsAsync.Run();
         }
     }
 }
