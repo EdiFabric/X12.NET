@@ -19,7 +19,7 @@ With EDI Tools for .NET you can:
 * Import\Export to\from XML
 * Import\Export to\from JSON
 * Use the templates as Entity Framework POCOs (X12 only)
-* Generate DB structure wiht Code First (X12 only)
+* Generate DB structure with Code First (X12 only)
 * Save to\Query DB using Entity Framework
 
 EDI Templates are included for the following standards:
@@ -62,6 +62,7 @@ EdiFabric EDI Toolkit supports:
 * .NET Standard 1.6
 * .NET Standard 2.0
 * .NET Core 2.0 (trial available)
+* .NET Core 3.0
 
 The examples reference 14 day trial NuGet packages
 
