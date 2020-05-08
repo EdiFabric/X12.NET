@@ -183,7 +183,6 @@ namespace EdiFabric.Templates.Hipaa5010
         public DbSet<SBR> SBR { get; set; }
         public DbSet<PAT_PatientInformation_3> PAT_PatientInformation_3 { get; set; }
         public DbSet<PAT> PAT { get; set; }
-        public DbSet<Loop_2300_837P_2> Loop_2300_837P_2 { get; set; }
         public DbSet<Loop_2000C_837P> Loop_2000C_837P { get; set; }
         public DbSet<HL_DependentLevel> HL_DependentLevel { get; set; }
         public DbSet<PAT_PatientInformation> PAT_PatientInformation { get; set; }

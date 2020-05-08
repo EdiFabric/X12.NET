@@ -1078,7 +1078,7 @@ namespace EdiFabric.Templates.Hipaa5010
         /// </summary>
         [DataMember]
         [Pos(5)]
-        public virtual List<Loop_2300_837P_2> Loop2300 { get; set; }
+        public virtual List<Loop_2300_837P> Loop2300 { get; set; }
         /// <summary>
         /// Loop for Patient Hierarchical Level
         /// </summary>
@@ -1369,101 +1369,6 @@ namespace EdiFabric.Templates.Hipaa5010
     [DataContract()]
     [Group(typeof(CLM_ClaimInformation_3))]
     public class Loop_2300_837P
-    {
-        
-        [XmlIgnore]
-        [IgnoreDataMember]
-        public int Id { get; set; }
-        /// <summary>
-        /// Claim Information
-        /// </summary>
-        [DataMember]
-        [Pos(1)]
-        public virtual CLM_ClaimInformation_3 CLM_ClaimInformation { get; set; }
-        [DataMember]
-        [Pos(2)]
-        public virtual All_DTP_837P_2 AllDTP { get; set; }
-        /// <summary>
-        /// Claim Supplemental Information
-        /// </summary>
-        [DataMember]
-        [Pos(3)]
-        public virtual List<PWK_ClaimSupplementalInformation_3> PWK_ClaimSupplementalInformation { get; set; }
-        /// <summary>
-        /// Contract Information
-        /// </summary>
-        [DataMember]
-        [Pos(4)]
-        public virtual CN1_ContractInformation_2 CN1_ContractInformation { get; set; }
-        /// <summary>
-        /// Patient Amount Paid
-        /// </summary>
-        [DataMember]
-        [Pos(5)]
-        public virtual AMT_PatientAmountPaid AMT_PatientAmountPaid { get; set; }
-        [DataMember]
-        [Pos(6)]
-        public virtual All_REF_837P_6 AllREF { get; set; }
-        /// <summary>
-        /// File Information
-        /// </summary>
-        [DataMember]
-        [Pos(7)]
-        public virtual List<K3_FileInformation> K3_FileInformation { get; set; }
-        /// <summary>
-        /// Claim Note
-        /// </summary>
-        [DataMember]
-        [Pos(8)]
-        public virtual NTE_ClaimNote_2 NTE_ClaimNote { get; set; }
-        /// <summary>
-        /// Ambulance Transport Information
-        /// </summary>
-        [DataMember]
-        [Pos(9)]
-        public virtual CR1_AmbulanceTransportInformation CR1_AmbulanceTransportInformation { get; set; }
-        /// <summary>
-        /// Spinal Manipulation Service Information
-        /// </summary>
-        [DataMember]
-        [Pos(10)]
-        public virtual CR2_SpinalManipulationServiceInformation CR2_SpinalManipulationServiceInformation { get; set; }
-        [DataMember]
-        [Pos(11)]
-        public virtual All_CRC_837P_2 AllCRC { get; set; }
-        [DataMember]
-        [Pos(12)]
-        public virtual All_HI_837P AllHI { get; set; }
-        /// <summary>
-        /// Claim Pricing/Repricing Information
-        /// </summary>
-        [DataMember]
-        [Pos(13)]
-        public virtual HCP_ClaimPricing HCP_ClaimPricing_RepricingInformation { get; set; }
-        [DataMember]
-        [Pos(14)]
-        public virtual All_NM1_837P_3 AllNM1 { get; set; }
-        /// <summary>
-        /// Loop for Other Subscriber Information
-        /// </summary>
-        [DataMember]
-        [Pos(15)]
-        public virtual List<Loop_2320_837P> Loop2320 { get; set; }
-        /// <summary>
-        /// Loop for Service Line Number
-        /// </summary>
-        [DataMember]
-        [Pos(16)]
-        public virtual List<Loop_2400_837P> Loop2400 { get; set; }
-    }
-    
-    /// <summary>
-    /// Loop for Claim Information
-    /// </summary>
-    [Serializable()]
-    [DataContract()]
-    [Group(typeof(CLM_ClaimInformation_3))]
-    public class Loop_2300_837P_2
     {
         
         [XmlIgnore]

@@ -307,10 +307,10 @@ namespace EdiFabric.Examples.X12.T837I
             //  End 2010BB Loop
 
             //  Repeating 2300 Loops
-            loop2000B.Loop2300 = new List<Loop_2300_837I_2>();
+            loop2000B.Loop2300 = new List<Loop_2300_837I>();
 
             //  Begin 2300 Loop CLAIM INFORMATION
-            var loop2300 = new Loop_2300_837I_2();
+            var loop2300 = new Loop_2300_837I();
 
             //  CLM CLAIM LEVEL INFORMATION
             loop2300.CLM_ClaimInformation = new CLM_ClaimInformation_2();
