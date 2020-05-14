@@ -340,7 +340,7 @@ namespace EdiFabric.Examples.X12.T837P
             loop2300.AllHI = new All_HI_837P();
 
             //  CASE: Patient has sore throat.
-            loop2300.AllHI.HI_HealthCareDiagnosisCode = new HI_DependentHealthCareDiagnosisCode();
+            loop2300.AllHI.HI_HealthCareDiagnosisCode = new HI_DependentHealthCareDiagnosisCode_2();
             loop2300.AllHI.HI_HealthCareDiagnosisCode.HealthCareCodeInformation_01 = new C022_HealthCareCodeInformation_8();
             loop2300.AllHI.HI_HealthCareDiagnosisCode.HealthCareCodeInformation_01.CodeListQualifierCode_01 = "BK";
             loop2300.AllHI.HI_HealthCareDiagnosisCode.HealthCareCodeInformation_01.IndustryCode_02 = "0340";
@@ -392,10 +392,10 @@ namespace EdiFabric.Examples.X12.T837P
             loop24001.AllNM1.Loop2420D.NM1_SupervisingProviderName.ResponseContactLastorOrganizationName_03 = "JONES";
             loop24001.AllNM1.Loop2420D.NM1_SupervisingProviderName.ResponseContactFirstName_04 = "DEVIL";
 
-            loop24001.AllNM1.Loop2420D.REF_SupervisingProviderSecondaryIdentification = new List<REF_AssistantSurgeonSecondaryIdentification>();
+            loop24001.AllNM1.Loop2420D.REF_SupervisingProviderSecondaryIdentification = new List<REF_AssistantSurgeonSecondaryIdentification_2>();
 
             //  Attendant's ID 
-            var refAssistantSurgeonSecondaryIdentification = new REF_AssistantSurgeonSecondaryIdentification();
+            var refAssistantSurgeonSecondaryIdentification = new REF_AssistantSurgeonSecondaryIdentification_2();
             refAssistantSurgeonSecondaryIdentification.ReferenceIdentificationQualifier_01 = "LU";
             refAssistantSurgeonSecondaryIdentification.MemberGrouporPolicyNumber_02 = "1234567890";
             loop24001.AllNM1.Loop2420D.REF_SupervisingProviderSecondaryIdentification.Add(refAssistantSurgeonSecondaryIdentification);

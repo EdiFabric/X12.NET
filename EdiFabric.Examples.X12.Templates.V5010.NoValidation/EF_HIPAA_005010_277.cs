@@ -365,7 +365,7 @@ namespace EdiFabric.Templates.Hipaa5010
         /// </summary>
         [DataMember]
         [Pos(2)]
-        public virtual List<STC_ClaimLevelStatusInformation> STC_InformationReceiverStatusInformation { get; set; }
+        public virtual List<STC_ClaimLevelStatusInformation_5> STC_InformationReceiverStatusInformation { get; set; }
     }
     
     /// <summary>
@@ -391,7 +391,7 @@ namespace EdiFabric.Templates.Hipaa5010
         /// </summary>
         [DataMember]
         [Pos(2)]
-        public virtual List<STC_ClaimLevelStatusInformation> STC_ProviderStatusInformation { get; set; }
+        public virtual List<STC_ClaimLevelStatusInformation_4> STC_ProviderStatusInformation { get; set; }
     }
     
     /// <summary>

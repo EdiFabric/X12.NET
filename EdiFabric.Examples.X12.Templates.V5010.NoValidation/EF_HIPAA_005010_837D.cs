@@ -393,13 +393,13 @@ namespace EdiFabric.Templates.Hipaa5010
         /// </summary>
         [DataMember]
         [Pos(1)]
-        public virtual List<REF_OtherPayerPredeterminationIdentification> REF_ServicePredeterminationIdentification { get; set; }
+        public virtual List<REF_OtherPayerPredeterminationIdentification_2> REF_ServicePredeterminationIdentification { get; set; }
         /// <summary>
         /// Prior Authorization
         /// </summary>
         [DataMember]
         [Pos(2)]
-        public virtual List<REF_OtherPayerPriorAuthorizationNumber> REF_PriorAuthorization { get; set; }
+        public virtual List<REF_OtherPayerPriorAuthorizationNumber_2> REF_PriorAuthorization { get; set; }
         /// <summary>
         /// Line Item Control Number
         /// </summary>
@@ -423,7 +423,7 @@ namespace EdiFabric.Templates.Hipaa5010
         /// </summary>
         [DataMember]
         [Pos(6)]
-        public virtual List<REF_OtherPayerReferralNumber> REF_ReferralNumber { get; set; }
+        public virtual List<REF_OtherPayerReferralNumber_2> REF_ReferralNumber { get; set; }
     }
     
     [Serializable()]
@@ -1115,7 +1115,7 @@ namespace EdiFabric.Templates.Hipaa5010
         /// </summary>
         [DataMember]
         [Pos(3)]
-        public virtual List<REF_OrderingProviderSecondaryIdentification> REF_ReferringProviderSecondaryIdentification { get; set; }
+        public virtual List<REF_OrderingProviderSecondaryIdentification_2> REF_ReferringProviderSecondaryIdentification { get; set; }
     }
     
     /// <summary>
@@ -1392,7 +1392,7 @@ namespace EdiFabric.Templates.Hipaa5010
         /// </summary>
         [DataMember]
         [Pos(2)]
-        public virtual List<REF_OrderingProviderSecondaryIdentification> REF_OtherPayerReferringProviderSecondaryIdentification { get; set; }
+        public virtual List<REF_OrderingProviderSecondaryIdentification_2> REF_OtherPayerReferringProviderSecondaryIdentification { get; set; }
     }
     
     /// <summary>
@@ -1625,7 +1625,7 @@ namespace EdiFabric.Templates.Hipaa5010
         /// </summary>
         [DataMember]
         [Pos(3)]
-        public virtual List<REF_AssistantSurgeonSecondaryIdentification> REF_RenderingProviderSecondaryIdentification { get; set; }
+        public virtual List<REF_AssistantSurgeonSecondaryIdentification_2> REF_RenderingProviderSecondaryIdentification { get; set; }
     }
     
     /// <summary>
@@ -1657,7 +1657,7 @@ namespace EdiFabric.Templates.Hipaa5010
         /// </summary>
         [DataMember]
         [Pos(3)]
-        public virtual List<REF_AssistantSurgeonSecondaryIdentification> REF_AssistantSurgeonSecondaryIdentification { get; set; }
+        public virtual List<REF_AssistantSurgeonSecondaryIdentification_2> REF_AssistantSurgeonSecondaryIdentification { get; set; }
     }
     
     /// <summary>
@@ -1683,7 +1683,7 @@ namespace EdiFabric.Templates.Hipaa5010
         /// </summary>
         [DataMember]
         [Pos(2)]
-        public virtual List<REF_AssistantSurgeonSecondaryIdentification> REF_SupervisingProviderSecondaryIdentification { get; set; }
+        public virtual List<REF_AssistantSurgeonSecondaryIdentification_2> REF_SupervisingProviderSecondaryIdentification { get; set; }
     }
     
     /// <summary>

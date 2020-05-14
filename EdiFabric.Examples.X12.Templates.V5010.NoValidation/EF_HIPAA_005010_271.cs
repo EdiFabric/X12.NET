@@ -298,7 +298,7 @@ namespace EdiFabric.Templates.Hipaa5010
         /// </summary>
         [DataMember]
         [Pos(9)]
-        public virtual HI_DependentHealthCareDiagnosisCode HI_SubscriberHealthCareDiagnosisCode { get; set; }
+        public virtual HI_DependentHealthCareDiagnosisCode_3 HI_SubscriberHealthCareDiagnosisCode { get; set; }
         /// <summary>
         /// Subscriber Date
         /// </summary>

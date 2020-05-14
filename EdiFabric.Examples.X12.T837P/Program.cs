@@ -343,7 +343,7 @@ namespace EdiFabric.Examples.X12.T837P
             loop2300.AllHI = new All_HI_837P();
 
             //  CASE: Patient has sore throat.
-            loop2300.AllHI.HI_HealthCareDiagnosisCode = new HI_DependentHealthCareDiagnosisCode();
+            loop2300.AllHI.HI_HealthCareDiagnosisCode = new HI_DependentHealthCareDiagnosisCode_2();
             loop2300.AllHI.HI_HealthCareDiagnosisCode.HealthCareCodeInformation_01 = new C022_HealthCareCodeInformation_8();
             loop2300.AllHI.HI_HealthCareDiagnosisCode.HealthCareCodeInformation_01.CodeListQualifierCode_01 = "BK";
             loop2300.AllHI.HI_HealthCareDiagnosisCode.HealthCareCodeInformation_01.IndustryCode_02 = "0340";

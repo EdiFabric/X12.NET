@@ -1331,7 +1331,7 @@ namespace EdiFabric.Templates.Hipaa5010
         /// </summary>
         [DataMember]
         [Pos(2)]
-        public virtual List<REF_OrderingProviderSecondaryIdentification> REF_ReferringProviderSecondaryIdentification { get; set; }
+        public virtual List<REF_OrderingProviderSecondaryIdentification_2> REF_ReferringProviderSecondaryIdentification { get; set; }
     }
     
     /// <summary>
@@ -1616,7 +1616,7 @@ namespace EdiFabric.Templates.Hipaa5010
         /// </summary>
         [DataMember]
         [Pos(2)]
-        public virtual List<REF_OrderingProviderSecondaryIdentification> REF_OtherPayerReferringProviderSecondaryIdentification { get; set; }
+        public virtual List<REF_OrderingProviderSecondaryIdentification_2> REF_OtherPayerReferringProviderSecondaryIdentification { get; set; }
     }
     
     /// <summary>
@@ -1771,7 +1771,7 @@ namespace EdiFabric.Templates.Hipaa5010
         /// </summary>
         [DataMember]
         [Pos(2)]
-        public virtual List<REF_AssistantSurgeonSecondaryIdentification> REF_OperatingPhysicianSecondaryIdentification { get; set; }
+        public virtual List<REF_AssistantSurgeonSecondaryIdentification_2> REF_OperatingPhysicianSecondaryIdentification { get; set; }
     }
     
     /// <summary>
@@ -1797,7 +1797,7 @@ namespace EdiFabric.Templates.Hipaa5010
         /// </summary>
         [DataMember]
         [Pos(2)]
-        public virtual List<REF_AssistantSurgeonSecondaryIdentification> REF_OtherOperatingPhysicianSecondaryIdentification { get; set; }
+        public virtual List<REF_AssistantSurgeonSecondaryIdentification_2> REF_OtherOperatingPhysicianSecondaryIdentification { get; set; }
     }
     
     /// <summary>
@@ -1823,7 +1823,7 @@ namespace EdiFabric.Templates.Hipaa5010
         /// </summary>
         [DataMember]
         [Pos(2)]
-        public virtual List<REF_AssistantSurgeonSecondaryIdentification> REF_RenderingProviderSecondaryIdentification { get; set; }
+        public virtual List<REF_AssistantSurgeonSecondaryIdentification_2> REF_RenderingProviderSecondaryIdentification { get; set; }
     }
     
     /// <summary>

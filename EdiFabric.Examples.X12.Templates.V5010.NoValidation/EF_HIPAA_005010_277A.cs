@@ -292,7 +292,7 @@ namespace EdiFabric.Templates.Hipaa5010
         /// </summary>
         [DataMember]
         [Pos(2)]
-        public virtual List<STC_ClaimLevelStatusInformation_2> STC_InformationReceiverStatusInformation { get; set; }
+        public virtual List<STC_ClaimLevelStatusInformation_3> STC_InformationReceiverStatusInformation { get; set; }
         /// <summary>
         /// Total Accepted Quantity
         /// </summary>

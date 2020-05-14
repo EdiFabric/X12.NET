@@ -9,8 +9,366 @@ namespace EdiFabric.Templates.Hipaa5010
     using EdiFabric.Core.Model.Edi.X12;
     using EdiFabric.Core.Model.Edi.ErrorContexts;
     using System.Xml.Serialization;
-    
-    
+
+    /// <summary>
+    /// Line Adjudication Information
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("SVD")]
+    public class SVD_LineAdjudicationInformation_3 : SVD, I_SVD<C003_CompositeMedicalProcedureIdentifier_12>
+    {
+
+        /// <summary>
+        /// Identification Code
+        /// </summary>
+        [DataMember]
+        [Required]
+        [StringLength(2, 80)]
+        [DataElement("67", typeof(X12_AN))]
+        [Pos(1)]
+        public override string OtherPayerPrimaryIdentifier_01 { get; set; }
+        /// <summary>
+        /// Monetary Amount
+        /// </summary>
+        [DataMember]
+        [Required]
+        [StringLength(1, 18)]
+        [DataElement("782", typeof(X12_R))]
+        [Pos(2)]
+        public override string ServiceLinePaidAmount_02 { get; set; }
+        /// <summary>
+        /// Composite Medical Procedure Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public virtual C003_CompositeMedicalProcedureIdentifier_12 CompositeMedicalProcedureIdentifier_03 { get; set; }
+        /// <summary>
+        /// Product/Service ID
+        /// </summary>
+        [DataMember]
+        [Required]
+        [StringLength(1, 48)]
+        [DataElement("234", typeof(X12_AN))]
+        [Pos(4)]
+        public override string ProductServiceID_04 { get; set; }
+        /// <summary>
+        /// Quantity
+        /// </summary>
+        [DataMember]
+        [Required]
+        [StringLength(1, 15)]
+        [DataElement("380", typeof(X12_R))]
+        [Pos(5)]
+        public override string PaidServiceUnitCount_05 { get; set; }
+        /// <summary>
+        /// Assigned Number
+        /// </summary>
+        [DataMember]
+        [StringLength(1, 6)]
+        [DataElement("554", typeof(X12_N0))]
+        [Pos(6)]
+        public override string BundledorUnbundledLineNumber_06 { get; set; }
+    }
+
+    /// <summary>
+    /// Dependent Health Care Diagnosis Code
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("HI", typeof(X12_ID_1270_6), typeof(X12_ID_1270_11))]
+    public class HI_DependentHealthCareDiagnosisCode_2 : HI, I_HI<C022_HealthCareCodeInformation_8, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4>
+    {
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Required]
+        [Pos(1)]
+        public virtual C022_HealthCareCodeInformation_8 HealthCareCodeInformation_01 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_02 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_03 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_04 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(5)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_05 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(6)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_06 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(7)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_07 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(8)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_08 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(9)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_09 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(10)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_10 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(11)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_11 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(12)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_12 { get; set; }
+    }
+
+    /// <summary>
+    /// Other Payer Prior Authorization Number
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_6))]
+    public class REF_OtherPayerPriorAuthorizationNumber_2 : REF, I_REF<C040_ReferenceIdentifier_3>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Required]
+        [DataElement("128", typeof(X12_ID_128_6))]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Reference Identification
+        /// </summary>
+        [DataMember]
+        [RequiredAny(3)]
+        [Required]
+        [StringLength(1, 50)]
+        [DataElement("127", typeof(X12_AN))]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [StringLength(1, 80)]
+        [DataElement("352", typeof(X12_AN))]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_3 ReferenceIdentifier_04 { get; set; }
+    }
+
+    /// <summary>
+    /// Other Payer Referral Number
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_3))]
+    public class REF_OtherPayerReferralNumber_2 : REF, I_REF<C040_ReferenceIdentifier_3>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Required]
+        [DataElement("128", typeof(X12_ID_128_3))]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Reference Identification
+        /// </summary>
+        [DataMember]
+        [RequiredAny(3)]
+        [Required]
+        [StringLength(1, 50)]
+        [DataElement("127", typeof(X12_AN))]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [StringLength(1, 80)]
+        [DataElement("352", typeof(X12_AN))]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_3 ReferenceIdentifier_04 { get; set; }
+    }
+
+    /// <summary>
+    /// Ordering Provider Secondary Identification
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_18))]
+    public class REF_OrderingProviderSecondaryIdentification_2 : REF, I_REF<C040_ReferenceIdentifier>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Required]
+        [DataElement("128", typeof(X12_ID_128_18))]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Reference Identification
+        /// </summary>
+        [DataMember]
+        [RequiredAny(3)]
+        [Required]
+        [StringLength(1, 50)]
+        [DataElement("127", typeof(X12_AN))]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [StringLength(1, 80)]
+        [DataElement("352", typeof(X12_AN))]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
+    }
+
+    /// <summary>
+    /// Assistant Surgeon Secondary Identification
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_23))]
+    public class REF_AssistantSurgeonSecondaryIdentification_2 : REF, I_REF<C040_ReferenceIdentifier_3>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Required]
+        [DataElement("128", typeof(X12_ID_128_23))]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Reference Identification
+        /// </summary>
+        [DataMember]
+        [RequiredAny(3)]
+        [Required]
+        [StringLength(1, 50)]
+        [DataElement("127", typeof(X12_AN))]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [StringLength(1, 80)]
+        [DataElement("352", typeof(X12_AN))]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_3 ReferenceIdentifier_04 { get; set; }
+    }
+
+    /// <summary>
+    /// Billing Provider Secondary Identification
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_2))]
+    public class REF_BillingProviderSecondaryIdentification_2 : REF, I_REF<C040_ReferenceIdentifier_3>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Required]
+        [DataElement("128", typeof(X12_ID_128_2))]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Reference Identification
+        /// </summary>
+        [DataMember]
+        [RequiredAny(3)]
+        [Required]
+        [StringLength(1, 50)]
+        [DataElement("127", typeof(X12_AN))]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [StringLength(1, 80)]
+        [DataElement("352", typeof(X12_AN))]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_3 ReferenceIdentifier_04 { get; set; }
+    }
+
     /// <summary>
     /// Coordination of Benefits (COB) Payer Paid Amount
     /// </summary>

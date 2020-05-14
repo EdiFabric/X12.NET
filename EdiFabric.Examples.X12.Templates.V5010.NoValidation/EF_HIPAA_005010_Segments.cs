@@ -9455,7 +9455,171 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public virtual C022_HealthCareCodeInformation HealthCareCodeInformation_12 { get; set; }
     }
-    
+
+    /// <summary>
+    /// Dependent Health Care Diagnosis Code
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("HI", typeof(X12_ID_1270_6), typeof(X12_ID_1270_11))]
+    public class HI_DependentHealthCareDiagnosisCode_2 : HI, I_HI<C022_HealthCareCodeInformation_8, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4>
+    {
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public virtual C022_HealthCareCodeInformation_8 HealthCareCodeInformation_01 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_02 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_03 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_04 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(5)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_05 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(6)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_06 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(7)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_07 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(8)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_08 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(9)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_09 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(10)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_10 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(11)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_11 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(12)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_12 { get; set; }
+    }
+
+    /// <summary>
+    /// Dependent Health Care Diagnosis Code
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("HI", typeof(X12_ID_1270_6), typeof(X12_ID_1270_11))]
+    public class HI_DependentHealthCareDiagnosisCode_3 : HI, I_HI<C022_HealthCareCodeInformation_8, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation, C022_HealthCareCodeInformation, C022_HealthCareCodeInformation>
+    {
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public virtual C022_HealthCareCodeInformation_8 HealthCareCodeInformation_01 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_02 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_03 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_04 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(5)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_05 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(6)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_06 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(7)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_07 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(8)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_08 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(9)]
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_09 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(10)]
+        public virtual C022_HealthCareCodeInformation HealthCareCodeInformation_10 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(11)]
+        public virtual C022_HealthCareCodeInformation HealthCareCodeInformation_11 { get; set; }
+        /// <summary>
+        /// Health Care Code Information
+        /// </summary>
+        [DataMember]
+        [Pos(12)]
+        public virtual C022_HealthCareCodeInformation HealthCareCodeInformation_12 { get; set; }
+    }
+
     /// <summary>
     /// Diagnosis Related Group (DRG) Information
     /// </summary>
@@ -25347,7 +25511,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Serializable()]
     [DataContract()]
     [Segment("REF", typeof(X12_ID_128_23))]
-    public class REF_AssistantSurgeonSecondaryIdentification : REF, I_REF<C040_ReferenceIdentifier_3>
+    public class REF_AssistantSurgeonSecondaryIdentification : REF, I_REF<C040_ReferenceIdentifier>
     {
         
         /// <summary>
@@ -25373,9 +25537,44 @@ namespace EdiFabric.Templates.Hipaa5010
         /// </summary>
         [DataMember]
         [Pos(4)]
+        public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
+    }
+
+    /// <summary>
+    /// Assistant Surgeon Secondary Identification
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_23))]
+    public class REF_AssistantSurgeonSecondaryIdentification_2 : REF, I_REF<C040_ReferenceIdentifier_3>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Reference Identification
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
         public virtual C040_ReferenceIdentifier_3 ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Billing Provider Secondary Identification
     /// </summary>
@@ -25410,7 +25609,42 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
+    /// <summary>
+    /// Billing Provider Secondary Identification
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_2))]
+    public class REF_BillingProviderSecondaryIdentification_2 : REF, I_REF<C040_ReferenceIdentifier_3>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Reference Identification
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_3 ReferenceIdentifier_04 { get; set; }
+    }
+
     /// <summary>
     /// Billing Provider Tax Identification
     /// </summary>
@@ -26355,7 +26589,42 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier_3 ReferenceIdentifier_04 { get; set; }
     }
-    
+
+    /// <summary>
+    /// Ordering Provider Secondary Identification
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_18))]
+    public class REF_OrderingProviderSecondaryIdentification_2 : REF, I_REF<C040_ReferenceIdentifier>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Reference Identification
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
+    }
+
     /// <summary>
     /// Other Claim Related Identification
     /// </summary>
@@ -26495,7 +26764,42 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
+    /// <summary>
+    /// Other Payer Predetermination Identification
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_5))]
+    public class REF_OtherPayerPredeterminationIdentification_2 : REF, I_REF<C040_ReferenceIdentifier_3>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Reference Identification
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_3 ReferenceIdentifier_04 { get; set; }
+    }
+
     /// <summary>
     /// Other Payer Prior Authorization Number
     /// </summary>
@@ -26530,7 +26834,42 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
+    /// <summary>
+    /// Other Payer Prior Authorization Number
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_6))]
+    public class REF_OtherPayerPriorAuthorizationNumber_2 : REF, I_REF<C040_ReferenceIdentifier_3>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Reference Identification
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_3 ReferenceIdentifier_04 { get; set; }
+    }
+
     /// <summary>
     /// Other Payer Referral Number
     /// </summary>
@@ -26565,7 +26904,42 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
+    /// <summary>
+    /// Other Payer Referral Number
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_3))]
+    public class REF_OtherPayerReferralNumber_2 : REF, I_REF<C040_ReferenceIdentifier_3>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Reference Identification
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_3 ReferenceIdentifier_04 { get; set; }
+    }
+
     /// <summary>
     /// Other Payer Secondary Identifier
     /// </summary>
@@ -29088,7 +29462,256 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string FreeformMessageText_12 { get; set; }
     }
-    
+
+    /// <summary>
+    /// Claim Level Status Information
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("STC")]
+    public class STC_ClaimLevelStatusInformation_3 : STC, I_STC<C043_HealthCareClaimStatus_4, C043_HealthCareClaimStatus_4, C043_HealthCareClaimStatus_4>
+    {
+
+        /// <summary>
+        /// Health Care Claim Status
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public virtual C043_HealthCareClaimStatus_4 HealthCareClaimStatus_01 { get; set; }
+        /// <summary>
+        /// Status Information Effective Date
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string Date_02 { get; set; }
+        /// <summary>
+        /// Status Information Action Code
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string ActionCode_03 { get; set; }
+        /// <summary>
+        /// Total Claim Charge Amount
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public override string TotalSubmittedChargesForUnitWork_04 { get; set; }
+        /// <summary>
+        /// Monetary Amount
+        /// </summary>
+        [DataMember]
+        [Pos(5)]
+        public override string MonetaryAmount_05 { get; set; }
+        /// <summary>
+        /// Date
+        /// </summary>
+        [DataMember]
+        [Pos(6)]
+        public override string Date_06 { get; set; }
+        /// <summary>
+        /// Payment Method Code
+        /// </summary>
+        [DataMember]
+        [Pos(7)]
+        public override string PaymentMethodCode_07 { get; set; }
+        /// <summary>
+        /// Date
+        /// </summary>
+        [DataMember]
+        [Pos(8)]
+        public override string Date_08 { get; set; }
+        /// <summary>
+        /// Check Number
+        /// </summary>
+        [DataMember]
+        [Pos(9)]
+        public override string CheckNumber_09 { get; set; }
+        /// <summary>
+        /// Health Care Claim Status
+        /// </summary>
+        [DataMember]
+        [Pos(10)]
+        public virtual C043_HealthCareClaimStatus_4 HealthCareClaimStatus_10 { get; set; }
+        /// <summary>
+        /// Health Care Claim Status
+        /// </summary>
+        [DataMember]
+        [Pos(11)]
+        public virtual C043_HealthCareClaimStatus_4 HealthCareClaimStatus_11 { get; set; }
+        /// <summary>
+        /// Free Form Message Text
+        /// </summary>
+        [DataMember]
+        [Pos(12)]
+        public override string FreeformMessageText_12 { get; set; }
+    }
+
+    /// <summary>
+    /// Claim Level Status Information
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("STC")]
+    public class STC_ClaimLevelStatusInformation_4 : STC, I_STC<C043_HealthCareClaimStatus_5, C043_HealthCareClaimStatus_5, C043_HealthCareClaimStatus_5>
+    {
+
+        /// <summary>
+        /// Health Care Claim Status
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public virtual C043_HealthCareClaimStatus_5 HealthCareClaimStatus_01 { get; set; }
+        /// <summary>
+        /// Date
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string Date_02 { get; set; }
+        /// <summary>
+        /// Action Code
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string ActionCode_03 { get; set; }
+        /// <summary>
+        /// Monetary Amount
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public override string TotalSubmittedChargesForUnitWork_04 { get; set; }
+        /// <summary>
+        /// Monetary Amount
+        /// </summary>
+        [DataMember]
+        [Pos(5)]
+        public override string MonetaryAmount_05 { get; set; }
+        /// <summary>
+        /// Date
+        /// </summary>
+        [DataMember]
+        [Pos(6)]
+        public override string Date_06 { get; set; }
+        /// <summary>
+        /// Payment Method Code
+        /// </summary>
+        [DataMember]
+        [Pos(7)]
+        public override string PaymentMethodCode_07 { get; set; }
+        /// <summary>
+        /// Date
+        /// </summary>
+        [DataMember]
+        [Pos(8)]
+        public override string Date_08 { get; set; }
+        /// <summary>
+        /// Check Number
+        /// </summary>
+        [DataMember]
+        [Pos(9)]
+        public override string CheckNumber_09 { get; set; }
+        /// <summary>
+        /// Health Care Claim Status
+        /// </summary>
+        [DataMember]
+        [Pos(10)]
+        public virtual C043_HealthCareClaimStatus_5 HealthCareClaimStatus_10 { get; set; }
+        /// <summary>
+        /// Health Care Claim Status
+        /// </summary>
+        [DataMember]
+        [Pos(11)]
+        public virtual C043_HealthCareClaimStatus_5 HealthCareClaimStatus_11 { get; set; }
+        /// <summary>
+        /// Free-form Message Text
+        /// </summary>
+        [DataMember]
+        [Pos(12)]
+        public override string FreeformMessageText_12 { get; set; }
+    }
+
+    /// <summary>
+    /// Claim Level Status Information
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("STC")]
+    public class STC_ClaimLevelStatusInformation_5 : STC, I_STC<C043_HealthCareClaimStatus_3, C043_HealthCareClaimStatus_3, C043_HealthCareClaimStatus_3>
+    {
+
+        /// <summary>
+        /// Health Care Claim Status
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public virtual C043_HealthCareClaimStatus_3 HealthCareClaimStatus_01 { get; set; }
+        /// <summary>
+        /// Date
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string Date_02 { get; set; }
+        /// <summary>
+        /// Action Code
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string ActionCode_03 { get; set; }
+        /// <summary>
+        /// Monetary Amount
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public override string TotalSubmittedChargesForUnitWork_04 { get; set; }
+        /// <summary>
+        /// Monetary Amount
+        /// </summary>
+        [DataMember]
+        [Pos(5)]
+        public override string MonetaryAmount_05 { get; set; }
+        /// <summary>
+        /// Date
+        /// </summary>
+        [DataMember]
+        [Pos(6)]
+        public override string Date_06 { get; set; }
+        /// <summary>
+        /// Payment Method Code
+        /// </summary>
+        [DataMember]
+        [Pos(7)]
+        public override string PaymentMethodCode_07 { get; set; }
+        /// <summary>
+        /// Date
+        /// </summary>
+        [DataMember]
+        [Pos(8)]
+        public override string Date_08 { get; set; }
+        /// <summary>
+        /// Check Number
+        /// </summary>
+        [DataMember]
+        [Pos(9)]
+        public override string CheckNumber_09 { get; set; }
+        /// <summary>
+        /// Health Care Claim Status
+        /// </summary>
+        [DataMember]
+        [Pos(10)]
+        public virtual C043_HealthCareClaimStatus_3 HealthCareClaimStatus_10 { get; set; }
+        /// <summary>
+        /// Health Care Claim Status
+        /// </summary>
+        [DataMember]
+        [Pos(11)]
+        public virtual C043_HealthCareClaimStatus_3 HealthCareClaimStatus_11 { get; set; }
+        /// <summary>
+        /// Free-form Message Text
+        /// </summary>
+        [DataMember]
+        [Pos(12)]
+        public override string FreeformMessageText_12 { get; set; }
+    }
+
     /// <summary>
     /// Service Line Level Status Information
     /// </summary>
@@ -29171,7 +29794,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string FreeformMessageText_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Professional Service
     /// </summary>
@@ -30385,7 +31008,54 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(6)]
         public override string BundledorUnbundledLineNumber_06 { get; set; }
     }
-    
+
+    /// <summary>
+    /// Line Adjudication Information
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("SVD")]
+    public class SVD_LineAdjudicationInformation_3 : SVD, I_SVD<C003_CompositeMedicalProcedureIdentifier_12>
+    {
+
+        /// <summary>
+        /// Identification Code
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string OtherPayerPrimaryIdentifier_01 { get; set; }
+        /// <summary>
+        /// Monetary Amount
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string ServiceLinePaidAmount_02 { get; set; }
+        /// <summary>
+        /// Composite Medical Procedure Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public virtual C003_CompositeMedicalProcedureIdentifier_12 CompositeMedicalProcedureIdentifier_03 { get; set; }
+        /// <summary>
+        /// Product/Service ID
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public override string ProductServiceID_04 { get; set; }
+        /// <summary>
+        /// Quantity
+        /// </summary>
+        [DataMember]
+        [Pos(5)]
+        public override string PaidServiceUnitCount_05 { get; set; }
+        /// <summary>
+        /// Assigned Number
+        /// </summary>
+        [DataMember]
+        [Pos(6)]
+        public override string BundledorUnbundledLineNumber_06 { get; set; }
+    }
+
     /// <summary>
     /// Tooth Information
     /// </summary>
