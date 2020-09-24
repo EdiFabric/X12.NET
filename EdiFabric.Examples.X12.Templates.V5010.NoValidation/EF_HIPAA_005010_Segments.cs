@@ -1913,7 +1913,145 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(21)]
         public override string AccountNumber_21 { get; set; }
     }
-    
+
+    /// <summary>
+    /// Beginning Segment for Payment Order/Remittance Advice
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("BPR", typeof(X12_ID_305_3))]
+    public class BPR_FinancialInformation_3 : BPR, I_BPR
+    {
+
+        /// <summary>
+        /// Transaction Handling Code
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string TransactionHandlingCode_01 { get; set; }
+        /// <summary>
+        /// Total Payment Amount
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string TotalPremiumPaymentAmount_02 { get; set; }
+        /// <summary>
+        /// Credit or Debit Flag Code
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string CreditorDebitFlagCode_03 { get; set; }
+        /// <summary>
+        /// Payment Method Code
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public override string PaymentMethodCode_04 { get; set; }
+        /// <summary>
+        /// Payment Format Code
+        /// </summary>
+        [DataMember]
+        [Pos(5)]
+        public override string PaymentFormatCode_05 { get; set; }
+        /// <summary>
+        /// (DFI) ID Number Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(6)]
+        public override string DepositoryFinancialInstitutionDFIIdentificationNumberQualifier_06 { get; set; }
+        /// <summary>
+        /// (DFI) Identification Number
+        /// </summary>
+        [DataMember]
+        [Pos(7)]
+        public override string OriginatingDepositoryFinancialInstitutionDFIIdentifier_07 { get; set; }
+        /// <summary>
+        /// Account Number Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(8)]
+        public override string AccountNumberQualifier_08 { get; set; }
+        /// <summary>
+        /// Account Number
+        /// </summary>
+        [DataMember]
+        [Pos(9)]
+        public override string SenderBankAccountNumber_09 { get; set; }
+        /// <summary>
+        /// Originating Company Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(10)]
+        public override string PayerIdentifier_10 { get; set; }
+        /// <summary>
+        /// Originating Company Supplemental Code
+        /// </summary>
+        [DataMember]
+        [Pos(11)]
+        public override string OriginatingCompanySupplementalCode_11 { get; set; }
+        /// <summary>
+        /// Depository Financial Institution (DFI) Identification Number Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(12)]
+        public override string DepositoryFinancialInstitutionDFIIdentificationNumberQualifier_12 { get; set; }
+        /// <summary>
+        /// Receiving Depository Financial Institution (DFI) Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(13)]
+        public override string ReceivingDepositoryFinancialInstitutionDFIIdentifier_13 { get; set; }
+        /// <summary>
+        /// Account Number Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(14)]
+        public override string AccountNumberQualifier_14 { get; set; }
+        /// <summary>
+        /// Receiver Bank Account Number
+        /// </summary>
+        [DataMember]
+        [Pos(15)]
+        public override string ReceiverBankAccountNumber_15 { get; set; }
+        /// <summary>
+        /// Check Issue or EFT Effective Date
+        /// </summary>
+        [DataMember]
+        [Pos(16)]
+        public override string CheckIssueorEFTEffectiveDate_16 { get; set; }
+        /// <summary>
+        /// Business Function Code
+        /// </summary>
+        [DataMember]
+        [Pos(17)]
+        public override string BusinessFunctionCode_17 { get; set; }
+        /// <summary>
+        /// (DFI) ID Number Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(18)]
+        public override string DFIIDNumberQualifier_18 { get; set; }
+        /// <summary>
+        /// (DFI) Identification Number
+        /// </summary>
+        [DataMember]
+        [Pos(19)]
+        public override string DFIIdentificationNumber_19 { get; set; }
+        /// <summary>
+        /// Account Number Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(20)]
+        public override string AccountNumberQualifier_20 { get; set; }
+        /// <summary>
+        /// Account Number
+        /// </summary>
+        [DataMember]
+        [Pos(21)]
+        public override string AccountNumber_21 { get; set; }
+    }
+
+
     /// <summary>
     /// Claim Level Adjustments
     /// </summary>
@@ -6308,7 +6446,55 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(6)]
         public override string DateTimePeriod_06 { get; set; }
     }
-    
+
+    /// <summary>
+    /// Date/Time Reference
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("DTM", typeof(X12_ID_374_33))]
+    public class DTM_IndividualCoveragePeriod_2 : DTM, I_DTM
+    {
+
+        /// <summary>
+        /// Date Time Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string DateTimeQualifier_01 { get; set; }
+        /// <summary>
+        /// Date
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string Date_02 { get; set; }
+        /// <summary>
+        /// Time
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string Time_03 { get; set; }
+        /// <summary>
+        /// Time Code
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public override string TimeCode_04 { get; set; }
+        /// <summary>
+        /// Date Time Period Format Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(5)]
+        public override string DateTimePeriodFormatQualifier_05 { get; set; }
+        /// <summary>
+        /// Coverage Period
+        /// </summary>
+        [DataMember]
+        [Pos(6)]
+        public override string DateTimePeriod_06 { get; set; }
+    }
+
+
     /// <summary>
     /// Accident Date
     /// </summary>
@@ -8336,7 +8522,72 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(9)]
         public override string ReferenceIdentification_09 { get; set; }
     }
-    
+
+    /// <summary>
+    /// Entity
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("ENT")]
+    public class ENT_RemittanceInformation : ENT, I_ENT
+    {
+
+        /// <summary>
+        /// Assigned Number
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string AssignedNumber_01 { get; set; }
+        /// <summary>
+        /// Entity Identifier Code
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string EntityIdentifierCode_02 { get; set; }
+        /// <summary>
+        /// Identification Code Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string IdentificationCodeQualifier_03 { get; set; }
+        /// <summary>
+        /// Identification Code
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public override string ReceiversIndividualIdentifier_04 { get; set; }
+        /// <summary>
+        /// Entity Identifier Code
+        /// </summary>
+        [DataMember]
+        [Pos(5)]
+        public override string EntityIdentifierCode_05 { get; set; }
+        /// <summary>
+        /// Identification Code Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(6)]
+        public override string IdentificationCodeQualifier_06 { get; set; }
+        /// <summary>
+        /// Identification Code
+        /// </summary>
+        [DataMember]
+        [Pos(7)]
+        public override string IdentificationCode_07 { get; set; }
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(8)]
+        public override string ReferenceIdentificationQualifier_08 { get; set; }
+        /// <summary>
+        /// Reference Identification
+        /// </summary>
+        [DataMember]
+        [Pos(9)]
+        public override string ReferenceIdentification_09 { get; set; }
+    }
+
     /// <summary>
     /// Dependent Eligibility or Benefit Inquiry
     /// </summary>
@@ -14309,7 +14560,103 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(6)]
         public override string EntityIdentifierCode_06 { get; set; }
     }
-    
+
+    /// <summary>
+    /// Party Identification
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("N1", typeof(X12_ID_98_71))]
+    public class N1_PayersName : N1, I_N1
+    {
+
+        /// <summary>
+        /// Entity Identifier Code
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string EntityIdentifierCode_01 { get; set; }
+        /// <summary>
+        /// Payer Name
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string PremiumPayerName_02 { get; set; }
+        /// <summary>
+        /// Identification Code Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string IdentificationCodeQualifier_03 { get; set; }
+        /// <summary>
+        /// Payer Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public override string IntermediaryBankIdentifier_04 { get; set; }
+        /// <summary>
+        /// Entity Relationship Code
+        /// </summary>
+        [DataMember]
+        [Pos(5)]
+        public override string EntityRelationshipCode_05 { get; set; }
+        /// <summary>
+        /// Entity Identifier Code
+        /// </summary>
+        [DataMember]
+        [Pos(6)]
+        public override string EntityIdentifierCode_06 { get; set; }
+    }
+
+
+    /// <summary>
+    /// Party Identification
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("N1", typeof(X12_ID_98_23))]
+    public class N1_PayeeName : N1, I_N1
+    {
+
+        /// <summary>
+        /// Entity Identifier Code
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string EntityIdentifierCode_01 { get; set; }
+        /// <summary>
+        /// Payee Organization Name
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string PremiumPayerName_02 { get; set; }
+        /// <summary>
+        /// Identification Code Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string IdentificationCodeQualifier_03 { get; set; }
+        /// <summary>
+        /// Payee's Tax Identification Number
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public override string IntermediaryBankIdentifier_04 { get; set; }
+        /// <summary>
+        /// Entity Relationship Code
+        /// </summary>
+        [DataMember]
+        [Pos(5)]
+        public override string EntityRelationshipCode_05 { get; set; }
+        /// <summary>
+        /// Entity Identifier Code
+        /// </summary>
+        [DataMember]
+        [Pos(6)]
+        public override string EntityIdentifierCode_06 { get; set; }
+    }
+
+
     /// <summary>
     /// Payer Identification
     /// </summary>
@@ -16751,7 +17098,90 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
+    /// <summary>
+    /// Individual or Organizational Name
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("NM1", typeof(X12_ID_98_26), typeof(X12_ID_1065))]
+    public class NM1_IndividualName_2 : NM1, I_NM1
+    {
+
+        /// <summary>
+        /// Entity Identifier Code
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string EntityIdentifierCode_01 { get; set; }
+        /// <summary>
+        /// Entity Type Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string EntityTypeQualifier_02 { get; set; }
+        /// <summary>
+        /// Individual Last Name
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string ResponseContactLastorOrganizationName_03 { get; set; }
+        /// <summary>
+        /// Individual First Name
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public override string ResponseContactFirstName_04 { get; set; }
+        /// <summary>
+        /// Individual Middle Name
+        /// </summary>
+        [DataMember]
+        [Pos(5)]
+        public override string ResponseContactMiddleName_05 { get; set; }
+        /// <summary>
+        /// Individual Name Prefix
+        /// </summary>
+        [DataMember]
+        [Pos(6)]
+        public override string NamePrefix_06 { get; set; }
+        /// <summary>
+        /// Individual Name Suffix
+        /// </summary>
+        [DataMember]
+        [Pos(7)]
+        public override string ResponseContactNameSuffix_07 { get; set; }
+        /// <summary>
+        /// Identification Code Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(8)]
+        public override string IdentificationCodeQualifier_08 { get; set; }
+        /// <summary>
+        /// Exchange Assigned Subscriber Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(9)]
+        public override string ResponseContactIdentifier_09 { get; set; }
+        /// <summary>
+        /// Entity Relationship Code
+        /// </summary>
+        [DataMember]
+        [Pos(10)]
+        public override string EntityRelationshipCode_10 { get; set; }
+        /// <summary>
+        /// Entity Identifier Code
+        /// </summary>
+        [DataMember]
+        [Pos(11)]
+        public override string EntityIdentifierCode_11 { get; set; }
+        /// <summary>
+        /// Name Last or Organization Name
+        /// </summary>
+        [DataMember]
+        [Pos(12)]
+        public override string NameLastorOrganizationName_12 { get; set; }
+    }
+
     /// <summary>
     /// Information Receiver Name
     /// </summary>
@@ -21980,7 +22410,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Billing Note
     /// </summary>
@@ -23229,7 +23659,73 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(9)]
         public override string ContactInquiryReference_09 { get; set; }
     }
-    
+
+    /// <summary>
+    /// Administrative Communications Contact
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("PER", typeof(X12_ID_366_10))]
+    public class PER_PayersAdministrativeContactInformation : PER, I_PER
+    {
+
+        /// <summary>
+        /// Contact Function Code
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string ContactFunctionCode_01 { get; set; }
+        /// <summary>
+        /// Premium Payer Contact Name
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string ResponseContactName_02 { get; set; }
+        /// <summary>
+        /// Communication Number Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string CommunicationNumberQualifier_03 { get; set; }
+        /// <summary>
+        /// Communication Number
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public override string ResponseContactCommunicationNumber_04 { get; set; }
+        /// <summary>
+        /// Communication Number Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(5)]
+        public override string CommunicationNumberQualifier_05 { get; set; }
+        /// <summary>
+        /// Communication Number
+        /// </summary>
+        [DataMember]
+        [Pos(6)]
+        public override string ResponseContactCommunicationNumber_06 { get; set; }
+        /// <summary>
+        /// Communication Number Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(7)]
+        public override string CommunicationNumberQualifier_07 { get; set; }
+        /// <summary>
+        /// Communication Number
+        /// </summary>
+        [DataMember]
+        [Pos(8)]
+        public override string ResponseContactCommunicationNumber_08 { get; set; }
+        /// <summary>
+        /// Contact Inquiry Reference
+        /// </summary>
+        [DataMember]
+        [Pos(9)]
+        public override string ContactInquiryReference_09 { get; set; }
+    }
+
+
     /// <summary>
     /// Payer Business Contact Information
     /// </summary>
@@ -26064,7 +26560,462 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier_2 ReferenceIdentifier_04 { get; set; }
     }
-    
+
+    /// <summary>
+    /// Reference Information
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_96))]
+    public class REF_ExchangeAssignedAPTCContributorTaxPayerIdentifier : REF, I_REF<C040_ReferenceIdentifier_9>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Exchange Assigned APTC Contributor/Tax Payer Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_9 ReferenceIdentifier_04 { get; set; }
+    }
+
+    /// <summary>
+    /// Reference Information
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_105))]
+    public class REF_ExchangeAssignedDependentIdentifier : REF, I_REF<C040_ReferenceIdentifier_9>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Exchange Assigned Dependent Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_9 ReferenceIdentifier_04 { get; set; }
+    }
+
+    /// <summary>
+    /// Reference Information
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_98))]
+    public class REF_ExchangeAssignedEmployerGroupIdentifier : REF, I_REF<C040_ReferenceIdentifier_9>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Exchange Assigned Employer Group Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_9 ReferenceIdentifier_04 { get; set; }
+    }
+
+    /// <summary>
+    /// Reference Information
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_99))]
+    public class REF_ExchangeAssignedPolicyIdentifier : REF, I_REF<C040_ReferenceIdentifier_9>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Exchange Assigned Policy Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_9 ReferenceIdentifier_04 { get; set; }
+    }
+
+    /// <summary>
+    /// Reference Information
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_85))]
+    public class REF_ExchangeAssignedQualifiedHealthPlanIdentifier : REF, I_REF<C040_ReferenceIdentifier_9>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Exchange Assigned Qualified Health Plan Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_9 ReferenceIdentifier_04 { get; set; }
+    }
+
+    /// <summary>
+    /// Reference Information
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_100))]
+    public class REF_ExchangeReportDocumentControlNumber : REF, I_REF<C040_ReferenceIdentifier_9>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Exchange-related Report Type
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Exchange Report Document Control Number
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_9 ReferenceIdentifier_04 { get; set; }
+    }
+
+    /// <summary>
+    /// Reference Information
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_97))]
+    public class REF_IssuerAssignedAPTCContributorTaxPayerIdentifier : REF, I_REF<C040_ReferenceIdentifier_9>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Issuer Assigned APTC Contributor/Tax Payer Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_9 ReferenceIdentifier_04 { get; set; }
+    }
+
+    /// <summary>
+    /// Reference Information
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_101))]
+    public class REF_IssuerAssignedDependentIdentifier : REF, I_REF<C040_ReferenceIdentifier_9>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Issuer Assigned Dependent Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_9 ReferenceIdentifier_04 { get; set; }
+    }
+
+    /// <summary>
+    /// Reference Information
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_48))]
+    public class REF_IssuerAssignedEmployerGroupIdentifier : REF, I_REF<C040_ReferenceIdentifier_9>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Issuer Assigned Employer Group Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_9 ReferenceIdentifier_04 { get; set; }
+    }
+
+    /// <summary>
+    /// Reference Information
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_103))]
+    public class REF_IssuerAssignedPolicyIdentifier : REF, I_REF<C040_ReferenceIdentifier_9>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Issuer Assigned Policy Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_9 ReferenceIdentifier_04 { get; set; }
+    }
+
+    /// <summary>
+    /// Reference Information
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_102))]
+    public class REF_IssuerAssignedQualifiedHealthPlanIdentifier : REF, I_REF<C040_ReferenceIdentifier_9>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Issuer Assigned Qualified Health Plan Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_9 ReferenceIdentifier_04 { get; set; }
+    }
+
+    /// <summary>
+    /// Reference Information
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_39))]
+    public class REF_IssuerAssignedSubscriberIdentifier : REF, I_REF<C040_ReferenceIdentifier_9>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Issuer Assigned Subscriber Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_9 ReferenceIdentifier_04 { get; set; }
+    }
+
+    /// <summary>
+    /// Reference Information
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_104))]
+    public class REF_UniqueHealthPlanIdentifier : REF, I_REF<C040_ReferenceIdentifier_9>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Unique Health Plan Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_9 ReferenceIdentifier_04 { get; set; }
+    }
+
     /// <summary>
     /// Dependent Supplemental Identification
     /// </summary>
@@ -28667,7 +29618,68 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(8)]
         public override string MonetaryAmount_08 { get; set; }
     }
-    
+
+
+
+    /// <summary>
+    /// Remittance Advice Accounts Receivable Open Item Reference
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("RMR", typeof(X12_ID_128_94))]
+    public class RMR_RemittanceDetail : RMR, I_RMR
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Exchange Payment Type
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string InsuranceRemittanceReferenceNumber_02 { get; set; }
+        /// <summary>
+        /// Payment Action Code
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string PaymentActionCode_03 { get; set; }
+        /// <summary>
+        /// Payment Amount
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public override string DetailPremiumPaymentAmount_04 { get; set; }
+        /// <summary>
+        /// Monetary Amount
+        /// </summary>
+        [DataMember]
+        [Pos(5)]
+        public override string BilledPremiumAmount_05 { get; set; }
+        /// <summary>
+        /// Monetary Amount
+        /// </summary>
+        [DataMember]
+        [Pos(6)]
+        public override string MonetaryAmount_06 { get; set; }
+        /// <summary>
+        /// Adjustment Reason Code
+        /// </summary>
+        [DataMember]
+        [Pos(7)]
+        public override string AdjustmentReasonCode_07 { get; set; }
+        /// <summary>
+        /// Monetary Amount
+        /// </summary>
+        [DataMember]
+        [Pos(8)]
+        public override string MonetaryAmount_08 { get; set; }
+    }
+
     /// <summary>
     /// Service, Promotion, Allowance, or Charge Information
     /// </summary>
@@ -31323,7 +32335,42 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public override string ReferenceIdentification_04 { get; set; }
     }
-    
+
+    /// <summary>
+    /// Trace
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("TRN", typeof(X12_ID_481_5))]
+    public class TRN_ReassociationTraceNumber_2 : TRN, I_TRN
+    {
+
+        /// <summary>
+        /// Trace Type Code
+        /// </summary>
+        [DataMember]
+        [Pos(1)]
+        public override string TraceTypeCode_01 { get; set; }
+        /// <summary>
+        /// Check or EFT Trace Number
+        /// </summary>
+        [DataMember]
+        [Pos(2)]
+        public override string CurrentTransactionTraceNumber_02 { get; set; }
+        /// <summary>
+        /// Originating Company Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(3)]
+        public override string OriginatingCompanyIdentifier_03 { get; set; }
+        /// <summary>
+        /// Reference Identification
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public override string ReferenceIdentification_04 { get; set; }
+    }
+
     /// <summary>
     /// Provider Supplemental Summary Information
     /// </summary>

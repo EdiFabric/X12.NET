@@ -66,7 +66,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
 
             //  Set EDI codes map where the original code type will be substituted with the partner-specific code type
             var codeSetMap = new Dictionary<string, List<string>>();
-            codeSetMap.Add("EDIFACT_ID_1001", new List<string> { "A", "B", "C", "D", "E" });
+            codeSetMap.Add("X12_ID_128", new List<string> { "A", "B", "C", "D", "E" });
 
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\MixedTransactions.txt");
 

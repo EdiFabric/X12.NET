@@ -2950,7 +2950,107 @@ namespace EdiFabric.Templates.Hipaa5010
     public class X12_ID_128_95
     {
     }
-    
+
+    /// <summary>
+    /// Reference Identification Qualifier
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",4A,")]
+    public class X12_ID_128_96
+    {
+    }
+
+    /// <summary>
+    /// Reference Identification Qualifier
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",23,")]
+    public class X12_ID_128_97
+    {
+    }
+
+    /// <summary>
+    /// Reference Identification Qualifier
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",18,")]
+    public class X12_ID_128_98
+    {
+    }
+
+    /// <summary>
+    /// Reference Identification Qualifier
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",POL,")]
+    public class X12_ID_128_99
+    {
+    }
+
+    /// <summary>
+    /// Reference Identification Qualifier
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",0N,")]
+    public class X12_ID_128_100
+    {
+    }
+
+    /// <summary>
+    /// Reference Identification Qualifier
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",1W,")]
+    public class X12_ID_128_101
+    {
+    }
+
+    /// <summary>
+    /// Reference Identification Qualifier
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",TV,")]
+    public class X12_ID_128_102
+    {
+    }
+
+    /// <summary>
+    /// Reference Identification Qualifier
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",AZ,")]
+    public class X12_ID_128_103
+    {
+    }
+
+    /// <summary>
+    /// Reference Identification Qualifier
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",ABY,")]
+    public class X12_ID_128_104
+    {
+    }
+
+    /// <summary>
+    /// Reference Identification Qualifier
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",60,")]
+    public class X12_ID_128_105
+    {
+    }
+
     /// <summary>
     /// Service, Promotion, Allowance, or Charge Code
     /// </summary>
@@ -4646,7 +4746,17 @@ namespace EdiFabric.Templates.Hipaa5010
     public class X12_ID_305_2
     {
     }
-    
+
+    /// <summary>
+    /// Transaction Handling Code
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",I,")]
+    public class X12_ID_305_3
+    {
+    }
+
     /// <summary>
     /// Action Code
     /// </summary>
@@ -6307,7 +6417,17 @@ namespace EdiFabric.Templates.Hipaa5010
     public class X12_ID_481_4
     {
     }
-    
+
+    /// <summary>
+    /// Trace Type Code
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",3,")]
+    public class X12_ID_481_5
+    {
+    }
+
     /// <summary>
     /// Payment Action Code
     /// </summary>
@@ -6670,7 +6790,17 @@ namespace EdiFabric.Templates.Hipaa5010
     public class X12_ID_591_2
     {
     }
-    
+
+    /// <summary>
+    /// Payment Method Code
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",ACH,CHK,FWT,NON,")]
+    public class X12_ID_591_4
+    {
+    }
+
     /// <summary>
     /// Payment Method Code
     /// </summary>
@@ -7271,7 +7401,37 @@ namespace EdiFabric.Templates.Hipaa5010
     public class X12_ID_66_43
     {
     }
-    
+
+    /// <summary>
+    /// Identification Code Qualifier
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",FI,")]
+    public class X12_ID_66_44
+    {
+    }
+
+    /// <summary>
+    /// Identification Code Qualifier
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",58,")]
+    public class X12_ID_66_45
+    {
+    }
+
+    /// <summary>
+    /// Identification Code Qualifier
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",C1,")]
+    public class X12_ID_66_46
+    {
+    }
+
     /// <summary>
     /// Identification Code Qualifier
     /// </summary>
@@ -7975,7 +8135,17 @@ namespace EdiFabric.Templates.Hipaa5010
     public class X12_ID_812
     {
     }
-    
+
+    /// <summary>
+    /// Payment Format Code
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",CCP,")]
+    public class X12_ID_812_2
+    {
+    }
+
     /// <summary>
     /// Maintenance Type Code
     /// </summary>
@@ -9087,7 +9257,17 @@ namespace EdiFabric.Templates.Hipaa5010
     public class X12_ID_98_7
     {
     }
-    
+
+    /// <summary>
+    /// Entity Identifier Code
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",RM,")]
+    public class X12_ID_98_71
+    {
+    }
+
     /// <summary>
     /// Entity Identifier Code
     /// </summary>

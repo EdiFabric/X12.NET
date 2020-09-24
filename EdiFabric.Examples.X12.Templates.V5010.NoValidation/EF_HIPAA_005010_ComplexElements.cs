@@ -3808,7 +3808,36 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(6)]
         public override string ReferenceIdentification_06 { get; set; }
     }
-    
+
+    /// <summary>
+    /// Reference Identifier
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Composite("C040")]
+    public class C040_ReferenceIdentifier_9 : C040, I_C040
+    {
+
+        [DataMember]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        [DataMember]
+        [Pos(2)]
+        public override string ReferenceIdentification_02 { get; set; }
+        [DataMember]
+        [Pos(3)]
+        public override string ReferenceIdentificationQualifier_03 { get; set; }
+        [DataMember]
+        [Pos(4)]
+        public override string ReferenceIdentification_04 { get; set; }
+        [DataMember]
+        [Pos(5)]
+        public override string ReferenceIdentificationQualifier_05 { get; set; }
+        [DataMember]
+        [Pos(6)]
+        public override string ReferenceIdentification_06 { get; set; }
+    }
+
     /// <summary>
     /// Adjustment Identifier
     /// </summary>

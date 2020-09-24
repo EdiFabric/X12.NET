@@ -109,6 +109,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HIPAA Files", "HIPAA Files"
 		Files\HIPAA\InstitutionalClaim.txt = Files\HIPAA\InstitutionalClaim.txt
 		Files\HIPAA\Payment.txt = Files\HIPAA\Payment.txt
 		Files\HIPAA\PaymentOrder.txt = Files\HIPAA\PaymentOrder.txt
+		Files\HIPAA\PaymentOrderRemittanceAdvice.txt = Files\HIPAA\PaymentOrderRemittanceAdvice.txt
 		Files\HIPAA\RequestTransmission.txt = Files\HIPAA\RequestTransmission.txt
 		Files\HIPAA\ResponseTransmission.txt = Files\HIPAA\ResponseTransmission.txt
 		Files\HIPAA\ServicesReview.txt = Files\HIPAA\ServicesReview.txt
@@ -152,6 +153,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_ReadMe", "_ReadMe", "{D73F
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T837P.DB", "EdiFabric.Examples.X12.T837P.DB\EdiFabric.Examples.X12.T837P.DB.csproj", "{F560BE17-37A1-4D0A-A500-4E2368207FFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T820HIX", "EdiFabric.Examples.X12.T820HIX\EdiFabric.Examples.X12.T820HIX.csproj", "{ACFE93D3-8283-4021-9AE8-A74D72A990B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -592,6 +595,16 @@ Global
 		{F560BE17-37A1-4D0A-A500-4E2368207FFF}.test|Any CPU.Build.0 = Release|Any CPU
 		{F560BE17-37A1-4D0A-A500-4E2368207FFF}.Trial|Any CPU.ActiveCfg = Release|Any CPU
 		{F560BE17-37A1-4D0A-A500-4E2368207FFF}.Trial|Any CPU.Build.0 = Release|Any CPU
+		{ACFE93D3-8283-4021-9AE8-A74D72A990B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACFE93D3-8283-4021-9AE8-A74D72A990B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACFE93D3-8283-4021-9AE8-A74D72A990B4}.Lite|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACFE93D3-8283-4021-9AE8-A74D72A990B4}.Lite|Any CPU.Build.0 = Debug|Any CPU
+		{ACFE93D3-8283-4021-9AE8-A74D72A990B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACFE93D3-8283-4021-9AE8-A74D72A990B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACFE93D3-8283-4021-9AE8-A74D72A990B4}.test|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACFE93D3-8283-4021-9AE8-A74D72A990B4}.test|Any CPU.Build.0 = Debug|Any CPU
+		{ACFE93D3-8283-4021-9AE8-A74D72A990B4}.Trial|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACFE93D3-8283-4021-9AE8-A74D72A990B4}.Trial|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -630,6 +643,7 @@ Global
 		{20E7295E-4EDA-4A56-9851-0847BF864EDD} = {7A8FC005-457B-49C1-98FB-858A2972D180}
 		{B9E445F0-58F8-414D-BDF5-41DC00041FD1} = {7A8FC005-457B-49C1-98FB-858A2972D180}
 		{F560BE17-37A1-4D0A-A500-4E2368207FFF} = {7A8FC005-457B-49C1-98FB-858A2972D180}
+		{ACFE93D3-8283-4021-9AE8-A74D72A990B4} = {7A8FC005-457B-49C1-98FB-858A2972D180}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB447360-6410-4AB0-8984-1454D5AAEA49}
