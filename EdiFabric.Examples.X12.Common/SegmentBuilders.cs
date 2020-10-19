@@ -57,7 +57,8 @@ namespace EdiFabric.Examples.X12.Common
         /// </summary>
         public static GS BuildGs(string controlNumber, 
             string senderId = "SENDER1", 
-            string receiverId = "RECEIVER1")
+            string receiverId = "RECEIVER1",
+            string version = "004010")
         {
             return new GS
             {
@@ -77,7 +78,7 @@ namespace EdiFabric.Examples.X12.Common
                 //  Responsible Agency Code
                 TransactionTypeCode_7 = "X",
                 //  Version/Release/Industry id code
-                VersionAndRelease_8 = "004010"
+                VersionAndRelease_8 = version
             };
         }
     }

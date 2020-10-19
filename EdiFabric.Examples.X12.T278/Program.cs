@@ -53,7 +53,7 @@ namespace EdiFabric.Examples.X12.T278
                 using (var writer = new X12Writer(stream))
                 {
                     writer.Write(SegmentBuilders.BuildIsa("1"));
-                    writer.Write(SegmentBuilders.BuildGs("1"));
+                    writer.Write(SegmentBuilders.BuildGs("1", "SENDER1", "RECEIVER1", "005010X217"));
                     writer.Write(transaction);
                 }
 
