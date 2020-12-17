@@ -40,8 +40,12 @@
     <Reference Include="EdiFabric.Framework, Version=9.8.7.5, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
       <HintPath>..\packages\EdiFabric.Framework.9.8.7.5\lib\net45\EdiFabric.Framework.dll</HintPath>
     </Reference>
+    <Reference Include="EdiFabric.Templates.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
+      <HintPath>..\packages\EdiFabric.Templates.X12.1.5.1\lib\net45\EdiFabric.Templates.X12.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,7 +65,6 @@
     <Compile Include="ReadEDIFileToEndAsync.cs" />
     <Compile Include="ReadEDIFileTransactionOnly.cs" />
     <Compile Include="ReadEDIFileWithInheritedTemplate.cs" />
-    <Compile Include="ReadEDIFileWithCustomTemplate.cs" />
     <Compile Include="ReadEDIFileWithErrors.cs" />
     <Compile Include="ReadEDIFileWithTemplateResolution.cs" />
   </ItemGroup>
@@ -73,22 +76,6 @@
     <ProjectReference Include="..\EdiFabric.Examples.X12.Common\EdiFabric.Examples.X12.Common.csproj">
       <Project>{bc167c5d-d762-4d14-8788-5eef0fbe4a12}</Project>
       <Name>EdiFabric.Examples.X12.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Examples.X12.Templates.V4010.Common\EdiFabric.Examples.X12.Templates.V4010.Common.csproj">
-      <Project>{8f106c0d-4ad9-4139-b299-6d59af3badd2}</Project>
-      <Name>EdiFabric.Examples.X12.Templates.V4010.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Examples.X12.Templates.V4010.PartnerB\EdiFabric.Examples.X12.Templates.V4010.PartnerB.csproj">
-      <Project>{b7a4a86c-b107-4f62-a931-0b046bc881e4}</Project>
-      <Name>EdiFabric.Examples.X12.Templates.V4010.PartnerB</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Examples.X12.Templates.V4010.PartnerC\EdiFabric.Examples.X12.Templates.V4010.PartnerC.csproj">
-      <Project>{4fa4f041-345c-4d30-a098-4b97192b68eb}</Project>
-      <Name>EdiFabric.Examples.X12.Templates.V4010.PartnerC</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Examples.X12.Templates.V4010\EdiFabric.Examples.X12.Templates.V4010.csproj">
-      <Project>{c8c0e28b-7ba8-4c81-a1a1-1aa86171aba5}</Project>
-      <Name>EdiFabric.Examples.X12.Templates.V4010</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

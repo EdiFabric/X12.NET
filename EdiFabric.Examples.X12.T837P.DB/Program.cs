@@ -1,5 +1,6 @@
 ﻿using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Edi.X12;
+using EdiFabric.Examples.X12.Common;
 using EdiFabric.Framework;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Framework.Writers;
@@ -23,7 +24,7 @@ namespace EdiFabric.Examples.X12.T837P.DB
             Stream ediStream = File.OpenRead(path);
             
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V5010"))
+            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.Hipaa", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var tran = ediItems.OfType<TS837P>().Single();
@@ -57,7 +58,7 @@ namespace EdiFabric.Examples.X12.T837P.DB
                 {
                     using (var stream = new MemoryStream())
                     {
-                        using (var writer = new X12Writer(stream, new X12WriterSettings { Postfix = Environment.NewLine, Separators = sep }))
+                        using (var writer = new X12Writer(stream, new X12WriterSettings { Postfix = Environment.NewLine, Separators = sep, SerialNumber = TrialLicense.SerialNumber }))
                         {
                             writer.Write(ediItems.OfType<ISA>().Single());
                             writer.Write(ediItems.OfType<GS>().Single());

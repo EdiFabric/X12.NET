@@ -50,18 +50,13 @@
     <Compile Include="EF_X12_004010_810.cs" />
     <Compile Include="EF_X12_004010_810_Builder.cs" />
     <Compile Include="EF_X12_004010_850_Builder.cs" />
-    <Compile Include="EF_X12_004010_850_CustomValidation.cs" />
-    <Compile Include="EF_X12_004010_850_Splitting.cs" />
+    <Compile Include="EF_X12_004010_850.cs" />
     <Compile Include="EF_X12_004010_Codes.cs" />
+    <Compile Include="EF_X12_004010_ComplexElementInterfaces.cs" />
     <Compile Include="EF_X12_004010_ComplexElements.cs" />
+    <Compile Include="EF_X12_004010_SegmentInterfaces.cs" />
     <Compile Include="EF_X12_004010_Segments.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\EdiFabric.Examples.X12.Templates.V4010.Common\EdiFabric.Examples.X12.Templates.V4010.Common.csproj">
-      <Project>{8f106c0d-4ad9-4139-b299-6d59af3badd2}</Project>
-      <Name>EdiFabric.Examples.X12.Templates.V4010.Common</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -2,6 +2,7 @@
 using System.IO;
 using System.Reflection;
 using EdiFabric.Core.Model.Edi.X12;
+using EdiFabric.Examples.X12.Common;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Templates.X12004010;
 
@@ -22,7 +23,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\MixedTransactions.txt");
 
             //  2.  Read multiple transactions batched up in the same interchange
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V4010"))
+            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.X12", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
             {
                 while (ediReader.Read())
                 {

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Edi.X12;
+using EdiFabric.Examples.X12.Common;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Templates.X12004010;
 
@@ -26,7 +27,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
 
             //  Set the NoEnvelope flag to true
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, TypeFactory, new X12ReaderSettings() { NoEnvelope = true }))
+            using (var ediReader = new X12Reader(ediStream, TypeFactory, new X12ReaderSettings() { NoEnvelope = true, SerialNumber = TrialLicense.SerialNumber }))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var items = ediItems.OfType<EdiMessage>();

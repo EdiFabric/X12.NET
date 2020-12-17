@@ -23,7 +23,7 @@ namespace EdiFabric.Examples.X12.WriteEDI
 
             using (var stream = new MemoryStream())
             {
-                using (var writer = new X12Writer(stream))
+                using (var writer = new X12Writer(stream, new X12WriterSettings { SerialNumber = TrialLicense.SerialNumber }))
                 {
                     //  Set a custom segment separator.
                     var separators = new Separators('|', Separators.X12.ComponentDataElement,

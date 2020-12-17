@@ -10,18 +10,6 @@ namespace EdiFabric.Templates.X12004010
     using System.Xml.Serialization;
     
     
-    [Serializable()]
-    [DataContract()]
-    public class X12_AN
-    {
-    }
-    
-    [Serializable()]
-    [DataContract()]
-    public class X12_DT
-    {
-    }
-    
     /// <summary>
     /// Percent Qualifier
     /// </summary>
@@ -1638,28 +1626,16 @@ namespace EdiFabric.Templates.X12004010
     public class X12_ID_98
     {
     }
-    
-    [Serializable()]
-    [DataContract()]
-    public class X12_N0
-    {
-    }
-    
-    [Serializable()]
-    [DataContract()]
-    public class X12_N2
-    {
-    }
-    
+
     [Serializable()]
     [DataContract()]
     public class X12_R
     {
     }
-    
+
     [Serializable()]
     [DataContract()]
-    public class X12_TM
+    public class X12_N2
     {
     }
 }

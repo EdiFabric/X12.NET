@@ -5,6 +5,7 @@ using EdiFabric.Core.Model.Edi.X12;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Plugins.Acknowledgments.X12.Model;
 using EdiFabric.Examples.X12.Common;
+using EdiFabric.Core.Model.Edi;
 
 namespace EdiFabric.Examples.X12.AcknowledgeEDI
 {
@@ -52,12 +53,13 @@ namespace EdiFabric.Examples.X12.AcknowledgeEDI
                 },
                 AckVersion = AckVersion.X12_997,
                 // Turn off AK2 for valid messages to reduce size
-                GenerateForValidMessages = false
+                GenerateForValidMessages = false,
+                ValidationSettings = new ValidationSettings { SerialNumber = TrialLicense.SerialNumber }
             };
 
             using (var ackMan = new Plugins.Acknowledgments.X12.AckMan(settings))
             {
-                using (var ediReader = new X12Reader(edi, "EdiFabric.Examples.X12.Templates.V4010"))
+                using (var ediReader = new X12Reader(edi, "EdiFabric.Examples.X12.Templates.V4010", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
                 {
                     while (ediReader.Read())
                         ackMan.Publish(ediReader.Item);

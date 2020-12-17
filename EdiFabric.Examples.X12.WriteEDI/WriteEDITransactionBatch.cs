@@ -21,7 +21,7 @@ namespace EdiFabric.Examples.X12.WriteEDI
 
             using (var stream = new MemoryStream())
             {
-                using (var writer = new X12Writer(stream, new X12WriterSettings() { Postfix = Environment.NewLine }))
+                using (var writer = new X12Writer(stream, new X12WriterSettings() { Postfix = Environment.NewLine, SerialNumber = TrialLicense.SerialNumber }))
                 {
                     writer.Write(SegmentBuilders.BuildIsa("1"));
                     writer.Write(SegmentBuilders.BuildGs("1"));

@@ -1,5 +1,6 @@
 ﻿using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Edi.ErrorContexts;
+using EdiFabric.Examples.X12.Common;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Templates.X12004010;
 using System.Collections.Generic;
@@ -22,9 +23,9 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             Debug.WriteLine("******************************");
 
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\Invoice.txt");
-
+            
             List<IEdiItem> ediItems;
-            using (var reader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V4010"))
+            using (var reader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V4010", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
                 ediItems = reader.ReadToEnd().ToList();
 
             var invoices = ediItems.OfType<TS810>();
@@ -33,7 +34,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             {
                 //  Validate
                 MessageErrorContext errorContext;
-                if (!invoice.IsValid(out errorContext))
+                if (!invoice.IsValid(out errorContext, new ValidationSettings { SerialNumber = TrialLicense.SerialNumber }))
                 {
                     //  Report it back to the sender, log, etc.
                     var errors = errorContext.Flatten();

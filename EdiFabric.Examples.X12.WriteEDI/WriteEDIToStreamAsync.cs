@@ -23,7 +23,7 @@ namespace EdiFabric.Examples.X12.WriteEDI
 
             using (var stream = new MemoryStream())
             {
-                using (var writer = new X12Writer(stream))
+                using (var writer = new X12Writer(stream, new X12WriterSettings { SerialNumber = TrialLicense.SerialNumber }))
                 {
                     //  2.  Begin with ISA segment
                     await writer.WriteAsync(SegmentBuilders.BuildIsa("1"));

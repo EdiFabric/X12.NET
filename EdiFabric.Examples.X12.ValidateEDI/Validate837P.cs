@@ -1,5 +1,6 @@
 ﻿using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Edi.ErrorContexts;
+using EdiFabric.Examples.X12.Common;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Templates.Hipaa5010;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\Hipaa\ClaimPayment.txt");
 
             List<IEdiItem> ediItems;
-            using (var reader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V5010"))
+            using (var reader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V5010", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
                 ediItems = reader.ReadToEnd().ToList();
 
             var claims = ediItems.OfType<TS837P>();
@@ -33,7 +34,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             {
                 //  Validate
                 MessageErrorContext errorContext;
-                if (!claim.IsValid(out errorContext))
+                if (!claim.IsValid(out errorContext, new ValidationSettings { SerialNumber = TrialLicense.SerialNumber }))
                 {
                     //  Report it back to the sender, log, etc.
                     var errors = errorContext.Flatten();

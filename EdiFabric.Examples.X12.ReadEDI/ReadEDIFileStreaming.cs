@@ -2,6 +2,7 @@
 using System.IO;
 using System.Reflection;
 using EdiFabric.Core.Model.Edi.X12;
+using EdiFabric.Examples.X12.Common;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Templates.X12004010;
 
@@ -25,7 +26,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
 
             //  2. Read item by item, that is each call to Read() 
             //  brings back either a control segment (ISA, GS, GE or IEA) or a transaction
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V4010"))
+            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.X12", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
             {
                 while (ediReader.Read())
                 {

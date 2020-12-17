@@ -1,4 +1,4 @@
-namespace EdiFabric.Templates.X12004010.PartnerB
+namespace EdiFabric.Templates.X12004010
 {
     using System;
     using System.Collections.Generic;

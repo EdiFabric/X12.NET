@@ -26,7 +26,7 @@ namespace EdiFabric.Examples.X12.T837I
             var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\Hipaa\InstitutionalClaim.txt");
 
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V5010.NoValidation"))
+            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.Hipaa", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var transactions = ediItems.OfType<TS837I>();
@@ -50,7 +50,7 @@ namespace EdiFabric.Examples.X12.T837I
 
             using (var stream = new MemoryStream())
             {
-                using (var writer = new X12Writer(stream))
+                using (var writer = new X12Writer(stream, new X12WriterSettings { SerialNumber = TrialLicense.SerialNumber }))
                 {
                     writer.Write(SegmentBuilders.BuildIsa("1"));
                     writer.Write(SegmentBuilders.BuildGs("1", "SENDER1", "RECEIVER1", "005010X223A2"));

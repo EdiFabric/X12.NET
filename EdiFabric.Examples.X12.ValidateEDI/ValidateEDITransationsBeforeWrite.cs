@@ -1,5 +1,6 @@
 ﻿using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Edi.ErrorContexts;
+using EdiFabric.Examples.X12.Common;
 using EdiFabric.Examples.X12.Templates.V4010;
 using System.Diagnostics;
 using System.Reflection;
@@ -21,7 +22,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             
             //  Then validate it
             MessageErrorContext errorContext;
-            if (!invoice.IsValid(out errorContext, new ValidationSettings { SkipTrailerValidation = true }))
+            if (!invoice.IsValid(out errorContext, new ValidationSettings { SkipTrailerValidation = true, SerialNumber = TrialLicense.SerialNumber }))
             {
                 //  Report it back to the sender, log, etc.
                 var errors = errorContext.Flatten();

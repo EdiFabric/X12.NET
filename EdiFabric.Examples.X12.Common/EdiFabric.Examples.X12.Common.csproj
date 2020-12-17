@@ -56,6 +56,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SegmentBuilders.cs" />
     <Compile Include="StreamExtensions.cs" />
+    <Compile Include="TrialLicense.cs" />
     <Compile Include="XmlExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

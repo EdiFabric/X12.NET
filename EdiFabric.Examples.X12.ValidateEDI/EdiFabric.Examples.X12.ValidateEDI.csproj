@@ -42,6 +42,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,13 +69,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\EdiFabric.Examples.X12.Templates.V4010.Common\EdiFabric.Examples.X12.Templates.V4010.Common.csproj">
-      <Project>{8f106c0d-4ad9-4139-b299-6d59af3badd2}</Project>
-      <Name>EdiFabric.Examples.X12.Templates.V4010.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Examples.X12.Templates.V4010.PartnerA\EdiFabric.Examples.X12.Templates.V4010.PartnerA.csproj">
-      <Project>{c083f5bd-5e3e-4363-853e-9e5dffc14d2e}</Project>
-      <Name>EdiFabric.Examples.X12.Templates.V4010.PartnerA</Name>
+    <ProjectReference Include="..\EdiFabric.Examples.X12.Common\EdiFabric.Examples.X12.Common.csproj">
+      <Project>{BC167C5D-D762-4D14-8788-5EEF0FBE4A12}</Project>
+      <Name>EdiFabric.Examples.X12.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\EdiFabric.Examples.X12.Templates.V4010\EdiFabric.Examples.X12.Templates.V4010.csproj">
       <Project>{c8c0e28b-7ba8-4c81-a1a1-1aa86171aba5}</Project>

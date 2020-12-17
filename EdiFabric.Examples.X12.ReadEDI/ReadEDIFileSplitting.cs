@@ -1,9 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Serialization;
+using EdiFabric.Core.Annotations.Edi;
+using EdiFabric.Core.Annotations.Validation;
 using EdiFabric.Core.Model.Edi;
+using EdiFabric.Core.Model.Edi.X12;
+using EdiFabric.Examples.X12.Common;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Templates.X12004010;
 
@@ -26,11 +32,11 @@ namespace EdiFabric.Examples.X12.ReadEDI
             //  The split is driven by setting which class to split by in the template.
             //  Set the class to inherit from EdiItem and the parser will automatically split by it.
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V4010", new X12ReaderSettings { Split = true }))
+            using (var ediReader = new X12Reader(ediStream, (ISA isa, GS gs, ST st) => typeof(TS850Splitter).GetTypeInfo(), new X12ReaderSettings { Split = true, SerialNumber = TrialLicense.SerialNumber }))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             //  Find all N1 loops, they are all different ediItems
-            var poLoop = ediItems.OfType<TS850>().Where(m => m.PO1Loop != null).SelectMany(m => m.PO1Loop);
+            var poLoop = ediItems.OfType<TS850Splitter>().Where(m => m.PO1Loop != null).SelectMany(m => m.PO1Loop);
             Debug.WriteLine(string.Format("PO parts {0}", poLoop.Count()));
         }
 
@@ -48,7 +54,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
             //  The split is driven by setting which class to split by in the template.
             //  Set the class to inherit from EdiItem and the parser will automatically split by it.
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V4010"))
+            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.X12", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var purchaseOrders = ediItems.OfType<TS850>();
@@ -70,5 +76,18 @@ namespace EdiFabric.Examples.X12.ReadEDI
             foreach (var po in splitPurchaseOrders)
                 Debug.WriteLine(string.Format("Split: PO - PO1 parts {0}", po.PO1Loop.Count()));
         }
+    }
+
+    [Serializable()]
+    [DataContract()]
+    [Message("X12", "004010", "850")]
+    public class TS850Splitter : TS850
+    {
+        [Splitter]
+        [DataMember]
+        [Required]
+        [ListCount(100000)]
+        [Pos(38)]
+        public new List<Loop_PO1_850> PO1Loop { get; set; }
     }
 }

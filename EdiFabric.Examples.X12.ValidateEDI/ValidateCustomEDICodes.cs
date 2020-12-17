@@ -4,10 +4,12 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Serialization;
+using EdiFabric.Core.Annotations.Edi;
 using EdiFabric.Core.ErrorCodes;
 using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Edi.ErrorContexts;
-using EdiFabric.Examples.X12.Templates.V4010.PartnerA;
+using EdiFabric.Examples.X12.Common;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Templates.X12004010;
 
@@ -31,7 +33,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\MixedTransactions.txt");
 
             List<IEdiItem> ediItems;
-            using (var reader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V4010"))
+            using (var reader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V4010", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
                 ediItems = reader.ReadToEnd().ToList();
 
             var purchaseOrders = ediItems.OfType<TS850>();
@@ -40,7 +42,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             {
                 //  Validate using EDI codes map
                 MessageErrorContext errorContext;
-                if (!purchaseOrder.IsValid(out errorContext, new ValidationSettings { DataElementTypeMap = codeSetMap }))
+                if (!purchaseOrder.IsValid(out errorContext, new ValidationSettings { DataElementTypeMap = codeSetMap, SerialNumber = TrialLicense.SerialNumber }))
                 {
                     //  Invalid code value
                     var customCodeError = errorContext.Errors.SingleOrDefault(e => e.Errors.Any(de => de.Code == DataElementErrorCode.InvalidCodeValue));
@@ -71,7 +73,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\MixedTransactions.txt");
 
             List<IEdiItem> ediItems;
-            using (var reader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V4010"))
+            using (var reader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V4010", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
                 ediItems = reader.ReadToEnd().ToList();
 
             var purchaseOrders = ediItems.OfType<TS850>();
@@ -80,7 +82,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             {
                 //  Validate using EDI codes map
                 MessageErrorContext errorContext;
-                if (!purchaseOrder.IsValid(out errorContext, new ValidationSettings { DataElementCodesMap = codeSetMap }))
+                if (!purchaseOrder.IsValid(out errorContext, new ValidationSettings { DataElementCodesMap = codeSetMap, SerialNumber = TrialLicense.SerialNumber }))
                 {
                     //  Invalid code value
                     var customCodeError = errorContext.Errors.SingleOrDefault(e => e.Errors.Any(de => de.Code == DataElementErrorCode.InvalidCodeValue));
@@ -94,5 +96,12 @@ namespace EdiFabric.Examples.X12.ValidateEDI
                 }
             }
         }
+    }
+
+    [Serializable()]
+    [DataContract()]
+    [EdiCodes(",PA,PB,")]
+    public class X12_ID_353_PartnerA
+    {
     }
 }

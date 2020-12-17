@@ -43,6 +43,9 @@
     <Reference Include="EdiFabric.Framework, Version=9.8.7.5, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
       <HintPath>..\packages\EdiFabric.Framework.9.8.7.5\lib\net45\EdiFabric.Framework.dll</HintPath>
     </Reference>
+    <Reference Include="EdiFabric.Templates.X12, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
+      <HintPath>..\packages\EdiFabric.Templates.X12.1.5.1\lib\net45\EdiFabric.Templates.X12.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -80,14 +83,6 @@
     <ProjectReference Include="..\EdiFabric.Examples.X12.Common\EdiFabric.Examples.X12.Common.csproj">
       <Project>{bc167c5d-d762-4d14-8788-5eef0fbe4a12}</Project>
       <Name>EdiFabric.Examples.X12.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Examples.X12.Templates.V4010.Common\EdiFabric.Examples.X12.Templates.V4010.Common.csproj">
-      <Project>{8f106c0d-4ad9-4139-b299-6d59af3badd2}</Project>
-      <Name>EdiFabric.Examples.X12.Templates.V4010.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\EdiFabric.Examples.X12.Templates.V4010.NoValidation\EdiFabric.Examples.X12.Templates.V4010.NoValidation.csproj">
-      <Project>{d2f91e2e-85bb-449f-9ab4-8f69a0f00907}</Project>
-      <Name>EdiFabric.Examples.X12.Templates.V4010.NoValidation</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
