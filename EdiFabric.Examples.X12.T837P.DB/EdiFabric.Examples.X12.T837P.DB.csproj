@@ -41,9 +41,6 @@
     <Reference Include="EdiFabric.Framework, Version=9.8.7.5, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
       <HintPath>..\packages\EdiFabric.Framework.9.8.7.5\lib\net45\EdiFabric.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="EdiFabric.Templates.Hipaa, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Templates.Hipaa.2.0.0\lib\net45\EdiFabric.Templates.Hipaa.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -74,6 +71,10 @@
     <ProjectReference Include="..\EdiFabric.Examples.X12.Common\EdiFabric.Examples.X12.Common.csproj">
       <Project>{BC167C5D-D762-4D14-8788-5EEF0FBE4A12}</Project>
       <Name>EdiFabric.Examples.X12.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EdiFabric.Examples.X12.Templates.V5010\EdiFabric.Examples.X12.Templates.V5010.csproj">
+      <Project>{bd94c9ca-090c-457c-8672-404e1499d461}</Project>
+      <Name>EdiFabric.Examples.X12.Templates.V5010</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

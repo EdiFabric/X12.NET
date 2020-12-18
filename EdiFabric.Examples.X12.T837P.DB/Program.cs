@@ -20,11 +20,11 @@ namespace EdiFabric.Examples.X12.T837P.DB
     {
         static void Main(string[] args)
         {
-            var path = @"C:\GitHub\X12-Examples\Files\HIPAA\ClaimPayment.txt";
+            var path = Directory.GetCurrentDirectory() + @"\..\..\..\Files\Hipaa\ClaimPayment.txt";
             Stream ediStream = File.OpenRead(path);
             
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.Hipaa", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
+            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V5010", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var tran = ediItems.OfType<TS837P>().Single();
