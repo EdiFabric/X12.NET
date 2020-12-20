@@ -93,7 +93,7 @@ in project EdiFabric.Examples.X12.Templates.V5010. All validation and acknowledg
 If you need to test with a different template, please contact us.
 
 11. EDI Templates
-EdiFabric supports all EDIFACT/EANCOM/IATA versions and message types. We have an extensive library of EDI templates, howevere, if you can't find a particular transaction, please let us know. 
+EdiFabric supports all X12/HIPAA versions and message types. We have an extensive library of EDI templates, however, if you can't find a particular transaction, please let us know. 
 The following templates are available out-of-the-box:
 
 X12
