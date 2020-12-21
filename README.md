@@ -93,7 +93,7 @@ HIPAA 5010 837D
 HIPAA 5010 837I  
 HIPAA 5010 837P  
 
-## 10. Validation
+## 10. EDI Validation
 None of the trial templates in EdiFabric.Templates.X12 and EdiFabric.Templates.Hipaa can be used for validation. They are cutdown versions of the full templates and can only be used for reading and writing.  
 To evaluate the validation and acknowledgment functionalities, the full templates for 850 and 810 are provided in project EdiFabric.Examples.X12.Templates.V4010, and the full template for 837P is provided in project EdiFabric.Examples.X12.Templates.V5010. All validation and acknowledgment examples refer to these projects instead of EdiFabric.Templates.X12 or EdiFabric.Templates.Hipaa.  
 If you need to test with a different template, please contact us.  
