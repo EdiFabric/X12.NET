@@ -27,7 +27,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
 
             //  Set the NoEnvelope flag to true
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, TypeFactory, new X12ReaderSettings() { NoEnvelope = true, SerialNumber = TrialLicense.SerialNumber }))
+            using (var ediReader = new X12Reader(ediStream, TypeFactory, new X12ReaderSettings() { NoEnvelope = true }))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var items = ediItems.OfType<EdiMessage>();

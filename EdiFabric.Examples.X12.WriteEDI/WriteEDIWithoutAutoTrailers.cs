@@ -23,7 +23,7 @@ namespace EdiFabric.Examples.X12.WriteEDI
             using (var stream = new MemoryStream())
             {
                 //  Set AutoTrailers to false
-                using (var writer = new X12Writer(stream, new X12WriterSettings { AutoTrailers = false, SerialNumber = TrialLicense.SerialNumber }))
+                using (var writer = new X12Writer(stream, new X12WriterSettings { AutoTrailers = false }))
                 {
                     writer.Write(SegmentBuilders.BuildIsa("1"));
                     writer.Write(SegmentBuilders.BuildGs("1"));

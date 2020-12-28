@@ -23,11 +23,11 @@ namespace EdiFabric.Examples.X12.WriteEDI
 
             using (var stream = new MemoryStream())
             {
-                using (var writer = new X12Writer(stream, new X12WriterSettings { SerialNumber = TrialLicense.SerialNumber }))
+                using (var writer = new X12Writer(stream))
                 {
                     //  Set a custom segment separator.
-                    var separators = new Separators('|', Separators.X12.ComponentDataElement,
-                        Separators.X12.DataElement, Separators.X12.RepetitionDataElement, Separators.X12.Escape);
+                    var separators = Separators.X12;
+                    separators.Segment = '|';
 
                     //  Write the ISA with the custom separator set
                     writer.Write(SegmentBuilders.BuildIsa("1"), separators);

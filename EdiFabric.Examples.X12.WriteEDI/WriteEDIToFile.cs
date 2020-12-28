@@ -22,7 +22,7 @@ namespace EdiFabric.Examples.X12.WriteEDI
 
             //  2.  Write directly to a file
             //  Change the patch to a file on your machine
-            using (var writer = new X12Writer(@"C:\Test\Output.txt", false, new X12WriterSettings { SerialNumber = TrialLicense.SerialNumber }))
+            using (var writer = new X12Writer(@"C:\Test\Output.txt", false))
             {
                 writer.Write(SegmentBuilders.BuildIsa("1"));
                 writer.Write(SegmentBuilders.BuildGs("1"));

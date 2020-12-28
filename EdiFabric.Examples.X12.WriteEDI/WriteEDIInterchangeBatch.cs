@@ -19,7 +19,7 @@ namespace EdiFabric.Examples.X12.WriteEDI
 
             using (var stream = new MemoryStream())
             {
-                using (var writer = new X12Writer(stream, new X12WriterSettings { SerialNumber = TrialLicense.SerialNumber }))
+                using (var writer = new X12Writer(stream))
                 {
                     //  1.  Write the first interchange
                     writer.Write(SegmentBuilders.BuildIsa("1"));

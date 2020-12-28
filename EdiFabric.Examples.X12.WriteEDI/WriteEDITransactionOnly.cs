@@ -22,7 +22,7 @@ namespace EdiFabric.Examples.X12.WriteEDI
             using (var stream = new MemoryStream())
             {
                 //  Set the separators
-                using (var writer = new X12Writer(stream, new X12WriterSettings() { Separators = Separators.X12, SerialNumber = TrialLicense.SerialNumber }))
+                using (var writer = new X12Writer(stream, new X12WriterSettings() { Separators = Separators.X12 }))
                 {
                     writer.Write(EF_X12_004010_810_Builder.BuildInvoice("1"));
                     writer.Write(EF_X12_004010_810_Builder.BuildInvoice("2"));

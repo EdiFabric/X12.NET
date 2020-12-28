@@ -26,7 +26,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
 
             //  2. Read item by item, that is each call to Read() 
             //  brings back either a control segment (ISA, GS, GE or IEA) or a transaction
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.X12", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
+            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.X12"))
             {
                 while (ediReader.Read())
                 {

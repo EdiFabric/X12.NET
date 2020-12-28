@@ -25,7 +25,7 @@ namespace EdiFabric.Examples.X12.DB
 
                 using (var stream = new MemoryStream())
                 {
-                    using (var writer = new X12Writer(stream, new X12WriterSettings { SerialNumber = TrialLicense.SerialNumber }))
+                    using (var writer = new X12Writer(stream))
                     {
                         writer.Write(SegmentBuilders.BuildIsa("1"));
                         writer.Write(SegmentBuilders.BuildGs("1"));

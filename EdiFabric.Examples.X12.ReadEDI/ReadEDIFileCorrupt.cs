@@ -24,7 +24,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\CorruptIsa.txt");
 
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.X12", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
+            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.X12"))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var readerErrors = ediItems.OfType<ReaderErrorContext>();

@@ -14,6 +14,7 @@ namespace EdiFabric.Examples.X12.T810
     {
         static void Main(string[] args)
         {
+            SerialKey.Set(TrialLicense.SerialKey);
             Read();
             Write();
         }
@@ -26,7 +27,7 @@ namespace EdiFabric.Examples.X12.T810
             var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\Invoice.txt");
 
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.X12", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
+            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.X12"))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var transactions = ediItems.OfType<TS810>();
@@ -50,7 +51,7 @@ namespace EdiFabric.Examples.X12.T810
 
             using (var stream = new MemoryStream())
             {
-                using (var writer = new X12Writer(stream, new X12WriterSettings { SerialNumber = TrialLicense.SerialNumber }))
+                using (var writer = new X12Writer(stream))
                 {
                     writer.Write(SegmentBuilders.BuildIsa("1"));
                     writer.Write(SegmentBuilders.BuildGs("1"));

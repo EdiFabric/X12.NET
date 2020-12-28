@@ -32,7 +32,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
             //  The split is driven by setting which class to split by in the template.
             //  Set the class to inherit from EdiItem and the parser will automatically split by it.
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, (ISA isa, GS gs, ST st) => typeof(TS850Splitter).GetTypeInfo(), new X12ReaderSettings { Split = true, SerialNumber = TrialLicense.SerialNumber }))
+            using (var ediReader = new X12Reader(ediStream, (ISA isa, GS gs, ST st) => typeof(TS850Splitter).GetTypeInfo(), new X12ReaderSettings { Split = true }))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             //  Find all N1 loops, they are all different ediItems
@@ -54,7 +54,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
             //  The split is driven by setting which class to split by in the template.
             //  Set the class to inherit from EdiItem and the parser will automatically split by it.
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.X12", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
+            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.X12"))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var purchaseOrders = ediItems.OfType<TS850>();

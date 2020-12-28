@@ -20,11 +20,13 @@ namespace EdiFabric.Examples.X12.T837P.DB
     {
         static void Main(string[] args)
         {
+            SerialKey.Set(TrialLicense.SerialKey);
+
             var path = Directory.GetCurrentDirectory() + @"\..\..\..\Files\Hipaa\ClaimPayment.txt";
             Stream ediStream = File.OpenRead(path);
             
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V5010", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
+            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V5010"))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var tran = ediItems.OfType<TS837P>().Single();
@@ -39,6 +41,7 @@ namespace EdiFabric.Examples.X12.T837P.DB
         {
             using (var db = new HIPAA_5010_837P_Context())
             {
+                tran.ClearCache();
                 db.Configuration.AutoDetectChangesEnabled = false;
                 db.Configuration.ValidateOnSaveEnabled = false;
                 db.TS837P.Add(tran);
@@ -58,7 +61,7 @@ namespace EdiFabric.Examples.X12.T837P.DB
                 {
                     using (var stream = new MemoryStream())
                     {
-                        using (var writer = new X12Writer(stream, new X12WriterSettings { Postfix = Environment.NewLine, Separators = sep, SerialNumber = TrialLicense.SerialNumber }))
+                        using (var writer = new X12Writer(stream, new X12WriterSettings { Postfix = Environment.NewLine, Separators = sep }))
                         {
                             writer.Write(ediItems.OfType<ISA>().Single());
                             writer.Write(ediItems.OfType<GS>().Single());

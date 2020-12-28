@@ -25,14 +25,18 @@ namespace EdiFabric.Examples.X12.DB
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\PurchaseOrder.txt");
 
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.X12", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
+            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.X12"))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var purchaseOrders = ediItems.OfType<TS850>();
 
             using (var db = new X12Context())
             {
-                db.TS850.AddRange(purchaseOrders);
+                foreach (var purchaseOrder in purchaseOrders)
+                {
+                    purchaseOrder.ClearCache();
+                    db.TS850.Add(purchaseOrder);
+                }
                 db.SaveChanges();
             }
         }

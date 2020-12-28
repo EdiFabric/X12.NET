@@ -33,7 +33,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\MixedTransactions.txt");
 
             List<IEdiItem> ediItems;
-            using (var reader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V4010", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
+            using (var reader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V4010"))
                 ediItems = reader.ReadToEnd().ToList();
 
             var purchaseOrders = ediItems.OfType<TS850>();
@@ -42,7 +42,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             {
                 //  Validate using EDI codes map
                 MessageErrorContext errorContext;
-                if (!purchaseOrder.IsValid(out errorContext, new ValidationSettings { DataElementTypeMap = codeSetMap, SerialNumber = TrialLicense.SerialNumber }))
+                if (!purchaseOrder.IsValid(out errorContext, new ValidationSettings { DataElementTypeMap = codeSetMap }))
                 {
                     //  Invalid code value
                     var customCodeError = errorContext.Errors.SingleOrDefault(e => e.Errors.Any(de => de.Code == DataElementErrorCode.InvalidCodeValue));
@@ -73,7 +73,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\MixedTransactions.txt");
 
             List<IEdiItem> ediItems;
-            using (var reader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V4010", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
+            using (var reader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V4010"))
                 ediItems = reader.ReadToEnd().ToList();
 
             var purchaseOrders = ediItems.OfType<TS850>();
@@ -82,7 +82,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             {
                 //  Validate using EDI codes map
                 MessageErrorContext errorContext;
-                if (!purchaseOrder.IsValid(out errorContext, new ValidationSettings { DataElementCodesMap = codeSetMap, SerialNumber = TrialLicense.SerialNumber }))
+                if (!purchaseOrder.IsValid(out errorContext, new ValidationSettings { DataElementCodesMap = codeSetMap }))
                 {
                     //  Invalid code value
                     var customCodeError = errorContext.Errors.SingleOrDefault(e => e.Errors.Any(de => de.Code == DataElementErrorCode.InvalidCodeValue));

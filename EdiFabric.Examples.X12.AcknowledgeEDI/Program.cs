@@ -1,9 +1,13 @@
-﻿namespace EdiFabric.Examples.X12.AcknowledgeEDI
+﻿using EdiFabric.Examples.X12.Common;
+
+namespace EdiFabric.Examples.X12.AcknowledgeEDI
 {
     class Program
     {
         static void Main(string[] args)
         {
+            SerialKey.Set(TrialLicense.SerialKey);
+
             //  Generate 997 for valid group
             GenerateValid997.Run();
 

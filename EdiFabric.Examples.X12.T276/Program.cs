@@ -14,6 +14,7 @@ namespace EdiFabric.Examples.X12.T276
     {
         static void Main(string[] args)
         {
+            SerialKey.Set(TrialLicense.SerialKey);
             Read();
             Write();
         }
@@ -26,7 +27,7 @@ namespace EdiFabric.Examples.X12.T276
             var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\Hipaa\RequestTransmission.txt");
 
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.Hipaa", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
+            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.Hipaa"))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var transactions = ediItems.OfType<TS276>();
@@ -50,7 +51,7 @@ namespace EdiFabric.Examples.X12.T276
 
             using (var stream = new MemoryStream())
             {
-                using (var writer = new X12Writer(stream, new X12WriterSettings { SerialNumber = TrialLicense.SerialNumber }))
+                using (var writer = new X12Writer(stream))
                 {
                     writer.Write(SegmentBuilders.BuildIsa("1"));
                     writer.Write(SegmentBuilders.BuildGs("1", "SENDER1", "RECEIVER1", "005010X212"));

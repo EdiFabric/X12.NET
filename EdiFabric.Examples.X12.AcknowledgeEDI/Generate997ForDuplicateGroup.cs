@@ -47,7 +47,7 @@ namespace EdiFabric.Examples.X12.AcknowledgeEDI
                     {
                         Debug.WriteLine(string.Format("Interchange with control number {0}", a.InterchangeHeader.InterchangeControlNumber_13));
                         Debug.WriteLine(string.Format("Group with control number {0}", a.GroupHeader.GroupControlNumber_6));
-                        Debug.WriteLine("Message {0} with control number {1}", a.Message.Name, a.Message.GetTransactionContext().HeaderControlNumber);
+                        Debug.WriteLine("Message {0} with control number {1}", a.Message.Name, a.Message.ErrorContext.ControlNumber);
                         Debug.WriteLine("Is in duplicate group: {0}", a.InDuplicateGroup);
                         // reject message
                     }
@@ -56,13 +56,12 @@ namespace EdiFabric.Examples.X12.AcknowledgeEDI
                 // Turn off AK2 for valid messages to reduce size
                 GenerateForValidMessages = false,
                 // Check for group duplicates
-                GroupDuplicates = true,
-                ValidationSettings = new ValidationSettings { SerialNumber = TrialLicense.SerialNumber }
+                GroupDuplicates = true
             };
 
             using (var ackMan = new Plugins.Acknowledgments.X12.AckMan(settings))
             {
-                using (var ediReader = new X12Reader(edi, "EdiFabric.Examples.X12.Templates.V4010", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
+                using (var ediReader = new X12Reader(edi, "EdiFabric.Examples.X12.Templates.V4010"))
                 {
                     while (ediReader.Read())
                         ackMan.Publish(ediReader.Item);

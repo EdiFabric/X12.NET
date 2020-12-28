@@ -33,7 +33,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             //  The custom validation logic is applied in the template by implementing IEdiValidator.
             //  See EF_X12_004010_850_CustomValidation.cs
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, (ISA isa, GS gs, ST st) => typeof(TS850CustomValidation).GetTypeInfo(), new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
+            using (var ediReader = new X12Reader(ediStream, (ISA isa, GS gs, ST st) => typeof(TS850CustomValidation).GetTypeInfo()))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             //  Get the purchase order
@@ -41,7 +41,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
 
             //  Check that the custom validation was triggered
             MessageErrorContext errorContext;
-            if (!po.IsValid(out errorContext, new ValidationSettings { SerialNumber = TrialLicense.SerialNumber }))
+            if (!po.IsValid(out errorContext))
             {
                 var customValidation = errorContext.Errors.FirstOrDefault(e => e.Message == "N2 segment is missing.");
                 Debug.WriteLine(customValidation.Message);

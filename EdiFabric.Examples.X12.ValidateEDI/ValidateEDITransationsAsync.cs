@@ -27,7 +27,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\MixedTransactions.txt");
 
             List<IEdiItem> ediItems;
-            using (var reader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V4010", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
+            using (var reader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V4010"))
                 ediItems = reader.ReadToEnd().ToList();
 
             var purchaseOrders = ediItems.OfType<TS850>();
@@ -35,7 +35,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             foreach (var purchaseOrder in purchaseOrders)
             {
                 //  Validate
-                Tuple<bool, MessageErrorContext> result = await purchaseOrder.IsValidAsync(new ValidationSettings { SerialNumber = TrialLicense.SerialNumber });
+                Tuple<bool, MessageErrorContext> result = await purchaseOrder.IsValidAsync();
                 if (!result.Item1)
                 {
                     //  Report it back to the sender, log, etc.

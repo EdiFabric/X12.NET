@@ -22,7 +22,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             
             //  Then validate it
             MessageErrorContext errorContext;
-            if (!invoice.IsValid(out errorContext, new ValidationSettings { SkipTrailerValidation = true, SerialNumber = TrialLicense.SerialNumber }))
+            if (!invoice.IsValid(out errorContext, new ValidationSettings { SkipTrailerValidation = true }))
             {
                 //  Report it back to the sender, log, etc.
                 var errors = errorContext.Flatten();

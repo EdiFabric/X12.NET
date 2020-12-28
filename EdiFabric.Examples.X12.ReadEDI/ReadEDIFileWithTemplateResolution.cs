@@ -29,7 +29,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
 
             //  2.  Read all the contents
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, AssemblyFactory, new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
+            using (var ediReader = new X12Reader(ediStream, AssemblyFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             //  3.  Pull the required transactions
@@ -58,7 +58,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
 
             //  2.  Read all the contents
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, TypeFactory, new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
+            using (var ediReader = new X12Reader(ediStream, TypeFactory))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             //  3.  Pull the required transactions

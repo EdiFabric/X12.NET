@@ -53,13 +53,12 @@ namespace EdiFabric.Examples.X12.AcknowledgeEDI
                 },
                 AckVersion = AckVersion.X12_997,
                 // Turn off AK2 for valid messages to reduce size
-                GenerateForValidMessages = false,
-                ValidationSettings = new ValidationSettings { SerialNumber = TrialLicense.SerialNumber }
+                GenerateForValidMessages = false
             };
 
             using (var ackMan = new Plugins.Acknowledgments.X12.AckMan(settings))
             {
-                using (var ediReader = new X12Reader(edi, "EdiFabric.Examples.X12.Templates.V4010", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
+                using (var ediReader = new X12Reader(edi, "EdiFabric.Examples.X12.Templates.V4010"))
                 {
                     while (ediReader.Read())
                         ackMan.Publish(ediReader.Item);

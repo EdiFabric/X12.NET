@@ -20,6 +20,8 @@ namespace EdiFabric.Examples.X12.Demo
 
             //  If you need a different X12 version or transaction, please contact us at https://support.edifabric.com/hc/en-us/requests/new, EdiFabric supports all versions and transaction for X12/HIPAA.
 
+            SerialKey.Set(TrialLicense.SerialKey);
+
             Translate_HIPAA_5010();
             Translate_X12_4010();
         }   
@@ -30,7 +32,7 @@ namespace EdiFabric.Examples.X12.Demo
             var path = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\PurchaseOrders.txt");
 
             List<IEdiItem> ediItems;
-            using (var reader = new X12Reader(path, "EdiFabric.Templates.X12", new X12ReaderSettings { ContinueOnError = true, SerialNumber = TrialLicense.SerialNumber }))
+            using (var reader = new X12Reader(path, "EdiFabric.Templates.X12", new X12ReaderSettings { ContinueOnError = true }))
                 ediItems = reader.ReadToEnd().ToList();
 
             foreach (var message in ediItems.OfType<EdiMessage>())
@@ -40,7 +42,7 @@ namespace EdiFabric.Examples.X12.Demo
                     //  Message was successfully parsed
 
                     MessageErrorContext mec;
-                    if (message.IsValid(out mec, new ValidationSettings { SerialNumber = TrialLicense.SerialNumber }))
+                    if (message.IsValid(out mec))
                     {
                         //  Message was successfully validated
                     }
@@ -64,7 +66,7 @@ namespace EdiFabric.Examples.X12.Demo
             var path = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\HIPAA\ClaimPayment.txt");
 
             List<IEdiItem> ediItems;
-            using (var reader = new X12Reader(path, "EdiFabric.Templates.Hipaa", new X12ReaderSettings { ContinueOnError = true, SerialNumber = TrialLicense.SerialNumber }))
+            using (var reader = new X12Reader(path, "EdiFabric.Templates.Hipaa", new X12ReaderSettings { ContinueOnError = true }))
                 ediItems = reader.ReadToEnd().ToList();
 
             foreach (var message in ediItems.OfType<EdiMessage>())
@@ -74,7 +76,7 @@ namespace EdiFabric.Examples.X12.Demo
                     //  Message was successfully parsed
 
                     MessageErrorContext mec;
-                    if (message.IsValid(out mec, new ValidationSettings { SerialNumber = TrialLicense.SerialNumber }))
+                    if (message.IsValid(out mec))
                     {
                         //  Message was successfully validated
                     }

@@ -28,7 +28,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
 
             //  2.  Read all the contents
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.X12", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
+            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.X12"))
             {
                 var items = await ediReader.ReadToEndAsync();
                 ediItems = items.ToList();

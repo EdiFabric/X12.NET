@@ -53,13 +53,12 @@ namespace EdiFabric.Examples.X12.AcknowledgeEDI
                         Debug.WriteLine("Message {0} with control number {1} is valid.", a.ErrorContext.Name, a.ErrorContext.ControlNumber);
                     }
                 },
-                AckVersion = AckVersion.X12_997,
-                ValidationSettings = new ValidationSettings { SerialNumber = TrialLicense.SerialNumber }
+                AckVersion = AckVersion.X12_997
             };
 
             using (var ackMan = new Plugins.Acknowledgments.X12.AckMan(settings))
             {
-                using (var ediReader = new X12Reader(edi, "EdiFabric.Examples.X12.Templates.V4010", new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
+                using (var ediReader = new X12Reader(edi, "EdiFabric.Examples.X12.Templates.V4010"))
                 {
                     while (ediReader.Read())
                         ackMan.Publish(ediReader.Item);

@@ -1,9 +1,13 @@
-﻿namespace EdiFabric.Examples.X12.WriteEDI
+﻿using EdiFabric.Examples.X12.Common;
+
+namespace EdiFabric.Examples.X12.WriteEDI
 {
     class Program
     {
         static void Main(string[] args)
         {
+            SerialKey.Set(TrialLicense.SerialKey);
+
             //  Write EDI to stream and then to string or file
             WriteEDIToStream.Run();
             WriteEDIToStreamAsync.Run();

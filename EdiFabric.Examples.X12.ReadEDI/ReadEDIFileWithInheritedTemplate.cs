@@ -32,7 +32,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
 
             //  2.  Read all the contents
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, (ISA isa, GS gs, ST st) => typeof(TS850PartnerC).GetTypeInfo(), new X12ReaderSettings { SerialNumber = TrialLicense.SerialNumber }))
+            using (var ediReader = new X12Reader(ediStream, (ISA isa, GS gs, ST st) => typeof(TS850PartnerC).GetTypeInfo()))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             //  3.  Pull the required transactions
