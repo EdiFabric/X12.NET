@@ -26,7 +26,7 @@ namespace EdiFabric.Examples.X12.Demo
             Translate_X12_4010();
         }   
 
-        public static void Translate_HIPAA_5010()
+        public static void Translate_X12_4010()
         {
             //  Change the path to point to your own file to test with
             var path = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\PurchaseOrders.txt");
@@ -60,7 +60,7 @@ namespace EdiFabric.Examples.X12.Demo
 
         }   //  Add a breakpoint here, run in debug mode and inspect ediItems
 
-        public static void Translate_X12_4010()
+        public static void Translate_HIPAA_5010()
         {
             //  Change the path to point to your own file to test with
             var path = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\HIPAA\ClaimPayment.txt");
