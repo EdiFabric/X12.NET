@@ -7,7 +7,7 @@ The examples are organized into different projects in two logical categories: by
 
 2. Requirements
 - Visual Studio, compatible with the supported .NET versions
-- .NET Framework 4.5 or .NET Core 3.1. All projects target .NET Framework 4.5, however, the Target Framework from each project's properties can be changed to .NET Core 3.1.
+- Minimum .NET Framework 4.5 or .NET Core 3.1. All projects target .NET Framework 4.5, however, the Target Framework from each project's properties can be changed to .NET Core 3.1.
 - EdiFabric trial NuGet packages and serial number.
 
 3. Download
@@ -24,15 +24,12 @@ edifabric-trial
 
 Ensure that the following packages are present in folder edifabric-trial:
 
-EdiFabric.Core.9.8.7.5.nupkg
-EdiFabric.Framework.9.8.7.5.nupkg
-EdiFabric.Plugins.Ack.Edifact.9.8.7.5.nupkg
-EdiFabric.Plugins.Ack.X12.9.8.7.5.nupkg
-EdiFabric.Templates.Edifact.2.0.0.nupkg
-EdiFabric.Templates.Hipaa.2.0.0.nupkg
-EdiFabric.Templates.Padis.2.0.0.nupkg
-EdiFabric.Templates.Vda.2.0.0.nupkg
-EdiFabric.Templates.X12.2.0.0.nupkg
+EdiFabric.Trial.10.0.0.nupkg
+EdiFabric.Templates.Edifact.2.1.0.nupkg
+EdiFabric.Templates.Hipaa.2.1.0.nupkg
+EdiFabric.Templates.Padis.2.1.0.nupkg
+EdiFabric.Templates.Vda.2.1.0.nupkg
+EdiFabric.Templates.X12.2.1.0.nupkg
 
 5. Setup
 Add folder edifabric-trial as a package source in Visual Studio:
@@ -46,9 +43,8 @@ NOTE: it is possible to also reference DLLs instead of NuGet packages. Change th
 Then uninstall the NuGet packages from each project and replace them with DLL references.
 
 6. Serial Number
-All main operations, like read, write, and validate require a valid serial number. The serial number is included in the file serial.key in folder edifabric-trial. Ensure it is there and that the file is not empty.
-The serial number is used in the file License.cs in project EdiFabric.Examples.X12.Common. Open the file and ensure that the serialKeyPath is correct.
-If the serial number is invalid or the file is missing, contact us at https://support.edifabric.com/hc/en-us/requests/new for assistance.
+The serial number is included in the file serial.key in folder edifabric-trial. Ensure it is there and that the file is not empty. The serial number is loaded in the file License.cs in project EdiFabric.Examples.X12.Common. 
+Open the file and ensure that the serialKeyPath is correct. If the serial number is invalid or the file is missing, contact us at https://support.edifabric.com/hc/en-us/requests/new for assistance.
 
 7. Gettings started
 To get started, set project EdiFabric.Examples.X12.Demo as the startup project, open Program.cs and follow the instructions there. This project allows you to quickly translate your own EDI files.
@@ -133,4 +129,4 @@ Support
 https://support.edifabric.com/hc/en-us/requests/new
 
 Last updated on December 16, 2020
-2020 © EdiFabric
+2021 © EdiFabric
