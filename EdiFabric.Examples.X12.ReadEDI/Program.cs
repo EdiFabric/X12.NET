@@ -6,7 +6,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
     {
         static void Main(string[] args)
         {
-            SerialKey.Set(TrialLicense.SerialKey);
+            SerialKey.Set(Common.SerialKey.Get());
 
             //  Read EDI file to the end
             ReadEDIFileToEnd.Run();

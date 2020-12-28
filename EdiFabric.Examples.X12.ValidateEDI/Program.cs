@@ -6,7 +6,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
     {
         static void Main(string[] args)
         {
-            SerialKey.Set(TrialLicense.SerialKey);
+            SerialKey.Set(Common.SerialKey.Get());
 
             //  Validate custom EDI codes
             ValidateCustomEDICodes.Run();

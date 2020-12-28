@@ -14,7 +14,7 @@ namespace EdiFabric.Examples.X12.T277
     {
         static void Main(string[] args)
         {
-            SerialKey.Set(TrialLicense.SerialKey);
+            SerialKey.Set(Common.SerialKey.Get());
             Read();
             Write();
         }

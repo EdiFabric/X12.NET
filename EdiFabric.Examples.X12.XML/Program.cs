@@ -6,7 +6,7 @@ namespace EdiFabric.Examples.X12.XML
     {
         static void Main(string[] args)
         {
-            SerialKey.Set(TrialLicense.SerialKey);
+            SerialKey.Set(Common.SerialKey.Get());
 
             //  Serialize to XML
             SerializeToXml.WithXmlSerializer();
