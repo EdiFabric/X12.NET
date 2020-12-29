@@ -29,12 +29,12 @@ edifabric-trial
 
 Ensure that the following packages are present in folder edifabric-trial:  
 
-EdiFabric.Trial.10.0.0.nupkg
-EdiFabric.Templates.Edifact.2.1.0.nupkg
-EdiFabric.Templates.Hipaa.2.1.0.nupkg
-EdiFabric.Templates.Padis.2.1.0.nupkg
-EdiFabric.Templates.Vda.2.1.0.nupkg
-EdiFabric.Templates.X12.2.1.0.nupkg  
+EdiFabric.Trial.10.0.0.nupkg  
+EdiFabric.Templates.Edifact.2.1.0.nupkg  
+EdiFabric.Templates.Hipaa.2.1.0.nupkg  
+EdiFabric.Templates.Padis.2.1.0.nupkg  
+EdiFabric.Templates.Vda.2.1.0.nupkg  
+EdiFabric.Templates.X12.2.1.0.nupkg   
 
 ## 5. Setup
 Add folder edifabric-trial as a package source in Visual Studio:  
