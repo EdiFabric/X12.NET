@@ -18,7 +18,7 @@ The examples are organized into different projects in two logical categories: by
 ## 3. Download
 Before you use the repository, you need to download the trial NuGet packages and the serial key.  
 
-## [Download EdiFabric Trial](https://sowl.co/oApEt). 
+### [Download EdiFabric Trial](https://sowl.co/oApEt)
 
 ## 4. Install
 Unzip the downloaded file in the previous step. The following folders should be available at the same level:  
