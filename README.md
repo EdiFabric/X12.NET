@@ -10,6 +10,16 @@ The best option to get the gist of what EdiFabric is, and can do, is to play aro
 
 The examples are organized into different projects in two logical categories: by product feature and by message type.    
 
+```C#
+var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\Hipaa\ClaimPayment.txt");
+
+List<IEdiItem> ediItems;
+using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.Hipaa"))
+    ediItems = ediReader.ReadToEnd().ToList();
+
+var transactions = ediItems.OfType<TS837P>();
+```
+
 ## 2. Requirements
 - Visual Studio, compatible with the supported .NET versions.  
 - Minimum .NET Framework 4.5 or .NET Core 3.1. All projects target .NET Framework 4.5, however, the Target Framework from each project's properties can be changed to .NET Core 3.1.  
