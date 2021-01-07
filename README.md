@@ -111,5 +111,5 @@ To continue using the trial and the examples, you'll need to either request a tr
 
 [Support](https://support.edifabric.com/hc/en-us/requests/new)
 
-Last updated on December 29, 2020
+Last updated on January 7, 2021
 ### 2021 © EdiFabric
