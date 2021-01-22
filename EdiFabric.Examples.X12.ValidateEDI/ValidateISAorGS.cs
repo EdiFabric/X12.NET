@@ -20,7 +20,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
 
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\Invoice.txt");
 
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates.V4010"))
+            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.X12"))
             {
                 while (ediReader.Read())
                 {

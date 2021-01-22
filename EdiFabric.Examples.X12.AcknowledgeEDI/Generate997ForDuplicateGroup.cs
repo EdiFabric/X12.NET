@@ -61,7 +61,7 @@ namespace EdiFabric.Examples.X12.AcknowledgeEDI
 
             using (var ackMan = new Plugins.Acknowledgments.X12.AckMan(settings))
             {
-                using (var ediReader = new X12Reader(edi, "EdiFabric.Examples.X12.Templates.V4010"))
+                using (var ediReader = new X12Reader(edi, "EdiFabric.Templates.X12"))
                 {
                     while (ediReader.Read())
                         ackMan.Publish(ediReader.Item);

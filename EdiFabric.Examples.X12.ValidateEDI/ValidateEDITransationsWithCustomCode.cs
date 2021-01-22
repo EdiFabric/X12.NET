@@ -72,7 +72,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
                 {
                     //  Check if N1 exists and N2 also exist
                     if (n1Loop.N1 != null && n1Loop.N2 == null)
-                        return new SegmentErrorContext("N2", validationContext.SegmentIndex + 2, GetType().GetTypeInfo(), SegmentErrorCode.RequiredSegmentMissing,
+                        return new SegmentErrorContext("N2", validationContext.SegmentIndex + 2, null, GetType().GetTypeInfo(), SegmentErrorCode.RequiredSegmentMissing,
                             "N2 segment is missing.");
 
                     return null;

@@ -3,7 +3,6 @@ using System.IO;
 using System.Reflection;
 using EdiFabric.Core.Model.Edi.X12;
 using EdiFabric.Examples.X12.Common;
-using EdiFabric.Examples.X12.Templates.V4010;
 using EdiFabric.Framework;
 using EdiFabric.Framework.Writers;
 

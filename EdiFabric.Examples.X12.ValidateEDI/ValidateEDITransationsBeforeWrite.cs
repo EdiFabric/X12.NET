@@ -1,7 +1,6 @@
 ﻿using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Edi.ErrorContexts;
 using EdiFabric.Examples.X12.Common;
-using EdiFabric.Examples.X12.Templates.V4010;
 using System.Diagnostics;
 using System.Reflection;
 
