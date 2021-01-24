@@ -33,7 +33,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
 
             foreach (var purchaseOrder in purchaseOrders)
             {
-                //  Validate using EDI codes map
+                //  Validate
                 MessageErrorContext errorContext;
                 if (!purchaseOrder.IsValid(out errorContext, new ValidationSettings { SyntaxSet = new Basic() }))
                 {
@@ -66,7 +66,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
 
             foreach (var purchaseOrder in purchaseOrders)
             {
-                //  Validate using EDI codes map
+                //  Validate
                 MessageErrorContext errorContext;
                 if (!purchaseOrder.IsValid(out errorContext, new ValidationSettings { SyntaxSet = new Extended() }))
                 {

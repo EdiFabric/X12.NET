@@ -18,7 +18,7 @@ namespace EdiFabric.Examples.X12.Demo
             //  X12 004010, all classes that begin with TS in namespace EdiFabric.Templates.X12004010
             //  HIPAA 005010, all classes that begin with TS in namespace EdiFabric.Templates.Hipaa5010
 
-            //  If you need a different X12 version or transaction, please contact us at https://support.edifabric.com/hc/en-us/requests/new, EdiFabric supports all versions and transaction for X12/HIPAA.
+            //  If you need a different X12 version or transaction, please contact us at https://support.edifabric.com/hc/en-us/requests/new, EdiFabric supports all versions and transactions for X12/HIPAA.
 
             SerialKey.Set(Common.SerialKey.Get());
 

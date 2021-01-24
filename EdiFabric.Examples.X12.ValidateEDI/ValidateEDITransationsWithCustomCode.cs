@@ -31,7 +31,6 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\PurchaseOrderInvalid.txt");
 
             //  The custom validation logic is applied in the template by implementing IEdiValidator.
-            //  See EF_X12_004010_850_CustomValidation.cs
             List<IEdiItem> ediItems;
             using (var ediReader = new X12Reader(ediStream, (ISA isa, GS gs, ST st) => typeof(TS850CustomValidation).GetTypeInfo()))
                 ediItems = ediReader.ReadToEnd().ToList();

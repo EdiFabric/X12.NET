@@ -8,7 +8,6 @@ using EdiFabric.Core.Annotations.Edi;
 using EdiFabric.Core.Annotations.Validation;
 using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Edi.X12;
-using EdiFabric.Examples.X12.Common;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Templates.X12004010;
 
@@ -17,9 +16,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
     class ReadEDIFileWithInheritedTemplate
     {
         /// <summary>
-        /// Reads EDI file into a custom, partner-specific template. 
-        /// Compare the files in EdiFabric.Examples.X12.Templates.V4010.PartnerC to the standard template in EdiFabric.Examples.X12.Templates.V4010
-        /// and the base template in EdiFabric.Examples.X12.Templates.V4010.PartnerB for changes.
+        /// Reads EDI file into a custom, partner-specific template.
         /// </summary>
         public static void Run()
         {
