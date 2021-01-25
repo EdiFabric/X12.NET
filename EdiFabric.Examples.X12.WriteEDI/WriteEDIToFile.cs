@@ -20,7 +20,7 @@ namespace EdiFabric.Examples.X12.WriteEDI
             var invoice = SegmentBuilders.BuildInvoice("1");
 
             //  2.  Write directly to a file
-            //  Change the patch to a file on your machine
+            //  Change the path to a file on your machine
             using (var writer = new X12Writer(@"C:\Test\Output.txt", false))
             {
                 writer.Write(SegmentBuilders.BuildIsa("1"));
