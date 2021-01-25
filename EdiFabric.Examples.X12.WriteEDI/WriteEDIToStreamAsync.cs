@@ -18,7 +18,7 @@ namespace EdiFabric.Examples.X12.WriteEDI
             Debug.WriteLine("******************************");
 
             //  1.  Construct the invoice
-            var invoice = EF_X12_004010_810_Builder.BuildInvoice("1");
+            var invoice = SegmentBuilders.BuildInvoice("1");
 
             using (var stream = new MemoryStream())
             {

@@ -1,6 +1,4 @@
-﻿using EdiFabric.Examples.X12.Common;
-
-namespace EdiFabric.Examples.X12.WriteEDI
+﻿namespace EdiFabric.Examples.X12.WriteEDI
 {
     class Program
     {

@@ -26,13 +26,13 @@ namespace EdiFabric.Examples.X12.WriteEDI
                     //  1.  Write the first group               
                     writer.Write(SegmentBuilders.BuildGs("1"));
                     //  Write the transactions...
-                    writer.Write(EF_X12_004010_810_Builder.BuildInvoice("1"));
+                    writer.Write(SegmentBuilders.BuildInvoice("1"));
 
                     //  2.  Write the second group
                     //  No need to close the previous group with a GE
                     writer.Write(SegmentBuilders.BuildGs("2"));
                     //  Write the transactions...
-                    writer.Write(EF_X12_004010_810_Builder.BuildInvoice("2"));
+                    writer.Write(SegmentBuilders.BuildInvoice("2"));
                 }
 
                 Debug.Write(stream.LoadToString());

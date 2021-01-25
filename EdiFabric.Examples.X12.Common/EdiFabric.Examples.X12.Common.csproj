@@ -50,8 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AckBuilders.cs" />
-    <Compile Include="EF_X12_004010_810_Builder.cs" />
-    <Compile Include="EF_X12_004010_850_Builder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SegmentBuilders.cs" />
     <Compile Include="StreamExtensions.cs" />

@@ -23,13 +23,13 @@ namespace EdiFabric.Examples.X12.WriteEDI
                     //  1.  Write the first interchange
                     writer.Write(SegmentBuilders.BuildIsa("1"));
                     writer.Write(SegmentBuilders.BuildGs("1"));
-                    writer.Write(EF_X12_004010_810_Builder.BuildInvoice("1"));
+                    writer.Write(SegmentBuilders.BuildInvoice("1"));
 
                     //  2.  Write the second interchange
                     //  No need to close the previous interchange with a IEA
                     writer.Write(SegmentBuilders.BuildIsa("2"));
                     writer.Write(SegmentBuilders.BuildGs("1"));
-                    writer.Write(EF_X12_004010_810_Builder.BuildInvoice("1"));
+                    writer.Write(SegmentBuilders.BuildInvoice("1"));
                 }
 
                 Debug.Write(stream.LoadToString());
