@@ -1,4 +1,4 @@
-# EdiFabric Examples for X12 4010 and HIPAA 5010
+# EdiFabric C# .NET Examples for X12 4010 and HIPAA 5010
 
 ## 1. Overview
 EdiFabric is a software development kit for .NET Framework and .NET Core, which makes it straightforward to parse, generate, validate, acknowledge, split, customize, or in other words, to programmatically manipulate EDI files. It is written in C# and is distributed as a set of NuGet packages and C# files.  
