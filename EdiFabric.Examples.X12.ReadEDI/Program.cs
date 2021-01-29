@@ -36,6 +36,9 @@ namespace EdiFabric.Examples.X12.ReadEDI
             //  Read using dynamic template resolution
             ReadEDIFileWithTemplateResolution.RunWithAssemblyFactory();
             ReadEDIFileWithTemplateResolution.RunWithTypeFactory();
+
+            //  Read with custom ISA or GS
+            ReadEDIFileWithCustomISAorGS.Run();
         }
     }
 }
