@@ -1,9 +1,9 @@
-# EdiFabric Examples for X12 4010 and HIPAA 5010
+# EdiFabric C# .NET Examples for X12 4010 and HIPAA 5010
 
 ## 1. Overview
 EdiFabric is a software development kit for .NET Framework and .NET Core, which makes it straightforward to parse, generate, validate, acknowledge, split, customize, or in other words, to programmatically manipulate EDI files. It is written in C# and is distributed as a set of NuGet packages and C# files.  
 
-It currently supports all message types for the X12 and EDIFACT EDI standards, the German automotive standard VDA, as well as custom formatted flat files (delimited, positional, or a mixture of both).  
+It currently supports all message types for the X12, EDIFACT, HL7, and NCPDP EDI standards, the German automotive standard VDA, as well as custom formatted flat files (delimited, positional, or a mixture of both).  
 
 > NOTE: EdiFabric does not provide any communication components (AS2 or SFTP, for example), has no dashboard or UI, and is not a full end-to-end EDI solution.
 The best option to get the gist of what EdiFabric is, and can do, is to play around with the trial and examples.  
@@ -72,9 +72,7 @@ HIPAA 5010 837I
 HIPAA 5010 837P  
 
 ## 8. EDI Validation
-None of the trial templates in EdiFabric.Templates.X12 and EdiFabric.Templates.Hipaa can be used for validation. They are cutdown versions of the full templates and can only be used for reading and writing.  
-To evaluate the validation and acknowledgment functionalities, the full templates for 850 and 810 are provided in project EdiFabric.Examples.X12.Templates.V4010, and the full template for 837P is provided in project EdiFabric.Examples.X12.Templates.V5010. All validation and acknowledgment examples refer to these projects instead of EdiFabric.Templates.X12 or EdiFabric.Templates.Hipaa.  
-If you need to test with a different template, please contact us.  
+All templates in EdiFabric.Templates.X12 and EdiFabric.Templates.Hipaa can be used for validation.  
 
 ## 9. EDI Templates
 EdiFabric supports all X12/HIPAA versions and message types. We have an extensive library of EDI templates, however, if you can't find a particular transaction, please let us know.   
