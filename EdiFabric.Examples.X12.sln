@@ -90,6 +90,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12", "X12", "{684BDB2C-727
 		Files\X12\ApplicationAdvice.txt = Files\X12\ApplicationAdvice.txt
 		Files\X12\CorruptIsa.txt = Files\X12\CorruptIsa.txt
 		Files\X12\CorruptSt.txt = Files\X12\CorruptSt.txt
+		Files\X12\Custom835.txt = Files\X12\Custom835.txt
 		Files\X12\DuplicateGroup.txt = Files\X12\DuplicateGroup.txt
 		Files\X12\DuplicateInterchange.txt = Files\X12\DuplicateInterchange.txt
 		Files\X12\DuplicateMessage.txt = Files\X12\DuplicateMessage.txt

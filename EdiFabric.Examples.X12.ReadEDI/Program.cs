@@ -1,6 +1,4 @@
-﻿using EdiFabric.Examples.X12.Common;
-
-namespace EdiFabric.Examples.X12.ReadEDI
+﻿namespace EdiFabric.Examples.X12.ReadEDI
 {
     class Program
     {
@@ -39,6 +37,9 @@ namespace EdiFabric.Examples.X12.ReadEDI
 
             //  Read with custom ISA or GS
             ReadEDIFileWithCustomISAorGS.Run();
+
+            //  Reads custom transaction
+            ReadCustomTransaction.Run();
         }
     }
 }
