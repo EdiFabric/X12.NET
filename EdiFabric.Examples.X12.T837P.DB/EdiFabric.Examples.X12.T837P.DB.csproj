@@ -38,9 +38,6 @@
     <Reference Include="EdiFabric, Version=10.1.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
       <HintPath>..\packages\EdiFabric.Trial.10.1.0\lib\net45\EdiFabric.dll</HintPath>
     </Reference>
-    <Reference Include="EdiFabric.Templates.Hipaa, Version=2.2.0.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
-      <HintPath>..\packages\EdiFabric.Templates.Hipaa.2.2.0\lib\net45\EdiFabric.Templates.Hipaa.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -59,7 +56,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EF_HIPAA_005010_837P.cs" />
     <Compile Include="EF_HIPAA_005010_837P_DbContext.cs" />
+    <Compile Include="EF_HIPAA_005010_Codes.cs" />
+    <Compile Include="EF_HIPAA_005010_ComplexElementInterfaces.cs" />
+    <Compile Include="EF_HIPAA_005010_ComplexElements.cs" />
+    <Compile Include="EF_HIPAA_005010_SegmentInterfaces.cs" />
+    <Compile Include="EF_HIPAA_005010_Segments.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

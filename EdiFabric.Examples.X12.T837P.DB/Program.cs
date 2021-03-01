@@ -26,7 +26,7 @@ namespace EdiFabric.Examples.X12.T837P.DB
             Stream ediStream = File.OpenRead(path);
             
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.Hipaa"))
+            using (var ediReader = new X12Reader(ediStream))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var tran = ediItems.OfType<TS837P>().Single();
