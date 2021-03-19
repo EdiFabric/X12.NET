@@ -107,6 +107,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12", "X12", "{684BDB2C-727
 		Files\X12\PurchaseOrderCustom1.txt = Files\X12\PurchaseOrderCustom1.txt
 		Files\X12\PurchaseOrderCustom2.txt = Files\X12\PurchaseOrderCustom2.txt
 		Files\X12\PurchaseOrderInvalid.txt = Files\X12\PurchaseOrderInvalid.txt
+		Files\X12\PurchaseOrderModified.txt = Files\X12\PurchaseOrderModified.txt
 		Files\X12\PurchaseOrderMs.json = Files\X12\PurchaseOrderMs.json
 		Files\X12\PurchaseOrderMultiLine.txt = Files\X12\PurchaseOrderMultiLine.txt
 		Files\X12\PurchaseOrderNs.json = Files\X12\PurchaseOrderNs.json
@@ -138,6 +139,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HIPAA", "HIPAA", "{9DB4C260
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.Demo", "EdiFabric.Examples.X12.Demo\EdiFabric.Examples.X12.Demo.csproj", "{EE9A6641-1EC9-4CB8-91BD-E7A28D7277D3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example EDI templates", "Example EDI templates", "{727B642B-B097-4B78-AC4C-1ACD5E43FBC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.Templates", "EdiFabric.Examples.X12.Templates\EdiFabric.Examples.X12.Templates.csproj", "{3144205D-7B91-42CF-9107-63A32918615E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.ModifyTemplates", "EdiFabric.Examples.X12.ModifyTemplates\EdiFabric.Examples.X12.ModifyTemplates.csproj", "{2F25042B-B510-4A30-A87E-F71D82E0C0D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -508,6 +515,26 @@ Global
 		{EE9A6641-1EC9-4CB8-91BD-E7A28D7277D3}.test|Any CPU.Build.0 = Debug|Any CPU
 		{EE9A6641-1EC9-4CB8-91BD-E7A28D7277D3}.Trial|Any CPU.ActiveCfg = Debug|Any CPU
 		{EE9A6641-1EC9-4CB8-91BD-E7A28D7277D3}.Trial|Any CPU.Build.0 = Debug|Any CPU
+		{3144205D-7B91-42CF-9107-63A32918615E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3144205D-7B91-42CF-9107-63A32918615E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3144205D-7B91-42CF-9107-63A32918615E}.Lite|Any CPU.ActiveCfg = Debug|Any CPU
+		{3144205D-7B91-42CF-9107-63A32918615E}.Lite|Any CPU.Build.0 = Debug|Any CPU
+		{3144205D-7B91-42CF-9107-63A32918615E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3144205D-7B91-42CF-9107-63A32918615E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3144205D-7B91-42CF-9107-63A32918615E}.test|Any CPU.ActiveCfg = Debug|Any CPU
+		{3144205D-7B91-42CF-9107-63A32918615E}.test|Any CPU.Build.0 = Debug|Any CPU
+		{3144205D-7B91-42CF-9107-63A32918615E}.Trial|Any CPU.ActiveCfg = Debug|Any CPU
+		{3144205D-7B91-42CF-9107-63A32918615E}.Trial|Any CPU.Build.0 = Debug|Any CPU
+		{2F25042B-B510-4A30-A87E-F71D82E0C0D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F25042B-B510-4A30-A87E-F71D82E0C0D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F25042B-B510-4A30-A87E-F71D82E0C0D7}.Lite|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F25042B-B510-4A30-A87E-F71D82E0C0D7}.Lite|Any CPU.Build.0 = Debug|Any CPU
+		{2F25042B-B510-4A30-A87E-F71D82E0C0D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F25042B-B510-4A30-A87E-F71D82E0C0D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F25042B-B510-4A30-A87E-F71D82E0C0D7}.test|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F25042B-B510-4A30-A87E-F71D82E0C0D7}.test|Any CPU.Build.0 = Debug|Any CPU
+		{2F25042B-B510-4A30-A87E-F71D82E0C0D7}.Trial|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F25042B-B510-4A30-A87E-F71D82E0C0D7}.Trial|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -549,6 +576,8 @@ Global
 		{ACFE93D3-8283-4021-9AE8-A74D72A990B4} = {B9C2A4B8-2FFD-4CF4-AED6-33932F3D40B4}
 		{684BDB2C-7279-4276-ACB0-63ACA9244B84} = {17593B3F-A426-498F-81D5-4906D5B15149}
 		{9DB4C260-FD60-4658-9051-48D9456B7547} = {17593B3F-A426-498F-81D5-4906D5B15149}
+		{3144205D-7B91-42CF-9107-63A32918615E} = {727B642B-B097-4B78-AC4C-1ACD5E43FBC3}
+		{2F25042B-B510-4A30-A87E-F71D82E0C0D7} = {727B642B-B097-4B78-AC4C-1ACD5E43FBC3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB447360-6410-4AB0-8984-1454D5AAEA49}
