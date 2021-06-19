@@ -5986,6 +5986,7 @@ namespace EdiFabric.Templates.Hipaa5010
         /// <summary>
         /// Name Prefix
         /// </summary>
+        [NotUsed]
         [DataMember]
         [StringLength(1, 10)]
         [DataElement("1038", typeof(X12_AN))]

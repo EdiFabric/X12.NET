@@ -9,8 +9,8 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             SerialKey.Set(Common.SerialKey.Get());
 
             //  Validate custom EDI codes
-            ValidateCustomEDICodes.Run();
-            ValidateCustomEDICodes.Run2();
+            //ValidateCustomEDICodes.Run();
+            //ValidateCustomEDICodes.Run2();
 
             //  Validate transactions after reading
             ValidateEDITransationsAfterRead.Run();
