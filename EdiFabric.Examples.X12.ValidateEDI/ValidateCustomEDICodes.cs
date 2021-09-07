@@ -73,7 +73,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\MixedTransactions.txt");
 
             List<IEdiItem> ediItems;
-            using (var reader = new X12Reader(ediStream, "EdiFabric.Templates.X12"))
+            using (var reader = new X12Reader(ediStream, "EdiFabric.Templates.X12", new X12ReaderSettings { DataElementCodesMap = codeSetMap }))
                 ediItems = reader.ReadToEnd().ToList();
 
             var purchaseOrders = ediItems.OfType<TS850>();
