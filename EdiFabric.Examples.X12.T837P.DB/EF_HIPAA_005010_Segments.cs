@@ -584,7 +584,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("BHT", typeof(X12_ID_1005_5), typeof(X12_ID_353_7))]
+    [Segment("BHT")]
     public class BHT_BeginningOfHierarchicalTransaction_8 : BHT, I_BHT
     {
         
@@ -646,7 +646,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("CAS", typeof(X12_ID_1033_2))]
+    [Segment("CAS")]
     public class CAS_ClaimLevelAdjustments : CAS, I_CAS
     {
         
@@ -984,7 +984,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("CN1", typeof(X12_ID_1166_2))]
+    [Segment("CN1")]
     public class CN1_ContractInformation_2 : CN1, I_CN1
     {
         
@@ -1043,7 +1043,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("CR1", typeof(X12_ID_355_7))]
+    [Segment("CR1")]
     public class CR1_AmbulanceTransportInformation : CR1, I_CR1
     {
         
@@ -1240,7 +1240,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("CR3", typeof(X12_ID_1322_4), typeof(X12_ID_355_13))]
+    [Segment("CR3")]
     public class CR3_DurableMedicalEquipmentCertification : CR3, I_CR3
     {
         
@@ -1670,7 +1670,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("CTP", typeof(X12_ID_687), typeof(X12_ID_236))]
+    [Segment("CTP")]
     public class CTP_DrugQuantity : CTP, I_CTP<C001_CompositeUnitOfMeasure_2>
     {
         
@@ -1770,7 +1770,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("CUR", typeof(X12_ID_98_31))]
+    [Segment("CUR")]
     public class CUR_ForeignCurrencyInformation_3 : CUR, I_CUR
     {
         
@@ -1957,7 +1957,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("DMG", typeof(X12_ID_1250_6))]
+    [Segment("DMG")]
     public class DMG_PatientDemographicInformation : DMG, I_DMG<C056_CompositeRaceOrEthnicityInformation>
     {
         
@@ -2935,7 +2935,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("HCP", typeof(X12_ID_1473_2))]
+    [Segment("HCP")]
     public class HCP_ClaimPricing : HCP, I_HCP
     {
         
@@ -3065,7 +3065,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("HCP", typeof(X12_ID_1473))]
+    [Segment("HCP")]
     public class HCP_LinePricing_3 : HCP, I_HCP
     {
         
@@ -3874,7 +3874,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("LQ", typeof(X12_ID_1270_25))]
+    [Segment("LQ")]
     public class LQ_FormIdentificationCode : LQ, I_LQ
     {
         
@@ -3923,7 +3923,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("MEA", typeof(X12_ID_737), typeof(X12_ID_738))]
+    [Segment("MEA")]
     public class MEA_TestResult : MEA, I_MEA<C001_CompositeUnitOfMeasure>
     {
         
@@ -6673,7 +6673,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("OI", typeof(X12_ID_1032), typeof(X12_ID_1383))]
+    [Segment("OI")]
     public class OI_OtherInsuranceCoverageInformation_2 : OI, I_OI
     {
         
@@ -6728,7 +6728,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("PAT", typeof(X12_ID_1069_2), typeof(X12_ID_1384))]
+    [Segment("PAT")]
     public class PAT_PatientInformation : PAT, I_PAT
     {
         
@@ -6807,7 +6807,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("PAT", typeof(X12_ID_1069_5), typeof(X12_ID_1384))]
+    [Segment("PAT")]
     public class PAT_PatientInformation_3 : PAT, I_PAT
     {
         
@@ -7055,7 +7055,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("PRV", typeof(X12_ID_1221_10), typeof(X12_ID_128_35))]
+    [Segment("PRV")]
     public class PRV_BillingProviderSpecialtyInformation : PRV, I_PRV<C035_ProviderSpecialtyInformation>
     {
         
@@ -7113,7 +7113,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("PRV", typeof(X12_ID_1221_5), typeof(X12_ID_128_35))]
+    [Segment("PRV")]
     public class PRV_RenderingProviderSpecialtyInformation : PRV, I_PRV<C035_ProviderSpecialtyInformation>
     {
         
@@ -8950,7 +8950,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("SBR", typeof(X12_ID_1138_2), typeof(X12_ID_1069_4))]
+    [Segment("SBR")]
     public class SBR_OtherSubscriberInformation : SBR, I_SBR
     {
         
@@ -9028,7 +9028,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("SBR", typeof(X12_ID_1138_2), typeof(X12_ID_1069_6))]
+    [Segment("SBR")]
     public class SBR_SubscriberInformation : SBR, I_SBR
     {
         
@@ -9105,7 +9105,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("SV1", typeof(X12_ID_235_6))]
+    [Segment("SV1")]
     public class SV1_ProfessionalService : SV1, I_SV1<C003_CompositeMedicalProcedureIdentifier_12, C004_CompositeDiagnosisCodePointer>
     {
         
@@ -9276,7 +9276,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("SV5", typeof(X12_ID_235_10), typeof(X12_ID_355_12))]
+    [Segment("SV5")]
     public class SV5_DurableMedicalEquipmentService : SV5, I_SV5<C003_CompositeMedicalProcedureIdentifier_9>
     {
         

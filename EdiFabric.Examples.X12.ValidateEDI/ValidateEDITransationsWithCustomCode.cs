@@ -56,7 +56,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
     [AttributeUsage(AttributeTargets.Property)]
     public class N1LoopValidationAttribute : ValidationAttribute
     {
-        public N1LoopValidationAttribute() : base(10)
+        public N1LoopValidationAttribute() : base(10, ValidationLevel.InterSegment_SNIP4)
         {
         }
 
