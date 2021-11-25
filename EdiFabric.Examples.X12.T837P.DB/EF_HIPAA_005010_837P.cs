@@ -9,14 +9,14 @@ namespace EdiFabric.Templates.Hipaa5010
     using EdiFabric.Core.Model.Edi.X12;
     using EdiFabric.Core.Model.Edi.ErrorContexts;
     using System.Xml.Serialization;
-
-
+    
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_AMT_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -33,13 +33,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual AMT_PostageClaimedAmount AMT_PostageClaimedAmount { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_AMT_837P_2
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -62,13 +62,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public virtual AMT_RemainingPatientLiability AMT_RemainingPatientLiability { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_CRC_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -92,13 +92,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public virtual CRC_ConditionIndicator CRC_ConditionIndicator_DurableMedicalEquipment { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_CRC_837P_2
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -129,13 +129,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual CRC_EPSDTReferral CRC_EPSDTReferral { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_DTP_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -202,13 +202,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(10)]
         public virtual DTP_InitialTreatmentDate DTP_Date_InitialTreatmentDate { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_DTP_837P_2
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -310,13 +310,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(16)]
         public virtual DTP_RepricerReceivedDate DTP_Date_RepricerReceivedDate { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_HI_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -341,13 +341,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public virtual List<HI_ConditionInformation> HI_ConditionInformation { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_NM1_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -371,13 +371,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public virtual Loop_2010AC_837P Loop2010AC { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_NM1_837P_2
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -396,13 +396,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual Loop_2010BB_837P Loop2010BB { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_NM1_837P_3
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -444,13 +444,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(6)]
         public virtual Loop_2310F_837P Loop2310F { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_NM1_837P_4
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -500,13 +500,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(7)]
         public virtual Loop_2330G_837P Loop2330G { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_NM1_837P_5
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -560,13 +560,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(8)]
         public virtual Loop_2420H_837P Loop2420H { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_NM1_837P_6
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -585,13 +585,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual Loop_1000B_837P Loop1000B { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_NTE_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -608,13 +608,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual NTE_ThirdPartyOrganizationNotes NTE_ThirdPartyOrganizationNotes { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_PWK_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -632,13 +632,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual PWK_DurableMedicalEquipmentCertificateofMedicalNecessityIndicator PWK_DurableMedicalEquipmentCertificateofMedicalNecessityIndicator { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_QTY_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -655,13 +655,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual QTY_ObstetricAnesthesiaAdditionalUnits QTY_ObstetricAnesthesiaAdditionalUnits { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_REF_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -697,13 +697,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(5)]
         public virtual REF_OtherPayerClaimControlNumber REF_OtherPayerClaimControlNumber { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_REF_837P_2
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -764,13 +764,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(9)]
         public virtual List<REF_OtherPayerReferralNumber_2> REF_ReferralNumber { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_REF_837P_3
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -788,13 +788,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual REF_BillingProviderTaxIdentification_2 REF_Pay_ToPlanTaxIdentificationNumber { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_REF_837P_4
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -811,13 +811,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual REF_PropertyandCasualtyClaimNumber REF_PropertyandCasualtyClaimNumber { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_REF_837P_5
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -836,13 +836,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual List<REF_BillingProviderSecondaryIdentification> REF_BillingProviderSecondaryIdentification { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_REF_837P_6
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -931,13 +931,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(14)]
         public virtual REF_CarePlanOversight REF_CarePlanOversight { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_REF_837P_7
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -954,13 +954,13 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual REF_PropertyandCasualtyPatientIdentifier REF_PropertyandCasualtyPatientIdentifier { get; set; }
     }
-
+    
     [Serializable()]
     [DataContract()]
     [All()]
     public class All_REF_837P_8
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -979,16 +979,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual List<REF_BillingProviderUPIN> REF_BillingProviderUPIN_LicenseInformation { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Submitter Name
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_InformationReceiverName_4))]
+    [Group(typeof(NM1_InformationReceiverName_4), "1000A")]
     public class Loop_1000A_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1008,16 +1008,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual List<PER_BillingProviderContactInformation> PER_SubmitterEDIContactInformation { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Receiver Name
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_ReceiverName))]
+    [Group(typeof(NM1_ReceiverName), "1000B")]
     public class Loop_1000B_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1029,16 +1029,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(1)]
         public virtual NM1_ReceiverName NM1_ReceiverName { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Billing Provider Hierarchical Level
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(HL_BillingProviderHierarchicalLevel))]
+    [Group(typeof(HL_BillingProviderHierarchicalLevel), "2000A")]
     public class Loop_2000A_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1073,16 +1073,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(5)]
         public virtual List<Loop_2000B_837P> Loop2000B { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Subscriber Hierarchical Level
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(HL_SubscriberHierarchicalLevel))]
+    [Group(typeof(HL_SubscriberHierarchicalLevel), "2000B")]
     public class Loop_2000B_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1124,16 +1124,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(6)]
         public virtual List<Loop_2000C_837P> Loop2000C { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Patient Hierarchical Level
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(HL_DependentLevel))]
+    [Group(typeof(HL_DependentLevel), "2000C")]
     public class Loop_2000C_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1167,16 +1167,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual List<Loop_2300_837P> Loop2300 { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Billing Provider Name
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_BillingProviderName_2))]
+    [Group(typeof(NM1_BillingProviderName_2), "2010AA")]
     public class Loop_2010AA_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1213,16 +1213,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(5)]
         public virtual List<PER_BillingProviderContactInformation> PER_BillingProviderContactInformation { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Pay-to Address Name
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_Pay))]
+    [Group(typeof(NM1_Pay), "2010AB")]
     public class Loop_2010AB_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1248,16 +1248,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public virtual N4_AdditionalPatientInformationContactCity N4_Pay_AddressCity_State_ZIPCode { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Pay-To Plan Name
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_Pay_3))]
+    [Group(typeof(NM1_Pay_3), "2010AC")]
     public class Loop_2010AC_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1287,16 +1287,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual All_REF_837P_3 AllREF { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Subscriber Name
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_SubscriberName_5))]
+    [Group(typeof(NM1_SubscriberName_5), "2010BA")]
     public class Loop_2010BA_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1335,16 +1335,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(6)]
         public virtual PER_PropertyandCasualtyPatientContactInformation PER_PropertyandCasualtySubscriberContactInformation { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Payer Name
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_OtherPayerName))]
+    [Group(typeof(NM1_OtherPayerName), "2010BB")]
     public class Loop_2010BB_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1371,16 +1371,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual All_REF_837P_5 AllREF { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Patient Name
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_PatientName_3))]
+    [Group(typeof(NM1_PatientName_3), "2010CA")]
     public class Loop_2010CA_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1422,16 +1422,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(6)]
         public virtual PER_PropertyandCasualtyPatientContactInformation PER_PropertyandCasualtyPatientContactInformation { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Claim Information
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(CLM_ClaimInformation_3))]
+    [Group(typeof(CLM_ClaimInformation_3), "2300")]
     public class Loop_2300_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1524,16 +1524,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(16)]
         public virtual List<Loop_2400_837P> Loop2400 { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Referring Provider Name
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_ReferringProviderName))]
+    [Group(typeof(NM1_ReferringProviderName), "2310A")]
     public class Loop_2310A_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1552,16 +1552,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual List<REF_OrderingProviderSecondaryIdentification_2> REF_ReferringProviderSecondaryIdentification { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Rendering Provider Name
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_RenderingProviderName))]
+    [Group(typeof(NM1_RenderingProviderName), "2310B")]
     public class Loop_2310B_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1586,16 +1586,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public virtual List<REF_AssistantSurgeonSecondaryIdentification> REF_RenderingProviderSecondaryIdentification { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Service Facility Location Name
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_ServiceFacilityLocation))]
+    [Group(typeof(NM1_ServiceFacilityLocation), "2310C")]
     public class Loop_2310C_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1634,16 +1634,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(5)]
         public virtual PER_PropertyandCasualtyPatientContactInformation PER_ServiceFacilityContactInformation { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Supervising Provider Name
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_SupervisingProviderName))]
+    [Group(typeof(NM1_SupervisingProviderName), "2310D")]
     public class Loop_2310D_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1662,16 +1662,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual List<REF_AssistantSurgeonSecondaryIdentification> REF_SupervisingProviderSecondaryIdentification { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Ambulance Pick-up Location
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_AmbulancePick))]
+    [Group(typeof(NM1_AmbulancePick), "2310E")]
     public class Loop_2310E_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1697,16 +1697,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public virtual N4_AdditionalPatientInformationContactCity N4_AmbulancePick_LocationCity_State_ZipCode { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Ambulance Drop-off Location
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_AmbulanceDrop))]
+    [Group(typeof(NM1_AmbulanceDrop), "2310F")]
     public class Loop_2310F_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1732,16 +1732,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public virtual N4_AdditionalPatientInformationContactCity N4_AmbulanceDrop_LocationCity_State_ZipCode { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Other Subscriber Information
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(SBR_OtherSubscriberInformation))]
+    [Group(typeof(SBR_OtherSubscriberInformation), "2320")]
     public class Loop_2320_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1780,16 +1780,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(6)]
         public virtual All_NM1_837P_4 AllNM1 { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Other Subscriber Name
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_OtherSubscriberName))]
+    [Group(typeof(NM1_OtherSubscriberName), "2330A")]
     public class Loop_2330A_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1819,16 +1819,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual REF_OtherSubscriberSecondaryIdentification REF_OtherSubscriberSecondaryIdentification { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Other Payer Name
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_OtherPayerName))]
+    [Group(typeof(NM1_OtherPayerName), "2330B")]
     public class Loop_2330B_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1861,16 +1861,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(5)]
         public virtual All_REF_837P AllREF { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Other Payer Referring Provider
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_OtherPayerReferringProvider))]
+    [Group(typeof(NM1_OtherPayerReferringProvider), "2330C")]
     public class Loop_2330C_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1890,16 +1890,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual List<REF_OrderingProviderSecondaryIdentification_2> REF_OtherPayerReferringProviderSecondaryIdentification { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Other Payer Rendering Provider
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_OtherPayerRenderingProvider_2))]
+    [Group(typeof(NM1_OtherPayerRenderingProvider_2), "2330D")]
     public class Loop_2330D_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1919,16 +1919,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual List<REF_AssistantSurgeonSecondaryIdentification> REF_OtherPayerRenderingProviderSecondaryIdentification { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Other Payer Service Facility Location
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_OtherPayerServiceFacilityLocation))]
+    [Group(typeof(NM1_OtherPayerServiceFacilityLocation), "2330E")]
     public class Loop_2330E_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1948,16 +1948,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual List<REF_OtherPayerServiceFacilityLocationSecondaryIdentification> REF_OtherPayerServiceFacilityLocationSecondaryIdentification { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Other Payer Supervising Provider
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_OtherPayerSupervisingProvider))]
+    [Group(typeof(NM1_OtherPayerSupervisingProvider), "2330F")]
     public class Loop_2330F_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -1977,16 +1977,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual List<REF_AssistantSurgeonSecondaryIdentification> REF_OtherPayerSupervisingProviderSecondaryIdentification { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Other Payer Billing Provider
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_OtherPayerBillingProvider))]
+    [Group(typeof(NM1_OtherPayerBillingProvider), "2330G")]
     public class Loop_2330G_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -2006,22 +2006,23 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual List<REF_BillingProviderSecondaryIdentification> REF_OtherPayerBillingProviderSecondaryIdentification { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Service Line Number
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(LX_HeaderNumber))]
+    [Group(typeof(LX_HeaderNumber), "2400")]
     public class Loop_2400_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
         /// <summary>
         /// Service Line Number
         /// </summary>
+        [SeqCount]
         [DataMember]
         [Required]
         [Pos(1)]
@@ -2128,16 +2129,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(21)]
         public virtual List<Loop_2440_837P> Loop2440 { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Drug Identification
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(LIN_DrugIdentification_2))]
+    [Group(typeof(LIN_DrugIdentification_2), "2410")]
     public class Loop_2410_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -2162,16 +2163,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public virtual REF_PrescriptionorCompoundDrugAssociationNumber REF_PrescriptionorCompoundDrugAssociationNumber { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Rendering Provider Name
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_RenderingProviderName))]
+    [Group(typeof(NM1_RenderingProviderName), "2420A")]
     public class Loop_2420A_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -2196,16 +2197,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public virtual List<REF_AssistantSurgeonSecondaryIdentification_2> REF_RenderingProviderSecondaryIdentification { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Purchased Service Provider Name
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_PurchasedServiceProviderName))]
+    [Group(typeof(NM1_PurchasedServiceProviderName), "2420B")]
     public class Loop_2420B_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -2224,16 +2225,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual List<REF_OrderingProviderSecondaryIdentification> REF_PurchasedServiceProviderSecondaryIdentification { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Service Facility Location
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_ServiceFacilityLocation))]
+    [Group(typeof(NM1_ServiceFacilityLocation), "2420C")]
     public class Loop_2420C_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -2266,16 +2267,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual List<REF_BillingProviderSecondaryIdentification_2> REF_ServiceFacilityLocationSecondaryIdentification { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Supervising Provider Name
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_SupervisingProviderName))]
+    [Group(typeof(NM1_SupervisingProviderName), "2420D")]
     public class Loop_2420D_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -2294,16 +2295,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual List<REF_AssistantSurgeonSecondaryIdentification_2> REF_SupervisingProviderSecondaryIdentification { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Ordering Provider Name
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_OrderingProviderName))]
+    [Group(typeof(NM1_OrderingProviderName), "2420E")]
     public class Loop_2420E_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -2340,16 +2341,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(5)]
         public virtual PER_BillingProviderContactInformation PER_OrderingProviderContactInformation { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Referring Provider Name
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_ReferringProviderName))]
+    [Group(typeof(NM1_ReferringProviderName), "2420F")]
     public class Loop_2420F_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -2368,16 +2369,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual List<REF_OrderingProviderSecondaryIdentification> REF_ReferringProviderSecondaryIdentification { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Ambulance Pick-up Location
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_AmbulancePick))]
+    [Group(typeof(NM1_AmbulancePick), "2420G")]
     public class Loop_2420G_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -2403,16 +2404,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public virtual N4_AdditionalPatientInformationContactCity N4_AmbulancePick_LocationCity_State_ZipCode { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Ambulance Drop-off Location
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(NM1_AmbulanceDrop))]
+    [Group(typeof(NM1_AmbulanceDrop), "2420H")]
     public class Loop_2420H_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -2438,16 +2439,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public virtual N4_AdditionalPatientInformationContactCity N4_AmbulanceDrop_LocationCity_State_ZipCode { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Line Adjudication Information
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(SVD_LineAdjudicationInformation))]
+    [Group(typeof(SVD_LineAdjudicationInformation_3), "2430")]
     public class Loop_2430_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -2479,16 +2480,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual AMT_RemainingPatientLiability AMT_RemainingPatientLiability { get; set; }
     }
-
+    
     /// <summary>
     /// Loop for Form Identification Code
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Group(typeof(LQ_FormIdentificationCode))]
+    [Group(typeof(LQ_FormIdentificationCode), "2440")]
     public class Loop_2440_837P
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }
@@ -2508,7 +2509,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public virtual List<FRM_SupportingDocumentation> FRM_SupportingDocumentation { get; set; }
     }
-
+    
     /// <summary>
     /// Health Care Claim : Professional
     /// </summary>
@@ -2517,7 +2518,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Message("X12", "005010X222A1", "837")]
     public class TS837P : EdiMessage
     {
-
+        
         [XmlIgnore]
         [IgnoreDataMember]
         public int Id { get; set; }

@@ -2,10 +2,7 @@ namespace EdiFabric.Templates.Hipaa5010
 {
     using System.Data.Entity;
     using System.Data.Entity.ModelConfiguration.Conventions;
-    using System.Linq;
     using EdiFabric.Core.Model.Edi.X12;
-    
-    
     public class HIPAA_5010_837P_Context : DbContext
     {
         public HIPAA_5010_837P_Context() : base("name=Hipaa5010837PConnectionString")
@@ -61,8 +58,6 @@ namespace EdiFabric.Templates.Hipaa5010
         public DbSet<DTP_PropertyandCasualtyDateofFirstContact> DTP_PropertyandCasualtyDateofFirstContact { get; set; }
         public DbSet<DTP_RepricerReceivedDate> DTP_RepricerReceivedDate { get; set; }
         public DbSet<All_HI_837P> All_HI_837P { get; set; }
-        public DbSet<HI_DependentHealthCareDiagnosisCode> HI_DependentHealthCareDiagnosisCode { get; set; }
-
         public DbSet<HI_DependentHealthCareDiagnosisCode_2> HI_DependentHealthCareDiagnosisCode_2 { get; set; }
         public DbSet<C022_HealthCareCodeInformation_8> C022_HealthCareCodeInformation_8 { get; set; }
         public DbSet<C022> C022 { get; set; }
@@ -130,10 +125,8 @@ namespace EdiFabric.Templates.Hipaa5010
         public DbSet<C040> C040 { get; set; }
         public DbSet<REF> REF { get; set; }
         public DbSet<REF_OtherPayerPriorAuthorizationNumber> REF_OtherPayerPriorAuthorizationNumber { get; set; }
-
         public DbSet<REF_OtherPayerPriorAuthorizationNumber_2> REF_OtherPayerPriorAuthorizationNumber_2 { get; set; }
         public DbSet<REF_OtherPayerReferralNumber> REF_OtherPayerReferralNumber { get; set; }
-
         public DbSet<REF_OtherPayerReferralNumber_2> REF_OtherPayerReferralNumber_2 { get; set; }
         public DbSet<REF_OtherPayerClaimAdjustmentIndicator> REF_OtherPayerClaimAdjustmentIndicator { get; set; }
         public DbSet<REF_OtherPayerClaimControlNumber> REF_OtherPayerClaimControlNumber { get; set; }
@@ -153,7 +146,6 @@ namespace EdiFabric.Templates.Hipaa5010
         public DbSet<REF_PropertyandCasualtyClaimNumber> REF_PropertyandCasualtyClaimNumber { get; set; }
         public DbSet<All_REF_837P_5> All_REF_837P_5 { get; set; }
         public DbSet<REF_BillingProviderSecondaryIdentification> REF_BillingProviderSecondaryIdentification { get; set; }
-
         public DbSet<REF_BillingProviderSecondaryIdentification_2> REF_BillingProviderSecondaryIdentification_2 { get; set; }
         public DbSet<All_REF_837P_6> All_REF_837P_6 { get; set; }
         public DbSet<REF_ServiceAuthorizationExceptionCode> REF_ServiceAuthorizationExceptionCode { get; set; }
@@ -234,13 +226,11 @@ namespace EdiFabric.Templates.Hipaa5010
         public DbSet<Loop_2400_837P> Loop_2400_837P { get; set; }
         public DbSet<NM1_ReferringProviderName> NM1_ReferringProviderName { get; set; }
         public DbSet<REF_OrderingProviderSecondaryIdentification> REF_OrderingProviderSecondaryIdentification { get; set; }
-
         public DbSet<REF_OrderingProviderSecondaryIdentification_2> REF_OrderingProviderSecondaryIdentification_2 { get; set; }
         public DbSet<C040_ReferenceIdentifier_3> C040_ReferenceIdentifier_3 { get; set; }
         public DbSet<NM1_RenderingProviderName> NM1_RenderingProviderName { get; set; }
         public DbSet<PRV_RenderingProviderSpecialtyInformation> PRV_RenderingProviderSpecialtyInformation { get; set; }
         public DbSet<REF_AssistantSurgeonSecondaryIdentification> REF_AssistantSurgeonSecondaryIdentification { get; set; }
-
         public DbSet<REF_AssistantSurgeonSecondaryIdentification_2> REF_AssistantSurgeonSecondaryIdentification_2 { get; set; }
         public DbSet<NM1_ServiceFacilityLocation> NM1_ServiceFacilityLocation { get; set; }
         public DbSet<REF_OtherPayerServiceFacilityLocationSecondaryIdentification> REF_OtherPayerServiceFacilityLocationSecondaryIdentification { get; set; }
@@ -290,10 +280,7 @@ namespace EdiFabric.Templates.Hipaa5010
         public DbSet<REF_PrescriptionorCompoundDrugAssociationNumber> REF_PrescriptionorCompoundDrugAssociationNumber { get; set; }
         public DbSet<NM1_PurchasedServiceProviderName> NM1_PurchasedServiceProviderName { get; set; }
         public DbSet<NM1_OrderingProviderName> NM1_OrderingProviderName { get; set; }
-        public DbSet<SVD_LineAdjudicationInformation> SVD_LineAdjudicationInformation { get; set; }
-
         public DbSet<SVD_LineAdjudicationInformation_3> SVD_LineAdjudicationInformation_3 { get; set; }
-        public DbSet<C003_CompositeMedicalProcedureIdentifier_7> C003_CompositeMedicalProcedureIdentifier_7 { get; set; }
         public DbSet<SVD> SVD { get; set; }
         public DbSet<LQ_FormIdentificationCode> LQ_FormIdentificationCode { get; set; }
         public DbSet<LQ> LQ { get; set; }

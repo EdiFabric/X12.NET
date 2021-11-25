@@ -11,365 +11,6 @@ namespace EdiFabric.Templates.Hipaa5010
     using System.Xml.Serialization;
 
     /// <summary>
-    /// Line Adjudication Information
-    /// </summary>
-    [Serializable()]
-    [DataContract()]
-    [Segment("SVD")]
-    public class SVD_LineAdjudicationInformation_3 : SVD, I_SVD<C003_CompositeMedicalProcedureIdentifier_12>
-    {
-
-        /// <summary>
-        /// Identification Code
-        /// </summary>
-        [DataMember]
-        [Required]
-        [StringLength(2, 80)]
-        [DataElement("67", typeof(X12_AN))]
-        [Pos(1)]
-        public override string OtherPayerPrimaryIdentifier_01 { get; set; }
-        /// <summary>
-        /// Monetary Amount
-        /// </summary>
-        [DataMember]
-        [Required]
-        [StringLength(1, 18)]
-        [DataElement("782", typeof(X12_R))]
-        [Pos(2)]
-        public override string ServiceLinePaidAmount_02 { get; set; }
-        /// <summary>
-        /// Composite Medical Procedure Identifier
-        /// </summary>
-        [DataMember]
-        [Pos(3)]
-        public virtual C003_CompositeMedicalProcedureIdentifier_12 CompositeMedicalProcedureIdentifier_03 { get; set; }
-        /// <summary>
-        /// Product/Service ID
-        /// </summary>
-        [DataMember]
-        [Required]
-        [StringLength(1, 48)]
-        [DataElement("234", typeof(X12_AN))]
-        [Pos(4)]
-        public override string ProductServiceID_04 { get; set; }
-        /// <summary>
-        /// Quantity
-        /// </summary>
-        [DataMember]
-        [Required]
-        [StringLength(1, 15)]
-        [DataElement("380", typeof(X12_R))]
-        [Pos(5)]
-        public override string PaidServiceUnitCount_05 { get; set; }
-        /// <summary>
-        /// Assigned Number
-        /// </summary>
-        [DataMember]
-        [StringLength(1, 6)]
-        [DataElement("554", typeof(X12_N0))]
-        [Pos(6)]
-        public override string BundledorUnbundledLineNumber_06 { get; set; }
-    }
-
-    /// <summary>
-    /// Dependent Health Care Diagnosis Code
-    /// </summary>
-    [Serializable()]
-    [DataContract()]
-    [Segment("HI", typeof(X12_ID_1270_6), typeof(X12_ID_1270_11))]
-    public class HI_DependentHealthCareDiagnosisCode_2 : HI, I_HI<C022_HealthCareCodeInformation_8, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4>
-    {
-        /// <summary>
-        /// Health Care Code Information
-        /// </summary>
-        [DataMember]
-        [Required]
-        [Pos(1)]
-        public virtual C022_HealthCareCodeInformation_8 HealthCareCodeInformation_01 { get; set; }
-        /// <summary>
-        /// Health Care Code Information
-        /// </summary>
-        [DataMember]
-        [Pos(2)]
-        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_02 { get; set; }
-        /// <summary>
-        /// Health Care Code Information
-        /// </summary>
-        [DataMember]
-        [Pos(3)]
-        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_03 { get; set; }
-        /// <summary>
-        /// Health Care Code Information
-        /// </summary>
-        [DataMember]
-        [Pos(4)]
-        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_04 { get; set; }
-        /// <summary>
-        /// Health Care Code Information
-        /// </summary>
-        [DataMember]
-        [Pos(5)]
-        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_05 { get; set; }
-        /// <summary>
-        /// Health Care Code Information
-        /// </summary>
-        [DataMember]
-        [Pos(6)]
-        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_06 { get; set; }
-        /// <summary>
-        /// Health Care Code Information
-        /// </summary>
-        [DataMember]
-        [Pos(7)]
-        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_07 { get; set; }
-        /// <summary>
-        /// Health Care Code Information
-        /// </summary>
-        [DataMember]
-        [Pos(8)]
-        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_08 { get; set; }
-        /// <summary>
-        /// Health Care Code Information
-        /// </summary>
-        [DataMember]
-        [Pos(9)]
-        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_09 { get; set; }
-        /// <summary>
-        /// Health Care Code Information
-        /// </summary>
-        [DataMember]
-        [Pos(10)]
-        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_10 { get; set; }
-        /// <summary>
-        /// Health Care Code Information
-        /// </summary>
-        [DataMember]
-        [Pos(11)]
-        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_11 { get; set; }
-        /// <summary>
-        /// Health Care Code Information
-        /// </summary>
-        [DataMember]
-        [Pos(12)]
-        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_12 { get; set; }
-    }
-
-    /// <summary>
-    /// Other Payer Prior Authorization Number
-    /// </summary>
-    [Serializable()]
-    [DataContract()]
-    [Segment("REF", typeof(X12_ID_128_6))]
-    public class REF_OtherPayerPriorAuthorizationNumber_2 : REF, I_REF<C040_ReferenceIdentifier_3>
-    {
-
-        /// <summary>
-        /// Reference Identification Qualifier
-        /// </summary>
-        [DataMember]
-        [Required]
-        [DataElement("128", typeof(X12_ID_128_6))]
-        [Pos(1)]
-        public override string ReferenceIdentificationQualifier_01 { get; set; }
-        /// <summary>
-        /// Reference Identification
-        /// </summary>
-        [DataMember]
-        [RequiredAny(3)]
-        [Required]
-        [StringLength(1, 50)]
-        [DataElement("127", typeof(X12_AN))]
-        [Pos(2)]
-        public override string MemberGrouporPolicyNumber_02 { get; set; }
-        /// <summary>
-        /// Description
-        /// </summary>
-        [DataMember]
-        [StringLength(1, 80)]
-        [DataElement("352", typeof(X12_AN))]
-        [Pos(3)]
-        public override string Description_03 { get; set; }
-        /// <summary>
-        /// Reference Identifier
-        /// </summary>
-        [DataMember]
-        [Pos(4)]
-        public virtual C040_ReferenceIdentifier_3 ReferenceIdentifier_04 { get; set; }
-    }
-
-    /// <summary>
-    /// Other Payer Referral Number
-    /// </summary>
-    [Serializable()]
-    [DataContract()]
-    [Segment("REF", typeof(X12_ID_128_3))]
-    public class REF_OtherPayerReferralNumber_2 : REF, I_REF<C040_ReferenceIdentifier_3>
-    {
-
-        /// <summary>
-        /// Reference Identification Qualifier
-        /// </summary>
-        [DataMember]
-        [Required]
-        [DataElement("128", typeof(X12_ID_128_3))]
-        [Pos(1)]
-        public override string ReferenceIdentificationQualifier_01 { get; set; }
-        /// <summary>
-        /// Reference Identification
-        /// </summary>
-        [DataMember]
-        [RequiredAny(3)]
-        [Required]
-        [StringLength(1, 50)]
-        [DataElement("127", typeof(X12_AN))]
-        [Pos(2)]
-        public override string MemberGrouporPolicyNumber_02 { get; set; }
-        /// <summary>
-        /// Description
-        /// </summary>
-        [DataMember]
-        [StringLength(1, 80)]
-        [DataElement("352", typeof(X12_AN))]
-        [Pos(3)]
-        public override string Description_03 { get; set; }
-        /// <summary>
-        /// Reference Identifier
-        /// </summary>
-        [DataMember]
-        [Pos(4)]
-        public virtual C040_ReferenceIdentifier_3 ReferenceIdentifier_04 { get; set; }
-    }
-
-    /// <summary>
-    /// Ordering Provider Secondary Identification
-    /// </summary>
-    [Serializable()]
-    [DataContract()]
-    [Segment("REF", typeof(X12_ID_128_18))]
-    public class REF_OrderingProviderSecondaryIdentification_2 : REF, I_REF<C040_ReferenceIdentifier>
-    {
-
-        /// <summary>
-        /// Reference Identification Qualifier
-        /// </summary>
-        [DataMember]
-        [Required]
-        [DataElement("128", typeof(X12_ID_128_18))]
-        [Pos(1)]
-        public override string ReferenceIdentificationQualifier_01 { get; set; }
-        /// <summary>
-        /// Reference Identification
-        /// </summary>
-        [DataMember]
-        [RequiredAny(3)]
-        [Required]
-        [StringLength(1, 50)]
-        [DataElement("127", typeof(X12_AN))]
-        [Pos(2)]
-        public override string MemberGrouporPolicyNumber_02 { get; set; }
-        /// <summary>
-        /// Description
-        /// </summary>
-        [DataMember]
-        [StringLength(1, 80)]
-        [DataElement("352", typeof(X12_AN))]
-        [Pos(3)]
-        public override string Description_03 { get; set; }
-        /// <summary>
-        /// Reference Identifier
-        /// </summary>
-        [DataMember]
-        [Pos(4)]
-        public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
-    }
-
-    /// <summary>
-    /// Assistant Surgeon Secondary Identification
-    /// </summary>
-    [Serializable()]
-    [DataContract()]
-    [Segment("REF", typeof(X12_ID_128_23))]
-    public class REF_AssistantSurgeonSecondaryIdentification_2 : REF, I_REF<C040_ReferenceIdentifier_3>
-    {
-
-        /// <summary>
-        /// Reference Identification Qualifier
-        /// </summary>
-        [DataMember]
-        [Required]
-        [DataElement("128", typeof(X12_ID_128_23))]
-        [Pos(1)]
-        public override string ReferenceIdentificationQualifier_01 { get; set; }
-        /// <summary>
-        /// Reference Identification
-        /// </summary>
-        [DataMember]
-        [RequiredAny(3)]
-        [Required]
-        [StringLength(1, 50)]
-        [DataElement("127", typeof(X12_AN))]
-        [Pos(2)]
-        public override string MemberGrouporPolicyNumber_02 { get; set; }
-        /// <summary>
-        /// Description
-        /// </summary>
-        [DataMember]
-        [StringLength(1, 80)]
-        [DataElement("352", typeof(X12_AN))]
-        [Pos(3)]
-        public override string Description_03 { get; set; }
-        /// <summary>
-        /// Reference Identifier
-        /// </summary>
-        [DataMember]
-        [Pos(4)]
-        public virtual C040_ReferenceIdentifier_3 ReferenceIdentifier_04 { get; set; }
-    }
-
-    /// <summary>
-    /// Billing Provider Secondary Identification
-    /// </summary>
-    [Serializable()]
-    [DataContract()]
-    [Segment("REF", typeof(X12_ID_128_2))]
-    public class REF_BillingProviderSecondaryIdentification_2 : REF, I_REF<C040_ReferenceIdentifier_3>
-    {
-
-        /// <summary>
-        /// Reference Identification Qualifier
-        /// </summary>
-        [DataMember]
-        [Required]
-        [DataElement("128", typeof(X12_ID_128_2))]
-        [Pos(1)]
-        public override string ReferenceIdentificationQualifier_01 { get; set; }
-        /// <summary>
-        /// Reference Identification
-        /// </summary>
-        [DataMember]
-        [RequiredAny(3)]
-        [Required]
-        [StringLength(1, 50)]
-        [DataElement("127", typeof(X12_AN))]
-        [Pos(2)]
-        public override string MemberGrouporPolicyNumber_02 { get; set; }
-        /// <summary>
-        /// Description
-        /// </summary>
-        [DataMember]
-        [StringLength(1, 80)]
-        [DataElement("352", typeof(X12_AN))]
-        [Pos(3)]
-        public override string Description_03 { get; set; }
-        /// <summary>
-        /// Reference Identifier
-        /// </summary>
-        [DataMember]
-        [Pos(4)]
-        public virtual C040_ReferenceIdentifier_3 ReferenceIdentifier_04 { get; set; }
-    }
-
-    /// <summary>
     /// Coordination of Benefits (COB) Payer Paid Amount
     /// </summary>
     [Serializable()]
@@ -377,7 +18,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("AMT", typeof(X12_ID_522_4))]
     public class AMT_CoordinationofBenefits : AMT, I_AMT
     {
-        
+
         /// <summary>
         /// Amount Qualifier Code
         /// </summary>
@@ -403,7 +44,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string CreditDebitFlagCode_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Coordination of Benefits (COB) Total Non-covered Amount
     /// </summary>
@@ -412,7 +53,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("AMT", typeof(X12_ID_522_6))]
     public class AMT_CoordinationofBenefits_2 : AMT, I_AMT
     {
-        
+
         /// <summary>
         /// Amount Qualifier Code
         /// </summary>
@@ -438,7 +79,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string CreditDebitFlagCode_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Patient Amount Paid
     /// </summary>
@@ -447,7 +88,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("AMT", typeof(X12_ID_522_16))]
     public class AMT_PatientAmountPaid : AMT, I_AMT
     {
-        
+
         /// <summary>
         /// Amount Qualifier Code
         /// </summary>
@@ -473,7 +114,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string CreditDebitFlagCode_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Postage Claimed Amount
     /// </summary>
@@ -482,7 +123,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("AMT", typeof(X12_ID_522_10))]
     public class AMT_PostageClaimedAmount : AMT, I_AMT
     {
-        
+
         /// <summary>
         /// Amount Qualifier Code
         /// </summary>
@@ -508,7 +149,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string CreditDebitFlagCode_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Remaining Patient Liability
     /// </summary>
@@ -517,7 +158,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("AMT", typeof(X12_ID_522_5))]
     public class AMT_RemainingPatientLiability : AMT, I_AMT
     {
-        
+
         /// <summary>
         /// Amount Qualifier Code
         /// </summary>
@@ -543,7 +184,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string CreditDebitFlagCode_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Sales Tax Amount
     /// </summary>
@@ -552,7 +193,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("AMT", typeof(X12_ID_522_7))]
     public class AMT_SalesTaxAmount : AMT, I_AMT
     {
-        
+
         /// <summary>
         /// Amount Qualifier Code
         /// </summary>
@@ -578,7 +219,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string CreditDebitFlagCode_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Beginning of Hierarchical Transaction
     /// </summary>
@@ -587,7 +228,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("BHT")]
     public class BHT_BeginningOfHierarchicalTransaction_8 : BHT, I_BHT
     {
-        
+
         /// <summary>
         /// Hierarchical Structure Code
         /// </summary>
@@ -640,7 +281,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(6)]
         public override string TransactionTypeCode_06 { get; set; }
     }
-    
+
     /// <summary>
     /// Claim Level Adjustments
     /// </summary>
@@ -649,7 +290,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("CAS")]
     public class CAS_ClaimLevelAdjustments : CAS, I_CAS
     {
-        
+
         /// <summary>
         /// Claim Adjustment Group Code
         /// </summary>
@@ -820,7 +461,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(19)]
         public override string AdjustmentQuantity_19 { get; set; }
     }
-    
+
     /// <summary>
     /// Claim Information
     /// </summary>
@@ -829,7 +470,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("CLM")]
     public class CLM_ClaimInformation_3 : CLM, I_CLM<C023_HealthCareServiceLocationInformation_2, C024_RelatedCausesInformation_3>
     {
-        
+
         /// <summary>
         /// Claim Submitter's Identifier
         /// </summary>
@@ -978,7 +619,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(20)]
         public override string DelayReasonCode_20 { get; set; }
     }
-    
+
     /// <summary>
     /// Contract Information
     /// </summary>
@@ -987,7 +628,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("CN1")]
     public class CN1_ContractInformation_2 : CN1, I_CN1
     {
-        
+
         /// <summary>
         /// Contract Type Code
         /// </summary>
@@ -1037,7 +678,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(6)]
         public override string ContractVersionIdentifier_06 { get; set; }
     }
-    
+
     /// <summary>
     /// Ambulance Transport Information
     /// </summary>
@@ -1046,7 +687,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("CR1")]
     public class CR1_AmbulanceTransportInformation : CR1, I_CR1
     {
-        
+
         /// <summary>
         /// Unit or Basis for Measurement Code
         /// </summary>
@@ -1129,7 +770,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(10)]
         public override string StretcherPurposeDescription_10 { get; set; }
     }
-    
+
     /// <summary>
     /// Spinal Manipulation Service Information
     /// </summary>
@@ -1138,7 +779,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("CR2")]
     public class CR2_SpinalManipulationServiceInformation : CR2, I_CR2
     {
-        
+
         /// <summary>
         /// Count
         /// </summary>
@@ -1234,7 +875,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string YesNoConditionorResponseCode_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Durable Medical Equipment Certification
     /// </summary>
@@ -1243,7 +884,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("CR3")]
     public class CR3_DurableMedicalEquipmentCertification : CR3, I_CR3
     {
-        
+
         /// <summary>
         /// Certification Type Code
         /// </summary>
@@ -1286,7 +927,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(5)]
         public override string Description_05 { get; set; }
     }
-    
+
     /// <summary>
     /// Ambulance Certification
     /// </summary>
@@ -1295,7 +936,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("CRC", typeof(X12_ID_1136_8), typeof(X12_ID_1073_4))]
     public class CRC_AmbulanceCertification : CRC, I_CRC
     {
-        
+
         /// <summary>
         /// Code Category
         /// </summary>
@@ -1349,7 +990,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(7)]
         public override string ConditionCode_07 { get; set; }
     }
-    
+
     /// <summary>
     /// Condition Indicator/Durable Medical Equipment
     /// </summary>
@@ -1358,7 +999,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("CRC", typeof(X12_ID_1136_5), typeof(X12_ID_1073_4))]
     public class CRC_ConditionIndicator : CRC, I_CRC
     {
-        
+
         /// <summary>
         /// Code Category
         /// </summary>
@@ -1412,7 +1053,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(7)]
         public override string ConditionCode_07 { get; set; }
     }
-    
+
     /// <summary>
     /// EPSDT Referral
     /// </summary>
@@ -1421,7 +1062,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("CRC", typeof(X12_ID_1136_3), typeof(X12_ID_1073_4))]
     public class CRC_EPSDTReferral : CRC, I_CRC
     {
-        
+
         /// <summary>
         /// Code Category
         /// </summary>
@@ -1475,7 +1116,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(7)]
         public override string ConditionCode_07 { get; set; }
     }
-    
+
     /// <summary>
     /// Homebound Indicator
     /// </summary>
@@ -1484,7 +1125,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("CRC", typeof(X12_ID_1136_2), typeof(X12_ID_1073))]
     public class CRC_HomeboundIndicator : CRC, I_CRC
     {
-        
+
         /// <summary>
         /// Code Category
         /// </summary>
@@ -1538,7 +1179,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(7)]
         public override string ConditionCode_07 { get; set; }
     }
-    
+
     /// <summary>
     /// Hospice Employee Indicator
     /// </summary>
@@ -1547,7 +1188,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("CRC", typeof(X12_ID_1136_4), typeof(X12_ID_1073_4))]
     public class CRC_HospiceEmployeeIndicator : CRC, I_CRC
     {
-        
+
         /// <summary>
         /// Code Category
         /// </summary>
@@ -1601,7 +1242,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(7)]
         public override string ConditionCode_07 { get; set; }
     }
-    
+
     /// <summary>
     /// Patient Condition Information: Vision
     /// </summary>
@@ -1610,7 +1251,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("CRC", typeof(X12_ID_1136), typeof(X12_ID_1073_4))]
     public class CRC_PatientConditionInformation : CRC, I_CRC
     {
-        
+
         /// <summary>
         /// Code Category
         /// </summary>
@@ -1664,7 +1305,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(7)]
         public override string ConditionCode_07 { get; set; }
     }
-    
+
     /// <summary>
     /// Drug Quantity
     /// </summary>
@@ -1673,7 +1314,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("CTP")]
     public class CTP_DrugQuantity : CTP, I_CTP<C001_CompositeUnitOfMeasure_2>
     {
-        
+
         /// <summary>
         /// Class of Trade Code
         /// </summary>
@@ -1764,7 +1405,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(11)]
         public override string MultiplePriceQuantity_11 { get; set; }
     }
-    
+
     /// <summary>
     /// Foreign Currency Information
     /// </summary>
@@ -1773,7 +1414,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("CUR")]
     public class CUR_ForeignCurrencyInformation_3 : CUR, I_CUR
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -1951,7 +1592,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(21)]
         public override string Time_21 { get; set; }
     }
-    
+
     /// <summary>
     /// Patient Demographic Information
     /// </summary>
@@ -1960,7 +1601,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DMG")]
     public class DMG_PatientDemographicInformation : DMG, I_DMG<C056_CompositeRaceOrEthnicityInformation>
     {
-        
+
         /// <summary>
         /// Date Time Period Format Qualifier
         /// </summary>
@@ -2049,7 +1690,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(11)]
         public override string IndustryCode_11 { get; set; }
     }
-    
+
     /// <summary>
     /// Accident Date
     /// </summary>
@@ -2058,7 +1699,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_19), typeof(X12_ID_1250_6))]
     public class DTP_AccidentDate_2 : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2085,7 +1726,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Date - Acute Manifestation
     /// </summary>
@@ -2094,7 +1735,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_40), typeof(X12_ID_1250_6))]
     public class DTP_AcuteManifestation : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2121,7 +1762,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Date - Admission
     /// </summary>
@@ -2130,7 +1771,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_7), typeof(X12_ID_1250_6))]
     public class DTP_AdmissionDate_4 : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2157,7 +1798,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Date - Assumed and Relinquished Care Dates
     /// </summary>
@@ -2166,7 +1807,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_9), typeof(X12_ID_1250_6))]
     public class DTP_AssumedandRelinquishedCareDates : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2193,7 +1834,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Date - Authorized Return to Work
     /// </summary>
@@ -2202,7 +1843,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_6), typeof(X12_ID_1250_6))]
     public class DTP_AuthorizedReturntoWork : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2229,7 +1870,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Date - Begin Therapy Date
     /// </summary>
@@ -2238,7 +1879,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_22), typeof(X12_ID_1250_6))]
     public class DTP_BeginTherapyDate : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2265,7 +1906,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// DATE - Certification Revision/Recertification Date
     /// </summary>
@@ -2274,7 +1915,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_21), typeof(X12_ID_1250_6))]
     public class DTP_CertificationRevision : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2301,7 +1942,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Claim Check Or Remittance Date
     /// </summary>
@@ -2310,7 +1951,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_12), typeof(X12_ID_1250_6))]
     public class DTP_ClaimCheckOrRemittanceDate : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2337,7 +1978,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Claim Level Service Date
     /// </summary>
@@ -2346,7 +1987,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_4), typeof(X12_ID_1250_2))]
     public class DTP_ClaimLevelServiceDate : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date Time Qualifier
         /// </summary>
@@ -2373,7 +2014,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Date - Disability Dates
     /// </summary>
@@ -2382,7 +2023,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_3), typeof(X12_ID_1250_2))]
     public class DTP_DisabilityDates : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2409,7 +2050,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Date - Discharge
     /// </summary>
@@ -2418,7 +2059,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_8), typeof(X12_ID_1250_6))]
     public class DTP_Discharge : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2445,7 +2086,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Date - Hearing and Vision Prescription Date
     /// </summary>
@@ -2454,7 +2095,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_48), typeof(X12_ID_1250_6))]
     public class DTP_HearingandVisionPrescriptionDate : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2481,7 +2122,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Date - Initial Treatment Date
     /// </summary>
@@ -2490,7 +2131,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_32), typeof(X12_ID_1250_6))]
     public class DTP_InitialTreatmentDate : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2517,7 +2158,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Date - Last Certification Date
     /// </summary>
@@ -2526,7 +2167,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_23), typeof(X12_ID_1250_6))]
     public class DTP_LastCertificationDate : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2553,7 +2194,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Date - Last Menstrual Period
     /// </summary>
@@ -2562,7 +2203,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_16), typeof(X12_ID_1250_6))]
     public class DTP_LastMenstrualPeriod : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2589,7 +2230,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Date - Last Seen Date
     /// </summary>
@@ -2598,7 +2239,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_36), typeof(X12_ID_1250_6))]
     public class DTP_LastSeenDate : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2625,7 +2266,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Date - Last Worked
     /// </summary>
@@ -2634,7 +2275,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_5), typeof(X12_ID_1250_6))]
     public class DTP_LastWorked : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2661,7 +2302,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Date - Last X-ray Date
     /// </summary>
@@ -2670,7 +2311,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_46), typeof(X12_ID_1250_6))]
     public class DTP_LastXrayDate : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2697,7 +2338,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Date - Onset of Current Illness or Symptom
     /// </summary>
@@ -2706,7 +2347,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_20), typeof(X12_ID_1250_6))]
     public class DTP_OnsetofCurrentIllnessorSymptom : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2733,7 +2374,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Property and Casualty Date of First Contact
     /// </summary>
@@ -2742,7 +2383,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_10), typeof(X12_ID_1250_6))]
     public class DTP_PropertyandCasualtyDateofFirstContact : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2769,7 +2410,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Date - Repricer Received Date
     /// </summary>
@@ -2778,7 +2419,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_11), typeof(X12_ID_1250_6))]
     public class DTP_RepricerReceivedDate : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2805,7 +2446,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Date - Shipped Date
     /// </summary>
@@ -2814,7 +2455,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_25), typeof(X12_ID_1250_6))]
     public class DTP_ShippedDate : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2841,7 +2482,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Date - Test Date
     /// </summary>
@@ -2850,7 +2491,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("DTP", typeof(X12_ID_374_24), typeof(X12_ID_1250_6))]
     public class DTP_TestDate : DTP, I_DTP
     {
-        
+
         /// <summary>
         /// Date/Time Qualifier
         /// </summary>
@@ -2877,7 +2518,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string DateTimePeriod_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Supporting Documentation
     /// </summary>
@@ -2886,7 +2527,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("FRM")]
     public class FRM_SupportingDocumentation : FRM, I_FRM
     {
-        
+
         /// <summary>
         /// Assigned Identification
         /// </summary>
@@ -2929,7 +2570,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(5)]
         public override string QuestionResponse_05 { get; set; }
     }
-    
+
     /// <summary>
     /// Claim Pricing/Repricing Information
     /// </summary>
@@ -2938,7 +2579,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("HCP")]
     public class HCP_ClaimPricing : HCP, I_HCP
     {
-        
+
         /// <summary>
         /// Pricing Methodology
         /// </summary>
@@ -3059,7 +2700,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(15)]
         public override string ExceptionCode_15 { get; set; }
     }
-    
+
     /// <summary>
     /// Line Pricing/Repricing Information
     /// </summary>
@@ -3068,7 +2709,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("HCP")]
     public class HCP_LinePricing_3 : HCP, I_HCP
     {
-        
+
         /// <summary>
         /// Pricing Methodology
         /// </summary>
@@ -3189,7 +2830,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(15)]
         public override string ExceptionCode_15 { get; set; }
     }
-    
+
     /// <summary>
     /// Anesthesia Related Procedure
     /// </summary>
@@ -3198,7 +2839,6 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("HI", typeof(X12_ID_1270_20), typeof(X12_ID_1270_23))]
     public class HI_AnesthesiaRelatedProcedure : HI, I_HI<C022_HealthCareCodeInformation_12, C022_HealthCareCodeInformation_15, C022_HealthCareCodeInformation, C022_HealthCareCodeInformation, C022_HealthCareCodeInformation, C022_HealthCareCodeInformation, C022_HealthCareCodeInformation, C022_HealthCareCodeInformation, C022_HealthCareCodeInformation, C022_HealthCareCodeInformation, C022_HealthCareCodeInformation, C022_HealthCareCodeInformation>
     {
-        
         /// <summary>
         /// Health Care Code Information
         /// </summary>
@@ -3273,7 +2913,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public virtual C022_HealthCareCodeInformation HealthCareCodeInformation_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Condition Information
     /// </summary>
@@ -3282,7 +2922,6 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("HI", typeof(X12_ID_1270_4), typeof(X12_ID_1270_4))]
     public class HI_ConditionInformation : HI, I_HI<C022_HealthCareCodeInformation_13, C022_HealthCareCodeInformation_13, C022_HealthCareCodeInformation_13, C022_HealthCareCodeInformation_13, C022_HealthCareCodeInformation_13, C022_HealthCareCodeInformation_13, C022_HealthCareCodeInformation_13, C022_HealthCareCodeInformation_13, C022_HealthCareCodeInformation_13, C022_HealthCareCodeInformation_13, C022_HealthCareCodeInformation_13, C022_HealthCareCodeInformation_13>
     {
-        
         /// <summary>
         /// Health Care Code Information
         /// </summary>
@@ -3357,16 +2996,15 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public virtual C022_HealthCareCodeInformation_13 HealthCareCodeInformation_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Dependent Health Care Diagnosis Code
     /// </summary>
     [Serializable()]
     [DataContract()]
     [Segment("HI", typeof(X12_ID_1270_6), typeof(X12_ID_1270_11))]
-    public class HI_DependentHealthCareDiagnosisCode : HI, I_HI<C022_HealthCareCodeInformation_8, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation, C022_HealthCareCodeInformation, C022_HealthCareCodeInformation, C022_HealthCareCodeInformation>
+    public class HI_DependentHealthCareDiagnosisCode_2 : HI, I_HI<C022_HealthCareCodeInformation_8, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4, C022_HealthCareCodeInformation_4>
     {
-        
         /// <summary>
         /// Health Care Code Information
         /// </summary>
@@ -3421,27 +3059,27 @@ namespace EdiFabric.Templates.Hipaa5010
         /// </summary>
         [DataMember]
         [Pos(9)]
-        public virtual C022_HealthCareCodeInformation HealthCareCodeInformation_09 { get; set; }
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_09 { get; set; }
         /// <summary>
         /// Health Care Code Information
         /// </summary>
         [DataMember]
         [Pos(10)]
-        public virtual C022_HealthCareCodeInformation HealthCareCodeInformation_10 { get; set; }
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_10 { get; set; }
         /// <summary>
         /// Health Care Code Information
         /// </summary>
         [DataMember]
         [Pos(11)]
-        public virtual C022_HealthCareCodeInformation HealthCareCodeInformation_11 { get; set; }
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_11 { get; set; }
         /// <summary>
         /// Health Care Code Information
         /// </summary>
         [DataMember]
         [Pos(12)]
-        public virtual C022_HealthCareCodeInformation HealthCareCodeInformation_12 { get; set; }
+        public virtual C022_HealthCareCodeInformation_4 HealthCareCodeInformation_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Billing Provider Hierarchical Level
     /// </summary>
@@ -3450,7 +3088,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("HL", typeof(X12_ID_735_8))]
     public class HL_BillingProviderHierarchicalLevel : HL, I_HL
     {
-        
+
         /// <summary>
         /// Hierarchical ID Number
         /// </summary>
@@ -3485,7 +3123,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public override string HierarchicalChildCode_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Dependent Level
     /// </summary>
@@ -3494,7 +3132,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("HL", typeof(X12_ID_735_4))]
     public class HL_DependentLevel : HL, I_HL
     {
-        
+
         /// <summary>
         /// Hierarchical ID Number
         /// </summary>
@@ -3530,7 +3168,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public override string HierarchicalChildCode_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Subscriber Hierarchical Level
     /// </summary>
@@ -3539,7 +3177,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("HL", typeof(X12_ID_735_2))]
     public class HL_SubscriberHierarchicalLevel : HL, I_HL
     {
-        
+
         /// <summary>
         /// Hierarchical ID Number
         /// </summary>
@@ -3575,7 +3213,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public override string HierarchicalChildCode_04 { get; set; }
     }
-    
+
     /// <summary>
     /// File Information
     /// </summary>
@@ -3584,7 +3222,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("K3")]
     public class K3_FileInformation : K3, I_K3<C001_CompositeUnitOfMeasure>
     {
-        
+
         /// <summary>
         /// Fixed Format Information
         /// </summary>
@@ -3608,7 +3246,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public virtual C001_CompositeUnitOfMeasure CompositeUnitOfMeasure_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Drug Identification
     /// </summary>
@@ -3617,7 +3255,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("LIN")]
     public class LIN_DrugIdentification_2 : LIN, I_LIN
     {
-        
+
         /// <summary>
         /// Assigned Identification
         /// </summary>
@@ -3868,7 +3506,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(31)]
         public override string ProductServiceID_31 { get; set; }
     }
-    
+
     /// <summary>
     /// Form Identification Code
     /// </summary>
@@ -3877,7 +3515,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("LQ")]
     public class LQ_FormIdentificationCode : LQ, I_LQ
     {
-        
+
         /// <summary>
         /// Code List Qualifier Code
         /// </summary>
@@ -3897,7 +3535,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public override string FormIdentifier_02 { get; set; }
     }
-    
+
     /// <summary>
     /// Header Number
     /// </summary>
@@ -3906,7 +3544,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("LX")]
     public class LX_HeaderNumber : LX, I_LX
     {
-        
+
         /// <summary>
         /// Assigned Number
         /// </summary>
@@ -3917,7 +3555,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(1)]
         public override string AssignedNumber_01 { get; set; }
     }
-    
+
     /// <summary>
     /// Test Result
     /// </summary>
@@ -3926,7 +3564,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("MEA")]
     public class MEA_TestResult : MEA, I_MEA<C001_CompositeUnitOfMeasure>
     {
-        
+
         /// <summary>
         /// Measurement Reference ID Code
         /// </summary>
@@ -4024,7 +3662,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string IndustryCode_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Outpatient Adjudication Information
     /// </summary>
@@ -4033,7 +3671,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("MOA")]
     public class MOA_OutpatientAdjudicationInformation : MOA, I_MOA
     {
-        
+
         /// <summary>
         /// Percentage as Decimal
         /// </summary>
@@ -4107,7 +3745,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(9)]
         public override string NonPayableProfessionalComponentBilledAmount_09 { get; set; }
     }
-    
+
     /// <summary>
     /// Additional Patient Information Contact Address
     /// </summary>
@@ -4116,7 +3754,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("N3")]
     public class N3_AdditionalPatientInformationContactAddress : N3, I_N3
     {
-        
+
         /// <summary>
         /// Address Information
         /// </summary>
@@ -4135,7 +3773,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public override string ResponseContactAddressLine_02 { get; set; }
     }
-    
+
     /// <summary>
     /// Additional Patient Information Contact City, State, ZIP Code
     /// </summary>
@@ -4144,7 +3782,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("N4")]
     public class N4_AdditionalPatientInformationContactCity : N4, I_N4
     {
-        
+
         /// <summary>
         /// City Name
         /// </summary>
@@ -4205,7 +3843,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(7)]
         public override string CountrySubdivisionCode_07 { get; set; }
     }
-    
+
     /// <summary>
     /// Ambulance Drop-off Location
     /// </summary>
@@ -4214,7 +3852,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_7), typeof(X12_ID_1065_3))]
     public class NM1_AmbulanceDrop : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -4312,7 +3950,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Ambulance Pick-up Location
     /// </summary>
@@ -4321,7 +3959,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_11), typeof(X12_ID_1065_3))]
     public class NM1_AmbulancePick : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -4419,7 +4057,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Billing Provider Name
     /// </summary>
@@ -4428,7 +4066,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_31), typeof(X12_ID_1065_2))]
     public class NM1_BillingProviderName_2 : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -4527,7 +4165,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Information Receiver Name
     /// </summary>
@@ -4536,7 +4174,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_21), typeof(X12_ID_1065_2))]
     public class NM1_InformationReceiverName_4 : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -4582,6 +4220,7 @@ namespace EdiFabric.Templates.Hipaa5010
         /// Name Prefix
         /// </summary>
         [DataMember]
+        [NotUsed]
         [StringLength(1, 10)]
         [DataElement("1038", typeof(X12_AN))]
         [Pos(6)]
@@ -4637,7 +4276,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Ordering Provider Name
     /// </summary>
@@ -4646,7 +4285,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_18), typeof(X12_ID_1065))]
     public class NM1_OrderingProviderName : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -4745,7 +4384,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Other Payer Billing Provider
     /// </summary>
@@ -4754,7 +4393,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_31), typeof(X12_ID_1065_2))]
     public class NM1_OtherPayerBillingProvider : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -4852,7 +4491,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Other Payer Name
     /// </summary>
@@ -4861,7 +4500,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_29), typeof(X12_ID_1065_3))]
     public class NM1_OtherPayerName : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -4962,7 +4601,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Other Payer Referring Provider
     /// </summary>
@@ -4971,7 +4610,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_54), typeof(X12_ID_1065))]
     public class NM1_OtherPayerReferringProvider : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -5069,7 +4708,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Other Payer Rendering Provider
     /// </summary>
@@ -5078,7 +4717,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_2), typeof(X12_ID_1065_2))]
     public class NM1_OtherPayerRenderingProvider_2 : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -5176,7 +4815,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Other Payer Service Facility Location
     /// </summary>
@@ -5185,7 +4824,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_5), typeof(X12_ID_1065_3))]
     public class NM1_OtherPayerServiceFacilityLocation : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -5283,7 +4922,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Other Payer Supervising Provider
     /// </summary>
@@ -5292,7 +4931,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_9), typeof(X12_ID_1065))]
     public class NM1_OtherPayerSupervisingProvider : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -5390,7 +5029,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Other Subscriber Name
     /// </summary>
@@ -5399,7 +5038,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_26), typeof(X12_ID_1065_2))]
     public class NM1_OtherSubscriberName : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -5500,7 +5139,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Patient Name
     /// </summary>
@@ -5509,7 +5148,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_13), typeof(X12_ID_1065))]
     public class NM1_PatientName_3 : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -5608,7 +5247,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Pay-to Address Name
     /// </summary>
@@ -5617,7 +5256,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_36), typeof(X12_ID_1065_2))]
     public class NM1_Pay : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -5715,7 +5354,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Pay-To Plan Name
     /// </summary>
@@ -5724,7 +5363,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_23), typeof(X12_ID_1065_3))]
     public class NM1_Pay_3 : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -5825,7 +5464,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Purchased Service Provider Name
     /// </summary>
@@ -5834,7 +5473,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_16), typeof(X12_ID_1065_2))]
     public class NM1_PurchasedServiceProviderName : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -5932,7 +5571,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Receiver Name
     /// </summary>
@@ -5941,7 +5580,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_25), typeof(X12_ID_1065_3))]
     public class NM1_ReceiverName : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -5986,8 +5625,8 @@ namespace EdiFabric.Templates.Hipaa5010
         /// <summary>
         /// Name Prefix
         /// </summary>
-        [NotUsed]
         [DataMember]
+        [NotUsed(true)]
         [StringLength(1, 10)]
         [DataElement("1038", typeof(X12_AN))]
         [Pos(6)]
@@ -5996,6 +5635,7 @@ namespace EdiFabric.Templates.Hipaa5010
         /// Name Suffix
         /// </summary>
         [DataMember]
+        [NotUsed(true)]
         [StringLength(1, 10)]
         [DataElement("1039", typeof(X12_AN))]
         [Pos(7)]
@@ -6043,7 +5683,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Referring Provider Name
     /// </summary>
@@ -6052,7 +5692,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_54), typeof(X12_ID_1065))]
     public class NM1_ReferringProviderName : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -6151,7 +5791,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Rendering Provider Name
     /// </summary>
@@ -6160,7 +5800,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_2), typeof(X12_ID_1065_2))]
     public class NM1_RenderingProviderName : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -6259,7 +5899,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Service Facility Location
     /// </summary>
@@ -6268,7 +5908,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_5), typeof(X12_ID_1065_3))]
     public class NM1_ServiceFacilityLocation : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -6367,7 +6007,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Subscriber Name
     /// </summary>
@@ -6376,7 +6016,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_26), typeof(X12_ID_1065_2))]
     public class NM1_SubscriberName_5 : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -6475,7 +6115,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Supervising Provider Name
     /// </summary>
@@ -6484,7 +6124,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NM1", typeof(X12_ID_98_9), typeof(X12_ID_1065))]
     public class NM1_SupervisingProviderName : NM1, I_NM1
     {
-        
+
         /// <summary>
         /// Entity Identifier Code
         /// </summary>
@@ -6583,7 +6223,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(12)]
         public override string NameLastorOrganizationName_12 { get; set; }
     }
-    
+
     /// <summary>
     /// Claim Note
     /// </summary>
@@ -6592,7 +6232,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NTE", typeof(X12_ID_363_5))]
     public class NTE_ClaimNote_2 : NTE, I_NTE
     {
-        
+
         /// <summary>
         /// Note Reference Code
         /// </summary>
@@ -6611,7 +6251,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public override string BillingNoteText_02 { get; set; }
     }
-    
+
     /// <summary>
     /// Line Note
     /// </summary>
@@ -6620,7 +6260,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NTE", typeof(X12_ID_363_2))]
     public class NTE_LineNote : NTE, I_NTE
     {
-        
+
         /// <summary>
         /// Note Reference Code
         /// </summary>
@@ -6639,7 +6279,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public override string BillingNoteText_02 { get; set; }
     }
-    
+
     /// <summary>
     /// Third Party Organization Notes
     /// </summary>
@@ -6648,7 +6288,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("NTE", typeof(X12_ID_363_3))]
     public class NTE_ThirdPartyOrganizationNotes : NTE, I_NTE
     {
-        
+
         /// <summary>
         /// Note Reference Code
         /// </summary>
@@ -6667,7 +6307,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(2)]
         public override string BillingNoteText_02 { get; set; }
     }
-    
+
     /// <summary>
     /// Other Insurance Coverage Information
     /// </summary>
@@ -6676,7 +6316,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("OI")]
     public class OI_OtherInsuranceCoverageInformation_2 : OI, I_OI
     {
-        
+
         /// <summary>
         /// Claim Filing Indicator Code
         /// </summary>
@@ -6722,7 +6362,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(6)]
         public override string ReleaseofInformationCode_06 { get; set; }
     }
-    
+
     /// <summary>
     /// Patient Information
     /// </summary>
@@ -6731,7 +6371,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("PAT")]
     public class PAT_PatientInformation : PAT, I_PAT
     {
-        
+
         /// <summary>
         /// Individual Relationship Code
         /// </summary>
@@ -6801,7 +6441,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(9)]
         public override string PregnancyIndicator_09 { get; set; }
     }
-    
+
     /// <summary>
     /// Patient Information
     /// </summary>
@@ -6810,7 +6450,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("PAT")]
     public class PAT_PatientInformation_3 : PAT, I_PAT
     {
-        
+
         /// <summary>
         /// Individual Relationship Code
         /// </summary>
@@ -6879,7 +6519,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(9)]
         public override string PregnancyIndicator_09 { get; set; }
     }
-    
+
     /// <summary>
     /// Billing Provider Contact Information
     /// </summary>
@@ -6888,7 +6528,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("PER", typeof(X12_ID_366_4))]
     public class PER_BillingProviderContactInformation : PER, I_PER
     {
-        
+
         /// <summary>
         /// Contact Function Code
         /// </summary>
@@ -6964,7 +6604,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(9)]
         public override string ContactInquiryReference_09 { get; set; }
     }
-    
+
     /// <summary>
     /// Property and Casualty Patient Contact Information
     /// </summary>
@@ -6973,7 +6613,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("PER", typeof(X12_ID_366_4))]
     public class PER_PropertyandCasualtyPatientContactInformation : PER, I_PER
     {
-        
+
         /// <summary>
         /// Contact Function Code
         /// </summary>
@@ -7049,7 +6689,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(9)]
         public override string ContactInquiryReference_09 { get; set; }
     }
-    
+
     /// <summary>
     /// Billing Provider Specialty Information
     /// </summary>
@@ -7058,7 +6698,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("PRV")]
     public class PRV_BillingProviderSpecialtyInformation : PRV, I_PRV<C035_ProviderSpecialtyInformation>
     {
-        
+
         /// <summary>
         /// Provider Code
         /// </summary>
@@ -7107,7 +6747,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(6)]
         public override string ProviderOrganizationCode_06 { get; set; }
     }
-    
+
     /// <summary>
     /// Rendering Provider Specialty Information
     /// </summary>
@@ -7116,7 +6756,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("PRV")]
     public class PRV_RenderingProviderSpecialtyInformation : PRV, I_PRV<C035_ProviderSpecialtyInformation>
     {
-        
+
         /// <summary>
         /// Provider Code
         /// </summary>
@@ -7165,7 +6805,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(6)]
         public override string ProviderOrganizationCode_06 { get; set; }
     }
-    
+
     /// <summary>
     /// Purchased Service Information
     /// </summary>
@@ -7174,7 +6814,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("PS1")]
     public class PS1_PurchasedServiceInformation : PS1, I_PS1
     {
-        
+
         /// <summary>
         /// Reference Identification
         /// </summary>
@@ -7202,7 +6842,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(3)]
         public override string StateorProvinceCode_03 { get; set; }
     }
-    
+
     /// <summary>
     /// Claim Supplemental Information
     /// </summary>
@@ -7211,7 +6851,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("PWK", typeof(X12_ID_755), typeof(X12_ID_756_5))]
     public class PWK_ClaimSupplementalInformation_2 : PWK, I_PWK<C002_ActionsIndicated_2>
     {
-        
+
         /// <summary>
         /// Report Type Code
         /// </summary>
@@ -7281,7 +6921,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(9)]
         public override string RequestCategoryCode_09 { get; set; }
     }
-    
+
     /// <summary>
     /// Claim Supplemental Information
     /// </summary>
@@ -7290,7 +6930,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("PWK", typeof(X12_ID_755_5), typeof(X12_ID_756_5))]
     public class PWK_ClaimSupplementalInformation_3 : PWK, I_PWK<C002_ActionsIndicated_2>
     {
-        
+
         /// <summary>
         /// Report Type Code
         /// </summary>
@@ -7360,7 +7000,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(9)]
         public override string RequestCategoryCode_09 { get; set; }
     }
-    
+
     /// <summary>
     /// Durable Medical Equipment Certificate of Medical Necessity Indicator
     /// </summary>
@@ -7369,7 +7009,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("PWK", typeof(X12_ID_755_2), typeof(X12_ID_756))]
     public class PWK_DurableMedicalEquipmentCertificateofMedicalNecessityIndicator : PWK, I_PWK<C002_ActionsIndicated_2>
     {
-        
+
         /// <summary>
         /// Report Type Code
         /// </summary>
@@ -7439,7 +7079,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(9)]
         public override string RequestCategoryCode_09 { get; set; }
     }
-    
+
     /// <summary>
     /// Ambulance Patient Count
     /// </summary>
@@ -7448,7 +7088,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("QTY", typeof(X12_ID_673_11))]
     public class QTY_AmbulancePatientCount : QTY, I_QTY<C001_CompositeUnitOfMeasure>
     {
-        
+
         /// <summary>
         /// Quantity Qualifier
         /// </summary>
@@ -7483,7 +7123,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public override string FreeformInformation_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Obstetric Anesthesia Additional Units
     /// </summary>
@@ -7492,7 +7132,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("QTY", typeof(X12_ID_673_4))]
     public class QTY_ObstetricAnesthesiaAdditionalUnits : QTY, I_QTY<C001_CompositeUnitOfMeasure>
     {
-        
+
         /// <summary>
         /// Quantity Qualifier
         /// </summary>
@@ -7527,7 +7167,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public override string FreeformInformation_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Adjusted Repriced Claim Number
     /// </summary>
@@ -7536,7 +7176,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_12))]
     public class REF_AdjustedRepricedClaimNumber : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -7570,7 +7210,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Adjusted Repriced Line Item Reference Number
     /// </summary>
@@ -7579,7 +7219,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_33))]
     public class REF_AdjustedRepricedLineItemReferenceNumber : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -7613,16 +7253,59 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Assistant Surgeon Secondary Identification
     /// </summary>
     [Serializable()]
     [DataContract()]
     [Segment("REF", typeof(X12_ID_128_23))]
-    public class REF_AssistantSurgeonSecondaryIdentification : REF, I_REF<C040_ReferenceIdentifier_3>
+    public class REF_AssistantSurgeonSecondaryIdentification : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Required]
+        [DataElement("128", typeof(X12_ID_128_23))]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Reference Identification
+        /// </summary>
+        [DataMember]
+        [RequiredAny(3)]
+        [Required]
+        [StringLength(1, 50)]
+        [DataElement("127", typeof(X12_AN))]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [StringLength(1, 80)]
+        [DataElement("352", typeof(X12_AN))]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
+    }
+
+    /// <summary>
+    /// Assistant Surgeon Secondary Identification
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_23))]
+    public class REF_AssistantSurgeonSecondaryIdentification_2 : REF, I_REF<C040_ReferenceIdentifier_3>
+    {
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -7656,7 +7339,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier_3 ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Billing Provider Secondary Identification
     /// </summary>
@@ -7665,7 +7348,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_2))]
     public class REF_BillingProviderSecondaryIdentification : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -7699,7 +7382,50 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
+    /// <summary>
+    /// Billing Provider Secondary Identification
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_2))]
+    public class REF_BillingProviderSecondaryIdentification_2 : REF, I_REF<C040_ReferenceIdentifier_3>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Required]
+        [DataElement("128", typeof(X12_ID_128_2))]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Reference Identification
+        /// </summary>
+        [DataMember]
+        [RequiredAny(3)]
+        [Required]
+        [StringLength(1, 50)]
+        [DataElement("127", typeof(X12_AN))]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [StringLength(1, 80)]
+        [DataElement("352", typeof(X12_AN))]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_3 ReferenceIdentifier_04 { get; set; }
+    }
+
     /// <summary>
     /// Billing Provider Tax Identification
     /// </summary>
@@ -7708,7 +7434,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_21))]
     public class REF_BillingProviderTaxIdentification : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -7742,7 +7468,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Billing Provider Tax Identification
     /// </summary>
@@ -7751,7 +7477,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_22))]
     public class REF_BillingProviderTaxIdentification_2 : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -7785,7 +7511,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Billing Provider UPIN/License Information
     /// </summary>
@@ -7794,7 +7520,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_50))]
     public class REF_BillingProviderUPIN : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -7828,7 +7554,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Care Plan Oversight
     /// </summary>
@@ -7837,7 +7563,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_29))]
     public class REF_CarePlanOversight : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -7871,7 +7597,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Claim Identification Number For Clearinghouses and Other Transmission Intermediaries
     /// </summary>
@@ -7880,7 +7606,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_14))]
     public class REF_ClaimIdentificationNumberForClearinghousesAndOtherTransmissionIntermediaries : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -7914,7 +7640,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Clinical Laboratory Improvement Amendment (CLIA) Number
     /// </summary>
@@ -7923,7 +7649,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_16))]
     public class REF_ClinicalLaboratoryImprovementAmendment : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -7957,7 +7683,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Demonstration Project Identifier
     /// </summary>
@@ -7966,7 +7692,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_19))]
     public class REF_DemonstrationProjectIdentifier : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8000,7 +7726,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Immunization Batch Number
     /// </summary>
@@ -8009,7 +7735,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_42))]
     public class REF_ImmunizationBatchNumber : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8043,7 +7769,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Investigational Device Exemption Number
     /// </summary>
@@ -8052,7 +7778,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_13))]
     public class REF_InvestigationalDeviceExemptionNumber : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8086,7 +7812,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Line Item Control Number
     /// </summary>
@@ -8095,7 +7821,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_28))]
     public class REF_LineItemControlNumber : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8129,7 +7855,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Mammography Certification Number
     /// </summary>
@@ -8138,7 +7864,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_11))]
     public class REF_MammographyCertificationNumber : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8172,7 +7898,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Mandatory Medicare (Section 4081) Crossover Indicator
     /// </summary>
@@ -8181,7 +7907,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_9), typeof(X12_ID_127_2))]
     public class REF_MandatoryMedicare : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8214,7 +7940,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Medical Record Number
     /// </summary>
@@ -8223,7 +7949,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_17))]
     public class REF_MedicalRecordNumber : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8257,7 +7983,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Ordering Provider Secondary Identification
     /// </summary>
@@ -8266,7 +7992,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_18))]
     public class REF_OrderingProviderSecondaryIdentification : REF, I_REF<C040_ReferenceIdentifier_3>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8300,7 +8026,50 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier_3 ReferenceIdentifier_04 { get; set; }
     }
-    
+
+    /// <summary>
+    /// Ordering Provider Secondary Identification
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_18))]
+    public class REF_OrderingProviderSecondaryIdentification_2 : REF, I_REF<C040_ReferenceIdentifier>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Required]
+        [DataElement("128", typeof(X12_ID_128_18))]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Reference Identification
+        /// </summary>
+        [DataMember]
+        [RequiredAny(3)]
+        [Required]
+        [StringLength(1, 50)]
+        [DataElement("127", typeof(X12_AN))]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [StringLength(1, 80)]
+        [DataElement("352", typeof(X12_AN))]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
+    }
+
     /// <summary>
     /// Other Payer Claim Adjustment Indicator
     /// </summary>
@@ -8309,7 +8078,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_26))]
     public class REF_OtherPayerClaimAdjustmentIndicator : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8343,7 +8112,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Other Payer Claim Control Number
     /// </summary>
@@ -8352,7 +8121,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_8))]
     public class REF_OtherPayerClaimControlNumber : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8386,7 +8155,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Other Payer Prior Authorization Number
     /// </summary>
@@ -8395,7 +8164,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_6))]
     public class REF_OtherPayerPriorAuthorizationNumber : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8429,7 +8198,50 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
+    /// <summary>
+    /// Other Payer Prior Authorization Number
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_6))]
+    public class REF_OtherPayerPriorAuthorizationNumber_2 : REF, I_REF<C040_ReferenceIdentifier_3>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Required]
+        [DataElement("128", typeof(X12_ID_128_6))]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Reference Identification
+        /// </summary>
+        [DataMember]
+        [RequiredAny(3)]
+        [Required]
+        [StringLength(1, 50)]
+        [DataElement("127", typeof(X12_AN))]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [StringLength(1, 80)]
+        [DataElement("352", typeof(X12_AN))]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_3 ReferenceIdentifier_04 { get; set; }
+    }
+
     /// <summary>
     /// Other Payer Referral Number
     /// </summary>
@@ -8438,7 +8250,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_3))]
     public class REF_OtherPayerReferralNumber : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8472,7 +8284,50 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
+    /// <summary>
+    /// Other Payer Referral Number
+    /// </summary>
+    [Serializable()]
+    [DataContract()]
+    [Segment("REF", typeof(X12_ID_128_3))]
+    public class REF_OtherPayerReferralNumber_2 : REF, I_REF<C040_ReferenceIdentifier_3>
+    {
+
+        /// <summary>
+        /// Reference Identification Qualifier
+        /// </summary>
+        [DataMember]
+        [Required]
+        [DataElement("128", typeof(X12_ID_128_3))]
+        [Pos(1)]
+        public override string ReferenceIdentificationQualifier_01 { get; set; }
+        /// <summary>
+        /// Reference Identification
+        /// </summary>
+        [DataMember]
+        [RequiredAny(3)]
+        [Required]
+        [StringLength(1, 50)]
+        [DataElement("127", typeof(X12_AN))]
+        [Pos(2)]
+        public override string MemberGrouporPolicyNumber_02 { get; set; }
+        /// <summary>
+        /// Description
+        /// </summary>
+        [DataMember]
+        [StringLength(1, 80)]
+        [DataElement("352", typeof(X12_AN))]
+        [Pos(3)]
+        public override string Description_03 { get; set; }
+        /// <summary>
+        /// Reference Identifier
+        /// </summary>
+        [DataMember]
+        [Pos(4)]
+        public virtual C040_ReferenceIdentifier_3 ReferenceIdentifier_04 { get; set; }
+    }
+
     /// <summary>
     /// Other Payer Secondary Identifier
     /// </summary>
@@ -8481,7 +8336,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_75))]
     public class REF_OtherPayerSecondaryIdentifier : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8515,7 +8370,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Other Payer Service Facility Location Secondary Identification
     /// </summary>
@@ -8524,7 +8379,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_25))]
     public class REF_OtherPayerServiceFacilityLocationSecondaryIdentification : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8558,7 +8413,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Other Subscriber Secondary Identification
     /// </summary>
@@ -8567,7 +8422,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_60))]
     public class REF_OtherSubscriberSecondaryIdentification : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8601,7 +8456,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Pay-To Plan Secondary Identification
     /// </summary>
@@ -8610,7 +8465,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_51))]
     public class REF_Pay : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8644,7 +8499,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Prescription or Compound Drug Association Number
     /// </summary>
@@ -8653,7 +8508,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_34))]
     public class REF_PrescriptionorCompoundDrugAssociationNumber : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8687,7 +8542,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Property and Casualty Claim Number
     /// </summary>
@@ -8696,7 +8551,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_69))]
     public class REF_PropertyandCasualtyClaimNumber : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8730,7 +8585,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Property and Casualty Patient Identifier
     /// </summary>
@@ -8739,7 +8594,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_31))]
     public class REF_PropertyandCasualtyPatientIdentifier : REF, I_REF<C040_ReferenceIdentifier_7>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8773,7 +8628,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier_7 ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Referring Clinical Laboratory Improvement Amendment (CLIA) Facility Identification
     /// </summary>
@@ -8782,7 +8637,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_41))]
     public class REF_ReferringClinicalLaboratoryImprovementAmendment : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8816,7 +8671,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Repriced Claim Number
     /// </summary>
@@ -8825,7 +8680,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_10))]
     public class REF_RepricedClaimNumber : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8859,7 +8714,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Repriced Line Item Reference Number
     /// </summary>
@@ -8868,7 +8723,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_32))]
     public class REF_RepricedLineItemReferenceNumber : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8902,7 +8757,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Service Authorization Exception Code
     /// </summary>
@@ -8911,7 +8766,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("REF", typeof(X12_ID_128_7), typeof(X12_ID_127))]
     public class REF_ServiceAuthorizationExceptionCode : REF, I_REF<C040_ReferenceIdentifier>
     {
-        
+
         /// <summary>
         /// Reference Identification Qualifier
         /// </summary>
@@ -8944,7 +8799,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(4)]
         public virtual C040_ReferenceIdentifier ReferenceIdentifier_04 { get; set; }
     }
-    
+
     /// <summary>
     /// Other Subscriber Information
     /// </summary>
@@ -8953,7 +8808,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("SBR")]
     public class SBR_OtherSubscriberInformation : SBR, I_SBR
     {
-        
+
         /// <summary>
         /// Payer Responsibility Sequence Number Code
         /// </summary>
@@ -9022,7 +8877,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(9)]
         public override string ClaimFilingIndicatorCode_09 { get; set; }
     }
-    
+
     /// <summary>
     /// Subscriber Information
     /// </summary>
@@ -9031,7 +8886,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("SBR")]
     public class SBR_SubscriberInformation : SBR, I_SBR
     {
-        
+
         /// <summary>
         /// Payer Responsibility Sequence Number Code
         /// </summary>
@@ -9099,7 +8954,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(9)]
         public override string ClaimFilingIndicatorCode_09 { get; set; }
     }
-    
+
     /// <summary>
     /// Professional Service
     /// </summary>
@@ -9108,7 +8963,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("SV1")]
     public class SV1_ProfessionalService : SV1, I_SV1<C003_CompositeMedicalProcedureIdentifier_12, C004_CompositeDiagnosisCodePointer>
     {
-        
+
         /// <summary>
         /// Composite Medical Procedure Identifier
         /// </summary>
@@ -9270,7 +9125,7 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(21)]
         public override string ProviderAgreementCode_21 { get; set; }
     }
-    
+
     /// <summary>
     /// Durable Medical Equipment Service
     /// </summary>
@@ -9279,7 +9134,7 @@ namespace EdiFabric.Templates.Hipaa5010
     [Segment("SV5")]
     public class SV5_DurableMedicalEquipmentService : SV5, I_SV5<C003_CompositeMedicalProcedureIdentifier_9>
     {
-        
+
         /// <summary>
         /// Composite Medical Procedure Identifier
         /// </summary>
@@ -9340,16 +9195,16 @@ namespace EdiFabric.Templates.Hipaa5010
         [Pos(7)]
         public override string PrognosisCode_07 { get; set; }
     }
-    
+
     /// <summary>
     /// Line Adjudication Information
     /// </summary>
     [Serializable()]
     [DataContract()]
     [Segment("SVD")]
-    public class SVD_LineAdjudicationInformation : SVD, I_SVD<C003_CompositeMedicalProcedureIdentifier_7>
+    public class SVD_LineAdjudicationInformation_3 : SVD, I_SVD<C003_CompositeMedicalProcedureIdentifier_12>
     {
-        
+
         /// <summary>
         /// Identification Code
         /// </summary>
@@ -9372,9 +9227,8 @@ namespace EdiFabric.Templates.Hipaa5010
         /// Composite Medical Procedure Identifier
         /// </summary>
         [DataMember]
-        [Required]
         [Pos(3)]
-        public virtual C003_CompositeMedicalProcedureIdentifier_7 CompositeMedicalProcedureIdentifier_03 { get; set; }
+        public virtual C003_CompositeMedicalProcedureIdentifier_12 CompositeMedicalProcedureIdentifier_03 { get; set; }
         /// <summary>
         /// Product/Service ID
         /// </summary>

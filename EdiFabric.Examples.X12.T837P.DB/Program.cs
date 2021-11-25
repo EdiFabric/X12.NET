@@ -42,8 +42,6 @@ namespace EdiFabric.Examples.X12.T837P.DB
             using (var db = new HIPAA_5010_837P_Context())
             {
                 tran.ClearCache();
-                db.Configuration.AutoDetectChangesEnabled = false;
-                db.Configuration.ValidateOnSaveEnabled = false;
                 db.TS837P.Add(tran);
                 db.SaveChanges();
             }
