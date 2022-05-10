@@ -32,6 +32,9 @@
 
             //  Turn auto-trailers off
             WriteEDIWithoutAutoTrailers.Run();
+
+            //  Write with obfuscation
+            WriteEDIWithObfuscation.Run();
         }
     }
 }
