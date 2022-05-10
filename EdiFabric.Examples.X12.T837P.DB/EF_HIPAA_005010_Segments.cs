@@ -85,7 +85,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("AMT", typeof(X12_ID_522_16))]
+    [Segment("AMT")]
     public class AMT_PatientAmountPaid : AMT, I_AMT
     {
 
@@ -1948,7 +1948,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("DTP", typeof(X12_ID_374_12), typeof(X12_ID_1250_6))]
+    [Segment("DTP")]
     public class DTP_ClaimCheckOrRemittanceDate : DTP, I_DTP
     {
 
@@ -5145,7 +5145,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("NM1", typeof(X12_ID_98_13), typeof(X12_ID_1065))]
+    [Segment("NM1")]
     public class NM1_PatientName_3 : NM1, I_NM1
     {
 
@@ -6229,7 +6229,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("NTE", typeof(X12_ID_363_5))]
+    [Segment("NTE")]
     public class NTE_ClaimNote_2 : NTE, I_NTE
     {
 
@@ -6525,7 +6525,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("PER", typeof(X12_ID_366_4))]
+    [Segment("PER")]
     public class PER_BillingProviderContactInformation : PER, I_PER
     {
 
@@ -6610,7 +6610,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("PER", typeof(X12_ID_366_4))]
+    [Segment("PER")]
     public class PER_PropertyandCasualtyPatientContactInformation : PER, I_PER
     {
 
@@ -6927,7 +6927,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("PWK", typeof(X12_ID_755_5), typeof(X12_ID_756_5))]
+    [Segment("PWK")]
     public class PWK_ClaimSupplementalInformation_3 : PWK, I_PWK<C002_ActionsIndicated_2>
     {
 
@@ -7259,7 +7259,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("REF", typeof(X12_ID_128_23))]
+    [Segment("REF")]
     public class REF_AssistantSurgeonSecondaryIdentification : REF, I_REF<C040_ReferenceIdentifier>
     {
 
@@ -7302,7 +7302,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("REF", typeof(X12_ID_128_23))]
+    [Segment("REF")]
     public class REF_AssistantSurgeonSecondaryIdentification_2 : REF, I_REF<C040_ReferenceIdentifier_3>
     {
 
@@ -7388,7 +7388,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("REF", typeof(X12_ID_128_2))]
+    [Segment("REF")]
     public class REF_BillingProviderSecondaryIdentification_2 : REF, I_REF<C040_ReferenceIdentifier_3>
     {
 
@@ -7989,7 +7989,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("REF", typeof(X12_ID_128_18))]
+    [Segment("REF")]
     public class REF_OrderingProviderSecondaryIdentification : REF, I_REF<C040_ReferenceIdentifier_3>
     {
 
@@ -8032,7 +8032,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("REF", typeof(X12_ID_128_18))]
+    [Segment("REF")]
     public class REF_OrderingProviderSecondaryIdentification_2 : REF, I_REF<C040_ReferenceIdentifier>
     {
 
@@ -8376,7 +8376,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("REF", typeof(X12_ID_128_25))]
+    [Segment("REF")]
     public class REF_OtherPayerServiceFacilityLocationSecondaryIdentification : REF, I_REF<C040_ReferenceIdentifier>
     {
 
@@ -8505,7 +8505,7 @@ namespace EdiFabric.Templates.Hipaa5010
     /// </summary>
     [Serializable()]
     [DataContract()]
-    [Segment("REF", typeof(X12_ID_128_34))]
+    [Segment("REF")]
     public class REF_PrescriptionorCompoundDrugAssociationNumber : REF, I_REF<C040_ReferenceIdentifier>
     {
 
