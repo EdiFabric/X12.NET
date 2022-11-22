@@ -6,18 +6,16 @@ The examples are organized into different projects in two logical categories: by
 2. Requirements
 - Visual Studio, compatible with the supported .NET versions
 - Minimum .NET Framework 4.5 or .NET Core 3.1. All projects target .NET Framework 4.5, however, the Target Framework from each project's properties can be changed to .NET Core 3.1.
-- EdiFabric trial NuGet packages and serial number.
+- EdiFabric trial DLLs and serial number.
 
-3. Setup
-Rebuild the solution to install the trial packages from nuget.org. If there are any build errors, contact us at https://support.edifabric.com/hc/en-us/requests/new for assistance.
-
-NOTE: it is possible to also reference DLLs instead of NuGet packages. Change the .nupkg extension of the packages to .zip, unzip them, and extract the DLL files. 
-Then uninstall the NuGet packages from each project and replace them with DLL references.
-
-4. Serial Key
-Download the serial key from https://sowl.co/oApEt. 
-The serial key is included in the file serial.key in folder edifabric-trial. Ensure it is there and that the file is not empty. The serial key is loaded in the file SerialKey.cs in project EdiFabric.Examples.X12.Common. 
+3. Serial Key and EdiFabric trial DLLs
+Download the serial key and EdiFabric trial DLLs from https://sowl.co/oApEt. 
+The serial key is included in the file serial.key in folder edifabric-trial. Ensure it is there and that the file is not empty. The serial key is loaded in the file SerialKey.cs in project EdiFabric.Examples.EDIFACT.Common. 
 Open the file and ensure that the serialKeyPath is correct. If the serial key is invalid or the file is missing, contact us at https://support.edifabric.com/hc/en-us/requests/new for assistance.
+The trial DLLs are in folders net45 (for .NET Framework 4.5+) and netcoreapp3.1 (for .NET Core 3.1+).
+
+4. Setup
+Rebuild the solution. If there are any build errors, contact us at https://support.edifabric.com/hc/en-us/requests/new for assistance.
 
 5. Getting started
 To get started, set project EdiFabric.Examples.X12.Demo as the startup project, open Program.cs and follow the instructions there. This project allows you to quickly translate your own EDI files.
@@ -59,6 +57,11 @@ HIPAA 5010 837P
 All templates in EdiFabric.Templates.X12 and EdiFabric.Templates.Hipaa can be used for validation. 
 
 9. EDI Templates
+The trial comes with the following prebuilt template assemblies:
+
+EdiFabric.Templates.X12.dll - X12 ASC 004010
+EdiFabric.Templates.Hipaa.dll - X12 HIPAA 5010
+
 EdiFabric supports all X12/HIPAA versions and message types. We have an extensive library of EDI templates, however, if you can't find a particular transaction, please let us know. 
 The following templates are available out-of-the-box:
 
@@ -68,16 +71,8 @@ https://support.edifabric.com/hc/en-us/articles/360000360572-X12-2040-to-4010
 HIPAA
 https://support.edifabric.com/hc/en-us/articles/360000372751-HIPAA-270-271-276-277-278-820-834-835-837-999
 
-For an interactive view of all templates go to EdiNation's EDI Webpad (no registration is required):
-
-X12
-https://www.edination.com/edi-models-x12.html
-
-HIPAA
-https://www.edination.com/edi-models-hipaa.html
-
-IAIABC
-https://www.edination.com/edi-models-iaiabc.html
+For an interactive view of all templates go to EdiNation (no registration is required):
+https://edination.com/edi-formats.html
 
 10. Trial use
 The trial assemblies are valid for 14 days and are subject to EdiFabric's license terms available at https://www.edifabric.com/files/eula.pdf. Upon expiry, the trial packages will begin throwing exceptions. 
@@ -104,5 +99,5 @@ https://support.edifabric.com
 Support
 https://support.edifabric.com/hc/en-us/requests/new
 
-Last updated on January 7, 2021
-2021 © EdiFabric
+Last updated on November 22, 2022
+2022 © EdiFabric
