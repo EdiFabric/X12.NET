@@ -80,7 +80,7 @@ The following templates are available out-of-the-box:
 
 [HIPAA](https://support.edifabric.com/hc/en-us/articles/360000372751-HIPAA-270-271-276-277-278-820-834-835-837-999)
 
-For an interactive view of all templates go to EdiNation's EDI Webpad (no registration is required):
+For an interactive view of all templates go to EdiNation (no registration is required):
 
 [EdiNation](https://edination.com/edi-formats.html)
 
