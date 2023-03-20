@@ -42,6 +42,9 @@
     <Reference Include="EdiFabric.Templates.Edigas">
       <HintPath>..\..\edifabric-trial\net45\EdiFabric.Templates.Edigas.dll</HintPath>
     </Reference>
+    <Reference Include="EdiFabric.Templates.Hipaa">
+      <HintPath>..\..\edifabric-trial\net45\EdiFabric.Templates.Hipaa.dll</HintPath>
+    </Reference>
     <Reference Include="EdiFabric.Templates.Padis">
       <HintPath>..\..\edifabric-trial\net45\EdiFabric.Templates.Padis.dll</HintPath>
     </Reference>
