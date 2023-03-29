@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ValidateEDI\Program.cs" Link="Program.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ValidateEDI\Validate810.cs" Link="Validate810.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ValidateEDI\Validate837P.cs" Link="Validate837P.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ValidateEDI\Validate850.cs" Link="Validate850.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ValidateEDI\ValidateCustomEDICodes.cs" Link="ValidateCustomEDICodes.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ValidateEDI\ValidateDataElementTypes.cs" Link="ValidateDataElementTypes.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ValidateEDI\ValidateEDITransationsAfterRead.cs" Link="ValidateEDITransationsAfterRead.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ValidateEDI\ValidateEDITransationsAsync.cs" Link="ValidateEDITransationsAsync.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ValidateEDI\ValidateEDITransationsBeforeWrite.cs" Link="ValidateEDITransationsBeforeWrite.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ValidateEDI\ValidateEDITransationsWithCustomCode.cs" Link="ValidateEDITransationsWithCustomCode.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ValidateEDI\ValidateISAorGS.cs" Link="ValidateISAorGS.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EdiFabric.Examples.X12.Common\EdiFabric.Examples.X12.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="EdiFabric">
+      <HintPath>..\..\..\edifabric\net6.0\EdiFabric.dll</HintPath>
+    </Reference>
+    <Reference Include="EdiFabric.Templates.Hipaa">
+      <HintPath>..\..\..\edifabric\net6.0\EdiFabric.Templates.Hipaa.dll</HintPath>
+    </Reference>
+    <Reference Include="EdiFabric.Templates.X12">
+      <HintPath>..\..\..\edifabric\net6.0\EdiFabric.Templates.X12.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

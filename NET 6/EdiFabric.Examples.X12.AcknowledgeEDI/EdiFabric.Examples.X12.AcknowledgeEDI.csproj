@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.AcknowledgeEDI\Generate997ForDuplicateGroup.cs" Link="Generate997ForDuplicateGroup.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.AcknowledgeEDI\Generate997ForDuplicateInterchange.cs" Link="Generate997ForDuplicateInterchange.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.AcknowledgeEDI\Generate997ForDuplicateTransaction.cs" Link="Generate997ForDuplicateTransaction.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.AcknowledgeEDI\Generate997WithCustomControlNumbers.cs" Link="Generate997WithCustomControlNumbers.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.AcknowledgeEDI\GenerateInvalid997.cs" Link="GenerateInvalid997.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.AcknowledgeEDI\GenerateValid997.cs" Link="GenerateValid997.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.AcknowledgeEDI\Program.cs" Link="Program.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.AcknowledgeEDI\Read997.cs" Link="Read997.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EdiFabric.Examples.X12.Common\EdiFabric.Examples.X12.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="EdiFabric">
+      <HintPath>..\..\..\edifabric\net6.0\EdiFabric.dll</HintPath>
+    </Reference>
+    <Reference Include="EdiFabric.Templates.X12">
+      <HintPath>..\..\..\edifabric\net6.0\EdiFabric.Templates.X12.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ReadEDI\Program.cs" Link="Program.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ReadEDI\ReadCustomTransaction.cs" Link="ReadCustomTransaction.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ReadEDI\ReadEDIFileBatch.cs" Link="ReadEDIFileBatch.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ReadEDI\ReadEDIFileCorrupt.cs" Link="ReadEDIFileCorrupt.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ReadEDI\ReadEDIFileSplitting.cs" Link="ReadEDIFileSplitting.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ReadEDI\ReadEDIFileStreaming.cs" Link="ReadEDIFileStreaming.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ReadEDI\ReadEDIFileStreamingAsync.cs" Link="ReadEDIFileStreamingAsync.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ReadEDI\ReadEDIFileToEnd.cs" Link="ReadEDIFileToEnd.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ReadEDI\ReadEDIFileToEndAsync.cs" Link="ReadEDIFileToEndAsync.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ReadEDI\ReadEDIFileTransactionOnly.cs" Link="ReadEDIFileTransactionOnly.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ReadEDI\ReadEDIFileWithCustomISAorGS.cs" Link="ReadEDIFileWithCustomISAorGS.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ReadEDI\ReadEDIFileWithErrors.cs" Link="ReadEDIFileWithErrors.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ReadEDI\ReadEDIFileWithInheritedTemplate.cs" Link="ReadEDIFileWithInheritedTemplate.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ReadEDI\ReadEDIFileWithTemplateResolution.cs" Link="ReadEDIFileWithTemplateResolution.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EdiFabric.Examples.X12.Common\EdiFabric.Examples.X12.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="EdiFabric">
+      <HintPath>..\..\..\edifabric\net6.0\EdiFabric.dll</HintPath>
+    </Reference>
+    <Reference Include="EdiFabric.Templates.Hipaa">
+      <HintPath>..\..\..\edifabric\net6.0\EdiFabric.Templates.Hipaa.dll</HintPath>
+    </Reference>
+    <Reference Include="EdiFabric.Templates.X12">
+      <HintPath>..\..\..\edifabric\net6.0\EdiFabric.Templates.X12.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
