@@ -20,7 +20,7 @@ namespace EdiFabric.Examples.X12.AcknowledgeEDI
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var edi = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\DuplicateInterchange.txt");
+            var edi = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\..\Files\X12\DuplicateInterchange.txt");
 
             var settings = new AckSettings
             {

@@ -22,7 +22,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
             Debug.WriteLine("******************************");
 
             //  1.  Load to a stream 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\PurchaseOrders.txt");
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\..\Files\X12\PurchaseOrders.txt");
 
             //  2. Read item by item, that is each call to Read() 
             //  brings back either a control segment (ISA, GS, GE or IEA) or a transaction

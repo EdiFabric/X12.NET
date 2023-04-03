@@ -25,7 +25,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
             Debug.WriteLine("******************************");
 
             //  1.  Load to a stream 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\PurchaseOrderCustom2.txt");
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\..\Files\X12\PurchaseOrderCustom2.txt");
 
             //  2.  Read all the contents
             List<IEdiItem> ediItems;

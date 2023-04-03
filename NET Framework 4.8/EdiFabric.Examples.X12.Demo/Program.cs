@@ -29,7 +29,7 @@ namespace EdiFabric.Examples.X12.Demo
         public static void Translate_X12_4010()
         {
             //  Change the path to point to your own file to test with
-            var path = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\PurchaseOrders.txt");
+            var path = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\..\Files\X12\PurchaseOrders.txt");
 
             List<IEdiItem> ediItems;
             using (var reader = new X12Reader(path, "EdiFabric.Templates.X12", new X12ReaderSettings { ContinueOnError = true }))
@@ -63,7 +63,7 @@ namespace EdiFabric.Examples.X12.Demo
         public static void Translate_HIPAA_5010()
         {
             //  Change the path to point to your own file to test with
-            var path = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\HIPAA\ClaimPayment.txt");
+            var path = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\..\Files\HIPAA\ClaimPayment.txt");
 
             List<IEdiItem> ediItems;
             using (var reader = new X12Reader(path, "EdiFabric.Templates.Hipaa", new X12ReaderSettings { ContinueOnError = true }))

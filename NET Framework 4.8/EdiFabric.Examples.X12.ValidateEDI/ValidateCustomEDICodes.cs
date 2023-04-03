@@ -30,7 +30,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             Dictionary<Type, Type> codeSetMap = new Dictionary<Type, Type>();
             codeSetMap.Add(typeof(X12_ID_353), typeof(X12_ID_353_PartnerA));
 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\MixedTransactions.txt");
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\..\Files\X12\MixedTransactions.txt");
 
             List<IEdiItem> ediItems;
             using (var reader = new X12Reader(ediStream, "EdiFabric.Templates.X12"))
@@ -70,7 +70,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             var codeSetMap = new Dictionary<string, List<string>>();
             codeSetMap.Add("X12_ID_128", new List<string> { "A", "B", "C", "D", "E" });
 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\MixedTransactions.txt");
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\..\Files\X12\MixedTransactions.txt");
 
             List<IEdiItem> ediItems;
             using (var reader = new X12Reader(ediStream, "EdiFabric.Templates.X12", new X12ReaderSettings { DataElementCodesMap = codeSetMap }))

@@ -21,10 +21,10 @@ namespace EdiFabric.Examples.X12.ModifyTemplates
             SerialKey.Set(Common.SerialKey.Get());
 
             // Parse 850
-            ParsePO(@"\..\..\..\Files\X12\PurchaseOrder.txt");
+            ParsePO(@"\..\..\..\..\Files\X12\PurchaseOrder.txt");
 
             //  Parse modified 850 
-            ParseModifiedPO(@"\..\..\..\Files\X12\PurchaseOrderModified.txt");
+            ParseModifiedPO(@"\..\..\..\..\Files\X12\PurchaseOrderModified.txt");
         }
 
         public static void ParsePO(string ediFile)

@@ -22,7 +22,7 @@ namespace EdiFabric.Examples.X12.T837P.DB
         {
             SerialKey.Set(Common.SerialKey.Get());
 
-            var path = Directory.GetCurrentDirectory() + @"\..\..\..\Files\Hipaa\ClaimPayment.txt";
+            var path = Directory.GetCurrentDirectory() + @"\..\..\..\..\Files\Hipaa\ClaimPayment.txt";
             Stream ediStream = File.OpenRead(path);
             
             List<IEdiItem> ediItems;

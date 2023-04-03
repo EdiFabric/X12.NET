@@ -22,7 +22,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\Invoice.txt");
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\..\Files\X12\Invoice.txt");
             
             List<IEdiItem> ediItems;
             using (var reader = new X12Reader(ediStream, "EdiFabric.Templates.X12"))

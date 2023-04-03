@@ -23,7 +23,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\Files\X12\MixedTransactionsNoEnvelopes.txt");
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\..\Files\X12\MixedTransactionsNoEnvelopes.txt");
 
             //  Set the NoEnvelope flag to true
             List<IEdiItem> ediItems;

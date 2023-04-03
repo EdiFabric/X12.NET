@@ -9,7 +9,7 @@ namespace EdiFabric.Examples.X12.Common
         static SerialKey()
         {
             // To get a free serial key go to https://sowl.co/oApEt
-            var serialKeyPath = @"../../../../edifabric-trial/serial.key";
+            var serialKeyPath = @"../../../../../edifabric/serial.key";
 
             if (!File.Exists(serialKeyPath))
                 throw new Exception("Set the path to the serial.key file in project EdiFabric.Examples.X12.Common, file SerialKey.cs!");
