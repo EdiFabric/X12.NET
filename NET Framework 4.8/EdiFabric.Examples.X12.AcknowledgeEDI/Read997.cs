@@ -23,7 +23,7 @@ namespace EdiFabric.Examples.X12.AcknowledgeEDI
             Debug.WriteLine("******************************");
 
             //  1.  Load to a stream 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\..\Files\X12\997.txt");
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\X12\997.txt");
 
             //  2.  Read all the contents
             List<IEdiItem> ediItems;

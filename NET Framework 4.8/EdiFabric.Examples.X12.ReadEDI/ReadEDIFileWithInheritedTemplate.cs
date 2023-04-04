@@ -8,6 +8,7 @@ using EdiFabric.Core.Annotations.Edi;
 using EdiFabric.Core.Annotations.Validation;
 using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Edi.X12;
+using EdiFabric.Examples.X12.Common;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Templates.X12004010;
 
@@ -25,7 +26,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
             Debug.WriteLine("******************************");
 
             //  1.  Load to a stream 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\..\Files\X12\PurchaseOrderCustom2.txt");
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\X12\PurchaseOrderCustom2.txt");
 
             //  2.  Read all the contents
             List<IEdiItem> ediItems;

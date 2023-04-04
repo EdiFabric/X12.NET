@@ -160,3 +160,6 @@
 /NET Framework 4.8/EdiFabric.Examples.X12.XML/bin
 /NET Framework 4.8/EdiFabric.Examples.X12.XML/obj
 /NET Framework 4.8/packages
+/NET 6/EdiFabric.Examples.X12.DB/Migrations
+/NET 6/EdiFabric.Examples.X12.T837P.DB/Migrations
+/NET Framework 4.8/EdiFabric.Examples.X12.Common/EdiFabric.Examples.X12.Common.csproj.user

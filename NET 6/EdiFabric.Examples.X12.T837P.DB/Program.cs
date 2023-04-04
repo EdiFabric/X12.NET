@@ -4,6 +4,7 @@ using EdiFabric.Framework;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Framework.Writers;
 using EdiFabric.Templates.Hipaa5010;
+using Microsoft.EntityFrameworkCore.Metadata;
 using System.Text;
 
 namespace EdiFabric.Examples.EFCore.X12.TS837P
@@ -14,6 +15,7 @@ namespace EdiFabric.Examples.EFCore.X12.TS837P
         //  Before you run this you need to create a database
         //  Set this project to be the Startup Project and then open the Package Manager Console from Tools->NuGet Package Manager-> Package Manager Console
         //  In Package Manager Console select the Default Project to be this one
+        //  Disable the Nullable project setting
         //  Create the database with migrations in two steps:
         //  1. PM> Add-Migration InitialCreate
         //  2. PM> Update-Database
@@ -22,7 +24,7 @@ namespace EdiFabric.Examples.EFCore.X12.TS837P
         {
             SerialKey.Set(GetSerial());
 
-            var path = Directory.GetCurrentDirectory() + @"\..\..\..\ClaimPayment.txt";
+            var path = Directory.GetCurrentDirectory() + TestFilesPath + @"\HIPAA\ClaimPayment.txt";
             Stream ediStream = File.OpenRead(path);
 
             List<IEdiItem> ediItems;
@@ -85,12 +87,13 @@ namespace EdiFabric.Examples.EFCore.X12.TS837P
 
         public static string GetSerial()
         {
-            var serialKeyPath = @"../../../../../edifabric-trial/serial.key";
-
-            if (!File.Exists(serialKeyPath))
+            if (!File.Exists(SerialKeyPath))
                 throw new Exception("Set the correct path to the serial.key file!");
 
-            return File.ReadAllText(serialKeyPath).Trim(new[] { ' ', '\r', '\n' });
+            return File.ReadAllText(SerialKeyPath).Trim(new[] { ' ', '\r', '\n' });
         }
+
+        public static string TestFilesPath = @"\..\..\..\..\..\Files";
+        public static string SerialKeyPath = @"../../../../../../edifabric/serial.key";
     }
 }

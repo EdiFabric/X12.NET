@@ -72,8 +72,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X12", "X12", "{52BDC8F7-C3A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.Templates", "EdiFabric.Examples.X12.Templates\EdiFabric.Examples.X12.Templates.csproj", "{F4F8A3EE-C398-4DC0-95F4-C07540D66046}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.ModifyTemplates", "EdiFabric.Examples.X12.ModifyTemplates\EdiFabric.Examples.X12.ModifyTemplates.csproj", "{87E5E376-F387-45DA-B6C9-4081B9B92F52}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.Common", "EdiFabric.Examples.X12.Common\EdiFabric.Examples.X12.Common.csproj", "{2F959590-6223-4CFB-87B9-5F4A1FB251FE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.AcknowledgeEDI", "EdiFabric.Examples.X12.AcknowledgeEDI\EdiFabric.Examples.X12.AcknowledgeEDI.csproj", "{B5DF9C35-7995-4AD9-8649-64F450606001}"
@@ -94,57 +92,59 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.Vali
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.WriteEDI", "EdiFabric.Examples.X12.WriteEDI\EdiFabric.Examples.X12.WriteEDI.csproj", "{7EB0659A-4F91-4551-951F-01EAAC8F282B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.XML", "EdiFabric.Examples.X12.XML\EdiFabric.Examples.X12.XML.csproj", "{2833A502-1496-40A8-B14B-3474F90364EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.XML", "EdiFabric.Examples.X12.XML\EdiFabric.Examples.X12.XML.csproj", "{2833A502-1496-40A8-B14B-3474F90364EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T210", "EdiFabric.Examples.X12.T210\EdiFabric.Examples.X12.T210.csproj", "{6BB3DF59-3DE6-4CAB-A411-B91CB81F157F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T210", "EdiFabric.Examples.X12.T210\EdiFabric.Examples.X12.T210.csproj", "{6BB3DF59-3DE6-4CAB-A411-B91CB81F157F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T214", "EdiFabric.Examples.X12.T214\EdiFabric.Examples.X12.T214.csproj", "{76BE54DD-854E-4A05-A993-405F8F0F4612}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T214", "EdiFabric.Examples.X12.T214\EdiFabric.Examples.X12.T214.csproj", "{76BE54DD-854E-4A05-A993-405F8F0F4612}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T270", "EdiFabric.Examples.X12.T270\EdiFabric.Examples.X12.T270.csproj", "{63647E79-1F91-4C93-9840-A0919019076D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T270", "EdiFabric.Examples.X12.T270\EdiFabric.Examples.X12.T270.csproj", "{63647E79-1F91-4C93-9840-A0919019076D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T271", "EdiFabric.Examples.X12.T271\EdiFabric.Examples.X12.T271.csproj", "{064D1A2E-97D7-43EC-BD7B-DE9C2DB5A7F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T271", "EdiFabric.Examples.X12.T271\EdiFabric.Examples.X12.T271.csproj", "{064D1A2E-97D7-43EC-BD7B-DE9C2DB5A7F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T276", "EdiFabric.Examples.X12.T276\EdiFabric.Examples.X12.T276.csproj", "{FE198BD6-5420-4332-89EA-58F8E64F1792}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T276", "EdiFabric.Examples.X12.T276\EdiFabric.Examples.X12.T276.csproj", "{FE198BD6-5420-4332-89EA-58F8E64F1792}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T277", "EdiFabric.Examples.X12.T277\EdiFabric.Examples.X12.T277.csproj", "{26647D86-09A6-4D7C-BA49-148EF93070CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T277", "EdiFabric.Examples.X12.T277\EdiFabric.Examples.X12.T277.csproj", "{26647D86-09A6-4D7C-BA49-148EF93070CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T278", "EdiFabric.Examples.X12.T278\EdiFabric.Examples.X12.T278.csproj", "{60583023-391E-45C8-BF62-99FF57435E7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T278", "EdiFabric.Examples.X12.T278\EdiFabric.Examples.X12.T278.csproj", "{60583023-391E-45C8-BF62-99FF57435E7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T404", "EdiFabric.Examples.X12.T404\EdiFabric.Examples.X12.T404.csproj", "{FCE49119-250F-42CE-AF0F-654C0C3331A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T404", "EdiFabric.Examples.X12.T404\EdiFabric.Examples.X12.T404.csproj", "{FCE49119-250F-42CE-AF0F-654C0C3331A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T810", "EdiFabric.Examples.X12.T810\EdiFabric.Examples.X12.T810.csproj", "{040676D6-5058-4F3F-953B-48CD49A735DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T810", "EdiFabric.Examples.X12.T810\EdiFabric.Examples.X12.T810.csproj", "{040676D6-5058-4F3F-953B-48CD49A735DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T820", "EdiFabric.Examples.X12.T820\EdiFabric.Examples.X12.T820.csproj", "{1F6BA901-3BE4-4EFF-97CF-CDAEB459B460}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T820", "EdiFabric.Examples.X12.T820\EdiFabric.Examples.X12.T820.csproj", "{1F6BA901-3BE4-4EFF-97CF-CDAEB459B460}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T820HIX", "EdiFabric.Examples.X12.T820HIX\EdiFabric.Examples.X12.T820HIX.csproj", "{A19B694E-555E-4B87-95A0-401CD167400E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T820HIX", "EdiFabric.Examples.X12.T820HIX\EdiFabric.Examples.X12.T820HIX.csproj", "{A19B694E-555E-4B87-95A0-401CD167400E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T824", "EdiFabric.Examples.X12.T824\EdiFabric.Examples.X12.T824.csproj", "{ECB8C535-12B5-46AA-AE15-33B757C7050E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T824", "EdiFabric.Examples.X12.T824\EdiFabric.Examples.X12.T824.csproj", "{ECB8C535-12B5-46AA-AE15-33B757C7050E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T832", "EdiFabric.Examples.X12.T832\EdiFabric.Examples.X12.T832.csproj", "{92079B11-3128-4078-B6E5-C2FA26C78C73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T832", "EdiFabric.Examples.X12.T832\EdiFabric.Examples.X12.T832.csproj", "{92079B11-3128-4078-B6E5-C2FA26C78C73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T834", "EdiFabric.Examples.X12.T834\EdiFabric.Examples.X12.T834.csproj", "{E773726A-43AF-4023-8324-2C19727936CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T834", "EdiFabric.Examples.X12.T834\EdiFabric.Examples.X12.T834.csproj", "{E773726A-43AF-4023-8324-2C19727936CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T835", "EdiFabric.Examples.X12.T835\EdiFabric.Examples.X12.T835.csproj", "{2E11CE6F-2199-49EF-81E9-1FF55CD1DC6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T835", "EdiFabric.Examples.X12.T835\EdiFabric.Examples.X12.T835.csproj", "{2E11CE6F-2199-49EF-81E9-1FF55CD1DC6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T837D", "EdiFabric.Examples.X12.T837D\EdiFabric.Examples.X12.T837D.csproj", "{9F5DC6CC-5F58-469F-890A-E1364B3D9CC1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T837D", "EdiFabric.Examples.X12.T837D\EdiFabric.Examples.X12.T837D.csproj", "{9F5DC6CC-5F58-469F-890A-E1364B3D9CC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T837I", "EdiFabric.Examples.X12.T837I\EdiFabric.Examples.X12.T837I.csproj", "{01881B95-706C-4385-9215-F7B4951C13A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T837I", "EdiFabric.Examples.X12.T837I\EdiFabric.Examples.X12.T837I.csproj", "{01881B95-706C-4385-9215-F7B4951C13A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T837P", "EdiFabric.Examples.X12.T837P\EdiFabric.Examples.X12.T837P.csproj", "{5825B47F-5909-4073-995B-DB04975A78CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T837P", "EdiFabric.Examples.X12.T837P\EdiFabric.Examples.X12.T837P.csproj", "{5825B47F-5909-4073-995B-DB04975A78CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T837P.DB", "EdiFabric.Examples.X12.T837P.DB\EdiFabric.Examples.X12.T837P.DB.csproj", "{F777ED05-32A1-4E21-A36D-EFFC5E6D4FE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T837P.DB", "EdiFabric.Examples.X12.T837P.DB\EdiFabric.Examples.X12.T837P.DB.csproj", "{F777ED05-32A1-4E21-A36D-EFFC5E6D4FE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T850", "EdiFabric.Examples.X12.T850\EdiFabric.Examples.X12.T850.csproj", "{662166BB-BB39-40AD-83EE-1267CDC7D4A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T850", "EdiFabric.Examples.X12.T850\EdiFabric.Examples.X12.T850.csproj", "{662166BB-BB39-40AD-83EE-1267CDC7D4A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T855", "EdiFabric.Examples.X12.T855\EdiFabric.Examples.X12.T855.csproj", "{9C6CE501-9136-4653-8A57-E62AC548B6DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T855", "EdiFabric.Examples.X12.T855\EdiFabric.Examples.X12.T855.csproj", "{9C6CE501-9136-4653-8A57-E62AC548B6DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T856", "EdiFabric.Examples.X12.T856\EdiFabric.Examples.X12.T856.csproj", "{BB122F05-98DC-4FED-B8A6-85E0CDA2310F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T856", "EdiFabric.Examples.X12.T856\EdiFabric.Examples.X12.T856.csproj", "{BB122F05-98DC-4FED-B8A6-85E0CDA2310F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T857", "EdiFabric.Examples.X12.T857\EdiFabric.Examples.X12.T857.csproj", "{F88CFFF5-571A-4CD4-9DB1-DBA7EF5F0DAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T857", "EdiFabric.Examples.X12.T857\EdiFabric.Examples.X12.T857.csproj", "{F88CFFF5-571A-4CD4-9DB1-DBA7EF5F0DAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T861", "EdiFabric.Examples.X12.T861\EdiFabric.Examples.X12.T861.csproj", "{E8A7822A-0769-4DAC-80F3-85B5C03B2C1D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T861", "EdiFabric.Examples.X12.T861\EdiFabric.Examples.X12.T861.csproj", "{E8A7822A-0769-4DAC-80F3-85B5C03B2C1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.T945", "EdiFabric.Examples.X12.T945\EdiFabric.Examples.X12.T945.csproj", "{BA2B3754-689A-4486-8E3C-186E3BB7D70C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T945", "EdiFabric.Examples.X12.T945\EdiFabric.Examples.X12.T945.csproj", "{BA2B3754-689A-4486-8E3C-186E3BB7D70C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.ModifyTemplates", "EdiFabric.Examples.X12.ModifyTemplates\EdiFabric.Examples.X12.ModifyTemplates.csproj", "{8A3E6204-07F9-4D90-A54E-DEF0DB69E392}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -156,10 +156,6 @@ Global
 		{F4F8A3EE-C398-4DC0-95F4-C07540D66046}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F4F8A3EE-C398-4DC0-95F4-C07540D66046}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F4F8A3EE-C398-4DC0-95F4-C07540D66046}.Release|Any CPU.Build.0 = Release|Any CPU
-		{87E5E376-F387-45DA-B6C9-4081B9B92F52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{87E5E376-F387-45DA-B6C9-4081B9B92F52}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{87E5E376-F387-45DA-B6C9-4081B9B92F52}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{87E5E376-F387-45DA-B6C9-4081B9B92F52}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2F959590-6223-4CFB-87B9-5F4A1FB251FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2F959590-6223-4CFB-87B9-5F4A1FB251FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F959590-6223-4CFB-87B9-5F4A1FB251FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -304,6 +300,10 @@ Global
 		{BA2B3754-689A-4486-8E3C-186E3BB7D70C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA2B3754-689A-4486-8E3C-186E3BB7D70C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA2B3754-689A-4486-8E3C-186E3BB7D70C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A3E6204-07F9-4D90-A54E-DEF0DB69E392}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A3E6204-07F9-4D90-A54E-DEF0DB69E392}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A3E6204-07F9-4D90-A54E-DEF0DB69E392}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A3E6204-07F9-4D90-A54E-DEF0DB69E392}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -312,7 +312,6 @@ Global
 		{D46BE22A-2CF0-4CEA-9255-8F9A51396F57} = {C5AA548C-8E2B-40E5-BF48-06E388E191A5}
 		{52BDC8F7-C3AA-421A-AECC-17556A569CBE} = {C5AA548C-8E2B-40E5-BF48-06E388E191A5}
 		{F4F8A3EE-C398-4DC0-95F4-C07540D66046} = {2862941F-FDC8-487E-921D-2711C78D6BBF}
-		{87E5E376-F387-45DA-B6C9-4081B9B92F52} = {2862941F-FDC8-487E-921D-2711C78D6BBF}
 		{B5DF9C35-7995-4AD9-8649-64F450606001} = {163D6422-FF4C-42C2-9843-D772149C14B5}
 		{397F676D-65D9-424E-A079-1381E4B14E92} = {163D6422-FF4C-42C2-9843-D772149C14B5}
 		{962FDE9F-A4B6-40CB-940F-EB79A190402F} = {163D6422-FF4C-42C2-9843-D772149C14B5}
@@ -347,6 +346,7 @@ Global
 		{F88CFFF5-571A-4CD4-9DB1-DBA7EF5F0DAF} = {FA5C714F-750E-426D-842D-B74B7C4C361D}
 		{E8A7822A-0769-4DAC-80F3-85B5C03B2C1D} = {FA5C714F-750E-426D-842D-B74B7C4C361D}
 		{BA2B3754-689A-4486-8E3C-186E3BB7D70C} = {FA5C714F-750E-426D-842D-B74B7C4C361D}
+		{8A3E6204-07F9-4D90-A54E-DEF0DB69E392} = {2862941F-FDC8-487E-921D-2711C78D6BBF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {17D2EBCC-DA74-40EF-86E9-4DEDE2942C4D}

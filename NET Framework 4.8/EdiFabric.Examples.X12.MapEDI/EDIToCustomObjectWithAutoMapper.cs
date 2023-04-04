@@ -52,7 +52,7 @@ namespace EdiFabric.Examples.X12.MapEDI
                 }
             );
 
-            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\..\Files\X12\PurchaseOrderCSV.txt");
+            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\X12\PurchaseOrderCSV.txt");
 
             List<IEdiItem> ediItems;
             using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.X12"))

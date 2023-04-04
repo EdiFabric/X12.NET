@@ -18,7 +18,7 @@ namespace EdiFabric.Examples.X12.XML
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\..\Files\X12\PurchaseOrder.xml");
+            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\X12\PurchaseOrder.xml");
 
             var xml = XElement.Load(ediStream);
             var transaction = xml.Deserialize<TS850>();
@@ -33,7 +33,7 @@ namespace EdiFabric.Examples.X12.XML
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\..\Files\X12\PurchaseOrder2.xml");
+            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\X12\PurchaseOrder2.xml");
 
             var xml = XElement.Load(ediStream);
             var transaction = xml.DeserializeDataContract<TS850>();

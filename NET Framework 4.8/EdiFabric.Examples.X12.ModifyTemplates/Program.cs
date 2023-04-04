@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Edi.X12;
+using EdiFabric.Examples.X12.Common;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Templates.X12004010;
 
@@ -21,10 +22,10 @@ namespace EdiFabric.Examples.X12.ModifyTemplates
             SerialKey.Set(Common.SerialKey.Get());
 
             // Parse 850
-            ParsePO(@"\..\..\..\..\Files\X12\PurchaseOrder.txt");
+            ParsePO(Config.TestFilesPath + @"\X12\PurchaseOrder.txt");
 
             //  Parse modified 850 
-            ParseModifiedPO(@"\..\..\..\..\Files\X12\PurchaseOrderModified.txt");
+            ParseModifiedPO(Config.TestFilesPath + @"\X12\PurchaseOrderModified.txt");
         }
 
         public static void ParsePO(string ediFile)

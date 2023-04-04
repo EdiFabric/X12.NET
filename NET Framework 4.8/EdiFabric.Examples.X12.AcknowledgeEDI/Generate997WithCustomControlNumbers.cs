@@ -20,7 +20,7 @@ namespace EdiFabric.Examples.X12.AcknowledgeEDI
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var edi = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\..\Files\X12\PurchaseOrder.txt");
+            var edi = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\X12\PurchaseOrder.txt");
 
             int isaControlNumber = 28;
             int gsControlNumber = 35;

@@ -21,7 +21,7 @@ namespace EdiFabric.Examples.X12.AcknowledgeEDI
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            var edi = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\..\Files\X12\DuplicateGroup.txt");
+            var edi = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\X12\DuplicateGroup.txt");
 
             var settings = new AckSettings
             {

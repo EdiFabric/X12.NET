@@ -24,7 +24,7 @@ namespace EdiFabric.Examples.X12.T820HIX
         /// </summary>
         static void Read()
         {
-            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\..\Files\Hipaa\PaymentOrderRemittanceAdvice.txt");
+            var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\Hipaa\PaymentOrderRemittanceAdvice.txt");
 
             List<IEdiItem> ediItems;
             using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.Hipaa"))

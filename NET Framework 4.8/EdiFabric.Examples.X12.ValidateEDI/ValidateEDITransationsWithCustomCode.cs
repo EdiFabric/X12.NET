@@ -28,7 +28,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             Debug.WriteLine(MethodBase.GetCurrentMethod().Name);
             Debug.WriteLine("******************************");
 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\..\Files\X12\PurchaseOrderInvalid.txt");
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\X12\PurchaseOrderInvalid.txt");
 
             //  The custom validation logic is applied in the template by implementing IEdiValidator.
             List<IEdiItem> ediItems;

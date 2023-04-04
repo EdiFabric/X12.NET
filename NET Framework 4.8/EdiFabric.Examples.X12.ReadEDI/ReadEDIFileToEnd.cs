@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using EdiFabric.Core.Model.Edi;
+using EdiFabric.Examples.X12.Common;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Templates.X12004010;
 
@@ -23,7 +24,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
             Debug.WriteLine("******************************");
 
             //  1.  Load to a stream 
-            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + @"\..\..\..\..\Files\X12\PurchaseOrders.txt");
+            Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\X12\PurchaseOrders.txt");
 
             //  2.  Read all the contents
             List<IEdiItem> ediItems;

@@ -54,6 +54,7 @@
     <Compile Include="SegmentBuilders.cs" />
     <Compile Include="StreamExtensions.cs" />
     <Compile Include="SerialKey.cs" />
+    <Compile Include="Config.cs" />
     <Compile Include="XmlExtensions.cs" />
   </ItemGroup>
   <ItemGroup>

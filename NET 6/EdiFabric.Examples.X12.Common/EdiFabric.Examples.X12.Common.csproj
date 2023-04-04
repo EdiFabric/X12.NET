@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Common\AckBuilders.cs" Link="AckBuilders.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Common\Config.cs" Link="Config.cs" />
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Common\SegmentBuilders.cs" Link="SegmentBuilders.cs" />
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Common\SerialKey.cs" Link="SerialKey.cs" />
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Common\StreamExtensions.cs" Link="StreamExtensions.cs" />
