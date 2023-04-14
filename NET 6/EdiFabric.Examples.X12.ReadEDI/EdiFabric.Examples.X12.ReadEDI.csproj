@@ -10,6 +10,7 @@
   <ItemGroup>
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ReadEDI\Program.cs" Link="Program.cs" />
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ReadEDI\ReadCustomTransaction.cs" Link="ReadCustomTransaction.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ReadEDI\ReadDEXFile.cs" Link="ReadDEXFile.cs" />
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ReadEDI\ReadEDIFileBatch.cs" Link="ReadEDIFileBatch.cs" />
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ReadEDI\ReadEDIFileCorrupt.cs" Link="ReadEDIFileCorrupt.cs" />
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ReadEDI\ReadEDIFileSplitting.cs" Link="ReadEDIFileSplitting.cs" />

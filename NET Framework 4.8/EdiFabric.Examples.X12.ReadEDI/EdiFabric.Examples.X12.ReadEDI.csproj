@@ -77,6 +77,7 @@
     <Compile Include="ReadEDIFileSplitting.cs" />
     <Compile Include="ReadEDIFileStreaming.cs" />
     <Compile Include="ReadEDIFileStreamingAsync.cs" />
+    <Compile Include="ReadDEXFile.cs" />
     <Compile Include="ReadEDIFileToEnd.cs" />
     <Compile Include="ReadEDIFileToEndAsync.cs" />
     <Compile Include="ReadEDIFileTransactionOnly.cs" />

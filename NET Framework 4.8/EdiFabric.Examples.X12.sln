@@ -146,6 +146,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.Temp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.ModifyTemplates", "EdiFabric.Examples.X12.ModifyTemplates\EdiFabric.Examples.X12.ModifyTemplates.csproj", "{2F25042B-B510-4A30-A87E-F71D82E0C0D7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DEX", "DEX", "{3CF6E7FF-1215-4F50-81F9-87D8C9536067}"
+	ProjectSection(SolutionItems) = preProject
+		..\Files\DEX\DEX_894.txt = ..\Files\DEX\DEX_894.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -578,6 +583,7 @@ Global
 		{9DB4C260-FD60-4658-9051-48D9456B7547} = {17593B3F-A426-498F-81D5-4906D5B15149}
 		{3144205D-7B91-42CF-9107-63A32918615E} = {727B642B-B097-4B78-AC4C-1ACD5E43FBC3}
 		{2F25042B-B510-4A30-A87E-F71D82E0C0D7} = {727B642B-B097-4B78-AC4C-1ACD5E43FBC3}
+		{3CF6E7FF-1215-4F50-81F9-87D8C9536067} = {17593B3F-A426-498F-81D5-4906D5B15149}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB447360-6410-4AB0-8984-1454D5AAEA49}

@@ -40,6 +40,9 @@
 
             //  Reads custom transaction
             ReadCustomTransaction.Run();
+
+            //  Reads DEX file
+            ReadDEXFile.Run();
         }
     }
 }

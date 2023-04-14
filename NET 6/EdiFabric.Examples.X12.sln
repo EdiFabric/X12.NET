@@ -144,7 +144,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T861
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.T945", "EdiFabric.Examples.X12.T945\EdiFabric.Examples.X12.T945.csproj", "{BA2B3754-689A-4486-8E3C-186E3BB7D70C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EdiFabric.Examples.X12.ModifyTemplates", "EdiFabric.Examples.X12.ModifyTemplates\EdiFabric.Examples.X12.ModifyTemplates.csproj", "{8A3E6204-07F9-4D90-A54E-DEF0DB69E392}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EdiFabric.Examples.X12.ModifyTemplates", "EdiFabric.Examples.X12.ModifyTemplates\EdiFabric.Examples.X12.ModifyTemplates.csproj", "{8A3E6204-07F9-4D90-A54E-DEF0DB69E392}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DEX", "DEX", "{8C38EBEE-8229-4590-A90A-B096E3D74118}"
+	ProjectSection(SolutionItems) = preProject
+		..\Files\DEX\DEX_894.txt = ..\Files\DEX\DEX_894.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -347,6 +352,7 @@ Global
 		{E8A7822A-0769-4DAC-80F3-85B5C03B2C1D} = {FA5C714F-750E-426D-842D-B74B7C4C361D}
 		{BA2B3754-689A-4486-8E3C-186E3BB7D70C} = {FA5C714F-750E-426D-842D-B74B7C4C361D}
 		{8A3E6204-07F9-4D90-A54E-DEF0DB69E392} = {2862941F-FDC8-487E-921D-2711C78D6BBF}
+		{8C38EBEE-8229-4590-A90A-B096E3D74118} = {C5AA548C-8E2B-40E5-BF48-06E388E191A5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {17D2EBCC-DA74-40EF-86E9-4DEDE2942C4D}
