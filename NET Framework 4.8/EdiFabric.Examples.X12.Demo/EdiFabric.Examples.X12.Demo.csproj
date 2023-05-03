@@ -36,29 +36,11 @@
     <Reference Include="EdiFabric">
       <HintPath>..\..\..\edifabric\net48\EdiFabric.dll</HintPath>
     </Reference>
-    <Reference Include="EdiFabric.Templates.Edifact">
-      <HintPath>..\..\..\edifabric\net48\EdiFabric.Templates.Edifact.dll</HintPath>
-    </Reference>
-    <Reference Include="EdiFabric.Templates.Edigas">
-      <HintPath>..\..\..\edifabric\net48\EdiFabric.Templates.Edigas.dll</HintPath>
-    </Reference>
     <Reference Include="EdiFabric.Templates.Hipaa">
-      <HintPath>..\..\..\edifabric\net48\EdiFabric.Templates.Hipaa.dll</HintPath>
-    </Reference>
-    <Reference Include="EdiFabric.Templates.Hl7">
-      <HintPath>..\..\..\edifabric\net48\EdiFabric.Templates.Hl7.dll</HintPath>
-    </Reference>
-    <Reference Include="EdiFabric.Templates.Ncpdp">
-      <HintPath>..\..\..\edifabric\net48\EdiFabric.Templates.Ncpdp.dll</HintPath>
-    </Reference>
-    <Reference Include="EdiFabric.Templates.Padis">
-      <HintPath>..\..\..\edifabric\net48\EdiFabric.Templates.Padis.dll</HintPath>
-    </Reference>
-    <Reference Include="EdiFabric.Templates.Vda">
-      <HintPath>..\..\..\edifabric\net48\EdiFabric.Templates.Vda.dll</HintPath>
+      <HintPath>..\..\..\edifabric\net45\EdiFabric.Templates.Hipaa.dll</HintPath>
     </Reference>
     <Reference Include="EdiFabric.Templates.X12">
-      <HintPath>..\..\..\edifabric\net48\EdiFabric.Templates.X12.dll</HintPath>
+      <HintPath>..\..\..\edifabric\net45\EdiFabric.Templates.X12.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
