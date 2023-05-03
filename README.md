@@ -21,14 +21,15 @@ var transactions = ediItems.OfType<TS837P>();
 ```
 
 ## 2. Requirements
-- Visual Studio, compatible with the supported .NET versions.  
-- Minimum .NET Framework 4.5 or .NET Core 3.1. All projects target .NET Framework 4.5, however, the Target Framework from each project's properties can be changed to .NET Core 3.1.  
-- EdiFabric trial DLLs and serial number. 
+- Visual Studio, compatible with the supported .NET versions. [Download Visual Studio](https://visualstudio.microsoft.com/downloads/).
+- Minimum .NET Framework 4.8 or .NET 6. 
+- EdiFabric DLLs and a trial serial number. 
 
 ## 3. Serial Key and EdiFabric trial DLLs
-[Download the serial key](https://sowl.co/oApEt). The serial key is included in the file serial.key in folder edifabric-trial. Ensure it is there and that the file is not empty. The serial key is loaded in the file SerialKey.cs in project EdiFabric.Examples.X12.Common. Open the file and ensure that the serialKeyPath is correct. 
-If the serial number is invalid or the file is missing, contact us at https://support.edifabric.com/hc/en-us/requests/new for assistance.  
-The trial DLLs are in folders net45 (for .NET Framework 4.5+) and netcoreapp3.1 (for .NET Core 3.1+).
+[Download the serial key](https://sowl.co/oApEt).
+The serial key is included in the file serial.key in folder edifabric. Ensure it is there and that the file is not empty. The serial key is loaded in the file SerialKey.cs in project EdiFabric.Examples.X12.Common. 
+Open the file and ensure that the serialKeyPath is correct. If the serial key is invalid or the file is missing, contact us at https://support.edifabric.com/hc/en-us/requests/new for assistance.
+The trial DLLs are in folders net48 (for .NET Framework 4.8+) and net6.0 (for .NET 6+).
 
 ## 4. Setup
 Rebuild the solution. If there are any build errors, contact us at https://support.edifabric.com/hc/en-us/requests/new for assistance.
@@ -85,8 +86,7 @@ For an interactive view of all templates go to EdiNation (no registration is req
 [EdiNation](https://edination.com/edi-formats.html)
 
 ## 10. Trial use
-The trial assemblies are valid for 14 days and are subject to EdiFabric's license terms available at https://www.edifabric.com/files/eula.pdf. Upon expiry, the trial DLLs will begin throwing exceptions.   
-To continue using the trial and the examples, you'll need to request a trial extension.  
+The trial serial key is valid for 14 days, and using the product with a trial license is subject to EdiFabric's license terms available at https://www.edifabric.com/files/eula.pdf. Upon expiry, the product will begin throwing exceptions. To continue using the trial and the examples, you'll need to request a trial extension. 
 
 ## 11. Warranty
 *The source code in these example projects is strictly for demonstrational purposes and is provided "AS IS" without warranty of any kind, whether expressed or implied, including but not limited to the implied warranties of merchantability and/or fitness for a particular purpose.*
@@ -105,5 +105,5 @@ To continue using the trial and the examples, you'll need to request a trial ext
 
 [Support](https://support.edifabric.com/hc/en-us/requests/new)
 
-Last updated on November 22, 2022
-### 2022 © EdiFabric
+Last updated on April 20, 2023
+### 2023 © EdiFabric
