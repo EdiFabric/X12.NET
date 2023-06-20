@@ -33,14 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EdiFabric">
-      <HintPath>..\..\..\edifabric\net48\EdiFabric.dll</HintPath>
+    <Reference Include="EdiFabric, Version=10.5.2.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
+      <HintPath>..\packages\EdiFabric.10.5.2\lib\net48\EdiFabric.dll</HintPath>
     </Reference>
-    <Reference Include="EdiFabric.Templates.Hipaa">
-      <HintPath>..\..\..\edifabric\net45\EdiFabric.Templates.Hipaa.dll</HintPath>
+    <Reference Include="EdiFabric.Templates.Hipaa, Version=2.7.1.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
+      <HintPath>..\packages\EdiFabric.Templates.Hipaa.2.7.1\lib\net45\EdiFabric.Templates.Hipaa.dll</HintPath>
     </Reference>
-    <Reference Include="EdiFabric.Templates.X12">
-      <HintPath>..\..\..\edifabric\net45\EdiFabric.Templates.X12.dll</HintPath>
+    <Reference Include="EdiFabric.Templates.X12, Version=2.7.1.0, Culture=neutral, PublicKeyToken=30198c5f4974e51a, processorArchitecture=MSIL">
+      <HintPath>..\packages\EdiFabric.Templates.X12.2.7.1\lib\net45\EdiFabric.Templates.X12.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EdiFabric.Examples.X12.Common\EdiFabric.Examples.X12.Common.csproj">

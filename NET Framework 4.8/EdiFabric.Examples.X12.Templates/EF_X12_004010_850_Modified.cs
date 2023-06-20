@@ -2,7 +2,7 @@ using System;
 using EdiFabric.Core.Annotations.Edi;
 using EdiFabric.Core.Annotations.Validation;
 
-namespace EdiFabric.Templates.X12004010
+namespace EdiFabric.Templates.X12
 {
     /// <summary>
     /// Modified Purchase Order

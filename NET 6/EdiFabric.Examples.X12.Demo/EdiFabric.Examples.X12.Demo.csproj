@@ -12,37 +12,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EdiFabric.Examples.X12.Common\EdiFabric.Examples.X12.Common.csproj" />
+    <PackageReference Include="EdiFabric" Version="10.5.2" />
+    <PackageReference Include="EdiFabric.Templates.Hipaa" Version="2.7.1" />
+    <PackageReference Include="EdiFabric.Templates.X12" Version="2.7.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="EdiFabric">
-      <HintPath>..\..\..\edifabric\net6.0\EdiFabric.dll</HintPath>
-    </Reference>
-    <Reference Include="EdiFabric.Templates.Edifact">
-      <HintPath>..\..\..\edifabric\net6.0\EdiFabric.Templates.Edifact.dll</HintPath>
-    </Reference>
-    <Reference Include="EdiFabric.Templates.Edigas">
-      <HintPath>..\..\..\edifabric\net6.0\EdiFabric.Templates.Edigas.dll</HintPath>
-    </Reference>
-    <Reference Include="EdiFabric.Templates.Hipaa">
-      <HintPath>..\..\..\edifabric\net6.0\EdiFabric.Templates.Hipaa.dll</HintPath>
-    </Reference>
-    <Reference Include="EdiFabric.Templates.Hl7">
-      <HintPath>..\..\..\edifabric\net6.0\EdiFabric.Templates.Hl7.dll</HintPath>
-    </Reference>
-    <Reference Include="EdiFabric.Templates.Ncpdp">
-      <HintPath>..\..\..\edifabric\net6.0\EdiFabric.Templates.Ncpdp.dll</HintPath>
-    </Reference>
-    <Reference Include="EdiFabric.Templates.Padis">
-      <HintPath>..\..\..\edifabric\net6.0\EdiFabric.Templates.Padis.dll</HintPath>
-    </Reference>
-    <Reference Include="EdiFabric.Templates.Vda">
-      <HintPath>..\..\..\edifabric\net6.0\EdiFabric.Templates.Vda.dll</HintPath>
-    </Reference>
-    <Reference Include="EdiFabric.Templates.X12">
-      <HintPath>..\..\..\edifabric\net6.0\EdiFabric.Templates.X12.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\EdiFabric.Examples.X12.Common\EdiFabric.Examples.X12.Common.csproj" />
   </ItemGroup>
 
 </Project>
