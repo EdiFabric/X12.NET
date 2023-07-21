@@ -10,13 +10,13 @@
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Common\AckBuilders.cs" Link="AckBuilders.cs" />
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Common\Config.cs" Link="Config.cs" />
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Common\SegmentBuilders.cs" Link="SegmentBuilders.cs" />
-    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Common\SerialKey.cs" Link="SerialKey.cs" />
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Common\StreamExtensions.cs" Link="StreamExtensions.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Common\TokenFileCache.cs" Link="TokenFileCache.cs" />
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Common\XmlExtensions.cs" Link="XmlExtensions.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="EdiFabric" Version="10.6.0" />
+    <PackageReference Include="EdiFabric" Version="10.6.3" />
     <PackageReference Include="EdiFabric.Templates.X12" Version="2.7.1" />
   </ItemGroup>
 

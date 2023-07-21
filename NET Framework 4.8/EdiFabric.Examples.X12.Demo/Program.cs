@@ -20,7 +20,7 @@ namespace EdiFabric.Examples.X12.Demo
 
             //  If you need a different X12 version or transaction, please contact us at https://support.edifabric.com/hc/en-us/requests/new, EdiFabric supports all versions and transactions for X12/HIPAA.
 
-            SerialKey.Set(Common.SerialKey.Get());
+            TokenFileCache.Set();
 
             Translate_HIPAA_5010();
             Translate_X12_4010();

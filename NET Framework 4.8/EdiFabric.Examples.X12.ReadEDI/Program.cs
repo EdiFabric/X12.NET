@@ -1,10 +1,12 @@
-﻿namespace EdiFabric.Examples.X12.ReadEDI
+﻿using EdiFabric.Examples.X12.Common;
+
+namespace EdiFabric.Examples.X12.ReadEDI
 {
     class Program
     {
         static void Main(string[] args)
         {
-            SerialKey.Set(Common.SerialKey.Get());
+            TokenFileCache.Set();
 
             //  Read EDI file to the end
             ReadEDIFileToEnd.Run();

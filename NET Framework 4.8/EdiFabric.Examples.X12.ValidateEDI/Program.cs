@@ -6,7 +6,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
     {
         static void Main(string[] args)
         {
-            SerialKey.Set(Common.SerialKey.Get());
+            TokenFileCache.Set();
 
             //  Validate custom EDI codes
             //ValidateCustomEDICodes.Run();

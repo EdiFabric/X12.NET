@@ -14,7 +14,7 @@ namespace EdiFabric.Examples.X12.T945
     {
         static void Main(string[] args)
         {
-            SerialKey.Set(Common.SerialKey.Get());
+            TokenFileCache.Set();
             Read();
             Write();
         }
