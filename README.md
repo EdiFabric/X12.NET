@@ -66,6 +66,8 @@ HIPAA 5010 837D
 HIPAA 5010 837I  
 HIPAA 5010 837P  
 
+> **If you need to test with a message type in a different version, [install the templates for that version from EdiNation](https://support.edifabric.com/hc/en-us/articles/360016750838-How-to-start-a-new-VS-project).**
+
 ## 8. EDI Validation
 All templates in EdiFabric.Templates.X12 and EdiFabric.Templates.Hipaa can be used for validation.  
 
