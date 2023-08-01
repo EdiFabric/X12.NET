@@ -6,7 +6,7 @@ namespace EdiFabric.Examples.X12.WriteEDI
     {
         static void Main(string[] args)
         {
-            TokenFileCache.Set();
+            SerialKey.Set(Config.TrialSerialKey);
 
             //  Write EDI to stream and then to string or file
             WriteEDIToStream.Run();

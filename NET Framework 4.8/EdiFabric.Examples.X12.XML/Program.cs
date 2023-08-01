@@ -6,7 +6,7 @@ namespace EdiFabric.Examples.X12.XML
     {
         static void Main(string[] args)
         {
-            TokenFileCache.Set();
+            SerialKey.Set(Config.TrialSerialKey);
 
             //  Serialize to XML
             SerializeToXml.WithXmlSerializer();

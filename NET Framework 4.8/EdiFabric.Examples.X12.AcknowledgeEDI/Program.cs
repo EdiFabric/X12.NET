@@ -6,7 +6,7 @@ namespace EdiFabric.Examples.X12.AcknowledgeEDI
     {
         static void Main(string[] args)
         {
-            TokenFileCache.Set();
+            SerialKey.Set(Config.TrialSerialKey);
 
             //  Generate 997 for valid group
             GenerateValid997.Run();

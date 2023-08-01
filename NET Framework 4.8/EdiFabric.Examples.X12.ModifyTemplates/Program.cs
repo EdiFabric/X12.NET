@@ -19,7 +19,7 @@ namespace EdiFabric.Examples.X12.ModifyTemplates
     {
         static void Main(string[] args)
         {
-            TokenFileCache.Set();
+            SerialKey.Set(Config.TrialSerialKey);
 
             // Parse 850
             ParsePO(Config.TestFilesPath + @"\X12\PurchaseOrder.txt");

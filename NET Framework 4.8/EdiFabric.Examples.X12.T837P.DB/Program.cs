@@ -20,7 +20,7 @@ namespace EdiFabric.Examples.X12.T837P.DB
     {
         static void Main(string[] args)
         {
-            TokenFileCache.Set();
+            SerialKey.Set(Config.TrialSerialKey);
 
             var path = Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\Hipaa\ClaimPayment.txt";
             Stream ediStream = File.OpenRead(path);

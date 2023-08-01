@@ -6,7 +6,7 @@ namespace EdiFabric.Examples.X12.JSON
     {
         static void Main(string[] args)
         {
-            TokenFileCache.Set();
+            SerialKey.Set(Config.TrialSerialKey);
 
             //  Serialize to JSON
             SerializeToJson.Run();
