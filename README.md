@@ -27,6 +27,7 @@ var transactions = ediItems.OfType<TS837P>();
 ## 3. Serial Key and EdiFabric trial DLLs
 All projects reference EdiFabric EDI Tools as NuGet packages from nuget.org. If you wish to install EdiFabric EDI Tools as DLLs, download the trial DLLs from [here](https://sowl.co/oApEt).
 
+
 ## 4. Setup
 Rebuild the solution with Package Restore enabled. If there are any build errors, manually install the missing packages from [here](https://www.nuget.org/packages?q=edifabric).
 
@@ -100,6 +101,10 @@ The trial serial key is valid for 14 days, and using the product with a trial li
 [EdiFabric Tutorial](https://support.edifabric.com/hc/en-us/articles/360000291511-Tutorial-EDI-NET-Tools-Basics)
 
 [Knowledge Base](https://support.edifabric.com)
+
+## 13. Production Operation
+
+Beware that ```SerialKey.Set``` makes an HTTP request to **api.edifrabric.com** upon invocation. This may fail in production due to downtime or networking issues. Since a retry policy can't be applied directly to the underlying HttpClient, the policy must be applied on the outside. In addition, a guide for caching the token is [here](https://github.com/EdiFabric/X12.NET/blob/master/NET%20Framework%204.8/EdiFabric.Examples.X12.Common/TokenFileCache.cs)
 
 [Support](https://support.edifabric.com/hc/en-us/requests/new)
 
