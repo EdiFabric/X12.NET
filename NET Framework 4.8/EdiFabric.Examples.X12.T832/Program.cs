@@ -4,6 +4,7 @@ using EdiFabric.Examples.X12.Common;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Framework.Writers;
 using EdiFabric.Templates.X12004010;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,7 +15,15 @@ namespace EdiFabric.Examples.X12.T832
     {
         static void Main(string[] args)
         {
-            SerialKey.Set(Config.TrialSerialKey);
+            try
+            {
+                SerialKey.Set(Config.TrialSerialKey, true);
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.StartsWith("Can't set token"))
+                    throw new Exception("Your trial has expired! To continue using EdiFabric SDK you must purchase a plan from https://www.edifabric.com/pricing.html");
+            }
             Read();
             Write();
         }

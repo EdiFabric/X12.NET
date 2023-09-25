@@ -20,7 +20,15 @@ namespace EdiFabric.Examples.X12.T837P.DB
     {
         static void Main(string[] args)
         {
-            SerialKey.Set(Config.TrialSerialKey);
+            try
+            {
+                SerialKey.Set(Config.TrialSerialKey, true);
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.StartsWith("Can't set token"))
+                    throw new Exception("Your trial has expired! To continue using EdiFabric SDK you must purchase a plan from https://www.edifabric.com/pricing.html");
+            }
 
             var path = Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\Hipaa\ClaimPayment.txt";
             Stream ediStream = File.OpenRead(path);

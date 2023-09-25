@@ -2,6 +2,7 @@
 using EdiFabric.Core.Model.Edi.ErrorContexts;
 using EdiFabric.Examples.X12.Common;
 using EdiFabric.Framework.Readers;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -20,7 +21,15 @@ namespace EdiFabric.Examples.X12.Demo
 
             //  If you need a different X12 version or transaction, please contact us at https://support.edifabric.com/hc/en-us/requests/new, EdiFabric supports all versions and transactions for X12/HIPAA.
 
-            SerialKey.Set(Config.TrialSerialKey);
+            try
+            {
+                SerialKey.Set(Config.TrialSerialKey, true);
+            }
+            catch (Exception ex)
+            {
+                if (ex.Message.StartsWith("Can't set token"))
+                    throw new Exception("Your trial has expired! To continue using EdiFabric SDK you must purchase a plan from https://www.edifabric.com/pricing.html");
+            }
             //  Uncomment and then comment out the line above if you wish to use distributed cache for tokens
             //  TokenFileCache.Set();
 
