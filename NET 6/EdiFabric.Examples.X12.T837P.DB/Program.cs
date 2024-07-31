@@ -1,5 +1,6 @@
 ﻿using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Edi.X12;
+using EdiFabric.Examples.X12.Common;
 using EdiFabric.Framework;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Framework.Writers;
@@ -22,7 +23,7 @@ namespace EdiFabric.Examples.EFCore.X12.TS837P
         //  The connection string is in EF_HIPAA_005010_837P_DbContext.cs, and is set to the local instance of SQL Server
         static void Main(string[] args)
         {
-            SerialKey.Set(GetSerial());
+            SerialKey.Set(Config.TrialSerialKey);
 
             var path = Directory.GetCurrentDirectory() + TestFilesPath + @"\HIPAA\ClaimPayment.txt";
             Stream ediStream = File.OpenRead(path);
@@ -85,15 +86,6 @@ namespace EdiFabric.Examples.EFCore.X12.TS837P
             }
         }
 
-        public static string GetSerial()
-        {
-            if (!File.Exists(SerialKeyPath))
-                throw new Exception("Set the correct path to the serial.key file!");
-
-            return File.ReadAllText(SerialKeyPath).Trim(new[] { ' ', '\r', '\n' });
-        }
-
         public static string TestFilesPath = @"\..\..\..\..\..\Files";
-        public static string SerialKeyPath = @"../../../../../../edifabric/serial.key";
     }
 }
