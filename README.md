@@ -103,5 +103,4 @@ The trial serial key is valid for 14 days, and using the product with a trial li
 
 [Support](https://support.edifabric.com/hc/en-us/requests/new)
 
-Last updated on June 20, 2023
-### 2023 © EdiFabric
+### 2025 © EdiFabric
