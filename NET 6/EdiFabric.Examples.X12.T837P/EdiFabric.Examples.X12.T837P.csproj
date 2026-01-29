@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="EdiFabric" Version="10.7.5" />
+    <PackageReference Include="EdiFabric" Version="10.7.6" />
     <PackageReference Include="EdiFabric.Templates.Hipaa" Version="2.7.6" />
   </ItemGroup>
 
