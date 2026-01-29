@@ -81,7 +81,7 @@ The following templates are available out-of-the-box:
 
 For an interactive view of all templates go to EdiNation (no registration is required):
 
-[EdiNation](https://edination.com/edi-formats.html](https://edination.edifabric.com/edi-spec-library.html)
+[EdiNation](https://edination.edifabric.com/edi-spec-library.html)
 
 ## 10. Trial use
 The trial serial key is valid for 14 days, and using the product with a trial license is subject to EdiFabric's license terms available at https://www.edifabric.com/files/eula.pdf. Upon expiry, the product will begin throwing exceptions. To continue using the trial and the examples, you'll need to request a trial extension. 
