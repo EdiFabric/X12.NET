@@ -23,7 +23,7 @@ namespace EdiFabric.Examples.EFCore.X12.TS837P
         //  The connection string is in EF_HIPAA_005010_837P_DbContext.cs, and is set to the local instance of SQL Server
         static void Main(string[] args)
         {
-            SerialKey.Set(Config.TrialSerialKey);
+            License.SetSerial(Config.TrialSerialKey);
 
             var path = Directory.GetCurrentDirectory() + TestFilesPath + @"\HIPAA\ClaimPayment.txt";
             Stream ediStream = File.OpenRead(path);

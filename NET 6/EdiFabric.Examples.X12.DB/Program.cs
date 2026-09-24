@@ -22,7 +22,7 @@ namespace EdiFabric.Examples.EFCore.X12.TS850
         //  The connection string is in EF_X12_004010_DbContext.cs, and is set to the local instance of SQL Server
         static void Main(string[] args)
         {
-            SerialKey.Set(Config.TrialSerialKey);
+            License.SetSerial(Config.TrialSerialKey);
 
             var path = Directory.GetCurrentDirectory() + TestFilesPath + @"\X12\PurchaseOrder.txt";
             Stream ediStream = File.OpenRead(path);
