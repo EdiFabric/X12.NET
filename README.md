@@ -20,7 +20,7 @@ The .NET 6 projects compile the same sources as the .NET Framework 4.8 projects.
 - .NET 6 for `NET 6/EdiFabric.Examples.X12.sln`. The projects set `<TargetFramework>net6.0</TargetFramework>` so they stay compatible with existing .NET 6 apps. EdiFabric 11.0.0 also provides `net8.0`, `net9.0`, and `net10.0`. To evaluate a later version, change that property (for example to `net8.0`) and rebuild.
 - .NET Framework 4.8 for `NET Framework 4.8/EdiFabric.Examples.X12.sln`.
 
-1. [Sign up free for **Community**](https://www.edifabric.com/pricing.html) to get an evaluation serial key. Community never expires, requires no credit card, and is limited to 250 operations per day for non-production use. After signup, retrieve your serial from [Your Account](https://support.edifabric.com/hc/en-us/articles/360007159031-Your-Account-API-key).
+1. [Sign up free for **Community**](https://www.edifabric.com/pricing.html) to get an evaluation serial key. Community never expires, requires no credit card, and is limited to 250 operations per day for non-production use. After signup, retrieve your serial from [Your Account](https://www.edifabric.com/docs/getting-started/your-account.html).
 2. Paste that serial into `TrialSerialKey` in `NET Framework 4.8/EdiFabric.Examples.X12.Common/Config.cs`. The .NET 6 projects link this file, so one edit covers both solutions.
 
 NuGet restore pulls **EdiFabric 11.0.0**, **EdiFabric.Templates.X12 3.0.0**, and, where a project needs them, **EdiFabric.Templates.Hipaa 3.0.0**.
@@ -154,7 +154,7 @@ For another version on a paid plan, add that model as C# files. See [EDI templat
 > to get an evaluation serial key. Community never expires, requires no credit
 > card, and is for non-production evaluation, learning, and prototyping
 > (250 operations per day). After signup, copy your serial from
-> [Your Account](https://support.edifabric.com/hc/en-us/articles/360007159031-Your-Account-API-key)
+> [Your Account](https://www.edifabric.com/docs/getting-started/your-account.html)
 > into `Config.TrialSerialKey`.
 >
 > One operation is one parse, generate, validate, or acknowledge call. The 250-a-day
@@ -227,12 +227,12 @@ License failures throw `LicenseException`. `ErrorCode` is the number below, and 
 
 The models published on NuGet, such as **EdiFabric.Templates.X12**, **EdiFabric.Templates.Hipaa**, **EdiFabric.Templates.Edifact**, and **EdiFabric.Templates.Padis**, are for evaluation only. They are a Community plan limitation. These examples reference **EdiFabric.Templates.X12** and **EdiFabric.Templates.Hipaa** so you can run the samples on Community.
 
-Paid plans provide every template as plain C# files. Add them to the solution by following [How to create EDI template projects](https://support.edifabric.com/hc/en-us/articles/360016750838-How-to-create-EDI-Template-projects). For evaluation and the Community plan, you can still download the templates in compiled form by following the same article.
+Paid plans provide every template as plain C# files. Add them to the solution by following [How to create EDI template projects](https://www.edifabric.com/docs/edifabric-net/edi-templates.html). For evaluation and the Community plan, you can still download the templates in compiled form by following the same article.
 
-The same classes validate as well as parse. EdiFabric supports the X12 and HIPAA versions. If a transaction is missing, [ask for it](https://support.edifabric.com/hc/en-us/requests/new).
+The same classes validate as well as parse. EdiFabric supports the X12 and HIPAA versions. If a transaction is missing, [ask for it](https://www.edifabric.com/docs/index.html).
 
-- [X12](https://support.edifabric.com/hc/en-us/articles/360000360572-X12-2040-to-4010)
-- [HIPAA](https://support.edifabric.com/hc/en-us/articles/360000372751-HIPAA-270-271-276-277-278-820-834-835-837-999)
+- [X12](https://www.edifabric.com/docs/standards/x12-2040-to-x12-4010.html)
+- [HIPAA](https://www.edifabric.com/docs/standards/x12-hipaa-4010-and-x12-hipaa-5010.html)
 - [EdiNation spec library](https://edination.edifabric.com/edi-spec-library.html) (no registration)
 
 ## Warranty
@@ -241,13 +241,13 @@ The source code in these example projects is strictly for demonstrational purpos
 
 ## Links
 
-- [Install EdiFabric](https://support.edifabric.com/hc/en-us/articles/360016808578-Install-EdiFabric)
-- [Tutorial](https://support.edifabric.com/hc/en-us/articles/360000291511-Tutorial-EDI-NET-Tools-Basics)
-- [EDI to database](https://support.edifabric.com/hc/en-us/articles/360029265372-EDI-to-DB)
-- [Knowledge base](https://support.edifabric.com)
+- [Install EdiFabric](https://www.edifabric.com/docs/edifabric-net/install.html)
+- [Tutorial](https://www.edifabric.com/docs/edifabric-net/edi-tools-for-net-tutorial-part-1.html)
+- [EDI to database](https://www.edifabric.com/docs/edifabric-net/edi-to-db.html)
+- [Knowledge base](https://www.edifabric.com/docs/index.html)
 - [Community plan (free signup)](https://www.edifabric.com/pricing.html)
-- [Your Account](https://support.edifabric.com/hc/en-us/articles/360007159031-Your-Account-API-key)
-- [Support](https://support.edifabric.com/hc/en-us/requests/new)
+- [Your Account](https://www.edifabric.com/docs/getting-started/your-account.html)
+- [Support](https://www.edifabric.com/docs/index.html)
 - Support: support@edifabric.com
 
 ### 2026 © EdiFabric
