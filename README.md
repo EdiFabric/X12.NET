@@ -12,14 +12,14 @@ The .NET 6 projects compile the same sources as the .NET Framework 4.8 projects.
 | `NET Framework 4.8/EdiFabric.Examples.X12.sln` | .NET Framework 4.8 solution |
 | `NET Framework 4.8/EdiFabric.Examples.X12.Common/Config.cs` | Serial key shared by every example |
 | `NET Framework 4.8/EdiFabric.Examples.X12.Demo/Program.cs` | Runnable walkthrough: read, then validate |
-| `NET Framework 4.8/EdiFabric.Examples.X12.Templates` | C# templates used by every example except the Demo |
+| `NET Framework 4.8/EdiFabric.Examples.X12.Templates` | C# templates used by the examples |
 | `Files/` | Sample X12 and HIPAA interchanges |
 
 ### Templates
 
-References to the **EdiFabric.Templates.X12** and **EdiFabric.Templates.Hipaa** NuGet packages have been replaced with a reference to the **EdiFabric.Examples.X12.Templates** project, which contains all templates as C#. The only exception is `EdiFabric.Examples.X12.Demo`. This way, the examples use templates the same way as a real, paid application does. See [EDI templates](#edi-templates).
+EdiFabric reads and writes EDI through templates: C# classes that describe each transaction, its loops, segments, data elements and codes. The examples keep their templates as C# files in the **EdiFabric.Examples.X12.Templates** class library, one file per transaction plus the shared segments, composites and codes for each version. The examples reference that project and pass its assembly name to `X12Reader`. This is how you use templates in your own application: download the C# files, add them to a class library, and reference it. See [EDI templates](#edi-templates).
 
-`EdiFabric.Examples.X12.Demo` still references the full **EdiFabric.Templates.Hipaa** (HIPAA 5010 and pre-errata) and **EdiFabric.Templates.X12** (X12 4010) packages, so it covers a larger span of message types.
+`EdiFabric.Examples.X12.Demo` uses complete, precompiled template sets for X12 4010 and HIPAA 5010 (including pre-errata), so you can try it with a wider range of message types.
 
 ## Requirements
 
@@ -32,7 +32,7 @@ All projects can be evaluated with the demo serial key `bd96a836feca45cb91c86ee6
 1. [Sign up free for **Community**](https://www.edifabric.com/pricing.html) to get your own evaluation serial key. Community never expires, requires no credit card, and is for non-production use. The first 14 days after you subscribe have unlimited operations, then the quota is 250 per day. To extend the unlimited period, ask through the [support portal](https://support.edifabric.com/hc/en-us/requests/new) or at [support@edifabric.com](mailto:support@edifabric.com). After signup, retrieve your serial from [Your Account](https://www.edifabric.com/docs/getting-started/your-account.html).
 2. Replace the demo key in `TrialSerialKey` with your serial. The .NET 6 projects link this file, so one edit covers both solutions.
 
-NuGet restore pulls **EdiFabric 11.0.0**. Only `EdiFabric.Examples.X12.Demo` also pulls **EdiFabric.Templates.X12 3.0.0** and **EdiFabric.Templates.Hipaa 3.0.0**.
+NuGet restore pulls **EdiFabric 11.0.0**.
 
 ## Getting started
 
@@ -45,7 +45,7 @@ cd "NET 6/EdiFabric.Examples.X12.Demo"
 dotnet run
 ```
 
-The demo reads `Files/X12/PurchaseOrders.txt` with `EdiFabric.Templates.X12` and `Files/HIPAA/ClaimPayment.txt` with `EdiFabric.Templates.Hipaa`. It parses every transaction with `X12Reader` and validates each one with `IsValid`. Set a breakpoint at the end of `Translate_X12_4010` or `Translate_HIPAA_5010` and inspect `ediItems`.
+The demo reads `Files/X12/PurchaseOrders.txt` with the X12 4010 templates and `Files/HIPAA/ClaimPayment.txt` with the HIPAA 5010 templates. It parses every transaction with `X12Reader` and validates each one with `IsValid`. Set a breakpoint at the end of `Translate_X12_4010` or `Translate_HIPAA_5010` and inspect `ediItems`.
 
 To translate your own file, change the path in `EdiFabric.Examples.X12.Demo/Program.cs`.
 
@@ -69,7 +69,7 @@ using (var ediReader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Template
 var purchaseOrders = ediItems.OfType<TS850>();
 ```
 
-`X12Reader` takes the stream and the template assembly name. The examples pass `EdiFabric.Examples.X12.Templates`; the Demo passes `EdiFabric.Templates.X12` or `EdiFabric.Templates.Hipaa`. `ReadToEnd` loads the interchange into memory. For large files, use the streaming samples in **ReadEDI**.
+`X12Reader` takes the stream and the name of the assembly that contains the templates, here `EdiFabric.Examples.X12.Templates`. `ReadToEnd` loads the interchange into memory. For large files, use the streaming samples in **ReadEDI**.
 
 ### Validation and acknowledgments
 
@@ -121,7 +121,7 @@ using (var stream = new MemoryStream())
 | `EdiFabric.Examples.X12.T837P.DB` | Save and reload an 837P with EF Core (create the database before you run it) |
 | `EdiFabric.Examples.X12.MapEDI` | Map with AutoMapper and XSLT |
 | `EdiFabric.Examples.X12.ModifyTemplates` | Parse a partner-specific 850 template |
-| `EdiFabric.Examples.X12.Templates` | C# templates for X12 4010 and HIPAA 5010, referenced by every example except the Demo |
+| `EdiFabric.Examples.X12.Templates` | C# templates for X12 4010 and HIPAA 5010, used by the examples |
 
 ## Examples by message type
 
@@ -240,7 +240,7 @@ License failures throw `LicenseException`. `ErrorCode` is the number below, and 
 
 ## EDI templates
 
-Except for the Demo, these examples reference the **EdiFabric.Examples.X12.Templates** project, which contains the C# templates for every transaction they use. That is how templates work in a real application: in your own application, use the C# templates from the [EDI spec library](https://www.edifabric.com/specs/index.html) the same way. The templates are the same on every plan, Community included. When you upgrade, you change only the serial key, and your template projects stay as they are.
+The examples reference the **EdiFabric.Examples.X12.Templates** project, which contains the C# templates for every transaction they use. In your own application, use the C# templates from the [EDI spec library](https://www.edifabric.com/specs/index.html) the same way. The templates are the same on every plan, Community included. When you upgrade, you change only the serial key, and your template projects stay as they are.
 
 ### Find and download a template
 
