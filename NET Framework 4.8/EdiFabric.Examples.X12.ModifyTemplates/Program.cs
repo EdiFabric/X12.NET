@@ -8,6 +8,7 @@ using EdiFabric.Core.Model.Edi.X12;
 using EdiFabric.Examples.X12.Common;
 using EdiFabric.Framework.Readers;
 using EdiFabric.Templates.X12;
+using EdiFabric.Templates.X12004010;
 
 namespace EdiFabric.Examples.X12.ModifyTemplates
 {

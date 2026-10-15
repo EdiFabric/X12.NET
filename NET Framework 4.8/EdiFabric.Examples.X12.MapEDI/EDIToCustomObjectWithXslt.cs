@@ -24,7 +24,7 @@ namespace EdiFabric.Examples.X12.MapEDI
             var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\X12\PurchaseOrderCSV.txt");
 
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.X12"))
+            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates"))
             {
                 ediItems = ediReader.ReadToEnd().ToList();
             }

@@ -1,4 +1,4 @@
-﻿using EdiFabric.Framework.Readers;
+using EdiFabric.Framework.Readers;
 using EdiFabric.Framework.Writers;
 using EdiFabric.Templates.Hipaa5010;
 using System.Collections.Generic;
@@ -28,7 +28,7 @@ namespace EdiFabric.Examples.X12.T270
             var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\Hipaa\GenericRequest.txt");
 
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.Hipaa"))
+            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates"))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var transactions = ediItems.OfType<TS270>();

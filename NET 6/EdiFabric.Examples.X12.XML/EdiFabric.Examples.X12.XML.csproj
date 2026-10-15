@@ -15,11 +15,11 @@
 
   <ItemGroup>
     <PackageReference Include="EdiFabric" Version="11.0.0" />
-    <PackageReference Include="EdiFabric.Templates.X12" Version="3.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\EdiFabric.Examples.X12.Common\EdiFabric.Examples.X12.Common.csproj" />
+    <ProjectReference Include="..\EdiFabric.Examples.X12.Templates\EdiFabric.Examples.X12.Templates.csproj" />
   </ItemGroup>
 
 </Project>

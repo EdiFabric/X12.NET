@@ -25,7 +25,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
 
             //  Use the base X12ReaderBase instead of X12Reader
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12ReaderBase<ISACustom, GSCustom>(ediStream, "EdiFabric.Templates.X12"))
+            using (var ediReader = new X12ReaderBase<ISACustom, GSCustom>(ediStream, "EdiFabric.Examples.X12.Templates"))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var isa = ediItems.OfType<ISACustom>();

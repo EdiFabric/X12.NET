@@ -1,4 +1,4 @@
-﻿using EdiFabric.Core.Model.Edi;
+using EdiFabric.Core.Model.Edi;
 using EdiFabric.Core.Model.Edi.X12;
 using EdiFabric.Examples.X12.Common;
 using EdiFabric.Framework.Readers;
@@ -21,7 +21,7 @@ namespace EdiFabric.Examples.X12.T837P
             var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\Hipaa\ClaimPaymentEVV.txt");
 
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.Hipaa"))
+            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates"))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var transactions = ediItems.OfType<TS837P>();

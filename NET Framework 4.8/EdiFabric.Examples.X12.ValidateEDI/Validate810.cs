@@ -25,7 +25,7 @@ namespace EdiFabric.Examples.X12.ValidateEDI
             Stream ediStream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\X12\Invoice.txt");
             
             List<IEdiItem> ediItems;
-            using (var reader = new X12Reader(ediStream, "EdiFabric.Templates.X12"))
+            using (var reader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates"))
                 ediItems = reader.ReadToEnd().ToList();
 
             var invoices = ediItems.OfType<TS810>();

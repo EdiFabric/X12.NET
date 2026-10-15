@@ -39,7 +39,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
         public static Assembly AssemblyFactory(MessageContext messageContext)
         {
             if (messageContext.Version == "004010")
-                return Assembly.Load("EdiFabric.Templates.X12");
+                return Assembly.Load("EdiFabric.Examples.X12.Templates");
 
             throw new Exception(string.Format("Version {0} is not supported.", messageContext.Version));
         }

@@ -54,7 +54,7 @@ namespace EdiFabric.Examples.X12.ReadEDI
             //  The split is driven by setting which class to split by in the template.
             //  Set the class to inherit from EdiItem and the parser will automatically split by it.
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.X12"))
+            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates"))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var purchaseOrders = ediItems.OfType<TS850>();

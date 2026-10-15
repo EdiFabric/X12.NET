@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ModifyTemplates\EF_X12_004010_850_Modified.cs" Link="EF_X12_004010_850_Modified.cs" />
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.ModifyTemplates\Program.cs" Link="Program.cs" />
   </ItemGroup>
 

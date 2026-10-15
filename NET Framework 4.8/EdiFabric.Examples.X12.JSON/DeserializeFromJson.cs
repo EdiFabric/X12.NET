@@ -1,8 +1,9 @@
-﻿using System.Diagnostics;
+﻿using EdiFabric.Examples.X12.Common;
+using EdiFabric.Templates.X12004010;
+using System.Diagnostics;
 using System.IO;
 using System.Reflection;
-using EdiFabric.Examples.X12.Common;
-using EdiFabric.Templates.X12004010;
+using System.Text.Json;
 
 namespace EdiFabric.Examples.X12.JSON
 {
@@ -18,7 +19,7 @@ namespace EdiFabric.Examples.X12.JSON
             Debug.WriteLine("******************************");
 
             var ediStream = File.OpenRead(Directory.GetCurrentDirectory() + Config.TestFilesPath + @"\X12\PurchaseOrderNs.json");
-            var transaction = Newtonsoft.Json.JsonConvert.DeserializeObject<TS850>(ediStream.LoadToString());
+            var transaction = JsonSerializer.Deserialize<TS850>(ediStream.LoadToString());
         }
     }
 }

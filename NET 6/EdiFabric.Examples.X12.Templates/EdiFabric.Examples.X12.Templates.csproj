@@ -7,11 +7,40 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_HIPAA_005010_270.cs" Link="EF_HIPAA_005010_270.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_HIPAA_005010_271.cs" Link="EF_HIPAA_005010_271.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_HIPAA_005010_276.cs" Link="EF_HIPAA_005010_276.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_HIPAA_005010_277.cs" Link="EF_HIPAA_005010_277.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_HIPAA_005010_278.cs" Link="EF_HIPAA_005010_278.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_HIPAA_005010_820.cs" Link="EF_HIPAA_005010_820.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_HIPAA_005010_820HIX.cs" Link="EF_HIPAA_005010_820HIX.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_HIPAA_005010_834.cs" Link="EF_HIPAA_005010_834.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_HIPAA_005010_835.cs" Link="EF_HIPAA_005010_835.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_HIPAA_005010_837D.cs" Link="EF_HIPAA_005010_837D.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_HIPAA_005010_837I.cs" Link="EF_HIPAA_005010_837I.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_HIPAA_005010_837P.cs" Link="EF_HIPAA_005010_837P.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_HIPAA_005010_Codes.cs" Link="EF_HIPAA_005010_Codes.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_HIPAA_005010_ComplexElementInterfaces.cs" Link="EF_HIPAA_005010_ComplexElementInterfaces.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_HIPAA_005010_ComplexElements.cs" Link="EF_HIPAA_005010_ComplexElements.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_HIPAA_005010_SegmentInterfaces.cs" Link="EF_HIPAA_005010_SegmentInterfaces.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_HIPAA_005010_Segments.cs" Link="EF_HIPAA_005010_Segments.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_X12_004010_210.cs" Link="EF_X12_004010_210.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_X12_004010_214.cs" Link="EF_X12_004010_214.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_X12_004010_404.cs" Link="EF_X12_004010_404.cs" />
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_X12_004010_810.cs" Link="EF_X12_004010_810.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_X12_004010_824.cs" Link="EF_X12_004010_824.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_X12_004010_832.cs" Link="EF_X12_004010_832.cs" />
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_X12_004010_850.cs" Link="EF_X12_004010_850.cs" />
-    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_X12_004010_850_Modified.cs" Link="EF_X12_004010_850_Modified.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_X12_004010_855.cs" Link="EF_X12_004010_855.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_X12_004010_856.cs" Link="EF_X12_004010_856.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_X12_004010_857.cs" Link="EF_X12_004010_857.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_X12_004010_861.cs" Link="EF_X12_004010_861.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_X12_004010_894.cs" Link="EF_X12_004010_894.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_X12_004010_945.cs" Link="EF_X12_004010_945.cs" />
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_X12_004010_Codes.cs" Link="EF_X12_004010_Codes.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_X12_004010_ComplexElementInterfaces.cs" Link="EF_X12_004010_ComplexElementInterfaces.cs" />
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_X12_004010_ComplexElements.cs" Link="EF_X12_004010_ComplexElements.cs" />
+    <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_X12_004010_SegmentInterfaces.cs" Link="EF_X12_004010_SegmentInterfaces.cs" />
     <Compile Include="..\..\NET Framework 4.8\EdiFabric.Examples.X12.Templates\EF_X12_004010_Segments.cs" Link="EF_X12_004010_Segments.cs" />
   </ItemGroup>
 
