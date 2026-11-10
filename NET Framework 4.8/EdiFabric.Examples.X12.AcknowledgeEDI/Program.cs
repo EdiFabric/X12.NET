@@ -7,7 +7,7 @@ namespace EdiFabric.Examples.X12.AcknowledgeEDI
     {
         static void Main(string[] args)
         {
-            License.SetSerial(Config.TrialSerialKey);
+            License.EnsureToken(Config.TrialSerialKey, 3600);
 
             //  Generate 997 for valid group
             GenerateValid997.Run();

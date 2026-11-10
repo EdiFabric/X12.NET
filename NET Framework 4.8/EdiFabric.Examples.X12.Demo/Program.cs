@@ -21,7 +21,7 @@ namespace EdiFabric.Examples.X12.Demo
 
             //  If you need a different X12 version or transaction, please contact us at https://support.edifabric.com/hc/en-us/requests/new, EdiFabric supports all versions and transactions for X12/HIPAA.
 
-            License.SetSerial(Config.TrialSerialKey);
+            License.EnsureToken(Config.TrialSerialKey, 3600);
             //  Uncomment and then comment out the line above if you wish to use distributed cache for tokens
             //  TokenFileCache.Set();
 

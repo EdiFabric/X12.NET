@@ -20,7 +20,7 @@ namespace EdiFabric.Examples.X12.ModifyTemplates
     {
         static void Main(string[] args)
         {
-            License.SetSerial(Config.TrialSerialKey);
+            License.EnsureToken(Config.TrialSerialKey, 3600);
 
             // Parse 850
             ParsePO(Config.TestFilesPath + @"\X12\PurchaseOrder.txt");

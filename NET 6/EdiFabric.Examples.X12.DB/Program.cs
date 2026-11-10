@@ -22,13 +22,13 @@ namespace EdiFabric.Examples.EFCore.X12.TS850
         //  The connection string is in EF_X12_004010_DbContext.cs, and is set to the local instance of SQL Server
         static void Main(string[] args)
         {
-            License.SetSerial(Config.TrialSerialKey);
+            License.EnsureToken(Config.TrialSerialKey, 3600);
 
             var path = Directory.GetCurrentDirectory() + TestFilesPath + @"\X12\PurchaseOrder.txt";
             Stream ediStream = File.OpenRead(path);
 
             List<IEdiItem> ediItems;
-            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Templates.X12"))
+            using (var ediReader = new X12Reader(ediStream, "EdiFabric.Examples.X12.Templates"))
                 ediItems = ediReader.ReadToEnd().ToList();
 
             var tran = ediItems.OfType<Templates.X12004010.TS850>().Single();
