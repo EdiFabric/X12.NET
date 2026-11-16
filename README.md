@@ -1,4 +1,6 @@
-# EdiFabric C# .NET Examples for X12
+# EdiFabric C# .NET Examples for X12 and HIPAA EDI
+
+C# examples for EdiFabric, the .NET X12 parser and EDI library: read, write, validate and acknowledge **X12 4010** and **HIPAA 5010** files, including 837 claims, 835 remittances, 834 enrollments, 270/271 eligibility, 850 purchase orders, 856 ship notices, 810 invoices and 210/214 freight, plus 997 and 999 acknowledgments and X12 to JSON. Install EdiFabric from NuGet with `dotnet add package EdiFabric`; it targets .NET 6, 8, 9, 10 and .NET Framework 4.8, and runs without an account on the demo serial key.
 
 **EdiFabric 11.2.0** is a .NET SDK that parses, generates, validates, acknowledges, and splits EDI files. These examples cover **X12 4010** and **HIPAA 5010**.
 
